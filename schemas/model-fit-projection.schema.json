@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aoa.local/models/model-fit-projection.schema.json",
+  "title": "ModelFitProjection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "kind",
+    "model_fit_projection_id",
+    "subject_realization_ref",
+    "consumers",
+    "generated_from_claim_refs",
+    "study_refs",
+    "posture",
+    "effect_family",
+    "task_fit",
+    "authority",
+    "freshness",
+    "must_not_claim",
+    "generated_at"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://schemas.aoa.local/models/model-fit-projection.schema.json"
+    },
+    "schema_version": {"const": "aoa_model_fit_projection_v1"},
+    "kind": {"const": "ModelFitProjection"},
+    "model_fit_projection_id": {
+      "type": "string",
+      "pattern": "^model-fit-projection:[a-z0-9][a-z0-9._/-]+$"
+    },
+    "subject_realization_ref": {
+      "type": "string",
+      "pattern": "^source/model-realizations/[a-z0-9][a-z0-9._-]*\\.json$"
+    },
+    "consumers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "enum": ["aoa-agents", "aoa-sdk", "abyss-stack"]}
+    },
+    "generated_from_claim_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^source/model-claims/[a-z0-9][a-z0-9._-]*\\.json$"
+      }
+    },
+    "study_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^source/model-studies/[a-z0-9][a-z0-9._-]*\\.json$"
+      }
+    },
+    "posture": {
+      "type": "string",
+      "enum": ["declared", "candidate", "shadow", "admitted", "suspended", "deprecated"]
+    },
+    "effect_family": {
+      "type": "string",
+      "enum": ["read", "candidate", "internal_effect", "external_effect"]
+    },
+    "task_fit": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_family",
+          "claim_posture",
+          "conditions",
+          "exclusions",
+          "escalation_required"
+        ],
+        "properties": {
+          "task_family": {"type": "string", "minLength": 1},
+          "claim_posture": {
+            "type": "string",
+            "enum": ["hypothesis", "observed", "reviewed", "weakened"]
+          },
+          "conditions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "exclusions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "escalation_required": {"type": "boolean"}
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["informational_only", "activation_authority", "proof_authority", "acceptance_authority"],
+      "properties": {
+        "informational_only": {"const": true},
+        "activation_authority": {"const": false},
+        "proof_authority": {"const": false},
+        "acceptance_authority": {"const": false}
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "review_by"],
+      "properties": {
+        "status": {"type": "string", "enum": ["current", "stale", "unknown"]},
+        "review_by": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "must_not_claim": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "generated_at": {"type": "string", "format": "date-time"}
+  }
+}

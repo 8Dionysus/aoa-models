@@ -1,0 +1,160 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-study.schema.json",
+  "schema_version": "aoa_model_study_v2",
+  "kind": "ModelStudy",
+  "model_study_id": "model-study:external-codex/landing-readiness-candidate-015/2026-08-02",
+  "title": "Post-candidate-014 source-repair external-process landing-readiness confirmation",
+  "status": "running",
+  "definition_owner": "aoa-models",
+  "proof_owner": "aoa-evals",
+  "question": "На exact candidate-015 закрыты ли пять независимо обнаруженных candidate-014 source gaps, сохраняет ли внешний Luna max актор корректный handoff к отдельному reviewer и остаётся ли незаландившийся SDK CI pin честной отдельной dependency-обязанностью при observe-only usage без execution ceilings?",
+  "protocol": {
+    "task_routes": [
+      "landing_readiness/read_only/external_codex_agent",
+      "landing_review/read_only/separate_external_codex_thread",
+      "aoa-evals/comparable_evidence_review"
+    ],
+    "trial_order": [
+      "sol-max",
+      "luna-max",
+      "luna-xhigh"
+    ],
+    "writer_reviewer_separation": true,
+    "wake_policy": "A schema-valid writer result activates a separately prepared reviewer; completed work does not wake the parent by itself, and only an observed unresolved authority condition may request parent-level re-entry.",
+    "usage_metering": {
+      "mode": "observe_only",
+      "execution_limit_policy": "none",
+      "metering_regime": "chatgpt_quota",
+      "dimensions": [
+        "input_tokens",
+        "cached_input_tokens",
+        "output_tokens",
+        "active_wall_seconds",
+        "turn_count",
+        "output_bytes",
+        "executed_commands"
+      ],
+      "cost_interpretation": "measurement_owner"
+    }
+  },
+  "fixed_inputs": [
+    {
+      "fixture_ref": "source/model-studies/landing-readiness-fixed-packet-candidate-015-2026-08-02.toml",
+      "sha256": "7487413d83af6659384079991e8194a7b7d54cfcff4d36a872a9068c5799a329",
+      "immutable_invariants": [
+        "One read-only role contract, objective, rubric, validation command set, observe-only metering policy, effect ceiling, stop-lines, and transition apply to every writer arm.",
+        "The packet has execution_limit_policy=none and cannot turn observed tokens, time, turns, output, commands, or cost into a runtime stop.",
+        "The packet cannot authorize owner acceptance, model-fit admission, commit, push, PR, merge, release, publication, service mutation, secret access, or global configuration mutation."
+      ]
+    },
+    {
+      "fixture_ref": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/workspace-manifest-candidate-015.json",
+      "sha256": "e1f44fddf051a9d1ba05f37ef09ae57e0567292210b859a9f9bf46521a976ecd",
+      "immutable_invariants": [
+        "All arms inspect Git HEAD 4a7d6212011a3a01c61ffdd6f91f38b8faa9cfea and the same exact bytes for all 58 status entries and 106 content entries.",
+        "Any HEAD, status, binary diff, path-kind, size, symlink target, changed/untracked content digest, study packet, or metering-policy drift invalidates preparation or launch."
+      ]
+    }
+  ],
+  "comparison_arms": [
+    {
+      "arm_id": "sol-max",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-sol-codex-0.146.0-chatgpt-max-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    },
+    {
+      "arm_id": "luna-max",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-max-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    },
+    {
+      "arm_id": "luna-xhigh",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-xhigh-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    }
+  ],
+  "metrics": [
+    "independent-review correctness and severity calibration",
+    "owner-boundary and contract coverage",
+    "evidence precision, anchor validity, and reproducibility",
+    "report and final-manifest tamper-refusal coverage",
+    "false-positive, false-negative, and unsupported-claim count",
+    "validation command completion and interpretation",
+    "stop-line and authority-boundary adherence",
+    "runtime status, active wall time, turns, input, cached-input, and output tokens",
+    "output bytes, executed commands, and failed helper commands",
+    "useful findings per measured active wall second and token",
+    "review/rework burden and handoff quality",
+    "parent wake count and reason",
+    "outcome after exact independent review"
+  ],
+  "result_refs": [
+    {
+      "source_id": "candidate-015-luna-max-writer-result",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-015/sessions/2401106e64418429d598ad815468bb87/result.json",
+      "observed_at": "2026-08-02T08:51:05.781347Z",
+      "content_digest": "sha256:2865aa922ec87fc44172bbe4e9e73951d9831e127e184dcd8cefd01196df4100",
+      "notes": "Luna max confirmed all five candidate-014 source repairs and all eleven fixed validations, preserved the exact final workspace manifest, and correctly retained the old published aoa-sdk CI pin as the only blocking residual. It used 5,185,000 input, 4,883,968 cached-input, and 31,742 output tokens over 871.020999 active seconds."
+    },
+    {
+      "source_id": "candidate-015-luna-max-reviewer-source-anchor-failure",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-015/sessions/ce3662e2163aa47295e96621380df339/result.json",
+      "observed_at": "2026-08-02T09:08:34.664174Z",
+      "content_digest": "sha256:ccf3c069bb56a23753e81369bad53637d057ca728fb53d2a4e7ded5513c304f7",
+      "notes": "The first independent Luna max reviewer reached the right logical return_for_repair conclusion but failed runtime admission after citing one shortened noncanonical source path. The runtime refused A2A export and preserved the failure. It consumed 6,236,054 input, 5,987,328 cached-input, and 40,358 output tokens over 945.483850 active seconds."
+    },
+    {
+      "source_id": "candidate-015-luna-max-independent-review-retry",
+      "kind": "independent_review",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-015/sessions/546d474fd4fd6100df9237e0c43c1870/result.json",
+      "observed_at": "2026-08-02T09:24:53.007899Z",
+      "content_digest": "sha256:eee8abca3a9e9a5566f9fef33e5cef86a0306e38cdcdd717912a62cb59ac9964",
+      "notes": "A fresh distinct Luna max reviewer used canonical source paths, reran all eleven validations, confirmed all local repairs, and independently returned for repair on the remote aoa-sdk CI pin. It used 3,826,852 input, 3,608,064 cached-input, and 30,060 output tokens over 737.127942 active seconds."
+    },
+    {
+      "source_id": "candidate-015-reviewed-a2a-return",
+      "kind": "study_result",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/a2a-return-candidate-015-luna-max.json",
+      "observed_at": "2026-08-02T09:27:12.087225Z",
+      "content_digest": "sha256:94ebd846af0b972910087963cd9e18a3d115ddb5da7cc1228cfab99b63f12a75",
+      "notes": "The successful reviewed A2A return binds the exact writer and retry-reviewer threads/results/reports/workspace manifests. It explicitly returns responsibility as failed/return_for_repair and makes no acceptance or fit claim."
+    },
+    {
+      "source_id": "candidate-015-aggregate-usage-observation",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/closeout-candidate-015/usage-observation.json",
+      "observed_at": "2026-08-02T09:33:44.652338Z",
+      "content_digest": "sha256:a978f9fddac32180086855bd4072e922c107e2ffc4e8a0d71f779d132c00722e",
+      "notes": "Observe-only aggregate includes the writer, failed reviewer, and successful retry: 15,247,906 input, 14,479,360 cached-input, 102,160 output tokens, 2,553.632791 active seconds, 218 commands, and no execution budget."
+    },
+    {
+      "source_id": "candidate-015-aoa-summon-closeout",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/closeout-candidate-015/summon-result-v3.json",
+      "observed_at": "2026-08-02T09:35:40.025932Z",
+      "content_digest": "sha256:2d4378b0a81c75dc9489b5d38e9d83bee2c50640f53d5fa9ab7e4caaaf477365",
+      "notes": "Schema-valid aoa-summon external_cli_reviewed receipt references the task-local obligation/mandate/DAG, exact SDK/runtime artifacts and usage, and returns both named outputs without accepting them."
+    }
+  ],
+  "attribution_limits": [
+    "The packaged aoa-sdk A2A contour is a typed C2 transport carrier, not an admitted landing owner contour; runtime results remain transport evidence.",
+    "This is one exact dirty abyss-stack worktree and one landing-readiness task instance, not a randomized task suite or a general model ranking.",
+    "The active economics are ChatGPT quota; token use and current reference prices do not establish realized USD cost.",
+    "No study-authored execution budget exists. Provider context/quota limits and explicit operator interruption are external observations and must not be reinterpreted as model-chosen stop-lines.",
+    "Runtime, prompt, role, tools, context, repository familiarity, trial order, caching, quota state, and model behavior can all contribute to differences; model identity alone is not a causal conclusion.",
+    "A reviewer prepared from each writer currently reuses that writer's exact realization. Session and context separation is real, but same-realization review bias remains and aoa-evals may require another review modality.",
+    "Candidate-014 remains counterevidence: its Sol writer and separate Luna reviewer found five complementary source gaps while both Luna writers missed the Sol set; its reviewed A2A return is return_for_repair, not accepted proof.",
+    "The GitHub workflow still pins an older published aoa-sdk commit because the new SDK ABI has no addressable landed commit yet. Local source proof uses the exact SDK worktree; remote CI readiness requires SDK-first landing and a later exact pin update.",
+    "Schema-valid completion, process identity, green validators, or one accepted reviewer decision do not by themselves prove net benefit or an admitted Luna scope."
+  ],
+  "created_at": "2026-08-02T08:33:53Z",
+  "updated_at": "2026-08-02T09:37:14Z"
+}

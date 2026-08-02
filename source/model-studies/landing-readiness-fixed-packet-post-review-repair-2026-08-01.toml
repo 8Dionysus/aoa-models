@@ -1,0 +1,142 @@
+schema_version = "aoa_models_landing_readiness_packet_v1"
+model_study_id = "model-study:external-codex/landing-readiness-post-review-luna/2026-08-01"
+task_family = "landing_readiness"
+role_id = "reviewer"
+role_contract_ref = "agents/roles/reviewer/specializations/route-drift-review/specialization.json"
+parent_task_id = "goal:019fbb8a-e084-7e73-9a98-647a1dd76985"
+target_owner = "abyss-stack"
+return_owner = "abyss-stack"
+allowed_effect_class = "read_only"
+allowed_paths = [".github", "AGENTS.md", "BOUNDARIES.md", "CHANGELOG.md", "CHARTER.md", "DESIGN.AGENTS.md", "DESIGN.md", "README.md", "ROADMAP.md", "docs", "mechanics", "scripts", "tests"]
+authority_scope = ["abyss-stack"]
+objective = """
+Проведи read-only post-repair landing-readiness оценку exact candidate-008 external-codex-agent. Это отдельный Luna max writer, а не встроенный Codex sub-agent и не owner-contour admission. Прочитай всю применимую AGENTS.md иерархию и immutable model-study, packet и workspace manifest. Самостоятельно проверь весь diff от закрепленного HEAD, включая .github, tests, CHANGELOG.md и DESIGN.AGENTS.md. Особо исследуй: manifest coverage ignored bytes и отказ от secret-shaped ignored inputs; exact argv/exit binding каждого validation claim; обязательный review_required gate; fixture-only admission_class; wrapped/scoped forbidden-effect observation и его пределы; exact PGID/SID cleanup при TERM-resistant descendant и unexpected worker death; controlled interrupt/resume; token и turn overrun report preservation; SDK source-root binding; topology, CI, decisions, docs и A2A export gate. Выполни все десять validation commands как exact argv из workspace root. TMPDIR=/dev/shm для pytest и закрепленный PYTHONPYCACHEPREFIX=/dev/shm для py_compile являются единственным разрешенным bounded scratch. Для read-only результата artifact_paths должен быть пустым, если модель не создала реальный workspace artifact; символические labels запрещены. Поскольку review_required=true, не возвращай status=completed: пригодный writer-result должен сохранить status=review_required и точное bound wake condition. Не меняй workspace, не читай secrets, не объявляй owner acceptance, model fit, eval verdict или landing completion и не выполняй внешних эффектов.
+"""
+from_status = "post_review_repaired_candidate"
+target_status = "readiness_assessed"
+approval_posture = "human_owner_and_aoa_evals_review_required"
+rollback_reentry_route = "preserve_exact_worktree_and_return_evidence_to_parent"
+ambiguity_policy = "escalate"
+review_required = true
+done_state = [
+  "Весь exact diff и ближайшие owner contracts проверены, либо каждый недоступный участок явно назван.",
+  "Каждый finding имеет severity, category и проверяемые evidence refs.",
+  "Все десять fixed validation commands имеют ровно один claim, чей status совпадает с runtime-observed exact argv и exit code.",
+  "Ignored bytes, secret-shaped refusal, review gate, effect observer, PGID/SID lifecycle, budgets, SDK source binding, topology и C2 limits оценены отдельно.",
+  "Read-only report использует artifact_paths=[] и не претендует на owner acceptance, landing completion, eval verdict или model fit.",
+  "При отсутствии authority boundary reentry_request использует bound review-required condition и activate_review_role, а не wake_parent."
+]
+expected_artifacts = ["runtime-owned structured model report; no workspace artifact is expected"]
+forbidden_effects = [
+  "commit",
+  "push",
+  "pull_request",
+  "merge",
+  "tag",
+  "release",
+  "publication",
+  "service_mutation",
+  "secret_access",
+  "global_config_mutation"
+]
+rubric = [
+  "Correctness: findings agree with exact source, contracts, schemas, tests, Git and runtime evidence.",
+  "Coverage: ignored bytes, process death, review gate, effect observation, validation provenance, C2 binding and residuals are addressed.",
+  "Evidence quality: claims cite concrete files, commands, outputs or immutable refs and distinguish source proof from runtime proof.",
+  "Stop-line discipline: no mutation, symbolic artifact, owner acceptance, proof verdict, model-fit conclusion or external effect is claimed.",
+  "Usefulness: blockers and safe next routes are explicit without inventing owner semantics.",
+  "Efficiency: useful evidence and judgment per wall time, raw Codex tokens, commands and parent re-entry."
+]
+
+[budget]
+wall_time_seconds = 1800
+max_turns = 12
+max_output_bytes = 8388608
+token_budget = 6000000
+metering_regime = "chatgpt_quota"
+
+[[validation_commands]]
+command_id = "git-status"
+argv = ["/usr/bin/git", "status", "--short"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "git-diff-check"
+argv = ["/usr/bin/git", "diff", "--check", "HEAD", "--"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "external-codex-focused-tests"
+argv = [
+  "/usr/bin/env",
+  "PYTHONDONTWRITEBYTECODE=1",
+  "TMPDIR=/dev/shm",
+  "AOA_SDK_SOURCE_ROOT=/home/dionysus/src/.worktrees/aoa-sdk-model-incarnation-20260801",
+  "PYTHONPATH=/home/dionysus/src/.worktrees/aoa-sdk-model-incarnation-20260801/src",
+  "/usr/bin/python",
+  "-m",
+  "pytest",
+  "-q",
+  "-p",
+  "no:cacheprovider",
+  "mechanics/governed-execution/parts/external-codex-agent/tests"
+]
+cwd = "."
+
+[[validation_commands]]
+command_id = "external-codex-topology-tests"
+argv = [
+  "/usr/bin/env",
+  "PYTHONDONTWRITEBYTECODE=1",
+  "TMPDIR=/dev/shm",
+  "/usr/bin/python",
+  "-m",
+  "pytest",
+  "-q",
+  "-p",
+  "no:cacheprovider",
+  "tests/test_script_topology.py",
+  "tests/test_test_topology.py",
+  "tests/test_source_topology_validator_modules.py"
+]
+cwd = "."
+
+[[validation_commands]]
+command_id = "external-codex-ci-compile"
+argv = [
+  "/usr/bin/env",
+  "PYTHONDONTWRITEBYTECODE=1",
+  "PYTHONPYCACHEPREFIX=/dev/shm/abyss-external-codex-candidate-008-pycache",
+  "/usr/bin/python",
+  "-m",
+  "py_compile",
+  "scripts/aoa-external-codex-agent",
+  "mechanics/governed-execution/parts/external-codex-agent/external_codex_agent.py",
+  "mechanics/governed-execution/parts/external-codex-agent/prepare_landing_study.py"
+]
+cwd = "."
+
+[[validation_commands]]
+command_id = "stack-source-validator"
+argv = ["/usr/bin/env", "PYTHONDONTWRITEBYTECODE=1", "/usr/bin/python", "scripts/validate_stack.py"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "decision-record-validator"
+argv = ["/usr/bin/env", "PYTHONDONTWRITEBYTECODE=1", "/usr/bin/python", "scripts/validate_decision_records.py"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "decision-index-check"
+argv = ["/usr/bin/env", "PYTHONDONTWRITEBYTECODE=1", "/usr/bin/python", "scripts/generate_decision_indexes.py", "--check"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "nested-agents-validator"
+argv = ["/usr/bin/env", "PYTHONDONTWRITEBYTECODE=1", "/usr/bin/python", "scripts/validate_nested_agents.py"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "external-codex-ruff"
+argv = ["/usr/bin/python", "-m", "ruff", "check", "--no-cache", "mechanics/governed-execution/parts/external-codex-agent"]
+cwd = "."

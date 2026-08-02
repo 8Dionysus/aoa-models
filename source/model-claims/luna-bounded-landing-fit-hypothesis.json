@@ -1,0 +1,158 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-claim.schema.json",
+  "schema_version": "aoa_model_claim_v1",
+  "kind": "ModelClaim",
+  "model_claim_id": "model-claim:openai/gpt-5.6-luna/bounded-landing-fit-hypothesis-v1",
+  "subject_realization_refs": [
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-max-readonly.json",
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-xhigh-readonly.json",
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-xhigh-workspace-write.json"
+  ],
+  "statement": "GPT-5.6 Luna max or xhigh may provide net benefit for bounded landing readiness and follow-through when owner decisions are already fixed and completion is guarded by deterministic evidence.",
+  "scope": {
+    "task_family": "landing",
+    "conditions": [
+      "the target owner and source of truth are explicit",
+      "architecture and authority boundaries are already decided",
+      "the done state and validators are inspectable",
+      "acceptance remains with the target owner and proof route"
+    ],
+    "exclusions": [
+      "architectural or owner-boundary decisions",
+      "semantic merge conflicts with materially different futures",
+      "autonomous commit, push, merge, release, publication, or other external effects",
+      "claims about internal geometry or training data inferred from behavior alone"
+    ]
+  },
+  "evidence_modality": "inference_with_explicit_limits",
+  "evidence_refs": [
+    {
+      "source_id": "openai-codex-model-guidance-2026-08-01",
+      "kind": "official_documentation",
+      "uri": "https://learn.chatgpt.com/docs/models",
+      "observed_at": "2026-08-01T07:44:16Z",
+      "content_digest": null,
+      "notes": "The provider describes Luna as fast and economical for clear, repeatable, high-volume work; landing transfer is a project hypothesis, not a provider claim."
+    },
+    {
+      "source_id": "candidate-014-luna-xhigh-writer-result",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-014/sessions/e7319c99788970f8cc75c395768ebc9f/result.json",
+      "observed_at": "2026-08-02T08:02:23.152035Z",
+      "content_digest": "sha256:203f7777c79f3b70d0c054dd109b02d2227e8fef5df59f310f666045f585eb50",
+      "notes": "Luna xhigh completed the fixed candidate-014 writer arm in 669.941856 active seconds with lower observed token use than Luna max and Sol max, preserved review gating, and made no owner or fit claim. It missed the three blocking gaps found by Sol, so this is throughput and discipline evidence only."
+    },
+    {
+      "source_id": "candidate-015-luna-max-writer-result",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-015/sessions/2401106e64418429d598ad815468bb87/result.json",
+      "observed_at": "2026-08-02T08:51:05.781347Z",
+      "content_digest": "sha256:2865aa922ec87fc44172bbe4e9e73951d9831e127e184dcd8cefd01196df4100",
+      "notes": "Luna max correctly confirmed five source repairs, all eleven fixed validations, exact workspace integrity, and the one remaining remote SDK CI dependency under the bounded read-only procedure."
+    },
+    {
+      "source_id": "installed-runtime-workspace-write-018-luna-xhigh-writer-result",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-installed-workspace-write-018/sessions/970ee8de9a548219782a139be93c6f01/result.json",
+      "observed_at": "2026-08-02T10:14:12.403385Z",
+      "content_digest": "sha256:bcbc2609e8760c4fc2002e1278cf5f5932872d962cd93055463e8b53431aed32",
+      "notes": "A globally installed external runtime gave Luna xhigh real workspace-write authority. It repaired exactly docs/decisions/indexes/by-number.md, passed the fixed validation sequence, returned review_required without parent wake, and left the controller-observed final manifest clean."
+    },
+    {
+      "source_id": "installed-runtime-workspace-write-018-reviewed-a2a-return",
+      "kind": "study_result",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/a2a-return-installed-runtime-workspace-write-018.json",
+      "observed_at": "2026-08-02T10:22:50.823261Z",
+      "content_digest": "sha256:6126ee0bb58bb93fe4fddb143a18d963060e2bd40be3fad412599c030d4e7cb8",
+      "notes": "The reviewed return binds the exact writer and independent reviewer results, both summon-request digests, and matching writer/reviewer final manifests; outcome is proceed with no inherited owner acceptance or model-fit verdict."
+    }
+  ],
+  "confidence_posture": "hypothesis",
+  "observation_interval": {
+    "start": "2026-08-01T07:44:16Z",
+    "end": "2026-08-02T10:22:50.823261Z"
+  },
+  "known_counterevidence": [
+    {
+      "source_id": "candidate-014-sol-max-complementary-findings",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-014/sessions/bc70b8b741a924f9cb61df6b3a40a68c/result.json",
+      "observed_at": "2026-08-02T07:35:25.878121Z",
+      "content_digest": "sha256:f3008eebe3c92a63372574947f81d8cb813d91ed62f438c1cb56101afdc3ae4b",
+      "notes": "Sol max found three blocking route gaps that both Luna writer arms missed. A distinct Luna max reviewer later found two different gaps, showing complementary coverage rather than a Luna replacement for high-initiative source review."
+    },
+    {
+      "source_id": "candidate-014-reviewed-return-for-repair",
+      "kind": "study_result",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/a2a-return-candidate-014-luna-max.json",
+      "observed_at": "2026-08-02T08:24:25.839635Z",
+      "content_digest": "sha256:f369b658fcd6be603481d81237dda50e91af8eccc7a97718209823de8303f117",
+      "notes": "The first comparative reviewed return was return_for_repair, not acceptance or net-benefit proof."
+    },
+    {
+      "source_id": "candidate-015-luna-max-reviewer-source-anchor-failure",
+      "kind": "execution_receipt",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-015/sessions/ce3662e2163aa47295e96621380df339/result.json",
+      "observed_at": "2026-08-02T09:08:34.664174Z",
+      "content_digest": "sha256:ccf3c069bb56a23753e81369bad53637d057ca728fb53d2a4e7ded5513c304f7",
+      "notes": "The first candidate-015 Luna max reviewer consumed more input and active time than the writer but failed runtime admission on one shortened noncanonical source anchor, forcing a full fresh reviewer retry. This is material evidence-precision and review-cost counterevidence."
+    }
+  ],
+  "freshness": {
+    "status": "current",
+    "review_by": "2026-08-15T00:00:00Z",
+    "policy": "The globally installed workspace-write and reviewed-return mechanism is now observed. Keep the claim at hypothesis until aoa-evals reviews the comparison, held-out duties, rework cost, and net benefit."
+  },
+  "lifecycle": {
+    "state": "hypothesis",
+    "history": [
+      {
+        "from": null,
+        "to": "hypothesis",
+        "at": "2026-08-01T07:44:16Z",
+        "reason": "Project pressure and current provider guidance justify a bounded trial, not a reviewed fit claim.",
+        "evidence_refs": [
+          "openai-codex-model-guidance-2026-08-01"
+        ]
+      }
+    ],
+    "superseded_by": null
+  },
+  "independent_review_refs": [
+    {
+      "source_id": "candidate-014-luna-max-independent-review",
+      "kind": "independent_review",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-014/sessions/4b42a8abde1d4ae115fdb2f1991ccd8e/result.json",
+      "observed_at": "2026-08-02T08:23:56.613497Z",
+      "content_digest": "sha256:08072301093b7ac003006d2ec2020eda6f3eb332bb5d6b0972835fc448aaa76b",
+      "notes": "Distinct Luna max review found two additional repository-level blockers and returned for repair."
+    },
+    {
+      "source_id": "candidate-015-luna-max-independent-review-retry",
+      "kind": "independent_review",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-candidate-015/sessions/546d474fd4fd6100df9237e0c43c1870/result.json",
+      "observed_at": "2026-08-02T09:24:53.007899Z",
+      "content_digest": "sha256:eee8abca3a9e9a5566f9fef33e5cef86a0306e38cdcdd717912a62cb59ac9964",
+      "notes": "Fresh distinct Luna max review confirmed all five local repairs and returned only the remote SDK CI pin for repair. Same-realization review bias remains."
+    },
+    {
+      "source_id": "installed-runtime-workspace-write-018-luna-xhigh-independent-review",
+      "kind": "independent_review",
+      "uri": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260802/runtime-state-installed-workspace-write-018-reviewer/sessions/bd95f403a0c1955b7dd6d433b3291cda/result.json",
+      "observed_at": "2026-08-02T10:20:44.183546Z",
+      "content_digest": "sha256:ae0b85bef322e338fd3d5adf798d79ef88e0d3e88623422e262a71a6bee08c5d",
+      "notes": "A separately addressable Luna xhigh reviewer used read-only authority, confirmed the exact repair and matching final manifest, changed no path, and returned proceed without parent wake. Same-realization review bias remains."
+    }
+  ],
+  "attribution_limits": [
+    "Fixed external-process landing-readiness tasks have completed, but they are one dirty-worktree family and do not establish general landing-role fit.",
+    "The active ChatGPT quota regime does not expose direct per-run USD billing.",
+    "Candidate-014 indicates Luna max/xhigh can be faster and use fewer observed tokens while still missing blocking gaps found by Sol; speed and token count cannot substitute for outcome coverage.",
+    "Candidate-015 required a failed reviewer plus a full retry, so end-to-end role cost must include review and rework rather than writer usage alone.",
+    "One installed Luna xhigh workspace-write chain demonstrates bounded mutation and reviewed return, but one deterministic generated-index repair does not establish general practical benefit or justify effect admission.",
+    "The independent reviewers use the same Luna realization family as the selected writer, so same-realization review bias remains.",
+    "No behavioral result may be used to infer closed-model internal geometry or training lineage."
+  ],
+  "created_at": "2026-08-01T07:44:16Z",
+  "updated_at": "2026-08-02T10:22:50.823261Z"
+}

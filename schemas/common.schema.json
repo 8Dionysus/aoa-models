@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aoa.local/models/common.schema.json",
+  "title": "aoa-models common definitions",
+  "$defs": {
+    "source_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "kind", "uri", "observed_at"],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "official_documentation",
+            "live_runtime_output",
+            "repository_source",
+            "raw_session_evidence",
+            "execution_receipt",
+            "study_result",
+            "eval_verdict",
+            "independent_review",
+            "other"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "content_digest": {
+          "type": ["string", "null"],
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "observation_interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "evidence_modality": {
+      "type": "string",
+      "enum": [
+        "provider_source_fact",
+        "runtime_observation",
+        "black_box_behavioral_evidence",
+        "task_outcome_evidence",
+        "representation_internal_space_measurement",
+        "causal_intervention",
+        "training_lineage_evidence",
+        "inference_with_explicit_limits"
+      ]
+    },
+    "claim_lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "hypothesis",
+        "observed",
+        "reviewed",
+        "weakened",
+        "stale",
+        "superseded",
+        "retracted"
+      ]
+    },
+    "record_ref": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

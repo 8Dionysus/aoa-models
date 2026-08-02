@@ -1,0 +1,109 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-study.schema.json",
+  "schema_version": "aoa_model_study_v2",
+  "kind": "ModelStudy",
+  "model_study_id": "model-study:external-codex/landing-readiness-candidate-013/2026-08-01",
+  "title": "Observe-only Sol max, Luna max, and Luna xhigh external-process landing-readiness comparison",
+  "status": "fixed",
+  "definition_owner": "aoa-models",
+  "proof_owner": "aoa-evals",
+  "question": "На exact candidate-013 сохраняют ли Luna max и Luna xhigh correctness, evidence quality, initiative and honest stop-lines относительно Sol max, когда usage только измеряется без заранее заданных execution ceilings и каждый writer проходит отдельный runtime/review contour?",
+  "protocol": {
+    "task_routes": [
+      "landing_readiness/read_only/external_codex_agent",
+      "landing_review/read_only/separate_external_codex_thread",
+      "aoa-evals/comparable_evidence_review"
+    ],
+    "trial_order": [
+      "sol-max",
+      "luna-max",
+      "luna-xhigh"
+    ],
+    "writer_reviewer_separation": true,
+    "wake_policy": "A schema-valid writer result activates a separately prepared reviewer; completed work does not wake the parent by itself, and only an observed unresolved authority condition may request parent-level re-entry.",
+    "usage_metering": {
+      "mode": "observe_only",
+      "execution_limit_policy": "none",
+      "metering_regime": "chatgpt_quota",
+      "dimensions": [
+        "input_tokens",
+        "cached_input_tokens",
+        "output_tokens",
+        "active_wall_seconds",
+        "turn_count",
+        "output_bytes",
+        "executed_commands"
+      ],
+      "cost_interpretation": "measurement_owner"
+    }
+  },
+  "fixed_inputs": [
+    {
+      "fixture_ref": "source/model-studies/landing-readiness-fixed-packet-candidate-013-2026-08-01.toml",
+      "sha256": "cda911583a4e87736cda703f345fb74764a6743bd70ddf0935187eaf4e531ff4",
+      "immutable_invariants": [
+        "One read-only role contract, objective, rubric, validation command set, observe-only metering policy, effect ceiling, stop-lines, and transition apply to every writer arm.",
+        "The packet has execution_limit_policy=none and cannot turn observed tokens, time, turns, output, commands, or cost into a runtime stop.",
+        "The packet cannot authorize owner acceptance, model-fit admission, commit, push, PR, merge, release, publication, service mutation, secret access, or global configuration mutation."
+      ]
+    },
+    {
+      "fixture_ref": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260801/workspace-manifest-candidate-013.json",
+      "sha256": "22899b072cd55aa8c3c199f82680e4a0af00c233a76fb4d9a09e38149f266dbc",
+      "immutable_invariants": [
+        "All arms inspect Git HEAD 4a7d6212011a3a01c61ffdd6f91f38b8faa9cfea and the same exact bytes for all 50 status entries and 54 content entries.",
+        "Any HEAD, status, binary diff, path-kind, size, symlink target, changed/untracked content digest, study packet, or metering-policy drift invalidates preparation or launch."
+      ]
+    }
+  ],
+  "comparison_arms": [
+    {
+      "arm_id": "sol-max",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-sol-codex-0.146.0-chatgpt-max-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    },
+    {
+      "arm_id": "luna-max",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-max-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    },
+    {
+      "arm_id": "luna-xhigh",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-xhigh-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    }
+  ],
+  "metrics": [
+    "independent-review correctness and severity calibration",
+    "owner-boundary and contract coverage",
+    "evidence precision, anchor validity, and reproducibility",
+    "false-positive, false-negative, and unsupported-claim count",
+    "validation command completion and interpretation",
+    "stop-line and authority-boundary adherence",
+    "runtime status, active wall time, turns, input, cached-input, and output tokens",
+    "output bytes, executed commands, and failed helper commands",
+    "useful findings per measured active wall second and token",
+    "review/rework burden and handoff quality",
+    "parent wake count and reason",
+    "outcome after exact independent review"
+  ],
+  "result_refs": [],
+  "attribution_limits": [
+    "The packaged aoa-sdk A2A contour is a typed C2 transport carrier, not an admitted landing owner contour; runtime results remain transport evidence.",
+    "This is one exact dirty abyss-stack worktree and one landing-readiness task instance, not a randomized task suite or a general model ranking.",
+    "The active economics are ChatGPT quota; token use and current reference prices do not establish realized USD cost.",
+    "No study-authored execution budget exists. Provider context/quota limits and explicit operator interruption are external observations and must not be reinterpreted as model-chosen stop-lines.",
+    "Runtime, prompt, role, tools, context, repository familiarity, trial order, caching, quota state, and model behavior can all contribute to differences; model identity alone is not a causal conclusion.",
+    "A reviewer prepared from each writer currently reuses that writer's exact realization. Session and context separation is real, but same-realization review bias remains and aoa-evals may require another review modality.",
+    "Candidate-011 and candidate-012 remain counterevidence. Neither their writer receipts nor failed reviewers establish an accepted comparison, model fit, owner acceptance, or landing completion.",
+    "Schema-valid completion, process identity, green validators, or one accepted reviewer decision do not by themselves prove net benefit or an admitted Luna scope."
+  ],
+  "created_at": "2026-08-01T16:30:17Z",
+  "updated_at": "2026-08-01T16:30:17Z"
+}

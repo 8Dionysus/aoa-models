@@ -1,0 +1,107 @@
+schema_version = "aoa_models_landing_track_packet_v1"
+model_study_id = "model-study:external-codex/landing-closeout-pr-342-temp-profile-v2/2026-08-01"
+task_family = "landing_closeout"
+role_id = "reviewer"
+role_contract_ref = "agents/roles/reviewer/profile.json"
+parent_task_id = "goal:019fbb8a-e084-7e73-9a98-647a1dd76985"
+target_owner = "abyss-stack"
+return_owner = "abyss-stack"
+allowed_effect_class = "read_only"
+allowed_paths = ["AGENTS.md", "CHANGELOG.md", "kag", "mcp", "mechanics", "scripts", "tests"]
+source_evidence_paths = ["AGENTS.md", "CHANGELOG.md", "kag", "mcp", "mechanics", "scripts", "tests"]
+authority_scope = ["abyss-stack"]
+objective = """
+Выполни свежую read-only post-landing closeout reconstruction для exact локального commit 4a7d6212011a3a01c61ffdd6f91f38b8faa9cfea с subject `Refresh MCP protocol lab and repair owner-scoped KAG evaluation (#342)`. Git object имеет ровно одного родителя: называй его только locally observed landed/squash-style source commit, не merge commit. Exact workspace находится на этом commit; подготовленный пакет фиксирует local remote-tracking `refs/remotes/origin/main` как 9cabe283f20f2d0b2861aaad061d2049d6878375 на момент подготовки. Не выдавай local ref или commit subject за свежую сетевую GitHub-проверку, PR state, owner acceptance, release либо runtime deployment.
+
+Сначала прочитай применимую AGENTS.md, immutable inputs, commit scope и ближайшие owner contracts. Проверь exact HEAD, local origin/main, ancestry landed commit, clean workspace, focused protocol-lab/KAG tests и stack validator только точными validation execution_argv. Read-only Codex permission profile разрешает validator scratch только в attempt-local TMPDIR; это не workspace-write authority. Реконструируй: что локально доказано, какие проверки реально выполнены, что намеренно не проверено, residual handoff и rollback/re-entry posture.
+
+Перед final report проверь каждый `source:` evidence ref против точных bytes. Literal anchor обязан буквально встречаться в файле; если heading/символ неоднозначен, используй существующий `#Lx-Ly`, предварительно установив точные номера строк. Не придумывай и не нормализуй название anchor. Stable immutable refs и controller-owned runtime final-manifest ref используй только по их точным идентичностям.
+
+Не меняй workspace и не выполняй commit, push, PR, merge, tag, release, публикацию, service mutation, secret access или global config. При пригодном результате сохрани обязательный independent-review gate через status=review_required, decision=submit_for_review, condition_id=review-required, proposed_action=activate_review_role и artifact_paths=[]. При реальном blocker fail closed и назови точное наблюдение.
+"""
+from_status = "landed_source_commit_locally_observed"
+target_status = "post_landing_closeout_reconstructed"
+approval_posture = "human_owner_and_aoa_evals_review_required"
+rollback_reentry_route = "return_to_commit_parent_or_open_owner_scoped_followup_from_exact_failed_check"
+ambiguity_policy = "escalate"
+review_required = true
+done_state = [
+  "Exact HEAD, pinned local origin/main ref, one-parent commit topology, and ancestry are checked without claiming live remote freshness.",
+  "Focused protocol-lab and KAG tests plus the stack validator have exact runtime-observed claims and can use only attempt-local temporary scratch.",
+  "Verified source state, skipped live/tag/release/runtime checks, residual handoff, and rollback/re-entry posture are separated.",
+  "Every source evidence anchor is checked against exact bytes before final output.",
+  "The report remains read-only, names no artifact path, preserves independent review, and claims no owner acceptance or external effect."
+]
+expected_artifacts = ["runtime-owned structured closeout reconstruction; no workspace artifact is expected"]
+forbidden_effects = [
+  "commit",
+  "push",
+  "pull_request",
+  "merge",
+  "tag",
+  "release",
+  "publication",
+  "service_mutation",
+  "secret_access",
+  "global_config_mutation"
+]
+rubric = [
+  "Correctness: local Git topology and validator claims match exact observed evidence.",
+  "Closeout discipline: landed-source evidence is not inflated into live remote, release, deployment, or owner-acceptance proof.",
+  "Sandbox discipline: validator temp writes stay outside the read-only workspace in attempt-local TMPDIR.",
+  "Evidence quality: every semantic claim uses an existing exact anchor, stable immutable input, final manifest, or exact validation command ID.",
+  "Usefulness: skipped checks, residual owner work, and rollback/re-entry are concrete.",
+  "Efficiency: actual tokens, time, turns, output, commands, host observations, and operator intervention are counted without predeclared execution ceilings."
+]
+
+[usage_metering]
+mode = "observe_only"
+execution_limit_policy = "none"
+metering_regime = "chatgpt_quota"
+dimensions = ["input_tokens", "cached_input_tokens", "output_tokens", "active_wall_seconds", "turn_count", "output_bytes", "executed_commands"]
+cost_interpretation = "measurement_owner"
+
+[[validation_commands]]
+command_id = "git-status"
+argv = ["/usr/bin/git", "status", "--short"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "git-head"
+argv = ["/usr/bin/git", "rev-parse", "HEAD"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "local-origin-main"
+argv = ["/usr/bin/git", "rev-parse", "refs/remotes/origin/main"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "landed-commit-ancestor"
+argv = ["/usr/bin/git", "merge-base", "--is-ancestor", "4a7d6212011a3a01c61ffdd6f91f38b8faa9cfea", "refs/remotes/origin/main"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "landed-commit-identity"
+argv = ["/usr/bin/git", "show", "-s", "--format=%H%n%P%n%s", "4a7d6212011a3a01c61ffdd6f91f38b8faa9cfea"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "protocol-lab-tests"
+argv = ["/usr/bin/env", "PYTHONDONTWRITEBYTECODE=1", "/usr/bin/python", "-m", "pytest", "-q", "-p", "no:cacheprovider", "mcp/protocol-lab/tests/test_protocol_lab.py"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "kag-seam-tests"
+argv = ["/usr/bin/env", "PYTHONDONTWRITEBYTECODE=1", "/usr/bin/python", "-m", "pytest", "-q", "-p", "no:cacheprovider", "mechanics/federation-seams/parts/kag-seam/tests/test_kag_runtime_projection.py"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "stack-source-validator"
+argv = ["/usr/bin/env", "PYTHONDONTWRITEBYTECODE=1", "/usr/bin/python", "scripts/validate_stack.py"]
+cwd = "."
+
+[[validation_commands]]
+command_id = "git-diff-check"
+argv = ["/usr/bin/git", "diff", "--check", "HEAD", "--"]
+cwd = "."

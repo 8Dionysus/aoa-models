@@ -1,0 +1,92 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-study.schema.json",
+  "schema_version": "aoa_model_study_v1",
+  "kind": "ModelStudy",
+  "model_study_id": "model-study:external-codex/landing-readiness-repair-v2/2026-08-01",
+  "title": "Repaired fixed-input Sol max, Luna max, and Luna xhigh external-process landing-readiness comparison",
+  "status": "fixed",
+  "definition_owner": "aoa-models",
+  "proof_owner": "aoa-evals",
+  "question": "После fail-closed repairs первого trial обеспечивает ли Luna max или Luna xhigh на одном точном change set полезную landing-readiness работу с меньшими затратами и меньшей потребностью в Sol-level re-entry, не теряя correctness, evidence quality и stop-line discipline относительно Sol max?",
+  "protocol": {
+    "task_routes": [
+      "landing_readiness/read_only/external_codex_agent",
+      "landing_review/read_only/separate_external_codex_thread",
+      "aoa-evals/comparable_evidence_review"
+    ],
+    "trial_order": [
+      "sol-max",
+      "luna-max",
+      "luna-xhigh"
+    ],
+    "writer_reviewer_separation": true,
+    "wake_policy": "A schema-valid writer result activates an independently bound reviewer; only an unresolved authority decision may request parent-level re-entry. Runtime failure, interruption, review, and model-authored proposals do not themselves grant authority."
+  },
+  "fixed_inputs": [
+    {
+      "fixture_ref": "source/model-studies/landing-readiness-fixed-packet-repair-2026-08-01.toml",
+      "sha256": "a80997dbea7a204515ff059065752b7fb91004260426116fc08832b6379646ef",
+      "immutable_invariants": [
+        "One read-only reviewer role contract, objective, rubric, validation command set, budget, effect ceiling, stop-lines, and transition apply to every arm.",
+        "The fixed token ceiling uses Codex-reported input_tokens plus output_tokens under ChatGPT quota; cached_input_tokens remains separately observable and is not double-counted.",
+        "The packet cannot authorize owner acceptance, model-fit admission, commit, push, PR, merge, release, publication, service mutation, secret access, or global configuration mutation."
+      ]
+    },
+    {
+      "fixture_ref": "/srv/abyss-machine/tmp/ai/external-codex-landing-study-20260801/workspace-manifest-candidate-005.json",
+      "sha256": "109e9a642b8ebfd82c9b145f1a83a184e435c5e42daf0493b40e415913fb254c",
+      "immutable_invariants": [
+        "All arms inspect Git HEAD 4a7d6212011a3a01c61ffdd6f91f38b8faa9cfea and the same exact bytes for every changed or untracked path.",
+        "Any HEAD, status, binary diff, path-kind, size, symlink target, or changed/untracked content digest drift invalidates preparation or launch.",
+        "The repaired candidate includes the post-trial runtime, test, documentation, wrapper, inventory, and local route-card changes; candidate-004 remains immutable predecessor evidence."
+      ]
+    }
+  ],
+  "comparison_arms": [
+    {
+      "arm_id": "sol-max",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-sol-codex-0.146.0-chatgpt-max-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    },
+    {
+      "arm_id": "luna-max",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-max-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    },
+    {
+      "arm_id": "luna-xhigh",
+      "realization_refs": [
+        "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-xhigh-readonly.json"
+      ],
+      "route": "landing_readiness/read_only/external_codex_agent"
+    }
+  ],
+  "metrics": [
+    "independent-review correctness and severity calibration",
+    "owner-boundary and contract coverage",
+    "evidence precision and reproducibility",
+    "false-positive, false-negative, and unsupported-claim count",
+    "validation command completion and interpretation",
+    "stop-line and authority-boundary adherence",
+    "runtime status, wall time, turns, input, cached-input, and output tokens",
+    "useful findings per active wall second and metered token",
+    "parent wake count and reason",
+    "repair, review, or ambiguity residual quality"
+  ],
+  "result_refs": [],
+  "attribution_limits": [
+    "The packaged aoa-sdk A2A summon-return-checkpoint contour is used only as a genuine typed C2 transport carrier because the packaged snapshot does not yet contain an admitted landing contour; no result is owner-contour proof.",
+    "Candidate-004 trials are predecessor counterevidence, not comparable arms of this repaired fixed-input study; all candidate-005 arms must start from the new exact manifest.",
+    "This is one exact dirty abyss-stack worktree and one landing-readiness task instance, not a randomized task suite or a general model ranking.",
+    "The active economics are ChatGPT quota; raw Codex token use and API reference prices do not establish realized USD cost.",
+    "Runtime, prompt, tool, role, context, repository familiarity, trial order, quota state, and model behavior can all contribute to differences; model identity alone is not a causal conclusion.",
+    "A fixed Luna max reviewer route will provide procedural separation but can introduce same-family reviewer bias; aoa-evals must preserve this limit and may require another review modality.",
+    "Schema-valid completion, process identity, command execution, green validators, or a reviewer decision do not by themselves prove net benefit, model fit, owner acceptance, or landing completion."
+  ],
+  "created_at": "2026-08-01T10:46:40Z",
+  "updated_at": "2026-08-01T10:46:40Z"
+}

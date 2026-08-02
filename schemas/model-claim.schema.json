@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aoa.local/models/model-claim.schema.json",
+  "title": "ModelClaim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "kind",
+    "model_claim_id",
+    "subject_realization_refs",
+    "statement",
+    "scope",
+    "evidence_modality",
+    "evidence_refs",
+    "confidence_posture",
+    "observation_interval",
+    "known_counterevidence",
+    "freshness",
+    "lifecycle",
+    "independent_review_refs",
+    "attribution_limits",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://schemas.aoa.local/models/model-claim.schema.json"
+    },
+    "schema_version": {"const": "aoa_model_claim_v1"},
+    "kind": {"const": "ModelClaim"},
+    "model_claim_id": {
+      "type": "string",
+      "pattern": "^model-claim:[a-z0-9][a-z0-9._/-]+$"
+    },
+    "subject_realization_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^source/model-realizations/[a-z0-9][a-z0-9._-]*\\.json$"
+      }
+    },
+    "statement": {"type": "string", "minLength": 20},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_family", "conditions", "exclusions"],
+      "properties": {
+        "task_family": {"type": "string", "minLength": 1},
+        "conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "exclusions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "evidence_modality": {
+      "$ref": "https://schemas.aoa.local/models/common.schema.json#/$defs/evidence_modality"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.aoa.local/models/common.schema.json#/$defs/source_ref"
+      }
+    },
+    "confidence_posture": {
+      "type": "string",
+      "enum": ["hypothesis", "provisional", "bounded", "reviewed", "withdrawn"]
+    },
+    "observation_interval": {
+      "$ref": "https://schemas.aoa.local/models/common.schema.json#/$defs/observation_interval"
+    },
+    "known_counterevidence": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.aoa.local/models/common.schema.json#/$defs/source_ref"
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "review_by", "policy"],
+      "properties": {
+        "status": {"type": "string", "enum": ["current", "stale", "unknown"]},
+        "review_by": {"type": ["string", "null"], "format": "date-time"},
+        "policy": {"type": "string", "minLength": 1}
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "history", "superseded_by"],
+      "properties": {
+        "state": {
+          "$ref": "https://schemas.aoa.local/models/common.schema.json#/$defs/claim_lifecycle_state"
+        },
+        "history": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["from", "to", "at", "reason", "evidence_refs"],
+            "properties": {
+              "from": {
+                "oneOf": [
+                  {"type": "null"},
+                  {"$ref": "https://schemas.aoa.local/models/common.schema.json#/$defs/claim_lifecycle_state"}
+                ]
+              },
+              "to": {
+                "$ref": "https://schemas.aoa.local/models/common.schema.json#/$defs/claim_lifecycle_state"
+              },
+              "at": {"type": "string", "format": "date-time"},
+              "reason": {"type": "string", "minLength": 1},
+              "evidence_refs": {
+                "type": "array",
+                "items": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        },
+        "superseded_by": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "independent_review_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.aoa.local/models/common.schema.json#/$defs/source_ref"
+      }
+    },
+    "attribution_limits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}
