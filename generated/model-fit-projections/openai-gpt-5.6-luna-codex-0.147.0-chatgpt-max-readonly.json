@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-fit-projection.schema.json",
+  "authority": {
+    "acceptance_authority": false,
+    "activation_authority": false,
+    "informational_only": true,
+    "proof_authority": false
+  },
+  "consumers": [
+    "aoa-agents",
+    "aoa-sdk",
+    "abyss-stack"
+  ],
+  "effect_family": "read",
+  "freshness": {
+    "review_by": "2026-08-15T00:00:00Z",
+    "status": "current"
+  },
+  "generated_at": "2026-08-08T08:12:22Z",
+  "generated_from_claim_refs": [
+    "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
+  ],
+  "kind": "ModelFitProjection",
+  "model_fit_projection_id": "model-fit-projection:openai-gpt-5.6-luna-codex-0.147.0-chatgpt-max-readonly",
+  "must_not_claim": [
+    "routing or activation authority",
+    "proof or owner acceptance",
+    "landing completion",
+    "internal geometry or training lineage from behavior alone"
+  ],
+  "posture": "declared",
+  "schema_version": "aoa_model_fit_projection_v1",
+  "study_refs": [],
+  "subject_realization_ref": "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-max-readonly.json",
+  "task_fit": [
+    {
+      "claim_posture": "hypothesis",
+      "conditions": [
+        "the target owner and source of truth are explicit",
+        "architecture and authority boundaries are already decided",
+        "the done state and validators are inspectable",
+        "acceptance remains with the target owner and proof route",
+        "the exact Codex 0.147.0 realization passes the live catalog check",
+        "the bound abyss-stack runtime profile exists and is admitted before launch"
+      ],
+      "escalation_required": true,
+      "exclusions": [
+        "architectural or owner-boundary decisions",
+        "semantic merge conflicts with materially different futures",
+        "autonomous commit, push, merge, release, publication, or other external effects",
+        "claims about internal geometry or training data inferred from behavior alone",
+        "treating compatibility with the live model catalog as runtime-profile availability or task-fit proof",
+        "transferring Codex 0.146.0 outcome evidence to 0.147.0 without a new real-work regression"
+      ],
+      "task_family": "landing"
+    }
+  ]
+}

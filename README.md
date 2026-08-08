@@ -25,6 +25,11 @@ choose routes, define agent roles, issue proof verdicts, or accept a landing.
 - `ModelStudy`: a reproducible protocol with fixed arms and attribution limits.
 - `ModelFitProjection`: a generated consumer view that cannot authorize use.
 
+The first bounded access plane is `scripts/query_model_fit.py`. It accepts
+role-derived task, runtime, permission, tool, and MCP requirements and returns
+informational candidates from current projections. It does not select a model,
+route work, grant permission, activate a runtime, or issue a proof verdict.
+
 The first contour describes GPT-5.6 Luna `max` and `xhigh` under the locally
 observed Codex/ChatGPT access regime. Each effort has a read-only readiness/
 review realization and a dedicated-worktree workspace-write preparation
@@ -55,6 +60,7 @@ Run from the repository root:
 python scripts/validate_models.py
 python scripts/build_model_fit_projections.py --check
 python scripts/generate_decision_index.py --check
+python scripts/check_live_codex_catalog.py
 python -m unittest discover -s tests -v
 ```
 

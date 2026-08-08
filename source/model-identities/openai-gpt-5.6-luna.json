@@ -29,8 +29,24 @@
       "observed_at": "2026-08-01T07:44:16Z",
       "content_digest": null,
       "notes": "Codex CLI 0.146.0 exposes slug gpt-5.6-luna, context 272000, effective context 95 percent, API support, and multi-agent backend v1."
+    },
+    {
+      "source_id": "openai-gpt-5.6-luna-model-2026-08-08",
+      "kind": "official_documentation",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": null,
+      "notes": "Current official documentation identifies Luna as the cost-sensitive high-volume GPT-5.6 variant and publishes its API context, output limit, tools, and economics."
+    },
+    {
+      "source_id": "local-codex-model-catalog-luna-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-debug-models#gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": "sha256:4b383dc91a67d6a214c5d592de0882221d2c968c2a7bd0b2fe53c2370cd56563",
+      "notes": "Codex CLI 0.147.0 exposes Luna with context 272000, effective context 95 percent, API support, xhigh and max effort, and multi-agent backend v1."
     }
   ],
   "created_at": "2026-08-01T07:44:16Z",
-  "updated_at": "2026-08-01T07:44:16Z"
+  "updated_at": "2026-08-08T08:12:22Z"
 }

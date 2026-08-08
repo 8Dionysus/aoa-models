@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aoa.local/models/model-fit-query.schema.json",
+  "title": "Read-only model fit query",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_family",
+    "runtime_product",
+    "runtime_version",
+    "sandbox_mode",
+    "required_tools",
+    "required_mcp_servers"
+  ],
+  "properties": {
+    "schema_version": {"const": "aoa_model_fit_query_v1"},
+    "task_family": {"type": "string", "minLength": 1},
+    "runtime_product": {"type": "string", "minLength": 1},
+    "runtime_version": {"type": "string", "minLength": 1},
+    "reasoning_effort": {
+      "type": ["string", "null"],
+      "enum": [null, "low", "medium", "high", "xhigh", "max"]
+    },
+    "sandbox_mode": {
+      "enum": ["read-only", "workspace-write", "danger-full-access"]
+    },
+    "required_tools": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "required_mcp_servers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

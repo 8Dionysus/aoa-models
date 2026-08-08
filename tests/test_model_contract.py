@@ -12,7 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_model_fit_projections import build_expected  # noqa: E402
+from check_live_codex_catalog import check_catalog  # noqa: E402
 from model_contract import validate_repo  # noqa: E402
+from query_model_fit import query_model_fit, validate_query_result  # noqa: E402
 
 
 class ModelContractTests(unittest.TestCase):
@@ -48,7 +50,7 @@ class ModelContractTests(unittest.TestCase):
     def test_reviewed_claim_requires_independent_review(self) -> None:
         temporary, fixture = self.make_fixture()
         self.addCleanup(temporary.cleanup)
-        path = fixture / "source/model-claims/luna-bounded-landing-fit-hypothesis.json"
+        path = fixture / "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
         claim = json.loads(path.read_text(encoding="utf-8"))
         claim["confidence_posture"] = "reviewed"
         claim["lifecycle"]["state"] = "reviewed"
@@ -70,7 +72,7 @@ class ModelContractTests(unittest.TestCase):
     def test_lifecycle_history_must_be_contiguous(self) -> None:
         temporary, fixture = self.make_fixture()
         self.addCleanup(temporary.cleanup)
-        path = fixture / "source/model-claims/luna-bounded-landing-fit-hypothesis.json"
+        path = fixture / "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
         claim = json.loads(path.read_text(encoding="utf-8"))
         claim["lifecycle"]["state"] = "stale"
         claim["freshness"]["status"] = "stale"
@@ -109,6 +111,103 @@ class ModelContractTests(unittest.TestCase):
         self.assertTrue(
             any("usage_metering" in issue and "required property" in issue for issue in issues)
         )
+
+    def test_current_claim_cannot_reference_stale_realization(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        path = fixture / "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
+        claim = json.loads(path.read_text(encoding="utf-8"))
+        claim["subject_realization_refs"][0] = (
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.146.0-chatgpt-max-readonly.json"
+        )
+        path.write_text(json.dumps(claim, indent=2) + "\n", encoding="utf-8")
+
+        issues = validate_repo(fixture)
+
+        self.assertTrue(
+            any("current claim references non-current realization" in issue for issue in issues)
+        )
+
+    def test_live_codex_catalog_accepts_exact_current_realization(self) -> None:
+        realization_ref = (
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-workspace-write.json"
+        )
+        catalog = {
+            "models": [
+                {
+                    "slug": "gpt-5.6-luna",
+                    "supported_reasoning_levels": [
+                        {"effort": effort}
+                        for effort in ("low", "medium", "high", "xhigh", "max")
+                    ],
+                    "context_window": 272000,
+                    "effective_context_window_percent": 95,
+                    "multi_agent_version": "v1",
+                    "supported_in_api": True,
+                }
+            ]
+        }
+
+        result, ok = check_catalog(
+            ROOT,
+            catalog,
+            "codex-cli 0.147.0",
+            (realization_ref,),
+        )
+
+        self.assertTrue(ok)
+        self.assertEqual(result["required_failures"], [])
+        assessment = next(
+            item for item in result["assessments"] if item["realization_ref"] == realization_ref
+        )
+        self.assertEqual(assessment["currentness"], "current")
+
+    def test_live_codex_catalog_rejects_active_version_drift(self) -> None:
+        catalog = {
+            "models": [
+                {
+                    "slug": "gpt-5.6-luna",
+                    "supported_reasoning_levels": [
+                        {"effort": effort}
+                        for effort in ("low", "medium", "high", "xhigh", "max")
+                    ],
+                    "context_window": 272000,
+                    "effective_context_window_percent": 95,
+                    "multi_agent_version": "v1",
+                    "supported_in_api": True,
+                }
+            ]
+        }
+
+        result, ok = check_catalog(ROOT, catalog, "codex-cli 0.148.0")
+
+        self.assertFalse(ok)
+        self.assertEqual(len(result["active_mismatches"]), 4)
+
+    def test_property_query_returns_informational_current_candidate(self) -> None:
+        query = {
+            "schema_version": "aoa_model_fit_query_v1",
+            "task_family": "landing",
+            "runtime_product": "codex-cli",
+            "runtime_version": "0.147.0",
+            "reasoning_effort": "xhigh",
+            "sandbox_mode": "workspace-write",
+            "required_tools": ["shell-read", "workspace-write"],
+            "required_mcp_servers": [],
+        }
+
+        result = query_model_fit(ROOT, query)
+
+        self.assertEqual(result["candidate_count"], 1)
+        self.assertEqual(result["candidates"][0]["model_slug"], "gpt-5.6-luna")
+        self.assertTrue(result["authority"]["informational_only"])
+        self.assertFalse(result["authority"]["activation_authority"])
+        self.assertFalse(result["authority"]["routing_authority"])
+        self.assertFalse(result["authority"]["proof_authority"])
+        self.assertFalse(result["authority"]["acceptance_authority"])
+        validate_query_result(ROOT, result)
 
 
 if __name__ == "__main__":

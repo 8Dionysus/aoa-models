@@ -159,6 +159,7 @@ def _validate_claim(
     rel: Path,
     claim: dict[str, Any],
     realization_paths: set[str],
+    realizations_by_path: dict[str, dict[str, Any]],
     issues: list[str],
 ) -> None:
     for ref in claim.get("subject_realization_refs", []):
@@ -210,6 +211,13 @@ def _validate_claim(
         issues.append(f"{rel}: retracted claim requires preserved counterevidence")
 
     freshness = claim.get("freshness", {})
+    if freshness.get("status") == "current":
+        for ref in claim.get("subject_realization_refs", []):
+            realization_state = realizations_by_path.get(ref, {}).get("lifecycle_state")
+            if realization_state not in {"declared", "observed"}:
+                issues.append(
+                    f"{rel}: current claim references non-current realization {ref} ({realization_state})"
+                )
     review_by = freshness.get("review_by")
     if freshness.get("status") == "current" and review_by:
         try:
@@ -345,6 +353,10 @@ def validate_repo(root: Path = DEFAULT_ROOT) -> list[str]:
         path.relative_to(root).as_posix(): record
         for path, record in records.get("ModelClaim", [])
     }
+    realizations_by_path = {
+        path.relative_to(root).as_posix(): record
+        for path, record in records.get("ModelRealization", [])
+    }
 
     for path, realization in records.get("ModelRealization", []):
         rel = path.relative_to(root)
@@ -361,9 +373,50 @@ def validate_repo(root: Path = DEFAULT_ROOT) -> list[str]:
             prices = realization.get("configuration", {}).get("economics", {}).get("reference_prices", [])
             if any(not item.get("not_active_for_this_realization") for item in prices):
                 issues.append(f"{rel}: API reference price must not be represented as active ChatGPT quota cost")
+        context = realization.get("configuration", {}).get("context", {})
+        native_api = context.get("native_api")
+        if isinstance(native_api, dict) and native_api.get(
+            "context_window_tokens", 0
+        ) < context.get("nominal_context_tokens", 0):
+            issues.append(
+                f"{rel}: native API context cannot be smaller than the recorded Codex context"
+            )
+        lifecycle_state = realization.get("lifecycle_state")
+        transition = realization.get("lifecycle_transition")
+        if lifecycle_state in {"suspended", "stale", "retired"}:
+            if not isinstance(transition, dict):
+                issues.append(f"{rel}: inactive realization requires lifecycle_transition")
+            else:
+                if transition.get("to") != lifecycle_state:
+                    issues.append(
+                        f"{rel}: lifecycle transition target does not match {lifecycle_state}"
+                    )
+                source_ids = {
+                    item.get("source_id")
+                    for item in realization.get("source_refs", [])
+                    if isinstance(item, dict)
+                }
+                for evidence_ref in transition.get("evidence_refs", []):
+                    if evidence_ref not in source_ids:
+                        issues.append(
+                            f"{rel}: lifecycle transition evidence ref is not a source_ref: {evidence_ref}"
+                        )
+            if realization.get("observation_interval", {}).get("end") is None:
+                issues.append(f"{rel}: inactive realization requires a closed observation interval")
+        elif transition is not None:
+            issues.append(
+                f"{rel}: active realization must not carry an inactive lifecycle transition"
+            )
 
     for path, claim in records.get("ModelClaim", []):
-        _validate_claim(root, path.relative_to(root), claim, realization_paths, issues)
+        _validate_claim(
+            root,
+            path.relative_to(root),
+            claim,
+            realization_paths,
+            realizations_by_path,
+            issues,
+        )
     for path, study in records.get("ModelStudy", []):
         _validate_study(path.relative_to(root), study, realization_paths, issues)
     for path, projection in records.get("ModelFitProjection", []):

@@ -1,0 +1,119 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-realization.schema.json",
+  "schema_version": "aoa_model_realization_v1",
+  "kind": "ModelRealization",
+  "model_realization_id": "model-realization:openai/gpt-5.6-luna/codex-0.147.0/chatgpt/xhigh/workspace-write/2026-08-08",
+  "model_identity_ref": "source/model-identities/openai-gpt-5.6-luna.json",
+  "configuration": {
+    "access": {
+      "provider": "OpenAI",
+      "surface": "Codex CLI",
+      "auth_regime": "chatgpt_login",
+      "billing_regime": "chatgpt_quota",
+      "supported_in_api": true
+    },
+    "runtime": {
+      "product": "codex-cli",
+      "version": "0.147.0",
+      "executable": "codex",
+      "model_slug": "gpt-5.6-luna",
+      "transport": "exec-jsonl",
+      "multi_agent_backend_version": "v1",
+      "resume_surface": "codex exec resume"
+    },
+    "reasoning_effort": "xhigh",
+    "context": {
+      "nominal_context_tokens": 272000,
+      "effective_context_percent": 95,
+      "regime": "codex-model-catalog-default",
+      "native_api": {
+        "context_window_tokens": 1050000,
+        "max_output_tokens": 128000,
+        "source_uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna"
+      }
+    },
+    "tools": {
+      "profile_mode": "runtime_profile_ref",
+      "profile_ref": "abyss-stack:external_codex_agent/landing-workspace-write-v2",
+      "required_tools": [
+        "shell-read",
+        "workspace-write"
+      ],
+      "required_mcp_servers": [],
+      "inheritance_allowed": false
+    },
+    "environment": {
+      "role_profile_ref": "aoa-agents:coder/repo-refactor",
+      "prompt_contract_ref": "aoa-models:luna-landing-fit-v2",
+      "cwd_policy": "dedicated-worktree",
+      "instruction_policy": "owner-root-and-nearest-agents",
+      "locale": "ru"
+    },
+    "permissions": {
+      "sandbox_mode": "workspace-write",
+      "approval_policy": "never",
+      "external_effects": false,
+      "network_access": "disabled"
+    },
+    "economics": {
+      "active_regime": "chatgpt_quota",
+      "meter": "codex-subscription-usage",
+      "reference_prices": [
+        {
+          "regime": "standard-api-short-context",
+          "currency": "USD",
+          "unit": "per_1m_tokens",
+          "not_active_for_this_realization": true,
+          "effective_at": "2026-08-08T08:12:22Z",
+          "prices": {
+            "input": 0.2,
+            "cached_input": 0.02,
+            "cache_write": 0.25,
+            "output": 1.2
+          },
+          "source_uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "long_context_pricing": {
+            "input_threshold_tokens": 272000,
+            "input_multiplier": 2.0,
+            "output_multiplier": 1.5,
+            "scope": "full API request when input exceeds the threshold"
+          }
+        }
+      ]
+    }
+  },
+  "configuration_fingerprint": "sha256:e6ec6c786a54c9ab63c93fa49674039ff563cb13d4213abda6137c747a5245ee",
+  "observation_interval": {
+    "start": "2026-08-08T08:12:22Z",
+    "end": null
+  },
+  "lifecycle_state": "declared",
+  "source_refs": [
+    {
+      "source_id": "local-codex-model-catalog-luna-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-debug-models#gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": "sha256:4b383dc91a67d6a214c5d592de0882221d2c968c2a7bd0b2fe53c2370cd56563",
+      "notes": "Codex CLI 0.147.0 exposes Luna with xhigh and max, context 272000, effective context 95 percent, API support, and multi-agent backend v1."
+    },
+    {
+      "source_id": "local-codex-login-status-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-login-status",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": null,
+      "notes": "The active realization uses ChatGPT login and quota accounting; API prices are reference economics only."
+    },
+    {
+      "source_id": "openai-gpt-5.6-luna-model-2026-08-08",
+      "kind": "official_documentation",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": null,
+      "notes": "Official model documentation provides the native API context, output limit, token prices, cache-write rate, and long-context multiplier."
+    }
+  ],
+  "created_at": "2026-08-08T08:12:22Z",
+  "updated_at": "2026-08-08T08:12:22Z"
+}

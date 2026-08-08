@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-claim.schema.json",
+  "schema_version": "aoa_model_claim_v1",
+  "kind": "ModelClaim",
+  "model_claim_id": "model-claim:openai/gpt-5.6-luna/bounded-landing-fit-transfer-hypothesis-v2",
+  "subject_realization_refs": [
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-max-readonly.json",
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-max-workspace-write.json",
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-readonly.json",
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-workspace-write.json"
+  ],
+  "statement": "GPT-5.6 Luna xhigh or max under the exact Codex 0.147.0 realization may retain the bounded landing suitability observed under Codex 0.146.0, but current fit remains a transfer hypothesis until a real external-process regression returns through owner review.",
+  "scope": {
+    "task_family": "landing",
+    "conditions": [
+      "the target owner and source of truth are explicit",
+      "architecture and authority boundaries are already decided",
+      "the done state and validators are inspectable",
+      "acceptance remains with the target owner and proof route",
+      "the exact Codex 0.147.0 realization passes the live catalog check",
+      "the bound abyss-stack runtime profile exists and is admitted before launch"
+    ],
+    "exclusions": [
+      "architectural or owner-boundary decisions",
+      "semantic merge conflicts with materially different futures",
+      "autonomous commit, push, merge, release, publication, or other external effects",
+      "claims about internal geometry or training data inferred from behavior alone",
+      "treating compatibility with the live model catalog as runtime-profile availability or task-fit proof",
+      "transferring Codex 0.146.0 outcome evidence to 0.147.0 without a new real-work regression"
+    ]
+  },
+  "evidence_modality": "inference_with_explicit_limits",
+  "evidence_refs": [
+    {
+      "source_id": "codex-0.146.0-bounded-landing-fit-claim",
+      "kind": "repository_source",
+      "uri": "source/model-claims/luna-bounded-landing-fit-hypothesis.json",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": null,
+      "notes": "The stale predecessor preserves the actual landing trials, independent reviews, counterevidence, and attribution limits. It informs this transfer hypothesis but does not prove current fit."
+    },
+    {
+      "source_id": "local-codex-model-catalog-luna-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-debug-models#gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": "sha256:4b383dc91a67d6a214c5d592de0882221d2c968c2a7bd0b2fe53c2370cd56563",
+      "notes": "The live Codex catalog confirms Luna, xhigh and max, the Codex context regime, API support, and backend v1 under Codex 0.147.0."
+    },
+    {
+      "source_id": "openai-gpt-5.6-luna-model-2026-08-08",
+      "kind": "official_documentation",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": null,
+      "notes": "OpenAI describes Luna as the cost-sensitive high-volume GPT-5.6 variant and publishes its native API context and economics."
+    }
+  ],
+  "confidence_posture": "hypothesis",
+  "observation_interval": {
+    "start": "2026-08-08T08:12:22Z",
+    "end": null
+  },
+  "known_counterevidence": [],
+  "freshness": {
+    "status": "current",
+    "review_by": "2026-08-15T00:00:00Z",
+    "policy": "Current only as a Codex 0.147.0 transfer hypothesis. A real external landing regression must either strengthen, narrow, weaken, or stale it before operational admission."
+  },
+  "lifecycle": {
+    "state": "hypothesis",
+    "history": [
+      {
+        "from": null,
+        "to": "hypothesis",
+        "at": "2026-08-08T08:12:22Z",
+        "reason": "A live Codex 0.147.0 catalog observation plus bounded 0.146.0 landing evidence justify a new regression candidate, not transferred proof.",
+        "evidence_refs": [
+          "codex-0.146.0-bounded-landing-fit-claim",
+          "local-codex-model-catalog-luna-2026-08-08"
+        ]
+      }
+    ],
+    "superseded_by": null
+  },
+  "independent_review_refs": [],
+  "attribution_limits": [
+    "The Codex 0.147.0 realizations are declared from current catalog and owner inputs but have not yet completed an external actor run.",
+    "The stale Codex 0.146.0 claim preserves relevant evidence but does not prove behavior or net benefit under 0.147.0.",
+    "The active ChatGPT quota regime does not expose direct per-run USD billing; API prices remain reference economics.",
+    "The declared landing runtime profiles must be implemented and admitted by abyss-stack before any launch.",
+    "No behavioral result may be used to infer closed-model internal geometry or training lineage."
+  ],
+  "created_at": "2026-08-08T08:12:22Z",
+  "updated_at": "2026-08-08T08:12:22Z"
+}
