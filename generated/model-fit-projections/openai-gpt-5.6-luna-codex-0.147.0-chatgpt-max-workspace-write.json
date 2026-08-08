@@ -16,12 +16,12 @@
     "review_by": "2026-08-15T00:00:00Z",
     "status": "current"
   },
-  "generated_at": "2026-08-02T10:22:50.823261Z",
+  "generated_at": "2026-08-08T08:12:22Z",
   "generated_from_claim_refs": [
-    "source/model-claims/luna-bounded-landing-fit-hypothesis.json"
+    "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
   ],
   "kind": "ModelFitProjection",
-  "model_fit_projection_id": "model-fit-projection:openai-gpt-5.6-luna-codex-0.146.0-chatgpt-xhigh-workspace-write",
+  "model_fit_projection_id": "model-fit-projection:openai-gpt-5.6-luna-codex-0.147.0-chatgpt-max-workspace-write",
   "must_not_claim": [
     "routing or activation authority",
     "proof or owner acceptance",
@@ -30,11 +30,8 @@
   ],
   "posture": "declared",
   "schema_version": "aoa_model_fit_projection_v1",
-  "study_refs": [
-    "source/model-studies/external-codex-landing-preparation-generated-drift-2026-08-01.json",
-    "source/model-studies/external-codex-landing-preparation-generated-drift-evidence-v2-2026-08-01.json"
-  ],
-  "subject_realization_ref": "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-xhigh-workspace-write.json",
+  "study_refs": [],
+  "subject_realization_ref": "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-max-workspace-write.json",
   "task_fit": [
     {
       "claim_posture": "hypothesis",
@@ -42,14 +39,18 @@
         "the target owner and source of truth are explicit",
         "architecture and authority boundaries are already decided",
         "the done state and validators are inspectable",
-        "acceptance remains with the target owner and proof route"
+        "acceptance remains with the target owner and proof route",
+        "the exact Codex 0.147.0 realization passes the live catalog check",
+        "the bound abyss-stack runtime profile exists and is admitted before launch"
       ],
       "escalation_required": true,
       "exclusions": [
         "architectural or owner-boundary decisions",
         "semantic merge conflicts with materially different futures",
         "autonomous commit, push, merge, release, publication, or other external effects",
-        "claims about internal geometry or training data inferred from behavior alone"
+        "claims about internal geometry or training data inferred from behavior alone",
+        "treating compatibility with the live model catalog as runtime-profile availability or task-fit proof",
+        "transferring Codex 0.146.0 outcome evidence to 0.147.0 without a new real-work regression"
       ],
       "task_family": "landing"
     }

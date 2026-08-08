@@ -54,6 +54,8 @@ def build_expected(root: Path = DEFAULT_ROOT) -> dict[str, str]:
         if realization_ref not in realizations:
             continue
         realization = realizations[realization_ref]
+        if realization.get("lifecycle_state") not in {"declared", "observed"}:
+            continue
         states = [claim.get("lifecycle", {}).get("state") for _, claim in claim_entries]
         reviewed_task_outcome = any(
             claim.get("lifecycle", {}).get("state") == "reviewed"

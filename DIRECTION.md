@@ -13,11 +13,14 @@ post-landing verification, and closeout.
    workspace-write realization records, with external effects disabled.
 2. Prove claim lifecycle, source/derived separation, and unsupported-promotion
    rejection locally.
-3. Reference an `aoa-sdk` incarnation binding and an `abyss-stack` external
-   Codex process without owning either.
-4. Feed fixed-input Sol/Luna landing studies to `aoa-evals` for independent
+3. Keep exact Codex realization currentness tied to live runtime/catalog facts
+   rather than a calendar review date alone.
+4. Serve the first real consumer through a bounded read-only property query,
+   then reference an `aoa-sdk` incarnation binding and an `abyss-stack`
+   external Codex process without owning either.
+5. Feed fixed-input Sol/Luna landing studies to `aoa-evals` for independent
    comparison and verdict meaning.
-5. Admit only the task and effort boundary supported by net-benefit evidence.
+6. Admit only the task and effort boundary supported by net-benefit evidence.
 
 The study contour measures actual tokens, active wall time, turns, output,
 commands, review burden, and rework. It does not prescribe token, time, turn,
@@ -31,7 +34,8 @@ measurements and evaluated separately from model capability.
 - internal representation and causal-intervention studies;
 - model character and temperament research across time and environments;
 - richer longitudinal model lineage;
-- a bounded access plane when a real consumer requires one;
+- richer access or storage planes beyond the current bounded read-only fit
+  query;
 - flexible A2A relations among persistent role-bearing agents.
 
 These directions remain open. The current schemas are a first observation

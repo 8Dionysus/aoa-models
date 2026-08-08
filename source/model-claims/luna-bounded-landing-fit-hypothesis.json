@@ -65,6 +65,14 @@
       "observed_at": "2026-08-02T10:22:50.823261Z",
       "content_digest": "sha256:6126ee0bb58bb93fe4fddb143a18d963060e2bd40be3fad412599c030d4e7cb8",
       "notes": "The reviewed return binds the exact writer and independent reviewer results, both summon-request digests, and matching writer/reviewer final manifests; outcome is proceed with no inherited owner acceptance or model-fit verdict."
+    },
+    {
+      "source_id": "local-codex-version-transition-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-version",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": null,
+      "notes": "The installed Codex runtime changed to 0.147.0, so this exact 0.146.0-scoped claim is no longer current."
     }
   ],
   "confidence_posture": "hypothesis",
@@ -99,12 +107,12 @@
     }
   ],
   "freshness": {
-    "status": "current",
-    "review_by": "2026-08-15T00:00:00Z",
-    "policy": "The globally installed workspace-write and reviewed-return mechanism is now observed. Keep the claim at hypothesis until aoa-evals reviews the comparison, held-out duties, rework cost, and net benefit."
+    "status": "stale",
+    "review_by": null,
+    "policy": "The claim is preserved for the exact Codex 0.146.0 realizations. A new Codex version requires a distinct realization and transfer hypothesis before any regression can restore current fit evidence."
   },
   "lifecycle": {
-    "state": "hypothesis",
+    "state": "stale",
     "history": [
       {
         "from": null,
@@ -113,6 +121,15 @@
         "reason": "Project pressure and current provider guidance justify a bounded trial, not a reviewed fit claim.",
         "evidence_refs": [
           "openai-codex-model-guidance-2026-08-01"
+        ]
+      },
+      {
+        "from": "hypothesis",
+        "to": "stale",
+        "at": "2026-08-08T08:12:22Z",
+        "reason": "Every subject realization is tied to Codex 0.146.0 while the installed runtime is 0.147.0.",
+        "evidence_refs": [
+          "local-codex-version-transition-2026-08-08"
         ]
       }
     ],
@@ -154,5 +171,5 @@
     "No behavioral result may be used to infer closed-model internal geometry or training lineage."
   ],
   "created_at": "2026-08-01T07:44:16Z",
-  "updated_at": "2026-08-02T10:22:50.823261Z"
+  "updated_at": "2026-08-08T08:12:22Z"
 }

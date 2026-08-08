@@ -73,9 +73,9 @@
   "configuration_fingerprint": "sha256:fefff1d9819c6db2b225344196cac2d396264108308eff4bb84049c120987d1a",
   "observation_interval": {
     "start": "2026-08-01T07:44:16Z",
-    "end": null
+    "end": "2026-08-08T08:12:22Z"
   },
-  "lifecycle_state": "declared",
+  "lifecycle_state": "stale",
   "source_refs": [
     {
       "source_id": "local-codex-model-catalog-luna-2026-08-01",
@@ -108,8 +108,25 @@
       "observed_at": "2026-08-01T07:44:16Z",
       "content_digest": null,
       "notes": "API prices are retained as a comparison regime and are not asserted as the active ChatGPT quota cost."
+    },
+    {
+      "source_id": "local-codex-version-transition-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-version",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": null,
+      "notes": "The installed Codex runtime is 0.147.0; this exact 0.146.0 realization is preserved as historical evidence and is not current activation input."
     }
   ],
   "created_at": "2026-08-01T07:44:16Z",
-  "updated_at": "2026-08-01T07:44:16Z"
+  "updated_at": "2026-08-08T08:12:22Z",
+  "lifecycle_transition": {
+    "from": "declared",
+    "to": "stale",
+    "at": "2026-08-08T08:12:22Z",
+    "reason": "The exact Codex CLI version changed from 0.146.0 to 0.147.0.",
+    "evidence_refs": [
+      "local-codex-version-transition-2026-08-08"
+    ]
+  }
 }
