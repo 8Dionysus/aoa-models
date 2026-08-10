@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -14,7 +15,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from build_model_fit_projections import build_expected  # noqa: E402
 from check_live_codex_catalog import check_catalog  # noqa: E402
 from model_contract import validate_repo  # noqa: E402
-from query_model_fit import query_model_fit, validate_query_result  # noqa: E402
+from query_model_fit import (  # noqa: E402
+    ModelFitQueryError,
+    assert_query_result_digest,
+    query_model_fit,
+    validate_query_result,
+)
 
 
 class ModelContractTests(unittest.TestCase):
@@ -27,6 +33,22 @@ class ModelContractTests(unittest.TestCase):
             ignore=shutil.ignore_patterns(".git", "__pycache__", ".pytest_cache", ".ruff_cache"),
         )
         return temporary, fixture
+
+    def init_fixture_git(self, fixture: Path) -> None:
+        for args in (
+            ("init", "-b", "main"),
+            ("config", "user.name", "Fixture"),
+            ("config", "user.email", "fixture@example.invalid"),
+            ("add", "."),
+            ("commit", "-m", "fixture owner source"),
+        ):
+            subprocess.run(
+                ["git", "-C", str(fixture), *args],
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+            )
 
     def test_repository_is_valid(self) -> None:
         self.assertEqual(validate_repo(ROOT), [])
@@ -66,7 +88,12 @@ class ModelContractTests(unittest.TestCase):
         )
         path.write_text(json.dumps(claim, indent=2) + "\n", encoding="utf-8")
         issues = validate_repo(fixture)
-        self.assertTrue(any("unsupported lifecycle transition hypothesis -> reviewed" in issue for issue in issues))
+        self.assertTrue(
+            any(
+                "unsupported lifecycle transition hypothesis -> reviewed" in issue
+                for issue in issues
+            )
+        )
         self.assertTrue(any("requires an independent review" in issue for issue in issues))
 
     def test_lifecycle_history_must_be_contiguous(self) -> None:
@@ -118,8 +145,7 @@ class ModelContractTests(unittest.TestCase):
         path = fixture / "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
         claim = json.loads(path.read_text(encoding="utf-8"))
         claim["subject_realization_refs"][0] = (
-            "source/model-realizations/"
-            "openai-gpt-5.6-luna-codex-0.146.0-chatgpt-max-readonly.json"
+            "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-max-readonly.json"
         )
         path.write_text(json.dumps(claim, indent=2) + "\n", encoding="utf-8")
 
@@ -139,8 +165,7 @@ class ModelContractTests(unittest.TestCase):
                 {
                     "slug": "gpt-5.6-luna",
                     "supported_reasoning_levels": [
-                        {"effort": effort}
-                        for effort in ("low", "medium", "high", "xhigh", "max")
+                        {"effort": effort} for effort in ("low", "medium", "high", "xhigh", "max")
                     ],
                     "context_window": 272000,
                     "effective_context_window_percent": 95,
@@ -170,8 +195,7 @@ class ModelContractTests(unittest.TestCase):
                 {
                     "slug": "gpt-5.6-luna",
                     "supported_reasoning_levels": [
-                        {"effort": effort}
-                        for effort in ("low", "medium", "high", "xhigh", "max")
+                        {"effort": effort} for effort in ("low", "medium", "high", "xhigh", "max")
                     ],
                     "context_window": 272000,
                     "effective_context_window_percent": 95,
@@ -200,14 +224,88 @@ class ModelContractTests(unittest.TestCase):
 
         result = query_model_fit(ROOT, query)
 
+        self.assertEqual(result["schema_version"], "aoa_model_fit_query_result_v2")
         self.assertEqual(result["candidate_count"], 1)
-        self.assertEqual(result["candidates"][0]["model_slug"], "gpt-5.6-luna")
+        candidate = result["candidates"][0]
+        self.assertEqual(candidate["model_slug"], "gpt-5.6-luna")
+        self.assertEqual(
+            candidate["realization_provenance"]["artifact_ref"],
+            candidate["realization_ref"],
+        )
+        self.assertEqual(
+            candidate["projection_provenance"]["artifact_ref"],
+            candidate["projection_ref"],
+        )
+        self.assertTrue(candidate["fit_evidence_refs"])
+        self.assertTrue(
+            all(
+                item["owner_repo"] == "aoa-models"
+                and item["source_ref"] == result["owner_source_ref"]
+                and item["artifact_digest"].startswith("sha256:")
+                for item in (
+                    candidate["realization_provenance"],
+                    candidate["projection_provenance"],
+                    *candidate["fit_evidence_refs"],
+                )
+            )
+        )
         self.assertTrue(result["authority"]["informational_only"])
         self.assertFalse(result["authority"]["activation_authority"])
         self.assertFalse(result["authority"]["routing_authority"])
         self.assertFalse(result["authority"]["proof_authority"])
         self.assertFalse(result["authority"]["acceptance_authority"])
+        self.assertNotIn("selected_candidate", result)
+        assert_query_result_digest(result)
         validate_query_result(ROOT, result)
+
+        result["candidate_count"] = 0
+        with self.assertRaisesRegex(ModelFitQueryError, "digest mismatch"):
+            assert_query_result_digest(result)
+
+    def test_no_match_result_is_still_content_addressed_owner_evidence(self) -> None:
+        query = {
+            "schema_version": "aoa_model_fit_query_v1",
+            "task_family": "landing_preparation",
+            "runtime_product": "codex-cli",
+            "runtime_version": "0.147.0",
+            "reasoning_effort": "xhigh",
+            "sandbox_mode": "workspace-write",
+            "required_tools": ["shell-read", "workspace-write"],
+            "required_mcp_servers": [],
+        }
+
+        result = query_model_fit(ROOT, query)
+
+        self.assertEqual(result["candidate_count"], 0)
+        self.assertEqual(result["candidates"], [])
+        self.assertRegex(result["owner_source_ref"], r"^[0-9a-f]{40}$")
+        assert_query_result_digest(result)
+
+    def test_query_rejects_dirty_unselected_catalog_input(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
+        unselected = (
+            fixture
+            / "source/model-realizations/openai-gpt-5.6-sol-codex-0.146.0-chatgpt-max-readonly.json"
+        )
+        unselected.write_text(
+            unselected.read_text(encoding="utf-8") + "\n",
+            encoding="utf-8",
+        )
+        query = {
+            "schema_version": "aoa_model_fit_query_v1",
+            "task_family": "landing",
+            "runtime_product": "codex-cli",
+            "runtime_version": "0.147.0",
+            "reasoning_effort": "xhigh",
+            "sandbox_mode": "workspace-write",
+            "required_tools": ["shell-read", "workspace-write"],
+            "required_mcp_servers": [],
+        }
+
+        with self.assertRaisesRegex(ModelFitQueryError, "fit evidence is dirty"):
+            query_model_fit(fixture, query)
 
 
 if __name__ == "__main__":

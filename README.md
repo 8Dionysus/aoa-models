@@ -27,8 +27,11 @@ choose routes, define agent roles, issue proof verdicts, or accept a landing.
 
 The first bounded access plane is `scripts/query_model_fit.py`. It accepts
 role-derived task, runtime, permission, tool, and MCP requirements and returns
-informational candidates from current projections. It does not select a model,
-route work, grant permission, activate a runtime, or issue a proof verdict.
+informational candidates from current projections. Each v2 result binds the
+exact query, clean owner source, realization/projection catalog, candidate
+realization and projection bytes, and their generating fit claims or studies.
+It does not select a model, route work, grant permission, activate a runtime,
+or issue a proof verdict.
 
 The first contour describes GPT-5.6 Luna `max` and `xhigh` under the locally
 observed Codex/ChatGPT access regime. Each effort has a read-only readiness/

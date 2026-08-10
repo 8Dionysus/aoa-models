@@ -15,9 +15,10 @@ post-landing verification, and closeout.
    rejection locally.
 3. Keep exact Codex realization currentness tied to live runtime/catalog facts
    rather than a calendar review date alone.
-4. Serve the first real consumer through a bounded read-only property query,
-   then reference an `aoa-sdk` incarnation binding and an `abyss-stack`
-   external Codex process without owning either.
+4. Serve the first real consumer through a bounded, content-addressed read-only
+   property query, then bind that exact fit evidence through an `aoa-sdk`
+   incarnation and an `abyss-stack` external Codex process without owning
+   either.
 5. Feed fixed-input Sol/Luna landing studies to `aoa-evals` for independent
    comparison and verdict meaning.
 6. Admit only the task and effort boundary supported by net-benefit evidence.
