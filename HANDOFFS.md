@@ -21,6 +21,8 @@ No handoff transfers acceptance automatically. Rejection or non-admission
 returns to the named source record, preserves the evidence, and either weakens
 the claim, changes the study, or suspends the consumer projection.
 
-The owner-governed fit query is a read-only handoff aid. A returned candidate
-is not an `aoa-sdk` binding, an `abyss-stack` admission, an `aoa-agents` role
-choice, or an `aoa-evals` verdict.
+The owner-governed fit query is a read-only handoff aid. Its v2 result gives
+the next owner content-addressed realization, projection, claim/study, catalog,
+query, and result evidence. A returned candidate is not an `aoa-sdk` binding,
+an `abyss-stack` admission, an `aoa-agents` role choice, or an `aoa-evals`
+verdict.
