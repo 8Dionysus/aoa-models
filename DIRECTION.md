@@ -22,6 +22,10 @@ post-landing verification, and closeout.
 5. Feed fixed-input Sol/Luna landing studies to `aoa-evals` for independent
    comparison and verdict meaning.
 6. Admit only the task and effort boundary supported by net-benefit evidence.
+7. Use the first evidence-complete `eval`, `stats`, and `memo` duties as
+   operational canaries for separate Luna fit hypotheses; do not require a
+   sterile benchmark campaign before useful work, and do not promote one
+   successful duty into general role fit.
 
 The study contour measures actual tokens, active wall time, turns, output,
 commands, review burden, and rework. It does not prescribe token, time, turn,

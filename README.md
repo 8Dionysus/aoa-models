@@ -41,6 +41,11 @@ it describes an exact callable configuration, not permission or evidence of
 fit. Behavioral fit for landing remains a hypothesis until external-process
 trials and `aoa-evals` review supply evidence.
 
+The first operational expansion adds separate Luna hypotheses for bounded
+`eval`, `stats`, and `memo` duties. They admit only evidence-complete real-work
+canaries under owner review; provider capability, low price, schema-valid
+completion, or adjacent landing evidence does not establish role fit.
+
 Terms such as character, temperament, subjectivity, and internal world are
 valid research images for future model study. This initial schema neither
 reduces them to human categories nor freezes them into final object types.
