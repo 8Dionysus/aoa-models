@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-claim.schema.json",
+  "schema_version": "aoa_model_claim_v1",
+  "kind": "ModelClaim",
+  "model_claim_id": "model-claim:openai/gpt-5.6-luna/bounded-memo-role-fit-hypothesis-v1",
+  "subject_realization_refs": [
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-structured-owner-duty-workspace-write.json"
+  ],
+  "statement": "GPT-5.6 Luna xhigh under the exact structured-owner-duty Codex 0.147.0 realization may prepare one provenance-bounded memo candidate from reviewed inputs without promoting it into durable canon, but this remains a real-work canary hypothesis until a memo-owner-reviewed duty demonstrates the role.",
+  "scope": {
+    "task_family": "memo",
+    "conditions": [
+      "the memo owner, reviewed evidence inputs, lifecycle target and named candidate output are explicit",
+      "the actor preserves provenance and prepares rather than confirms durable memory",
+      "the work runs in an isolated projection with effects bounded by the mandate",
+      "the result returns to the memo owner for admission, quarantine or no-write review",
+      "the exact Codex 0.147.0 realization passes the live catalog check",
+      "the bound abyss-stack external actor runtime is artifact-admitted before launch",
+      "usage is counted from runtime receipts and never becomes a caller-authored execution budget"
+    ],
+    "exclusions": [
+      "automatic promotion into durable memory or owner truth",
+      "inventing provenance, review state, lifecycle or source authority",
+      "copying private raw evidence into a public or stronger-owner surface",
+      "autonomous commit, push, merge, publication or undelegated external effect",
+      "treating a polished narrative as reviewed memory",
+      "inferring closed-model internal geometry or training lineage from behavior"
+    ]
+  },
+  "evidence_modality": "inference_with_explicit_limits",
+  "evidence_refs": [
+    {
+      "source_id": "luna-landing-transfer-hypothesis-adjacent-evidence",
+      "kind": "repository_source",
+      "uri": "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json",
+      "observed_at": "2026-08-11T02:09:22Z",
+      "content_digest": null,
+      "notes": "Adjacent structured external-work evidence only; it does not prove memory-keeper fit."
+    },
+    {
+      "source_id": "local-codex-model-catalog-luna-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-debug-models#gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": "sha256:4b383dc91a67d6a214c5d592de0882221d2c968c2a7bd0b2fe53c2370cd56563",
+      "notes": "Confirms the exact Luna xhigh and max realizations under Codex 0.147.0."
+    },
+    {
+      "source_id": "openai-gpt-5.6-luna-model-2026-08-11",
+      "kind": "official_documentation",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "observed_at": "2026-08-11T02:09:22Z",
+      "content_digest": null,
+      "notes": "Provider capabilities and economics only; not AoA role-fit evidence."
+    }
+  ],
+  "confidence_posture": "hypothesis",
+  "observation_interval": {"start": "2026-08-11T02:09:22Z", "end": null},
+  "known_counterevidence": [],
+  "freshness": {
+    "status": "current",
+    "review_by": "2026-08-22T00:00:00Z",
+    "policy": "Current only for one evidence-complete real-work memo canary; its memo-owner review must strengthen, narrow, weaken or stale the claim."
+  },
+  "lifecycle": {
+    "state": "hypothesis",
+    "history": [{
+      "from": null,
+      "to": "hypothesis",
+      "at": "2026-08-11T02:09:22Z",
+      "reason": "Current provider/runtime facts and adjacent bounded external-work evidence justify one real-duty canary, not transferred proof.",
+      "evidence_refs": ["luna-landing-transfer-hypothesis-adjacent-evidence", "local-codex-model-catalog-luna-2026-08-08", "openai-gpt-5.6-luna-model-2026-08-11"]
+    }],
+    "superseded_by": null
+  },
+  "independent_review_refs": [],
+  "attribution_limits": [
+    "No Luna memo-role run under this exact claim has completed.",
+    "Adjacent landing evidence does not establish memory-keeper fit or net benefit.",
+    "Provider capabilities and pricing do not prove task performance.",
+    "The first canary may prepare a candidate but cannot confirm or promote durable memory.",
+    "Behavior cannot establish closed-model internal geometry or training lineage."
+  ],
+  "created_at": "2026-08-11T02:09:22Z",
+  "updated_at": "2026-08-11T02:09:22Z"
+}

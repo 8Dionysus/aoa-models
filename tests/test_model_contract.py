@@ -124,6 +124,10 @@ class ModelContractTests(unittest.TestCase):
             self.assertFalse(projection["authority"]["proof_authority"])
             self.assertFalse(projection["authority"]["acceptance_authority"])
             self.assertEqual(projection["effect_family"], "read")
+            self.assertIn(
+                "task completion or target-owner acceptance",
+                projection["must_not_claim"],
+            )
 
     def test_v2_study_requires_observe_only_usage_metering(self) -> None:
         temporary, fixture = self.make_fixture()
@@ -208,7 +212,7 @@ class ModelContractTests(unittest.TestCase):
         result, ok = check_catalog(ROOT, catalog, "codex-cli 0.148.0")
 
         self.assertFalse(ok)
-        self.assertEqual(len(result["active_mismatches"]), 4)
+        self.assertEqual(len(result["active_mismatches"]), 5)
 
     def test_property_query_returns_informational_current_candidate(self) -> None:
         query = {
@@ -228,6 +232,11 @@ class ModelContractTests(unittest.TestCase):
         self.assertEqual(result["candidate_count"], 1)
         candidate = result["candidates"][0]
         self.assertEqual(candidate["model_slug"], "gpt-5.6-luna")
+        self.assertEqual(
+            candidate["realization_ref"],
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-workspace-write.json",
+        )
         self.assertEqual(
             candidate["realization_provenance"]["artifact_ref"],
             candidate["realization_ref"],
@@ -261,6 +270,45 @@ class ModelContractTests(unittest.TestCase):
         result["candidate_count"] = 0
         with self.assertRaisesRegex(ModelFitQueryError, "digest mismatch"):
             assert_query_result_digest(result)
+
+    def test_structured_owner_duties_only_match_role_neutral_realization(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
+        expected_ref = (
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-"
+            "structured-owner-duty-workspace-write.json"
+        )
+
+        for task_family in ("eval", "stats", "memo"):
+            with self.subTest(task_family=task_family):
+                query = {
+                    "schema_version": "aoa_model_fit_query_v1",
+                    "task_family": task_family,
+                    "runtime_product": "codex-cli",
+                    "runtime_version": "0.147.0",
+                    "reasoning_effort": "xhigh",
+                    "sandbox_mode": "workspace-write",
+                    "required_tools": ["shell-read", "workspace-write"],
+                    "required_mcp_servers": [],
+                }
+
+                result = query_model_fit(fixture, query)
+
+                self.assertEqual(result["candidate_count"], 1)
+                candidate = result["candidates"][0]
+                self.assertEqual(candidate["realization_ref"], expected_ref)
+                self.assertEqual(candidate["projection_posture"], "declared")
+                self.assertEqual(len(candidate["task_fit"]), 1)
+                self.assertEqual(candidate["task_fit"][0]["task_family"], task_family)
+                self.assertEqual(candidate["task_fit"][0]["claim_posture"], "hypothesis")
+                self.assertTrue(candidate["task_fit"][0]["escalation_required"])
+                self.assertTrue(
+                    any("not reviewed" in limitation for limitation in candidate["limitations"])
+                )
+                assert_query_result_digest(result)
+                validate_query_result(fixture, result)
 
     def test_no_match_result_is_still_content_addressed_owner_evidence(self) -> None:
         query = {

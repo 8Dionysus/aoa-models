@@ -56,7 +56,6 @@ def build_expected(root: Path = DEFAULT_ROOT) -> dict[str, str]:
         realization = realizations[realization_ref]
         if realization.get("lifecycle_state") not in {"declared", "observed"}:
             continue
-        states = [claim.get("lifecycle", {}).get("state") for _, claim in claim_entries]
         reviewed_task_outcome = any(
             claim.get("lifecycle", {}).get("state") == "reviewed"
             and claim.get("evidence_modality") == "task_outcome_evidence"
@@ -119,7 +118,7 @@ def build_expected(root: Path = DEFAULT_ROOT) -> dict[str, str]:
             "must_not_claim": [
                 "routing or activation authority",
                 "proof or owner acceptance",
-                "landing completion",
+                "task completion or target-owner acceptance",
                 "internal geometry or training lineage from behavior alone",
             ],
             "generated_at": max(timestamps),
