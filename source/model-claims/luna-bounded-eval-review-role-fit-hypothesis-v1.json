@@ -1,0 +1,95 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-claim.schema.json",
+  "schema_version": "aoa_model_claim_v1",
+  "kind": "ModelClaim",
+  "model_claim_id": "model-claim:openai/gpt-5.6-luna/bounded-eval-review-role-fit-hypothesis-v1",
+  "subject_realization_refs": [
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-readonly.json"
+  ],
+  "statement": "GPT-5.6 Luna xhigh under the exact read-only Codex 0.147.0 realization may independently review one bounded eval-selection return with evidence discipline and scope restraint, but this remains a real-work canary hypothesis until the present reviewer duty returns and is filtered.",
+  "scope": {
+    "task_family": "eval-review",
+    "conditions": [
+      "the writer result, model report, selected output, task contract and target owner are exact immutable inputs",
+      "the current aoa-evals source and the review done state are inspectable",
+      "the reviewer has a separate identity, thread and read-only environment",
+      "the reviewer may confirm or return for repair but cannot mutate or self-accept the writer result",
+      "owner acceptance, eval design, eval execution and model-fit admission remain outside the mandate",
+      "the exact Codex 0.147.0 realization and admitted abyss-stack read-only profile are bound before launch",
+      "usage is counted from runtime receipts and is not constrained by a caller-authored execution budget"
+    ],
+    "exclusions": [
+      "repairing writer source, report or output",
+      "inventing a rubric, eval, metric, proof verdict or owner meaning",
+      "issuing aoa-evals owner acceptance or a model-fit conclusion",
+      "autonomous commit, push, merge, publication, network access or external effects",
+      "treating the writer's successful transport as correctness evidence",
+      "inferring closed-model internal geometry or training lineage from behavior"
+    ]
+  },
+  "evidence_modality": "inference_with_explicit_limits",
+  "evidence_refs": [
+    {
+      "source_id": "external-evaluator-v15-bounded-return",
+      "kind": "live_runtime_output",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/pilots-20260811/v15/eval/runtime-state/sessions/4bd0ee4192134f05fcc1ae4407a5b075/result.json",
+      "observed_at": "2026-08-12T02:09:34Z",
+      "content_digest": "sha256:a580764d2da618b68b8cad6704ba8b097068e85edb0dd04c8bc8b1df2f007978",
+      "notes": "This proves that one separate Luna evaluator produced and returned a bounded selection under the writer contour. It supplies real review material but does not prove reviewer-role fit."
+    },
+    {
+      "source_id": "luna-landing-readonly-adjacent-hypothesis",
+      "kind": "repository_source",
+      "uri": "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json",
+      "observed_at": "2026-08-12T02:19:41Z",
+      "content_digest": null,
+      "notes": "Adjacent read-only external-review evidence only; landing fit does not transfer as eval-review proof."
+    },
+    {
+      "source_id": "local-codex-model-catalog-luna-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-debug-models#gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": "sha256:4b383dc91a67d6a214c5d592de0882221d2c968c2a7bd0b2fe53c2370cd56563",
+      "notes": "Confirms the exact Luna xhigh realization under Codex 0.147.0; it is compatibility evidence, not role-fit evidence."
+    }
+  ],
+  "confidence_posture": "hypothesis",
+  "observation_interval": {
+    "start": "2026-08-12T02:09:34Z",
+    "end": null
+  },
+  "known_counterevidence": [],
+  "freshness": {
+    "status": "current",
+    "review_by": "2026-08-19T00:00:00Z",
+    "policy": "Current only to authorize one evidence-complete real-work eval-review canary; its filtered return must strengthen, narrow, weaken or stale this claim."
+  },
+  "lifecycle": {
+    "state": "hypothesis",
+    "history": [
+      {
+        "from": null,
+        "to": "hypothesis",
+        "at": "2026-08-12T02:19:41Z",
+        "reason": "A real bounded evaluator return plus adjacent read-only Luna evidence justify one independent-review canary, not transferred proof.",
+        "evidence_refs": [
+          "external-evaluator-v15-bounded-return",
+          "luna-landing-readonly-adjacent-hypothesis",
+          "local-codex-model-catalog-luna-2026-08-08"
+        ]
+      }
+    ],
+    "superseded_by": null
+  },
+  "independent_review_refs": [],
+  "attribution_limits": [
+    "No Luna eval-review run under this exact claim has completed.",
+    "The writer return proves useful review material and transport only, not reviewer correctness or net benefit.",
+    "Landing read-only evidence is adjacent and cannot establish eval-review fit.",
+    "A successful canary remains subject to goal-master filtering and aoa-evals owner authority.",
+    "Behavior cannot establish closed-model internal geometry or training lineage."
+  ],
+  "created_at": "2026-08-12T02:19:41Z",
+  "updated_at": "2026-08-12T02:19:41Z"
+}
