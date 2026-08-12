@@ -271,6 +271,37 @@ class ModelContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ModelFitQueryError, "digest mismatch"):
             assert_query_result_digest(result)
 
+    def test_eval_review_query_returns_readonly_luna_hypothesis(self) -> None:
+        query = {
+            "schema_version": "aoa_model_fit_query_v1",
+            "task_family": "eval-review",
+            "runtime_product": "codex-cli",
+            "runtime_version": "0.147.0",
+            "reasoning_effort": "xhigh",
+            "sandbox_mode": "read-only",
+            "required_tools": ["shell-read"],
+            "required_mcp_servers": [],
+        }
+
+        result = query_model_fit(ROOT, query)
+
+        self.assertEqual(result["candidate_count"], 1)
+        candidate = result["candidates"][0]
+        self.assertEqual(candidate["model_slug"], "gpt-5.6-luna")
+        self.assertEqual(candidate["reasoning_effort"], "xhigh")
+        self.assertEqual(candidate["sandbox_mode"], "read-only")
+        task_fit = next(
+            item
+            for item in candidate["task_fit"]
+            if item["task_family"] == "eval-review"
+        )
+        self.assertEqual(task_fit["claim_posture"], "hypothesis")
+        self.assertTrue(task_fit["escalation_required"])
+        self.assertTrue(result["authority"]["informational_only"])
+        self.assertFalse(result["authority"]["activation_authority"])
+        assert_query_result_digest(result)
+        validate_query_result(ROOT, result)
+
     def test_structured_owner_duties_only_match_role_neutral_realization(self) -> None:
         temporary, fixture = self.make_fixture()
         self.addCleanup(temporary.cleanup)
