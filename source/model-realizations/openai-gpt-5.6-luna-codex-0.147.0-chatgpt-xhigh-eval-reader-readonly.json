@@ -1,0 +1,128 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-realization.schema.json",
+  "schema_version": "aoa_model_realization_v1",
+  "kind": "ModelRealization",
+  "model_realization_id": "model-realization:openai/gpt-5.6-luna/codex-0.147.0/chatgpt/xhigh/eval-reader/read-only/2026-08-14",
+  "model_identity_ref": "source/model-identities/openai-gpt-5.6-luna.json",
+  "configuration": {
+    "access": {
+      "auth_regime": "chatgpt_login",
+      "billing_regime": "chatgpt_quota",
+      "provider": "OpenAI",
+      "supported_in_api": true,
+      "surface": "Codex CLI"
+    },
+    "context": {
+      "effective_context_percent": 95,
+      "native_api": {
+        "context_window_tokens": 1050000,
+        "max_output_tokens": 128000,
+        "source_uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna"
+      },
+      "nominal_context_tokens": 272000,
+      "regime": "codex-model-catalog-default"
+    },
+    "economics": {
+      "active_regime": "chatgpt_quota",
+      "meter": "codex-subscription-usage",
+      "reference_prices": [
+        {
+          "currency": "USD",
+          "effective_at": "2026-08-08T08:12:22Z",
+          "long_context_pricing": {
+            "input_multiplier": 2.0,
+            "input_threshold_tokens": 272000,
+            "output_multiplier": 1.5,
+            "scope": "full API request when input exceeds the threshold"
+          },
+          "not_active_for_this_realization": true,
+          "prices": {
+            "cache_write": 0.25,
+            "cached_input": 0.02,
+            "input": 0.2,
+            "output": 1.2
+          },
+          "regime": "standard-api-short-context",
+          "source_uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "unit": "per_1m_tokens"
+        }
+      ]
+    },
+    "environment": {
+      "cwd_policy": "read-only-source",
+      "instruction_policy": "owner-root-and-nearest-agents",
+      "locale": "ru",
+      "prompt_contract_ref": "aoa-models:luna-eval-review-v1",
+      "role_profile_ref": "aoa-agents:task-local-selected-role-chain"
+    },
+    "permissions": {
+      "approval_policy": "never",
+      "external_effects": false,
+      "network_access": "disabled",
+      "sandbox_mode": "read-only"
+    },
+    "reasoning_effort": "xhigh",
+    "runtime": {
+      "executable": "codex",
+      "model_slug": "gpt-5.6-luna",
+      "multi_agent_backend_version": "v1",
+      "product": "codex-cli",
+      "resume_surface": "codex exec resume",
+      "transport": "exec-jsonl",
+      "version": "0.147.0"
+    },
+    "tools": {
+      "inheritance_allowed": false,
+      "profile_mode": "runtime_profile_ref",
+      "profile_ref": "abyss-stack:external_codex_agent/eval-reader-v1",
+      "required_mcp_servers": [
+        "aoa_evals"
+      ],
+      "required_tools": [
+        "shell-read"
+      ]
+    }
+  },
+  "configuration_fingerprint": "sha256:6be2d342fedbfc3e005394189133465925a21ec924629f9643b3172bdf74e95a",
+  "observation_interval": {
+    "end": null,
+    "start": "2026-08-14T00:00:00Z"
+  },
+  "lifecycle_state": "declared",
+  "source_refs": [
+    {
+      "content_digest": "sha256:4b383dc91a67d6a214c5d592de0882221d2c968c2a7bd0b2fe53c2370cd56563",
+      "kind": "live_runtime_output",
+      "notes": "Codex CLI 0.147.0 exposes Luna with xhigh and max, context 272000, effective context 95 percent, API support, and multi-agent backend v1.",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "source_id": "local-codex-model-catalog-luna-2026-08-08",
+      "uri": "command:codex-debug-models#gpt-5.6-luna"
+    },
+    {
+      "content_digest": null,
+      "kind": "live_runtime_output",
+      "notes": "The active realization uses ChatGPT login and quota accounting; API prices are reference economics only.",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "source_id": "local-codex-login-status-2026-08-08",
+      "uri": "command:codex-login-status"
+    },
+    {
+      "content_digest": "sha256:259111bf1f6c03a1d4e44dec47a8ffc3e1dfd1b012332602e62c91bf1fe961f3",
+      "kind": "repository_source",
+      "notes": "The admitted abyss-stack evaluator profile binds eval-reader-v1 with shell-read and aoa_evals; this source fact does not prove MCP liveness or credential non-observation.",
+      "observed_at": "2026-08-14T00:00:00Z",
+      "source_id": "abyss-stack-eval-reader-profile-2026-08-14",
+      "uri": "artifact:abyss-stack:external_codex_agent/eval-reader-v1"
+    },
+    {
+      "content_digest": null,
+      "kind": "official_documentation",
+      "notes": "Official model documentation provides the native API context, output limit, token prices, cache-write rate, and long-context multiplier.",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "source_id": "openai-gpt-5.6-luna-model-2026-08-08",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna"
+    }
+  ],
+  "created_at": "2026-08-14T00:00:00Z",
+  "updated_at": "2026-08-14T00:00:00Z"
+}
