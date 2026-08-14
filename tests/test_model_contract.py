@@ -212,9 +212,12 @@ class ModelContractTests(unittest.TestCase):
         result, ok = check_catalog(ROOT, catalog, "codex-cli 0.148.0")
 
         self.assertFalse(ok)
-        self.assertEqual(len(result["active_mismatches"]), 5)
+        self.assertEqual(len(result["active_mismatches"]), 6)
 
     def test_property_query_returns_informational_current_candidate(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
         query = {
             "schema_version": "aoa_model_fit_query_v1",
             "task_family": "landing",
@@ -226,7 +229,7 @@ class ModelContractTests(unittest.TestCase):
             "required_mcp_servers": [],
         }
 
-        result = query_model_fit(ROOT, query)
+        result = query_model_fit(fixture, query)
 
         self.assertEqual(result["schema_version"], "aoa_model_fit_query_result_v2")
         self.assertEqual(result["candidate_count"], 1)
@@ -272,6 +275,36 @@ class ModelContractTests(unittest.TestCase):
             assert_query_result_digest(result)
 
     def test_eval_review_query_returns_readonly_luna_hypothesis(self) -> None:
+        realization = json.loads(
+            (
+                ROOT
+                / "source/model-realizations/"
+                "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-"
+                "eval-reader-readonly.json"
+            ).read_text(encoding="utf-8")
+        )
+        configuration = realization["configuration"]
+        self.assertEqual(
+            configuration["tools"]["profile_ref"],
+            "abyss-stack:external_codex_agent/eval-reader-v1",
+        )
+        self.assertEqual(configuration["tools"]["required_mcp_servers"], ["aoa_evals"])
+        self.assertEqual(
+            configuration["environment"]["role_profile_ref"],
+            "aoa-agents:task-local-selected-role-chain",
+        )
+        landing_projection = json.loads(
+            (
+                ROOT
+                / "generated/model-fit-projections/"
+                "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-readonly.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertNotIn(
+            "eval-review",
+            {item["task_family"] for item in landing_projection["task_fit"]},
+        )
+
         query = {
             "schema_version": "aoa_model_fit_query_v1",
             "task_family": "eval-review",
@@ -280,16 +313,25 @@ class ModelContractTests(unittest.TestCase):
             "reasoning_effort": "xhigh",
             "sandbox_mode": "read-only",
             "required_tools": ["shell-read"],
-            "required_mcp_servers": [],
+            "required_mcp_servers": ["aoa_evals"],
         }
 
-        result = query_model_fit(ROOT, query)
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
+        result = query_model_fit(fixture, query)
 
         self.assertEqual(result["candidate_count"], 1)
         candidate = result["candidates"][0]
         self.assertEqual(candidate["model_slug"], "gpt-5.6-luna")
         self.assertEqual(candidate["reasoning_effort"], "xhigh")
         self.assertEqual(candidate["sandbox_mode"], "read-only")
+        self.assertEqual(
+            candidate["realization_ref"],
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-"
+            "eval-reader-readonly.json",
+        )
         task_fit = next(
             item
             for item in candidate["task_fit"]
@@ -300,7 +342,7 @@ class ModelContractTests(unittest.TestCase):
         self.assertTrue(result["authority"]["informational_only"])
         self.assertFalse(result["authority"]["activation_authority"])
         assert_query_result_digest(result)
-        validate_query_result(ROOT, result)
+        validate_query_result(fixture, result)
 
     def test_structured_owner_duties_only_match_role_neutral_realization(self) -> None:
         temporary, fixture = self.make_fixture()
@@ -342,6 +384,9 @@ class ModelContractTests(unittest.TestCase):
                 validate_query_result(fixture, result)
 
     def test_no_match_result_is_still_content_addressed_owner_evidence(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
         query = {
             "schema_version": "aoa_model_fit_query_v1",
             "task_family": "landing_preparation",
@@ -353,7 +398,7 @@ class ModelContractTests(unittest.TestCase):
             "required_mcp_servers": [],
         }
 
-        result = query_model_fit(ROOT, query)
+        result = query_model_fit(fixture, query)
 
         self.assertEqual(result["candidate_count"], 0)
         self.assertEqual(result["candidates"], [])

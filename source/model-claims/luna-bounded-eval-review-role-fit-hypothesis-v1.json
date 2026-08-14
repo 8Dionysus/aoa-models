@@ -4,7 +4,7 @@
   "kind": "ModelClaim",
   "model_claim_id": "model-claim:openai/gpt-5.6-luna/bounded-eval-review-role-fit-hypothesis-v1",
   "subject_realization_refs": [
-    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-readonly.json"
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-eval-reader-readonly.json"
   ],
   "statement": "GPT-5.6 Luna xhigh under the exact read-only Codex 0.147.0 realization may independently review one bounded eval-selection return with evidence discipline and scope restraint, but this remains a real-work canary hypothesis until the present reviewer duty returns and is filtered.",
   "scope": {
@@ -91,5 +91,5 @@
     "Behavior cannot establish closed-model internal geometry or training lineage."
   ],
   "created_at": "2026-08-12T02:19:41Z",
-  "updated_at": "2026-08-12T02:19:41Z"
+  "updated_at": "2026-08-14T00:00:00Z"
 }
