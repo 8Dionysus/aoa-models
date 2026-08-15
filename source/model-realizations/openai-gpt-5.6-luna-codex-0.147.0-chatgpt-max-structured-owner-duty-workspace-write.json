@@ -1,0 +1,151 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-realization.schema.json",
+  "schema_version": "aoa_model_realization_v1",
+  "kind": "ModelRealization",
+  "model_realization_id": "model-realization:openai/gpt-5.6-luna/codex-0.147.0/chatgpt/max/structured-owner-duty/workspace-write/2026-08-15",
+  "model_identity_ref": "source/model-identities/openai-gpt-5.6-luna.json",
+  "configuration": {
+    "access": {
+      "provider": "OpenAI",
+      "surface": "Codex CLI",
+      "auth_regime": "chatgpt_login",
+      "billing_regime": "chatgpt_quota",
+      "supported_in_api": true
+    },
+    "runtime": {
+      "product": "codex-cli",
+      "version": "0.147.0",
+      "executable": "codex",
+      "model_slug": "gpt-5.6-luna",
+      "transport": "exec-jsonl",
+      "multi_agent_backend_version": "v1",
+      "resume_surface": "codex exec resume"
+    },
+    "reasoning_effort": "max",
+    "context": {
+      "nominal_context_tokens": 272000,
+      "effective_context_percent": 95,
+      "regime": "codex-model-catalog-default",
+      "native_api": {
+        "context_window_tokens": 1050000,
+        "max_output_tokens": 128000,
+        "source_uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna"
+      }
+    },
+    "tools": {
+      "profile_mode": "runtime_profile_ref",
+      "profile_ref": "abyss-stack:external_codex_agent/structured-owner-duty-workspace-write-v1",
+      "required_tools": [
+        "shell-read",
+        "workspace-write"
+      ],
+      "required_mcp_servers": [],
+      "inheritance_allowed": false
+    },
+    "environment": {
+      "role_profile_ref": "aoa-agents:task-local-selected-role-chain",
+      "prompt_contract_ref": "aoa-models:structured-owner-duty-canary-v1",
+      "cwd_policy": "dedicated-worktree",
+      "instruction_policy": "owner-root-nearest-agents-and-bound-mandate",
+      "locale": "ru"
+    },
+    "permissions": {
+      "sandbox_mode": "workspace-write",
+      "approval_policy": "never",
+      "external_effects": false,
+      "network_access": "disabled"
+    },
+    "economics": {
+      "active_regime": "chatgpt_quota",
+      "meter": "codex-subscription-usage",
+      "reference_prices": [
+        {
+          "regime": "standard-api-short-context",
+          "currency": "USD",
+          "unit": "per_1m_tokens",
+          "not_active_for_this_realization": true,
+          "effective_at": "2026-08-08T08:12:22Z",
+          "prices": {
+            "input": 0.2,
+            "cached_input": 0.02,
+            "cache_write": 0.25,
+            "output": 1.2
+          },
+          "source_uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "long_context_pricing": {
+            "input_threshold_tokens": 272000,
+            "input_multiplier": 2.0,
+            "output_multiplier": 1.5,
+            "scope": "full API request when input exceeds the threshold"
+          }
+        }
+      ]
+    }
+  },
+  "configuration_fingerprint": "sha256:f9a83cc692267de7d720caf476b4e8096886129d7b9db8b0a92122d87890cafd",
+  "observation_interval": {
+    "start": "2026-08-15T06:03:00Z",
+    "end": null
+  },
+  "lifecycle_state": "declared",
+  "source_refs": [
+    {
+      "source_id": "local-codex-model-catalog-luna-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-debug-models#gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": "sha256:4b383dc91a67d6a214c5d592de0882221d2c968c2a7bd0b2fe53c2370cd56563",
+      "notes": "Codex CLI 0.147.0 exposes Luna with xhigh and max, context 272000, effective context 95 percent, API support, and multi-agent backend v1."
+    },
+    {
+      "source_id": "luna-max-live-catalog-2026-08-15",
+      "kind": "live_runtime_output",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/eval-model-luna-live-catalog.json",
+      "observed_at": "2026-08-15T10:31:00Z",
+      "content_digest": "sha256:70808afa1f749df7984ca831b8c0bc4302bc28ac096da23ed6edaeee5e1a139a",
+      "notes": "A fresh local catalog observation exposes gpt-5.6-luna with max under Codex 0.147.0; it proves availability, not task fit."
+    },
+    {
+      "source_id": "luna-max-runtime-update-writer-return-2026-08-15",
+      "kind": "execution_receipt",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-20260814/final-d5/owner-writer-state-d5-v1/sessions/579f5e3010eeaf358fa628ef05ed4626/attempts/002/model-report.json",
+      "observed_at": "2026-08-15T06:45:00Z",
+      "content_digest": "sha256:99cd25487cbca5f4cf4bf290b019c2d7352e8b9721cf5b1a3907bd12f3f4739e",
+      "notes": "Max runtime writer returned one source-owned generated-index repair, four passed validations, review_required, and no owner acceptance/model-fit claim. The profile was a landing writer, so this is adjacent real-work evidence for the declared structured-owner-duty hypothesis."
+    },
+    {
+      "source_id": "luna-max-pr379-authority-stop-2026-08-14",
+      "kind": "execution_receipt",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/pr379-ci-landing-writer-state-v2/sessions/079d6724fc4acb42d978c82a68daf1b6/runtime-failure.json",
+      "observed_at": "2026-08-14T23:00:00Z",
+      "content_digest": "sha256:217374816cbe97878cbeb9b882743be46bc7d42695e96a09922e76e031ec3cae",
+      "notes": "Max arm stopped with workspace_manifest_observation_gap and no changed paths; useful stop-line/counterevidence, not completion proof."
+    },
+    {
+      "source_id": "abyss-stack-runtime-update-pr386",
+      "kind": "repository_source",
+      "uri": "https://github.com/8Dionysus/abyss-stack/pull/386@21652f9204af4db36b04604ae89fe4d97771eb41",
+      "observed_at": "2026-08-15T09:19:52Z",
+      "content_digest": null,
+      "notes": "Merged runtime fix required for external actor resume/Git lock isolation; PR checks passed. This is owner/runtime context, not standalone model-fit proof."
+    },
+    {
+      "source_id": "aoa-evals-owner-contract-selection-2026-08-15",
+      "kind": "repository_source",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/eval-model-luna-owner-procedure.json",
+      "observed_at": "2026-08-15T10:45:00Z",
+      "content_digest": "sha256:99f6d3d8da040b2324fb426ee753f1abc790d0313dfefbe1175cc0d7d3e1c644",
+      "notes": "Owner-source contract selection identifies the primary draft A2A checkpoint eval and its named companion diagnostics."
+    },
+    {
+      "source_id": "openai-gpt-5.6-luna-model-2026-08-11",
+      "kind": "official_documentation",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "observed_at": "2026-08-11T02:09:22Z",
+      "content_digest": null,
+      "notes": "Provider capabilities and economics only; not AoA role-fit evidence."
+    }
+  ],
+  "created_at": "2026-08-15T10:45:00Z",
+  "updated_at": "2026-08-15T10:45:00Z"
+}
