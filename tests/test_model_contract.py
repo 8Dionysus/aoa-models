@@ -53,6 +53,20 @@ class ModelContractTests(unittest.TestCase):
     def test_repository_is_valid(self) -> None:
         self.assertEqual(validate_repo(ROOT), [])
 
+    def test_landing_claim_counterevidence_is_landing_scoped(self) -> None:
+        path = ROOT / "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
+        claim = json.loads(path.read_text(encoding="utf-8"))
+        source_ids = {
+            item["source_id"] for item in claim["known_counterevidence"]
+        }
+
+        self.assertEqual(
+            source_ids,
+            {"luna-max-pr379-authority-stop-counterevidence-2026-08-14"},
+        )
+        self.assertFalse(any("evaluator" in source_id for source_id in source_ids))
+        self.assertFalse(any("acceptance-matrix" in source_id for source_id in source_ids))
+
     def test_projection_builder_matches_files(self) -> None:
         expected = build_expected(ROOT)
         self.assertTrue(expected)

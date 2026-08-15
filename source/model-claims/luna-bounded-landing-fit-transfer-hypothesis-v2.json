@@ -93,22 +93,6 @@
       "observed_at": "2026-08-14T23:00:00Z",
       "content_digest": "sha256:217374816cbe97878cbeb9b882743be46bc7d42695e96a09922e76e031ec3cae",
       "notes": "The Max landing attempt was authority_blocked because workspace_manifest_observation_gap remained unresolved; no landing change was returned."
-    },
-    {
-      "source_id": "aoa-models-evaluator-fit-query-is-xhigh-readonly-2026-08-14",
-      "kind": "live_runtime_output",
-      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/evaluator-live-duty-fit-query-main-5df7882.json",
-      "observed_at": "2026-08-14T00:00:00Z",
-      "content_digest": "sha256:777ad7ca5a224eeaa1fd42de4afcf7366644cb9a57e2ed4f1f615f6f38c44295",
-      "notes": "The earlier exact evaluator fit query selected xhigh read-only, not Max structured-owner-duty; it remains informational and cannot be used as a Max transfer result."
-    },
-    {
-      "source_id": "task-local-acceptance-matrix-evaluator-intake-gap",
-      "kind": "repository_source",
-      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/ACCEPTANCE_MATRIX.md#L16-L20",
-      "observed_at": "2026-08-15T00:00:00Z",
-      "content_digest": null,
-      "notes": "Normal evaluator intake and live scoped MCP proof remain partial or missing in the task-local acceptance matrix."
     }
   ],
   "freshness": {
@@ -141,5 +125,5 @@
     "No behavioral result may be used to infer closed-model internal geometry or training lineage."
   ],
   "created_at": "2026-08-08T08:12:22Z",
-  "updated_at": "2026-08-15T10:45:00Z"
+  "updated_at": "2026-08-15T11:00:23Z"
 }
