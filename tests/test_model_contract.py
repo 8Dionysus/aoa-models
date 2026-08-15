@@ -212,7 +212,7 @@ class ModelContractTests(unittest.TestCase):
         result, ok = check_catalog(ROOT, catalog, "codex-cli 0.148.0")
 
         self.assertFalse(ok)
-        self.assertEqual(len(result["active_mismatches"]), 6)
+        self.assertEqual(len(result["active_mismatches"]), 7)
 
     def test_property_query_returns_informational_current_candidate(self) -> None:
         temporary, fixture = self.make_fixture()

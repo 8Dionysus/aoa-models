@@ -1,0 +1,148 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-claim.schema.json",
+  "schema_version": "aoa_model_claim_v1",
+  "kind": "ModelClaim",
+  "model_claim_id": "model-claim:openai/gpt-5.6-luna/bounded-eval-role-fit-max-structured-owner-duty-hypothesis-v1",
+  "subject_realization_refs": [
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.147.0-chatgpt-max-structured-owner-duty-workspace-write.json"
+  ],
+  "statement": "GPT-5.6 Luna max under the exact Codex 0.147.0 role-neutral structured-owner-duty realization may preserve one owner-bounded evaluator duty across a reviewed return/checkpoint route and return named evidence, but this remains a bounded real-work hypothesis rather than general evaluator competence or owner authority.",
+  "scope": {
+    "task_family": "eval",
+    "conditions": [
+      "aoa-agents supplies the role mandate, holder, return owner, authority ceiling and stop-line before model binding",
+      "aoa-evals supplies the exact named procedure, inputs, criteria, blind spots and output shape",
+      "the actor inspects real immutable work evidence, including failed or blocked attempts, rather than grading a sterile success fixture",
+      "the actor keeps initiative bounded to discovering and reporting evidence gaps or owner-correct next routes, without inventing a new procedure or acceptance meaning",
+      "the actor keeps executed paths inside the declared scope and discloses narrowing, widening, reshaping, or authority blockage",
+      "handoff returns exact artifacts, residuals and owner references for independent review; checkpoint resume preserves the same task/thread anchor or safe-stops honestly",
+      "the exact Codex 0.147.0 max realization is live-catalog compatible and the bound runtime is artifact-admitted before launch",
+      "usage is counted from runtime receipts and never becomes a caller-authored execution budget"
+    ],
+    "exclusions": [
+      "inventing an eval, proof invariant, rubric, metric, verdict scale, owner acceptance or model-fit meaning",
+      "issuing final proof, owner acceptance, release, landing, activation, merge, publication, or runtime verdicts",
+      "autonomous commit, push, merge, external effect, or authority widening beyond the mandate",
+      "treating a draft aoa-evals bundle, MCP response, green validation, receipt, or generated projection as central proof or acceptance",
+      "claiming general initiative, child-output quality, live runtime readiness, remote transport reliability, or cross-task reliability",
+      "transferring the role identity of evaluator, runtime owner, stats owner, memo owner, or acceptance holder from the model name",
+      "inferring closed-model internal geometry or training lineage from behavior"
+    ]
+  },
+  "evidence_modality": "inference_with_explicit_limits",
+  "evidence_refs": [
+    {
+      "source_id": "eval-model-luna-mixed-support-result",
+      "kind": "repository_source",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/eval-model-luna-result.json",
+      "observed_at": "2026-08-15T10:45:00Z",
+      "content_digest": null,
+      "notes": "Owner-procedure review returned mixed support/candidate_only; the result separates duty retention, initiative, scope, handoff, resume, reviewability, and primary A2A axes."
+    },
+    {
+      "source_id": "luna-max-runtime-update-writer-return-2026-08-15",
+      "kind": "execution_receipt",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-20260814/final-d5/owner-writer-state-d5-v1/sessions/579f5e3010eeaf358fa628ef05ed4626/attempts/002/model-report.json",
+      "observed_at": "2026-08-15T06:45:00Z",
+      "content_digest": "sha256:99cd25487cbca5f4cf4bf290b019c2d7352e8b9721cf5b1a3907bd12f3f4739e",
+      "notes": "Adjacent Max real-work writer return: one bounded generated-index repair, four validations, review_required, no owner acceptance."
+    },
+    {
+      "source_id": "luna-max-runtime-update-independent-review-2026-08-15",
+      "kind": "independent_review",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-20260814/final-d5/owner-reviewer-state-d5-v7b/sessions/63127be5119c062802acd57ae25e69c0/attempts/001/model-report.json",
+      "observed_at": "2026-08-15T08:00:00Z",
+      "content_digest": "sha256:7e11947965d44e0c058e4f5e9041ef4a887bed8c6ade0e45b5f3495683d44a86",
+      "notes": "Independent reviewer accepted the bounded writer return for goal-master filtering while explicitly withholding owner acceptance and model-fit judgment; it reviews the return, not the model claim itself."
+    },
+    {
+      "source_id": "luna-max-pr379-authority-stop-2026-08-14",
+      "kind": "execution_receipt",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/pr379-ci-landing-writer-state-v2/sessions/079d6724fc4acb42d978c82a68daf1b6/runtime-failure.json",
+      "observed_at": "2026-08-14T23:00:00Z",
+      "content_digest": "sha256:217374816cbe97878cbeb9b882743be46bc7d42695e96a09922e76e031ec3cae",
+      "notes": "Max stop-line counterevidence: workspace_manifest_observation_gap, authority_blocked, no changed paths."
+    },
+    {
+      "source_id": "local-codex-model-catalog-luna-2026-08-08",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-debug-models#gpt-5.6-luna",
+      "observed_at": "2026-08-08T08:12:22Z",
+      "content_digest": "sha256:4b383dc91a67d6a214c5d592de0882221d2c968c2a7bd0b2fe53c2370cd56563",
+      "notes": "Confirms xhigh and max are exposed under Codex 0.147.0; it does not prove task fit."
+    },
+    {
+      "source_id": "aoa-evals-owner-contract-selection-2026-08-15",
+      "kind": "repository_source",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/eval-model-luna-owner-procedure.json",
+      "observed_at": "2026-08-15T10:45:00Z",
+      "content_digest": "sha256:99f6d3d8da040b2324fb426ee753f1abc790d0313dfefbe1175cc0d7d3e1c644",
+      "notes": "The owner-source selection and contract limits for the primary and companion evals."
+    }
+  ],
+  "known_counterevidence": [
+    {
+      "source_id": "aoa-models-evaluator-fit-query-is-xhigh-readonly-2026-08-14",
+      "kind": "live_runtime_output",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/evaluator-live-duty-fit-query-main-5df7882.json",
+      "observed_at": "2026-08-14T00:00:00Z",
+      "content_digest": "sha256:777ad7ca5a224eeaa1fd42de4afcf7366644cb9a57e2ed4f1f615f6f38c44295",
+      "notes": "The existing exact evaluator fit query selected a Luna xhigh read-only eval-reader realization, not this Max structured-owner-duty realization; it remains informational and unreviewed."
+    },
+    {
+      "source_id": "task-local-acceptance-matrix-evaluator-intake-gap",
+      "kind": "repository_source",
+      "uri": "file:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/ACCEPTANCE_MATRIX.md#L16-L20",
+      "observed_at": "2026-08-15T00:00:00Z",
+      "content_digest": null,
+      "notes": "Normal evaluator/aoa-evals owner intake and live scoped MCP proof remain marked missing or partial in the task-local matrix."
+    },
+    {
+      "source_id": "aoa-a2a-draft-contract-limit",
+      "kind": "repository_source",
+      "uri": "repo:aoa-evals@3b0b3d41f7a555662af0e324955d482370945e63#evals/workflow/aoa-a2a-summon-return-checkpoint/EVAL.md",
+      "observed_at": "2026-08-15T10:45:00Z",
+      "content_digest": "sha256:65e8ab95b0084e94f09ec0203198e02c6e3c4c590439255813a067a9e5fd09b1",
+      "notes": "The selected bundle is draft, maturity 1, non-export-ready, and explicitly excludes child quality, live runtime readiness, and general autonomy."
+    }
+  ],
+  "confidence_posture": "hypothesis",
+  "observation_interval": {
+    "start": "2026-08-15T06:03:00Z",
+    "end": "2026-08-15T10:45:00Z"
+  },
+  "freshness": {
+    "status": "current",
+    "review_by": "2026-08-22T00:00:00Z",
+    "policy": "Current only for this exact declared Max realization and one bounded real-work canary; independent owner review must strengthen, narrow, weaken, stale, or retract the claim."
+  },
+  "lifecycle": {
+    "state": "hypothesis",
+    "history": [
+      {
+        "from": null,
+        "to": "hypothesis",
+        "at": "2026-08-15T10:45:00Z",
+        "reason": "A mixed-support owner-procedure review shows bounded scope, handoff, resume, and reviewability signals in real Luna Max work, while initiative, exact structured-role realization, central intake, and A2A packet completeness remain limited or mixed.",
+        "evidence_refs": [
+          "eval-model-luna-mixed-support-result",
+          "luna-max-runtime-update-writer-return-2026-08-15",
+          "luna-max-runtime-update-independent-review-2026-08-15",
+          "luna-max-pr379-authority-stop-2026-08-14"
+        ]
+      }
+    ],
+    "superseded_by": null
+  },
+  "independent_review_refs": [],
+  "attribution_limits": [
+    "The exact Max structured-owner-duty realization is declared from the live catalog plus adjacent Max writer evidence; it has not yet been run under this exact role-neutral realization.",
+    "The independent review reviewed the Max writer return, not the model-fit claim or central aoa-evals admission.",
+    "Initiative is confounded with explicit task instructions and safe-stop behavior; no universal initiative claim is supported.",
+    "The primary eval is draft and no live aoa_evals MCP result was available in this execution surface.",
+    "xhigh artifacts and PR body statements are not attributed to Max unless the exact Max runtime result says so.",
+    "No behavioral result may be used to infer closed-model internal geometry or training lineage."
+  ],
+  "created_at": "2026-08-15T10:45:00Z",
+  "updated_at": "2026-08-15T10:45:00Z"
+}
