@@ -52,24 +52,38 @@
       "observed_at": "2026-08-11T02:09:22Z",
       "content_digest": null,
       "notes": "Provider capabilities and economics only; not AoA role-fit evidence."
+    },
+    {
+      "source_id": "local-codex-version-transition-2026-08-20",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-version-and-debug-models",
+      "observed_at": "2026-08-20T09:23:27Z",
+      "content_digest": "sha256:11d081a3213a02aca4b23149aa8e24d12114eda46297ef17160b1e8b5844d60d",
+      "notes": "Installed Codex CLI is 0.148.0, so the subject 0.147.0 realization is stale. This closes currentness only and does not establish replacement fit."
     }
   ],
   "confidence_posture": "hypothesis",
-  "observation_interval": {"start": "2026-08-11T02:09:22Z", "end": null},
+  "observation_interval": {"start": "2026-08-11T02:09:22Z", "end": "2026-08-20T09:23:27Z"},
   "known_counterevidence": [],
   "freshness": {
-    "status": "current",
-    "review_by": "2026-08-22T00:00:00Z",
-    "policy": "Current only for one evidence-complete real-work eval canary; its independent review must strengthen, narrow, weaken or stale the claim."
+    "status": "stale",
+    "review_by": null,
+    "policy": "The bounded eval-role hypothesis is preserved as historical input; the Codex 0.147.0 realization became stale on the 0.148.0 runtime transition, and a future 0.148.0 canary must re-establish currentness before fit is considered."
   },
   "lifecycle": {
-    "state": "hypothesis",
+    "state": "stale",
     "history": [{
       "from": null,
       "to": "hypothesis",
       "at": "2026-08-11T02:09:22Z",
       "reason": "Current provider/runtime facts and adjacent bounded external-work evidence justify one real-duty canary, not transferred proof.",
       "evidence_refs": ["luna-landing-transfer-hypothesis-adjacent-evidence", "local-codex-model-catalog-luna-2026-08-08", "openai-gpt-5.6-luna-model-2026-08-11"]
+    }, {
+      "from": "hypothesis",
+      "to": "stale",
+      "at": "2026-08-20T09:23:27Z",
+      "reason": "The exact Codex 0.147.0 realization became stale when the installed Codex CLI advanced to 0.148.0. The bounded hypothesis is retained, but no replacement 0.148.0 fit or role evidence is admitted by this transition.",
+      "evidence_refs": ["local-codex-version-transition-2026-08-20"]
     }],
     "superseded_by": null
   },
@@ -82,5 +96,5 @@
     "Behavior cannot establish closed-model internal geometry or training lineage."
   ],
   "created_at": "2026-08-11T02:09:22Z",
-  "updated_at": "2026-08-11T02:09:22Z"
+  "updated_at": "2026-08-20T09:23:27Z"
 }
