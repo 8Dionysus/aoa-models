@@ -1,0 +1,124 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-realization.schema.json",
+  "schema_version": "aoa_model_realization_v1",
+  "kind": "ModelRealization",
+  "model_realization_id": "model-realization:openai/gpt-5.6-luna/codex-0.148.0/chatgpt/max/structured-owner-duty/workspace-write/2026-08-20",
+  "model_identity_ref": "source/model-identities/openai-gpt-5.6-luna.json",
+  "configuration": {
+    "access": {
+      "provider": "OpenAI",
+      "surface": "Codex CLI",
+      "auth_regime": "chatgpt_login",
+      "billing_regime": "chatgpt_quota",
+      "supported_in_api": true
+    },
+    "runtime": {
+      "product": "codex-cli",
+      "version": "0.148.0",
+      "executable": "codex",
+      "model_slug": "gpt-5.6-luna",
+      "transport": "exec-jsonl",
+      "multi_agent_backend_version": "v1",
+      "runtime_subject": {
+        "kind": "content_addressed_runtime_package",
+        "source": "codex-cli-standalone/x86_64-unknown-linux-musl+codex-code-mode-host",
+        "digest": "sha256:35cc6b0e4e5c527569807be8017b705f410f0c6c2b7a3fa1c6a5407d65889041"
+      },
+      "resume_surface": "codex exec resume"
+    },
+    "reasoning_effort": "max",
+    "context": {
+      "nominal_context_tokens": 272000,
+      "effective_context_percent": 95,
+      "regime": "codex-model-catalog-default",
+      "native_api": {
+        "context_window_tokens": 1050000,
+        "max_output_tokens": 128000,
+        "source_uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna"
+      }
+    },
+    "tools": {
+      "profile_mode": "runtime_profile_ref",
+      "profile_ref": "abyss-stack:external_codex_agent/structured-owner-duty-workspace-write-v1",
+      "required_tools": [
+        "shell-read",
+        "workspace-write"
+      ],
+      "required_mcp_servers": [],
+      "inheritance_allowed": false
+    },
+    "environment": {
+      "role_profile_ref": "aoa-agents:task-local-selected-role-chain",
+      "prompt_contract_ref": "aoa-models:structured-owner-duty-canary-v1",
+      "cwd_policy": "dedicated-worktree",
+      "instruction_policy": "owner-root-nearest-agents-and-bound-mandate",
+      "locale": "ru"
+    },
+    "permissions": {
+      "sandbox_mode": "workspace-write",
+      "approval_policy": "never",
+      "external_effects": false,
+      "network_access": "disabled"
+    },
+    "economics": {
+      "active_regime": "chatgpt_quota",
+      "meter": "codex-subscription-usage",
+      "reference_prices": [
+        {
+          "regime": "standard-api-short-context",
+          "currency": "USD",
+          "unit": "per_1m_tokens",
+          "not_active_for_this_realization": true,
+          "effective_at": "2026-08-08T08:12:22Z",
+          "prices": {
+            "input": 0.2,
+            "cached_input": 0.02,
+            "cache_write": 0.25,
+            "output": 1.2
+          },
+          "source_uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "long_context_pricing": {
+            "input_threshold_tokens": 272000,
+            "input_multiplier": 2.0,
+            "output_multiplier": 1.5,
+            "scope": "full API request when input exceeds the threshold"
+          }
+        }
+      ]
+    }
+  },
+  "configuration_fingerprint": "sha256:e12b95f9a7a4db1a58ae652bd33e33c5fc540896353d46b7767867a6b0c1d1e0",
+  "observation_interval": {
+    "start": "2026-08-20T17:25:23Z",
+    "end": "2026-08-20T22:15:49Z"
+  },
+  "lifecycle_state": "declared",
+  "source_refs": [
+    {
+      "source_id": "local-codex-0.148.0-luna-catalog-2026-08-20",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-debug-models-jq-luna-compact",
+      "observed_at": "2026-08-20T17:25:23Z",
+      "content_digest": "sha256:b92dbc71807eb3ad48663229cd6cf9e4ddce413fd659ca8207e73cb0870a792f",
+      "notes": "Codex CLI 0.148.0 exposes gpt-5.6-luna with max, context 272000, effective context 95 percent, API support, and multi-agent backend v1. This proves catalog compatibility only, not task fit or activation readiness."
+    },
+    {
+      "source_id": "local-codex-0.148.0-runtime-package-subject-2026-08-20",
+      "kind": "live_runtime_output",
+      "uri": "runtime:codex-cli-standalone/current",
+      "observed_at": "2026-08-20T22:15:49Z",
+      "content_digest": "sha256:35cc6b0e4e5c527569807be8017b705f410f0c6c2b7a3fa1c6a5407d65889041",
+      "notes": "Content digest covers the exact six-file standalone package tree, including codex, codex-code-mode-host, codex-package.json, rg, bwrap, and zsh. It identifies the observed runtime package subject; package admission and binding remain stronger-owner concerns."
+    },
+    {
+      "source_id": "openai-gpt-5.6-luna-model-2026-08-11",
+      "kind": "official_documentation",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "observed_at": "2026-08-11T02:09:22Z",
+      "content_digest": null,
+      "notes": "Provider capabilities and reference economics only; not AoA role-fit evidence."
+    }
+  ],
+  "created_at": "2026-08-20T17:25:23Z",
+  "updated_at": "2026-08-20T22:15:49Z"
+}

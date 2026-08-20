@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-fit-projection.schema.json",
+  "authority": {
+    "acceptance_authority": false,
+    "activation_authority": false,
+    "informational_only": true,
+    "proof_authority": false
+  },
+  "consumers": [
+    "aoa-agents",
+    "aoa-sdk",
+    "abyss-stack"
+  ],
+  "effect_family": "read",
+  "freshness": {
+    "review_by": null,
+    "status": "current"
+  },
+  "generated_at": "2026-08-20T22:15:49Z",
+  "generated_from_claim_refs": [
+    "source/model-claims/luna-codex-0.148.0-currentness-nontransfer-hypothesis-v1.json"
+  ],
+  "kind": "ModelFitProjection",
+  "model_fit_projection_id": "model-fit-projection:openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write",
+  "must_not_claim": [
+    "routing or activation authority",
+    "proof or owner acceptance",
+    "task completion or target-owner acceptance",
+    "internal geometry or training lineage from behavior alone"
+  ],
+  "posture": "declared",
+  "schema_version": "aoa_model_fit_projection_v1",
+  "study_refs": [],
+  "subject_realization_ref": "source/model-realizations/openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json",
+  "task_fit": [
+    {
+      "claim_posture": "hypothesis",
+      "conditions": [
+        "the exact runtime_subject source and digest match the runtime binding, and the package plus required companions are artifact-admitted before launch",
+        "the selected realization, runtime profile, model slug, reasoning effort, permissions and tool profile match exactly",
+        "a new bounded real-work canary returns runtime receipts and separately reviewed evidence before any fit promotion",
+        "the live Codex catalog remains compatible with the same runtime subject at launch time"
+      ],
+      "escalation_required": true,
+      "exclusions": [
+        "transferring any Codex 0.147.0 task outcome, fit, reliability, handoff, wake, resume, or acceptance claim",
+        "using an ambient Codex catalog observation to establish currentness for another runtime subject",
+        "using catalog compatibility as activation, routing, process health, proof, or owner acceptance",
+        "claiming general Luna competence, autonomy, initiative, or evaluator authority",
+        "inferring closed-model internals or training lineage from runtime availability"
+      ],
+      "task_family": "structured-owner-duty-currentness"
+    }
+  ]
+}

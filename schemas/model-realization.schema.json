@@ -138,6 +138,9 @@
                 "null"
               ]
             },
+            "runtime_subject": {
+              "$ref": "https://schemas.aoa.local/models/runtime-subject.schema.json"
+            },
             "resume_surface": {
               "type": "string",
               "minLength": 1

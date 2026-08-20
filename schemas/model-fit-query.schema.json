@@ -18,6 +18,9 @@
     "task_family": {"type": "string", "minLength": 1},
     "runtime_product": {"type": "string", "minLength": 1},
     "runtime_version": {"type": "string", "minLength": 1},
+    "runtime_subject": {
+      "$ref": "https://schemas.aoa.local/models/runtime-subject.schema.json"
+    },
     "reasoning_effort": {
       "type": ["string", "null"],
       "enum": [null, "low", "medium", "high", "xhigh", "max"]

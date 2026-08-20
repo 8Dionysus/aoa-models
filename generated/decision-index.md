@@ -5,3 +5,4 @@
 - [AOA-MODELS-D-0001 - Own configuration-scoped model knowledge in a separate organ](../docs/decisions/AOA-MODELS-D-0001-own-configuration-scoped-model-knowledge.md) - 2026-08-01; `accepted-owner-local`
 - [AOA-MODELS-D-0002 - Bind fit consumption to live realizations](../docs/decisions/AOA-MODELS-D-0002-bind-fit-consumption-to-live-realizations.md) - 2026-08-08; `accepted-owner-source`
 - [AOA-MODELS-D-0003 - Content-address fit query returns](../docs/decisions/AOA-MODELS-D-0003-content-address-fit-query-returns.md) - 2026-08-10; `accepted-owner-source`
+- [AOA-MODELS-D-0004 - Bind currentness to an exact runtime subject](../docs/decisions/AOA-MODELS-D-0004-runtime-subject-currentness.md) - 2026-08-20; `accepted-owner-source`

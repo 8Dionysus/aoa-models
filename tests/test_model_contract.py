@@ -12,6 +12,12 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+RUNTIME_SUBJECT = {
+    "kind": "content_addressed_runtime_package",
+    "source": "codex-cli-standalone/x86_64-unknown-linux-musl+codex-code-mode-host",
+    "digest": "sha256:35cc6b0e4e5c527569807be8017b705f410f0c6c2b7a3fa1c6a5407d65889041",
+}
+
 from build_model_fit_projections import build_expected  # noqa: E402
 from check_live_codex_catalog import check_catalog  # noqa: E402
 from model_contract import canonical_fingerprint, validate_repo  # noqa: E402
@@ -191,6 +197,7 @@ class ModelContractTests(unittest.TestCase):
         path = fixture / realization_ref
         realization = json.loads(path.read_text(encoding="utf-8"))
         realization["configuration"]["runtime"]["version"] = "0.148.0"
+        realization["configuration"]["runtime"]["runtime_subject"] = RUNTIME_SUBJECT
         realization["lifecycle_state"] = "declared"
         realization["observation_interval"]["end"] = None
         realization.pop("lifecycle_transition", None)
@@ -218,6 +225,7 @@ class ModelContractTests(unittest.TestCase):
             catalog,
             "codex-cli 0.148.0",
             (realization_ref,),
+            RUNTIME_SUBJECT,
         )
 
         self.assertTrue(ok)
@@ -236,6 +244,7 @@ class ModelContractTests(unittest.TestCase):
         )
         path = fixture / realization_ref
         realization = json.loads(path.read_text(encoding="utf-8"))
+        realization["configuration"]["runtime"]["runtime_subject"] = RUNTIME_SUBJECT
         realization["lifecycle_state"] = "declared"
         path.write_text(json.dumps(realization, indent=2) + "\n", encoding="utf-8")
         catalog = {
@@ -253,7 +262,12 @@ class ModelContractTests(unittest.TestCase):
             ]
         }
 
-        result, ok = check_catalog(fixture, catalog, "codex-cli 0.148.0")
+        result, ok = check_catalog(
+            fixture,
+            catalog,
+            "codex-cli 0.148.0",
+            runtime_subject=RUNTIME_SUBJECT,
+        )
 
         self.assertFalse(ok)
         self.assertEqual(result["active_mismatches"], [realization_ref])
@@ -267,6 +281,7 @@ class ModelContractTests(unittest.TestCase):
             "task_family": "landing",
             "runtime_product": "codex-cli",
             "runtime_version": "0.147.0",
+            "runtime_subject": RUNTIME_SUBJECT,
             "reasoning_effort": "xhigh",
             "sandbox_mode": "workspace-write",
             "required_tools": ["shell-read", "workspace-write"],
@@ -315,6 +330,7 @@ class ModelContractTests(unittest.TestCase):
             "task_family": "eval-review",
             "runtime_product": "codex-cli",
             "runtime_version": "0.147.0",
+            "runtime_subject": RUNTIME_SUBJECT,
             "reasoning_effort": "xhigh",
             "sandbox_mode": "read-only",
             "required_tools": ["shell-read"],
@@ -344,6 +360,7 @@ class ModelContractTests(unittest.TestCase):
                     "task_family": task_family,
                     "runtime_product": "codex-cli",
                     "runtime_version": "0.147.0",
+                    "runtime_subject": RUNTIME_SUBJECT,
                     "reasoning_effort": "xhigh",
                     "sandbox_mode": "workspace-write",
                     "required_tools": ["shell-read", "workspace-write"],
@@ -366,6 +383,7 @@ class ModelContractTests(unittest.TestCase):
             "task_family": "landing_preparation",
             "runtime_product": "codex-cli",
             "runtime_version": "0.147.0",
+            "runtime_subject": RUNTIME_SUBJECT,
             "reasoning_effort": "xhigh",
             "sandbox_mode": "workspace-write",
             "required_tools": ["shell-read", "workspace-write"],
@@ -396,6 +414,7 @@ class ModelContractTests(unittest.TestCase):
             "task_family": "landing",
             "runtime_product": "codex-cli",
             "runtime_version": "0.147.0",
+            "runtime_subject": RUNTIME_SUBJECT,
             "reasoning_effort": "xhigh",
             "sandbox_mode": "workspace-write",
             "required_tools": ["shell-read", "workspace-write"],
@@ -404,6 +423,137 @@ class ModelContractTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ModelFitQueryError, "fit evidence is dirty"):
             query_model_fit(fixture, query)
+
+    def test_query_requires_exact_runtime_subject(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
+        query = {
+            "schema_version": "aoa_model_fit_query_v1",
+            "task_family": "structured-owner-duty-currentness",
+            "runtime_product": "codex-cli",
+            "runtime_version": "0.148.0",
+            "reasoning_effort": "max",
+            "sandbox_mode": "workspace-write",
+            "required_tools": ["shell-read", "workspace-write"],
+            "required_mcp_servers": [],
+        }
+
+        with self.assertRaisesRegex(ModelFitQueryError, "exact runtime subject identity"):
+            query_model_fit(fixture, query)
+
+    def test_same_version_different_runtime_subject_returns_no_candidate(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
+        query = {
+            "schema_version": "aoa_model_fit_query_v1",
+            "task_family": "structured-owner-duty-currentness",
+            "runtime_product": "codex-cli",
+            "runtime_version": "0.148.0",
+            "runtime_subject": {
+                **RUNTIME_SUBJECT,
+                "digest": "sha256:" + "1" * 64,
+            },
+            "reasoning_effort": "max",
+            "sandbox_mode": "workspace-write",
+            "required_tools": ["shell-read", "workspace-write"],
+            "required_mcp_servers": [],
+        }
+
+        result = query_model_fit(fixture, query)
+
+        self.assertEqual(result["candidate_count"], 0)
+        self.assertEqual(result["candidates"], [])
+        assert_query_result_digest(result)
+        validate_query_result(fixture, result)
+
+    def test_matching_runtime_subject_is_returned_with_candidate(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
+        query = {
+            "schema_version": "aoa_model_fit_query_v1",
+            "task_family": "structured-owner-duty-currentness",
+            "runtime_product": "codex-cli",
+            "runtime_version": "0.148.0",
+            "runtime_subject": RUNTIME_SUBJECT,
+            "reasoning_effort": "max",
+            "sandbox_mode": "workspace-write",
+            "required_tools": ["shell-read", "workspace-write"],
+            "required_mcp_servers": [],
+        }
+
+        result = query_model_fit(fixture, query)
+
+        self.assertEqual(result["candidate_count"], 1)
+        self.assertEqual(result["candidates"][0]["runtime_subject"], RUNTIME_SUBJECT)
+
+    def test_catalog_rejects_same_version_different_runtime_subject(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        self.init_fixture_git(fixture)
+        realization_ref = (
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json"
+        )
+        catalog = {
+            "models": [
+                {
+                    "slug": "gpt-5.6-luna",
+                    "supported_reasoning_levels": [
+                        {"effort": effort} for effort in ("low", "medium", "high", "xhigh", "max")
+                    ],
+                    "context_window": 272000,
+                    "effective_context_window_percent": 95,
+                    "multi_agent_version": "v1",
+                    "supported_in_api": True,
+                }
+            ]
+        }
+
+        result, ok = check_catalog(
+            fixture,
+            catalog,
+            "codex-cli 0.148.0",
+            (realization_ref,),
+            {**RUNTIME_SUBJECT, "digest": "sha256:" + "2" * 64},
+        )
+
+        self.assertFalse(ok)
+        self.assertIn(realization_ref, result["active_mismatches"])
+
+    def test_active_realization_requires_runtime_subject(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        path = fixture / (
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json"
+        )
+        realization = json.loads(path.read_text(encoding="utf-8"))
+        del realization["configuration"]["runtime"]["runtime_subject"]
+        path.write_text(json.dumps(realization, indent=2) + "\n", encoding="utf-8")
+
+        issues = validate_repo(fixture)
+
+        self.assertTrue(any("active realization requires an exact runtime_subject" in issue for issue in issues))
+
+    def test_runtime_subject_digest_requires_source_evidence(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        path = fixture / (
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json"
+        )
+        realization = json.loads(path.read_text(encoding="utf-8"))
+        realization["configuration"]["runtime"]["runtime_subject"]["digest"] = (
+            "sha256:" + "3" * 64
+        )
+        path.write_text(json.dumps(realization, indent=2) + "\n", encoding="utf-8")
+
+        issues = validate_repo(fixture)
+
+        self.assertTrue(any("runtime_subject digest is not backed" in issue for issue in issues))
 
 
 if __name__ == "__main__":
