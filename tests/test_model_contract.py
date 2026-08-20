@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_model_fit_projections import build_expected  # noqa: E402
 from check_live_codex_catalog import check_catalog  # noqa: E402
-from model_contract import validate_repo  # noqa: E402
+from model_contract import canonical_fingerprint, validate_repo  # noqa: E402
 from query_model_fit import (  # noqa: E402
     ModelFitQueryError,
     assert_query_result_digest,
@@ -69,9 +69,13 @@ class ModelContractTests(unittest.TestCase):
 
     def test_projection_builder_matches_files(self) -> None:
         expected = build_expected(ROOT)
-        self.assertTrue(expected)
+        actual = {
+            path.relative_to(ROOT).as_posix(): path.read_text(encoding="utf-8")
+            for path in (ROOT / "generated/model-fit-projections").glob("*.json")
+        }
+        self.assertEqual(set(expected), set(actual))
         for relative, content in expected.items():
-            self.assertEqual((ROOT / relative).read_text(encoding="utf-8"), content)
+            self.assertEqual(actual[relative], content)
 
     def test_configuration_fingerprint_is_enforced(self) -> None:
         temporary, fixture = self.make_fixture()
@@ -128,7 +132,7 @@ class ModelContractTests(unittest.TestCase):
         )
         path.write_text(json.dumps(claim, indent=2) + "\n", encoding="utf-8")
         issues = validate_repo(fixture)
-        self.assertTrue(any("does not continue from hypothesis" in issue for issue in issues))
+        self.assertTrue(any("does not continue from stale" in issue for issue in issues))
 
     def test_generated_projection_has_no_activation_or_acceptance_authority(self) -> None:
         for path in (ROOT / "generated/model-fit-projections").glob("*.json"):
@@ -165,6 +169,10 @@ class ModelContractTests(unittest.TestCase):
         claim["subject_realization_refs"][0] = (
             "source/model-realizations/openai-gpt-5.6-luna-codex-0.146.0-chatgpt-max-readonly.json"
         )
+        claim["freshness"]["status"] = "current"
+        claim["freshness"]["review_by"] = "2099-01-01T00:00:00Z"
+        claim["lifecycle"]["state"] = "hypothesis"
+        claim["lifecycle"]["history"] = claim["lifecycle"]["history"][:1]
         path.write_text(json.dumps(claim, indent=2) + "\n", encoding="utf-8")
 
         issues = validate_repo(fixture)
@@ -178,6 +186,18 @@ class ModelContractTests(unittest.TestCase):
             "source/model-realizations/"
             "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-workspace-write.json"
         )
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        path = fixture / realization_ref
+        realization = json.loads(path.read_text(encoding="utf-8"))
+        realization["configuration"]["runtime"]["version"] = "0.148.0"
+        realization["lifecycle_state"] = "declared"
+        realization["observation_interval"]["end"] = None
+        realization.pop("lifecycle_transition", None)
+        realization["configuration_fingerprint"] = canonical_fingerprint(
+            realization["configuration"]
+        )
+        path.write_text(json.dumps(realization, indent=2) + "\n", encoding="utf-8")
         catalog = {
             "models": [
                 {
@@ -194,9 +214,9 @@ class ModelContractTests(unittest.TestCase):
         }
 
         result, ok = check_catalog(
-            ROOT,
+            fixture,
             catalog,
-            "codex-cli 0.147.0",
+            "codex-cli 0.148.0",
             (realization_ref,),
         )
 
@@ -208,6 +228,16 @@ class ModelContractTests(unittest.TestCase):
         self.assertEqual(assessment["currentness"], "current")
 
     def test_live_codex_catalog_rejects_active_version_drift(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        realization_ref = (
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-workspace-write.json"
+        )
+        path = fixture / realization_ref
+        realization = json.loads(path.read_text(encoding="utf-8"))
+        realization["lifecycle_state"] = "declared"
+        path.write_text(json.dumps(realization, indent=2) + "\n", encoding="utf-8")
         catalog = {
             "models": [
                 {
@@ -223,12 +253,12 @@ class ModelContractTests(unittest.TestCase):
             ]
         }
 
-        result, ok = check_catalog(ROOT, catalog, "codex-cli 0.148.0")
+        result, ok = check_catalog(fixture, catalog, "codex-cli 0.148.0")
 
         self.assertFalse(ok)
-        self.assertEqual(len(result["active_mismatches"]), 7)
+        self.assertEqual(result["active_mismatches"], [realization_ref])
 
-    def test_property_query_returns_informational_current_candidate(self) -> None:
+    def test_property_query_returns_no_candidate_when_runtime_line_is_stale(self) -> None:
         temporary, fixture = self.make_fixture()
         self.addCleanup(temporary.cleanup)
         self.init_fixture_git(fixture)
@@ -246,35 +276,8 @@ class ModelContractTests(unittest.TestCase):
         result = query_model_fit(fixture, query)
 
         self.assertEqual(result["schema_version"], "aoa_model_fit_query_result_v2")
-        self.assertEqual(result["candidate_count"], 1)
-        candidate = result["candidates"][0]
-        self.assertEqual(candidate["model_slug"], "gpt-5.6-luna")
-        self.assertEqual(
-            candidate["realization_ref"],
-            "source/model-realizations/"
-            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-workspace-write.json",
-        )
-        self.assertEqual(
-            candidate["realization_provenance"]["artifact_ref"],
-            candidate["realization_ref"],
-        )
-        self.assertEqual(
-            candidate["projection_provenance"]["artifact_ref"],
-            candidate["projection_ref"],
-        )
-        self.assertTrue(candidate["fit_evidence_refs"])
-        self.assertTrue(
-            all(
-                item["owner_repo"] == "aoa-models"
-                and item["source_ref"] == result["owner_source_ref"]
-                and item["artifact_digest"].startswith("sha256:")
-                for item in (
-                    candidate["realization_provenance"],
-                    candidate["projection_provenance"],
-                    *candidate["fit_evidence_refs"],
-                )
-            )
-        )
+        self.assertEqual(result["candidate_count"], 0)
+        self.assertEqual(result["candidates"], [])
         self.assertTrue(result["authority"]["informational_only"])
         self.assertFalse(result["authority"]["activation_authority"])
         self.assertFalse(result["authority"]["routing_authority"])
@@ -284,7 +287,7 @@ class ModelContractTests(unittest.TestCase):
         assert_query_result_digest(result)
         validate_query_result(ROOT, result)
 
-        result["candidate_count"] = 0
+        result["candidate_count"] = 1
         with self.assertRaisesRegex(ModelFitQueryError, "digest mismatch"):
             assert_query_result_digest(result)
 
@@ -307,18 +310,6 @@ class ModelContractTests(unittest.TestCase):
             configuration["environment"]["role_profile_ref"],
             "aoa-agents:task-local-selected-role-chain",
         )
-        landing_projection = json.loads(
-            (
-                ROOT
-                / "generated/model-fit-projections/"
-                "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-readonly.json"
-            ).read_text(encoding="utf-8")
-        )
-        self.assertNotIn(
-            "eval-review",
-            {item["task_family"] for item in landing_projection["task_fit"]},
-        )
-
         query = {
             "schema_version": "aoa_model_fit_query_v1",
             "task_family": "eval-review",
@@ -335,24 +326,8 @@ class ModelContractTests(unittest.TestCase):
         self.init_fixture_git(fixture)
         result = query_model_fit(fixture, query)
 
-        self.assertEqual(result["candidate_count"], 1)
-        candidate = result["candidates"][0]
-        self.assertEqual(candidate["model_slug"], "gpt-5.6-luna")
-        self.assertEqual(candidate["reasoning_effort"], "xhigh")
-        self.assertEqual(candidate["sandbox_mode"], "read-only")
-        self.assertEqual(
-            candidate["realization_ref"],
-            "source/model-realizations/"
-            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-"
-            "eval-reader-readonly.json",
-        )
-        task_fit = next(
-            item
-            for item in candidate["task_fit"]
-            if item["task_family"] == "eval-review"
-        )
-        self.assertEqual(task_fit["claim_posture"], "hypothesis")
-        self.assertTrue(task_fit["escalation_required"])
+        self.assertEqual(result["candidate_count"], 0)
+        self.assertEqual(result["candidates"], [])
         self.assertTrue(result["authority"]["informational_only"])
         self.assertFalse(result["authority"]["activation_authority"])
         assert_query_result_digest(result)
@@ -362,12 +337,6 @@ class ModelContractTests(unittest.TestCase):
         temporary, fixture = self.make_fixture()
         self.addCleanup(temporary.cleanup)
         self.init_fixture_git(fixture)
-        expected_ref = (
-            "source/model-realizations/"
-            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-"
-            "structured-owner-duty-workspace-write.json"
-        )
-
         for task_family in ("eval", "stats", "memo"):
             with self.subTest(task_family=task_family):
                 query = {
@@ -383,17 +352,8 @@ class ModelContractTests(unittest.TestCase):
 
                 result = query_model_fit(fixture, query)
 
-                self.assertEqual(result["candidate_count"], 1)
-                candidate = result["candidates"][0]
-                self.assertEqual(candidate["realization_ref"], expected_ref)
-                self.assertEqual(candidate["projection_posture"], "declared")
-                self.assertEqual(len(candidate["task_fit"]), 1)
-                self.assertEqual(candidate["task_fit"][0]["task_family"], task_family)
-                self.assertEqual(candidate["task_fit"][0]["claim_posture"], "hypothesis")
-                self.assertTrue(candidate["task_fit"][0]["escalation_required"])
-                self.assertTrue(
-                    any("not reviewed" in limitation for limitation in candidate["limitations"])
-                )
+                self.assertEqual(result["candidate_count"], 0)
+                self.assertEqual(result["candidates"], [])
                 assert_query_result_digest(result)
                 validate_query_result(fixture, result)
 

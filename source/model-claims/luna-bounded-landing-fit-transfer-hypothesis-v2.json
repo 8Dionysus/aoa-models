@@ -78,12 +78,20 @@
       "observed_at": "2026-08-15T10:45:00Z",
       "content_digest": "sha256:99f6d3d8da040b2324fb426ee753f1abc790d0313dfefbe1175cc0d7d3e1c644",
       "notes": "Owner-source eval selection keeps the current model-work review bounded and separate from landing-fit transfer."
+    },
+    {
+      "source_id": "local-codex-version-transition-2026-08-20",
+      "kind": "live_runtime_output",
+      "uri": "command:codex-version-and-debug-models",
+      "observed_at": "2026-08-20T09:23:27Z",
+      "content_digest": "sha256:11d081a3213a02aca4b23149aa8e24d12114eda46297ef17160b1e8b5844d60d",
+      "notes": "Installed Codex CLI is 0.148.0, so the subject 0.147.0 realization is stale. This closes currentness only and does not establish replacement fit."
     }
   ],
   "confidence_posture": "hypothesis",
   "observation_interval": {
     "start": "2026-08-08T08:12:22Z",
-    "end": null
+    "end": "2026-08-20T09:23:27Z"
   },
   "known_counterevidence": [
     {
@@ -96,12 +104,12 @@
     }
   ],
   "freshness": {
-    "status": "current",
-    "review_by": "2026-08-22T00:00:00Z",
-    "policy": "Current only as a reviewed-but-unpromoted Codex 0.147.0 transfer hypothesis. The Max structured-owner-duty review is a separate eval/model record; a real external landing regression must still strengthen, narrow, weaken, stale, or retract this transfer hypothesis before operational admission."
+    "status": "stale",
+    "review_by": null,
+    "policy": "The bounded landing-transfer hypothesis is preserved as historical input; its Codex 0.147.0 realizations became stale on the 0.148.0 runtime transition, and a future 0.148.0 regression must re-establish currentness before fit is considered."
   },
   "lifecycle": {
-    "state": "hypothesis",
+    "state": "stale",
     "history": [
       {
         "from": null,
@@ -112,6 +120,13 @@
           "codex-0.146.0-bounded-landing-fit-claim",
           "local-codex-model-catalog-luna-2026-08-08"
         ]
+      },
+      {
+        "from": "hypothesis",
+        "to": "stale",
+        "at": "2026-08-20T09:23:27Z",
+        "reason": "The exact Codex 0.147.0 realizations became stale when the installed Codex CLI advanced to 0.148.0. The bounded transfer hypothesis is retained, but no replacement 0.148.0 fit or landing evidence is admitted by this transition.",
+        "evidence_refs": ["local-codex-version-transition-2026-08-20"]
       }
     ],
     "superseded_by": null
@@ -125,5 +140,5 @@
     "No behavioral result may be used to infer closed-model internal geometry or training lineage."
   ],
   "created_at": "2026-08-08T08:12:22Z",
-  "updated_at": "2026-08-15T11:00:23Z"
+  "updated_at": "2026-08-20T09:23:27Z"
 }
