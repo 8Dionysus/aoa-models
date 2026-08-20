@@ -15,7 +15,11 @@ from typing import Any
 from jsonschema import Draft202012Validator, FormatChecker
 from referencing import Registry, Resource
 
-from model_contract import DEFAULT_ROOT, load_json
+from model_contract import (
+    DEFAULT_ROOT,
+    load_json,
+    runtime_subject_validation_errors,
+)
 
 
 ACTIVE_REALIZATION_STATES = {"declared", "observed"}
@@ -127,8 +131,12 @@ def _catalog_paths(root: Path, directories: tuple[str, ...]) -> set[str]:
 
 def _validate_query(root: Path, query: dict[str, Any]) -> None:
     schema = load_json(root / "schemas/model-fit-query.schema.json")
+    runtime_subject_schema = load_json(root / "schemas/runtime-subject.schema.json")
     Draft202012Validator(
         schema,
+        registry=Registry().with_resource(
+            runtime_subject_schema["$id"], Resource.from_contents(runtime_subject_schema)
+        ),
         format_checker=FormatChecker(),
     ).validate(query)
 
@@ -136,7 +144,12 @@ def _validate_query(root: Path, query: dict[str, Any]) -> None:
 def validate_query_result(root: Path, result: dict[str, Any]) -> None:
     query_schema = load_json(root / "schemas/model-fit-query.schema.json")
     result_schema = load_json(root / "schemas/model-fit-query-result.schema.json")
-    registry = Registry().with_resource(query_schema["$id"], Resource.from_contents(query_schema))
+    runtime_subject_schema = load_json(root / "schemas/runtime-subject.schema.json")
+    registry = (
+        Registry()
+        .with_resource(query_schema["$id"], Resource.from_contents(query_schema))
+        .with_resource(runtime_subject_schema["$id"], Resource.from_contents(runtime_subject_schema))
+    )
     Draft202012Validator(
         result_schema,
         registry=registry,
@@ -154,6 +167,11 @@ def _load_by_relative_path(root: Path, directory: str) -> dict[str, dict[str, An
 def query_model_fit(root: Path, query: dict[str, Any]) -> dict[str, Any]:
     root = root.resolve()
     _validate_query(root, query)
+    subject_errors = runtime_subject_validation_errors(root, query.get("runtime_subject"))
+    if subject_errors:
+        raise ModelFitQueryError(
+            "exact runtime subject identity is required: " + "; ".join(subject_errors)
+        )
     source_ref = _owner_source_ref(root)
     realizations = _load_by_relative_path(root, "source/model-realizations")
     projections = _load_by_relative_path(root, "generated/model-fit-projections")
@@ -178,6 +196,10 @@ def query_model_fit(root: Path, query: dict[str, Any]) -> dict[str, Any]:
         runtime = configuration["runtime"]
         tools = configuration["tools"]
         permissions = configuration["permissions"]
+
+        realization_subject = runtime.get("runtime_subject")
+        if realization_subject != query["runtime_subject"]:
+            continue
         if runtime["product"] != query["runtime_product"]:
             continue
         if runtime["version"] != query["runtime_version"]:
@@ -238,6 +260,7 @@ def query_model_fit(root: Path, query: dict[str, Any]) -> dict[str, Any]:
             {
                 "realization_ref": realization_ref,
                 "projection_ref": projection_ref,
+                "runtime_subject": realization_subject,
                 "realization_provenance": _provenance_ref(
                     root,
                     realization_ref,
@@ -308,6 +331,9 @@ def main() -> int:
     parser.add_argument("--task-family", required=True)
     parser.add_argument("--runtime-product", default="codex-cli")
     parser.add_argument("--runtime-version", required=True)
+    parser.add_argument("--runtime-subject-source")
+    parser.add_argument("--runtime-subject-digest")
+    parser.add_argument("--runtime-subject-kind", default="content_addressed_runtime")
     parser.add_argument(
         "--reasoning-effort",
         choices=("low", "medium", "high", "xhigh", "max"),
@@ -332,6 +358,12 @@ def main() -> int:
         "required_tools": sorted(set(args.required_tool)),
         "required_mcp_servers": sorted(set(args.required_mcp_server)),
     }
+    if args.runtime_subject_source is not None or args.runtime_subject_digest is not None:
+        query["runtime_subject"] = {
+            "kind": args.runtime_subject_kind,
+            "source": args.runtime_subject_source,
+            "digest": args.runtime_subject_digest,
+        }
     result = query_model_fit(args.root, query)
     json.dump(result, sys.stdout, ensure_ascii=False, indent=2, sort_keys=True)
     sys.stdout.write("\n")

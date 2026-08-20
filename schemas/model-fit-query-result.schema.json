@@ -51,6 +51,9 @@
         "properties": {
           "realization_ref": {"type": "string", "minLength": 1},
           "projection_ref": {"type": "string", "minLength": 1},
+          "runtime_subject": {
+            "$ref": "https://schemas.aoa.local/models/runtime-subject.schema.json"
+          },
           "realization_provenance": {"$ref": "#/$defs/provenanceRef"},
           "projection_provenance": {"$ref": "#/$defs/provenanceRef"},
           "fit_evidence_refs": {

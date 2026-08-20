@@ -11,7 +11,7 @@ import subprocess
 import sys
 from typing import Any
 
-from model_contract import DEFAULT_ROOT, load_json
+from model_contract import DEFAULT_ROOT, load_json, runtime_subject_validation_errors
 
 
 ACTIVE_REALIZATION_STATES = {"declared", "observed"}
@@ -40,6 +40,8 @@ def assess_realization(
     realization: dict[str, Any],
     codex_version: str,
     models_by_slug: dict[str, dict[str, Any]],
+    runtime_subject: dict[str, Any] | None = None,
+    root: Path | None = None,
 ) -> dict[str, Any]:
     configuration = realization["configuration"]
     runtime = configuration["runtime"]
@@ -54,6 +56,21 @@ def assess_realization(
         mismatches.append(
             f"runtime version {runtime['version']!r} differs from live {codex_version!r}"
         )
+    expected_subject = runtime.get("runtime_subject")
+    expected_subject_errors = (
+        runtime_subject_validation_errors(root, expected_subject)
+        if root is not None
+        else []
+    )
+    if expected_subject_errors or not isinstance(expected_subject, dict):
+        mismatches.append(
+            "realization has no valid exact runtime subject identity"
+            + (": " + "; ".join(expected_subject_errors) if expected_subject_errors else "")
+        )
+    elif runtime_subject is None:
+        mismatches.append("live exact runtime subject identity was not supplied")
+    elif expected_subject != runtime_subject:
+        mismatches.append("live runtime subject identity differs from the realization")
     if model is None:
         mismatches.append(f"model slug {model_slug!r} is absent from the live catalog")
     else:
@@ -106,10 +123,16 @@ def check_catalog(
     catalog: dict[str, Any],
     codex_version_output: str,
     required_realization_refs: tuple[str, ...] = (),
+    runtime_subject: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], bool]:
     root = root.resolve()
     codex_version = _normalized_codex_version(codex_version_output)
     models_by_slug = _catalog_models(catalog)
+    subject_errors = (
+        runtime_subject_validation_errors(root, runtime_subject)
+        if runtime_subject is not None
+        else []
+    )
     assessments = []
     for path in sorted((root / "source/model-realizations").glob("*.json")):
         realization_ref = path.relative_to(root).as_posix()
@@ -119,6 +142,8 @@ def check_catalog(
                 load_json(path),
                 codex_version,
                 models_by_slug,
+                runtime_subject,
+                root,
             )
         )
 
@@ -133,10 +158,12 @@ def check_catalog(
         for item in assessments
         if item["currentness"] == "active_mismatch"
     ]
-    ok = not required_failures and not active_mismatches
+    ok = not subject_errors and not required_failures and not active_mismatches
     result = {
         "schema_version": "aoa_models_live_codex_catalog_check_v1",
         "codex_version": codex_version,
+        "runtime_subject": runtime_subject,
+        "runtime_subject_errors": subject_errors,
         "catalog_model_count": len(models_by_slug),
         "assessment_count": len(assessments),
         "assessments": assessments,
@@ -159,6 +186,9 @@ def main() -> int:
     parser.add_argument("--codex-version")
     parser.add_argument("--codex-executable", default="codex")
     parser.add_argument("--require-realization-ref", action="append", default=[])
+    parser.add_argument("--runtime-subject-source")
+    parser.add_argument("--runtime-subject-digest")
+    parser.add_argument("--runtime-subject-kind", default="content_addressed_runtime")
     args = parser.parse_args()
 
     if args.catalog:
@@ -187,6 +217,15 @@ def main() -> int:
         catalog,
         version_output,
         tuple(args.require_realization_ref),
+        (
+            {
+                "kind": args.runtime_subject_kind,
+                "source": args.runtime_subject_source,
+                "digest": args.runtime_subject_digest,
+            }
+            if args.runtime_subject_source is not None or args.runtime_subject_digest is not None
+            else None
+        ),
     )
     json.dump(result, sys.stdout, ensure_ascii=False, indent=2, sort_keys=True)
     sys.stdout.write("\n")

@@ -6,17 +6,18 @@
   "subject_realization_refs": [
     "source/model-realizations/openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json"
   ],
-  "statement": "The exact Codex 0.148.0 Luna max structured-owner-duty realization is live-catalog compatible and may enter a new bounded canary, but no behavioral fit, reliability, wake delivery, or owner-acceptance evidence transfers from a Codex 0.147.0 realization.",
+  "statement": "The exact content-addressed runtime subject for the Codex 0.148.0 Luna max structured-owner-duty realization is compatible with the observed live catalog and may enter a new bounded canary, but ambient catalog facts or evidence from another runtime subject do not transfer behavioral fit, reliability, wake delivery, or owner acceptance.",
   "scope": {
     "task_family": "structured-owner-duty-currentness",
     "conditions": [
-      "the exact Codex 0.148.0 runtime package and its required companions are artifact-admitted before launch",
+      "the exact runtime_subject source and digest match the runtime binding, and the package plus required companions are artifact-admitted before launch",
       "the selected realization, runtime profile, model slug, reasoning effort, permissions and tool profile match exactly",
       "a new bounded real-work canary returns runtime receipts and separately reviewed evidence before any fit promotion",
-      "the live Codex catalog remains compatible with the realization at launch time"
+      "the live Codex catalog remains compatible with the same runtime subject at launch time"
     ],
     "exclusions": [
       "transferring any Codex 0.147.0 task outcome, fit, reliability, handoff, wake, resume, or acceptance claim",
+      "using an ambient Codex catalog observation to establish currentness for another runtime subject",
       "using catalog compatibility as activation, routing, process health, proof, or owner acceptance",
       "claiming general Luna competence, autonomy, initiative, or evaluator authority",
       "inferring closed-model internals or training lineage from runtime availability"
@@ -33,6 +34,14 @@
       "notes": "Confirms exact 0.148.0 catalog compatibility for Luna max; it does not execute the realization or prove task fit."
     },
     {
+      "source_id": "local-codex-0.148.0-runtime-package-subject-2026-08-20",
+      "kind": "live_runtime_output",
+      "uri": "runtime:codex-cli-standalone/current",
+      "observed_at": "2026-08-20T22:15:49Z",
+      "content_digest": "sha256:35cc6b0e4e5c527569807be8017b705f410f0c6c2b7a3fa1c6a5407d65889041",
+      "notes": "Binds the realization to one exact package subject; an equal version with another source or digest is not the same currentness subject."
+    },
+    {
       "source_id": "luna-max-0.147.0-structured-owner-duty-stale-source",
       "kind": "repository_source",
       "uri": "repo:aoa-models@ffed04f#source/model-claims/luna-bounded-eval-role-fit-max-structured-owner-duty-hypothesis-v1.json",
@@ -44,7 +53,7 @@
   "confidence_posture": "hypothesis",
   "observation_interval": {
     "start": "2026-08-20T17:25:23Z",
-    "end": "2026-08-20T17:25:23Z"
+    "end": "2026-08-20T22:15:49Z"
   },
   "known_counterevidence": [
     {
@@ -68,9 +77,10 @@
         "from": null,
         "to": "hypothesis",
         "at": "2026-08-20T17:25:23Z",
-        "reason": "A fresh 0.148.0 catalog observation establishes only realization currentness, while the previous 0.147.0 owner-duty hypothesis and evidence are stale by exact-runtime identity.",
+        "reason": "A fresh catalog observation plus an exact runtime_subject package digest establishes currentness only for this subject; the previous 0.147.0 owner-duty hypothesis and evidence are stale by exact-runtime identity.",
         "evidence_refs": [
           "local-codex-0.148.0-luna-catalog-2026-08-20",
+          "local-codex-0.148.0-runtime-package-subject-2026-08-20",
           "luna-max-0.147.0-structured-owner-duty-stale-source"
         ]
       }
@@ -79,11 +89,12 @@
   },
   "independent_review_refs": [],
   "attribution_limits": [
-    "The live catalog proves availability and declared configuration compatibility only.",
+    "The live catalog proves availability and declared configuration compatibility only for the matching runtime_subject.",
+    "A version match without an exact runtime_subject source and digest is insufficient currentness evidence.",
     "The new realization has not yet completed a real task through the repaired external actor route.",
     "No 0.147.0 execution receipt, review, wake, or fit conclusion is attributed to the 0.148.0 realization.",
     "Runtime package admission, process truth, wake delivery, proof, routing, and owner acceptance remain with their stronger owners."
   ],
   "created_at": "2026-08-20T17:25:23Z",
-  "updated_at": "2026-08-20T17:25:23Z"
+  "updated_at": "2026-08-20T22:15:49Z"
 }

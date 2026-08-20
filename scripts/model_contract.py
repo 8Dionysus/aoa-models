@@ -24,6 +24,8 @@ RECORD_ROUTES = {
     Path("generated/model-fit-projections"): "model-fit-projection.schema.json",
 }
 
+REQUIRED_SCHEMA_FILES = {*RECORD_ROUTES.values(), "runtime-subject.schema.json"}
+
 ID_FIELDS = {
     "ModelIdentity": "model_identity_id",
     "ModelRealization": "model_realization_id",
@@ -45,6 +47,21 @@ ALLOWED_TRANSITIONS: dict[str, set[str]] = {
 
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def runtime_subject_validation_errors(root: Path, subject: Any) -> list[str]:
+    """Return schema errors for one exact runtime subject identity."""
+    if not isinstance(subject, dict):
+        return ["runtime subject must be an object"]
+    schema_path = root / "schemas/runtime-subject.schema.json"
+    if not schema_path.is_file():
+        return ["runtime subject schema is missing"]
+    schema = load_json(schema_path)
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    return [
+        error.message
+        for error in sorted(validator.iter_errors(subject), key=lambda item: list(item.path))
+    ]
 
 
 def canonical_fingerprint(configuration: dict[str, Any]) -> str:
@@ -282,7 +299,7 @@ def validate_repo(root: Path = DEFAULT_ROOT) -> list[str]:
         schemas, registry = _schema_registry(root)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         return [f"schemas: {exc}"]
-    for required_schema in RECORD_ROUTES.values():
+    for required_schema in sorted(REQUIRED_SCHEMA_FILES):
         if required_schema not in schemas:
             issues.append(f"schemas/{required_schema}: required schema is missing")
 
@@ -382,6 +399,28 @@ def validate_repo(root: Path = DEFAULT_ROOT) -> list[str]:
                 f"{rel}: native API context cannot be smaller than the recorded Codex context"
             )
         lifecycle_state = realization.get("lifecycle_state")
+        runtime_subject = (
+            realization.get("configuration", {})
+            .get("runtime", {})
+            .get("runtime_subject")
+        )
+        if lifecycle_state in {"declared", "observed"}:
+            subject_errors = runtime_subject_validation_errors(root, runtime_subject)
+            if subject_errors:
+                issues.append(
+                    f"{rel}: active realization requires an exact runtime_subject identity: "
+                    + "; ".join(subject_errors)
+                )
+            else:
+                evidence_digests = {
+                    ref.get("content_digest")
+                    for ref in realization.get("source_refs", [])
+                    if isinstance(ref, dict)
+                }
+                if runtime_subject["digest"] not in evidence_digests:
+                    issues.append(
+                        f"{rel}: runtime_subject digest is not backed by a source_ref content_digest"
+                    )
         transition = realization.get("lifecycle_transition")
         if lifecycle_state in {"suspended", "stale", "retired"}:
             if not isinstance(transition, dict):

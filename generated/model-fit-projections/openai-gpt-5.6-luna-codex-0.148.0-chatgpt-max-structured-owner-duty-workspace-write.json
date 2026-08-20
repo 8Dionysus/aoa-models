@@ -16,7 +16,7 @@
     "review_by": null,
     "status": "current"
   },
-  "generated_at": "2026-08-20T17:25:23Z",
+  "generated_at": "2026-08-20T22:15:49Z",
   "generated_from_claim_refs": [
     "source/model-claims/luna-codex-0.148.0-currentness-nontransfer-hypothesis-v1.json"
   ],
@@ -36,14 +36,15 @@
     {
       "claim_posture": "hypothesis",
       "conditions": [
-        "the exact Codex 0.148.0 runtime package and its required companions are artifact-admitted before launch",
+        "the exact runtime_subject source and digest match the runtime binding, and the package plus required companions are artifact-admitted before launch",
         "the selected realization, runtime profile, model slug, reasoning effort, permissions and tool profile match exactly",
         "a new bounded real-work canary returns runtime receipts and separately reviewed evidence before any fit promotion",
-        "the live Codex catalog remains compatible with the realization at launch time"
+        "the live Codex catalog remains compatible with the same runtime subject at launch time"
       ],
       "escalation_required": true,
       "exclusions": [
         "transferring any Codex 0.147.0 task outcome, fit, reliability, handoff, wake, resume, or acceptance claim",
+        "using an ambient Codex catalog observation to establish currentness for another runtime subject",
         "using catalog compatibility as activation, routing, process health, proof, or owner acceptance",
         "claiming general Luna competence, autonomy, initiative, or evaluator authority",
         "inferring closed-model internals or training lineage from runtime availability"
