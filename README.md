@@ -1,5 +1,7 @@
 # aoa-models
 
+> Current release: `v0.1.0`. See [CHANGELOG](CHANGELOG.md) for release notes.
+
 `aoa-models` is the AoA source owner for configuration-scoped, lifecycle-aware
 knowledge about model realizations. It records what was actually observed,
 under which model, runtime, access, effort, tool, context, environment, and
