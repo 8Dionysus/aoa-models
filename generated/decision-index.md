@@ -6,3 +6,4 @@
 - [AOA-MODELS-D-0002 - Bind fit consumption to live realizations](../docs/decisions/AOA-MODELS-D-0002-bind-fit-consumption-to-live-realizations.md) - 2026-08-08; `accepted-owner-source`
 - [AOA-MODELS-D-0003 - Content-address fit query returns](../docs/decisions/AOA-MODELS-D-0003-content-address-fit-query-returns.md) - 2026-08-10; `accepted-owner-source`
 - [AOA-MODELS-D-0004 - Bind currentness to an exact runtime subject](../docs/decisions/AOA-MODELS-D-0004-runtime-subject-currentness.md) - 2026-08-20; `accepted-owner-source`
+- [AOA-MODELS-D-0005 - Establish a source-only initial release route](../docs/decisions/AOA-MODELS-D-0005-initial-source-release-route.md) - 2026-08-22; `accepted-owner-source`
