@@ -17,6 +17,11 @@ RUNTIME_SUBJECT = {
     "source": "codex-cli-standalone/x86_64-unknown-linux-musl+codex-code-mode-host",
     "digest": "sha256:35cc6b0e4e5c527569807be8017b705f410f0c6c2b7a3fa1c6a5407d65889041",
 }
+CURRENT_RUNTIME_SUBJECT = {
+    "kind": "content_addressed_runtime_package",
+    "source": "codex-cli-standalone/x86_64-unknown-linux-musl+codex-code-mode-host",
+    "digest": "sha256:304089232ad96d67bf003f0fb59b2fccf305259ac5a1983e969aa6f1b85ca891",
+}
 
 from build_model_fit_projections import build_expected  # noqa: E402
 from check_live_codex_catalog import check_catalog  # noqa: E402
@@ -190,14 +195,22 @@ class ModelContractTests(unittest.TestCase):
     def test_live_codex_catalog_accepts_exact_current_realization(self) -> None:
         realization_ref = (
             "source/model-realizations/"
-            "openai-gpt-5.6-luna-codex-0.147.0-chatgpt-xhigh-workspace-write.json"
+            "openai-gpt-5.6-luna-codex-0.149.1-chatgpt-max-structured-owner-duty-workspace-write.json"
         )
         temporary, fixture = self.make_fixture()
         self.addCleanup(temporary.cleanup)
+        legacy_ref = (
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json"
+        )
+        legacy_path = fixture / legacy_ref
+        legacy = json.loads(legacy_path.read_text(encoding="utf-8"))
+        legacy["lifecycle_state"] = "stale"
+        legacy_path.write_text(json.dumps(legacy, indent=2) + "\n", encoding="utf-8")
         path = fixture / realization_ref
         realization = json.loads(path.read_text(encoding="utf-8"))
-        realization["configuration"]["runtime"]["version"] = "0.148.0"
-        realization["configuration"]["runtime"]["runtime_subject"] = RUNTIME_SUBJECT
+        realization["configuration"]["runtime"]["version"] = "0.149.1"
+        realization["configuration"]["runtime"]["runtime_subject"] = CURRENT_RUNTIME_SUBJECT
         realization["lifecycle_state"] = "declared"
         realization["observation_interval"]["end"] = None
         realization.pop("lifecycle_transition", None)
@@ -223,9 +236,9 @@ class ModelContractTests(unittest.TestCase):
         result, ok = check_catalog(
             fixture,
             catalog,
-            "codex-cli 0.148.0",
+            "codex-cli 0.149.1",
             (realization_ref,),
-            RUNTIME_SUBJECT,
+            CURRENT_RUNTIME_SUBJECT,
         )
 
         self.assertTrue(ok)
@@ -270,7 +283,12 @@ class ModelContractTests(unittest.TestCase):
         )
 
         self.assertFalse(ok)
-        self.assertEqual(result["active_mismatches"], [realization_ref])
+        self.assertIn(realization_ref, result["active_mismatches"])
+        self.assertIn(
+            "source/model-realizations/"
+            "openai-gpt-5.6-luna-codex-0.149.1-chatgpt-max-structured-owner-duty-workspace-write.json",
+            result["active_mismatches"],
+        )
 
     def test_property_query_returns_no_candidate_when_runtime_line_is_stale(self) -> None:
         temporary, fixture = self.make_fixture()
