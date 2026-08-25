@@ -1,0 +1,110 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-claim.schema.json",
+  "schema_version": "aoa_model_claim_v1",
+  "kind": "ModelClaim",
+  "model_claim_id": "model-claim:openai/gpt-5.6-luna/codex-0.149.1/structured-independent-review-currentness-hypothesis-v1",
+  "subject_realization_refs": [
+    "source/model-realizations/openai-gpt-5.6-luna-codex-0.149.1-chatgpt-max-structured-independent-review-readonly.json"
+  ],
+  "statement": "The exact content-addressed Codex 0.149.1 Luna max structured-independent-review read-only realization is a bounded currentness hypothesis for the matching admitted runtime subject, permission profile, shell-read tool surface, and consumer fit query; it does not transfer the 0.148.0 pilot outcome or establish behavioral fit, proof, routing, activation, or acceptance.",
+  "scope": {
+    "task_family": "structured-independent-review-currentness",
+    "conditions": [
+      "the exact runtime_subject source and digest match the active abyss-stack runtime binding",
+      "the model identity, 0.149.1 realization configuration, Luna max effort, context, read-only permissions and landing-readonly-v2 tool profile match exactly",
+      "the active artifact admission and live catalog remain compatible with this exact subject at the time of any future canary",
+      "a new bounded real-work canary and independent review are required before any behavioral fit promotion",
+      "the generated fit query remains informational and cannot select, route, activate, prove, or accept a runtime"
+    ],
+    "exclusions": [
+      "transferring any Codex 0.148.0 behavioral fit, task outcome, reliability, handoff, wake, resume, or acceptance claim",
+      "substituting the current workspace-write realization for this read-only realization or treating permissions as interchangeable",
+      "using package admission, catalog compatibility, generated projections, or query output as activation, routing, process health, proof, or owner acceptance",
+      "claiming general Luna competence, autonomy, initiative, evaluator authority, or completion of the behavioral Goal",
+      "inferring closed-model internals, training data, or training lineage from runtime availability or behavior"
+    ]
+  },
+  "evidence_modality": "inference_with_explicit_limits",
+  "evidence_refs": [
+    {
+      "source_id": "codex-0.149.1-current-package-metadata",
+      "kind": "live_runtime_output",
+      "uri": "runtime:codex-cli-standalone/0.149.1/package-metadata",
+      "observed_at": "2026-08-25T19:36:31Z",
+      "content_digest": "sha256:756dcadcf9e968f0e62fa92fd020f4592e92d27dacec9887882600d39df69d5b",
+      "notes": "Package identity and version only; not behavioral evidence."
+    },
+    {
+      "source_id": "codex-0.149.1-current-runtime-subject",
+      "kind": "live_runtime_output",
+      "uri": "file:/srv/abyss-machine/runtimes/abyss-stack/external-codex-agent/releases/sha256-0946e21178a033482b321e90e04efcaeb7e10b2dbac2af7d76ab196be58559c1/runtime/runtime-profile.v1.json",
+      "observed_at": "2026-08-25T19:36:31Z",
+      "content_digest": "sha256:304089232ad96d67bf003f0fb59b2fccf305259ac5a1983e969aa6f1b85ca891",
+      "notes": "Exact 0.149.1 runtime subject and current read-only shell-read profile; process activation remains outside this owner."
+    },
+    {
+      "source_id": "abyss-stack-0.149.1-current-artifact-admission",
+      "kind": "live_runtime_output",
+      "uri": "file:/srv/abyss-machine/runtimes/abyss-stack/external-codex-agent/active.json",
+      "observed_at": "2026-08-25T19:36:31Z",
+      "content_digest": "sha256:6d26795aed8d137a09cc74ff36c8963a918f1b4fdf95b47703ebb5e0090fccb1",
+      "notes": "Current selected release has an artifact-admission allow decision; this does not establish fit."
+    },
+    {
+      "source_id": "aoa-models-runtime-subject-currentness-law",
+      "kind": "repository_source",
+      "uri": "repo:aoa-models@HEAD#docs/decisions/AOA-MODELS-D-0004-runtime-subject-currentness.md",
+      "observed_at": "2026-08-25T20:03:48Z",
+      "content_digest": "sha256:7a58059f4e58328d14e161ae192935409ba54b5e33f1db8424e389cd24562542",
+      "notes": "The owner law is the authority for keeping exact subject currentness separate from activation and fit."
+    }
+  ],
+  "confidence_posture": "hypothesis",
+  "observation_interval": {
+    "start": "2026-08-25T19:36:31Z",
+    "end": null
+  },
+  "known_counterevidence": [
+    {
+      "source_id": "model-fit-drift-post-drift-zero-candidate",
+      "kind": "study_result",
+      "uri": "file:/srv/abyss-machine/tmp/ai/tos-documentation-goal-01a02fdb-20260823/evidence/agents-md-behavioral-evaluation-latency-recovery-v2/model-fit-drift.json",
+      "observed_at": "2026-08-25T19:47:58Z",
+      "content_digest": "sha256:412058df9a808d7551f0d5341f95d1eb49dcb0ec0350b9d02d225fc4ed4d47d8",
+      "notes": "The pre-delta exact 0.148.0 and 0.149.1 read-only fit queries returned zero candidates. This is infrastructure currentness pressure and is not behavioral counterevidence for the new realization."
+    }
+  ],
+  "freshness": {
+    "status": "current",
+    "review_by": null,
+    "policy": "Reassess on any Codex version, exact runtime subject, package admission, live catalog, runtime profile, access, effort, context, permission, or tool-profile change; behavioral fit remains unestablished until a fresh reviewed canary."
+  },
+  "lifecycle": {
+    "state": "hypothesis",
+    "history": [
+      {
+        "from": null,
+        "to": "hypothesis",
+        "at": "2026-08-25T20:03:48Z",
+        "reason": "Current owner runtime evidence and the exact read-only realization configuration establish a bounded currentness candidate for the structured-independent-review consumer; the claim is intentionally not a behavioral or acceptance verdict.",
+        "evidence_refs": [
+          "codex-0.149.1-current-package-metadata",
+          "codex-0.149.1-current-runtime-subject",
+          "abyss-stack-0.149.1-current-artifact-admission",
+          "aoa-models-runtime-subject-currentness-law"
+        ]
+      }
+    ],
+    "superseded_by": null
+  },
+  "independent_review_refs": [],
+  "attribution_limits": [
+    "The exact subject and read-only permission profile are currentness inputs; package admission and process activation remain abyss-stack-owned.",
+    "The generated projection and exact fit query provide a content-addressed navigation result only; they do not authorize selection, routing, activation, proof, or acceptance.",
+    "The 0.148.0 read-only pilot evidence is not attributed to 0.149.1 and cannot establish behavioral fit for this candidate.",
+    "No behavioral rerun, independent review verdict, or ToS Goal acceptance is represented here.",
+    "No closed-model internal geometry, training data, or training lineage claim is made."
+  ],
+  "created_at": "2026-08-25T20:03:48Z",
+  "updated_at": "2026-08-25T20:03:48Z"
+}
