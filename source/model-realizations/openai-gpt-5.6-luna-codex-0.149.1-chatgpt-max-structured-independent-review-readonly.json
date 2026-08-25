@@ -2,7 +2,7 @@
   "$schema": "https://schemas.aoa.local/models/model-realization.schema.json",
   "schema_version": "aoa_model_realization_v1",
   "kind": "ModelRealization",
-  "model_realization_id": "model-realization:openai/gpt-5.6-luna/codex-0.148.0/chatgpt/max/structured-owner-duty/workspace-write/2026-08-20",
+  "model_realization_id": "model-realization:openai/gpt-5.6-luna/codex-0.149.1/chatgpt/max/structured-independent-review/read-only/2026-08-25",
   "model_identity_ref": "source/model-identities/openai-gpt-5.6-luna.json",
   "configuration": {
     "access": {
@@ -14,7 +14,7 @@
     },
     "runtime": {
       "product": "codex-cli",
-      "version": "0.148.0",
+      "version": "0.149.1",
       "executable": "codex",
       "model_slug": "gpt-5.6-luna",
       "transport": "exec-jsonl",
@@ -22,7 +22,7 @@
       "runtime_subject": {
         "kind": "content_addressed_runtime_package",
         "source": "codex-cli-standalone/x86_64-unknown-linux-musl+codex-code-mode-host",
-        "digest": "sha256:35cc6b0e4e5c527569807be8017b705f410f0c6c2b7a3fa1c6a5407d65889041"
+        "digest": "sha256:304089232ad96d67bf003f0fb59b2fccf305259ac5a1983e969aa6f1b85ca891"
       },
       "resume_surface": "codex exec resume"
     },
@@ -39,23 +39,22 @@
     },
     "tools": {
       "profile_mode": "runtime_profile_ref",
-      "profile_ref": "abyss-stack:external_codex_agent/structured-owner-duty-workspace-write-v1",
+      "profile_ref": "abyss-stack:external_codex_agent/landing-readonly-v2",
       "required_tools": [
-        "shell-read",
-        "workspace-write"
+        "shell-read"
       ],
       "required_mcp_servers": [],
       "inheritance_allowed": false
     },
     "environment": {
-      "role_profile_ref": "aoa-agents:task-local-selected-role-chain",
-      "prompt_contract_ref": "aoa-models:structured-owner-duty-canary-v1",
-      "cwd_policy": "dedicated-worktree",
+      "role_profile_ref": "aoa-agents:reviewer/route-drift-review",
+      "prompt_contract_ref": "aoa-models:luna-landing-fit-v2",
+      "cwd_policy": "read-only-source",
       "instruction_policy": "owner-root-nearest-agents-and-bound-mandate",
       "locale": "ru"
     },
     "permissions": {
-      "sandbox_mode": "workspace-write",
+      "sandbox_mode": "read-only",
       "approval_policy": "never",
       "external_effects": false,
       "network_access": "disabled"
@@ -87,45 +86,20 @@
       ]
     }
   },
-  "configuration_fingerprint": "sha256:e12b95f9a7a4db1a58ae652bd33e33c5fc540896353d46b7767867a6b0c1d1e0",
+  "configuration_fingerprint": "sha256:f742b4306f5ad08c7e9859a6189be5c0dda1e8d680ab27048e9ba7dbbc361b39",
   "observation_interval": {
-    "start": "2026-08-20T17:25:23Z",
-    "end": "2026-08-25T20:03:48Z"
+    "start": "2026-08-25T19:36:31Z",
+    "end": null
   },
-  "lifecycle_state": "stale",
-  "lifecycle_transition": {
-    "from": "declared",
-    "to": "stale",
-    "at": "2026-08-25T20:03:48Z",
-    "reason": "The active Codex runtime advanced to 0.149.1 with a different exact runtime subject; this 0.148.0 workspace-write realization is preserved as history and cannot remain active currentness evidence.",
-    "evidence_refs": [
-      "codex-0.149.1-current-runtime-subject"
-    ]
-  },
+  "lifecycle_state": "declared",
   "source_refs": [
     {
-      "source_id": "local-codex-0.148.0-luna-catalog-2026-08-20",
+      "source_id": "codex-0.149.1-current-package-metadata",
       "kind": "live_runtime_output",
-      "uri": "command:codex-debug-models-jq-luna-compact",
-      "observed_at": "2026-08-20T17:25:23Z",
-      "content_digest": "sha256:b92dbc71807eb3ad48663229cd6cf9e4ddce413fd659ca8207e73cb0870a792f",
-      "notes": "Codex CLI 0.148.0 exposes gpt-5.6-luna with max, context 272000, effective context 95 percent, API support, and multi-agent backend v1. This proves catalog compatibility only, not task fit or activation readiness."
-    },
-    {
-      "source_id": "local-codex-0.148.0-runtime-package-subject-2026-08-20",
-      "kind": "live_runtime_output",
-      "uri": "runtime:codex-cli-standalone/current",
-      "observed_at": "2026-08-20T22:15:49Z",
-      "content_digest": "sha256:35cc6b0e4e5c527569807be8017b705f410f0c6c2b7a3fa1c6a5407d65889041",
-      "notes": "Content digest covers the exact six-file standalone package tree, including codex, codex-code-mode-host, codex-package.json, rg, bwrap, and zsh. It identifies the observed runtime package subject; package admission and binding remain stronger-owner concerns."
-    },
-    {
-      "source_id": "openai-gpt-5.6-luna-model-2026-08-11",
-      "kind": "official_documentation",
-      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
-      "observed_at": "2026-08-11T02:09:22Z",
-      "content_digest": null,
-      "notes": "Provider capabilities and reference economics only; not AoA role-fit evidence."
+      "uri": "runtime:codex-cli-standalone/0.149.1/package-metadata",
+      "observed_at": "2026-08-25T19:36:31Z",
+      "content_digest": "sha256:756dcadcf9e968f0e62fa92fd020f4592e92d27dacec9887882600d39df69d5b",
+      "notes": "Current owner evidence identifies the standalone Codex package version 0.149.1, target x86_64-unknown-linux-musl, variant codex, and bin/codex entrypoint. Package metadata is kept separate from the exact runtime subject and task fit."
     },
     {
       "source_id": "codex-0.149.1-current-runtime-subject",
@@ -133,9 +107,25 @@
       "uri": "file:/srv/abyss-machine/runtimes/abyss-stack/external-codex-agent/releases/sha256-0946e21178a033482b321e90e04efcaeb7e10b2dbac2af7d76ab196be58559c1/runtime/runtime-profile.v1.json",
       "observed_at": "2026-08-25T19:36:31Z",
       "content_digest": "sha256:304089232ad96d67bf003f0fb59b2fccf305259ac5a1983e969aa6f1b85ca891",
-      "notes": "The current abyss-stack active release admits Codex CLI 0.149.1 with a different exact runtime subject; the prior 0.148.0 realization is no longer current. This transition does not transfer workspace-write behavior or fit."
+      "notes": "The active abyss-stack release profile names Codex CLI 0.149.1 and this exact runtime subject. It also exposes the read-only shell-read landing profile with disabled network and no external effects; activation and process truth remain abyss-stack-owned."
+    },
+    {
+      "source_id": "abyss-stack-0.149.1-current-artifact-admission",
+      "kind": "live_runtime_output",
+      "uri": "file:/srv/abyss-machine/runtimes/abyss-stack/external-codex-agent/active.json",
+      "observed_at": "2026-08-25T19:36:31Z",
+      "content_digest": "sha256:6d26795aed8d137a09cc74ff36c8963a918f1b4fdf95b47703ebb5e0090fccb1",
+      "notes": "The active runtime selects release sha256:0946e21178a033482b321e90e04efcaeb7e10b2dbac2af7d76ab196be58559c1 and records an allow decision through the artifact trust gate. This is admission evidence, not activation or behavioral proof."
+    },
+    {
+      "source_id": "aoa-models-runtime-subject-currentness-law",
+      "kind": "repository_source",
+      "uri": "repo:aoa-models@HEAD#docs/decisions/AOA-MODELS-D-0004-runtime-subject-currentness.md",
+      "observed_at": "2026-08-25T20:03:48Z",
+      "content_digest": "sha256:7a58059f4e58328d14e161ae192935409ba54b5e33f1db8424e389cd24562542",
+      "notes": "Owner law requires exact runtime-subject currentness to remain distinct from version, realization configuration, activation, proof, routing, and acceptance."
     }
   ],
-  "created_at": "2026-08-20T17:25:23Z",
+  "created_at": "2026-08-25T20:03:48Z",
   "updated_at": "2026-08-25T20:03:48Z"
 }

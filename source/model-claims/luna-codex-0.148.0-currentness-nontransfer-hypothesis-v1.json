@@ -48,12 +48,20 @@
       "observed_at": "2026-08-20T17:25:23Z",
       "content_digest": "sha256:5c6f3c10ec76e2023eb313c3210fdc592aab640ec69d85987cd42399911a116d",
       "notes": "The prior bounded hypothesis is stale and explicitly says a future 0.148.0 canary must re-establish currentness before fit is considered."
+    },
+    {
+      "source_id": "codex-0.149.1-current-runtime-subject",
+      "kind": "live_runtime_output",
+      "uri": "file:/srv/abyss-machine/runtimes/abyss-stack/external-codex-agent/releases/sha256-0946e21178a033482b321e90e04efcaeb7e10b2dbac2af7d76ab196be58559c1/runtime/runtime-profile.v1.json",
+      "observed_at": "2026-08-25T19:36:31Z",
+      "content_digest": "sha256:304089232ad96d67bf003f0fb59b2fccf305259ac5a1983e969aa6f1b85ca891",
+      "notes": "The current abyss-stack active release admits Codex CLI 0.149.1 with a different exact runtime subject; the prior 0.148.0 realization is no longer current. This transition does not transfer workspace-write behavior or fit."
     }
   ],
   "confidence_posture": "hypothesis",
   "observation_interval": {
     "start": "2026-08-20T17:25:23Z",
-    "end": "2026-08-20T22:15:49Z"
+    "end": "2026-08-25T20:03:48Z"
   },
   "known_counterevidence": [
     {
@@ -63,15 +71,23 @@
       "observed_at": "2026-08-20T17:25:23Z",
       "content_digest": "sha256:a850643e0b0de105aa33a9c526b5078387219263193cab35368e5674db8f10f2",
       "notes": "Adjacent 0.147.0 writer and reviewer evidence exists, but the exact realization is stale and cannot establish 0.148.0 behavior."
+    },
+    {
+      "source_id": "codex-0.149.1-current-subject-counterevidence",
+      "kind": "live_runtime_output",
+      "uri": "file:/srv/abyss-machine/runtimes/abyss-stack/external-codex-agent/releases/sha256-0946e21178a033482b321e90e04efcaeb7e10b2dbac2af7d76ab196be58559c1/runtime/runtime-profile.v1.json",
+      "observed_at": "2026-08-25T19:36:31Z",
+      "content_digest": "sha256:304089232ad96d67bf003f0fb59b2fccf305259ac5a1983e969aa6f1b85ca891",
+      "notes": "The active runtime has advanced to 0.149.1 and a different exact subject, which is direct counterevidence to retaining 0.148.0 as current."
     }
   ],
   "freshness": {
-    "status": "current",
+    "status": "stale",
     "review_by": null,
-    "policy": "Reassess on any Codex version, package companion, live catalog, runtime profile, access, effort, permission, or tool-profile change; behavioral fit remains unestablished until a fresh reviewed canary."
+    "policy": "Preserve this 0.148.0 realization as historical evidence. It is stale after the exact runtime subject changed to 0.149.1; behavioral fit remains unestablished and must not be transferred to another realization."
   },
   "lifecycle": {
-    "state": "hypothesis",
+    "state": "stale",
     "history": [
       {
         "from": null,
@@ -82,6 +98,15 @@
           "local-codex-0.148.0-luna-catalog-2026-08-20",
           "local-codex-0.148.0-runtime-package-subject-2026-08-20",
           "luna-max-0.147.0-structured-owner-duty-stale-source"
+        ]
+      },
+      {
+        "from": "hypothesis",
+        "to": "stale",
+        "at": "2026-08-25T20:03:48Z",
+        "reason": "The active Codex runtime advanced to 0.149.1 with a different exact runtime subject; the 0.148.0 currentness hypothesis is preserved and cannot satisfy the current read-only consumer query.",
+        "evidence_refs": [
+          "codex-0.149.1-current-runtime-subject"
         ]
       }
     ],
@@ -96,5 +121,5 @@
     "Runtime package admission, process truth, wake delivery, proof, routing, and owner acceptance remain with their stronger owners."
   ],
   "created_at": "2026-08-20T17:25:23Z",
-  "updated_at": "2026-08-20T22:15:49Z"
+  "updated_at": "2026-08-25T20:03:48Z"
 }

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schemas.aoa.local/models/model-fit-projection.schema.json",
+  "authority": {
+    "acceptance_authority": false,
+    "activation_authority": false,
+    "informational_only": true,
+    "proof_authority": false
+  },
+  "consumers": [
+    "aoa-agents",
+    "aoa-sdk",
+    "abyss-stack"
+  ],
+  "effect_family": "read",
+  "freshness": {
+    "review_by": null,
+    "status": "current"
+  },
+  "generated_at": "2026-08-25T20:03:48Z",
+  "generated_from_claim_refs": [
+    "source/model-claims/luna-structured-independent-review-0.149.1-currentness-hypothesis-v1.json"
+  ],
+  "kind": "ModelFitProjection",
+  "model_fit_projection_id": "model-fit-projection:openai-gpt-5.6-luna-codex-0.149.1-chatgpt-max-structured-independent-review-readonly",
+  "must_not_claim": [
+    "routing or activation authority",
+    "proof or owner acceptance",
+    "task completion or target-owner acceptance",
+    "internal geometry or training lineage from behavior alone"
+  ],
+  "posture": "declared",
+  "schema_version": "aoa_model_fit_projection_v1",
+  "study_refs": [],
+  "subject_realization_ref": "source/model-realizations/openai-gpt-5.6-luna-codex-0.149.1-chatgpt-max-structured-independent-review-readonly.json",
+  "task_fit": [
+    {
+      "claim_posture": "hypothesis",
+      "conditions": [
+        "the exact runtime_subject source and digest match the active abyss-stack runtime binding",
+        "the model identity, 0.149.1 realization configuration, Luna max effort, context, read-only permissions and landing-readonly-v2 tool profile match exactly",
+        "the active artifact admission and live catalog remain compatible with this exact subject at the time of any future canary",
+        "a new bounded real-work canary and independent review are required before any behavioral fit promotion",
+        "the generated fit query remains informational and cannot select, route, activate, prove, or accept a runtime"
+      ],
+      "escalation_required": true,
+      "exclusions": [
+        "transferring any Codex 0.148.0 behavioral fit, task outcome, reliability, handoff, wake, resume, or acceptance claim",
+        "substituting the current workspace-write realization for this read-only realization or treating permissions as interchangeable",
+        "using package admission, catalog compatibility, generated projections, or query output as activation, routing, process health, proof, or owner acceptance",
+        "claiming general Luna competence, autonomy, initiative, evaluator authority, or completion of the behavioral Goal",
+        "inferring closed-model internals, training data, or training lineage from runtime availability or behavior"
+      ],
+      "task_family": "structured-independent-review-currentness"
+    }
+  ]
+}

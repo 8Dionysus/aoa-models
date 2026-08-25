@@ -492,20 +492,20 @@ class ModelContractTests(unittest.TestCase):
         self.init_fixture_git(fixture)
         query = {
             "schema_version": "aoa_model_fit_query_v1",
-            "task_family": "structured-owner-duty-currentness",
+            "task_family": "structured-independent-review-currentness",
             "runtime_product": "codex-cli",
-            "runtime_version": "0.148.0",
-            "runtime_subject": RUNTIME_SUBJECT,
+            "runtime_version": "0.149.1",
+            "runtime_subject": CURRENT_RUNTIME_SUBJECT,
             "reasoning_effort": "max",
-            "sandbox_mode": "workspace-write",
-            "required_tools": ["shell-read", "workspace-write"],
+            "sandbox_mode": "read-only",
+            "required_tools": ["shell-read"],
             "required_mcp_servers": [],
         }
 
         result = query_model_fit(fixture, query)
 
         self.assertEqual(result["candidate_count"], 1)
-        self.assertEqual(result["candidates"][0]["runtime_subject"], RUNTIME_SUBJECT)
+        self.assertEqual(result["candidates"][0]["runtime_subject"], CURRENT_RUNTIME_SUBJECT)
 
     def test_catalog_rejects_same_version_different_runtime_subject(self) -> None:
         temporary, fixture = self.make_fixture()
@@ -513,7 +513,7 @@ class ModelContractTests(unittest.TestCase):
         self.init_fixture_git(fixture)
         realization_ref = (
             "source/model-realizations/"
-            "openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json"
+            "openai-gpt-5.6-luna-codex-0.149.1-chatgpt-max-structured-independent-review-readonly.json"
         )
         catalog = {
             "models": [
@@ -533,9 +533,9 @@ class ModelContractTests(unittest.TestCase):
         result, ok = check_catalog(
             fixture,
             catalog,
-            "codex-cli 0.148.0",
+            "codex-cli 0.149.1",
             (realization_ref,),
-            {**RUNTIME_SUBJECT, "digest": "sha256:" + "2" * 64},
+            {**CURRENT_RUNTIME_SUBJECT, "digest": "sha256:" + "2" * 64},
         )
 
         self.assertFalse(ok)
@@ -546,7 +546,7 @@ class ModelContractTests(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         path = fixture / (
             "source/model-realizations/"
-            "openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json"
+            "openai-gpt-5.6-luna-codex-0.149.1-chatgpt-max-structured-independent-review-readonly.json"
         )
         realization = json.loads(path.read_text(encoding="utf-8"))
         del realization["configuration"]["runtime"]["runtime_subject"]
@@ -561,7 +561,7 @@ class ModelContractTests(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         path = fixture / (
             "source/model-realizations/"
-            "openai-gpt-5.6-luna-codex-0.148.0-chatgpt-max-structured-owner-duty-workspace-write.json"
+            "openai-gpt-5.6-luna-codex-0.149.1-chatgpt-max-structured-independent-review-readonly.json"
         )
         realization = json.loads(path.read_text(encoding="utf-8"))
         realization["configuration"]["runtime"]["runtime_subject"]["digest"] = (
