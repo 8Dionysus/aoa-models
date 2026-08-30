@@ -20,6 +20,11 @@ different-provider Claude 5 persistence run, and a cross-provider outcome-
 economics run; [`research-intake/README.md`](research-intake/README.md) indexes
 the packets and reports.
 
+The first bounded automation contour can capture one structured source segment,
+refresh it into an append-only change receipt, and package a content-addressed
+supersession proposal for review. It does not crawl, select, rank, promote, or
+mutate research or model source.
+
 ## Owner boundary
 
 | Relation | This repository |
@@ -38,6 +43,9 @@ the packets and reports.
 - `ModelFitProjection`: a generated consumer view that cannot authorize use.
 - `ReconRun`: a pre-canon external research packet; it cannot satisfy a model
   claim, study verdict, runtime-currentness, routing, or activation requirement.
+- `ResearchCaptureSnapshot`, `ResearchChangeReceipt`, and
+  `ResearchSupersessionProposal`: immutable mechanical intake candidates with
+  no source-mutation or automatic-application authority.
 
 The first bounded access plane is `scripts/query_model_fit.py`. It accepts
 role-derived task, exact runtime-subject identity, runtime compatibility,
@@ -71,7 +79,8 @@ reduces them to human categories nor freezes them into final object types.
 - `source/` contains owner-authored identities, realizations, claims, and study
   definitions.
 - `research-intake/` contains pre-canon external recon runs and their bounded
-  reports; it is neither `source/` nor accepted evidence.
+  reports, capture snapshots, change receipts, and review proposals; it is
+  neither `source/` nor accepted evidence.
 - `schemas/` defines their machine-readable contracts.
 - `generated/` contains rebuildable model-fit projections and indexes only.
 - `docs/decisions/` preserves durable owner rationale.

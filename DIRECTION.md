@@ -30,7 +30,9 @@ post-landing verification, and closeout.
 8. Receive external web evidence through a separate pre-canon research-intake
    contour, test it across temporal drift, authority/persistence, outcome
    economics, and materially different subjects, and promote nothing without
-   the normal exact-source and review route.
+   the normal exact-source and review route. Automate only bounded segment
+   capture, append-only refresh comparison, and review-proposal packaging while
+   leaving discovery and semantic judgment with the researcher.
 
 The study contour measures actual tokens, active wall time, turns, output,
 commands, review burden, and rework. It does not prescribe token, time, turn,
@@ -44,8 +46,8 @@ measurements and evaluated separately from model capability.
 - internal representation and causal-intervention studies;
 - model character and temperament research across time and environments;
 - richer longitudinal model lineage;
-- automated web crawling, monitoring, source ranking, or consensus before
-  several materially different recon runs stabilize the observation contour;
+- automated web crawling, revisit scheduling, source ranking, consensus, or
+  promotion beyond the bounded capture/refresh/proposal contour;
 - richer access or storage planes beyond the current bounded read-only fit
   query;
 - flexible A2A relations among persistent role-bearing agents.
