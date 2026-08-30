@@ -27,6 +27,10 @@ post-landing verification, and closeout.
    operational canaries for separate Luna fit hypotheses; do not require a
    sterile benchmark campaign before useful work, and do not promote one
    successful duty into general role fit.
+8. Receive external web evidence through a separate pre-canon research-intake
+   contour, test it across temporal drift, authority/persistence, outcome
+   economics, and materially different subjects, and promote nothing without
+   the normal exact-source and review route.
 
 The study contour measures actual tokens, active wall time, turns, output,
 commands, review burden, and rework. It does not prescribe token, time, turn,
@@ -40,6 +44,8 @@ measurements and evaluated separately from model capability.
 - internal representation and causal-intervention studies;
 - model character and temperament research across time and environments;
 - richer longitudinal model lineage;
+- automated web crawling, monitoring, source ranking, or consensus before
+  several materially different recon runs stabilize the observation contour;
 - richer access or storage planes beyond the current bounded read-only fit
   query;
 - flexible A2A relations among persistent role-bearing agents.
@@ -58,3 +64,5 @@ Expand only when concrete evidence creates pressure:
 - add an access plane when at least one bounded consumer cannot use the source
   or generated artifact route safely;
 - revise or supersede a claim when counterevidence changes its useful scope.
+- evolve research-intake shape only when a real run exposes a missing
+  distinction; model/provider names and source counts remain data, not code.

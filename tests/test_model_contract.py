@@ -64,6 +64,22 @@ class ModelContractTests(unittest.TestCase):
     def test_repository_is_valid(self) -> None:
         self.assertEqual(validate_repo(ROOT), [])
 
+    def test_pre_canon_research_cannot_be_direct_model_evidence(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        path = fixture / (
+            "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
+        )
+        claim = json.loads(path.read_text(encoding="utf-8"))
+        claim["evidence_refs"][0]["uri"] = "research-intake/recon-runs/example.json"
+        path.write_text(json.dumps(claim, indent=2) + "\n", encoding="utf-8")
+
+        issues = validate_repo(fixture)
+
+        self.assertTrue(
+            any("pre-canon research intake cannot be used" in issue for issue in issues)
+        )
+
     def test_landing_claim_counterevidence_is_landing_scoped(self) -> None:
         path = ROOT / "source/model-claims/luna-bounded-landing-fit-transfer-hypothesis-v2.json"
         claim = json.loads(path.read_text(encoding="utf-8"))

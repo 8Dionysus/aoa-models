@@ -169,6 +169,10 @@ def _validate_source_refs(record: dict[str, Any], rel: Path, issues: list[str]) 
         uri = ref.get("uri", "")
         if isinstance(uri, str) and uri.startswith("generated/"):
             issues.append(f"{rel}: generated projection cannot be used as source evidence: {uri}")
+        if isinstance(uri, str) and uri.startswith("research-intake/"):
+            issues.append(
+                f"{rel}: pre-canon research intake cannot be used as direct owner evidence: {uri}"
+            )
 
 
 def _validate_claim(

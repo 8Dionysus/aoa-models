@@ -10,6 +10,16 @@ permission configuration, and how each bounded claim changes over time.
 The repository is an experimental owner organ. It does not launch models,
 choose routes, define agent roles, issue proof verdicts, or accept a landing.
 
+External web reconnaissance enters through a separate pre-canon
+`research-intake/` surface. Its validated packets preserve source segments,
+origin dependencies, incomplete configurations, contradictions, and revisit
+triggers without becoming model source truth or fit-query input. See
+[`docs/RESEARCH_INTAKE.md`](docs/RESEARCH_INTAKE.md).
+The first manual corpus includes a GPT-5.6 seed and temporal recheck, a
+different-provider Claude 5 persistence run, and a cross-provider outcome-
+economics run; [`research-intake/README.md`](research-intake/README.md) indexes
+the packets and reports.
+
 ## Owner boundary
 
 | Relation | This repository |
@@ -26,6 +36,8 @@ choose routes, define agent roles, issue proof verdicts, or accept a landing.
 - `ModelClaim`: one bounded, evidenced assertion with currentness and lifecycle.
 - `ModelStudy`: a reproducible protocol with fixed arms and attribution limits.
 - `ModelFitProjection`: a generated consumer view that cannot authorize use.
+- `ReconRun`: a pre-canon external research packet; it cannot satisfy a model
+  claim, study verdict, runtime-currentness, routing, or activation requirement.
 
 The first bounded access plane is `scripts/query_model_fit.py`. It accepts
 role-derived task, exact runtime-subject identity, runtime compatibility,
@@ -58,6 +70,8 @@ reduces them to human categories nor freezes them into final object types.
 
 - `source/` contains owner-authored identities, realizations, claims, and study
   definitions.
+- `research-intake/` contains pre-canon external recon runs and their bounded
+  reports; it is neither `source/` nor accepted evidence.
 - `schemas/` defines their machine-readable contracts.
 - `generated/` contains rebuildable model-fit projections and indexes only.
 - `docs/decisions/` preserves durable owner rationale.
@@ -70,6 +84,7 @@ Run from the repository root:
 
 ```bash
 python scripts/validate_models.py
+python scripts/validate_research_intake.py
 python scripts/build_model_fit_projections.py --check
 python scripts/generate_decision_index.py --check
 python scripts/check_live_codex_catalog.py

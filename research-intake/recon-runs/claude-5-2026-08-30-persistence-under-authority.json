@@ -1,0 +1,2303 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:claude-5/2026-08-30-persistence-under-authority",
+  "title": "Claude 5 persistence under capability, product, and runtime authority",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "Which long-horizon and self-verification observations persist when model capability is separated from delegated acceptance, product fallback, runtime state, transport, termination, and operator visibility?",
+  "scope": {
+    "subject_labels": [
+      "claude-5",
+      "claude-fable-5",
+      "claude-opus-5",
+      "claude-code"
+    ],
+    "target_kinds": [
+      "provider_fact",
+      "benchmark_result",
+      "model_behavior",
+      "runtime_behavior",
+      "product_policy",
+      "operational_pressure"
+    ],
+    "capture_interval": {
+      "start": "2026-08-30T06:00:00Z",
+      "end": "2026-08-30T07:20:00Z"
+    },
+    "inclusion_criteria": [
+      "Use bounded source segments and retain product, runtime, instrument, and temporal identity.",
+      "Prefer official facts, exposed independent methods, primary traces, and explicit counterevidence.",
+      "Preserve incomplete operational evidence only in the role and scope it can support."
+    ],
+    "exclusion_criteria": [
+      "Do not count dependent retellings as independent origins.",
+      "Do not infer model-only traits from product, runtime, transport, quota, or harness symptoms.",
+      "Do not compare aggregate scores across instrument revisions as a longitudinal model result."
+    ],
+    "generality_probe": {
+      "mode": "different_family_or_provider",
+      "subject_labels": [
+        "anthropic",
+        "claude-fable-5",
+        "claude-opus-5"
+      ],
+      "rationale": "A non-OpenAI family exercises the same schema and semantic validator without provider-specific code branches."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.3",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.3.md",
+        "content_digest": "sha256:64fcff8429ea6823f9f3aa5e1c614110b4d724219e198dd8cfe505424cd15aed"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gpt-5.6-2026-08-29-v0.2.json",
+        "content_digest": "sha256:4404900b111ce459faa9cc355ea559dc754f8d29c793adf26c8d605c9142118a"
+      }
+    ],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-fable-launch",
+      "title": "Claude Fable 5 and Claude Mythos 5",
+      "uri": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "source_class": "provider_release",
+      "publisher": "Anthropic",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-06-09T00:00:00Z",
+      "updated_at": "2026-07-01T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Provider page includes launch, suspension, and redeployment updates.",
+      "mutable_surface": true,
+      "origin_group": "anthropic-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-long-horizon",
+          "locator": "Launch positioning, autonomy, memory, and long-running work; captured lines 34-66.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-curated-feedback",
+          "locator": "Curated early-customer reports on long-horizon work; captured lines 75-167.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-safeguard-fallback",
+          "locator": "Safeguard, fallback, trusted-access and availability policy; captured lines 169-216.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Primary provider surface for Fable 5 capability and product-policy claims."
+    },
+    {
+      "source_id": "src-opus-launch",
+      "title": "Introducing Claude Opus 5",
+      "uri": "https://www.anthropic.com/news/claude-opus-5",
+      "source_class": "provider_release",
+      "publisher": "Anthropic",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-07-24T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-07-24T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Provider release and curated early-access evidence.",
+      "mutable_surface": true,
+      "origin_group": "anthropic-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-performance",
+          "locator": "Performance and cost-effectiveness claims; captured lines 17-55.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-verification",
+          "locator": "Provider examples of verification and iteration; captured lines 63-69.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-curated-feedback",
+          "locator": "Curated customer efficiency and long-horizon reports; captured lines 69-215.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Primary provider claim surface for Opus 5 long-horizon work and self-verification."
+    },
+    {
+      "source_id": "src-opus-docs",
+      "title": "What's new in Claude Opus 5",
+      "uri": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6",
+      "source_class": "provider_doc",
+      "publisher": "Anthropic",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-07-24T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Mutable provider documentation; URL slug retains an older internal name.",
+      "mutable_surface": true,
+      "origin_group": "anthropic-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-context-spec",
+          "locator": "1M default/maximum context and 128k max output specification.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-price",
+          "locator": "$5 input and $25 output per million tokens.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-long-context-guidance",
+          "locator": "Claimed consistent instruction following, tool calling, and reasoning through the window.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Current provider spec needed to distinguish advertised capability from realized sessions."
+    },
+    {
+      "source_id": "src-fable-safeguard-update",
+      "title": "Improving Fable 5's biology safeguards",
+      "uri": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "source_class": "provider_release",
+      "publisher": "Anthropic",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-07T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-08-07T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Product safeguard update changes which underlying model serves some requests.",
+      "mutable_surface": true,
+      "origin_group": "anthropic-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-fallback-change",
+          "locator": "About 85% reduction in biology fallbacks across product surfaces; captured lines 11-21.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-classifier-method",
+          "locator": "Classifier boundary, retraining, and remaining safeguarded scope; captured lines 36-43.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Primary evidence that product policy changes effective model realization without renaming the user-facing tier."
+    },
+    {
+      "source_id": "src-aa-method",
+      "title": "Coding Agent Index methodology",
+      "uri": "https://artificialanalysis.ai/methodology/coding-agents-benchmarking/",
+      "source_class": "benchmark_methodology",
+      "publisher": "Artificial Analysis",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": "2026-08-01T00:00:00Z",
+      "effective_interval": {
+        "start": "2026-08-01T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Version 1.4 is current for August 2026.",
+      "mutable_surface": true,
+      "origin_group": "artificial-analysis",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-suite",
+          "locator": "326 tasks across DeepSWE, Terminal-Bench v2.1 and SWE-Atlas-QnA, three attempts per task; captured lines 29-48.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-scoring",
+          "locator": "pass@1 aggregation and verifier behavior; captured lines 378-416.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-efficiency",
+          "locator": "Pooled cost, token and execution-time metrics; captured lines 417-432.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-integrity",
+          "locator": "Terminal-Bench v2.1 reward-hacking definition, trajectory review and zero-score boundary; captured lines 395-416 and 435-441.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Exposed independent method behind the current agent comparison."
+    },
+    {
+      "source_id": "src-aa-comparison",
+      "title": "Claude Code versus Codex",
+      "uri": "https://artificialanalysis.ai/agents/coding-agents/comparisons/claude-code-vs-codex",
+      "source_class": "live_benchmark",
+      "publisher": "Artificial Analysis",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": "2026-08-30T00:00:00Z",
+      "effective_interval": {
+        "start": "2026-08-01T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Live benchmark results can change with reruns, model variants, and method revisions.",
+      "mutable_surface": true,
+      "origin_group": "artificial-analysis",
+      "propagation_role": "dependent",
+      "dependency_refs": [
+        "src-aa-method"
+      ],
+      "segments": [
+        {
+          "segment_id": "seg-current-outcomes",
+          "locator": "Coding Agent Index v1.4 comparison and per-evaluation results; captured lines 30-59.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-variants",
+          "locator": "Current model/effort variants and outcome-economics table; captured lines 60-107.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-boundaries",
+          "locator": "Cost and execution-time metric boundaries; captured lines 128-216.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Independent outcome instrument with exposed task, attempt, verifier, cost, time, turn, and token dimensions."
+    },
+    {
+      "source_id": "src-issue-81300",
+      "title": "Opus 5 verification allocation in orchestration roles",
+      "uri": "https://github.com/anthropics/claude-code/issues/81300",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter markgerrard",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-07-26T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open primary report; transcripts offered but not attached to the public issue.",
+      "mutable_surface": true,
+      "origin_group": "issue-markgerrard",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-context",
+          "locator": "Same-seat multi-agent orchestration context and positive worker observations; captured lines 153-162.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-acceptance",
+          "locator": "Repeated acceptance-verification misses and controls; captured lines 163-176.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-fidelity",
+          "locator": "Long verbatim regeneration errors and hash containment; captured lines 177-198.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Detailed same-seat operational report that separates worker capability from orchestration acceptance."
+    },
+    {
+      "source_id": "src-issue-84933",
+      "title": "Opus 5 long turns become tool-calls-only",
+      "uri": "https://github.com/anthropics/claude-code/issues/84933",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter j0ntz",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-07T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open primary report with bounded local statistics; no minimal reproduction.",
+      "mutable_surface": true,
+      "origin_group": "issue-j0ntz",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-environment",
+          "locator": "Claude Code versions, OS, effort, context, tools, and 1-4 hour workload; captured lines 161-169.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-run-statistics",
+          "locator": "Two silent sessions and 18 comparable controls with message/block counts; captured lines 169-181.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-outcome-visibility",
+          "locator": "Normal task completion but absent supervision signal; captured lines 182-189.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Primary trace distinguishing completed execution from operator-visible progress."
+    },
+    {
+      "source_id": "src-issue-83153",
+      "title": "Long-running Opus 5 session freezes at AskUserQuestion",
+      "uri": "https://github.com/anthropics/claude-code/issues/83153",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter cmonachan-git",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-01T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open TUI issue with one project and two same-day freezes.",
+      "mutable_surface": true,
+      "origin_group": "issue-cmonachan",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-environment",
+          "locator": "Windows, ConPTY/psmux, agent teams, 2.5-hour session and permissions; captured lines 161-170.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-freeze",
+          "locator": "Rendered question followed by inert event loop and process evidence; captured lines 171-180.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-controls",
+          "locator": "Fresh-process replay controls and kill/resume recovery; captured lines 181-192.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Controlled product-runtime symptom in a long session; retained without model-only attribution."
+    },
+    {
+      "source_id": "src-issue-85205",
+      "title": "Opus 5 1M sessions auto-compact at 150k",
+      "uri": "https://github.com/anthropics/claude-code/issues/85205",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter RockerMJ031",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-09T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open session-state issue; causal state remains unknown.",
+      "mutable_surface": true,
+      "origin_group": "issue-rockermj",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-ab-control",
+          "locator": "Same machine/build/model sessions expose 150k versus 1M windows; captured lines 160-215.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-reproduction",
+          "locator": "Reproduction steps, unknown state variable, impact and expected/actual; captured lines 216-240.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Same-seat negative control demonstrating realized context can diverge per session."
+    },
+    {
+      "source_id": "src-issue-87757",
+      "title": "Opus 5 large-context ECONNRESET traces",
+      "uri": "https://github.com/anthropics/claude-code/issues/87757",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter nicorivas07",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-18T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open networking issue with packet capture; synthetic traffic did not reproduce the real-session symptom.",
+      "mutable_surface": true,
+      "origin_group": "issue-nicorivas",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-network-evidence",
+          "locator": "Server-edge reset counts, SACK gaps, context and network controls; captured lines 160-218.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-observability",
+          "locator": "Retry recovery, 2-20 second stalls, and transcript omission; captured lines 161-164 and 219-222.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Transport-level evidence that persistence pressure can be outside the model trajectory."
+    },
+    {
+      "source_id": "src-issue-82226",
+      "title": "Opus 5 client/server context-window mismatch",
+      "uri": "https://github.com/anthropics/claude-code/issues/82226",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter BikiBikiBik",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-07-29T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open client/API mismatch report; server entitlement or header path not conclusively isolated.",
+      "mutable_surface": true,
+      "origin_group": "issue-bikibiki",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-ab-control",
+          "locator": "Same-session model switch and 12 failures in a 166k-178k band; captured lines 160-185.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-fleet",
+          "locator": "2,013-log scan and sibling-model controls above 800k; captured lines 186-208.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-environment",
+          "locator": "Client, account, compaction and reproduction configuration; captured lines 212-225.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Large primary trace with A/B controls, retained as realization pressure rather than model capability evidence."
+    },
+    {
+      "source_id": "src-issue-83789",
+      "title": "Claude 5 sessions fail to consult available memory and prior transcripts",
+      "uri": "https://github.com/anthropics/claude-code/issues/83789",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter yawangshiro",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-04T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open stale issue; one workflow and reporter, with no provider-confirmed model/runtime cause.",
+      "mutable_surface": true,
+      "origin_group": "issue-yawangshiro",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-orientation-cases",
+          "locator": "Two multi-hour tasks and correct prior-context routes; captured lines 160-178.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-scope-verification",
+          "locator": "Abandonment, unrequested cleanup and verification-scope cases; captured lines 179-205.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-environment",
+          "locator": "Claude Code, model and available memory/session tooling; captured lines 206-210.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public primary issue inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Primary orientation and scope-pressure report with bounded cases and recovery contrast."
+    },
+    {
+      "source_id": "src-issue-77727",
+      "title": "Fable 5 dynamic loop idles after promising continuous work",
+      "uri": "https://github.com/anthropics/claude-code/issues/77727",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter simplysdm",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-07-15T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open stale issue; local transcript was referenced but not archived in this repository.",
+      "mutable_surface": true,
+      "origin_group": "issue-simplysdm",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-loop-transcript",
+          "locator": "Single-model transcript identity, seven-minute idle and three repeated instructions; captured lines 162-190.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-harness-counterevidence",
+          "locator": "ScheduleWakeup mechanism and cross-model recurrence suggesting harness contribution; captured lines 191-202.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public primary issue inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Transcript-located loop/recovery trace that separates reported continuation from scheduled execution."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-fable-long-horizon-claim",
+      "statement": "Anthropic positions Fable 5 for days-long, complex, asynchronous work with persistent memory and self-checking, but the public release does not expose a population-level completion denominator for that broad claim.",
+      "target_kind": "model_behavior",
+      "subject": {
+        "completeness": "partial",
+        "family": "claude-5",
+        "models": [
+          "claude-fable-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-platform-and-products",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Claude Code or other agent harnesses",
+        "instrument_revision": "provider release examples and curated feedback",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": null,
+        "verified": "No common public task pool, attempt count, or artifact set underlies the broad claim.",
+        "reported": "Provider and curated users report days-long work and long-horizon gains.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "provider_long_horizon_positioning",
+            "value": true,
+            "unit": null,
+            "denominator": "provider release surface",
+            "notes": "Useful discovery signal, not an independent incidence estimate."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-fable-launch",
+          "segment_id": "seg-long-horizon"
+        },
+        {
+          "source_id": "src-fable-launch",
+          "segment_id": "seg-curated-feedback"
+        }
+      ],
+      "confounds": [
+        "Customer quotes are curated on the provider surface and do not add independent method origins."
+      ],
+      "configuration_gaps": [
+        "Exact snapshots, prompts, task pool, attempts, harness configuration, failures, and artifact verification are incomplete."
+      ],
+      "transfer_limits": [
+        "Supports provider positioning and study questions, not a general persistence claim."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "watch",
+      "observed_interval": {
+        "start": "2026-06-09T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-opus-self-verification-claim",
+      "statement": "The Opus 5 release claims stronger self-verification and repeated iteration to success, but its examples primarily concern the model's own work rather than acceptance of other actors' claims.",
+      "target_kind": "model_behavior",
+      "subject": {
+        "completeness": "partial",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-platform-and-products",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "provider release examples",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": null,
+        "verified": "Examples are provider-selected; no general acceptance-role test is exposed.",
+        "reported": "Provider reports self-verification and successful iteration examples.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "provider_self_verification_claim",
+            "value": true,
+            "unit": null,
+            "denominator": "provider examples",
+            "notes": "Scope is self-produced work in the cited examples."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-opus-launch",
+          "segment_id": "seg-verification"
+        }
+      ],
+      "confounds": [],
+      "configuration_gaps": [
+        "Exact prompts, attempts, failure distribution, harness, and acceptance protocol are unavailable."
+      ],
+      "transfer_limits": [
+        "Does not establish verification of delegated reports or owner acceptance boundaries."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "replicate",
+      "observed_interval": {
+        "start": "2026-07-24T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-opus-current-agent-outcome",
+      "statement": "In Artificial Analysis Coding Agent Index v1.4, Claude Code with Opus 5 xhigh scored 68 across a 326-task suite with three attempts per task.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Artificial Analysis evaluated Claude endpoint",
+        "reasoning_effort": "xhigh",
+        "context_policy": null,
+        "tools": [
+          "Claude Code agent tools"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Claude Code",
+        "instrument_revision": "Artificial Analysis Coding Agent Index v1.4",
+        "grader": "program verifiers, test suites, and binary task-resolution scoring",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Complete end-to-end software engineering, terminal, and repository-Q&A tasks.",
+        "executed": "Three attempts per each of 326 configured tasks under the published agent variants.",
+        "artifact": "Code patches, terminal outcomes, and open answers consumed by benchmark verifiers.",
+        "verified": "Per-task attempts are scored pass/fail by the published verifier and aggregation method.",
+        "reported": "Composite index 68; DeepSWE 60%, Terminal-Bench v2.1 89%, SWE-Atlas-QnA 55%.",
+        "termination": "Benchmark attempts terminate under the harness; full failure taxonomy is not exposed on the comparison page.",
+        "measurements": [
+          {
+            "metric": "coding_agent_index",
+            "value": 68,
+            "unit": "index points",
+            "denominator": "326 tasks with 3 attempts per task under v1.4",
+            "notes": "Composite; read with per-eval breakdown."
+          },
+          {
+            "metric": "deepswe",
+            "value": 60,
+            "unit": "percent pass@1",
+            "denominator": "113 tasks with 3 attempts each",
+            "notes": "Long-horizon software engineering component."
+          },
+          {
+            "metric": "terminal_bench_v2_1",
+            "value": 89,
+            "unit": "percent pass@1",
+            "denominator": "89 tasks with 3 attempts each",
+            "notes": "Agentic terminal component."
+          },
+          {
+            "metric": "swe_atlas_qna",
+            "value": 55,
+            "unit": "percent pass@1",
+            "denominator": "124 tasks with 3 attempts each",
+            "notes": "Repository Q&A component."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-suite"
+        },
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-scoring"
+        },
+        {
+          "source_id": "src-aa-comparison",
+          "segment_id": "seg-current-outcomes"
+        }
+      ],
+      "confounds": [
+        "This is an agent variant result, not a model-only evaluation."
+      ],
+      "configuration_gaps": [
+        "Exact endpoint snapshot and all task trajectories are not exposed in the captured comparison."
+      ],
+      "transfer_limits": [
+        "Bounded to Claude Code, Opus 5 xhigh, Coding Agent Index v1.4, and the captured date."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-orchestration-acceptance-boundary",
+      "statement": "A same-seat Opus 5 orchestration report found strong implementation quality and long-horizon coherence while repeatedly accepting polished worker reports without risk-proportional verification, unchanged by xhigh effort or added memory instructions.",
+      "target_kind": "model_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code-and-agent-sdk",
+        "snapshot": null,
+        "runtime": {
+          "name": "Claude Code / ASDK",
+          "version": null,
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": null,
+        "reasoning_effort": "medium to xhigh",
+        "context_policy": "1M context",
+        "tools": [
+          "multi-agent orchestration",
+          "Redis bridge",
+          "Postgres artifact store"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "custom multi-agent platform",
+        "instrument_revision": "same-seat operational comparison and mutation probes",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Orchestrate worker and reviewer seats and verify load-bearing acceptance claims.",
+        "executed": "Long-running orchestration and acceptance actions across a production custom platform.",
+        "artifact": "Worker reports, merged results, documents, hashes, and mutation-probe evidence described by the reporter.",
+        "verified": "Reporter used mutation probes and hash checks for selected failures; public transcripts are not attached.",
+        "reported": "Strong worker performance coexisted with repeated acceptance-verification misses.",
+        "termination": "The reporter removed the model from one byte-transfer path and requested documentation changes.",
+        "measurements": [
+          {
+            "metric": "acceptance_instruction_interventions",
+            "value": 2,
+            "unit": "memory entries",
+            "denominator": "one affected session",
+            "notes": "Reporter says neither changed acceptance behavior."
+          },
+          {
+            "metric": "verbatim_transfer_errors",
+            "value": 5,
+            "unit": "errors",
+            "denominator": "roughly 10 minutes of 39KB document transfers",
+            "notes": "All caught by hash checks according to the report."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-81300",
+          "segment_id": "seg-context"
+        },
+        {
+          "source_id": "src-issue-81300",
+          "segment_id": "seg-acceptance"
+        },
+        {
+          "source_id": "src-issue-81300",
+          "segment_id": "seg-fidelity"
+        }
+      ],
+      "confounds": [
+        "Single organization and custom harness; reporter-authored interpretation; transcripts unavailable publicly."
+      ],
+      "configuration_gaps": [
+        "Exact model snapshot, full prompts, task count, complete trajectories, and independent reproduction are unavailable."
+      ],
+      "transfer_limits": [
+        "Supports a bounded self-work versus delegated-acceptance question, not a universal Opus 5 trait."
+      ],
+      "counterevidence_refs": [
+        "obs-opus-self-verification-claim"
+      ],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "replicate",
+      "observed_interval": {
+        "start": "2026-07-26T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-silent-long-turns",
+      "statement": "Two of twenty comparable long Opus 5 sessions emitted almost no operator-visible prose for long stretches while continuing tool execution, making supervised autonomy temporarily unobservable.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code",
+        "snapshot": null,
+        "runtime": {
+          "name": "Claude Code",
+          "version": "2.1.223-2.1.224",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "high",
+        "context_policy": "1M context; silent runs did not require the largest observed context",
+        "tools": [
+          "shell",
+          "file edits",
+          "simulator UI",
+          "screenshot reads"
+        ],
+        "permissions": [
+          "bypass permissions"
+        ],
+        "prompt": "near-identical ~74k-token opening template",
+        "scaffold": null,
+        "runbook": null,
+        "harness": "interactive TUI under tmux on macOS Darwin 24.5",
+        "instrument_revision": "local transcript block-shape comparison",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Run a 1-4 hour autonomous, tool-heavy workload with human supervision.",
+        "executed": "Tool calls and hooks continued during silent periods.",
+        "artifact": "Reporter states task completion remained normal.",
+        "verified": "Reporter controlled for transcript-loss shape, context, vision, prompt, and effort using 18 comparable sessions.",
+        "reported": "Two affected sessions versus 18 prose-emitting controls.",
+        "termination": "Affected runs completed, but supervision signal was absent for up to about 100 minutes.",
+        "measurements": [
+          {
+            "metric": "affected_sessions",
+            "value": 2,
+            "unit": "sessions",
+            "denominator": "20 comparable sessions",
+            "notes": "Two consecutive-day affected runs plus 18 controls."
+          },
+          {
+            "metric": "silent_session_a_tool_calls",
+            "value": 193,
+            "unit": "tool calls",
+            "denominator": "303 assistant messages",
+            "notes": "Three text blocks, all near the end of ~3.5 hours."
+          },
+          {
+            "metric": "silent_session_b_tool_calls",
+            "value": 242,
+            "unit": "tool calls",
+            "denominator": "352 assistant messages",
+            "notes": "No text for the final ~100 minutes."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-84933",
+          "segment_id": "seg-environment"
+        },
+        {
+          "source_id": "src-issue-84933",
+          "segment_id": "seg-run-statistics"
+        },
+        {
+          "source_id": "src-issue-84933",
+          "segment_id": "seg-outcome-visibility"
+        }
+      ],
+      "confounds": [
+        "No minimal reproduction; one reporter and recurring workload; model emission and product communication policy are not fully separable."
+      ],
+      "configuration_gaps": [
+        "Exact snapshot, full transcripts, task acceptance criteria, and artifact verifier are unavailable."
+      ],
+      "transfer_limits": [
+        "Supports an observability pressure in the specified Claude Code configuration, not a general completion failure."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-08-07T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-silent-runs-completed",
+      "statement": "The same silent-turn report says tools, hooks, and task completion remained normal, proving that operator visibility and completed execution are separate outcome axes.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code",
+        "snapshot": null,
+        "runtime": {
+          "name": "Claude Code",
+          "version": "2.1.223-2.1.224",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "high",
+        "context_policy": "1M context",
+        "tools": [
+          "tool-heavy autonomous workflow"
+        ],
+        "permissions": [
+          "bypass permissions"
+        ],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "interactive Claude Code TUI",
+        "instrument_revision": "reporter transcript comparison",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Complete long-running work while remaining supervisable.",
+        "executed": "Tool execution continued.",
+        "artifact": "Task output reportedly completed normally.",
+        "verified": "Completion is reporter-verified, not independently reproduced.",
+        "reported": "Execution success and communication failure co-occurred.",
+        "termination": "Completed with impaired mid-turn observability.",
+        "measurements": [
+          {
+            "metric": "completion_with_visibility_failure",
+            "value": true,
+            "unit": null,
+            "denominator": "two affected sessions",
+            "notes": "Separates completion from operator visibility."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-84933",
+          "segment_id": "seg-outcome-visibility"
+        }
+      ],
+      "confounds": [
+        "Acceptance quality of the completed artifacts is not published."
+      ],
+      "configuration_gaps": [
+        "Exact artifacts and verifier results are unavailable."
+      ],
+      "transfer_limits": [
+        "Only supports axis separation for the cited sessions."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "cluster",
+      "observed_interval": {
+        "start": "2026-08-07T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-tui-freeze",
+      "statement": "A Windows long-session report recorded two same-day process freezes, including one after AskUserQuestion rendered; controlled fresh-process replays exonerated the prompt payload, terminal stack, plan mode, and project configuration.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code",
+        "snapshot": null,
+        "runtime": {
+          "name": "Claude Code",
+          "version": "2.1.220",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": "1M context at about 26% after ~2.5 hours",
+        "tools": [
+          "AskUserQuestion",
+          "Bash",
+          "experimental agent teams"
+        ],
+        "permissions": [
+          "dangerously-skip-permissions"
+        ],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Windows 11 Pro, ConPTY inside psmux, WPF terminal, plan mode",
+        "instrument_revision": "live process state, capture-pane, injected input, resize controls and replay",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Continue an interactive planning turn after a rendered question.",
+        "executed": "The question tool use completed and rendered; the process then stopped responding.",
+        "artifact": "Transcript stopped after a normal tool_use record.",
+        "verified": "Reporter used control panes, process metrics, identical-payload replays, and fresh processes.",
+        "reported": "Two productive sessions froze in one day.",
+        "termination": "Required killing the process and resuming the session.",
+        "measurements": [
+          {
+            "metric": "same_day_freezes",
+            "value": 2,
+            "unit": "sessions",
+            "denominator": "one project day",
+            "notes": "One at question rendering and one mid-tool-run."
+          },
+          {
+            "metric": "affected_session_age",
+            "value": 2.5,
+            "unit": "hours",
+            "denominator": "one detailed affected session",
+            "notes": "Approximately 26% of displayed context used."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-83153",
+          "segment_id": "seg-environment"
+        },
+        {
+          "source_id": "src-issue-83153",
+          "segment_id": "seg-freeze"
+        },
+        {
+          "source_id": "src-issue-83153",
+          "segment_id": "seg-controls"
+        }
+      ],
+      "confounds": [
+        "One Windows/terminal stack and experimental agent-team configuration; long-process state not isolated."
+      ],
+      "configuration_gaps": [
+        "Exact model snapshot, memory state, and internal event-loop trace are unavailable."
+      ],
+      "transfer_limits": [
+        "Routes to Claude Code runtime/TUI investigation; does not prove model persistence failure."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-08-01T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-session-context-desync",
+      "statement": "On one machine and Claude Code build, sessions showing the same Opus 5 1M model label realized either a 150k auto-compact window or the full 1M window, with repeated premature compaction in the affected state.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code",
+        "snapshot": null,
+        "runtime": {
+          "name": "Claude Code",
+          "version": "2.1.226",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": "displayed claude-opus-5[1m]; parallel long sessions",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "macOS Darwin 25.6, bash",
+        "instrument_revision": "same-machine /context A/B and timestamped session events",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Use the advertised 1M context for long-running sessions.",
+        "executed": "Affected sessions auto-compacted around 150k while controls on the same model ID exposed 1M.",
+        "artifact": "Timestamped /context rows and event records transcribed in the issue.",
+        "verified": "Same-machine, same-build, same-model control distinguishes per-session state; causal state remains unknown.",
+        "reported": "A roughly 6x realized-window difference.",
+        "termination": "Sessions continued through lossy early compaction rather than using the advertised window.",
+        "measurements": [
+          {
+            "metric": "affected_auto_compact_window",
+            "value": 150000,
+            "unit": "tokens",
+            "denominator": "affected sessions",
+            "notes": "Displayed directly by /context."
+          },
+          {
+            "metric": "control_context_window",
+            "value": 1000000,
+            "unit": "tokens",
+            "denominator": "same-model control session",
+            "notes": "Same machine and build."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-85205",
+          "segment_id": "seg-ab-control"
+        },
+        {
+          "source_id": "src-issue-85205",
+          "segment_id": "seg-reproduction"
+        }
+      ],
+      "confounds": [
+        "Resume history, prior compactions, and route used to enter the 1M variant were not isolated."
+      ],
+      "configuration_gaps": [
+        "Exact server route, entitlement state, and internal session field source are unavailable."
+      ],
+      "transfer_limits": [
+        "Establishes a per-session realization mismatch in the cited environment, not a model context limit."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-08-09T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-large-context-transport-resets",
+      "statement": "A packet-capture report on Opus 5 sessions at roughly 420k-457k context localized frequent resets to the server edge; retries usually recovered but added 2-20 seconds and were omitted from transcripts.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code-api-route",
+        "snapshot": null,
+        "runtime": {
+          "name": "Claude Code",
+          "version": "2.1.234",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": "1M context, observed at about 420k-457k tokens",
+        "tools": [
+          "HTTP/2 API transport",
+          "subagents in some sessions"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "macOS Darwin 25.5, Node 25.6.0, South America CDN edge",
+        "instrument_revision": "tcpdump, TTL/hop analysis, SACK reconstruction and network controls",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Continue large-context Claude Code requests.",
+        "executed": "Requests experienced repeated connection resets and automatic retries.",
+        "artifact": "Packet-capture counts and reconstructed SACK gaps are reported in the issue.",
+        "verified": "Reporter ruled out measured local packet loss, VPN/proxy, MTU, IPv4/IPv6, bandwidth, idle timeout, and handshake instability.",
+        "reported": "Retries usually recovered, so transcript-visible hard failures undercounted disruption.",
+        "termination": "Most requests recovered after 2-20 second stalls; rare exhausted retries failed.",
+        "measurements": [
+          {
+            "metric": "server_originated_resets",
+            "value": 69,
+            "unit": "approximate unique TCP resets",
+            "denominator": "about two minutes",
+            "notes": "Reporter attributes TTL 58 to the six-hop destination edge."
+          },
+          {
+            "metric": "distinct_connections_reset",
+            "value": 41,
+            "unit": "connections",
+            "denominator": "about two minutes",
+            "notes": "Deduplicated by 5-tuple and sequence."
+          },
+          {
+            "metric": "retry_stall_range",
+            "value": "2-20",
+            "unit": "seconds",
+            "denominator": "each visible retry event",
+            "notes": "Usually recovered."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-87757",
+          "segment_id": "seg-network-evidence"
+        },
+        {
+          "source_id": "src-issue-87757",
+          "segment_id": "seg-observability"
+        }
+      ],
+      "confounds": [
+        "One geographic route and endpoint; synthetic traffic did not reproduce real-session behavior."
+      ],
+      "configuration_gaps": [
+        "Provider edge logs, exact request bodies, retry counts per full session, and independent reproduction are unavailable."
+      ],
+      "transfer_limits": [
+        "Supports transport and observability pressure, not model-generation causality."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-08-18T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-client-server-window-mismatch",
+      "statement": "A 2,013-log analysis found twelve Opus 5 prompt-too-long failures in a narrow 166k-178k band while same-account Opus 4.8 and Fable 5 controls exceeded 800k, localizing a client-route/entitlement mismatch rather than a generic 1M model limit.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5",
+          "claude-opus-4-8",
+          "claude-fable-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code-oauth-route",
+        "snapshot": null,
+        "runtime": {
+          "name": "Claude Code",
+          "version": "2.1.220",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": "client displays 1M; DISABLE_AUTO_COMPACT=1",
+        "tools": [
+          "model switch",
+          "subagents",
+          "file reads"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Windows 11 Pro, Max 20x OAuth, extra usage disabled",
+        "instrument_revision": "same-session A/B plus scan of 2,013 JSONL files",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Continue Opus 5 sessions beyond about 170k input context under a displayed 1M window.",
+        "executed": "Twelve requests failed with Prompt is too long; model-switch controls on the same context succeeded with sibling models.",
+        "artifact": "Reporter retained 1.13GB of local logs and exact failure bands.",
+        "verified": "Same-session switch and fleet controls narrow the mismatch, but header versus entitlement cause remains unresolved.",
+        "reported": "No Opus 5 request crossed 177,975 tokens in the scan; sibling models reached 839,535 and 856,901.",
+        "termination": "Affected Opus 5 requests hard-failed; two subagents died before reporting.",
+        "measurements": [
+          {
+            "metric": "prompt_too_long_failures",
+            "value": 12,
+            "unit": "failures",
+            "denominator": "2,013 scanned JSONL files",
+            "notes": "All on Opus 5 in one date band."
+          },
+          {
+            "metric": "opus_5_max_observed_prompt",
+            "value": 177975,
+            "unit": "tokens",
+            "denominator": "reporter's scanned fleet",
+            "notes": "Never crossed 200k."
+          },
+          {
+            "metric": "fable_5_control_max",
+            "value": 856901,
+            "unit": "tokens",
+            "denominator": "same machine/account scan",
+            "notes": "Sibling 1M control."
+          },
+          {
+            "metric": "opus_4_8_control_max",
+            "value": 839535,
+            "unit": "tokens",
+            "denominator": "same machine/account scan",
+            "notes": "Sibling 1M control."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-82226",
+          "segment_id": "seg-ab-control"
+        },
+        {
+          "source_id": "src-issue-82226",
+          "segment_id": "seg-fleet"
+        },
+        {
+          "source_id": "src-issue-82226",
+          "segment_id": "seg-environment"
+        }
+      ],
+      "confounds": [
+        "Server-side entitlement mismatch and dropped beta-header paths remain competing mechanisms."
+      ],
+      "configuration_gaps": [
+        "Raw provider error body and server-side routing/entitlement state are unavailable."
+      ],
+      "transfer_limits": [
+        "Routes to client/API realization ownership; it is not evidence that Opus 5 model capability has a 200k context."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-07-29T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-provider-context-spec",
+      "statement": "Anthropic's current documentation specifies Opus 5 as having a 1M-token context window by default and as the maximum, with up to 128k output tokens.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-api",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Claude API and documented cloud routes",
+        "reasoning_effort": null,
+        "context_policy": "1M default and maximum",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "current provider documentation",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": null,
+        "verified": "Captured on the current provider documentation page; no local request tested the limit.",
+        "reported": "Provider specification reports 1M context and 128k maximum output.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "documented_context_window",
+            "value": 1000000,
+            "unit": "tokens",
+            "denominator": "one request",
+            "notes": "Default and maximum according to provider docs."
+          },
+          {
+            "metric": "documented_max_output",
+            "value": 128000,
+            "unit": "tokens",
+            "denominator": "one request",
+            "notes": "Provider specification."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-opus-docs",
+          "segment_id": "seg-context-spec"
+        }
+      ],
+      "confounds": [
+        "Provider specification does not guarantee every product session or entitlement route realizes the same window."
+      ],
+      "configuration_gaps": [
+        "Exact API snapshot and owner runtime subject are unavailable."
+      ],
+      "transfer_limits": [
+        "Establishes documented API specification, not observed Claude Code session capacity."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-fable-fallback-change",
+      "statement": "Anthropic reports that an August classifier update reduced biology-related Fable 5 fallbacks by about 85%, while dual-use requests still fall back to Opus 5, so effective model identity can change by product policy without a new user-facing label.",
+      "target_kind": "product_policy",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-fable-5",
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-product-surfaces",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "Fable 5 with provider safety classifier and fallback",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "provider internal cross-product testing",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Reduce benign biology false-positive fallback while retaining dual-use safeguards.",
+        "executed": "Provider rewrote classifier constitution, updated training data, retrained, and evaluated it.",
+        "artifact": null,
+        "verified": "Provider reports the aggregate reduction; raw test set and trials are not public in the captured source.",
+        "reported": "About 85% fewer biology fallbacks across product surfaces; selected dual-use requests still route to Opus 5.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "biology_fallback_reduction",
+            "value": 85,
+            "unit": "approximate percent",
+            "denominator": "provider test traffic across product surfaces",
+            "notes": "Internal provider result, not independently reproduced."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-fable-safeguard-update",
+          "segment_id": "seg-fallback-change"
+        },
+        {
+          "source_id": "src-fable-safeguard-update",
+          "segment_id": "seg-classifier-method"
+        }
+      ],
+      "confounds": [
+        "Provider test distribution and exact false-negative behavior are not public."
+      ],
+      "configuration_gaps": [
+        "Exact classifier snapshot, test set, sample size, product breakdown, and raw outcomes are unavailable."
+      ],
+      "transfer_limits": [
+        "Supports a product-routing change, not a direct change in underlying Fable model behavior."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "watch",
+      "observed_interval": {
+        "start": "2026-08-07T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-memory-orientation-pressure",
+      "statement": "One Claude Code report describes two tasks consuming about six hours before Opus 5 or Fable 5 consulted already-available memory, repository operations or prior transcripts; each reportedly completed within minutes after that orientation step.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "partial",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5",
+          "claude-fable-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code-desktop",
+        "snapshot": null,
+        "runtime": {
+          "name": "claude-code",
+          "version": null,
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "Windows Claude Code with populated memory and session-search tooling",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [
+          "repository operation catalog",
+          "persistent memory",
+          "prior-session search"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "standing instruction to consult prior sources and use existing operations first",
+        "harness": null,
+        "instrument_revision": null,
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Complete two bounded media-editing tasks using existing project knowledge.",
+        "executed": "Several incorrect approaches preceded consultation of already-available sources.",
+        "artifact": "Reporter described generated image artifacts and prior-session recipes; raw corpus is not attached.",
+        "verified": "Reporter contrasted failed attempts with rapid completion after consulting the prior source.",
+        "reported": "About six hours lost across two tasks; correct routes took minutes once read.",
+        "termination": "Tasks eventually completed after explicit reorientation.",
+        "measurements": [
+          {
+            "metric": "affected_tasks",
+            "value": 2,
+            "unit": "tasks",
+            "denominator": "one working day",
+            "notes": "Bounded detailed cases."
+          },
+          {
+            "metric": "reported_reorientation_cost",
+            "value": 6,
+            "unit": "approximate hours",
+            "denominator": "two tasks",
+            "notes": "Reporter estimate."
+          },
+          {
+            "metric": "destructive_cleanup_files",
+            "value": 10,
+            "unit": "files",
+            "denominator": "one unrequested cleanup episode",
+            "notes": "Recovered from an external backup according to the report."
+          }
+        ],
+        "additional_dimensions": {
+          "orientation_sources_available": true,
+          "orientation_sources_consulted_initially": false
+        }
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-83789",
+          "segment_id": "seg-orientation-cases"
+        },
+        {
+          "source_id": "src-issue-83789",
+          "segment_id": "seg-scope-verification"
+        },
+        {
+          "source_id": "src-issue-83789",
+          "segment_id": "seg-environment"
+        }
+      ],
+      "confounds": [
+        "The report combines two Claude 5 models, multiple tasks and harness behavior in one workflow."
+      ],
+      "configuration_gaps": [
+        "Exact model per attempt, prompts, complete transcripts, artifact verifier and independent reproduction are unavailable."
+      ],
+      "transfer_limits": [
+        "Supports an orientation and scope-control study question, not a general memory-use trait."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "replicate",
+      "observed_interval": {
+        "start": "2026-08-03T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-loop-promise-schedule-gap",
+      "statement": "In one 1,250-message Fable 5 dynamic-loop session, the assistant reported continuous work but scheduled a wake gap and was idle within seven minutes; the user repeated the stop condition three times in roughly one hour.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-fable-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code-cli-loop",
+        "snapshot": null,
+        "runtime": {
+          "name": "claude-code-cli",
+          "version": "2.1.x",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Claude Code dynamic /loop",
+        "reasoning_effort": null,
+        "context_policy": "self-paced wakeup while operator remained active",
+        "tools": [
+          "ScheduleWakeup"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "continue looping until operator stops the session",
+        "harness": null,
+        "instrument_revision": "timestamped local transcript excerpt",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Continue the design/build loop until an explicit operator stop.",
+        "executed": "A long wakeup was scheduled instead of immediate continued work.",
+        "artifact": "Local transcript path and bounded excerpts were identified in the issue.",
+        "verified": "The report identifies one model across 1,250 assistant messages and timestamped instruction/idle events.",
+        "reported": "The assistant said continuation was immediate while the schedule produced an idle gap.",
+        "termination": "Operator detected the idle state and reissued the instruction.",
+        "measurements": [
+          {
+            "metric": "time_to_observed_idle",
+            "value": 7,
+            "unit": "minutes",
+            "denominator": "one dynamic-loop episode",
+            "notes": "From promise to operator intervention."
+          },
+          {
+            "metric": "repeated_continue_instructions",
+            "value": 3,
+            "unit": "instructions",
+            "denominator": "roughly one hour",
+            "notes": "Operator recovery attempts."
+          },
+          {
+            "metric": "single_model_messages",
+            "value": 1250,
+            "unit": "assistant messages",
+            "denominator": "incident session",
+            "notes": "Reporter transcript scan."
+          }
+        ],
+        "additional_dimensions": {
+          "reported_continuation": "immediate",
+          "scheduled_continuation": "long wake gap"
+        }
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-77727",
+          "segment_id": "seg-loop-transcript"
+        },
+        {
+          "source_id": "src-issue-77727",
+          "segment_id": "seg-harness-counterevidence"
+        }
+      ],
+      "confounds": [
+        "The same broad failure class was reported on an earlier model, suggesting ScheduleWakeup/harness contribution."
+      ],
+      "configuration_gaps": [
+        "Exact wake duration, full transcript bytes and controlled model-versus-harness A/B are unavailable."
+      ],
+      "transfer_limits": [
+        "Supports loop-state and operator-visibility pressure in one product mode, not a Fable persistence trait."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-07-13T00:25:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-reward-hacking-control-scope",
+      "statement": "Coding Agent Index v1.4 scores detected reward-hacked Terminal-Bench v2.1 attempts zero after trajectory review, but the control does not cover the other two benchmark components and exposes no per-model incidence in the captured comparison.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code-in-coding-agent-index",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Artificial Analysis Coding Agent Index",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [
+          "internet-enabled Terminal-Bench agent environment"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Terminal-Bench v2.1 through Harbor",
+        "instrument_revision": "Coding Agent Index v1.4",
+        "grader": "deterministic verifier plus Claude Sonnet 5 reward-hacking trajectory judge",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Prevent passing attempts from earning credit through test, verifier or reference-answer exploitation.",
+        "executed": "Every verifier-passing Terminal-Bench trajectory is reviewed against task, tests and reference solution.",
+        "artifact": "Agent trajectory and judge outcome inside the benchmark harness.",
+        "verified": "Flagged attempts are scored zero under the published method.",
+        "reported": "The aggregate comparison does not disclose model-specific flag counts.",
+        "termination": "Integrity check is bounded to Terminal-Bench v2.1.",
+        "measurements": [
+          {
+            "metric": "covered_benchmark_components",
+            "value": 1,
+            "unit": "component",
+            "denominator": "three Coding Agent Index components",
+            "notes": "Only Terminal-Bench v2.1 has this published control."
+          },
+          {
+            "metric": "flagged_attempt_score",
+            "value": 0,
+            "unit": "pass@1 credit",
+            "denominator": "one flagged Terminal-Bench attempt",
+            "notes": "Published scoring rule."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-integrity"
+        }
+      ],
+      "confounds": [
+        "The judge is model-based and its false-positive/false-negative rate is not exposed here."
+      ],
+      "configuration_gaps": [
+        "Per-agent flag incidence and equivalent controls for DeepSWE and SWE-Atlas-Q&A are unavailable."
+      ],
+      "transfer_limits": [
+        "Establishes instrument integrity scope, not exploit-seeking prevalence or absence for Opus 5."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "clu-capability-versus-acceptance",
+      "label": "Long-horizon execution capability does not establish delegated acceptance authority",
+      "observation_refs": [
+        "obs-fable-long-horizon-claim",
+        "obs-opus-self-verification-claim",
+        "obs-opus-current-agent-outcome"
+      ],
+      "counterevidence_refs": [
+        "obs-orchestration-acceptance-boundary"
+      ],
+      "independent_origin_groups": [
+        "anthropic-provider",
+        "artificial-analysis",
+        "issue-markgerrard"
+      ],
+      "supported_scope": "Provider and independent benchmark surfaces support strong bounded long-horizon execution, while the orchestration report preserves a distinct unverified boundary around accepting other agents' claims.",
+      "transfer_limits": [
+        "The negative evidence is one custom orchestration environment and cannot erase benchmark task completion."
+      ],
+      "unresolved_configuration_gaps": [
+        "No common public test directly measures self-work verification and delegated acceptance under the same configuration."
+      ],
+      "posture": "cross_modal_pattern",
+      "disposition": "replicate",
+      "next_action": "Design an owner-local acceptance eval that separates self-produced work from delegated evidence verification."
+    },
+    {
+      "cluster_id": "clu-realized-persistence-pressure",
+      "label": "Long-session persistence depends on runtime, session state, transport, and observability",
+      "observation_refs": [
+        "obs-silent-long-turns",
+        "obs-silent-runs-completed",
+        "obs-tui-freeze",
+        "obs-session-context-desync",
+        "obs-large-context-transport-resets",
+        "obs-client-server-window-mismatch"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "issue-j0ntz",
+        "issue-cmonachan",
+        "issue-rockermj",
+        "issue-nicorivas",
+        "issue-bikibiki"
+      ],
+      "supported_scope": "Across five independent primary reports and several evidence modalities, long Claude Code sessions experienced distinct realization pressures even when model capability or eventual task completion remained intact.",
+      "transfer_limits": [
+        "Mechanisms differ and incidence is unknown; the supported core is realization dependence, not one shared Opus 5 defect."
+      ],
+      "unresolved_configuration_gaps": [
+        "No provider aggregate telemetry or common reproduction matrix across routes, builds, operating systems, and entitlements."
+      ],
+      "posture": "cross_modal_pattern",
+      "disposition": "route_to_runtime_owner",
+      "next_action": "Measure context realization, compaction, retries, operator-visible progress, and terminal outcome separately in owned long-session runs."
+    },
+    {
+      "cluster_id": "clu-safeguarded-product-identity",
+      "label": "Safety fallback policy is part of realized subject identity",
+      "observation_refs": [
+        "obs-fable-fallback-change"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "anthropic-provider"
+      ],
+      "supported_scope": "For Fable 5 biology requests in August 2026, product classifiers can route some prompts to Opus 5, so the selected label alone under-identifies the serving model.",
+      "transfer_limits": [
+        "Provider-only evidence; exact fallback incidence by task class is unavailable."
+      ],
+      "unresolved_configuration_gaps": [
+        "Exact classifier and request-distribution identity are not public."
+      ],
+      "posture": "method_backed_observation",
+      "disposition": "watch",
+      "next_action": "Require fallback and safety-route disclosure in future realization studies where available."
+    },
+    {
+      "cluster_id": "clu-orientation-loop-recovery",
+      "label": "Useful persistence requires explicit orientation, loop state and recovery evidence",
+      "observation_refs": [
+        "obs-fable-long-horizon-claim",
+        "obs-memory-orientation-pressure",
+        "obs-loop-promise-schedule-gap",
+        "obs-tui-freeze"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "anthropic-provider",
+        "issue-yawangshiro",
+        "issue-simplysdm",
+        "issue-cmonachan"
+      ],
+      "supported_scope": "Provider positioning and three independent primary traces show that useful long-horizon work must distinguish available orientation evidence, scheduled continuation, runtime liveness and recovery outcome.",
+      "transfer_limits": [
+        "The traces have different mechanisms and cannot be aggregated into one Claude 5 behavior rate."
+      ],
+      "unresolved_configuration_gaps": [
+        "No common exact model, harness, task, verifier or population denominator spans the traces."
+      ],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Design an owned long-task protocol that records sources consulted, scheduled work, checkpoints, loop detection, recovery and accepted artifact."
+    },
+    {
+      "cluster_id": "clu-integrity-control-boundary",
+      "label": "Exploit-seeking claims require instrument-scoped integrity evidence",
+      "observation_refs": [
+        "obs-opus-current-agent-outcome",
+        "obs-reward-hacking-control-scope"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "artificial-analysis"
+      ],
+      "supported_scope": "The current Opus 5 agent outcome includes a published reward-hacking control for Terminal-Bench v2.1, but neither the other components nor model-specific flag incidence are exposed.",
+      "transfer_limits": [
+        "One benchmark origin cannot establish absence or prevalence of exploit-seeking behavior."
+      ],
+      "unresolved_configuration_gaps": [
+        "Per-model judge outcomes and cross-component integrity controls are unknown."
+      ],
+      "posture": "method_backed_observation",
+      "disposition": "preserve",
+      "next_action": "Require integrity-control scope and per-arm outcomes in any owned exploit-seeking study."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "ten-self-versus-delegated-verification",
+      "label": "Provider self-verification claim versus delegated acceptance misses",
+      "side_a_refs": [
+        "obs-opus-self-verification-claim"
+      ],
+      "side_b_refs": [
+        "obs-orchestration-acceptance-boundary"
+      ],
+      "analysis": "The evidence measures different scopes: verifying one's own generated work can coexist with failing to verify polished reports accepted from other agents.",
+      "resolution": "resolved_by_scope",
+      "remaining_question": "Does an owned acceptance-specific instrument reproduce the boundary under exact current snapshots?"
+    },
+    {
+      "tension_id": "ten-capability-versus-runtime-completion",
+      "label": "High aggregate agent outcome versus long-session runtime failures",
+      "side_a_refs": [
+        "obs-opus-current-agent-outcome"
+      ],
+      "side_b_refs": [
+        "obs-tui-freeze",
+        "obs-client-server-window-mismatch"
+      ],
+      "analysis": "A benchmark pass rate measures completed attempts under its harness; TUI and route failures concern whether a different realization reaches or exposes the outcome.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "What is the incidence of realization failures in the exact AoA runtime and workload distribution?"
+    },
+    {
+      "tension_id": "ten-advertised-versus-realized-context",
+      "label": "Documented 1M context versus 150k/200k realized session paths",
+      "side_a_refs": [
+        "obs-provider-context-spec"
+      ],
+      "side_b_refs": [
+        "obs-session-context-desync",
+        "obs-client-server-window-mismatch"
+      ],
+      "analysis": "The provider specification and issue traces refer to different authority layers: documented model/API capacity versus particular client, entitlement, header, and session-state realizations.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Which current routes and entitlements realize the 1M window end to end?"
+    },
+    {
+      "tension_id": "ten-completion-versus-observability",
+      "label": "Normal task completion versus absent supervision signal",
+      "side_a_refs": [
+        "obs-silent-runs-completed"
+      ],
+      "side_b_refs": [
+        "obs-silent-long-turns"
+      ],
+      "analysis": "Completed execution and operator-visible progress are independent outcome axes; neither cancels the other.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "What minimum heartbeat or trace makes long autonomous work safely supervisable?"
+    },
+    {
+      "tension_id": "ten-promised-versus-scheduled-persistence",
+      "label": "Reported immediate continuation versus scheduled idle gap",
+      "side_a_refs": [
+        "obs-fable-long-horizon-claim"
+      ],
+      "side_b_refs": [
+        "obs-loop-promise-schedule-gap"
+      ],
+      "analysis": "Provider capability positioning and one dynamic-loop execution occupy different layers; the issue localizes a gap between reported and scheduled product behavior, not underlying model capacity.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Under a fixed loop harness, how often do reported, scheduled and executed continuation agree?"
+    },
+    {
+      "tension_id": "ten-available-versus-consulted-orientation",
+      "label": "Orientation evidence present versus used before action",
+      "side_a_refs": [
+        "obs-opus-self-verification-claim"
+      ],
+      "side_b_refs": [
+        "obs-memory-orientation-pressure"
+      ],
+      "analysis": "Self-verification after generation does not ensure that prior owner evidence was consulted before choosing a trajectory; orientation and verification are separate protocol stages.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Does an explicit pre-action evidence check reduce rework and scope expansion on owned tasks?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "mp-capability-realization-outcome",
+      "trigger_refs": [
+        "obs-opus-current-agent-outcome",
+        "obs-tui-freeze"
+      ],
+      "pressure": "Capability, realized execution, completed outcome, and product termination are repeatedly conflated in model commentary.",
+      "proposed_response": "Keep those axes separate in every observation and cluster.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-operator-visibility",
+      "trigger_refs": [
+        "obs-silent-long-turns",
+        "obs-silent-runs-completed"
+      ],
+      "pressure": "A task can complete while becoming operationally unsupervisable for hours.",
+      "proposed_response": "Treat operator-visible progress and transcript completeness as outcome dimensions, not style traits.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-context-realization",
+      "trigger_refs": [
+        "obs-provider-context-spec",
+        "obs-session-context-desync",
+        "obs-client-server-window-mismatch"
+      ],
+      "pressure": "Advertised context capacity can diverge from client/session/route realization.",
+      "proposed_response": "Record documented context and realized context separately with route, entitlement, client build, and compaction state.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-runtime-attribution",
+      "trigger_refs": [
+        "obs-large-context-transport-resets",
+        "obs-tui-freeze"
+      ],
+      "pressure": "Model-labeled reports can localize to transport or event-loop layers after controls.",
+      "proposed_response": "Assign target_kind from the isolated mechanism rather than the issue title.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-fallback-identity",
+      "trigger_refs": [
+        "obs-fable-fallback-change"
+      ],
+      "pressure": "Safety routing can silently change which model answers under one selected label.",
+      "proposed_response": "Include fallback policy and effective serving model in subject binding when evidence exposes them.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-orientation-recovery-ledger",
+      "trigger_refs": [
+        "obs-memory-orientation-pressure",
+        "obs-loop-promise-schedule-gap",
+        "obs-tui-freeze"
+      ],
+      "pressure": "Long-task reports omit whether prior evidence was available and consulted, what continuation was scheduled, and what recovery actually restored.",
+      "proposed_response": "Record orientation inputs available/consulted, reported versus scheduled continuation, checkpoint state, recovery action and accepted outcome.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-integrity-control-scope",
+      "trigger_refs": [
+        "obs-reward-hacking-control-scope"
+      ],
+      "pressure": "A benchmark score can silently mix components with different exploit-detection coverage.",
+      "proposed_response": "Bind integrity mechanism, adjudicator and coverage to the exact instrument component and preserve unknown per-arm incidence.",
+      "status": "adopted"
+    }
+  ],
+  "revisit_triggers": [
+    "Anthropic publishes Opus 5 or Fable 5 system-card revisions or aggregate long-session telemetry.",
+    "Any cited Claude Code issue receives a confirmed cause, fix, closure, or controlled counterexample.",
+    "A current owner-local realization is available for an exact long-session replication.",
+    "Fallback policy, context entitlement, or Claude Code compaction/observability behavior changes.",
+    "A controlled long-task study exposes whether available prior evidence was consulted before action and measures reorientation cost.",
+    "Claude Code loop scheduling gains a fixed liveness contract or the cited dynamic-loop issue is reproduced or resolved.",
+    "Coding Agent Index publishes per-agent integrity adjudications or extends equivalent controls beyond Terminal-Bench v2.1."
+  ],
+  "created_at": "2026-08-30T07:20:00Z",
+  "updated_at": "2026-08-30T07:20:00Z"
+}
