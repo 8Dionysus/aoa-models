@@ -1,0 +1,1683 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:cross-provider/2026-08-30-outcome-economics",
+  "title": "Cross-provider agent outcome economics",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "What remains of GPT-5.6 and Claude 5 efficiency claims after binding quality, task class, effort, harness, tokens, cache, turns, time, cost, instrument revision, termination, and excluded operational overhead?",
+  "scope": {
+    "subject_labels": [
+      "gpt-5.6",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "claude-opus-5",
+      "claude-fable-5",
+      "codex",
+      "claude-code"
+    ],
+    "target_kinds": [
+      "provider_fact",
+      "benchmark_result",
+      "operational_pressure"
+    ],
+    "capture_interval": {
+      "start": "2026-08-30T06:00:00Z",
+      "end": "2026-08-30T07:20:00Z"
+    },
+    "inclusion_criteria": [
+      "Use bounded source segments and retain product, runtime, instrument, and temporal identity.",
+      "Prefer official facts, exposed independent methods, primary traces, and explicit counterevidence.",
+      "Preserve incomplete operational evidence only in the role and scope it can support."
+    ],
+    "exclusion_criteria": [
+      "Do not count dependent retellings as independent origins.",
+      "Do not infer model-only traits from product, runtime, transport, quota, or harness symptoms.",
+      "Do not compare aggregate scores across instrument revisions as a longitudinal model result."
+    ],
+    "generality_probe": {
+      "mode": "different_family_or_provider",
+      "subject_labels": [
+        "openai",
+        "anthropic",
+        "artificial-analysis"
+      ],
+      "rationale": "A shared current instrument compares two providers and multiple agent variants while the contract remains provider-neutral."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.3",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.3.md",
+        "content_digest": "sha256:64fcff8429ea6823f9f3aa5e1c614110b4d724219e198dd8cfe505424cd15aed"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gpt-5.6-2026-08-30-temporal-drift.json",
+        "content_digest": "sha256:e6362e42cf2ea49f59f87705559374c4b77cda01ce1b23b259c64213c79ff43d"
+      },
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/claude-5-2026-08-30-persistence-under-authority.json",
+        "content_digest": "sha256:24647cafefa2c852b7129e165b1164b007d6ee6e9cc17d28d0a8c74b26bfa641"
+      }
+    ],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-aa-method",
+      "title": "Coding Agent Index methodology",
+      "uri": "https://artificialanalysis.ai/methodology/coding-agents-benchmarking/",
+      "source_class": "benchmark_methodology",
+      "publisher": "Artificial Analysis",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": "2026-08-01T00:00:00Z",
+      "effective_interval": {
+        "start": "2026-08-01T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Version 1.4 is current; earlier versions used different task and scoring contours.",
+      "mutable_surface": true,
+      "origin_group": "artificial-analysis",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-suite",
+          "locator": "326 tasks across three components with three attempts each; captured lines 29-48.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-scoring",
+          "locator": "Per-attempt pass@1 and per-task aggregation; captured lines 378-416.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-efficiency",
+          "locator": "Cost, token and execution-time denominators and missing-telemetry handling; captured lines 417-432.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-revisions",
+          "locator": "Version 1.1 through 1.4 changes; captured lines 433-465.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Method authority for the current agent outcome and economics comparison."
+    },
+    {
+      "source_id": "src-aa-current",
+      "title": "Claude Code versus Codex",
+      "uri": "https://artificialanalysis.ai/agents/coding-agents/comparisons/claude-code-vs-codex",
+      "source_class": "live_benchmark",
+      "publisher": "Artificial Analysis",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": "2026-08-30T00:00:00Z",
+      "effective_interval": {
+        "start": "2026-08-01T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Live results captured under Coding Agent Index v1.4.",
+      "mutable_surface": true,
+      "origin_group": "artificial-analysis",
+      "propagation_role": "dependent",
+      "dependency_refs": [
+        "src-aa-method"
+      ],
+      "segments": [
+        {
+          "segment_id": "seg-headline",
+          "locator": "v1.4 score, per-eval, cost, time, turns, tokens and cache-hit comparison; captured lines 30-59.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-variants",
+          "locator": "Effort/model variant table including Opus 5 and GPT-5.6 family; captured lines 60-107.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-cost-boundary",
+          "locator": "Pay-per-token cost includes token/cache charges but excludes broader production cost; captured lines 164-181.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-time-boundary",
+          "locator": "Agent wall time excludes environment, verifier, judge and harness overhead; captured lines 199-216.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Current cross-provider outcome-economics table with shared task coverage."
+    },
+    {
+      "source_id": "src-aa-launch",
+      "title": "GPT-5.6 benchmarks across intelligence, speed and cost",
+      "uri": "https://artificialanalysis.ai/articles/gpt-5-6-has-landed",
+      "source_class": "independent_benchmark",
+      "publisher": "Artificial Analysis",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-07-09T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Historical v1.1-era result; not directly comparable to current v1.4.",
+      "mutable_surface": true,
+      "origin_group": "artificial-analysis",
+      "propagation_role": "dependent",
+      "dependency_refs": [
+        "src-aa-method"
+      ],
+      "segments": [
+        {
+          "segment_id": "seg-v1-1-result",
+          "locator": "Launch-time Coding Agent Index score 80 and lower per-task cost claims; captured lines 18-32.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-launch-prices",
+          "locator": "Launch API prices and cache-write pricing; captured lines 30-32.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Historical instrument snapshot selected to test score and cost drift handling."
+    },
+    {
+      "source_id": "src-openai-sol-doc",
+      "title": "GPT-5.6 Sol API model page",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "source_class": "provider_doc",
+      "publisher": "OpenAI",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-08-21T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Current base API rates; benchmark per-task cost depends on actual token composition.",
+      "mutable_surface": true,
+      "origin_group": "openai-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-price",
+          "locator": "Current $4 input, $20 output and cached-input pricing per million tokens.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-cache-rules",
+          "locator": "Long-context and cache-write price modifiers.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Current raw provider price needed to distinguish token price from outcome cost."
+    },
+    {
+      "source_id": "src-anthropic-pricing",
+      "title": "Choosing the right Claude model",
+      "uri": "https://platform.claude.com/docs/en/docs/about-claude/models/choosing-a-model",
+      "source_class": "provider_doc",
+      "publisher": "Anthropic",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-07-24T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Current provider rates; cache and fast-mode modifiers are separate.",
+      "mutable_surface": true,
+      "origin_group": "anthropic-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-opus-price",
+          "locator": "Opus 5 current $5 input and $25 output per million tokens.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-fable-price",
+          "locator": "Fable 5 current $10 input and $50 output per million tokens.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Current raw provider price needed for cross-provider denominator discipline."
+    },
+    {
+      "source_id": "src-cache-issue",
+      "title": "Prompt cache full-prefix rewrites in Claude Code",
+      "uri": "https://github.com/anthropics/claude-code/issues/82563",
+      "source_class": "primary_issue",
+      "publisher": "anthropics/claude-code reporter janspaeth",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-07-30T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open primary report; provider billing and cache backend were not independently inspected.",
+      "mutable_surface": true,
+      "origin_group": "issue-janspaeth",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-corpus",
+          "locator": "Three-week scan: sessions, requests, rewrite events, tokens and affected models; captured lines 161-184.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-repro",
+          "locator": "Consecutive-turn 41-second rewrite and recovery; captured lines 200-214.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-distribution",
+          "locator": "Idle-gap distribution, session escalation and counting caveats; captured lines 215-285 and 332-341.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Artifact-rich operational-cost report showing cache realization can dominate billed work across model families."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-current-quality-profile",
+      "statement": "Under Coding Agent Index v1.4, Claude Code with Opus 5 xhigh scored 68 versus Codex with GPT-5.6 Sol max at 65, but Codex led DeepSWE while Claude Code led Terminal-Bench and repository Q&A.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "cross-provider-agent-variants",
+        "models": [
+          "claude-opus-5",
+          "gpt-5.6-sol"
+        ],
+        "provider": null,
+        "product": "claude-code-versus-codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "Opus xhigh versus Sol max",
+        "context_policy": null,
+        "tools": [
+          "agent harness tools"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Claude Code versus Codex",
+        "instrument_revision": "Artificial Analysis Coding Agent Index v1.4",
+        "grader": "published pass@1 verifiers",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Complete 326 repository, terminal, and software-engineering tasks with three attempts each.",
+        "executed": "Published agent variants executed the shared benchmark suite.",
+        "artifact": "Patches, terminal outcomes, and repository answers consumed by benchmark verifiers.",
+        "verified": "Pass/fail outcomes aggregated per the v1.4 methodology.",
+        "reported": "Near aggregate scores conceal different per-evaluation strengths.",
+        "termination": "Benchmark attempts completed or failed under harness limits; failure taxonomy is not fully exposed.",
+        "measurements": [
+          {
+            "metric": "opus_xhigh_index",
+            "value": 68,
+            "unit": "index points",
+            "denominator": "326 tasks x 3 attempts",
+            "notes": "Claude Code variant."
+          },
+          {
+            "metric": "sol_max_index",
+            "value": 65,
+            "unit": "index points",
+            "denominator": "326 tasks x 3 attempts",
+            "notes": "Codex variant."
+          },
+          {
+            "metric": "opus_deepswe",
+            "value": 60,
+            "unit": "percent pass@1",
+            "denominator": "113 tasks x 3 attempts",
+            "notes": "Claude Code variant."
+          },
+          {
+            "metric": "sol_deepswe",
+            "value": 69,
+            "unit": "percent pass@1",
+            "denominator": "113 tasks x 3 attempts",
+            "notes": "Codex variant."
+          },
+          {
+            "metric": "opus_terminal",
+            "value": 89,
+            "unit": "percent pass@1",
+            "denominator": "89 tasks x 3 attempts",
+            "notes": "Claude Code variant."
+          },
+          {
+            "metric": "sol_terminal",
+            "value": 83,
+            "unit": "percent pass@1",
+            "denominator": "89 tasks x 3 attempts",
+            "notes": "Codex variant."
+          },
+          {
+            "metric": "opus_qna",
+            "value": 55,
+            "unit": "percent pass@1",
+            "denominator": "124 tasks x 3 attempts",
+            "notes": "Claude Code variant."
+          },
+          {
+            "metric": "sol_qna",
+            "value": 43,
+            "unit": "percent pass@1",
+            "denominator": "124 tasks x 3 attempts",
+            "notes": "Codex variant."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-suite"
+        },
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-scoring"
+        },
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-headline"
+        }
+      ],
+      "confounds": [
+        "Model, effort, and agent harness all differ; aggregate weighting compresses task-class differences."
+      ],
+      "configuration_gaps": [
+        "Exact endpoint snapshots and all attempt trajectories are not exposed in the live comparison."
+      ],
+      "transfer_limits": [
+        "Bounded to the two agent variants and v1.4 task distribution; not a model-only or universal ranking."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-current-cost-per-task",
+      "statement": "On the same v1.4 suite, reported pay-per-token API cost averaged $8.17 per task for Claude Code Opus 5 xhigh and $5.00 for Codex GPT-5.6 Sol max.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "cross-provider-agent-variants",
+        "models": [
+          "claude-opus-5",
+          "gpt-5.6-sol"
+        ],
+        "provider": null,
+        "product": "claude-code-versus-codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "Opus xhigh versus Sol max",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Claude Code versus Codex",
+        "instrument_revision": "Coding Agent Index v1.4 pooled efficiency metrics",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Measure pay-per-token API spend while attempting the shared benchmark tasks.",
+        "executed": "Token usage from benchmark attempts was priced using current provider rates and cache treatment.",
+        "artifact": null,
+        "verified": "Method includes cached input and cache writes where priced; missing telemetry is excluded rather than zeroed.",
+        "reported": "$8.17 versus $5.00 per task.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "opus_xhigh_cost",
+            "value": 8.17,
+            "unit": "USD",
+            "denominator": "average benchmark task-attempt coverage pooled per task",
+            "notes": "Claude Code Opus 5 xhigh."
+          },
+          {
+            "metric": "sol_max_cost",
+            "value": 5.0,
+            "unit": "USD",
+            "denominator": "average benchmark task-attempt coverage pooled per task",
+            "notes": "Codex GPT-5.6 Sol max."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-efficiency"
+        },
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-headline"
+        },
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-cost-boundary"
+        }
+      ],
+      "confounds": [
+        "This excludes infrastructure, engineering, supervision, verifier time, and consumer-plan accounting."
+      ],
+      "configuration_gaps": [
+        "Exact endpoint snapshots and all attempt trajectories are not exposed in the live comparison."
+      ],
+      "transfer_limits": [
+        "Pay-per-token benchmark cost, not total cost of an accepted production artifact."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-current-time-per-task",
+      "statement": "Codex GPT-5.6 Sol max averaged 10.2 agent-wall minutes per task versus 23.7 minutes for Claude Code Opus 5 xhigh on the shared v1.4 suite.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "cross-provider-agent-variants",
+        "models": [
+          "claude-opus-5",
+          "gpt-5.6-sol"
+        ],
+        "provider": null,
+        "product": "claude-code-versus-codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "Opus xhigh versus Sol max",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Claude Code versus Codex",
+        "instrument_revision": "Coding Agent Index v1.4 execution-time metric",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Measure active agent runtime per benchmark task.",
+        "executed": "Agent wall time was pooled over benchmark attempts.",
+        "artifact": null,
+        "verified": "Method excludes environment startup, verifier, judge, and other harness overhead.",
+        "reported": "23.7 versus 10.2 agent-wall minutes per task.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "opus_xhigh_agent_wall_time",
+            "value": 23.7,
+            "unit": "minutes",
+            "denominator": "average task",
+            "notes": "Excludes verifier and setup overhead."
+          },
+          {
+            "metric": "sol_max_agent_wall_time",
+            "value": 10.2,
+            "unit": "minutes",
+            "denominator": "average task",
+            "notes": "Excludes verifier and setup overhead."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-headline"
+        },
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-time-boundary"
+        }
+      ],
+      "confounds": [
+        "Different harnesses and efforts; total user wait and verifier time are not represented."
+      ],
+      "configuration_gaps": [
+        "Exact endpoint snapshots and all attempt trajectories are not exposed in the live comparison."
+      ],
+      "transfer_limits": [
+        "Bounded to active agent time in the published benchmark, not production end-to-end latency."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-current-turn-token-profile",
+      "statement": "The current comparison reports 152.1 turns and 21.6M tokens per task for Claude Code Opus 5 xhigh versus 112.3 turns and 13.2M tokens for Codex GPT-5.6 Sol max, while Claude Code had the higher cache-hit rate.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "cross-provider-agent-variants",
+        "models": [
+          "claude-opus-5",
+          "gpt-5.6-sol"
+        ],
+        "provider": null,
+        "product": "claude-code-versus-codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "Opus xhigh versus Sol max",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Claude Code versus Codex",
+        "instrument_revision": "Coding Agent Index v1.4 token and turn telemetry",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Measure interaction and token burden for shared task attempts.",
+        "executed": "Benchmark harnesses emitted turn and token telemetry.",
+        "artifact": null,
+        "verified": "Pooled metrics use published token-accounting rules; provider-native categories are combined in the headline total.",
+        "reported": "Opus used more turns/tokens but achieved a 97% cache-hit rate versus 90% for Sol.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "opus_xhigh_turns",
+            "value": 152.1,
+            "unit": "turns",
+            "denominator": "average task",
+            "notes": "Claude Code variant."
+          },
+          {
+            "metric": "sol_max_turns",
+            "value": 112.3,
+            "unit": "turns",
+            "denominator": "average task",
+            "notes": "Codex variant."
+          },
+          {
+            "metric": "opus_xhigh_tokens",
+            "value": 21.6,
+            "unit": "million tokens",
+            "denominator": "average task",
+            "notes": "Input, cache, and output headline total."
+          },
+          {
+            "metric": "sol_max_tokens",
+            "value": 13.2,
+            "unit": "million tokens",
+            "denominator": "average task",
+            "notes": "Input, cache, and output headline total."
+          },
+          {
+            "metric": "opus_xhigh_cache_hit",
+            "value": 97,
+            "unit": "percent",
+            "denominator": "benchmark prompt tokens",
+            "notes": "Provider/harness-specific cache behavior."
+          },
+          {
+            "metric": "sol_max_cache_hit",
+            "value": 90,
+            "unit": "percent",
+            "denominator": "benchmark prompt tokens",
+            "notes": "Provider/harness-specific cache behavior."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-headline"
+        },
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-variants"
+        }
+      ],
+      "confounds": [
+        "Tokenizers, cache policies, tool protocols, and turn boundaries differ by provider and harness."
+      ],
+      "configuration_gaps": [
+        "Exact endpoint snapshots and all attempt trajectories are not exposed in the live comparison."
+      ],
+      "transfer_limits": [
+        "Useful within this instrument; raw total tokens are not interchangeable with billed uncached tokens or subscription quota."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-sol-effort-slope",
+      "statement": "Within Codex on v1.4, moving GPT-5.6 Sol from high to max raised the index from 64 to 65 while cost rose from $3.00 to $5.00, agent time from 6.2 to 10.2 minutes, and tokens from 8.0M to 13.2M per task.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol"
+        ],
+        "provider": "openai",
+        "product": "codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "high versus max",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Codex",
+        "instrument_revision": "Coding Agent Index v1.4 model variants",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare adjacent reasoning efforts under one agent harness and task suite.",
+        "executed": "Published high and max variants ran the v1.4 suite.",
+        "artifact": null,
+        "verified": "Same table and instrument; exact endpoint snapshots remain unknown.",
+        "reported": "One aggregate point accompanied materially higher resource use.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "high_index",
+            "value": 64,
+            "unit": "index points",
+            "denominator": "326 tasks x 3 attempts",
+            "notes": "Codex Sol high."
+          },
+          {
+            "metric": "max_index",
+            "value": 65,
+            "unit": "index points",
+            "denominator": "326 tasks x 3 attempts",
+            "notes": "Codex Sol max."
+          },
+          {
+            "metric": "high_cost",
+            "value": 3.0,
+            "unit": "USD",
+            "denominator": "average task",
+            "notes": "Pay-per-token API cost."
+          },
+          {
+            "metric": "max_cost",
+            "value": 5.0,
+            "unit": "USD",
+            "denominator": "average task",
+            "notes": "Pay-per-token API cost."
+          },
+          {
+            "metric": "high_time",
+            "value": 6.2,
+            "unit": "minutes",
+            "denominator": "average task",
+            "notes": "Agent wall time."
+          },
+          {
+            "metric": "max_time",
+            "value": 10.2,
+            "unit": "minutes",
+            "denominator": "average task",
+            "notes": "Agent wall time."
+          },
+          {
+            "metric": "high_tokens",
+            "value": 8.0,
+            "unit": "million tokens",
+            "denominator": "average task",
+            "notes": "Headline total."
+          },
+          {
+            "metric": "max_tokens",
+            "value": 13.2,
+            "unit": "million tokens",
+            "denominator": "average task",
+            "notes": "Headline total."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-variants"
+        }
+      ],
+      "confounds": [
+        "Aggregate index can hide per-eval gains and variance; effort may change termination behavior."
+      ],
+      "configuration_gaps": [
+        "Exact endpoint snapshots and all attempt trajectories are not exposed in the live comparison."
+      ],
+      "transfer_limits": [
+        "A local effort frontier for this task distribution, not a universal recommendation to avoid max."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-opus-effort-slope",
+      "statement": "Within Claude Code on v1.4, moving Opus 5 from high to xhigh raised the index from 66 to 68 while cost rose from $3.92 to $8.17, agent time from 14.0 to 23.7 minutes, and tokens from 9.9M to 21.6M per task.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-5",
+        "models": [
+          "claude-opus-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "high versus xhigh",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Claude Code",
+        "instrument_revision": "Coding Agent Index v1.4 model variants",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare adjacent reasoning efforts under one agent harness and task suite.",
+        "executed": "Published high and xhigh variants ran the v1.4 suite.",
+        "artifact": null,
+        "verified": "Same table and instrument; exact endpoint snapshots remain unknown.",
+        "reported": "Two aggregate points accompanied more than double the reported cost and tokens.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "high_index",
+            "value": 66,
+            "unit": "index points",
+            "denominator": "326 tasks x 3 attempts",
+            "notes": "Claude Code Opus high."
+          },
+          {
+            "metric": "xhigh_index",
+            "value": 68,
+            "unit": "index points",
+            "denominator": "326 tasks x 3 attempts",
+            "notes": "Claude Code Opus xhigh."
+          },
+          {
+            "metric": "high_cost",
+            "value": 3.92,
+            "unit": "USD",
+            "denominator": "average task",
+            "notes": "Pay-per-token API cost."
+          },
+          {
+            "metric": "xhigh_cost",
+            "value": 8.17,
+            "unit": "USD",
+            "denominator": "average task",
+            "notes": "Pay-per-token API cost."
+          },
+          {
+            "metric": "high_time",
+            "value": 14.0,
+            "unit": "minutes",
+            "denominator": "average task",
+            "notes": "Agent wall time."
+          },
+          {
+            "metric": "xhigh_time",
+            "value": 23.7,
+            "unit": "minutes",
+            "denominator": "average task",
+            "notes": "Agent wall time."
+          },
+          {
+            "metric": "high_tokens",
+            "value": 9.9,
+            "unit": "million tokens",
+            "denominator": "average task",
+            "notes": "Headline total."
+          },
+          {
+            "metric": "xhigh_tokens",
+            "value": 21.6,
+            "unit": "million tokens",
+            "denominator": "average task",
+            "notes": "Headline total."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-variants"
+        }
+      ],
+      "confounds": [
+        "Aggregate index can hide per-eval gains and variance; xhigh may be chosen for a different utility function."
+      ],
+      "configuration_gaps": [
+        "Exact endpoint snapshots and all attempt trajectories are not exposed in the live comparison."
+      ],
+      "transfer_limits": [
+        "A local effort frontier for this task distribution, not a universal recommendation to avoid xhigh."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-family-price-token-nonmonotonicity",
+      "statement": "In Codex v1.4, Luna max cost only $0.29 per task despite 16M tokens—more than Sol max's 13.2M—showing lower per-token price can dominate higher token volume while outcome score remains lower.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-terra",
+          "gpt-5.6-luna"
+        ],
+        "provider": "openai",
+        "product": "codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "max",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Codex",
+        "instrument_revision": "Coding Agent Index v1.4 model variants",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare family tiers at max effort on one task suite.",
+        "executed": "Published Sol, Terra and Luna variants ran the v1.4 suite.",
+        "artifact": null,
+        "verified": "Same table and harness family; exact endpoint snapshots remain unknown.",
+        "reported": "Score, token volume, time, and cost do not share one ordering.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "sol_index_cost_tokens",
+            "value": "65 | $5.00 | 13.2M",
+            "unit": "index | USD/task | tokens/task",
+            "denominator": "Codex Sol max",
+            "notes": "10.2 agent-wall minutes/task."
+          },
+          {
+            "metric": "terra_index_cost_tokens",
+            "value": "60 | $1.93 | 9.7M",
+            "unit": "index | USD/task | tokens/task",
+            "denominator": "Codex Terra max",
+            "notes": "8.2 agent-wall minutes/task."
+          },
+          {
+            "metric": "luna_index_cost_tokens",
+            "value": "57 | $0.29 | 16M",
+            "unit": "index | USD/task | tokens/task",
+            "denominator": "Codex Luna max",
+            "notes": "8.0 agent-wall minutes/task."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-variants"
+        }
+      ],
+      "confounds": [
+        "Total token composition and cache categories differ across tiers; score weighting may not match owner utility."
+      ],
+      "configuration_gaps": [
+        "Exact endpoint snapshots and all attempt trajectories are not exposed in the live comparison."
+      ],
+      "transfer_limits": [
+        "Bounded to max-effort Codex variants and v1.4; not a statement that Luna is always cheapest per accepted outcome."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-instrument-discontinuity",
+      "statement": "Artificial Analysis reported GPT-5.6 Sol max at 80 on the July launch Coding Agent Index, while the August v1.4 table reports 65; task, Terminal-Bench, Q&A scoring, token accounting, and reward-hacking revisions prevent treating the difference as a model regression.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol"
+        ],
+        "provider": "openai",
+        "product": "codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": "max",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Codex",
+        "instrument_revision": "Coding Agent Index v1.1-era launch result versus v1.4 current result",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare historical and current published aggregate scores.",
+        "executed": "Reviewed the launch article, current table, and method version history.",
+        "artifact": null,
+        "verified": "Instrument changes are documented; no common-revision rerun was available in the captured sources.",
+        "reported": "80 historically versus 65 currently, explicitly non-longitudinal.",
+        "termination": "Comparison stopped at instrument incompatibility rather than inferring regression.",
+        "measurements": [
+          {
+            "metric": "launch_index",
+            "value": 80,
+            "unit": "index points",
+            "denominator": "historical v1.1-era suite",
+            "notes": "Published July 9."
+          },
+          {
+            "metric": "current_index",
+            "value": 65,
+            "unit": "index points",
+            "denominator": "v1.4 suite",
+            "notes": "Captured August 30."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-launch",
+          "segment_id": "seg-v1-1-result"
+        },
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-variants"
+        },
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-revisions"
+        }
+      ],
+      "confounds": [
+        "Multiple task, scoring, accounting, endpoint, and possibly snapshot changes."
+      ],
+      "configuration_gaps": [
+        "No frozen common-revision rerun links the two published values."
+      ],
+      "transfer_limits": [
+        "Supports instrument discontinuity only; it does not establish improvement or regression."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [
+        {
+          "recon_run_id": "recon-run:gpt-5.6/2026-08-29-v0.2",
+          "observation_id": "obs-015"
+        }
+      ],
+      "evidence_posture": "stale_for_current_subject",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-07-09T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-raw-price-not-outcome-cost",
+      "statement": "Current base rates are $4/$20 per million input/output tokens for Sol and $5/$25 for Opus 5, but the benchmark's per-task cost also depends on token composition, cache behavior, effort, and completed attempts.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "cross-provider-agent-variants",
+        "models": [
+          "gpt-5.6-sol",
+          "claude-opus-5"
+        ],
+        "provider": null,
+        "product": "api",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "first-party API pricing",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "current provider docs plus Coding Agent Index cost method",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": null,
+        "verified": "Provider prices and benchmark cost definition were captured; no direct billing run was executed.",
+        "reported": "Raw provider token prices and measured Cost per Task have distinct denominators.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "sol_input_output_price",
+            "value": "$4/$20",
+            "unit": "USD per million tokens",
+            "denominator": "input/output tokens",
+            "notes": "Current base API price."
+          },
+          {
+            "metric": "opus_input_output_price",
+            "value": "$5/$25",
+            "unit": "USD per million tokens",
+            "denominator": "input/output tokens",
+            "notes": "Current base API price."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-openai-sol-doc",
+          "segment_id": "seg-price"
+        },
+        {
+          "source_id": "src-anthropic-pricing",
+          "segment_id": "seg-opus-price"
+        },
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-efficiency"
+        }
+      ],
+      "confounds": [
+        "Cache-write, long-context, fast-mode, region/provider, and future price modifiers."
+      ],
+      "configuration_gaps": [
+        "No AoA workload token distribution or accepted-outcome rate is attached."
+      ],
+      "transfer_limits": [
+        "Raw rates cannot rank cost per accepted AoA outcome without workload telemetry."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-cache-rewrite-pressure",
+      "statement": "A three-week Claude Code transcript analysis found 85 full-prefix cache rewrites across 13,688 requests; they accounted for 31.3% of all cache-write tokens and affected four Claude model families, indicating a harness/cache cost mechanism rather than a model-specific efficiency trait.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "bounded",
+        "family": "claude-multi-family",
+        "models": [
+          "claude-opus-4-8",
+          "claude-opus-5",
+          "claude-fable-5",
+          "claude-sonnet-5"
+        ],
+        "provider": "anthropic",
+        "product": "claude-code",
+        "snapshot": null,
+        "runtime": {
+          "name": "Claude Code",
+          "version": null,
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": "100k-900k contexts",
+        "tools": [
+          "hooks",
+          "subagents",
+          "workflow runs",
+          "heavy edit/bash loops"
+        ],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Claude Code CLI on macOS Darwin 25.5",
+        "instrument_revision": "requestId-deduplicated scan of 732 sessions and 13,688 API requests",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Reuse recent conversation-prefix cache entries during long Claude Code work.",
+        "executed": "Some consecutive requests rewrote the full prefix instead of reading the recent cache entry.",
+        "artifact": "Reporter retained 468MB of transcripts with per-request usage and named request IDs.",
+        "verified": "Events were deduplicated by requestId; sub-300-second cases were separated from legitimate >1-hour expiry.",
+        "reported": "85 events used 26.2M cache-write tokens; 25 sub-300-second events represented about 9.3M input-token-equivalents.",
+        "termination": "Most work continued, but some session budgets were consumed without proportional generation output.",
+        "measurements": [
+          {
+            "metric": "scanned_sessions",
+            "value": 732,
+            "unit": "sessions",
+            "denominator": "three weeks",
+            "notes": "One reporter's local corpus."
+          },
+          {
+            "metric": "scanned_requests",
+            "value": 13688,
+            "unit": "API requests",
+            "denominator": "three weeks",
+            "notes": "Deduplicated request population."
+          },
+          {
+            "metric": "full_prefix_rewrites",
+            "value": 85,
+            "unit": "events",
+            "denominator": "13,688 API requests",
+            "notes": "Across 27 sessions and five projects."
+          },
+          {
+            "metric": "rewrite_share_of_cache_write",
+            "value": 31.3,
+            "unit": "percent",
+            "denominator": "83,666,423 cache-creation tokens",
+            "notes": "26,211,061 tokens in detected events."
+          },
+          {
+            "metric": "sub_300_second_events",
+            "value": 25,
+            "unit": "events",
+            "denominator": "85 detected rewrites",
+            "notes": "Inside even the shortest declared TTL."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-cache-issue",
+          "segment_id": "seg-corpus"
+        },
+        {
+          "source_id": "src-cache-issue",
+          "segment_id": "seg-repro"
+        },
+        {
+          "source_id": "src-cache-issue",
+          "segment_id": "seg-distribution"
+        }
+      ],
+      "confounds": [
+        "One account, hook configuration, product accounting, and provider cache backend are not independently inspected."
+      ],
+      "configuration_gaps": [
+        "Provider billing records, cache backend state, exact client version, and independent reproduction are unavailable."
+      ],
+      "transfer_limits": [
+        "Supports a cross-model Claude Code cache pressure; it is not a population incidence or model cost claim."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-07-10T00:00:00Z",
+        "end": "2026-07-30T00:00:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-benchmark-cost-boundary",
+      "statement": "The v1.4 Cost per Task metric includes pay-per-token input, cache, cache-write, reasoning, and output charges where available, but explicitly excludes infrastructure, engineering, supervision, verifier, and other production overhead.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "coding-agent-index",
+        "models": [],
+        "provider": "artificial-analysis",
+        "product": "benchmark",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "Coding Agent Index v1.4",
+        "grader": "published methodology",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Define the economic boundary of published Cost per Task.",
+        "executed": "Reviewed methodology and comparison-page metric notes.",
+        "artifact": null,
+        "verified": "The source explicitly lists included token charges and excluded operational categories.",
+        "reported": "Metric is pay-per-token API cost, not total production cost.",
+        "termination": "Boundary review completed.",
+        "measurements": [
+          {
+            "metric": "full_operational_cost_covered",
+            "value": false,
+            "unit": null,
+            "denominator": "Cost per Task metric",
+            "notes": "Supervision and infrastructure are excluded."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-aa-method",
+          "segment_id": "seg-efficiency"
+        },
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-cost-boundary"
+        },
+        {
+          "source_id": "src-aa-current",
+          "segment_id": "seg-time-boundary"
+        }
+      ],
+      "confounds": [],
+      "configuration_gaps": [
+        "The amount of excluded overhead is not published for each agent variant."
+      ],
+      "transfer_limits": [
+        "Defines interpretation of the benchmark only; it does not estimate total AoA cost."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "clu-outcome-economics-vector",
+      "label": "Agent outcome economics is a vector rather than one model ranking",
+      "observation_refs": [
+        "obs-current-quality-profile",
+        "obs-current-cost-per-task",
+        "obs-current-time-per-task",
+        "obs-current-turn-token-profile"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "artificial-analysis"
+      ],
+      "supported_scope": "Within one current instrument, Opus 5 xhigh has the higher aggregate score while GPT-5.6 Sol max is cheaper, faster, and uses fewer turns and tokens; per-eval leaders also differ.",
+      "transfer_limits": [
+        "One independent benchmark origin and task distribution; both model and harness differ."
+      ],
+      "unresolved_configuration_gaps": [
+        "Reliability variance, owner acceptance, supervision cost, and exact endpoint snapshots are not exposed."
+      ],
+      "posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "next_action": "Select owner utility weights and rerun exact candidate configurations on AoA task classes before choosing a route."
+    },
+    {
+      "cluster_id": "clu-effort-frontiers",
+      "label": "Effort increases have model- and task-specific marginal returns",
+      "observation_refs": [
+        "obs-sol-effort-slope",
+        "obs-opus-effort-slope",
+        "obs-family-price-token-nonmonotonicity"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "artificial-analysis"
+      ],
+      "supported_scope": "The current table exposes different score/cost/time/token slopes across efforts and tiers, so reasoning effort is part of the evaluated configuration rather than a monotonic quality switch.",
+      "transfer_limits": [
+        "Aggregate slopes may differ by per-eval component and production workload."
+      ],
+      "unresolved_configuration_gaps": [
+        "Attempt variance and exact termination distributions by effort are unavailable."
+      ],
+      "posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "next_action": "Run effort sweeps on owner tasks and retain Pareto points rather than one default winner."
+    },
+    {
+      "cluster_id": "clu-instrument-discontinuity",
+      "label": "Historical and current aggregate scores require revision identity",
+      "observation_refs": [
+        "obs-instrument-discontinuity"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "artificial-analysis"
+      ],
+      "supported_scope": "The July score 80 and August score 65 belong to different Coding Agent Index revisions and cannot establish a temporal model regression without a frozen common instrument.",
+      "transfer_limits": [
+        "Does not say either published result is wrong."
+      ],
+      "unresolved_configuration_gaps": [
+        "No common-revision rerun is captured."
+      ],
+      "posture": "stale_for_current_subject",
+      "disposition": "preserve",
+      "next_action": "Preserve revision-bound observations and seek same-revision reruns for longitudinal claims."
+    },
+    {
+      "cluster_id": "clu-economic-boundary",
+      "label": "Token price and benchmark cost omit operational realization pressure",
+      "observation_refs": [
+        "obs-raw-price-not-outcome-cost",
+        "obs-cache-rewrite-pressure",
+        "obs-benchmark-cost-boundary"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "openai-provider",
+        "anthropic-provider",
+        "artificial-analysis",
+        "issue-janspaeth"
+      ],
+      "supported_scope": "Provider token prices and benchmark Cost per Task are useful bounded measures, while primary cache traces show product-runtime behavior can add billed work not attributable to model capability or captured by total production-cost accounting.",
+      "transfer_limits": [
+        "The cache issue is one Claude Code corpus and cannot be added numerically to the benchmark rows."
+      ],
+      "unresolved_configuration_gaps": [
+        "No shared production workload or full-cost ledger connects the sources."
+      ],
+      "posture": "cross_modal_pattern",
+      "disposition": "replicate",
+      "next_action": "Capture cache categories, retries, supervision, verifier time, termination, and accepted artifacts in owned cost studies."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "ten-quality-versus-resources",
+      "label": "Higher aggregate score versus lower cost, time, turns, and tokens",
+      "side_a_refs": [
+        "obs-current-quality-profile"
+      ],
+      "side_b_refs": [
+        "obs-current-cost-per-task",
+        "obs-current-time-per-task",
+        "obs-current-turn-token-profile"
+      ],
+      "analysis": "The outcome and resource axes differ by design; choosing between variants requires an owner utility function and task-class weighting rather than averaging them into confidence.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "What quality delta is worth the additional resource and supervision burden on AoA workloads?"
+    },
+    {
+      "tension_id": "ten-effort-marginal-return",
+      "label": "Small aggregate score gain versus large effort-resource increase",
+      "side_a_refs": [
+        "obs-sol-effort-slope"
+      ],
+      "side_b_refs": [
+        "obs-opus-effort-slope"
+      ],
+      "analysis": "Both families show non-free effort escalation, but the slopes and per-eval consequences differ; neither supports one universal effort rule.",
+      "resolution": "partially_resolved",
+      "remaining_question": "Which owner task classes gain enough verified outcome at the higher efforts to justify the cost?"
+    },
+    {
+      "tension_id": "ten-launch-versus-current-index",
+      "label": "Launch score 80 versus current score 65",
+      "side_a_refs": [
+        "obs-instrument-discontinuity"
+      ],
+      "side_b_refs": [
+        "obs-current-quality-profile"
+      ],
+      "analysis": "The historical and current values use different index revisions and comparison populations, so the apparent decline is an instrument discontinuity rather than observed longitudinal regression.",
+      "resolution": "resolved_by_instrument",
+      "remaining_question": "Can both snapshots be rerun on one frozen v1.4 or later task suite?"
+    },
+    {
+      "tension_id": "ten-standardized-cache-versus-runtime-cache",
+      "label": "High benchmark cache-hit rate versus costly full-prefix rewrite episodes",
+      "side_a_refs": [
+        "obs-current-turn-token-profile"
+      ],
+      "side_b_refs": [
+        "obs-cache-rewrite-pressure"
+      ],
+      "analysis": "The benchmark reports pooled cache behavior under its harness, while the issue describes intermittent production-client cache misses across a different corpus; both can be true.",
+      "resolution": "resolved_by_scope",
+      "remaining_question": "What is the cache-write distribution for the exact AoA harness and session lifecycle?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "mp-denominator-required",
+      "trigger_refs": [
+        "obs-current-cost-per-task",
+        "obs-current-time-per-task",
+        "obs-current-turn-token-profile"
+      ],
+      "pressure": "Price, cost, time, turns, tokens, cache, quota, and accepted outcomes are repeatedly collapsed into the word efficiency.",
+      "proposed_response": "Require metric, unit, denominator, exclusions, and task/instrument identity for every economics observation.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-per-eval-before-ranking",
+      "trigger_refs": [
+        "obs-current-quality-profile"
+      ],
+      "pressure": "Near aggregate scores conceal different winners across task classes.",
+      "proposed_response": "Preserve per-evaluation outcomes and owner task weights before any routing recommendation.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-effort-sweep",
+      "trigger_refs": [
+        "obs-sol-effort-slope",
+        "obs-opus-effort-slope"
+      ],
+      "pressure": "Reasoning effort changes cost and time faster than aggregate score in the captured rows.",
+      "proposed_response": "Treat effort as configuration and evaluate its local Pareto frontier.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-instrument-revision",
+      "trigger_refs": [
+        "obs-instrument-discontinuity"
+      ],
+      "pressure": "A live benchmark name survives incompatible task, scoring, and accounting revisions.",
+      "proposed_response": "Bind every result to an instrument revision and forbid regression claims across revisions without a common rerun.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-operational-overhead",
+      "trigger_refs": [
+        "obs-cache-rewrite-pressure",
+        "obs-benchmark-cost-boundary"
+      ],
+      "pressure": "Standard pay-per-token benchmark cost excludes runtime anomalies and broader acceptance/supervision overhead.",
+      "proposed_response": "Add an owned full-outcome ledger before production economics claims; keep external operational traces as replication pressure.",
+      "status": "adopted"
+    }
+  ],
+  "revisit_triggers": [
+    "Artificial Analysis changes Coding Agent Index revision, task pool, grader, or variant rows.",
+    "OpenAI or Anthropic changes token, cache, long-context, or fast-mode pricing.",
+    "A common-revision rerun connects the July and August benchmark snapshots.",
+    "Owned AoA workload telemetry exposes accepted outcomes, retries, cache writes, supervision, and total wall time.",
+    "The cache-rewrite issue receives a confirmed cause, fix, or independent reproduction."
+  ],
+  "created_at": "2026-08-30T07:20:00Z",
+  "updated_at": "2026-08-30T07:20:00Z"
+}

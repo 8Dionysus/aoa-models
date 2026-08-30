@@ -10,6 +10,10 @@ Do not turn a convenient model nickname into source truth. Model, effort,
 runtime, access regime, context, tools, environment, and permissions remain
 separate fields.
 
+External web evidence belongs in `research-intake/` until a separate owner
+review establishes a canonical fact, study, or claim. A valid recon packet is
+pre-canon structure, not proof or fit evidence.
+
 ## Authority
 
 - Owner-authored records under `source/` are the local source of model meaning.
@@ -34,6 +38,10 @@ separate fields.
 6. Hand activation, runtime, proof, acceptance, publication, and external
    effects to their stronger owners.
 
+For web research, preserve source segments, origin dependencies, instrument
+revision, configuration gaps, counterevidence, and transfer limits. Do not feed
+research-intake paths into `query_model_fit.py` or canonical source evidence.
+
 ## Claim lifecycle
 
 The supported lifecycle is:
@@ -49,6 +57,7 @@ reason; semantic history is not rewritten silently.
 
 ```bash
 python scripts/validate_models.py
+python scripts/validate_research_intake.py
 python scripts/build_model_fit_projections.py --check
 python scripts/generate_decision_index.py --check
 python -m unittest discover -s tests -v
@@ -63,6 +72,8 @@ Stop before claiming or writing when:
   behavior alone;
 - a proof verdict would be copied or reinterpreted instead of referenced;
 - a model-fit projection would become a routing or activation decision;
+- a pre-canon web observation would be promoted without a separate owner
+  review and the evidence required by the target source object;
 - the change needs runtime, host, secret, global configuration, publication,
   or external-effect authority;
 - safe work would overwrite unrelated dirty changes.

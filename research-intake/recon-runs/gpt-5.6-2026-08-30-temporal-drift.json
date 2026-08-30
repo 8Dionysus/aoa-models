@@ -1,0 +1,1633 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:gpt-5.6/2026-08-30-temporal-drift",
+  "title": "GPT-5.6 segment and product temporal drift recheck",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "Which GPT-5.6 facts changed or remained temporally split across source segments and product surfaces, and what can a repeat capture honestly supersede?",
+  "scope": {
+    "subject_labels": [
+      "gpt-5.6",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gpt-5.5-comparator"
+    ],
+    "target_kinds": [
+      "provider_fact",
+      "benchmark_result",
+      "product_policy",
+      "operational_pressure",
+      "runtime_behavior"
+    ],
+    "capture_interval": {
+      "start": "2026-08-30T06:00:00Z",
+      "end": "2026-08-30T07:20:00Z"
+    },
+    "inclusion_criteria": [
+      "Use bounded source segments and retain product, runtime, instrument, and temporal identity.",
+      "Prefer official facts, exposed independent methods, primary traces, and explicit counterevidence.",
+      "Preserve incomplete operational evidence only in the role and scope it can support."
+    ],
+    "exclusion_criteria": [
+      "Do not count dependent retellings as independent origins.",
+      "Do not infer model-only traits from product, runtime, transport, quota, or harness symptoms.",
+      "Do not compare aggregate scores across instrument revisions as a longitudinal model result."
+    ],
+    "generality_probe": {
+      "mode": "different_product_or_instrument",
+      "subject_labels": [
+        "chatgpt-chat",
+        "chatgpt-work",
+        "codex",
+        "api",
+        "deployment-safety-evaluation"
+      ],
+      "rationale": "The run tests whether one family label survives separate product and instrument timelines without schema changes."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.3",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.3.md",
+        "content_digest": "sha256:64fcff8429ea6823f9f3aa5e1c614110b4d724219e198dd8cfe505424cd15aed"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gpt-5.6-2026-08-29-v0.2.json",
+        "content_digest": "sha256:4404900b111ce459faa9cc355ea559dc754f8d29c793adf26c8d605c9142118a"
+      }
+    ],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-openai-release",
+      "title": "GPT-5.6 release page",
+      "uri": "https://openai.com/index/gpt-5-6/",
+      "source_class": "provider_release",
+      "publisher": "OpenAI",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-07-09T00:00:00Z",
+      "updated_at": "2026-08-21T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "The page carries later update notices while retaining historical launch-pricing prose.",
+      "mutable_surface": true,
+      "origin_group": "openai-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-update-notices",
+          "locator": "Update notices dated 2026-07-30 and 2026-08-21; captured lines 40-41.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-launch-pricing",
+          "locator": "Availability and launch pricing section; captured lines 226-234.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-tier-cadence",
+          "locator": "Durable tier and product availability statements; captured lines 228-233.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Primary provider release surface selected to compare page-local temporal segments."
+    },
+    {
+      "source_id": "src-sol-doc",
+      "title": "GPT-5.6 Sol API model page",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "source_class": "provider_doc",
+      "publisher": "OpenAI",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-08-21T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Mutable current API documentation; snapshot identifier is not exposed on the captured page.",
+      "mutable_surface": true,
+      "origin_group": "openai-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-current-price-spec",
+          "locator": "Current model identity, $4/$20 price, 1.05M context and 128k output; captured lines 804-831.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-long-context-price",
+          "locator": "Per-token pricing, >272k multiplier and cache-write rule; captured pricing section.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Current first-party model specification and price for the Sol API route."
+    },
+    {
+      "source_id": "src-terra-doc",
+      "title": "GPT-5.6 Terra API model page",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+      "source_class": "provider_doc",
+      "publisher": "OpenAI",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-07-30T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Mutable current API documentation.",
+      "mutable_surface": true,
+      "origin_group": "openai-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-current-price-spec",
+          "locator": "Current $2/$12 price, $0.20 cached input, 1.05M context and 128k output; captured lines 804-876.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Current first-party model specification and price for the Terra API route."
+    },
+    {
+      "source_id": "src-luna-doc",
+      "title": "GPT-5.6 Luna API model page",
+      "uri": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "source_class": "provider_doc",
+      "publisher": "OpenAI",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-07-30T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Mutable current API documentation.",
+      "mutable_surface": true,
+      "origin_group": "openai-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-current-price-spec",
+          "locator": "Current $0.20/$1.20 price, $0.02 cached input, 1.05M context and 128k output; captured lines 804-876.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Current first-party model specification and price for the Luna API route."
+    },
+    {
+      "source_id": "src-chat-update",
+      "title": "Improving GPT-5.6 Sol in ChatGPT",
+      "uri": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/",
+      "source_class": "provider_release",
+      "publisher": "OpenAI",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-06T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-08-06T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Product-scoped release, not a family-wide snapshot replacement.",
+      "mutable_surface": true,
+      "origin_group": "openai-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-chat-update",
+          "locator": "Updated Sol and Luna Chat experience; captured lines 39-45 and 88-100.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-product-boundary",
+          "locator": "Updated version is Chat-only; Work and Codex do not change; captured lines 101-107.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Primary provider statement that binds an update to Chat rather than all products."
+    },
+    {
+      "source_id": "src-safety-update",
+      "title": "GPT-5.6 August Updates safety card",
+      "uri": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+      "source_class": "provider_system_card",
+      "publisher": "OpenAI",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-06T00:00:00Z",
+      "updated_at": "2026-08-19T00:00:00Z",
+      "effective_interval": {
+        "start": "2026-08-06T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "The card exposes a dated correction and explicitly distinguishes product-time model subjects.",
+      "mutable_surface": true,
+      "origin_group": "openai-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-result-correction",
+          "locator": "2026-08-19 correction of GPT-5.5 pass@4 from 0.4% to 1.48%; captured lines 117-124 and 315-321.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-product-split",
+          "locator": "August Chat models distinguished from July Codex and Work models; captured lines 120-124.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-distinct-designation",
+          "locator": "Same preparedness designations, but updates are distinct and do not replace prior models; captured lines 243-254.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Primary safety and evaluation surface with an explicit change log."
+    },
+    {
+      "source_id": "src-release-notes",
+      "title": "ChatGPT release notes",
+      "uri": "https://help.openai.com/en/articles/6825453",
+      "source_class": "provider_release_notes",
+      "publisher": "OpenAI",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": null,
+      "updated_at": "2026-08-30T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Mutable cumulative release-note surface.",
+      "mutable_surface": true,
+      "origin_group": "openai-provider",
+      "propagation_role": "dependent",
+      "dependency_refs": [
+        "src-chat-update"
+      ],
+      "segments": [
+        {
+          "segment_id": "seg-chat-boundary",
+          "locator": "August 6 entry repeats that Work and Codex do not change; captured lines 204-210.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public web source inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Selected to test propagation accounting, not as an independent origin."
+    },
+    {
+      "source_id": "src-issue-40258",
+      "title": "GPT-5.6 Sol Codex catalog differs by originator",
+      "uri": "https://github.com/openai/codex/issues/40258",
+      "source_class": "primary_issue",
+      "publisher": "openai/codex reporter Proview-China",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-23T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open issue; raw authenticated responses were summarized with secrets redacted and were not independently reproduced here.",
+      "mutable_surface": true,
+      "origin_group": "issue-proview-china",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-controlled-catalog",
+          "locator": "Same-account and same-request catalog A/B by originator header; captured lines 164-199.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-route-timeline",
+          "locator": "Observed 2026-08-21 to 2026-08-22 effective-window change and reproduction controls; captured lines 200-238.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public primary issue inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Fresh route-level control narrowing a prior broad context-realization pressure."
+    },
+    {
+      "source_id": "src-issue-40905",
+      "title": "Five-hour usage window interrupts one long-running GPT-5.6 Sol goal",
+      "uri": "https://github.com/openai/codex/issues/40905",
+      "source_class": "primary_issue",
+      "publisher": "openai/codex reporter FlapPearLabs",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-26T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open product-policy request based on one reporter and one long-running goal.",
+      "mutable_surface": true,
+      "origin_group": "issue-flap-pearlabs",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-interruptions",
+          "locator": "One long-running goal interrupted twice by the five-hour usage boundary; captured lines 161-217.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-proposed-denominators",
+          "locator": "Suggested completion, resume and time-to-completion measurements; captured lines 255-260.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public primary issue inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Quota countersearch with an explicit incident denominator and an incomplete accounting boundary."
+    },
+    {
+      "source_id": "src-issue-40944",
+      "title": "GPT-5.6 local-tool code-mode handshake failure on Windows",
+      "uri": "https://github.com/openai/codex/issues/40944",
+      "source_class": "primary_issue",
+      "publisher": "openai/codex reporter hancong-nju",
+      "captured_at": "2026-08-30T07:20:00Z",
+      "published_at": "2026-08-26T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open issue; referenced private session JSONL was not publicly attached.",
+      "mutable_surface": true,
+      "origin_group": "issue-hancong-nju",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-model-route-ab",
+          "locator": "Same-environment GPT-5.6 Sol/Luna failure and GPT-5.5 success; captured lines 160-205.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        },
+        {
+          "segment_id": "seg-runtime-controls",
+          "locator": "Catalog differences and runtime, sandbox, MFA and manual-host controls; captured lines 207-248.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The bounded live-web segment was inspected through the web research tool, but exact normalized response bytes were not archived."
+        }
+      ],
+      "access_notes": "Public primary issue inspected during the bounded 2026-08-30 run.",
+      "selection_context": "Newer client/runtime trace refining an earlier Windows tool-host observation."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-current-api-prices",
+      "statement": "On 2026-08-30 the first-party API pages reported base input/output prices of $4/$20 for Sol, $2/$12 for Terra, and $0.20/$1.20 for Luna per million tokens.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-terra",
+          "gpt-5.6-luna"
+        ],
+        "provider": "openai",
+        "product": "api",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "OpenAI first-party API model catalog",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "live provider docs captured 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": null,
+        "verified": "The bounded page segments were cross-read during this run; no billing transaction was executed.",
+        "reported": "Current prices were reported on the three provider model pages.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "sol_input_price",
+            "value": 4.0,
+            "unit": "USD per million tokens",
+            "denominator": "uncached input tokens",
+            "notes": "Base price on captured model page."
+          },
+          {
+            "metric": "sol_output_price",
+            "value": 20.0,
+            "unit": "USD per million tokens",
+            "denominator": "output tokens",
+            "notes": "Base price on captured model page."
+          },
+          {
+            "metric": "terra_input_price",
+            "value": 2.0,
+            "unit": "USD per million tokens",
+            "denominator": "uncached input tokens",
+            "notes": "Base price on captured model page."
+          },
+          {
+            "metric": "terra_output_price",
+            "value": 12.0,
+            "unit": "USD per million tokens",
+            "denominator": "output tokens",
+            "notes": "Base price on captured model page."
+          },
+          {
+            "metric": "luna_input_price",
+            "value": 0.2,
+            "unit": "USD per million tokens",
+            "denominator": "uncached input tokens",
+            "notes": "Base price on captured model page."
+          },
+          {
+            "metric": "luna_output_price",
+            "value": 1.2,
+            "unit": "USD per million tokens",
+            "denominator": "output tokens",
+            "notes": "Base price on captured model page."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-sol-doc",
+          "segment_id": "seg-current-price-spec"
+        },
+        {
+          "source_id": "src-terra-doc",
+          "segment_id": "seg-current-price-spec"
+        },
+        {
+          "source_id": "src-luna-doc",
+          "segment_id": "seg-current-price-spec"
+        }
+      ],
+      "confounds": [],
+      "configuration_gaps": [
+        "Exact provider snapshot identifiers are not exposed for the captured aliases.",
+        "No owner runtime subject or AoA verification is attached to the external provider surfaces."
+      ],
+      "transfer_limits": [
+        "Applies to the captured first-party API pages and date, excluding product subscriptions, long-context multipliers, cache writes, and future changes."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-retained-launch-prices",
+      "statement": "The same release URL still retained its July launch-pricing prose of $5/$30, $2.50/$15, and $1/$6 while its top update notices announced later reductions.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "partial",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-terra",
+          "gpt-5.6-luna"
+        ],
+        "provider": "openai",
+        "product": "api",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "OpenAI release page",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "mutable release-page segments captured 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": null,
+        "verified": "Both bounded segments were visible in the capture.",
+        "reported": "Historical launch prices and later update notices coexist on one live page.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "sol_launch_input_output",
+            "value": "$5/$30",
+            "unit": "USD per million tokens",
+            "denominator": "launch API price",
+            "notes": "Historical prose retained on the page."
+          },
+          {
+            "metric": "terra_launch_input_output",
+            "value": "$2.50/$15",
+            "unit": "USD per million tokens",
+            "denominator": "launch API price",
+            "notes": "Historical prose retained on the page."
+          },
+          {
+            "metric": "luna_launch_input_output",
+            "value": "$1/$6",
+            "unit": "USD per million tokens",
+            "denominator": "launch API price",
+            "notes": "Historical prose retained on the page."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-openai-release",
+          "segment_id": "seg-update-notices"
+        },
+        {
+          "source_id": "src-openai-release",
+          "segment_id": "seg-launch-pricing"
+        }
+      ],
+      "confounds": [],
+      "configuration_gaps": [
+        "Exact provider snapshot identifiers are not exposed for the captured aliases.",
+        "No owner runtime subject or AoA verification is attached to the external provider surfaces."
+      ],
+      "transfer_limits": [
+        "This observation is about page-segment currentness, not a claim that launch prices remain effective."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "stale_for_current_subject",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-segment-currentness",
+      "statement": "A recheck one day after the seed confirms that currentness must attach to a source segment: page-level recency would incorrectly make either the retained launch table or the later update notices authoritative for the whole URL.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "partial",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-terra",
+          "gpt-5.6-luna"
+        ],
+        "provider": "openai",
+        "product": "web-research",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "manual web capture",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "External Model Web Recon Lens v0.3",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": "Compared later update notices, retained launch prose, and current API model pages.",
+        "artifact": "This ReconRun preserves each segment separately.",
+        "verified": "Segment locators and temporal roles pass the intake contract; external truth is not owner-verified.",
+        "reported": "The URL contains multiple temporal states.",
+        "termination": "Bounded recheck completed.",
+        "measurements": [
+          {
+            "metric": "segment_level_drift_detected",
+            "value": true,
+            "unit": null,
+            "denominator": "one mutable release URL",
+            "notes": "Different segments encode different effective times."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-openai-release",
+          "segment_id": "seg-update-notices"
+        },
+        {
+          "source_id": "src-openai-release",
+          "segment_id": "seg-launch-pricing"
+        },
+        {
+          "source_id": "src-sol-doc",
+          "segment_id": "seg-current-price-spec"
+        }
+      ],
+      "confounds": [],
+      "configuration_gaps": [
+        "Exact provider snapshot identifiers are not exposed for the captured aliases.",
+        "No owner runtime subject or AoA verification is attached to the external provider surfaces."
+      ],
+      "transfer_limits": [
+        "Generalizes to mutable source handling, not to the truth of uncaptured page sections."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [
+        {
+          "recon_run_id": "recon-run:gpt-5.6/2026-08-29-v0.2",
+          "observation_id": "obs-004"
+        }
+      ],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "cluster",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-product-time-split",
+      "statement": "The August Chat update changed Sol and Luna in Chat while Work and Codex continued using July versions, so one family-tier label names distinct product-time subjects.",
+      "target_kind": "product_policy",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-luna"
+        ],
+        "provider": "openai",
+        "product": "chatgpt-chat-work-and-codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "OpenAI product surfaces",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "provider release and safety statements",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": null,
+        "verified": "Three provider segments agree, but two are dependent restatements from the same origin.",
+        "reported": "Provider sources explicitly separated August Chat versions from July Work and Codex versions.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "distinct_product_time_subjects",
+            "value": 2,
+            "unit": "version groups",
+            "denominator": "Chat versus Work/Codex",
+            "notes": "Provider uses month-of-release labels to distinguish them."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-chat-update",
+          "segment_id": "seg-product-boundary"
+        },
+        {
+          "source_id": "src-safety-update",
+          "segment_id": "seg-product-split"
+        },
+        {
+          "source_id": "src-release-notes",
+          "segment_id": "seg-chat-boundary"
+        }
+      ],
+      "confounds": [
+        "Public sources do not expose exact snapshot IDs for either product-time group."
+      ],
+      "configuration_gaps": [
+        "Exact provider snapshot identifiers are not exposed for the captured aliases.",
+        "No owner runtime subject or AoA verification is attached to the external provider surfaces."
+      ],
+      "transfer_limits": [
+        "Only establishes the provider-declared August 2026 product split; it does not compare behavior across the products."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [
+        {
+          "recon_run_id": "recon-run:gpt-5.6/2026-08-29-v0.2",
+          "observation_id": "obs-005"
+        }
+      ],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-benchmark-correction",
+      "statement": "The August safety card corrected a comparator's hard-negative protein-binding pass@4 value from 0.4% to 1.48% because the earlier number was pass@1, showing result identity can change at one segment without a new URL.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "partial",
+        "family": "gpt-5.5",
+        "models": [
+          "gpt-5.5"
+        ],
+        "provider": "openai",
+        "product": "deployment-safety-evaluation",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "hard-negative protein binding prediction evaluation",
+        "grader": "provider evaluation; full trial artifacts unavailable",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Estimate pass@4 on the provider's hard-negative protein-binding evaluation.",
+        "executed": "Provider evaluation; exact run trace not public in the captured segment.",
+        "artifact": null,
+        "verified": "Provider change log identifies the metric-label error; aoa-models did not rerun the evaluation.",
+        "reported": "Corrected from 0.4% to 1.48%.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "previously_reported_value",
+            "value": 0.4,
+            "unit": "percent",
+            "denominator": "pass@4 label, later identified as pass@1",
+            "notes": "Historical erroneous value."
+          },
+          {
+            "metric": "corrected_value",
+            "value": 1.48,
+            "unit": "percent",
+            "denominator": "pass@4",
+            "notes": "Current provider-corrected value."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-safety-update",
+          "segment_id": "seg-result-correction"
+        }
+      ],
+      "confounds": [
+        "Raw task attempts and scoring artifacts are unavailable."
+      ],
+      "configuration_gaps": [
+        "Exact model snapshot, prompt, repeats, and grader trace are unavailable."
+      ],
+      "transfer_limits": [
+        "Evidence supports the existence and meaning of the correction, not independent reproduction of the score."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-19T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-same-designation-distinct-subject",
+      "statement": "OpenAI retained the same Preparedness designations for the August Chat updates while explicitly saying those updates are distinct from and do not replace the prior Sol and Luna versions.",
+      "target_kind": "product_policy",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-luna"
+        ],
+        "provider": "openai",
+        "product": "chatgpt-chat-work-and-codex",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": null,
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "OpenAI Preparedness Framework assessment",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": null,
+        "verified": "The bounded provider segment contains both statements.",
+        "reported": "Same high-level designation, distinct model subjects.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "designation_equivalence_implies_snapshot_identity",
+            "value": false,
+            "unit": null,
+            "denominator": "August and prior model groups",
+            "notes": "Provider explicitly rejects replacement identity."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-safety-update",
+          "segment_id": "seg-distinct-designation"
+        }
+      ],
+      "confounds": [],
+      "configuration_gaps": [
+        "Exact provider snapshot identifiers are not exposed for the captured aliases.",
+        "No owner runtime subject or AoA verification is attached to the external provider surfaces."
+      ],
+      "transfer_limits": [
+        "A shared risk designation is not a behavioral equivalence or snapshot identity claim."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-release-note-propagation",
+      "statement": "The cumulative release note repeats the Chat-versus-Work/Codex boundary but adds no independent measurement origin beyond the provider release.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "partial",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-luna"
+        ],
+        "provider": "openai",
+        "product": "provider-documentation",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "OpenAI web documentation",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "origin/dependency review",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": "Compared provider release and cumulative release-note segments.",
+        "artifact": null,
+        "verified": "The packet records the release note as dependent on the release source.",
+        "reported": "Two URLs preserve one provider-origin statement.",
+        "termination": "Propagation review completed.",
+        "measurements": [
+          {
+            "metric": "independent_origin_increment",
+            "value": 0,
+            "unit": "origins",
+            "denominator": "one dependent restatement",
+            "notes": "New URL does not add a new origin."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-chat-update",
+          "segment_id": "seg-product-boundary"
+        },
+        {
+          "source_id": "src-release-notes",
+          "segment_id": "seg-chat-boundary"
+        }
+      ],
+      "confounds": [],
+      "configuration_gaps": [
+        "Internal authorship and telemetry lineage between provider pages are not public."
+      ],
+      "transfer_limits": [
+        "Applies to independence accounting, not to whether the repeated statement is accurate."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "propagation_only",
+      "disposition": "reject_as_propagation",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-current-api-context-spec",
+      "statement": "On 2026-08-30 the first-party Sol API page documented a 1.05M-token model context and 128k maximum output, which is an API specification rather than a Codex session guarantee.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol"
+        ],
+        "provider": "openai",
+        "product": "api",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "OpenAI API model documentation",
+        "reasoning_effort": null,
+        "context_policy": "documented maximum model context",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "2026-08-30 provider page capture",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": null,
+        "executed": null,
+        "artifact": "Current provider specification page.",
+        "verified": "The captured page segment exposes both limits.",
+        "reported": "1.05M context and 128k maximum output.",
+        "termination": null,
+        "measurements": [
+          {
+            "metric": "documented_context_window",
+            "value": 1050000,
+            "unit": "tokens",
+            "denominator": "one API request",
+            "notes": "Provider specification."
+          },
+          {
+            "metric": "documented_max_output",
+            "value": 128000,
+            "unit": "tokens",
+            "denominator": "one API request",
+            "notes": "Provider specification."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-sol-doc",
+          "segment_id": "seg-current-price-spec"
+        }
+      ],
+      "confounds": [
+        "A model/API capacity does not specify a product-client effective window."
+      ],
+      "configuration_gaps": [
+        "Exact snapshot and Codex entitlement mapping are not published on the page."
+      ],
+      "transfer_limits": [
+        "Applies to the captured API documentation, not every ChatGPT-backed Codex route."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [
+        {
+          "recon_run_id": "recon-run:gpt-5.6/2026-08-29-v0.2",
+          "observation_id": "obs-002"
+        }
+      ],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-originator-context-route",
+      "statement": "A same-account catalog A/B reported GPT-5.6 Sol max_context_window at 272k for four coding originators and 872k for omitted or other first-party originators while Terra and Luna stayed at 872k.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "partial",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-terra",
+          "gpt-5.6-luna"
+        ],
+        "provider": "openai",
+        "product": "chatgpt-backed-codex",
+        "snapshot": null,
+        "runtime": {
+          "name": "codex-cli",
+          "version": "0.149.0",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "authenticated ChatGPT Codex model catalog",
+        "reasoning_effort": null,
+        "context_policy": "remote max_context_window clamps local override at 95% effective window",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "same request with originator-header A/B",
+        "grader": null,
+        "additional_dimensions": {
+          "account_plan": "pro",
+          "client_version": "0.149.0"
+        }
+      },
+      "outcome": {
+        "requested": "Explain why the same account realizes different Sol context ceilings.",
+        "executed": "Reporter varied only the originator header across repeated authenticated catalog requests.",
+        "artifact": "Redacted raw catalog field comparison and ETags in the issue.",
+        "verified": "Two stable response variants were reported; local override was clamped after catalog refresh.",
+        "reported": "Coding originators received 272k Sol while alternate originators received 872k.",
+        "termination": "Controlled report completed; provider cause unresolved.",
+        "measurements": [
+          {
+            "metric": "coding_originator_sol_max_context",
+            "value": 272000,
+            "unit": "tokens",
+            "denominator": "four coding originators",
+            "notes": "Same response ETag."
+          },
+          {
+            "metric": "alternate_originator_sol_max_context",
+            "value": 872000,
+            "unit": "tokens",
+            "denominator": "omitted or four alternate originators",
+            "notes": "Different response ETag."
+          },
+          {
+            "metric": "coding_effective_context",
+            "value": 258400,
+            "unit": "tokens",
+            "denominator": "one fresh Codex thread under the 95% policy",
+            "notes": "Reporter-observed value."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-40258",
+          "segment_id": "seg-controlled-catalog"
+        },
+        {
+          "source_id": "src-issue-40258",
+          "segment_id": "seg-route-timeline"
+        }
+      ],
+      "confounds": [
+        "No provider confirmation or independent authenticated reproduction is attached."
+      ],
+      "configuration_gaps": [
+        "Backend experiment, entitlement and rollout cause remain undisclosed; no exact AoA runtime subject is bound."
+      ],
+      "transfer_limits": [
+        "Supports route-dependent Codex catalog realization on one account, not a model context limit."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [
+        {
+          "recon_run_id": "recon-run:gpt-5.6/2026-08-29-v0.2",
+          "observation_id": "obs-027"
+        }
+      ],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-08-21T08:58:30Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-quota-interrupted-goal",
+      "statement": "One Plus-plan report says the same multi-hour GPT-5.6 Sol goal was interrupted twice by a five-hour usage boundary, exposing product termination and recovery cost without a token or accepted-outcome accounting contract.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "partial",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol"
+        ],
+        "provider": "openai",
+        "product": "codex-chatgpt-plus",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "ChatGPT Plus Codex usage window",
+        "reasoning_effort": null,
+        "context_policy": "multi-hour persistent goal across quota resets",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "manual return and resume after reset",
+        "harness": null,
+        "instrument_revision": null,
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Complete one long-running autonomous goal.",
+        "executed": "The goal ran across multiple short-term usage windows.",
+        "artifact": null,
+        "verified": null,
+        "reported": "The reporter observed two quota-triggered interruptions of the same goal.",
+        "termination": "Interrupted by product usage boundary; manual resume required.",
+        "measurements": [
+          {
+            "metric": "quota_interruptions",
+            "value": 2,
+            "unit": "interruptions",
+            "denominator": "one long-running goal",
+            "notes": "Reporter incident count."
+          },
+          {
+            "metric": "short_usage_window",
+            "value": 5,
+            "unit": "hours",
+            "denominator": "one rolling product window",
+            "notes": "Plan policy as reported, not independently audited."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-40905",
+          "segment_id": "seg-interruptions"
+        },
+        {
+          "source_id": "src-issue-40905",
+          "segment_id": "seg-proposed-denominators"
+        }
+      ],
+      "confounds": [
+        "Task duration, token classes, weekly consumption, artifact state and recovery success are not exposed."
+      ],
+      "configuration_gaps": [
+        "Exact plan accounting, timestamps, transcript, accepted outcome and comparison goals are unavailable."
+      ],
+      "transfer_limits": [
+        "One goal supports a product-policy study question, not a model efficiency or quota-incidence claim."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "watch",
+      "observed_interval": {
+        "start": "2026-08-30T06:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    },
+    {
+      "observation_id": "obs-windows-code-mode-handshake",
+      "statement": "A Windows Codex Desktop report reproduced pre-command code-mode-host handshake failures for GPT-5.6 Sol and Luna across two bundled runtime versions while a same-environment GPT-5.5 control executed the command.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "partial",
+        "family": "gpt-5.6",
+        "models": [
+          "gpt-5.6-sol",
+          "gpt-5.6-luna",
+          "gpt-5.5"
+        ],
+        "provider": "openai",
+        "product": "codex-desktop-windows",
+        "snapshot": null,
+        "runtime": {
+          "name": "codex-cli bundled runtime",
+          "version": "0.149.0 and 0.150.0-alpha.8",
+          "subject_ref": null
+        },
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Codex Desktop local code-mode host",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [
+          "simple local directory listing"
+        ],
+        "permissions": [
+          "sandbox setup completed without reported errors"
+        ],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Windows x64 Codex Desktop package 26.820.7780.0",
+        "instrument_revision": "same-machine model-route and runtime-version controls",
+        "grader": null,
+        "additional_dimensions": {
+          "gpt_5_6_comp_hash": "3000",
+          "gpt_5_5_comp_hash": "2911"
+        }
+      },
+      "outcome": {
+        "requested": "Run a simple local command.",
+        "executed": "GPT-5.6 routes failed before command execution; GPT-5.5 control executed the listing.",
+        "artifact": "Reporter retained multiple private session logs; bounded results are summarized publicly.",
+        "verified": "Same failure under two runtime versions; manual host startup, sandbox and authentication controls were reported.",
+        "reported": "Code-mode host exited during handshake for Sol and Luna.",
+        "termination": "Tool route failed before the local command ran.",
+        "measurements": [
+          {
+            "metric": "affected_gpt_5_6_routes",
+            "value": 2,
+            "unit": "model routes",
+            "denominator": "Sol and Luna controls",
+            "notes": "Both failed in the report."
+          },
+          {
+            "metric": "runtime_versions_reproduced",
+            "value": 2,
+            "unit": "versions",
+            "denominator": "0.149.0 and 0.150.0-alpha.8",
+            "notes": "Same handshake symptom."
+          }
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {
+          "source_id": "src-issue-40944",
+          "segment_id": "seg-model-route-ab"
+        },
+        {
+          "source_id": "src-issue-40944",
+          "segment_id": "seg-runtime-controls"
+        }
+      ],
+      "confounds": [
+        "Model route, code-mode protocol, comp hash and app/backend refresh differ from the GPT-5.5 control."
+      ],
+      "configuration_gaps": [
+        "Private logs, exact request trace and a provider-confirmed cause are unavailable; Terra was not reported as tested."
+      ],
+      "transfer_limits": [
+        "Routes to Windows Codex runtime/tool ownership; it does not establish GPT-5.6 tool-use capability."
+      ],
+      "counterevidence_refs": [],
+      "supersedes": [
+        {
+          "recon_run_id": "recon-run:gpt-5.6/2026-08-29-v0.2",
+          "observation_id": "obs-036"
+        }
+      ],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {
+        "start": "2026-08-26T00:00:00Z",
+        "end": "2026-08-30T07:20:00Z"
+      }
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "clu-segment-currentness",
+      "label": "Currentness is segment-local rather than URL-wide",
+      "observation_refs": [
+        "obs-current-api-prices",
+        "obs-retained-launch-prices",
+        "obs-segment-currentness",
+        "obs-benchmark-correction"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "openai-provider"
+      ],
+      "supported_scope": "Within the captured OpenAI provider surfaces, prices and benchmark values require dated segment identity because one live URL can retain historical prose beside later corrections.",
+      "transfer_limits": [
+        "One provider origin establishes the document behavior but not cross-publisher prevalence."
+      ],
+      "unresolved_configuration_gaps": [
+        "Exact source-byte archives and provider edit history are unavailable."
+      ],
+      "posture": "artifact_backed_observation",
+      "disposition": "cluster",
+      "next_action": "Retain segment locators/digests and create new observations on future changes instead of mutating history."
+    },
+    {
+      "cluster_id": "clu-product-time-binding",
+      "label": "Family-tier identity requires product and release-time binding",
+      "observation_refs": [
+        "obs-product-time-split",
+        "obs-same-designation-distinct-subject"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "openai-provider"
+      ],
+      "supported_scope": "For the August 2026 OpenAI product split, the Sol or Luna tier label alone cannot identify the Chat model versus the prior Work/Codex model.",
+      "transfer_limits": [
+        "Does not establish exact snapshots or behavioral deltas between products."
+      ],
+      "unresolved_configuration_gaps": [
+        "Public snapshot identifiers remain absent."
+      ],
+      "posture": "method_backed_observation",
+      "disposition": "cluster",
+      "next_action": "Require product and temporal binding in any future realization candidate."
+    },
+    {
+      "cluster_id": "clu-product-route-realization",
+      "label": "API capacity and Codex realization require separate route identity",
+      "observation_refs": [
+        "obs-current-api-context-spec",
+        "obs-product-time-split",
+        "obs-originator-context-route",
+        "obs-windows-code-mode-handshake"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "openai-provider",
+        "issue-proview-china",
+        "issue-hancong-nju"
+      ],
+      "supported_scope": "Across provider and two independent primary traces, the family label under-identifies API capacity, product-time subject, catalog ceiling and local-tool route realization.",
+      "transfer_limits": [
+        "The two issue mechanisms differ and neither is an owner runtime diagnosis."
+      ],
+      "unresolved_configuration_gaps": [
+        "Exact snapshots, backend entitlement cause and owner runtime subjects remain absent."
+      ],
+      "posture": "cross_modal_pattern",
+      "disposition": "route_to_runtime_owner",
+      "next_action": "Replicate exact route fields against an owner-bound runtime subject before changing any realization."
+    },
+    {
+      "cluster_id": "clu-quota-as-termination",
+      "label": "Quota interruption belongs to product termination economics",
+      "observation_refs": [
+        "obs-quota-interrupted-goal"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "issue-flap-pearlabs"
+      ],
+      "supported_scope": "One bounded goal shows that a product usage boundary can terminate and require recovery independently of whether the model could continue the task.",
+      "transfer_limits": [
+        "No population incidence, token accounting or accepted artifact is available."
+      ],
+      "unresolved_configuration_gaps": [
+        "Exact plan ledger, task state at interruption and recovery outcome are unknown."
+      ],
+      "posture": "anecdotal_signal",
+      "disposition": "review_for_study",
+      "next_action": "Measure interruption, checkpoint, resume and accepted-outcome denominators on owned long goals."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "ten-launch-versus-current-price",
+      "label": "Retained launch prices versus current API prices",
+      "side_a_refs": [
+        "obs-retained-launch-prices"
+      ],
+      "side_b_refs": [
+        "obs-current-api-prices"
+      ],
+      "analysis": "The values are not competing current facts: one segment preserves launch history while current model pages and dated notices establish later effective prices.",
+      "resolution": "resolved_by_time",
+      "remaining_question": "When will the temporary Sol reduction expire or be replaced by another current price?"
+    },
+    {
+      "tension_id": "ten-shared-label-versus-product-subject",
+      "label": "Shared tier label versus distinct product-time realization",
+      "side_a_refs": [
+        "obs-product-time-split"
+      ],
+      "side_b_refs": [
+        "obs-same-designation-distinct-subject"
+      ],
+      "analysis": "The provider itself distinguishes the subjects despite shared family labels and risk designations, so label equality cannot collapse product-time identity.",
+      "resolution": "resolved_by_product",
+      "remaining_question": "Will future product surfaces converge on one exposed snapshot or continue independent cadence?"
+    },
+    {
+      "tension_id": "ten-api-capacity-versus-codex-route",
+      "label": "Documented API context versus realized Codex catalog ceiling",
+      "side_a_refs": [
+        "obs-current-api-context-spec"
+      ],
+      "side_b_refs": [
+        "obs-originator-context-route"
+      ],
+      "analysis": "The values belong to different product and route authority layers; the issue does not revise the API specification and the API page does not guarantee a Codex session ceiling.",
+      "resolution": "resolved_by_product",
+      "remaining_question": "Which exact backend policy maps account, originator and client build to the effective ceiling?"
+    },
+    {
+      "tension_id": "ten-capability-versus-quota-termination",
+      "label": "Long-horizon capability versus product-window interruption",
+      "side_a_refs": [
+        "obs-product-time-split"
+      ],
+      "side_b_refs": [
+        "obs-quota-interrupted-goal"
+      ],
+      "analysis": "A model/product may support long work while a separate usage policy terminates one execution; capability and recoverable completion remain different axes.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "What fraction of owned long goals checkpoint, resume and reach accepted completion across product limits?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "mp-segment-currentness",
+      "trigger_refs": [
+        "obs-segment-currentness"
+      ],
+      "pressure": "Mutable pages can contain simultaneously current, historical, and corrected segments.",
+      "proposed_response": "Bind currentness, digests, and supersession to source segments rather than URLs.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-product-time-subject",
+      "trigger_refs": [
+        "obs-product-time-split"
+      ],
+      "pressure": "Family and tier labels under-identify models when products advance on separate cadences.",
+      "proposed_response": "Require product and effective interval before any realization or behavior review.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-result-correction",
+      "trigger_refs": [
+        "obs-benchmark-correction"
+      ],
+      "pressure": "A corrected metric label can materially change a benchmark value without changing its URL.",
+      "proposed_response": "Preserve old and corrected observations with the metric denominator and change date.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-origin-deduplication",
+      "trigger_refs": [
+        "obs-release-note-propagation"
+      ],
+      "pressure": "Repeated provider documentation can look like corroboration while remaining one evidence origin.",
+      "proposed_response": "Track dependency refs and do not increment origin independence for restatements.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-route-realization-currentness",
+      "trigger_refs": [
+        "obs-current-api-context-spec",
+        "obs-originator-context-route",
+        "obs-windows-code-mode-handshake"
+      ],
+      "pressure": "A current family label and model specification can coexist with route-specific catalog and tool-host realizations.",
+      "proposed_response": "Bind capacity and tool observations to product, originator/client route, runtime build and exact owner subject when available.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-quota-termination-ledger",
+      "trigger_refs": [
+        "obs-quota-interrupted-goal"
+      ],
+      "pressure": "Quota complaints become useful only when interruption, goal state, resume path and accepted outcome have denominators.",
+      "proposed_response": "Keep product quota in the outcome termination and recovery ledger instead of converting it into model efficiency.",
+      "status": "adopted"
+    }
+  ],
+  "revisit_triggers": [
+    "OpenAI changes any GPT-5.6 base or long-context price.",
+    "Chat, Work, Codex, or API exposes a new snapshot or converges on one version.",
+    "The safety card or benchmark change log receives another correction.",
+    "The temporary Sol price reduction reaches its stated three-month horizon.",
+    "The cited Codex catalog or code-mode issues receive provider confirmation, a fix, closure, or an independent controlled reproduction.",
+    "Codex publishes an exact accounting and checkpoint/resume contract for short-window quota interruptions."
+  ],
+  "created_at": "2026-08-30T07:20:00Z",
+  "updated_at": "2026-08-30T07:20:00Z"
+}

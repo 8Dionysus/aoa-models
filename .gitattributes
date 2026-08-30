@@ -1,0 +1,4 @@
+# Preserve byte-identical imported research artifacts, including Markdown hard breaks.
+research-intake/reports/external-model-web-recon-method-v0.2.md whitespace=-blank-at-eol
+research-intake/reports/gpt-5.6-web-recon-deep-dossier.md whitespace=-blank-at-eol
+research-intake/reports/gpt-5.6-web-recon-pilot.md whitespace=-blank-at-eol

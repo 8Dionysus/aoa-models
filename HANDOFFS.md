@@ -17,6 +17,12 @@ owner, acceptance posture, and rollback or re-entry route.
 | durable recalled knowledge | `aoa-memo` | reviewed intake candidate, never automatic writeback |
 | ecosystem registration | `Agents-of-Abyss` | center-owned registry change after owner-local proof |
 
+External research-intake observations remain before these handoffs. An exact
+provider/runtime fact may enter a separate realization review; a reproducible
+protocol may become a study candidate; bounded behavior requires appropriate
+owned evidence and independent review; runtime/product symptoms return to their
+runtime owner. The intake packet itself transfers no acceptance.
+
 No handoff transfers acceptance automatically. Rejection or non-admission
 returns to the named source record, preserves the evidence, and either weakens
 the claim, changes the study, or suspends the consumer projection.

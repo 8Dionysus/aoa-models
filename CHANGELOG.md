@@ -6,7 +6,34 @@ not promote model knowledge into routing, runtime, proof, or acceptance.
 
 ## [Unreleased]
 
-- Reserved for changes after `v0.1.0`.
+### Added
+
+- A separate schema-validated `research-intake/` contour for pre-canon external
+  web reconnaissance, with source-segment provenance, origin dependencies,
+  configuration gaps, outcome decomposition, contradictions, lineage, and
+  revisit triggers.
+- Generic research-intake semantic validation, manual authoring guidance, and
+  multi-provider contract tests without model-, provider-, URL-, score-, or
+  corpus-count special cases.
+- The normalized GPT-5.6 v0.2 seed packet and bounded pilot/deep/method reports,
+  preserved without promotion into model source truth.
+- Three post-seed runs covering GPT-5.6 segment/product temporal drift, Claude
+  5 persistence across capability, delegated acceptance and runtime authority,
+  and cross-provider outcome economics, plus the evidence-derived v0.3 lens.
+
+### Changed
+
+- The normal owner validator now covers research-intake integrity while keeping
+  the live catalog probe, model source validation, proof, runtime, and
+  acceptance as separate claims.
+- Cluster provenance validation now includes both supporting observations and
+  counterevidence without allowing either to invent an origin group.
+
+### Security
+
+- Research-intake packets have no routing, activation, proof, acceptance, or
+  automatic-promotion authority and cannot be used as direct canonical source
+  evidence.
 
 ## [0.1.0] - 2026-08-22
 
