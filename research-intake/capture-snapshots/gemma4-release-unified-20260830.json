@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemas.aoa.local/models/research-automation-artifact.schema.json",
+  "schema_version": "aoa_model_research_automation_artifact_v1",
+  "kind": "ResearchCaptureSnapshot",
+  "capture_id": "research-capture:google-gemma-release-history/20260830t085700z",
+  "created_at": "2026-08-30T08:57:00Z",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "source_mutation_authority": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "request": {
+    "schema_version": "aoa_model_research_capture_request_v1",
+    "source": {
+      "source_id": "google-gemma-release-history",
+      "title": "Gemma release history",
+      "uri": "https://ai.google.dev/gemma/docs/releases",
+      "source_class": "provider_release_history",
+      "publisher": "Google",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable release history; this capture selects the later 12B Unified entry.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "access_notes": "Public provider documentation.",
+      "selection_context": "Selected to preserve the current family expansion without rewriting the original launch boundary."
+    },
+    "segment": {
+      "segment_id": "gemma-4-unified-release",
+      "locator": {
+        "kind": "html_id",
+        "value": "gemma-4-unified"
+      }
+    },
+    "retrieval": {
+      "media_type": "auto",
+      "max_bytes": 2097152,
+      "timeout_seconds": 30
+    }
+  },
+  "retrieval": {
+    "state": "captured",
+    "transport": "http",
+    "attempted_at": "2026-08-30T08:57:00Z",
+    "input_ref": null,
+    "final_uri": "https://ai.google.dev/gemma/docs/releases",
+    "media_type": "text/html",
+    "http_status": 200,
+    "etag": null,
+    "last_modified": "Thu, 02 Jul 2026 22:44:33 GMT",
+    "document_digest": "sha256:8cb5dbcc50b0055007e5fede40a5993069e557656a407478af93edc14786cf30",
+    "document_size_bytes": 139541,
+    "truncated": false,
+    "error": null
+  },
+  "segment_result": {
+    "state": "captured",
+    "content_digest": "sha256:4fc9ba7e34bcc493a3e209cc36445fd1278a2861de87fed315fcfb530438e300",
+    "normalized_content_digest": "sha256:4fc9ba7e34bcc493a3e209cc36445fd1278a2861de87fed315fcfb530438e300",
+    "byte_length": 12,
+    "normalization_profile": "html_element_text_v1",
+    "digest_unavailable_reason": null
+  },
+  "source_capture_candidate": {
+    "source_id": "google-gemma-release-history",
+    "title": "Gemma release history",
+    "uri": "https://ai.google.dev/gemma/docs/releases",
+    "source_class": "provider_release_history",
+    "publisher": "Google",
+    "published_at": null,
+    "updated_at": null,
+    "effective_interval": null,
+    "temporal_notes": "Mutable release history; this capture selects the later 12B Unified entry.",
+    "mutable_surface": true,
+    "origin_group": "google-provider",
+    "propagation_role": "origin",
+    "dependency_refs": [],
+    "access_notes": "Public provider documentation.",
+    "selection_context": "Selected to preserve the current family expansion without rewriting the original launch boundary.",
+    "captured_at": "2026-08-30T08:57:00Z",
+    "segments": [
+      {
+        "segment_id": "gemma-4-unified-release",
+        "locator": "html-id:gemma-4-unified",
+        "content_digest": "sha256:4fc9ba7e34bcc493a3e209cc36445fd1278a2861de87fed315fcfb530438e300",
+        "digest_unavailable_reason": null
+      }
+    ]
+  },
+  "predecessor_snapshot": null,
+  "gap_reasons": [],
+  "artifact_digest": "sha256:8844c57cf7812d44641af24fa9c1cfa18dcf1c3c3cbfefac1053f09fc9ff7e50"
+}

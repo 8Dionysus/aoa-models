@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemas.aoa.local/models/research-automation-artifact.schema.json",
+  "schema_version": "aoa_model_research_automation_artifact_v1",
+  "kind": "ResearchCaptureSnapshot",
+  "capture_id": "research-capture:hf-google-gemma-4-e4b-it/20260830t085705z",
+  "created_at": "2026-08-30T08:57:05Z",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "source_mutation_authority": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "request": {
+    "schema_version": "aoa_model_research_capture_request_v1",
+    "source": {
+      "source_id": "hf-google-gemma-4-e4b-it",
+      "title": "Hugging Face API metadata for google/gemma-4-E4B-it",
+      "uri": "https://huggingface.co/api/models/google/gemma-4-E4B-it",
+      "source_class": "model_registry_api",
+      "publisher": "Hugging Face",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable registry metadata captured as a current repository snapshot.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-registry",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "access_notes": "Public model registry API.",
+      "selection_context": "Selected to retain the exact current instruction-tuned checkpoint repository revision."
+    },
+    "segment": {
+      "segment_id": "whole-model-metadata",
+      "locator": {
+        "kind": "whole_document",
+        "value": null
+      }
+    },
+    "retrieval": {
+      "media_type": "application/json",
+      "max_bytes": 1048576,
+      "timeout_seconds": 30
+    }
+  },
+  "retrieval": {
+    "state": "captured",
+    "transport": "http",
+    "attempted_at": "2026-08-30T08:57:05Z",
+    "input_ref": null,
+    "final_uri": "https://huggingface.co/api/models/google/gemma-4-E4B-it",
+    "media_type": "application/json",
+    "http_status": 200,
+    "etag": "W/\"5bdc-jz7fm8TbzOIKPR/H7FxL2OimF00\"",
+    "last_modified": null,
+    "document_digest": "sha256:2beb4314bfdc93554641f2a94cc26b7582d6e4360a28eb1f38fe268b17694e0c",
+    "document_size_bytes": 23516,
+    "truncated": false,
+    "error": null
+  },
+  "segment_result": {
+    "state": "captured",
+    "content_digest": "sha256:2beb4314bfdc93554641f2a94cc26b7582d6e4360a28eb1f38fe268b17694e0c",
+    "normalized_content_digest": "sha256:ce669a3f176fd3e6b2107612d110ec900f7079a3e828c508dbc6be6a89cb80a7",
+    "byte_length": 23516,
+    "normalization_profile": "canonical_json_v1",
+    "digest_unavailable_reason": null
+  },
+  "source_capture_candidate": {
+    "source_id": "hf-google-gemma-4-e4b-it",
+    "title": "Hugging Face API metadata for google/gemma-4-E4B-it",
+    "uri": "https://huggingface.co/api/models/google/gemma-4-E4B-it",
+    "source_class": "model_registry_api",
+    "publisher": "Hugging Face",
+    "published_at": null,
+    "updated_at": null,
+    "effective_interval": null,
+    "temporal_notes": "Mutable registry metadata captured as a current repository snapshot.",
+    "mutable_surface": true,
+    "origin_group": "huggingface-registry",
+    "propagation_role": "origin",
+    "dependency_refs": [],
+    "access_notes": "Public model registry API.",
+    "selection_context": "Selected to retain the exact current instruction-tuned checkpoint repository revision.",
+    "captured_at": "2026-08-30T08:57:05Z",
+    "segments": [
+      {
+        "segment_id": "whole-model-metadata",
+        "locator": "whole-document",
+        "content_digest": "sha256:2beb4314bfdc93554641f2a94cc26b7582d6e4360a28eb1f38fe268b17694e0c",
+        "digest_unavailable_reason": null
+      }
+    ]
+  },
+  "predecessor_snapshot": null,
+  "gap_reasons": [],
+  "artifact_digest": "sha256:cda29b2e022f8e02d8c0e3fccdf7bd3d44a2a320943a8ebb974b5c5fa7556b13"
+}

@@ -1,0 +1,1486 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:gemma-4/2026-08-30-e2b-e4b-operating-points",
+  "title": "Gemma 4 E2B/E4B paired operating points and runtime boundaries",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "Under which measured task, format, runtime, hardware, output-length, context, and verification conditions do Gemma 4 E2B and E4B expose recurring capability, memory, latency, throughput, energy, MTP, and reliability trade-offs, and which symptoms remain attributable to conversion, runtime, harness, or device rather than the model alone?",
+  "scope": {
+    "subject_labels": [
+      "gemma-4-e2b-it",
+      "gemma-4-e4b-it",
+      "gemma-4-mtp",
+      "ple-placement",
+      "litert-lm",
+      "transformers",
+      "vllm",
+      "openvino"
+    ],
+    "target_kinds": [
+      "benchmark_result",
+      "runtime_behavior",
+      "operational_pressure",
+      "unresolved"
+    ],
+    "capture_interval": {
+      "start": "2026-08-30T08:00:00Z",
+      "end": "2026-08-30T09:10:00Z"
+    },
+    "inclusion_criteria": [
+      "Prefer paired E2B/E4B methods with exposed versions, hardware, prompts or task pools, and metric denominators.",
+      "Retain primary issue and field evidence when it exposes an exact route, failure phase, and unresolved confounds.",
+      "Countersearch strong directions and preserve non-comparable forum numbers as no-fit rather than false recurrence."
+    ],
+    "exclusion_criteria": [
+      "Do not attribute runtime, conversion, parser, context-state, or device symptoms to model-only behavior without controls.",
+      "Do not merge latency, throughput, memory, energy, output length, or accepted outcome into one efficiency score.",
+      "Do not treat nominal 128K context, MTP artifact existence, or multimodal weights as a deployment receipt."
+    ],
+    "generality_probe": {
+      "mode": "different_product_or_instrument",
+      "subject_labels": [
+        "controlled-h100-study",
+        "dgx-spark-vllm",
+        "l40s-ollama-energy",
+        "lunar-lake-openvino",
+        "android-litert",
+        "rtx-a5000-transformers"
+      ],
+      "rationale": "The run probes whether a stable E2B/E4B direction survives different instruments while keeping contradictory or route-specific outcomes separate."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.3",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.3.md",
+        "content_digest": "sha256:64fcff8429ea6823f9f3aa5e1c614110b4d724219e198dd8cfe505424cd15aed"
+      },
+      {
+        "relation": "deep_report",
+        "ref": "research-intake/reports/gemma-4-e2b-e4b-web-recon-deep-dossier-2026-08-30.md",
+        "content_digest": "sha256:700e52776b2a76629cd830730190880b252e720e605e851974498dbe199fbb93"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-udae-paper",
+      "title": "Unified Deployment-Aware Evaluation of Gemma 4, Phi-4, and Qwen3 v2",
+      "uri": "https://arxiv.org/html/2604.07035v2",
+      "source_class": "independent_controlled_study",
+      "publisher": "Boch et al.",
+      "captured_at": "2026-08-30T08:30:00Z",
+      "published_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z",
+      "effective_interval": {"start": "2026-05-18T00:00:00Z", "end": null},
+      "temporal_notes": "Version 2 replaces a materially different v1 result population for current interpretation.",
+      "mutable_surface": false,
+      "origin_group": "udae-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-method",
+          "locator": "Sections 3-4: seven models, four datasets, three prompt strategies, 19,992 examples, hardware/software, fallback, seed, and decoding method.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned public HTML was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-results",
+          "locator": "Version 2 aggregate result table containing E2B and E4B accuracy, latency, memory, and throughput rows.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned public HTML was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-architecture-label",
+          "locator": "Model-selection text classifying E2B/E4B as MoE active-parameter models.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned public HTML was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned independent paper.",
+      "selection_context": "Strongest captured controlled paired E2B/E4B capability-resource study."
+    },
+    {
+      "source_id": "src-udae-code",
+      "title": "UDAE evaluation code",
+      "uri": "https://github.com/mkboch/UDAE/tree/df56f10b16788348b5cb8ba5f9ae886fb9c85c05",
+      "source_class": "independent_study_code",
+      "publisher": "mkboch",
+      "captured_at": "2026-08-30T08:31:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Commit pinned to repository HEAD observed during this run.",
+      "mutable_surface": false,
+      "origin_group": "udae-study",
+      "propagation_role": "origin",
+      "dependency_refs": ["src-udae-paper"],
+      "segments": [
+        {
+          "segment_id": "seg-repository",
+          "locator": "Repository tree at commit df56f10b16788348b5cb8ba5f9ae886fb9c85c05.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit identity was resolved without retaining repository bytes."
+        }
+      ],
+      "access_notes": "Public commit-pinned source repository.",
+      "selection_context": "Method artifact supporting the paper origin, not an independent recurrence."
+    },
+    {
+      "source_id": "src-tech-report",
+      "title": "Gemma 4 Technical Report v2",
+      "uri": "https://arxiv.org/html/2607.02770v2",
+      "source_class": "provider_technical_report",
+      "publisher": "Google DeepMind",
+      "captured_at": "2026-08-30T08:45:00Z",
+      "published_at": "2026-07-24T00:00:00Z",
+      "updated_at": "2026-07-24T00:00:00Z",
+      "effective_interval": {"start": "2026-07-24T00:00:00Z", "end": null},
+      "temporal_notes": "Provider architecture countercheck for external study metadata.",
+      "mutable_surface": false,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-dense-ple",
+          "locator": "Architecture section identifying E2B/E4B as dense PLE models and 26B A4B as MoE.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned public HTML was inspected without retaining normalized segment bytes."
+        }
+      ],
+      "access_notes": "Public versioned provider report.",
+      "selection_context": "Authoritative architecture counterevidence to one benchmark's mechanism label."
+    },
+    {
+      "source_id": "src-mtp-field",
+      "title": "DGX Spark Gemma 4 MTP multi-token prediction benchmark",
+      "uri": "https://dev.classmethod.jp/en/articles/dgx-spark-gemma4-mtp-multi-token-prediction-bench/",
+      "source_class": "primary_field_benchmark",
+      "publisher": "Classmethod",
+      "captured_at": "2026-08-30T08:32:00Z",
+      "published_at": "2026-05-09T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-05-09T00:00:00Z", "end": null},
+      "temporal_notes": "Runtime-version-bound field benchmark; machine-translated English surface.",
+      "mutable_surface": true,
+      "origin_group": "classmethod-field",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-environment",
+          "locator": "DGX Spark GB10, 128 GB LPDDR5X, vLLM/PyTorch/Transformers versions, BF16 targets and assistants.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The public field report was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-long-form",
+          "locator": "Twelve long-form prompts, run averaging policy, baseline/MTP throughput and acceptance.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The public field report was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-short-form",
+          "locator": "Two hundred eight-token Japanese certification answers and accuracy smoke check.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The public field report was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public primary field report.",
+      "selection_context": "Paired long-versus-short MTP amortization evidence."
+    },
+    {
+      "source_id": "src-energy-thesis",
+      "title": "Energy and Cost Estimation of Local Large Language Models",
+      "uri": "https://osuva.uwasa.fi/items/f1cf41f4-bd01-4a0c-868d-8a98e8ee0306",
+      "source_class": "independent_thesis",
+      "publisher": "University of Vaasa",
+      "captured_at": "2026-08-30T08:50:00Z",
+      "published_at": "2026-05-20T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-05-20T00:00:00Z", "end": null},
+      "temporal_notes": "Published thesis record and full-text PDF; exact local model revisions are not reported.",
+      "mutable_surface": false,
+      "origin_group": "uwasa-thesis",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-method",
+          "locator": "Methods: Ollama/llama.cpp, two NVIDIA L40S 48 GB GPUs, CodeCarbon GPU/CPU/RAM/VRAM energy, FinQA/SWE-bench/WikiHow tasks, thinking and keep-alive controls.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The public PDF was read as temporary working material and removed; no retained normalized segment bytes were created."
+        },
+        {
+          "segment_id": "seg-e2b-e4b-results",
+          "locator": "Table 5 paired Gemma4:e2b/e4b average energy-per-token and throughput rows plus stated limitations.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The public PDF was read as temporary working material and removed; no retained normalized segment bytes were created."
+        }
+      ],
+      "access_notes": "Public CC BY 4.0 thesis; temporary PDF was deleted after bounded inspection.",
+      "selection_context": "Paired energy/throughput origin with explicit missing realization identity."
+    },
+    {
+      "source_id": "src-openvino-field",
+      "title": "Running Gemma 4 on Intel NPU with OpenVINO 2026",
+      "uri": "https://zenn.dev/jkudo/articles/ae85d7d099e672?locale=en",
+      "source_class": "primary_field_benchmark",
+      "publisher": "jkudo",
+      "captured_at": "2026-08-30T08:51:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Field report bound to OpenVINO 2026 nightly and custom-converted IRs.",
+      "mutable_surface": true,
+      "origin_group": "jkudo-field",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-device-matrix",
+          "locator": "Sixty-second sustained greedy E2B/E4B INT4/INT8 NPU/GPU/CPU throughput matrix and E4B INT8 NPU exclusion.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The public field report was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-energy",
+          "locator": "HWiNFO absolute-power and joules-per-token comparison for NPU/GPU/CPU.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The public field report was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public primary field report.",
+      "selection_context": "Paired format/device frontier and energy-denominator counterexample."
+    },
+    {
+      "source_id": "src-openvino-graph",
+      "title": "LiteRT-LM with OpenVINO backend graph analysis",
+      "uri": "https://zenn.dev/jkudo/articles/93b1f12f528a6b?locale=en",
+      "source_class": "primary_field_analysis",
+      "publisher": "jkudo",
+      "captured_at": "2026-08-30T08:51:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Follow-up representation analysis from the same origin as the device benchmark.",
+      "mutable_surface": true,
+      "origin_group": "jkudo-field",
+      "propagation_role": "origin",
+      "dependency_refs": ["src-openvino-field"],
+      "segments": [
+        {
+          "segment_id": "seg-e2b-e4b-graph-gap",
+          "locator": "Comparison of E2B Intel-specific compiled auxiliary/prefill graphs with E4B general StableHLO/dynamic graph representation.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The public field report was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public primary field analysis.",
+      "selection_context": "Mechanism evidence that successful weight loading and executable NPU representation are separate."
+    },
+    {
+      "source_id": "src-litert-android",
+      "title": "LiteRT-LM Android E2B reliability field report",
+      "uri": "https://github.com/google-ai-edge/LiteRT-LM/issues/2202",
+      "source_class": "primary_issue_report",
+      "publisher": "LiteRT-LM issue reporter",
+      "captured_at": "2026-08-30T08:33:00Z",
+      "published_at": "2026-05-07T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-05-07T00:00:00Z", "end": null},
+      "temporal_notes": "Open issue with multiple run updates; latest captured run is not a resolved maintainer verdict.",
+      "mutable_surface": true,
+      "origin_group": "litert-issue-2202",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-fixture-environment",
+          "locator": "Pixel 10a/Tensor G4/Mali-G715/Android 14, LiteRT-LM 0.10.x, mixed-quant E2B package, 357 single-turn plus 29 multi-turn fixtures and post-assertions.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-failure-buckets",
+          "locator": "GPU precision corruption, tool-count degradation, hangs, rehydration, and memory-accounting sections.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-latest-run",
+          "locator": "Most recent 325/357 completion, 71.4% honest pass, latency percentiles, and stalled status.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public primary issue report.",
+      "selection_context": "Detailed E2B route-level reliability and honest-verification pressure."
+    },
+    {
+      "source_id": "src-litert-cpu",
+      "title": "LiteRT-LM E2B/E4B CPU C ABI crash report",
+      "uri": "https://github.com/google-ai-edge/LiteRT-LM/issues/2149",
+      "source_class": "primary_issue_report",
+      "publisher": "LiteRT-LM issue reporter",
+      "captured_at": "2026-08-30T08:34:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Unresolved paired CPU issue report.",
+      "mutable_surface": true,
+      "origin_group": "litert-issue-2149",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-paired-failures",
+          "locator": "Ubuntu 24.04/glibc 2.39 CPU C ABI environment with named E2B/E4B package revisions, sizes, silent hang, and segfault outcomes.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public primary issue report.",
+      "selection_context": "Same-route paired failure difference with unresolved root cause."
+    },
+    {
+      "source_id": "src-ple-offload",
+      "title": "Gemma 4 E4B PLE table CPU placement measurement",
+      "uri": "https://github.com/huggingface/transformers/issues/47705",
+      "source_class": "primary_issue_measurement",
+      "publisher": "MyceliaLabsBV",
+      "captured_at": "2026-08-30T08:52:00Z",
+      "published_at": "2026-08-02T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-08-02T00:00:00Z", "end": null},
+      "temporal_notes": "Open feature question with a detailed one-device measurement, not a supported placement contract.",
+      "mutable_surface": true,
+      "origin_group": "mycelia-ple-issue",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-measurement",
+          "locator": "RTX A5000 Laptop 16 GB, bnb NF4, PLE GPU/CPU resident and peak memory, parity, transfer volume, and environment.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-support-question",
+          "locator": "Unsupported post-load workaround and unresolved device_map feature questions.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public primary issue report.",
+      "selection_context": "Exact PLE placement leverage and support-boundary evidence."
+    },
+    {
+      "source_id": "src-transformers-ple",
+      "title": "Transformers Gemma 4 PLE implementation issue",
+      "uri": "https://github.com/huggingface/transformers/issues/45206",
+      "source_class": "runtime_issue",
+      "publisher": "Hugging Face Transformers",
+      "captured_at": "2026-08-30T08:36:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Version-specific PLE implementation/documentation issue later closed through project work.",
+      "mutable_surface": true,
+      "origin_group": "transformers-project",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-ple-pipeline",
+          "locator": "Issue description of PLE lookup flow, implementation gap, version context, and closure relation.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public runtime issue.",
+      "selection_context": "Versioned runtime implementation pressure and evidence that issue status changes over time."
+    },
+    {
+      "source_id": "src-llama-ple",
+      "title": "llama.cpp Gemma 4 PLE forward-support issue",
+      "uri": "https://github.com/ggml-org/llama.cpp/issues/22243",
+      "source_class": "runtime_issue",
+      "publisher": "llama.cpp issue reporter",
+      "captured_at": "2026-08-30T08:37:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open bug-unconfirmed issue at capture time.",
+      "mutable_surface": true,
+      "origin_group": "llama-cpp-issue",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-missing-forward",
+          "locator": "Claim that PLE tensors load after b8765 but are absent from the forward graph, causing quality degradation rather than load failure.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public runtime issue; unconfirmed posture retained.",
+      "selection_context": "Counterexample to treating successful loading as correct PLE execution."
+    },
+    {
+      "source_id": "src-vllm-recipe",
+      "title": "vLLM Gemma 4 recipe",
+      "uri": "https://docs.vllm.ai/projects/recipes/en/latest/Google/Gemma4.html",
+      "source_class": "runtime_documentation",
+      "publisher": "vLLM",
+      "captured_at": "2026-08-30T08:38:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable latest runtime recipe; hardware guidance can change by version.",
+      "mutable_surface": true,
+      "origin_group": "vllm-project",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-support-memory",
+          "locator": "Gemma 4 support and BF16 E2B/E4B NVIDIA minimum-memory guidance.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable runtime docs were inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public runtime documentation.",
+      "selection_context": "Current runtime support surface, not a measured result."
+    },
+    {
+      "source_id": "src-vllm-mtp",
+      "title": "vLLM multi-token prediction documentation",
+      "uri": "https://docs.vllm.ai/en/latest/features/spec_decode/#multi-token-prediction",
+      "source_class": "runtime_documentation",
+      "publisher": "vLLM",
+      "captured_at": "2026-08-30T08:38:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable latest MTP runtime documentation.",
+      "mutable_surface": true,
+      "origin_group": "vllm-project",
+      "propagation_role": "origin",
+      "dependency_refs": ["src-vllm-recipe"],
+      "segments": [
+        {
+          "segment_id": "seg-mtp-support",
+          "locator": "MTP speculative decoding configuration and support description.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable runtime docs were inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public runtime documentation.",
+      "selection_context": "Runtime support context for field MTP measurements."
+    },
+    {
+      "source_id": "src-e2b-card",
+      "title": "Gemma 4 E2B IT model card",
+      "uri": "https://huggingface.co/google/gemma-4-E2B-it",
+      "source_class": "provider_model_card",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:35:00Z",
+      "published_at": null,
+      "updated_at": "2026-07-20T16:41:56Z",
+      "effective_interval": null,
+      "temporal_notes": "Mutable current card used only for nominal context and weight-capability counterpoint.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-context-modality",
+          "locator": "Model information and multimodal/context sections.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public provider model card.",
+      "selection_context": "Nominal model capacity compared with route-level usable evidence."
+    },
+    {
+      "source_id": "src-reddit-mtp",
+      "title": "Gemma 4 MTP on RTX 5090 Laptop field post",
+      "uri": "https://www.reddit.com/r/LocalLLM/comments/1t772ci/gemma_4_mtp_on_rtx_5090_laptop_sm_120_24gb_e2b/",
+      "source_class": "forum_field_report",
+      "publisher": "Reddit r/LocalLLM poster",
+      "captured_at": "2026-08-30T08:39:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Forum post current at capture time; E2B and E4B rows use different runtimes and formats.",
+      "mutable_surface": true,
+      "origin_group": "reddit-mtp-5090",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-noncomparable-rows",
+          "locator": "E2B llama.cpp/AtomicChat-fork Q8 row and E4B vLLM-nightly row with differing acceptance and throughput.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable forum post was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public forum field report.",
+      "selection_context": "Counterexample showing why impressive rows cannot be merged when runtimes and formats differ."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-udae-paired-frontier",
+      "statement": "In UDAE v2's four-dataset, three-strategy, greedy batch-one instrument, E4B few-shot CoT reports 0.761 weighted accuracy, 3.677 s mean latency, 14.895 GB peak memory, and 25.850 tok/s versus E2B at 0.688, 5.997 s, 9.543 GB, and 31.747 tok/s; the result supports an E4B outcome / E2B memory-and-decode frontier but not a universal wall-time or utility ranking.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "independent-evaluation",
+        "snapshot": "UDAE-v2-2026-05-18",
+        "runtime": {"name": "transformers", "version": "5.6.2", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"precision_policy": "BF16 then 4-bit fallback"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "eight NVIDIA H100 80 GB server",
+        "reasoning_effort": "few-shot chain-of-thought prompt strategy",
+        "context_policy": "dataset-specific maximum generation lengths",
+        "tools": [],
+        "permissions": [],
+        "prompt": "published few-shot CoT templates",
+        "scaffold": null,
+        "runbook": "seven models x four datasets x three prompt strategies",
+        "harness": "Python 3.13.11, PyTorch 2.10 CUDA 12.8, datasets 4.8.4, accelerate 1.13",
+        "instrument_revision": "UDAE v2, 19,992 examples, batch 1, seed 42, temperature 0/do_sample false",
+        "grader": "dataset-specific exact or multiple-choice metrics",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare task outcome and deployment-resource metrics under one exposed instrument.",
+        "executed": "Ran the published UDAE v2 matrix under greedy decoding.",
+        "artifact": "Paper tables and commit-pinned public code repository.",
+        "verified": "Method, versions, task pool, seed, and aggregate rows are published; per-row exact checkpoint SHA remains unavailable.",
+        "reported": "E4B leads weighted accuracy while E2B uses less peak memory and decodes more tokens per second in the captured few-shot row.",
+        "termination": "Published aggregate evaluation completed.",
+        "measurements": [
+          {"metric": "e2b_weighted_accuracy", "value": 0.688, "unit": "fraction", "denominator": "UDAE v2 few-shot CoT aggregate", "notes": "Four datasets."},
+          {"metric": "e4b_weighted_accuracy", "value": 0.761, "unit": "fraction", "denominator": "UDAE v2 few-shot CoT aggregate", "notes": "Four datasets."},
+          {"metric": "e2b_peak_memory", "value": 9.543, "unit": "GB", "denominator": "UDAE v2 few-shot CoT run", "notes": "Paper-reported aggregate."},
+          {"metric": "e4b_peak_memory", "value": 14.895, "unit": "GB", "denominator": "UDAE v2 few-shot CoT run", "notes": "Paper-reported aggregate."},
+          {"metric": "e2b_throughput", "value": 31.747, "unit": "tokens/second", "denominator": "UDAE v2 few-shot CoT generation", "notes": "Generated-length effects remain."},
+          {"metric": "e4b_throughput", "value": 25.85, "unit": "tokens/second", "denominator": "UDAE v2 few-shot CoT generation", "notes": "Generated-length effects remain."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-udae-paper", "segment_id": "seg-method"},
+        {"source_id": "src-udae-paper", "segment_id": "seg-results"},
+        {"source_id": "src-udae-code", "segment_id": "seg-repository"}
+      ],
+      "confounds": ["Generated lengths, task weighting, fallback realization, and exact checkpoint revisions can differ by row."],
+      "configuration_gaps": ["Per-item outputs, variance, exact revision/precision per model, energy, and accepted-outcome utility are unavailable."],
+      "transfer_limits": ["Does not establish AoA fit, a model-only latency cause, or a universal E4B-over-E2B ranking."],
+      "counterevidence_refs": ["obs-energy-paired", "obs-openvino-frontier"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-05-18T00:00:00Z", "end": "2026-05-18T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-udae-metadata-error",
+      "statement": "UDAE v2 calls E2B and E4B MoE models with active parameters, while the later provider technical report identifies them as dense PLE models and reserves MoE for 26B A4B; the study's exposed measurements remain bounded evidence, but its architecture-mechanism interpretation is rejected.",
+      "target_kind": "unresolved",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B", "gemma-4-26B-A4B"],
+        "provider": "google",
+        "product": "benchmark-subject-metadata",
+        "snapshot": "UDAE-v2-versus-technical-report-v2",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "exact",
+        "route": "cross-source subject-metadata audit",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "document comparison",
+        "instrument_revision": "UDAE v2 and Gemma 4 Technical Report v2",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Audit measured method and model-mechanism metadata independently.",
+        "executed": "Compared the benchmark's classification with the provider architecture report.",
+        "artifact": null,
+        "verified": "The two versioned papers use incompatible architecture labels for E2B/E4B.",
+        "reported": "Measurement rows can remain usable with a downgraded mechanism interpretation.",
+        "termination": "Metadata conflict resolved in favor of the provider architecture source; exact fallback realization remains incomplete.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-udae-paper", "segment_id": "seg-architecture-label"},
+        {"source_id": "src-tech-report", "segment_id": "seg-dense-ple"}
+      ],
+      "confounds": ["The provider report postdates the initial benchmark submission, but v2 still retains the incorrect label."],
+      "configuration_gaps": ["The benchmark's exact model loading logs are not inspected here."],
+      "transfer_limits": ["Does not invalidate the measured rows; it invalidates the study's cited mechanism label."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "contradictory",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-05-18T00:00:00Z", "end": "2026-07-24T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-mtp-long-output",
+      "statement": "On one DGX Spark GB10/vLLM development build with BF16 targets and official assistants, long-form MTP changed E2B from 36.5 to 69.1 tok/s with 38.8% acceptance and E4B from 18.5 to 38.7 tok/s with 44.6% acceptance, about 1.89x and 2.10x respectively.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E2B-it-assistant", "gemma-4-E4B-it", "gemma-4-E4B-it-assistant"],
+        "provider": "google",
+        "product": "local-vllm-mtp",
+        "snapshot": null,
+        "runtime": {"name": "vLLM", "version": "0.20.2rc1.dev99+g9c0812ffd", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "DGX Spark GB10, 128GB LPDDR5X 273GB/s", "dtype": "BF16"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "single-client DGX Spark generation",
+        "reasoning_effort": null,
+        "context_policy": "long-form prompts, max_new_tokens 256",
+        "tools": [],
+        "permissions": [],
+        "prompt": "twelve repeated long-form prompts",
+        "scaffold": null,
+        "runbook": "average runs 2-12 after first-run exclusion",
+        "harness": "PyTorch 2.11 CUDA 13.0, Transformers 5.8, Accelerate 1.13",
+        "instrument_revision": "Classmethod 2026-05-09 field benchmark",
+        "grader": null,
+        "additional_dimensions": {"temperature": 0, "clients": 1}
+      },
+      "outcome": {
+        "requested": "Measure target-only versus official-assistant MTP decode throughput on long outputs.",
+        "executed": "Repeated twelve prompts and averaged runs 2-12.",
+        "artifact": "Published benchmark tables and environment details.",
+        "verified": "Target/assistant, versions, hardware, max output, averaging, throughput, and acceptance are reported.",
+        "reported": "Both sizes show material long-form throughput gains in this one configuration.",
+        "termination": "Long-form benchmark completed.",
+        "measurements": [
+          {"metric": "e2b_mtp_speedup", "value": 1.89, "unit": "x", "denominator": "long-form target-only throughput", "notes": "36.5 to 69.1 tok/s."},
+          {"metric": "e4b_mtp_speedup", "value": 2.1, "unit": "x", "denominator": "long-form target-only throughput", "notes": "18.5 to 38.7 tok/s."},
+          {"metric": "e2b_acceptance", "value": 38.8, "unit": "percent", "denominator": "draft tokens", "notes": "Reported field value."},
+          {"metric": "e4b_acceptance", "value": 44.6, "unit": "percent", "denominator": "draft tokens", "notes": "Reported field value."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-mtp-field", "segment_id": "seg-environment"},
+        {"source_id": "src-mtp-field", "segment_id": "seg-long-form"},
+        {"source_id": "src-vllm-mtp", "segment_id": "seg-mtp-support"}
+      ],
+      "confounds": ["One device, one development runtime build, single client, fixed draft configuration, and no batching."],
+      "configuration_gaps": ["Exact checkpoint SHAs, output acceptance beyond a small smoke test, power, and multi-user behavior are unavailable."],
+      "transfer_limits": ["Does not guarantee MTP speedup on short outputs, other hardware, runtimes, batching, or quantized formats."],
+      "counterevidence_refs": ["obs-mtp-short-output", "obs-forum-mtp-noncomparable"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-05-09T00:00:00Z", "end": "2026-05-09T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-mtp-short-output",
+      "statement": "In the same DGX Spark field benchmark, 200 Japanese certification answers capped at eight output tokens produced 0.96x E2B and 1.01x E4B MTP speed ratios, so the long-form gain does not transfer to short outputs; answer accuracy moved by at most one item in this small check.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E2B-it-assistant", "gemma-4-E4B-it", "gemma-4-E4B-it-assistant"],
+        "provider": "google",
+        "product": "local-vllm-mtp",
+        "snapshot": null,
+        "runtime": {"name": "vLLM", "version": "0.20.2rc1.dev99+g9c0812ffd", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "DGX Spark GB10", "dtype": "BF16"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "single-client DGX Spark generation",
+        "reasoning_effort": null,
+        "context_policy": "200 short questions, max_new_tokens 8",
+        "tools": [],
+        "permissions": [],
+        "prompt": "Japanese certification multiple-choice questions",
+        "scaffold": null,
+        "runbook": "target-only versus official assistant",
+        "harness": "same versions as long-form run",
+        "instrument_revision": "Classmethod 2026-05-09 short-output benchmark",
+        "grader": "answer-key accuracy smoke check",
+        "additional_dimensions": {"temperature": 0, "clients": 1}
+      },
+      "outcome": {
+        "requested": "Test whether MTP amortizes on very short answers.",
+        "executed": "Ran 200 questions with an eight-token cap.",
+        "artifact": "Published short-output table.",
+        "verified": "Same report exposes both the near-unity speed ratios and small accuracy differences.",
+        "reported": "Draft overhead erases the long-form gain at this output length.",
+        "termination": "Short-form benchmark completed.",
+        "measurements": [
+          {"metric": "e2b_short_mtp_speedup", "value": 0.96, "unit": "x", "denominator": "target-only short-output throughput", "notes": "Slight slowdown."},
+          {"metric": "e4b_short_mtp_speedup", "value": 1.01, "unit": "x", "denominator": "target-only short-output throughput", "notes": "Effectively neutral."},
+          {"metric": "short_question_count", "value": 200, "unit": "questions", "denominator": "one certification set", "notes": "Not a general quality proof."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-mtp-field", "segment_id": "seg-environment"},
+        {"source_id": "src-mtp-field", "segment_id": "seg-short-form"}
+      ],
+      "confounds": ["Eight-token cap, Japanese tokenization, one task set, and single-client runtime."],
+      "configuration_gaps": ["No break-even output-length sweep or variance distribution."],
+      "transfer_limits": ["Does not show that MTP is useless at all short lengths or runtimes; it bounds one no-gain region."],
+      "counterevidence_refs": ["obs-mtp-long-output"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-05-09T00:00:00Z", "end": "2026-05-09T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-energy-paired",
+      "statement": "A University of Vaasa Ollama/CodeCarbon study on two L40S GPUs reports paired averages of 7.3e-7 kWh per output token and 118 tok/s for Gemma4:e2b versus 1.1e-6 kWh/token and 91 tok/s for Gemma4:e4b across FinQA, SWE-bench-derived, and WikiHow tasks; exact checkpoints, quantization, and runtime versions are missing and output quality was not graded.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma4:e2b", "gemma4:e4b"],
+        "provider": "ollama-library",
+        "product": "local-energy-study",
+        "snapshot": null,
+        "runtime": {"name": "Ollama/llama.cpp", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "2x NVIDIA L40S 48GB", "energy_instrument": "CodeCarbon"}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "WSTAR datacenter local inference",
+        "reasoning_effort": "thinking on/off analyzed in corpus",
+        "context_policy": "about 807-873 input tokens per task on average; output task-dependent",
+        "tools": [],
+        "permissions": [],
+        "prompt": "FinQA, SWE-bench-derived, and WikiHow prompts",
+        "scaffold": null,
+        "runbook": "thinking and keep-alive combinations",
+        "harness": "Ollama Python library with CodeCarbon GPU/CPU/RAM/VRAM measurement",
+        "instrument_revision": "2026 University of Vaasa thesis",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Measure local model energy and throughput across three business-oriented task types.",
+        "executed": "Ran the thesis benchmark corpus with thinking and keep-alive controls.",
+        "artifact": "Published thesis PDF and result tables.",
+        "verified": "Hardware, energy instrumentation, task families, limitations, and paired aggregate rows are reported.",
+        "reported": "E2B is the lower-energy, higher-throughput point under this incomplete realization identity.",
+        "termination": "Published aggregate study completed.",
+        "measurements": [
+          {"metric": "e2b_energy_per_output_token", "value": 0.00000073, "unit": "kWh/token", "denominator": "average across FinQA, SWE-bench-derived, WikiHow", "notes": "Quality not graded."},
+          {"metric": "e4b_energy_per_output_token", "value": 0.0000011, "unit": "kWh/token", "denominator": "average across FinQA, SWE-bench-derived, WikiHow", "notes": "Quality not graded."},
+          {"metric": "e2b_throughput", "value": 118, "unit": "tokens/second", "denominator": "same three-task average", "notes": "Exact format/version missing."},
+          {"metric": "e4b_throughput", "value": 91, "unit": "tokens/second", "denominator": "same three-task average", "notes": "Exact format/version missing."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-energy-thesis", "segment_id": "seg-method"},
+        {"source_id": "src-energy-thesis", "segment_id": "seg-e2b-e4b-results"}
+      ],
+      "confounds": ["Model package, quantization, exact runtime version, task sampling, output lengths, and system utilization."],
+      "configuration_gaps": ["Exact repository digest, model format, Ollama/llama.cpp version, accepted output quality, TTFT, peak memory, and thermal state are unavailable."],
+      "transfer_limits": ["Cannot establish energy per accepted outcome, a canonical realization comparison, or deployment total cost."],
+      "counterevidence_refs": ["obs-udae-paired-frontier"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-05-20T00:00:00Z", "end": "2026-05-20T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-openvino-frontier",
+      "statement": "On a Core Ultra 7 258V field setup with OpenVINO 2026 nightly and custom IRs, sixty-second greedy runs report E2B INT4 at 24.9/36.0/12.0 tok/s on NPU/GPU/CPU and E4B INT4 at 12.0/18.5/7.2; E4B INT8 at 4.4 GB could not sustain NPU runs because of device loss, although one smoke run reached 12.7 tok/s.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "custom-openvino-ir",
+        "snapshot": null,
+        "runtime": {"name": "OpenVINO GenAI", "version": "2026 nightly", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "Core Ultra 7 258V, Intel NPU, Arc 140V iGPU", "generation": "60s sustained greedy"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "custom-converted IR on NPU/GPU/CPU",
+        "reasoning_effort": null,
+        "context_policy": "cached sustained generation",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "sixty-second sustained runs",
+        "harness": "OpenVINO 2026 nightly/openvino-genai with BEST_PERF NPU hint",
+        "instrument_revision": "jkudo Lunar Lake field matrix",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare E2B/E4B formats across Lunar Lake devices.",
+        "executed": "Ran sustained greedy custom-IR generation on NPU, GPU, and CPU.",
+        "artifact": "Published matrix and graph-format analysis.",
+        "verified": "Stable points are separated from the unreproducible E4B INT8 NPU smoke run.",
+        "reported": "E2B is faster at matched INT4; E4B INT8 crosses a route-specific NPU memory/stability boundary.",
+        "termination": "E4B INT8 NPU point excluded after device-loss failures.",
+        "measurements": [
+          {"metric": "e2b_int4_npu", "value": 24.9, "unit": "tokens/second", "denominator": "60s sustained custom IR", "notes": "LM size 1.3 GB."},
+          {"metric": "e4b_int4_npu", "value": 12.0, "unit": "tokens/second", "denominator": "60s sustained custom IR", "notes": "LM size 2.6 GB."},
+          {"metric": "e2b_int4_gpu", "value": 36.0, "unit": "tokens/second", "denominator": "Arc 140V 60s sustained custom IR", "notes": "Fastest E2B device point."},
+          {"metric": "e4b_int4_gpu", "value": 18.5, "unit": "tokens/second", "denominator": "Arc 140V 60s sustained custom IR", "notes": "Fastest E4B device point."},
+          {"metric": "e4b_int8_npu_stable", "value": false, "unit": null, "denominator": "repeated 4.4 GB LM runs", "notes": "ZE_RESULT_ERROR_DEVICE_LOST."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-openvino-field", "segment_id": "seg-device-matrix"},
+        {"source_id": "src-openvino-graph", "segment_id": "seg-e2b-e4b-graph-gap"}
+      ],
+      "confounds": ["Custom conversion, nightly runtime, device-specific memory, cached prompts, one author, and no output-quality grader."],
+      "configuration_gaps": ["Exact checkpoint SHAs, thermal plateau, repeated-run variance, TTFT distribution, and accepted output are incomplete."],
+      "transfer_limits": ["Does not establish official OpenVINO compatibility or model-only instability."],
+      "counterevidence_refs": ["obs-udae-paired-frontier"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-05-01T00:00:00Z", "end": "2026-08-30T08:51:00Z"}
+    },
+    {
+      "observation_id": "obs-openvino-energy",
+      "statement": "In the same Lunar Lake field report, NPU absolute system power is about 27-30 W versus 37-39 W on GPU, yet the GPU's higher throughput produces lower joules per token for all stable compared formats; minimum watts and minimum energy per output token are different objectives.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "custom-openvino-ir",
+        "snapshot": null,
+        "runtime": {"name": "OpenVINO GenAI", "version": "2026 nightly", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"energy_instrument": "HWiNFO system power"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Core Ultra 7 258V NPU/GPU/CPU",
+        "reasoning_effort": null,
+        "context_policy": "sixty-second sustained generation",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "pair average system power with measured decode throughput",
+        "harness": "HWiNFO plus OpenVINO field benchmark",
+        "instrument_revision": "jkudo Lunar Lake energy matrix",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare absolute power and per-token energy objectives.",
+        "executed": "Observed system power during the same sustained generation points.",
+        "artifact": "Published power and J/token charts.",
+        "verified": "Power ranges and throughput direction are exposed in the report.",
+        "reported": "NPU minimizes absolute watts while GPU minimizes joules per token in this configuration.",
+        "termination": "Energy axes separated.",
+        "measurements": [
+          {"metric": "npu_system_power", "value": "27-30", "unit": "W", "denominator": "sustained generation system power", "notes": "About 13 W idle baseline reported."},
+          {"metric": "gpu_system_power", "value": "37-39", "unit": "W", "denominator": "sustained generation system power", "notes": "Higher absolute watts, higher throughput."},
+          {"metric": "gpu_joule_per_token_winner", "value": true, "unit": null, "denominator": "all stable compared formats in report", "notes": "One hardware/runtime origin."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-openvino-field", "segment_id": "seg-device-matrix"},
+        {"source_id": "src-openvino-field", "segment_id": "seg-energy"}
+      ],
+      "confounds": ["System-level HWiNFO measurement, one platform, sustained decode, and idle-baseline assumptions."],
+      "configuration_gaps": ["Battery discharge, cooling energy, thermal throttling over longer runs, and confidence intervals are unavailable."],
+      "transfer_limits": ["Does not establish GPU energy superiority on other devices, workloads, or batch sizes."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-05-01T00:00:00Z", "end": "2026-08-30T08:51:00Z"}
+    },
+    {
+      "observation_id": "obs-ple-offload",
+      "statement": "An open E4B Transformers issue reports that post-load CPU placement of embed_tokens_per_layer reduced resident VRAM from 10.11 to 4.48 GB and changed an 8.5K-token prefill from OOM at 15.5 GB to 11.84 GB peak, with greedy parity for 2,287 tokens and about 20 MB transfer per 1K tokens on one RTX A5000 Laptop 16 GB setup.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "exact",
+        "family": "gemma-4",
+        "models": ["google/gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "transformers-local-inference",
+        "snapshot": null,
+        "runtime": {"name": "transformers", "version": "5.8.1", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"accelerate": "1.13.0", "torch": "2.6.0+cu124", "quantization": "bnb NF4 with PLE-sensitive modules bf16", "hardware": "RTX A5000 Laptop 16GB"}
+      },
+      "configuration": {
+        "completeness": "exact",
+        "route": "single-GPU inference with post-load PLE CPU gather workaround",
+        "reasoning_effort": null,
+        "context_policy": "8.5K-token prefill; greedy parity checked to 2,287 generated tokens",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "instance-level post-load module-forward override",
+        "runbook": "compare PLE on GPU versus CPU",
+        "harness": "PyTorch CUDA memory measurement",
+        "instrument_revision": "Transformers issue #47705",
+        "grader": "token-for-token greedy parity",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Test whether the large PLE table can reside on CPU without changing greedy output.",
+        "executed": "Moved the table post-load, gathered input rows on CPU, and transferred gathered rows to GPU.",
+        "artifact": "Issue code workaround and measurements.",
+        "verified": "Reporter measured residency/peak and token parity; supported device_map route remains unverified.",
+        "reported": "PLE placement can determine whether E4B fits useful context on this 16 GB route.",
+        "termination": "Workaround succeeded; feature/support question remains open.",
+        "measurements": [
+          {"metric": "resident_ple_gpu", "value": 10.11, "unit": "GB", "denominator": "post-load resident VRAM", "notes": "PLE on GPU."},
+          {"metric": "resident_ple_cpu", "value": 4.48, "unit": "GB", "denominator": "post-load resident VRAM", "notes": "PLE on CPU."},
+          {"metric": "peak_prefill_ple_gpu", "value": "OOM at 15.5", "unit": "GB", "denominator": "8.5K-token prefill", "notes": "16 GB device."},
+          {"metric": "peak_prefill_ple_cpu", "value": 11.84, "unit": "GB", "denominator": "8.5K-token prefill", "notes": "Completed."},
+          {"metric": "greedy_parity_length", "value": 2287, "unit": "tokens", "denominator": "one parity run", "notes": "Identical token sequence."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-ple-offload", "segment_id": "seg-measurement"},
+        {"source_id": "src-ple-offload", "segment_id": "seg-support-question"}
+      ],
+      "confounds": ["One reporter, one E4B checkpoint route, custom monkey patch, allocator pressure, PCIe transfer, and greedy decoding."],
+      "configuration_gaps": ["Exact checkpoint SHA, E2B replication, supported device_map path, multi-turn load, and output-quality suite are absent."],
+      "transfer_limits": ["Does not establish a zero-cost or supported PLE offload across runtimes and hardware."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-08-02T00:00:00Z", "end": "2026-08-02T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-android-reliability",
+      "statement": "A primary Android E2B report on Pixel 10a/Tensor G4/Mali-G715 with LiteRT-LM 0.10.x found that post-condition verification reduced prior pass rates by 6-40 points; its latest 357-case run completed 325 cases with 71.4% honest pass, p50 9.3 s, p95 26.4 s, and p99 42.5 s while separating GPU corruption, tool-count degradation, hangs, rehydration, and memory-accounting errors.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it mixed-quant LiteRT package"],
+        "provider": "google",
+        "product": "android-litert-lm",
+        "snapshot": null,
+        "runtime": {"name": "LiteRT-LM", "version": "0.10.x", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"device": "Pixel 10a", "soc": "Tensor G4", "gpu": "Mali-G715", "os": "Android 14", "package_size": "about 2.5GB"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Android GPU with CPU comparison",
+        "reasoning_effort": null,
+        "context_policy": "357 single-turn and 29 multi-turn 5-20-turn fixtures; hangs near an 8192 generation cap",
+        "tools": ["structured tool-calling fixture"],
+        "permissions": [],
+        "prompt": "fixture corpus with post-condition assertions",
+        "scaffold": "JSON/tool parser and state rehydration",
+        "runbook": "more than ten report iterations with eight failure buckets",
+        "harness": "Android field reliability fixture",
+        "instrument_revision": "latest issue update captured 2026-08-30",
+        "grader": "artifact/post-condition verification rather than claimed completion",
+        "additional_dimensions": {"sampling": {"temperature": 1.0, "top_p": 0.95, "top_k": 64}}
+      },
+      "outcome": {
+        "requested": "Measure honest end-to-end completion and latency across Android fixtures.",
+        "executed": "Ran single- and multi-turn fixtures with post-condition checks and classified failures.",
+        "artifact": "Issue tables, fixture design, and run updates.",
+        "verified": "The reporter distinguishes completed, verified, malformed, stalled, and accounting outcomes.",
+        "reported": "Reliability is limited in this route and prior self-report-only success was inflated.",
+        "termination": "Latest run stalled after 325 of 357 cases.",
+        "measurements": [
+          {"metric": "completed_cases", "value": 325, "unit": "cases", "denominator": "357-case latest run", "notes": "Run stalled."},
+          {"metric": "honest_pass_rate", "value": 71.4, "unit": "percent", "denominator": "latest fixture run", "notes": "Post-condition verified."},
+          {"metric": "latency_p50", "value": 9.3, "unit": "seconds", "denominator": "latest run cases", "notes": "Reporter metric."},
+          {"metric": "latency_p95", "value": 26.4, "unit": "seconds", "denominator": "latest run cases", "notes": "Reporter metric."},
+          {"metric": "latency_p99", "value": 42.5, "unit": "seconds", "denominator": "latest run cases", "notes": "Reporter metric."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-litert-android", "segment_id": "seg-fixture-environment"},
+        {"source_id": "src-litert-android", "segment_id": "seg-failure-buckets"},
+        {"source_id": "src-litert-android", "segment_id": "seg-latest-run"}
+      ],
+      "confounds": ["One reporter/device/package, parser and token-budget interactions, runtime version family, and evolving fixture revisions."],
+      "configuration_gaps": ["Exact package digest, independent reproduction, maintainer root cause, thermal/battery state, and population incidence are unavailable."],
+      "transfer_limits": ["Does not establish a family-wide E2B failure rate or compare E4B under the same Android fixture."],
+      "counterevidence_refs": ["obs-openvino-frontier"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-05-07T00:00:00Z", "end": "2026-08-30T08:33:00Z"}
+    },
+    {
+      "observation_id": "obs-litert-paired-cpu-failures",
+      "statement": "A paired LiteRT-LM Ubuntu 24.04 CPU C ABI report holds the route constant and observes an approximately 2.6 GB E2B package silently hang after decode while an approximately 3.65 GB E4B package segfaults; named package revisions are present, but the unresolved root cause prevents model-only attribution.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it LiteRT package", "gemma-4-E4B-it LiteRT package"],
+        "provider": "google",
+        "product": "litert-lm-cpu-c-abi",
+        "snapshot": null,
+        "runtime": {"name": "LiteRT-LM engine_cpu C ABI", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"os": "Ubuntu 24.04", "glibc": "2.39"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "CPU C ABI",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "same issue reproduction setup",
+        "scaffold": null,
+        "runbook": "load and decode each named package",
+        "harness": "LiteRT-LM C ABI reproduction",
+        "instrument_revision": "issue #2149",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Run E2B and E4B packages through the same CPU interface.",
+        "executed": "Loaded and decoded each package under one host route.",
+        "artifact": "Issue reproduction details and named revisions.",
+        "verified": "Distinct terminal symptoms are reported with the environment held.",
+        "reported": "Both packages fail in this route but by different terminal modes.",
+        "termination": "E2B silent hang; E4B segmentation fault.",
+        "measurements": [
+          {"metric": "e2b_package_size", "value": 2.6, "unit": "GB", "denominator": "reported LiteRT package", "notes": "Approximate."},
+          {"metric": "e4b_package_size", "value": 3.65, "unit": "GB", "denominator": "reported LiteRT package", "notes": "Approximate."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-litert-cpu", "segment_id": "seg-paired-failures"}],
+      "confounds": ["Package conversion differences, runtime build, allocator, CPU backend, and unresolved root cause."],
+      "configuration_gaps": ["Maintainer diagnosis, minimized reproducer, exact runtime commit, and successful control package are incomplete."],
+      "transfer_limits": ["Cannot establish checkpoint corruption, general CPU incompatibility, or relative model reliability."],
+      "counterevidence_refs": ["obs-openvino-frontier"],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-04-01T00:00:00Z", "end": "2026-08-30T08:34:00Z"}
+    },
+    {
+      "observation_id": "obs-nominal-usable-context-gap",
+      "statement": "The E2B card establishes a nominal 131,072-token model limit, while the detailed Android route reports hangs near an 8,192-token generation cap and fragile state rehydration; the sources concern different objects, so no captured evidence establishes usable 128K on that mobile route.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "nominal-model-versus-android-route-context",
+        "snapshot": null,
+        "runtime": {"name": "LiteRT-LM", "version": "0.10.x", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "provider checkpoint metadata compared with Android field route",
+        "reasoning_effort": null,
+        "context_policy": "nominal 131072 model tokens versus route generation cap around 8192",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "mobile state rehydration",
+        "runbook": "countersearch for long-context mobile evidence",
+        "harness": null,
+        "instrument_revision": "2026-08-30 bounded search",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Determine whether nominal context is supported as usable context on the captured mobile route.",
+        "executed": "Compared provider model limit with primary route failures and searched for a paired artifact-backed mobile long-context run.",
+        "artifact": null,
+        "verified": "Nominal limit and route cap/hangs are both source-supported but not the same measurement.",
+        "reported": "Usable 128K remains an evidence gap rather than a pass or failure conclusion.",
+        "termination": "Countersearch ended without a closing mobile study.",
+        "measurements": [
+          {"metric": "nominal_model_context", "value": 131072, "unit": "tokens", "denominator": "provider model card", "notes": "Not route-tested here."},
+          {"metric": "reported_android_generation_cap", "value": 8192, "unit": "tokens", "denominator": "issue route cap near hangs", "notes": "Not a measured maximum usable context."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-e2b-card", "segment_id": "seg-context-modality"},
+        {"source_id": "src-litert-android", "segment_id": "seg-failure-buckets"}
+      ],
+      "confounds": ["Model context and generation cap differ; runtime state, KV precision, memory, prompt length, and output cap are not aligned."],
+      "configuration_gaps": ["No artifact-backed E2B/E4B mobile run spans long-context correctness, prefill, peak memory, thermal behavior, and reliability to 128K."],
+      "transfer_limits": ["Does not show that Gemma 4 cannot use 128K in another runtime or that this route is limited to exactly 8K usable context."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "recurring_pressure",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-05-07T00:00:00Z", "end": "2026-08-30T08:35:00Z"}
+    },
+    {
+      "observation_id": "obs-ple-runtime-support",
+      "statement": "Transformers and llama.cpp issue evidence shows that PLE support is versioned and graph-sensitive: one Transformers implementation gap was later closed, while a llama.cpp reporter claims tensors load but are absent from the forward graph and quality degrades; the latter remains bug-unconfirmed and cannot establish current runtime failure.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B"],
+        "provider": "google",
+        "product": "third-party-runtime-ple-support",
+        "snapshot": "issues captured 2026-08-30",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "Transformers and llama.cpp issue surfaces",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "inspect loader, forward graph, issue status, and closure",
+        "harness": null,
+        "instrument_revision": "issue states captured 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Assess whether successful weight loading establishes correct PLE execution.",
+        "executed": "Compared runtime issue descriptions and current issue status.",
+        "artifact": "Public issues and project closure relation.",
+        "verified": "PLE can require explicit forward-graph support; one current llama.cpp claim remains unconfirmed.",
+        "reported": "Loader success is not a semantic execution test, and issue status must carry runtime version/time.",
+        "termination": "Pressure retained without a current universal failure claim.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-transformers-ple", "segment_id": "seg-ple-pipeline"},
+        {"source_id": "src-llama-ple", "segment_id": "seg-missing-forward"},
+        {"source_id": "src-vllm-recipe", "segment_id": "seg-support-memory"}
+      ],
+      "confounds": ["Different runtimes, versions, formats, and issue maturity."],
+      "configuration_gaps": ["No common checkpoint/harness or current independent reproduction across the three runtime surfaces."],
+      "transfer_limits": ["Cannot label any current runtime generally broken or infer model quality from an unconfirmed graph report."],
+      "counterevidence_refs": ["obs-openvino-frontier", "obs-ple-offload"],
+      "supersedes": [],
+      "evidence_posture": "recurring_pressure",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-04-01T00:00:00Z", "end": "2026-08-30T08:38:00Z"}
+    },
+    {
+      "observation_id": "obs-forum-mtp-noncomparable",
+      "statement": "An RTX 5090 Laptop forum post reports high MTP throughput for both E sizes, but E2B uses a llama.cpp/AtomicChat fork with Q8 while E4B uses a vLLM nightly path; the rows are preserved as runtime-support discovery and rejected as a paired E2B/E4B comparison.",
+      "target_kind": "unresolved",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "forum-local-mtp",
+        "snapshot": null,
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "RTX 5090 Laptop 24GB sm_120"}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "different E2B and E4B runtime stacks",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "E2B llama.cpp/AtomicChat fork Q8; E4B vLLM nightly",
+        "instrument_revision": "forum post captured 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Assess whether forum throughput rows provide independent paired MTP recurrence.",
+        "executed": "Inspected runtime, format, and acceptance differences.",
+        "artifact": "Forum configuration table.",
+        "verified": "The two rows are not configuration matched.",
+        "reported": "Useful for discovering support paths, no-fit for cross-size speed ranking.",
+        "termination": "Comparison rejected without discarding the field signal.",
+        "measurements": [
+          {"metric": "e2b_reported_throughput", "value": 206.6, "unit": "tokens/second", "denominator": "llama.cpp/AtomicChat fork Q8 row", "notes": "Not comparable to E4B row."},
+          {"metric": "e4b_reported_throughput", "value": 178.6, "unit": "tokens/second", "denominator": "vLLM nightly row", "notes": "Not comparable to E2B row."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-reddit-mtp", "segment_id": "seg-noncomparable-rows"}],
+      "confounds": ["Different runtime, format, implementation maturity, acceptance, and possibly prompts."],
+      "configuration_gaps": ["No common target/assistant checkpoint, prompt corpus, output length, or runtime stack."],
+      "transfer_limits": ["Cannot compare E2B and E4B throughput or confirm the Classmethod speedup ratios."],
+      "counterevidence_refs": ["obs-mtp-long-output"],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "no_fit",
+      "observed_interval": {"start": "2026-05-01T00:00:00Z", "end": "2026-08-30T08:39:00Z"}
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "clu-e2b-e4b-pareto",
+      "label": "E4B outcome advantage and E2B resource advantage recur on separate axes",
+      "observation_refs": ["obs-udae-paired-frontier", "obs-energy-paired", "obs-openvino-frontier", "obs-ple-offload"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["udae-study", "uwasa-thesis", "jkudo-field", "mycelia-ple-issue"],
+      "supported_scope": "One controlled task study places E4B ahead on weighted outcomes while independent deployment measurements repeatedly place E2B lower on memory, decode time, or energy; E4B placement can also shift its own fit frontier.",
+      "transfer_limits": ["The sources do not share checkpoints, formats, runtimes, hardware, prompts, or accepted-outcome denominators."],
+      "unresolved_configuration_gaps": ["No paired owner run combines output acceptance, TTFT, prefill, decode, memory, energy, thermal state, reliability, and termination."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Build an owner-weighted Pareto study with exact realizations rather than select a universal winner."
+    },
+    {
+      "cluster_id": "clu-mtp-amortization",
+      "label": "MTP benefit depends on output length and exact runtime stack",
+      "observation_refs": ["obs-mtp-long-output", "obs-mtp-short-output", "obs-forum-mtp-noncomparable"],
+      "counterevidence_refs": ["obs-mtp-short-output", "obs-forum-mtp-noncomparable"],
+      "independent_origin_groups": ["classmethod-field", "reddit-mtp-5090"],
+      "supported_scope": "A controlled field origin shows about 1.9-2.1x long-form gains and near-zero short-form gains, while a second forum origin demonstrates that runtime/format mismatch prevents direct recurrence claims.",
+      "transfer_limits": ["No batch, concurrency, energy, or owner workload break-even study exists."],
+      "unresolved_configuration_gaps": ["Exact assistant revisions, break-even length curve, multi-client behavior, and accepted output parity are incomplete."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Sweep output length, acceptance, draft depth, batch, and hardware on exact target/assistant pairs."
+    },
+    {
+      "cluster_id": "clu-ple-operating-surface",
+      "label": "PLE correctness and placement are runtime-version operating surfaces",
+      "observation_refs": ["obs-ple-offload", "obs-ple-runtime-support", "obs-udae-metadata-error"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["mycelia-ple-issue", "transformers-project", "llama-cpp-issue", "google-provider", "udae-study"],
+      "supported_scope": "PLE affects architecture metadata, forward-graph correctness, and device placement; successful loading or effective-parameter labels cannot substitute for execution and residency evidence.",
+      "transfer_limits": ["Issue reports differ in maturity and no common runtime comparison exists."],
+      "unresolved_configuration_gaps": ["Supported cross-runtime offload and a generic PLE semantic test are absent."],
+      "posture": "recurring_pressure",
+      "disposition": "route_to_runtime_owner",
+      "next_action": "Require a runtime-specific PLE correctness and placement check for any admitted realization."
+    },
+    {
+      "cluster_id": "clu-route-reliability",
+      "label": "Reliability failures are route-specific and multi-owner rather than model-only",
+      "observation_refs": ["obs-openvino-frontier", "obs-android-reliability", "obs-litert-paired-cpu-failures", "obs-ple-runtime-support"],
+      "counterevidence_refs": ["obs-openvino-frontier"],
+      "independent_origin_groups": ["jkudo-field", "litert-issue-2202", "litert-issue-2149", "transformers-project", "llama-cpp-issue"],
+      "supported_scope": "Conversion format, device backend, state management, numeric path, parser, runtime version, and package size repeatedly change terminal behavior for E2B/E4B.",
+      "transfer_limits": ["No population incidence or common fixture spans these origins."],
+      "unresolved_configuration_gaps": ["Maintainer-confirmed root causes, fixed-version reruns, exact package digests, and independent reproductions are incomplete."],
+      "posture": "recurring_pressure",
+      "disposition": "route_to_runtime_owner",
+      "next_action": "Route each symptom to its exact converter/runtime/hardware/harness owner and require a fixed-version health rerun."
+    },
+    {
+      "cluster_id": "clu-nominal-usable-context",
+      "label": "Nominal 128K context is not a usable-context receipt",
+      "observation_refs": ["obs-nominal-usable-context-gap", "obs-android-reliability", "obs-ple-offload"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-provider", "litert-issue-2202", "mycelia-ple-issue"],
+      "supported_scope": "Provider model capacity, route generation caps, state reliability, prefill peak memory, and placement are separate determinants of usable context.",
+      "transfer_limits": ["The retained sources do not run one common long-context correctness benchmark to 128K."],
+      "unresolved_configuration_gaps": ["No paired mobile E2B/E4B long-context accuracy, memory, thermal, and completion study was found."],
+      "posture": "recurring_pressure",
+      "disposition": "replicate",
+      "next_action": "Measure a usable-context frontier per exact runtime subject rather than admitting the nominal model limit."
+    },
+    {
+      "cluster_id": "clu-evidence-audit",
+      "label": "Exposed measurements still require separate subject and comparability audits",
+      "observation_refs": ["obs-udae-metadata-error", "obs-forum-mtp-noncomparable", "obs-energy-paired"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["udae-study", "google-provider", "reddit-mtp-5090", "uwasa-thesis"],
+      "supported_scope": "A study can expose useful results while mislabeling architecture, omitting exact realization identity, or presenting non-comparable rows; each defect narrows rather than automatically erases the evidence.",
+      "transfer_limits": ["This is a method pattern, not a score for source classes."],
+      "unresolved_configuration_gaps": ["No automatic rule can decide which semantic layer remains usable; owner review remains required."],
+      "posture": "cross_modal_pattern",
+      "disposition": "preserve",
+      "next_action": "Audit subject metadata, method, and comparison compatibility independently in future runs."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "ten-quality-resources",
+      "label": "E4B task outcome versus E2B memory, throughput, and energy",
+      "side_a_refs": ["obs-udae-paired-frontier"],
+      "side_b_refs": ["obs-energy-paired", "obs-openvino-frontier"],
+      "analysis": "The sources recur on a capability/resource Pareto direction but use incompatible realizations and no common accepted-outcome utility, so neither side dominates universally.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "What is verified utility per memory, time, energy, and reliability budget on AoA workloads?"
+    },
+    {
+      "tension_id": "ten-mtp-length",
+      "label": "Long-form MTP acceleration versus short-form no gain",
+      "side_a_refs": ["obs-mtp-long-output"],
+      "side_b_refs": ["obs-mtp-short-output"],
+      "analysis": "Both outcomes arise in the same environment and differ principally by output length/task, resolving the apparent contradiction as an amortization boundary.",
+      "resolution": "resolved_by_instrument",
+      "remaining_question": "Where is the break-even length under each owner traffic distribution and batch size?"
+    },
+    {
+      "tension_id": "ten-npu-power-energy",
+      "label": "Lower NPU watts versus lower GPU joules per token",
+      "side_a_refs": ["obs-openvino-energy"],
+      "side_b_refs": ["obs-openvino-frontier"],
+      "analysis": "Absolute power and energy per generated token have different denominators; the GPU consumes more watts but finishes more tokens per unit time in this setup.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Which objective matters under battery, latency, concurrency, and thermal constraints?"
+    },
+    {
+      "tension_id": "ten-edge-runtime",
+      "label": "On-device artifact positioning versus runtime and conversion failures",
+      "side_a_refs": ["obs-openvino-frontier", "obs-ple-offload"],
+      "side_b_refs": ["obs-android-reliability", "obs-litert-paired-cpu-failures", "obs-ple-runtime-support"],
+      "analysis": "Successful and failed points coexist because format, graph representation, placement, backend, and runtime version differ; neither side is a family-wide verdict.",
+      "resolution": "resolved_by_product",
+      "remaining_question": "Which exact packages and runtime versions pass owner admission on each target device?"
+    },
+    {
+      "tension_id": "ten-context-nominal-usable",
+      "label": "Nominal 131K model context versus unclosed mobile usable-context evidence",
+      "side_a_refs": ["obs-nominal-usable-context-gap"],
+      "side_b_refs": ["obs-android-reliability", "obs-ple-offload"],
+      "analysis": "Model position capacity, route generation cap, prefill memory, state rehydration, and correctness are different dimensions; the gap remains open rather than a pass or contradiction.",
+      "resolution": "partially_resolved",
+      "remaining_question": "What long-context frontier completes reliably with verified retrieval and bounded thermal/memory state on a named mobile route?"
+    },
+    {
+      "tension_id": "ten-method-metadata",
+      "label": "Useful controlled measurements versus incorrect model architecture metadata",
+      "side_a_refs": ["obs-udae-paired-frontier"],
+      "side_b_refs": ["obs-udae-metadata-error"],
+      "analysis": "The outcome table and architecture interpretation are separable evidence layers; the metadata error narrows mechanism claims without automatically deleting measured aggregates.",
+      "resolution": "resolved_by_segment",
+      "remaining_question": "Did the study's fallback realization differ between E2B and E4B in a way not exposed by the aggregate table?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "mp-subject-metadata-audit",
+      "trigger_refs": ["obs-udae-metadata-error", "obs-forum-mtp-noncomparable"],
+      "pressure": "A source can expose a useful method or measurement while misclassifying architecture or comparing different runtime realizations.",
+      "proposed_response": "Audit subject metadata, realization compatibility, and measured outcome method as separate evidence layers; downgrade only the unsupported layer.",
+      "status": "proposed"
+    },
+    {
+      "pressure_id": "mp-output-length-mtp",
+      "trigger_refs": ["obs-mtp-long-output", "obs-mtp-short-output"],
+      "pressure": "MTP speedup changes from material to neutral when output length no longer amortizes draft overhead.",
+      "proposed_response": "Require target/assistant revision, runtime, hardware, draft settings, acceptance, output-length distribution, batch, and break-even curve.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-energy-denominator",
+      "trigger_refs": ["obs-energy-paired", "obs-openvino-energy"],
+      "pressure": "Watts, joules per token, total energy, output-token count, quality, and accepted outcome produce different efficiency conclusions.",
+      "proposed_response": "Retain metric, denominator, instrument boundary, output length, quality/acceptance, and excluded infrastructure for every energy claim.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-route-causality",
+      "trigger_refs": ["obs-openvino-frontier", "obs-android-reliability", "obs-litert-paired-cpu-failures", "obs-ple-runtime-support"],
+      "pressure": "Model, checkpoint, conversion, route, runtime, harness, device, parser, and operator protocol can each cause or expose a failure symptom.",
+      "proposed_response": "Route symptoms to the narrowest controlled owner surface and forbid model-only causality without held-constant evidence.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-nominal-usable-context",
+      "trigger_refs": ["obs-nominal-usable-context-gap", "obs-ple-offload", "obs-android-reliability"],
+      "pressure": "Nominal context length is repeatedly mistaken for a route-level usable context that completes correctly within memory and thermal limits.",
+      "proposed_response": "Measure usable context per realization with correctness, prefill, decode, peak memory, state continuity, thermal behavior, and completion reliability.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-honest-postconditions",
+      "trigger_refs": ["obs-android-reliability"],
+      "pressure": "Model-reported or parser-accepted completion can materially overstate task success when post-conditions are not verified.",
+      "proposed_response": "Separate requested, executed, artifact, verified, reported, and termination outcomes and retain the acceptance grader.",
+      "status": "adopted"
+    }
+  ],
+  "revisit_triggers": [
+    "UDAE or another controlled study publishes exact per-model checkpoints, precision paths, per-item artifacts, variance, or a corrected common-instrument rerun.",
+    "vLLM, Transformers, llama.cpp, LiteRT-LM, or OpenVINO changes Gemma 4 PLE, MTP, graph, device-map, multimodal, context, or device support.",
+    "Any cited issue receives a maintainer-confirmed cause, fix, closure, or independent reproduction on a named version.",
+    "A paired E2B/E4B study combines accepted output, TTFT, prefill, decode, peak memory, context, energy, thermal behavior, retries, and termination.",
+    "An artifact-backed mobile run tests long-context correctness and completion materially beyond 8K toward the nominal 128K limit.",
+    "An AoA owner selects exact E2B/E4B realizations and workload utility for a canonical study."
+  ],
+  "created_at": "2026-08-30T09:10:00Z",
+  "updated_at": "2026-08-30T09:10:00Z"
+}

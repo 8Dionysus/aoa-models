@@ -41,6 +41,17 @@ one provider-shaped fixture:
 - [`Cross-provider outcome economics`](reports/cross-provider-outcome-economics-2026-08-30.md)
   tests common-instrument comparison, effort frontiers, denominators,
   instrument discontinuity, and excluded operational cost.
+- [`Gemma 4 E2B/E4B deep dossier`](reports/gemma-4-e2b-e4b-web-recon-deep-dossier-2026-08-30.md)
+  pairs a temporal lineage/footprint packet with a separate operating-points
+  packet. It tests PLE effective-versus-retained parameter language, memory
+  denominators, bounded Gemma 3n inheritance, MTP amortization, energy and
+  device Pareto regions, usable-versus-nominal context, runtime attribution,
+  and subject-metadata audit without promoting either size.
+
+The Gemma 4 run also retains nine immutable, locator-bounded capture snapshots
+for release-history segments, memory-table/caveat segments, and exact current
+E2B/E4B base/IT registry responses. They are refresh anchors, not archived page
+bodies, scheduled watches, or canonical evidence.
 
 The current lens is
 [`External Model Web Recon v0.3`](reports/external-model-web-recon-method-v0.3.md).
