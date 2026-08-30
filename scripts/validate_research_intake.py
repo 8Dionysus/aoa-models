@@ -14,6 +14,7 @@ from research_intake_contract import (
     research_intake_summary,
     validate_research_intake,
 )
+from research_automation_contract import collect_research_automation_artifacts
 
 
 def main() -> int:
@@ -30,6 +31,17 @@ def main() -> int:
     for path, record in records:
         print(
             f"RUN {record['recon_run_id']} {canonical_digest(record)} "
+            f"{path.relative_to(root)}"
+        )
+    automation_records, _ = collect_research_automation_artifacts(root)
+    for path, record in automation_records:
+        artifact_id = (
+            record.get("capture_id")
+            or record.get("receipt_id")
+            or record.get("proposal_id")
+        )
+        print(
+            f"ARTIFACT {artifact_id} {record['artifact_digest']} "
             f"{path.relative_to(root)}"
         )
     counts = ", ".join(

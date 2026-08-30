@@ -195,6 +195,10 @@ class ResearchIntakeContractTests(unittest.TestCase):
         fixture = Path(temporary.name) / "aoa-models"
         (fixture / "schemas").mkdir(parents=True)
         shutil.copy2(ROOT / "schemas/recon-run.schema.json", fixture / "schemas")
+        shutil.copy2(
+            ROOT / "schemas/research-automation-artifact.schema.json",
+            fixture / "schemas",
+        )
         (fixture / "research-intake/recon-runs").mkdir(parents=True)
         return temporary, fixture
 

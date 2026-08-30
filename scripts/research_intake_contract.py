@@ -13,6 +13,11 @@ from urllib.parse import urlparse
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+from research_automation_contract import (
+    research_automation_summary,
+    validate_research_automation,
+)
+
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 RECON_RUN_DIRECTORY = Path("research-intake/recon-runs")
@@ -468,6 +473,7 @@ def validate_research_intake(root: Path = DEFAULT_ROOT) -> list[str]:
             issues,
         )
     _validate_no_direct_promotion(root, issues)
+    issues.extend(validate_research_automation(root))
     return issues
 
 
@@ -478,4 +484,5 @@ def research_intake_summary(root: Path = DEFAULT_ROOT) -> dict[str, int]:
         "SourceCapture": sum(len(record.get("source_captures", [])) for _, record in records),
         "ExternalObservation": sum(len(record.get("observations", [])) for _, record in records),
         "ObservationCluster": sum(len(record.get("clusters", [])) for _, record in records),
+        **research_automation_summary(root.resolve()),
     }

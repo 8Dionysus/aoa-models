@@ -23,6 +23,11 @@ protocol may become a study candidate; bounded behavior requires appropriate
 owned evidence and independent review; runtime/product symptoms return to their
 runtime owner. The intake packet itself transfers no acceptance.
 
+A capture snapshot proves only what bytes and locator were mechanically
+observed or unavailable at one attempt. A change receipt has no semantic
+supersession effect. A supersession proposal remains before the normal reviewed
+`ReconRun` source edit and transfers no acceptance to the target owner.
+
 No handoff transfers acceptance automatically. Rejection or non-admission
 returns to the named source record, preserves the evidence, and either weakens
 the claim, changes the study, or suspends the consumer projection.

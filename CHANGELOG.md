@@ -20,6 +20,13 @@ not promote model knowledge into routing, runtime, proof, or acceptance.
 - Three post-seed runs covering GPT-5.6 segment/product temporal drift, Claude
   5 persistence across capability, delegated acceptance and runtime authority,
   and cross-provider outcome economics, plus the evidence-derived v0.3 lens.
+- Bounded `capture-source`, `refresh-capture`, and `suggest-supersession`
+  commands with immutable capture snapshots, classified change receipts, and
+  content-addressed review proposals across text, JSON, HTML, missing,
+  unavailable, presentation-only, and content-change paths.
+- A provider-neutral research-automation artifact schema and durable tests for
+  overwrite refusal, predecessor history, recomputed change classification,
+  qualified observation refs, and review-only supersession admission.
 
 ### Changed
 
@@ -28,12 +35,17 @@ not promote model knowledge into routing, runtime, proof, or acceptance.
   acceptance as separate claims.
 - Cluster provenance validation now includes both supporting observations and
   counterevidence without allowing either to invent an origin group.
+- The normal research-intake validator now also checks retained automation
+  artifacts, their local digest-bound refs, and their declared flat routes.
 
 ### Security
 
 - Research-intake packets have no routing, activation, proof, acceptance, or
   automatic-promotion authority and cannot be used as direct canonical source
   evidence.
+- Research automation has no source-mutation or automatic-application
+  authority; broad crawling, ranking, consensus, scheduling, and promotion are
+  not introduced.
 
 ## [0.1.0] - 2026-08-22
 

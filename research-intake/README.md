@@ -5,6 +5,11 @@ This directory contains pre-canon external web-reconnaissance material.
 - `recon-runs/` contains schema-validated `ReconRun` packets.
 - `reports/` contains bounded human research reports and method notes paired
   with packets.
+- `capture-snapshots/` may retain reviewed immutable segment-capture candidates.
+- `change-receipts/` may retain classified refresh comparisons that resolve
+  both snapshots.
+- `supersession-proposals/` may retain review-only relationships that resolve
+  both source observations without editing them.
 
 Nothing here is a `ModelClaim`, accepted `ModelStudy`, proof verdict, runtime
 currentness fact, fit-query input, route, activation, or owner acceptance.
@@ -15,6 +20,10 @@ and validate with:
 ```bash
 python -B scripts/validate_research_intake.py
 ```
+
+Bounded capture and refresh use `python -B scripts/research_intake.py`. Request
+manifests, offline inputs, exploratory outputs, and one-off adapter trials are
+working material and do not belong in these retained routes by default.
 
 ## Current manual corpus
 
@@ -40,3 +49,6 @@ evidence as data; they do not prove that the ontology is complete.
 
 The bootstrap validation and temporary-surface cleanup are recorded in the
 [`execution receipt`](reports/web-recon-bootstrap-execution-2026-08-30.md).
+The bounded automation contour, generic demonstrations, and working-surface
+cleanup are recorded separately in the
+[`automation bootstrap receipt`](reports/research-automation-bootstrap-2026-08-30.md).

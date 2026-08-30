@@ -8,3 +8,4 @@
 - [AOA-MODELS-D-0004 - Bind currentness to an exact runtime subject](../docs/decisions/AOA-MODELS-D-0004-runtime-subject-currentness.md) - 2026-08-20; `accepted-owner-source`
 - [AOA-MODELS-D-0005 - Establish a source-only initial release route](../docs/decisions/AOA-MODELS-D-0005-initial-source-release-route.md) - 2026-08-22; `accepted-owner-source`
 - [AOA-MODELS-D-0006 - Separate pre-canon web research intake from model source truth](../docs/decisions/AOA-MODELS-D-0006-separate-pre-canon-web-research-intake.md) - 2026-08-30; `accepted-owner-source`
+- [AOA-MODELS-D-0007 - Bind research automation to immutable pre-canon artifacts](../docs/decisions/AOA-MODELS-D-0007-bound-research-automation-to-immutable-pre-canon-artifacts.md) - 2026-08-30; `accepted-owner-source`

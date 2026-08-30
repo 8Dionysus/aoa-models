@@ -42,6 +42,13 @@ For web research, preserve source segments, origin dependencies, instrument
 revision, configuration gaps, counterevidence, and transfer limits. Do not feed
 research-intake paths into `query_model_fit.py` or canonical source evidence.
 
+Bounded research automation may retrieve one declared segment, create a new
+snapshot, classify change, or package a review proposal. It must refuse output
+overwrite, preserve unavailable and partial states, bind local retained refs by
+digest, and leave `ReconRun` and canonical source unchanged. Provider, model,
+publisher, URL, and source class remain data; broad crawling, ranking,
+consensus, scheduling, and automatic supersession are outside this contour.
+
 ## Claim lifecycle
 
 The supported lifecycle is:
