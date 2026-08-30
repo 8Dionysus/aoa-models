@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemas.aoa.local/models/research-automation-artifact.schema.json",
+  "schema_version": "aoa_model_research_automation_artifact_v1",
+  "kind": "ResearchCaptureSnapshot",
+  "capture_id": "research-capture:google-gemma-release-history/20260830t085659z",
+  "created_at": "2026-08-30T08:56:59Z",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "source_mutation_authority": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "request": {
+    "schema_version": "aoa_model_research_capture_request_v1",
+    "source": {
+      "source_id": "google-gemma-release-history",
+      "title": "Gemma release history",
+      "uri": "https://ai.google.dev/gemma/docs/releases",
+      "source_class": "provider_release_history",
+      "publisher": "Google",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable release history; this capture selects the later multi-token prediction entry.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "access_notes": "Public provider documentation.",
+      "selection_context": "Selected to distinguish the post-launch MTP assistant release from the launch family."
+    },
+    "segment": {
+      "segment_id": "gemma-4-mtp-release",
+      "locator": {
+        "kind": "html_id",
+        "value": "gemma-4-mtp"
+      }
+    },
+    "retrieval": {
+      "media_type": "auto",
+      "max_bytes": 2097152,
+      "timeout_seconds": 30
+    }
+  },
+  "retrieval": {
+    "state": "captured",
+    "transport": "http",
+    "attempted_at": "2026-08-30T08:56:59Z",
+    "input_ref": null,
+    "final_uri": "https://ai.google.dev/gemma/docs/releases",
+    "media_type": "text/html",
+    "http_status": 200,
+    "etag": null,
+    "last_modified": "Thu, 02 Jul 2026 22:44:33 GMT",
+    "document_digest": "sha256:056ddd391ee058c085f726bb51bfb4e40265d342179dbe1d9adc042d444df461",
+    "document_size_bytes": 139545,
+    "truncated": false,
+    "error": null
+  },
+  "segment_result": {
+    "state": "captured",
+    "content_digest": "sha256:e038eaa6946d2c6fefa4cebe06175c0ccf2c1b3bfc18fec88492eaae25587294",
+    "normalized_content_digest": "sha256:e038eaa6946d2c6fefa4cebe06175c0ccf2c1b3bfc18fec88492eaae25587294",
+    "byte_length": 14,
+    "normalization_profile": "html_element_text_v1",
+    "digest_unavailable_reason": null
+  },
+  "source_capture_candidate": {
+    "source_id": "google-gemma-release-history",
+    "title": "Gemma release history",
+    "uri": "https://ai.google.dev/gemma/docs/releases",
+    "source_class": "provider_release_history",
+    "publisher": "Google",
+    "published_at": null,
+    "updated_at": null,
+    "effective_interval": null,
+    "temporal_notes": "Mutable release history; this capture selects the later multi-token prediction entry.",
+    "mutable_surface": true,
+    "origin_group": "google-provider",
+    "propagation_role": "origin",
+    "dependency_refs": [],
+    "access_notes": "Public provider documentation.",
+    "selection_context": "Selected to distinguish the post-launch MTP assistant release from the launch family.",
+    "captured_at": "2026-08-30T08:56:59Z",
+    "segments": [
+      {
+        "segment_id": "gemma-4-mtp-release",
+        "locator": "html-id:gemma-4-mtp",
+        "content_digest": "sha256:e038eaa6946d2c6fefa4cebe06175c0ccf2c1b3bfc18fec88492eaae25587294",
+        "digest_unavailable_reason": null
+      }
+    ]
+  },
+  "predecessor_snapshot": null,
+  "gap_reasons": [],
+  "artifact_digest": "sha256:2bb4523a965c619bb5a1b82c6b2120fd3d45bd62e3b2d941ba70d45df410cd48"
+}

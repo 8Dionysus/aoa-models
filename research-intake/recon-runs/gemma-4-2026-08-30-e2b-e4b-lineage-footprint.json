@@ -1,0 +1,1417 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:gemma-4/2026-08-30-e2b-e4b-lineage-footprint",
+  "title": "Gemma 4 E2B/E4B temporal lineage, architecture, and footprint",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "How did the Gemma 4 family and its E2B/E4B artifacts change over time, what do their effective and retained parameter labels mean, and which architecture, memory, multimodal, MTP, QAT, and Gemma 3n lineage statements survive bounded source review?",
+  "scope": {
+    "subject_labels": [
+      "gemma-4",
+      "gemma-4-e2b",
+      "gemma-4-e4b",
+      "gemma-4-e2b-it",
+      "gemma-4-e4b-it",
+      "gemma-3n-lineage"
+    ],
+    "target_kinds": [
+      "provider_fact",
+      "benchmark_result",
+      "unresolved"
+    ],
+    "capture_interval": {
+      "start": "2026-08-30T08:00:00Z",
+      "end": "2026-08-30T09:05:00Z"
+    },
+    "inclusion_criteria": [
+      "Retain launch and current family segments separately rather than rewriting history.",
+      "Bind parameter, memory, context, modality, protocol, and artifact facts to explicit denominators and source segments.",
+      "Carry Gemma 3n lineage only where a Gemma 4 source or implementation supports the relation."
+    ],
+    "exclusion_criteria": [
+      "Do not equate PLE effective parameters with sparse MoE active parameters.",
+      "Do not infer route-level modality, context, or runtime admission from checkpoint capability.",
+      "Do not inherit MatFormer or E2B-inside-E4B nesting from Gemma 3n by label alone."
+    ],
+    "generality_probe": {
+      "mode": "different_product_or_instrument",
+      "subject_labels": [
+        "provider-release-history",
+        "model-registry-api",
+        "technical-report-v2",
+        "reference-implementation"
+      ],
+      "rationale": "The run tests whether one family label remains coherent across launch time, current registry artifacts, a later technical report, and implementation-level configuration without schema changes."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.3",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.3.md",
+        "content_digest": "sha256:64fcff8429ea6823f9f3aa5e1c614110b4d724219e198dd8cfe505424cd15aed"
+      },
+      {
+        "relation": "deep_report",
+        "ref": "research-intake/reports/gemma-4-e2b-e4b-web-recon-deep-dossier-2026-08-30.md",
+        "content_digest": "sha256:700e52776b2a76629cd830730190880b252e720e605e851974498dbe199fbb93"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-release-launch",
+      "title": "Gemma release history: Gemma 4 launch",
+      "uri": "https://ai.google.dev/gemma/docs/releases",
+      "source_class": "provider_release_history",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:56:22Z",
+      "published_at": "2026-03-31T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-03-31T00:00:00Z", "end": null},
+      "temporal_notes": "Original Gemma 4 launch entry retained separately from later MTP and 12B additions.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-gemma-4-launch",
+          "locator": "html-id:gemma-4",
+          "content_digest": "sha256:9304e55fc839aa8c10b139032686e770062e6d33cd529dfefb37c76a2c7fa059",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public provider documentation; immutable capture snapshot retained locally.",
+      "selection_context": "Primary temporal source for the four-model launch boundary."
+    },
+    {
+      "source_id": "src-release-mtp",
+      "title": "Gemma release history: Gemma 4 MTP",
+      "uri": "https://ai.google.dev/gemma/docs/releases",
+      "source_class": "provider_release_history",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:56:59Z",
+      "published_at": "2026-04-16T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-04-16T00:00:00Z", "end": null},
+      "temporal_notes": "Post-launch MTP assistant entry.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-mtp-release",
+          "locator": "html-id:gemma-4-mtp",
+          "content_digest": "sha256:e038eaa6946d2c6fefa4cebe06175c0ccf2c1b3bfc18fec88492eaae25587294",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public provider documentation; immutable capture snapshot retained locally.",
+      "selection_context": "Selected to keep assistant artifacts distinct from base/IT checkpoint launch."
+    },
+    {
+      "source_id": "src-release-unified",
+      "title": "Gemma release history: Gemma 4 12B Unified",
+      "uri": "https://ai.google.dev/gemma/docs/releases",
+      "source_class": "provider_release_history",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:57:00Z",
+      "published_at": "2026-06-03T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-06-03T00:00:00Z", "end": null},
+      "temporal_notes": "Later current-family addition, not part of the original launch quartet.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-unified-release",
+          "locator": "html-id:gemma-4-unified",
+          "content_digest": "sha256:4fc9ba7e34bcc493a3e209cc36445fd1278a2861de87fed315fcfb530438e300",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public provider documentation; immutable capture snapshot retained locally.",
+      "selection_context": "Selected to distinguish current catalog membership from launch history."
+    },
+    {
+      "source_id": "src-tech-report",
+      "title": "Gemma 4 Technical Report v2",
+      "uri": "https://arxiv.org/html/2607.02770v2",
+      "source_class": "provider_technical_report",
+      "publisher": "Google DeepMind",
+      "captured_at": "2026-08-30T08:45:00Z",
+      "published_at": "2026-07-24T00:00:00Z",
+      "updated_at": "2026-07-24T00:00:00Z",
+      "effective_interval": {"start": "2026-07-24T00:00:00Z", "end": null},
+      "temporal_notes": "Version 2 is a later instrument and architecture account than the March launch.",
+      "mutable_surface": false,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-architecture",
+          "locator": "Sections 2.1-2.3 and architecture table for dense PLE, layers, encoders, attention, and memory.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned public HTML was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-provider-benchmarks",
+          "locator": "Section 3 benchmark tables for E2B and E4B IT thinking variants.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned public HTML was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-mtp-qat-lineage",
+          "locator": "Sections describing QAT, four-layer MTP assistants, and the reduced Gemma 3n-like audio encoder.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned public HTML was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned technical report.",
+      "selection_context": "Primary provider architecture and evaluation instrument."
+    },
+    {
+      "source_id": "src-core-memory",
+      "title": "Gemma model overview: inference memory requirements",
+      "uri": "https://ai.google.dev/gemma/docs/core",
+      "source_class": "provider_documentation",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:56:22Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Current mutable static-load estimates sampled at capture time.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-inference-memory",
+          "locator": "html-id:gemma-4-inference-memory-requirements",
+          "content_digest": "sha256:f8f9444e1646653eabdfbb6570972036c7e208701427340072dd7f629119c0a2",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public provider documentation; immutable capture snapshot retained locally.",
+      "selection_context": "Current E2B/E4B load-memory estimates by format."
+    },
+    {
+      "source_id": "src-core-memory-caveats",
+      "title": "Gemma model overview: memory planning considerations",
+      "uri": "https://ai.google.dev/gemma/docs/core",
+      "source_class": "provider_documentation",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:57:01Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Current mutable caveats define the memory-table denominator and PLE overhead.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-memory-caveats",
+          "locator": "html-id:key-considerations-for-memory-planning",
+          "content_digest": "sha256:c092104b7a877943581723a6b8096373cecb1063cdebfd2ec9b79b787095e675",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public provider documentation; immutable capture snapshot retained locally.",
+      "selection_context": "Selected so memory numbers retain overhead and excluded-context caveats."
+    },
+    {
+      "source_id": "src-hf-e2b-base",
+      "title": "Hugging Face API metadata for google/gemma-4-E2B",
+      "uri": "https://huggingface.co/api/models/google/gemma-4-E2B",
+      "source_class": "model_registry_api",
+      "publisher": "Hugging Face",
+      "captured_at": "2026-08-30T08:57:02Z",
+      "published_at": null,
+      "updated_at": "2026-07-15T16:39:18Z",
+      "effective_interval": null,
+      "temporal_notes": "Current mutable base repository metadata at capture time.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-registry",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-model-metadata",
+          "locator": "whole-document",
+          "content_digest": "sha256:10067c0fc2b9b00c0fe7eebaf9ba304a1adae17b06971170b2cae0961ae09ff4",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public registry API; immutable capture snapshot retained locally.",
+      "selection_context": "Exact E2B base repository SHA and safetensors count."
+    },
+    {
+      "source_id": "src-hf-e2b-it",
+      "title": "Hugging Face API metadata for google/gemma-4-E2B-it",
+      "uri": "https://huggingface.co/api/models/google/gemma-4-E2B-it",
+      "source_class": "model_registry_api",
+      "publisher": "Hugging Face",
+      "captured_at": "2026-08-30T08:57:03Z",
+      "published_at": null,
+      "updated_at": "2026-07-20T16:41:56Z",
+      "effective_interval": null,
+      "temporal_notes": "Current mutable IT repository metadata at capture time.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-registry",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-model-metadata",
+          "locator": "whole-document",
+          "content_digest": "sha256:658d035c2a3b8ef9ec8f82167d394b84dc7bed13fe7d9cf70114282d69b99f14",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public registry API; immutable capture snapshot retained locally.",
+      "selection_context": "Exact E2B IT repository SHA and safetensors count."
+    },
+    {
+      "source_id": "src-hf-e4b-base",
+      "title": "Hugging Face API metadata for google/gemma-4-E4B",
+      "uri": "https://huggingface.co/api/models/google/gemma-4-E4B",
+      "source_class": "model_registry_api",
+      "publisher": "Hugging Face",
+      "captured_at": "2026-08-30T08:57:04Z",
+      "published_at": null,
+      "updated_at": "2026-07-15T16:40:09Z",
+      "effective_interval": null,
+      "temporal_notes": "Current mutable base repository metadata at capture time.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-registry",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-model-metadata",
+          "locator": "whole-document",
+          "content_digest": "sha256:1b7b604073b122e02605377c19f64bd1c6bf536fb446b42df779779255d6b4ac",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public registry API; immutable capture snapshot retained locally.",
+      "selection_context": "Exact E4B base repository SHA and safetensors count."
+    },
+    {
+      "source_id": "src-hf-e4b-it",
+      "title": "Hugging Face API metadata for google/gemma-4-E4B-it",
+      "uri": "https://huggingface.co/api/models/google/gemma-4-E4B-it",
+      "source_class": "model_registry_api",
+      "publisher": "Hugging Face",
+      "captured_at": "2026-08-30T08:57:05Z",
+      "published_at": null,
+      "updated_at": "2026-07-20T16:42:03Z",
+      "effective_interval": null,
+      "temporal_notes": "Current mutable IT repository metadata at capture time.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-registry",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-model-metadata",
+          "locator": "whole-document",
+          "content_digest": "sha256:2beb4314bfdc93554641f2a94cc26b7582d6e4360a28eb1f38fe268b17694e0c",
+          "digest_unavailable_reason": null
+        }
+      ],
+      "access_notes": "Public registry API; immutable capture snapshot retained locally.",
+      "selection_context": "Exact E4B IT repository SHA and safetensors count."
+    },
+    {
+      "source_id": "src-e2b-card",
+      "title": "Gemma 4 E2B IT model card",
+      "uri": "https://huggingface.co/google/gemma-4-E2B-it",
+      "source_class": "provider_model_card",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:35:00Z",
+      "published_at": null,
+      "updated_at": "2026-07-20T16:41:56Z",
+      "effective_interval": null,
+      "temporal_notes": "Mutable current card inspected at run time.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-spec-protocol",
+          "locator": "Model information, usage, thinking, function-calling, and multimodal input sections.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public provider model card.",
+      "selection_context": "Current E2B configuration and protocol source."
+    },
+    {
+      "source_id": "src-e4b-card",
+      "title": "Gemma 4 E4B IT model card",
+      "uri": "https://huggingface.co/google/gemma-4-E4B-it",
+      "source_class": "provider_model_card",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:35:00Z",
+      "published_at": null,
+      "updated_at": "2026-07-20T16:42:03Z",
+      "effective_interval": null,
+      "temporal_notes": "Mutable current card inspected at run time.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-spec-protocol",
+          "locator": "Model information, usage, thinking, function-calling, and multimodal input sections.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public provider model card.",
+      "selection_context": "Current E4B configuration and protocol source."
+    },
+    {
+      "source_id": "src-reference-implementation",
+      "title": "Gemma 4 reference implementation",
+      "uri": "https://github.com/google-deepmind/gemma/blob/7b785991bd78626c73b317eb43fdbb6c292f7b9c/gemma/gm/nn/gemma4/_gemma4.py",
+      "source_class": "provider_reference_implementation",
+      "publisher": "Google DeepMind",
+      "captured_at": "2026-08-30T08:40:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Commit-pinned implementation inspected at repository HEAD for this run.",
+      "mutable_surface": false,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e-model-configs",
+          "locator": "E2B and E4B class definitions and attention-layer construction at commit 7b785991bd78626c73b317eb43fdbb6c292f7b9c.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned source was inspected without retaining normalized segment bytes."
+        }
+      ],
+      "access_notes": "Public commit-pinned source repository.",
+      "selection_context": "Implementation countercheck for layers and separate E2B/E4B definitions."
+    },
+    {
+      "source_id": "src-gemma3n-overview",
+      "title": "Gemma 3n model overview",
+      "uri": "https://ai.google.dev/gemma/docs/gemma-3n",
+      "source_class": "provider_documentation",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:42:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Lineage comparator, not a Gemma 4 source.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-ple-matformer",
+          "locator": "PLE caching and MatFormer/nested-model architecture sections.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The provider documentation was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public provider documentation.",
+      "selection_context": "Comparator used to prevent unsupported inheritance from Gemma 3n."
+    },
+    {
+      "source_id": "src-e2b-mtp",
+      "title": "Gemma 4 E2B IT MTP assistant",
+      "uri": "https://huggingface.co/google/gemma-4-E2B-it-assistant",
+      "source_class": "provider_model_card",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:43:00Z",
+      "published_at": "2026-04-16T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-04-16T00:00:00Z", "end": null},
+      "temporal_notes": "Assistant artifact is separate from the E2B target checkpoint.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-assistant-metadata",
+          "locator": "Model identity, target relation, and four-layer MTP assistant description.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public provider model card.",
+      "selection_context": "Official E2B MTP assistant artifact."
+    },
+    {
+      "source_id": "src-e4b-mtp",
+      "title": "Gemma 4 E4B IT MTP assistant",
+      "uri": "https://huggingface.co/google/gemma-4-E4B-it-assistant",
+      "source_class": "provider_model_card",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:43:00Z",
+      "published_at": "2026-04-16T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-04-16T00:00:00Z", "end": null},
+      "temporal_notes": "Assistant artifact is separate from the E4B target checkpoint.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-assistant-metadata",
+          "locator": "Model identity, target relation, and four-layer MTP assistant description.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public provider model card.",
+      "selection_context": "Official E4B MTP assistant artifact."
+    },
+    {
+      "source_id": "src-e2b-qat-mobile",
+      "title": "Gemma 4 E2B IT QAT mobile compressed-tensors checkpoint",
+      "uri": "https://huggingface.co/google/gemma-4-E2B-it-qat-mobile-ct",
+      "source_class": "provider_model_card",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:44:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable specialized quantized artifact surface.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-qat-format",
+          "locator": "QAT family and mobile compressed-tensors format description.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public provider model card.",
+      "selection_context": "Official E2B mobile QAT artifact."
+    },
+    {
+      "source_id": "src-e4b-qat-mobile",
+      "title": "Gemma 4 E4B IT QAT mobile compressed-tensors checkpoint",
+      "uri": "https://huggingface.co/google/gemma-4-E4B-it-qat-mobile-ct",
+      "source_class": "provider_model_card",
+      "publisher": "Google",
+      "captured_at": "2026-08-30T08:44:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable specialized quantized artifact surface.",
+      "mutable_surface": true,
+      "origin_group": "google-provider",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-qat-format",
+          "locator": "QAT family and mobile compressed-tensors format description.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public provider model card.",
+      "selection_context": "Official E4B mobile QAT artifact."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-family-timeline",
+      "statement": "Gemma 4 launched on 2026-03-31 as E2B, E4B, 26B A4B, and 31B; E2B/E4B MTP assistants followed on 2026-04-16 and 12B Unified joined on 2026-06-03, so launch and current family membership are different temporal segments.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "exact",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B", "gemma-4-26B-A4B", "gemma-4-31B", "gemma-4-12B"],
+        "provider": "google",
+        "product": "release-history",
+        "snapshot": "2026-08-30-segment-captures",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"launch_date": "2026-03-31", "mtp_date": "2026-04-16", "unified_12b_date": "2026-06-03"}
+      },
+      "configuration": {
+        "completeness": "exact",
+        "route": "provider release history",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "bounded HTML-ID capture",
+        "instrument_revision": "three date-bound release-history segments captured 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Separate historical launch composition from later family additions.",
+        "executed": "Captured launch, MTP, and 12B Unified release-history segments independently.",
+        "artifact": "Nine immutable capture snapshots include the three release segments.",
+        "verified": "Each selected HTML ID was captured with a segment digest and distinct capture identity.",
+        "reported": "The current five-size family cannot be projected backward onto the four-model launch.",
+        "termination": "Temporal map completed without automatic supersession.",
+        "measurements": [
+          {"metric": "launch_model_count", "value": 4, "unit": "models", "denominator": "2026-03-31 launch entry", "notes": "E2B, E4B, 26B A4B, and 31B."},
+          {"metric": "current_size_count", "value": 5, "unit": "sizes", "denominator": "post-2026-06-03 provider catalog", "notes": "Includes later 12B Unified."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-release-launch", "segment_id": "seg-gemma-4-launch"},
+        {"source_id": "src-release-mtp", "segment_id": "seg-mtp-release"},
+        {"source_id": "src-release-unified", "segment_id": "seg-unified-release"}
+      ],
+      "confounds": ["Mutable release page presentation may change while historical event dates remain stable."],
+      "configuration_gaps": [],
+      "transfer_limits": ["Family chronology does not establish artifact usability, runtime support, or canonical owner identity."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-03-31T00:00:00Z", "end": "2026-08-30T08:57:00Z"}
+    },
+    {
+      "observation_id": "obs-current-catalog",
+      "statement": "Current E2B and E4B provider cards describe base and instruction-tuned checkpoints under Apache 2.0 with text, image, and audio inputs, 128K nominal context, thinking, and function-calling protocols, while MTP and QAT/mobile variants remain separate artifacts.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E2B-it", "gemma-4-E4B", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "model-repositories",
+        "snapshot": "2026-08-30-current-cards",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"license": "Apache-2.0", "nominal_context_tokens": 131072}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider model cards",
+        "reasoning_effort": "thinking protocol available on IT checkpoints",
+        "context_policy": "nominal 131072-token model limit",
+        "tools": ["function-calling protocol"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "provider chat template and modality ordering",
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "cards current at 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Map current artifact and protocol surfaces.",
+        "executed": "Reviewed E2B/E4B IT cards plus MTP and QAT artifact cards.",
+        "artifact": "Base, IT, MTP assistant, and QAT/mobile repositories.",
+        "verified": "Card metadata and current registry surfaces were inspected; base/IT registry bytes were captured by digest.",
+        "reported": "Capability metadata is checkpoint-level and does not imply route-level admission.",
+        "termination": "Current catalog mapping completed.",
+        "measurements": [
+          {"metric": "nominal_context", "value": 131072, "unit": "tokens", "denominator": "E2B/E4B model-card limit", "notes": "Not a usable-context measurement."},
+          {"metric": "supported_input_modalities", "value": "text,image,audio", "unit": null, "denominator": "provider checkpoint metadata", "notes": "Runtime support remains separate."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-e2b-card", "segment_id": "seg-spec-protocol"},
+        {"source_id": "src-e4b-card", "segment_id": "seg-spec-protocol"},
+        {"source_id": "src-e2b-mtp", "segment_id": "seg-assistant-metadata"},
+        {"source_id": "src-e4b-mtp", "segment_id": "seg-assistant-metadata"},
+        {"source_id": "src-e2b-qat-mobile", "segment_id": "seg-qat-format"},
+        {"source_id": "src-e4b-qat-mobile", "segment_id": "seg-qat-format"}
+      ],
+      "confounds": ["Mutable model cards may change independently of checkpoint bytes."],
+      "configuration_gaps": ["No runtime, export, hardware, or end-to-end modality admission is attached."],
+      "transfer_limits": ["Artifact capability and license metadata are not a fit, safety, route, or deployment verdict."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-08-30T08:35:00Z", "end": "2026-08-30T08:57:05Z"}
+    },
+    {
+      "observation_id": "obs-exact-checkpoints",
+      "statement": "At the 2026-08-30 registry capture, E2B base and IT resolve to d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f and 3e22461f65e89153144f8adb70e3b8c2cc9845a7 with 5,123,178,051 safetensors parameters; E4B base and IT resolve to 411aa17b749aa952df1359d2dcea73917a544d9a and ee0ef6023621cff504d758262d4e04895a5af4a2 with 7,996,156,490.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "exact",
+        "family": "gemma-4",
+        "models": ["google/gemma-4-E2B", "google/gemma-4-E2B-it", "google/gemma-4-E4B", "google/gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "huggingface-model-registry",
+        "snapshot": "2026-08-30T08:57:02Z/2026-08-30T08:57:05Z",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "exact",
+        "route": "Hugging Face public model API",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "bounded whole-document JSON capture",
+        "instrument_revision": "aoa_model_research_capture_request_v1",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Retain exact current base/IT repository revisions and parameter counts.",
+        "executed": "Captured four public registry API responses with whole-document digests.",
+        "artifact": "Four ResearchCaptureSnapshot artifacts.",
+        "verified": "HTTP 200, application/json, untruncated documents, and content digests were recorded.",
+        "reported": "Base and IT share each size's retained safetensors parameter count but have distinct repository revisions.",
+        "termination": "Registry snapshot completed without downloading weights.",
+        "measurements": [
+          {"metric": "e2b_safetensors_parameters", "value": 5123178051, "unit": "parameters", "denominator": "current base/IT registry metadata", "notes": "Retained checkpoint count, not effective recurrent scale."},
+          {"metric": "e4b_safetensors_parameters", "value": 7996156490, "unit": "parameters", "denominator": "current base/IT registry metadata", "notes": "Retained checkpoint count, not effective recurrent scale."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-hf-e2b-base", "segment_id": "seg-model-metadata"},
+        {"source_id": "src-hf-e2b-it", "segment_id": "seg-model-metadata"},
+        {"source_id": "src-hf-e4b-base", "segment_id": "seg-model-metadata"},
+        {"source_id": "src-hf-e4b-it", "segment_id": "seg-model-metadata"}
+      ],
+      "confounds": ["Registry metadata is mutable and later commits can replace the current snapshot."],
+      "configuration_gaps": ["No weight-level recomputation or runtime realization identity was performed."],
+      "transfer_limits": ["Repository SHA and parameter count do not establish correctness, capability, or runtime currentness."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "review_for_claim",
+      "observed_interval": {"start": "2026-08-30T08:57:02Z", "end": "2026-08-30T08:57:05Z"}
+    },
+    {
+      "observation_id": "obs-effective-total-semantics",
+      "statement": "The provider describes E2B and E4B as dense PLE models with 2.3B and 4.5B effective language-model parameters while current retained checkpoints contain about 5.12B and 8.00B parameters; these effective labels are not sparse-MoE active-parameter counts.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B"],
+        "provider": "google",
+        "product": "technical-report-and-model-registry",
+        "snapshot": "technical-report-v2-plus-2026-08-30-registry",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"architecture": "dense with per-layer embeddings"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider report plus registry API",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "Gemma 4 Technical Report v2",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Disambiguate effective, total, and active parameter language.",
+        "executed": "Compared the report's architecture vocabulary with current registry counts.",
+        "artifact": null,
+        "verified": "The report assigns sparse experts to 26B A4B while E2B/E4B are dense PLE models.",
+        "reported": "E-labels are a provider-specific effective-scale description and cannot be used as byte or residency estimates.",
+        "termination": "Vocabulary split retained.",
+        "measurements": [
+          {"metric": "e2b_effective_parameters", "value": 2.3, "unit": "billion parameters", "denominator": "provider PLE effective scale", "notes": "Not current safetensors total."},
+          {"metric": "e4b_effective_parameters", "value": 4.5, "unit": "billion parameters", "denominator": "provider PLE effective scale", "notes": "Not current safetensors total."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-tech-report", "segment_id": "seg-architecture"},
+        {"source_id": "src-hf-e2b-base", "segment_id": "seg-model-metadata"},
+        {"source_id": "src-hf-e4b-base", "segment_id": "seg-model-metadata"}
+      ],
+      "confounds": ["The provider's rounded total figures and exact registry counts use different precision."],
+      "configuration_gaps": ["A component-by-component parameter ledger is not reconstructed here."],
+      "transfer_limits": ["Does not define on-disk bytes, resident memory, peak memory, or per-token compute for a runtime."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-07-24T00:00:00Z", "end": "2026-08-30T08:57:04Z"}
+    },
+    {
+      "observation_id": "obs-architecture-shape",
+      "statement": "Current sources converge on E2B as a 35-layer, hidden-size-1536 dense PLE decoder with 8 attention heads and 1 KV head, and E4B as 42 layers, hidden-size 2560, 8 attention heads and 2 KV heads; both use head dimension 256, 512-token sliding attention, periodic full attention, 262,144 vocabulary, and 131,072 nominal positions.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "reference-config-and-implementation",
+        "snapshot": "2026-08-30-current-configs-at-pinned-implementation-head",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"e2b_attention_cycle": "4 sliding + 1 full", "e4b_attention_cycle": "5 sliding + 1 full"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider configs, cards, report, and commit-pinned implementation",
+        "reasoning_effort": null,
+        "context_policy": "nominal 131072 positions",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "source/config inspection",
+        "instrument_revision": "reference implementation 7b785991bd78626c73b317eb43fdbb6c292f7b9c",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Retain an architecture shape without importing runtime behavior.",
+        "executed": "Cross-read current cards/configs, technical report, and reference classes.",
+        "artifact": "Commit-pinned implementation and mutable model cards.",
+        "verified": "Layer and attention patterns recur across provider surfaces; E2B and E4B are separate definitions.",
+        "reported": "Shared mechanisms coexist with size-specific layer, width, KV-head, and full-attention cadence differences.",
+        "termination": "Architecture shape bounded to inspected sources.",
+        "measurements": [
+          {"metric": "e2b_layers", "value": 35, "unit": "layers", "denominator": "current E2B text decoder", "notes": "Final layer is full attention."},
+          {"metric": "e4b_layers", "value": 42, "unit": "layers", "denominator": "current E4B text decoder", "notes": "Final layer is full attention."},
+          {"metric": "sliding_window", "value": 512, "unit": "tokens", "denominator": "local-attention layers", "notes": "Shared value."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-tech-report", "segment_id": "seg-architecture"},
+        {"source_id": "src-e2b-card", "segment_id": "seg-spec-protocol"},
+        {"source_id": "src-e4b-card", "segment_id": "seg-spec-protocol"},
+        {"source_id": "src-reference-implementation", "segment_id": "seg-e-model-configs"}
+      ],
+      "confounds": ["Mutable repository configs can change after the captured registry revisions."],
+      "configuration_gaps": ["Exact config bytes were inspected live but not retained as separate capture snapshots."],
+      "transfer_limits": ["Architecture shape does not predict runtime performance, usable context, or fit on a device."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_claim",
+      "observed_interval": {"start": "2026-07-24T00:00:00Z", "end": "2026-08-30T08:45:00Z"}
+    },
+    {
+      "observation_id": "obs-static-load-memory",
+      "statement": "The current provider memory table estimates E2B static load at 11.4 GB BF16, 5.7 GB SFP8, 2.9 GB Q4, 1.1 GB mobile, and 0.84 GB mobile text-only, versus E4B at 17.9, 8.9, 4.5, 2.5, and 2.2 GB; the table includes about 20% overhead but excludes prompt, KV-cache, and other context-state memory.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B"],
+        "provider": "google",
+        "product": "memory-planning-documentation",
+        "snapshot": "2026-08-30T08:56:22Z",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"estimate_type": "static load", "overhead_assumption_percent": 20, "context_state_included": false}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider estimate table",
+        "reasoning_effort": null,
+        "context_policy": "context state excluded",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "current provider docs captured 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Retain the provider's current load-memory denominator and values.",
+        "executed": "Captured the table and its planning caveats as separate segments.",
+        "artifact": "Two ResearchCaptureSnapshot artifacts.",
+        "verified": "Both selected segments have retained content digests.",
+        "reported": "E-label effective scale is not a static-load estimate, and context memory must be added separately.",
+        "termination": "Memory estimate retained with exclusions.",
+        "measurements": [
+          {"metric": "e2b_q4_static_load", "value": 2.9, "unit": "GB", "denominator": "provider estimate with 20% overhead excluding context", "notes": "Not observed runtime residency."},
+          {"metric": "e4b_q4_static_load", "value": 4.5, "unit": "GB", "denominator": "provider estimate with 20% overhead excluding context", "notes": "Not observed runtime residency."},
+          {"metric": "e2b_mobile_text_only", "value": 0.84, "unit": "GB", "denominator": "provider mobile text-only estimate", "notes": "Artifact/placement definition remains provider-scoped."},
+          {"metric": "e4b_mobile_text_only", "value": 2.2, "unit": "GB", "denominator": "provider mobile text-only estimate", "notes": "Artifact/placement definition remains provider-scoped."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-core-memory", "segment_id": "seg-inference-memory"},
+        {"source_id": "src-core-memory-caveats", "segment_id": "seg-memory-caveats"}
+      ],
+      "confounds": ["Provider estimates are not tied to one named runtime allocator or hardware device."],
+      "configuration_gaps": ["Exact on-disk format, placement, context length, KV dtype, transient buffers, and observed peak are absent."],
+      "transfer_limits": ["Cannot be used as an admission guarantee or direct comparison to measured resident/peak memory without denominator alignment."],
+      "counterevidence_refs": ["obs-text-only-footprint"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-08-30T08:56:22Z", "end": "2026-08-30T08:57:01Z"}
+    },
+    {
+      "observation_id": "obs-text-only-footprint",
+      "statement": "Technical Report v2 lists a separately scoped text-only footprint of 4.6 GB BF16 and 0.8 GB quantized for E2B, and 9.0 GB BF16 and 2.3 GB quantized for E4B, plus an int8 KV-cache estimate at 32K; these values do not share the current provider static-load table's component label.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B"],
+        "provider": "google",
+        "product": "technical-report-v2",
+        "snapshot": "2607.02770v2",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"estimate_type": "text-only footprint"}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "provider technical report",
+        "reasoning_effort": null,
+        "context_policy": "KV table separately scoped at 32K int8",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "Gemma 4 Technical Report v2",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Preserve the report's smaller memory table without flattening it into current load-memory estimates.",
+        "executed": "Read the table in architecture context and compared its labels with current docs.",
+        "artifact": null,
+        "verified": "The report explicitly labels the figures as text-only footprint.",
+        "reported": "The apparent numeric conflict is a denominator tension, not a demonstrated contradiction.",
+        "termination": "Scope split retained.",
+        "measurements": [
+          {"metric": "e2b_text_only_bf16", "value": 4.6, "unit": "GB", "denominator": "technical-report text-only footprint", "notes": "Not aligned to current static-load table."},
+          {"metric": "e2b_text_only_quantized", "value": 0.8, "unit": "GB", "denominator": "technical-report text-only footprint", "notes": "Quantization representation not merged with mobile package label."},
+          {"metric": "e4b_text_only_bf16", "value": 9.0, "unit": "GB", "denominator": "technical-report text-only footprint", "notes": "Not aligned to current static-load table."},
+          {"metric": "e4b_text_only_quantized", "value": 2.3, "unit": "GB", "denominator": "technical-report text-only footprint", "notes": "Quantization representation not merged with mobile package label."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-tech-report", "segment_id": "seg-architecture"}],
+      "confounds": ["The report and current docs do not expose a common component-by-component accounting table."],
+      "configuration_gaps": ["Exact included tensors, overhead policy, runtime, allocator, and measured-versus-estimated status are incomplete."],
+      "transfer_limits": ["Cannot supersede current static-load estimates or prove device fit."],
+      "counterevidence_refs": ["obs-static-load-memory"],
+      "supersedes": [],
+      "evidence_posture": "contradictory",
+      "disposition": "split_required",
+      "observed_interval": {"start": "2026-07-24T00:00:00Z", "end": "2026-07-24T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-protocol-modalities",
+      "statement": "Current E2B/E4B IT cards require images before text and audio after text, document image budgets from 70 to 1,120 tokens, audio up to 30 seconds, video up to 60 seconds at one frame per second, and expose thinking/function-calling protocols; these are checkpoint and preprocessing contracts rather than runtime support receipts.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "model-card-protocol",
+        "snapshot": "2026-08-30-current-cards",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"input_order": "images,text,audio", "video_sampling_fps": 1}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider preprocessing and chat protocol",
+        "reasoning_effort": "thinking enabled or disabled through documented IT protocol",
+        "context_policy": "nominal 128K shared with modality tokens",
+        "tools": ["function-calling protocol"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "provider processor and chat template",
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "cards current at 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {"recommended_sampling": {"temperature": 1.0, "top_p": 0.95, "top_k": 64}}
+      },
+      "outcome": {
+        "requested": "Map multimodal and chat protocol constraints.",
+        "executed": "Reviewed corresponding card sections for both sizes.",
+        "artifact": null,
+        "verified": "The same ordering and budget constraints recur on both cards.",
+        "reported": "Runtime exporters, auxiliary graphs, parsers, and device backends still require separate admission.",
+        "termination": "Protocol contour retained.",
+        "measurements": [
+          {"metric": "image_token_budget_range", "value": "70-1120", "unit": "tokens per image", "denominator": "provider preprocessing options", "notes": "Consumes shared context."},
+          {"metric": "audio_max_duration", "value": 30, "unit": "seconds", "denominator": "provider card", "notes": "Route support not established."},
+          {"metric": "video_max_duration", "value": 60, "unit": "seconds", "denominator": "provider card at 1 fps", "notes": "Represented through sampled frames and audio."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-e2b-card", "segment_id": "seg-spec-protocol"},
+        {"source_id": "src-e4b-card", "segment_id": "seg-spec-protocol"}
+      ],
+      "confounds": ["Card-level capability does not name supported runtime/export combinations."],
+      "configuration_gaps": ["No end-to-end modality, tool-parser, or long-context test artifact is attached."],
+      "transfer_limits": ["Cannot establish multimodal route admission, tool reliability, or usable context."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-08-30T08:35:00Z", "end": "2026-08-30T08:35:00Z"}
+    },
+    {
+      "observation_id": "obs-mtp-artifacts",
+      "statement": "Google released separate E2B and E4B four-layer multi-token-prediction assistant checkpoints on 2026-04-16; the assistant is an additional speculative-decoding artifact and does not change the target checkpoint or guarantee acceleration under every output length and runtime.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it-assistant", "gemma-4-E4B-it-assistant"],
+        "provider": "google",
+        "product": "mtp-assistant-checkpoints",
+        "snapshot": "2026-08-30-current-cards",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"assistant_layers": 4}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider MTP artifacts",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "technical-report-v2 and MTP model cards",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Distinguish target and speculative assistant artifacts.",
+        "executed": "Reviewed release segment, report architecture, and both assistant cards.",
+        "artifact": "Separate E2B and E4B assistant repositories.",
+        "verified": "Release date and four-layer assistant role recur across provider sources.",
+        "reported": "Performance remains an instrument-bound runtime question.",
+        "termination": "Artifact relation retained without speed claim.",
+        "measurements": [{"metric": "assistant_layers", "value": 4, "unit": "layers", "denominator": "each official MTP assistant", "notes": "Target-specific assistants."}],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-release-mtp", "segment_id": "seg-mtp-release"},
+        {"source_id": "src-tech-report", "segment_id": "seg-mtp-qat-lineage"},
+        {"source_id": "src-e2b-mtp", "segment_id": "seg-assistant-metadata"},
+        {"source_id": "src-e4b-mtp", "segment_id": "seg-assistant-metadata"}
+      ],
+      "confounds": ["Runtime draft length, acceptance, hardware, batch, and output length are absent."],
+      "configuration_gaps": ["Exact current assistant repository revisions were not retained in immutable API captures."],
+      "transfer_limits": ["Artifact existence does not establish speedup, quality parity, or route support."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-04-16T00:00:00Z", "end": "2026-08-30T08:43:00Z"}
+    },
+    {
+      "observation_id": "obs-qat-mobile-artifacts",
+      "statement": "Provider repositories expose E2B and E4B mobile-oriented QAT compressed-tensors checkpoints in addition to other QAT representations; their artifact labels and smaller formats do not by themselves establish conversion, runtime modality support, observed resident memory, or quality retention on a named device.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it-qat-mobile-ct", "gemma-4-E4B-it-qat-mobile-ct"],
+        "provider": "google",
+        "product": "qat-mobile-checkpoints",
+        "snapshot": "2026-08-30-current-cards",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"format": "compressed-tensors mobile QAT"}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "provider QAT model cards",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "cards current at 2026-08-30",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Map official mobile/QAT artifacts without treating format metadata as deployment proof.",
+        "executed": "Reviewed E2B/E4B mobile compressed-tensors cards and report QAT section.",
+        "artifact": "Two provider QAT/mobile repositories.",
+        "verified": "Artifact surfaces exist for both E sizes.",
+        "reported": "Format choice remains part of a realization and runtime study.",
+        "termination": "Artifact map retained; no local weights or benchmark were run.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-tech-report", "segment_id": "seg-mtp-qat-lineage"},
+        {"source_id": "src-e2b-qat-mobile", "segment_id": "seg-qat-format"},
+        {"source_id": "src-e4b-qat-mobile", "segment_id": "seg-qat-format"}
+      ],
+      "confounds": ["QAT family, mobile label, compressed-tensors representation, and downstream conversion are distinct dimensions."],
+      "configuration_gaps": ["Exact quantization recipe, runtime export, hardware, output acceptance, and observed memory are incomplete."],
+      "transfer_limits": ["Cannot establish quality, speed, energy, or modality support on any runtime."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-07-24T00:00:00Z", "end": "2026-08-30T08:44:00Z"}
+    },
+    {
+      "observation_id": "obs-gemma3n-lineage",
+      "statement": "Gemma 4 explicitly carries PLE lineage and a Gemma 3n-like audio encoder reduced from about 680M to about 305M parameters, but the captured Gemma 4 sources do not establish Gemma 3n MatFormer nesting or an E2B submodel inside E4B; those relations remain unresolved rather than inherited by name.",
+      "target_kind": "unresolved",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B", "gemma-3n-E2B", "gemma-3n-E4B"],
+        "provider": "google",
+        "product": "architecture-lineage",
+        "snapshot": "technical-report-v2-plus-current-reference-sources",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"positive_lineage": ["PLE", "audio-encoder design"], "unresolved_lineage": ["MatFormer", "nested E2B in E4B"]}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "cross-generation provider source comparison",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "document and implementation inspection",
+        "instrument_revision": "Gemma 4 report v2 and reference implementation 7b785991bd78626c73b317eb43fdbb6c292f7b9c",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Determine which Gemma 3n E-label mechanisms can be carried into Gemma 4.",
+        "executed": "Compared explicit lineage statements, Gemma 3n architecture docs, and separate Gemma 4 classes.",
+        "artifact": null,
+        "verified": "PLE and audio similarity are explicit; MatFormer/nesting is explicit only on the Gemma 3n comparator.",
+        "reported": "Absence of Gemma 4 nesting evidence is not proof that nesting is impossible.",
+        "termination": "Positive lineage bounded and unsupported inheritance stopped.",
+        "measurements": [
+          {"metric": "gemma3n_audio_encoder", "value": 680, "unit": "million parameters", "denominator": "report approximate comparator", "notes": "Approximate."},
+          {"metric": "gemma4_audio_encoder", "value": 305, "unit": "million parameters", "denominator": "report approximate E-series encoder", "notes": "About 55% smaller than comparator."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-tech-report", "segment_id": "seg-mtp-qat-lineage"},
+        {"source_id": "src-gemma3n-overview", "segment_id": "seg-ple-matformer"},
+        {"source_id": "src-reference-implementation", "segment_id": "seg-e-model-configs"}
+      ],
+      "confounds": ["Different generations can reuse labels while changing architecture."],
+      "configuration_gaps": ["No explicit provider statement confirming or denying Gemma 4 MatFormer/nesting was found."],
+      "transfer_limits": ["Separate class definitions are counter-pressure, not proof of architectural non-nesting."],
+      "counterevidence_refs": ["obs-architecture-shape"],
+      "supersedes": [],
+      "evidence_posture": "contradictory",
+      "disposition": "watch",
+      "observed_interval": {"start": "2026-07-24T00:00:00Z", "end": "2026-08-30T08:42:00Z"}
+    },
+    {
+      "observation_id": "obs-provider-capability-frontier",
+      "statement": "Within Gemma 4 Technical Report v2's IT-thinking benchmark instrument, E4B exceeds E2B on most captured language, reasoning, multimodal, agentic, and long-context rows, including MRCR v2 eight-needle 128K at 25.4 versus 19.1 and TerminalBench at 8 versus 3; this is a provider-instrument frontier rather than a universal rank.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it-thinking", "gemma-4-E4B-it-thinking"],
+        "provider": "google",
+        "product": "technical-report-benchmark",
+        "snapshot": "2607.02770v2",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider evaluation",
+        "reasoning_effort": "thinking",
+        "context_policy": "task-specific; MRCR row at 128K",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": null,
+        "harness": "Gemma 4 Technical Report v2 evaluation suite",
+        "instrument_revision": "2607.02770v2",
+        "grader": "task-specific provider graders",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Assess whether a paired capability direction recurs inside one provider instrument.",
+        "executed": "Compared E2B and E4B rows without aggregating them into one confidence score.",
+        "artifact": "Published benchmark tables.",
+        "verified": "Paired rows are present in the versioned report.",
+        "reported": "E4B is the capability-side point in this instrument; resource and runtime costs are not included.",
+        "termination": "Paired direction retained with provider and instrument bounds.",
+        "measurements": [
+          {"metric": "mrcr_v2_8_needle_128k_e2b", "value": 19.1, "unit": "score", "denominator": "provider MRCR v2 8-needle 128K row", "notes": "IT thinking configuration."},
+          {"metric": "mrcr_v2_8_needle_128k_e4b", "value": 25.4, "unit": "score", "denominator": "provider MRCR v2 8-needle 128K row", "notes": "IT thinking configuration."},
+          {"metric": "terminalbench_e2b", "value": 3, "unit": "score", "denominator": "provider TerminalBench row", "notes": "Instrument details remain report-scoped."},
+          {"metric": "terminalbench_e4b", "value": 8, "unit": "score", "denominator": "provider TerminalBench row", "notes": "Instrument details remain report-scoped."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-tech-report", "segment_id": "seg-provider-benchmarks"}],
+      "confounds": ["Provider origin, task mix, graders, thinking protocol, and report-selected settings."],
+      "configuration_gaps": ["Per-item artifacts, variance, runtime/hardware, output-token cost, and accepted-outcome utility are incomplete."],
+      "transfer_limits": ["Cannot rank E2B/E4B for an AoA workload or establish usable 128K on a deployment route."],
+      "counterevidence_refs": ["obs-static-load-memory"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-07-24T00:00:00Z", "end": "2026-07-24T23:59:59Z"}
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "clu-temporal-family",
+      "label": "Launch and current Gemma 4 catalogs are different temporal objects",
+      "observation_refs": ["obs-family-timeline", "obs-current-catalog", "obs-mtp-artifacts"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-provider"],
+      "supported_scope": "The launch quartet, later MTP assistants, and later 12B Unified addition can be retained without treating the current catalog as the historical launch catalog.",
+      "transfer_limits": ["Provider and registry surfaces are closely related origins rather than independent capability evidence."],
+      "unresolved_configuration_gaps": ["Future family additions and repository revisions remain mutable."],
+      "posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "next_action": "Refresh only the affected segment when a release or registry revision trigger fires."
+    },
+    {
+      "cluster_id": "clu-ple-parameter-memory",
+      "label": "PLE requires separate effective, retained, static-load, text-only, resident, and context denominators",
+      "observation_refs": ["obs-exact-checkpoints", "obs-effective-total-semantics", "obs-static-load-memory", "obs-text-only-footprint"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-provider", "huggingface-registry"],
+      "supported_scope": "E2B/E4B effective labels, retained checkpoint counts, and two provider memory tables can all be preserved when their denominators remain explicit.",
+      "transfer_limits": ["No measured runtime residency or peak follows from these provider and registry records."],
+      "unresolved_configuration_gaps": ["A component-by-component accounting and common measured runtime are absent."],
+      "posture": "cross_modal_pattern",
+      "disposition": "split_required",
+      "next_action": "Require component, format, placement, context, KV dtype, runtime, and static/resident/peak/on-disk labels in any owner study."
+    },
+    {
+      "cluster_id": "clu-shared-shell-protocol",
+      "label": "E2B and E4B share PLE, multimodal, and protocol mechanisms but differ in decoder shape",
+      "observation_refs": ["obs-architecture-shape", "obs-protocol-modalities", "obs-current-catalog"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-provider"],
+      "supported_scope": "The two E variants share nominal context, vocabulary, modalities, PLE, and protocol surfaces while differing in layers, width, KV heads, attention cadence, and retained size.",
+      "transfer_limits": ["One provider origin and no end-to-end runtime admission."],
+      "unresolved_configuration_gaps": ["Exact modality/runtime compatibility and usable context are not established."],
+      "posture": "method_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "next_action": "Treat each runtime-format-modality combination as a realization-specific admission target."
+    },
+    {
+      "cluster_id": "clu-specialized-artifacts",
+      "label": "MTP and QAT/mobile are separate realization inputs rather than intrinsic default behavior",
+      "observation_refs": ["obs-mtp-artifacts", "obs-qat-mobile-artifacts"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-provider"],
+      "supported_scope": "Provider artifacts exist for speculative decoding and mobile-oriented quantization for both E sizes, but their performance and compatibility remain unmeasured here.",
+      "transfer_limits": ["Artifact existence is not route support, speedup, quality, or memory proof."],
+      "unresolved_configuration_gaps": ["Exact assistant/QAT revisions and runtime study identities are incomplete."],
+      "posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "next_action": "Select exact target/assistant or QAT/runtime pairs only inside a named owner study."
+    },
+    {
+      "cluster_id": "clu-bounded-lineage",
+      "label": "Gemma 3n lineage is positive for PLE/audio and unresolved for MatFormer nesting",
+      "observation_refs": ["obs-gemma3n-lineage", "obs-architecture-shape"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-provider"],
+      "supported_scope": "Explicit Gemma 4 sources support PLE and audio-design lineage while failing to establish Gemma 3n MatFormer or nested E2B-in-E4B inheritance.",
+      "transfer_limits": ["Absence of a captured statement is not proof of architectural absence."],
+      "unresolved_configuration_gaps": ["No explicit provider confirmation or denial of Gemma 4 nesting was found."],
+      "posture": "contradictory",
+      "disposition": "watch",
+      "next_action": "Revisit only on an explicit provider report, implementation relation, or artifact-backed analysis."
+    },
+    {
+      "cluster_id": "clu-provider-capability-resource-frontier",
+      "label": "Provider capability direction and resource direction occupy different axes",
+      "observation_refs": ["obs-provider-capability-frontier", "obs-static-load-memory", "obs-exact-checkpoints"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-provider", "huggingface-registry"],
+      "supported_scope": "E4B is ahead on most captured provider benchmark rows while E2B has smaller retained and estimated load-memory surfaces.",
+      "transfer_limits": ["No accepted-outcome utility, external recurrence, runtime latency, or energy is included in this cluster."],
+      "unresolved_configuration_gaps": ["Owner workload weights and exact runtime operating points are absent."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Carry both variants into a paired owner workload study rather than promoting one universal winner."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "ten-launch-current",
+      "label": "Four-model launch versus five-size current catalog",
+      "side_a_refs": ["obs-family-timeline"],
+      "side_b_refs": ["obs-current-catalog"],
+      "analysis": "The two statements refer to different effective dates; preserving segment time resolves the apparent family-membership conflict without superseding either event.",
+      "resolution": "resolved_by_time",
+      "remaining_question": "What later release will next change only the current catalog?"
+    },
+    {
+      "tension_id": "ten-effective-retained",
+      "label": "E2B/E4B effective labels versus 5.12B/8.00B retained checkpoint counts",
+      "side_a_refs": ["obs-effective-total-semantics"],
+      "side_b_refs": ["obs-exact-checkpoints"],
+      "analysis": "PLE effective scale and retained checkpoint parameter count answer different questions; neither can substitute for the other or for runtime residency.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Which retained components are placed, quantized, or omitted in each target realization?"
+    },
+    {
+      "tension_id": "ten-memory-tables",
+      "label": "Current static-load estimates versus technical-report text-only footprint",
+      "side_a_refs": ["obs-static-load-memory"],
+      "side_b_refs": ["obs-text-only-footprint"],
+      "analysis": "The table labels and component scopes differ, so the numeric gap is preserved as a denominator split rather than asserted as a contradiction or update.",
+      "resolution": "partially_resolved",
+      "remaining_question": "Can the provider or an owner study expose a common component-by-component accounting?"
+    },
+    {
+      "tension_id": "ten-lineage-nesting",
+      "label": "Gemma 3n MatFormer/nesting versus Gemma 4 E-label reuse",
+      "side_a_refs": ["obs-gemma3n-lineage"],
+      "side_b_refs": ["obs-architecture-shape"],
+      "analysis": "Explicit Gemma 3n nesting cannot be inherited into Gemma 4 from labels; separate Gemma 4 class shapes create counter-pressure but do not prove non-nesting.",
+      "resolution": "unresolved",
+      "remaining_question": "Does an authoritative Gemma 4 source establish or deny MatFormer/nested E2B-in-E4B structure?"
+    },
+    {
+      "tension_id": "ten-capability-resource",
+      "label": "E4B provider benchmark advantage versus E2B retained/load-memory advantage",
+      "side_a_refs": ["obs-provider-capability-frontier"],
+      "side_b_refs": ["obs-static-load-memory", "obs-exact-checkpoints"],
+      "analysis": "Outcome and resource axes are both real and cannot be averaged without owner workload utility, accepted output, and runtime measurements.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Which Pareto point maximizes accepted AoA outcomes per memory, time, and energy budget?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "mp-temporal-family-segments",
+      "trigger_refs": ["obs-family-timeline", "obs-current-catalog"],
+      "pressure": "A mutable current catalog can silently rewrite the remembered composition of a model-family launch.",
+      "proposed_response": "Capture launch and later additions as separate temporal segments with independent digests and no automatic supersession.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-parameter-vocabulary",
+      "trigger_refs": ["obs-exact-checkpoints", "obs-effective-total-semantics"],
+      "pressure": "Effective, active, retained, and total parameter labels are repeatedly collapsed despite different architecture semantics.",
+      "proposed_response": "Require the parameter denominator and mechanism; never reuse PLE effective scale as MoE active scale or byte size.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-memory-denominator",
+      "trigger_refs": ["obs-static-load-memory", "obs-text-only-footprint"],
+      "pressure": "On-disk, text-only, static load, resident, peak, and context-state values can all differ materially for one checkpoint label.",
+      "proposed_response": "Require format, included components, overhead, placement, context, KV dtype, runtime, hardware, and measurement phase.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-lineage-no-label-inheritance",
+      "trigger_refs": ["obs-gemma3n-lineage"],
+      "pressure": "Cross-generation E2B/E4B labels invite automatic inheritance of mechanisms that may not survive the generation boundary.",
+      "proposed_response": "Carry only explicit positive lineage and preserve missing inheritance evidence as unresolved rather than negative proof.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "mp-weight-route-separation",
+      "trigger_refs": ["obs-protocol-modalities", "obs-qat-mobile-artifacts"],
+      "pressure": "Checkpoint modality, context, QAT, and mobile labels are easily mistaken for end-to-end runtime support and device admission.",
+      "proposed_response": "Keep weight capability, conversion/export, runtime graph, preprocessing, parser, hardware, and admission evidence as separate objects.",
+      "status": "adopted"
+    }
+  ],
+  "revisit_triggers": [
+    "Google changes Gemma 4 family membership, release history, architecture, context, modality, protocol, license, memory estimates, or provider benchmark instrument.",
+    "Any E2B/E4B base, IT, MTP, QAT, or mobile repository revision changes.",
+    "An authoritative Gemma 4 source confirms or denies MatFormer or nested E2B-in-E4B lineage.",
+    "A component-level memory accounting aligns technical-report text-only and current static-load tables.",
+    "An AoA owner selects an exact E2B/E4B realization for canonical fact or study review."
+  ],
+  "created_at": "2026-08-30T09:05:00Z",
+  "updated_at": "2026-08-30T09:05:00Z"
+}

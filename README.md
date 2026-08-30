@@ -15,10 +15,11 @@ External web reconnaissance enters through a separate pre-canon
 origin dependencies, incomplete configurations, contradictions, and revisit
 triggers without becoming model source truth or fit-query input. See
 [`docs/RESEARCH_INTAKE.md`](docs/RESEARCH_INTAKE.md).
-The first manual corpus includes a GPT-5.6 seed and temporal recheck, a
-different-provider Claude 5 persistence run, and a cross-provider outcome-
-economics run; [`research-intake/README.md`](research-intake/README.md) indexes
-the packets and reports.
+The manual corpus includes a GPT-5.6 seed and temporal recheck, a
+different-provider Claude 5 persistence run, a cross-provider outcome-
+economics run, and a two-packet Gemma 4 E2B/E4B lineage-and-operating-point
+investigation; [`research-intake/README.md`](research-intake/README.md) indexes
+the packets, reports, and bounded capture anchors.
 
 The first bounded automation contour can capture one structured source segment,
 refresh it into an append-only change receipt, and package a content-addressed
