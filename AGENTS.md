@@ -28,7 +28,9 @@ pre-canon structure, not proof or fit evidence.
 
 ## Mutation route
 
-1. Read `README.md`, `DIRECTION.md`, and the nearest schema or decision law.
+1. Start with `DIRECTION.md` and the nearest schema or decision law.
+   `README.md` remains the human/public map when scope or owner routing is
+   unclear; it is not an unconditional edit prerequisite.
 2. Preserve the distinction between provider fact, runtime observation,
    behavioral evidence, task outcome, internal-space measurement, causal
    intervention, training-lineage evidence, and bounded inference.
