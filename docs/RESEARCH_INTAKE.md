@@ -261,6 +261,41 @@ Useful revisit triggers include:
 - controlled reproduction or counterexample for an operational symptom;
 - a later observation that narrows or supersedes an earlier one.
 
+When research crosses training, conversion, quantization, serving, or an
+accelerated path, preserve the causal artifact chain rather than treating its
+last filename as the subject:
+
+```text
+training recipe -> checkpoint -> representation -> conversion -> runtime
+  -> loaded process/cache policy -> workload outcome
+```
+
+Bind measurements to their semantic namespace and denominator. File bytes,
+weight tensors, resident process memory, peak process memory, and full-stack
+peak are different memory measures. Cold setup, conversion, repack, warmup,
+prefill, decode, time-to-first-token, and end-to-end latency are different time
+measures. Throughput needs concurrency, input/output length, batching, and
+cache policy; energy needs the integration interval, token count, and whether
+idle power was removed.
+
+For a named score whose implementations can differ, retain a metric passport:
+reference and candidate, corpus, positions or response unit, direction,
+reduction, masking, precision, decoding, and instrument revision. A shared
+label such as `KL`, `ASR`, `WER`, or `ROUGE` is not sufficient for cross-study
+comparison.
+
+For adapted deployment, inspect parity across the stages that actually exist:
+base, adapter, merged artifact, quantized artifact, served path, and accelerated
+target/drafter pair. Loader acceptance is not semantic parity. Preserve
+release state separately as announced, listed, retrievable, loadable,
+executable, semantically accepted, benchmark-retained, and independently
+rerun.
+
+Negative research remains bounded. Record the searched question, variants,
+source roles, interval, access limits, and next action in a `search_probe`.
+Failure to find unseen-schema, privacy, long-context, or another requested
+evaluation in that scope is a continuation handle, never evidence of absence.
+
 ### 9. Validate
 
 Run from the repository root:

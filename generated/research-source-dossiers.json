@@ -12,15 +12,81 @@
     "source_mutation_authority": false
   },
   "counts": {
-    "attention_dossiers": 11,
+    "attention_dossiers": 12,
     "capture_snapshots": 9,
     "change_receipts": 0,
-    "dossiers": 144,
-    "recon_runs": 9,
-    "source_appearances": 160,
+    "dossiers": 162,
+    "recon_runs": 10,
+    "source_appearances": 179,
     "supersession_proposals": 1
   },
   "dossiers": [
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:08:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-qat-comparison-confounded"
+          ],
+          "origin_group": "3h4x-qat-format-audit",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The page and linked harness were inspected without retaining normalized bytes.",
+              "locator": "Harness, QAT/PTQ Q4_0 and Q4_K_M decode probe, behavioral-suite resolution, and causal interpretation.",
+              "segment_id": "seg-format-versus-recipe"
+            }
+          ],
+          "source_capture_digest": "sha256:6dec5fed13b9df932c06fd7f70f52408f5a3a125784feee9738101d219ec7a72",
+          "source_id": "src-3h4x-qat-causal-audit"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://3h4x.github.io/tech/2026/06/08/gemma4-qat-vs-non-qat",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:08:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:de432865b77effd56a14",
+      "first_recorded_at": "2026-09-04T21:08:00Z",
+      "latest_recorded_at": "2026-09-04T21:08:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "3h4x-qat-format-audit"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "3h4x.github.io"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "independent_instrument_audit"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 QAT vs non-QAT: is quantization-aware training actually better?"
+      ],
+      "uri_aliases": [
+        "https://3h4x.github.io/tech/2026/06/08/gemma4-qat-vs-non-qat"
+      ]
+    },
     {
       "appearance_count": 1,
       "appearances": [
@@ -88,7 +154,71 @@
       ]
     },
     {
-      "appearance_count": 2,
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:36:00Z",
+          "mutable_surface": true,
+          "observation_refs": [],
+          "origin_group": "google-gemma4-function-calling",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable provider documentation was inspected without retaining normalized segment bytes.",
+              "locator": "Tool declaration format, full model/developer cycle, argument validation warning, and automatic-schema caveat.",
+              "segment_id": "seg-schema-cycle-validation-caveat"
+            }
+          ],
+          "source_capture_digest": "sha256:6da81f7bcdf1759abb46d5f85d81214d52b2c19818e3c7d715866824f2746ab7",
+          "source_id": "src-google-function-calling"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://ai.google.dev/gemma/docs/capabilities/text/function-calling-gemma4",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:36:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:0ef09481d5654f9266be",
+      "first_recorded_at": "2026-09-04T21:36:00Z",
+      "latest_recorded_at": "2026-09-04T21:36:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "google-gemma4-function-calling"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Google"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "provider_capability_documentation"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Function calling with Gemma 4"
+      ],
+      "uri_aliases": [
+        "https://ai.google.dev/gemma/docs/capabilities/text/function-calling-gemma4"
+      ]
+    },
+    {
+      "appearance_count": 3,
       "appearances": [
         {
           "captured_at": "2026-08-30T08:56:22Z",
@@ -135,9 +265,35 @@
           ],
           "source_capture_digest": "sha256:c79d7f053dc52624705936154ebee4c18c3ca600febdbdc1fcd4000010a3ca71",
           "source_id": "src-core-memory-caveats"
+        },
+        {
+          "captured_at": "2026-09-04T21:02:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-qat-official-topology"
+          ],
+          "origin_group": "google-gemma4-core-docs",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable documentation was inspected live without a new retained immutable snapshot.",
+              "locator": "Capabilities, inference memory requirements, denominator caveats, QAT routing table, checkpoint classes, and mobile schema.",
+              "segment_id": "seg-current-memory-and-qat-routing"
+            }
+          ],
+          "source_capture_digest": "sha256:3409747494d62ee785e3a0ece68b263a007ddb79291cb467b3e859788e9ecd69",
+          "source_id": "src-google-core-overview-revisit"
         }
       ],
-      "attention": [],
+      "attention": [
+        "reused_segments_without_complete_digest",
+        "origin_group_variation"
+      ],
       "canonical_uri": "https://ai.google.dev/gemma/docs/core",
       "capture_snapshots": [
         {
@@ -171,18 +327,19 @@
       "currentness": {
         "change_history_present": false,
         "freshness_asserted": false,
-        "latest_recorded_at": "2026-08-30T08:57:01Z",
+        "latest_recorded_at": "2026-09-04T21:02:00Z",
         "posture": "mutable_snapshot_backed",
         "semantic_review_present": false,
         "snapshot_backed": true
       },
       "dossier_id": "research-source:2f3ae40d3bb79a210957",
       "first_recorded_at": "2026-08-30T08:56:22Z",
-      "latest_recorded_at": "2026-08-30T08:57:01Z",
+      "latest_recorded_at": "2026-09-04T21:02:00Z",
       "mutable_surface_states": [
         true
       ],
       "origin_groups": [
+        "google-gemma4-core-docs",
         "google-provider"
       ],
       "propagation_roles": [
@@ -191,12 +348,13 @@
       "publishers": [
         "Google"
       ],
-      "run_count": 1,
+      "run_count": 2,
       "source_classes": [
         "provider_documentation"
       ],
       "supersession_proposals": [],
       "titles": [
+        "Gemma 4 model overview",
         "Gemma model overview",
         "Gemma model overview: inference memory requirements",
         "Gemma model overview: memory planning considerations"
@@ -2042,6 +2200,72 @@
       ]
     },
     {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:22:00Z",
+          "mutable_surface": false,
+          "observation_refs": [
+            "obs-distilled-e2b"
+          ],
+          "origin_group": "distilled-gemma-hipe",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned arXiv HTML was inspected without retaining normalized response bytes.",
+              "locator": "Teacher selection and QLoRA, merged silver-trace generation, E2B student QLoRA, corpus, sandbox comparison, official results, and cross-language analysis.",
+              "segment_id": "seg-teacher-silver-student-results"
+            }
+          ],
+          "source_capture_digest": "sha256:c09b88bad40d4defb428e80f8361bee84a99a33538ae4f7334f6f82cdbf35b1f",
+          "source_id": "src-distilled-gemma"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://arxiv.org/html/2606.29130",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:22:00Z",
+        "posture": "immutable_reference",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:14fb7679f84394f25199",
+      "first_recorded_at": "2026-09-04T21:22:00Z",
+      "latest_recorded_at": "2026-09-04T21:22:00Z",
+      "mutable_surface_states": [
+        false
+      ],
+      "origin_groups": [
+        "distilled-gemma-hipe"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "HIPE 2026 team whereami"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "independent_distillation_study"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "DistilledGemma: Balanced Efficiency-Accuracy for Person-Place Relation Extraction from Multilingual Historical Articles"
+      ],
+      "uri_aliases": [
+        "https://arxiv.org/html/2606.29130"
+      ]
+    },
+    {
       "appearance_count": 2,
       "appearances": [
         {
@@ -2441,6 +2665,72 @@
       ],
       "uri_aliases": [
         "https://arxiv.org/html/2609.03350v1"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:00:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-qat-official-topology"
+          ],
+          "origin_group": "google-gemma4-qat-release",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable provider page was inspected through the web research tool without retaining normalized segment bytes.",
+              "locator": "Release sections on QAT versus PTQ, mobile quantization, modality removal, formats, MTP assistants, and fine-tuning routes.",
+              "segment_id": "seg-qat-formats-mobile-mtp-finetune"
+            }
+          ],
+          "source_capture_digest": "sha256:6f85add928da5d165d284ba5369c339b8eb684cebed803995b44182726bc50a4",
+          "source_id": "src-google-qat-announcement"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:00:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:26e60cb817855fb416fe",
+      "first_recorded_at": "2026-09-04T21:00:00Z",
+      "latest_recorded_at": "2026-09-04T21:00:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "google-gemma4-qat-release"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Google DeepMind"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "provider_release_announcement"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency"
+      ],
+      "uri_aliases": [
+        "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/"
       ]
     },
     {
@@ -3496,6 +3786,72 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T21:10:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-edge-energy-pareto"
+          ],
+          "origin_group": "jetson-thor-e2b-engine-test",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The forum thread was inspected without retaining normalized post bytes.",
+              "locator": "Summary table and method notes for LiteRT-LM CPU and llama.cpp CPU/GPU modes under an 8 GB budget.",
+              "segment_id": "seg-speed-memory-power-energy"
+            }
+          ],
+          "source_capture_digest": "sha256:de6092abd37b6fea04029c12e0f57261cdbf758d101ae242b5a3e7936ab290c1",
+          "source_id": "src-jetson-e2b-engines"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://forums.developer.nvidia.com/t/benchmark-litert-lm-vs-llama-cpp-server-gemma-4-e2b-on-nvidia-jetson-thor/380349",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:10:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:a1ede51c77250e163ff8",
+      "first_recorded_at": "2026-09-04T21:10:00Z",
+      "latest_recorded_at": "2026-09-04T21:10:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "jetson-thor-e2b-engine-test"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "NVIDIA Developer Forums contributor"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "primary_forum_benchmark"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Benchmark: LiteRT-LM vs llama.cpp server - Gemma 4 E2B on NVIDIA Jetson Thor"
+      ],
+      "uri_aliases": [
+        "https://forums.developer.nvidia.com/t/benchmark-litert-lm-vs-llama-cpp-server-gemma-4-e2b-on-nvidia-jetson-thor/380349"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-09-04T16:50:00Z",
           "mutable_surface": false,
           "observation_refs": [
@@ -3768,6 +4124,72 @@
       ],
       "uri_aliases": [
         "https://github.com/Sunwood-ai-labs/gemma4-mtp-benchmark/blob/cdc548843bdddd7e6ac34d1491004d40abaffd44/benchmarks/2026-05-06-task-matrix-m1-max.md"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:16:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-refusal-e2b-e4b"
+          ],
+          "origin_group": "trevors-gemma4-abliteration",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable report was inspected without a commit-pinned byte capture.",
+              "locator": "E2B and E4B biprojection, task-vector, marker correction, 686-prompt cross-validation, KL, layers, and tooling sections.",
+              "segment_id": "seg-e2b-e4b-methods-cross-dataset-audit"
+            }
+          ],
+          "source_capture_digest": "sha256:56450d1dba8c96a3e8cb4ea3196a6cfc41232a94d2cbbf105b36f24bb61a01a1",
+          "source_id": "src-trevors-abliteration"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/TrevorS/gemma-4-abliteration/blob/master/ABLITERATION.md",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:16:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:8d23c0e06782a37fb9cf",
+      "first_recorded_at": "2026-09-04T21:16:00Z",
+      "latest_recorded_at": "2026-09-04T21:16:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "trevors-gemma4-abliteration"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "TrevorS"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "community_experiment_repository"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 Abliteration Research"
+      ],
+      "uri_aliases": [
+        "https://github.com/TrevorS/gemma-4-abliteration/blob/master/ABLITERATION.md"
       ]
     },
     {
@@ -4459,6 +4881,72 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T21:12:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e2b-kernel-mtp-lineage"
+          ],
+          "origin_group": "little-gemma-runtime-engineering",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable journal was inspected through GitHub without a commit-pinned byte capture.",
+              "locator": "E2B QAT q4_0 MMA/repack entries, MTP acceptance, memory changes, same-day comparison, and July errata.",
+              "segment_id": "seg-e2b-q4-kernel-mtp-and-errata"
+            }
+          ],
+          "source_capture_digest": "sha256:bb5c686b5e7a9a11eb319a76b1cc3913f012de413ddb2fc6e53225fce8d10f0e",
+          "source_id": "src-little-gemma-journal"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/cortexist/little-gemma/blob/main/docs/prefill-performance-journal.md",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:12:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:9519ca32f77e4e4674a3",
+      "first_recorded_at": "2026-09-04T21:12:00Z",
+      "latest_recorded_at": "2026-09-04T21:12:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "little-gemma-runtime-engineering"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "cortexist"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "versioned_runtime_journal"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "little-gemma prefill performance journal"
+      ],
+      "uri_aliases": [
+        "https://github.com/cortexist/little-gemma/blob/main/docs/prefill-performance-journal.md"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-08-29T00:00:00Z",
           "mutable_surface": true,
           "observation_refs": [],
@@ -4795,6 +5283,72 @@
       ],
       "uri_aliases": [
         "https://github.com/google-deepmind/gemma/blob/7b785991bd78626c73b317eb43fdbb6c292f7b9c/gemma/gm/nn/gemma4/_gemma4.py"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:20:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-multilingual-collapse"
+          ],
+          "origin_group": "gustipardo-multilingual-abliteration",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable repository page was inspected without retaining commit-pinned bytes.",
+              "locator": "Preliminary size table, per-language results, mechanistic findings, fixed controls, pipeline, delayed-refusal note, and project status.",
+              "segment_id": "seg-seven-language-results-geometry-protocol"
+            }
+          ],
+          "source_capture_digest": "sha256:92b7695b4833bf0eddffe53a0e33af8da6ca54db6a2222ecb5bd7dc112de60d7",
+          "source_id": "src-gustipardo-multilingual-safety"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/gustipardo/gemma4-abliteration",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:20:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:3667ee1d47f93d6a8f14",
+      "first_recorded_at": "2026-09-04T21:20:00Z",
+      "latest_recorded_at": "2026-09-04T21:20:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "gustipardo-multilingual-abliteration"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "gustipardo"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "community_multilingual_study"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "The Democratization Safety Paradox: Multilingual Safety Collapse in Small Language Models"
+      ],
+      "uri_aliases": [
+        "https://github.com/gustipardo/gemma4-abliteration"
       ]
     },
     {
@@ -6993,6 +7547,72 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T21:14:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-qat-post-adaptation-gap"
+          ],
+          "origin_group": "unsloth-qat-adaptation-question",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable discussion was inspected without retaining normalized thread bytes.",
+              "locator": "Question and replies distinguishing Google Q4_0 QAT, unquantized QAT initialization, bitsandbytes NF4, LoRA, merge, and re-quantization.",
+              "segment_id": "seg-calibration-preservation-gap"
+            }
+          ],
+          "source_capture_digest": "sha256:8b218726a118d2f39381c161646dc9622f8d9fbbf0ea9a758e565b1fe14545e4",
+          "source_id": "src-unsloth-qat-finetune-discussion"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/unslothai/unsloth/discussions/6389",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:14:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:598e42b3774448dc7f2b",
+      "first_recorded_at": "2026-09-04T21:14:00Z",
+      "latest_recorded_at": "2026-09-04T21:14:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "unsloth-qat-adaptation-question"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Unsloth community"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "framework_community_discussion"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "How to QLoRA fine-tune on Google's Gemma 4 QAT checkpoints without losing QAT calibration?"
+      ],
+      "uri_aliases": [
+        "https://github.com/unslothai/unsloth/discussions/6389"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-09-04T19:50:00Z",
           "mutable_surface": true,
           "observation_refs": [
@@ -7185,6 +7805,72 @@
       ],
       "uri_aliases": [
         "https://github.com/unslothai/unsloth/issues/6089"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:04:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-qat-server-memory-throughput"
+          ],
+          "origin_group": "vllm-gemma4-runtime",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable recipe was inspected without retaining exact repository bytes.",
+              "locator": "QAT W4A16 and mobile sections plus MTP recommended settings and A100/H100 caveats.",
+              "segment_id": "seg-w4a16-mobile-memory-throughput-mtp"
+            }
+          ],
+          "source_capture_digest": "sha256:1ed2767812f59b929d232800829f515278ca3f4323af72bc455e95b4c7d835ee",
+          "source_id": "src-vllm-gemma4-recipe"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/vllm-project/recipes/blob/main/Google/Gemma4.md",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:04:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:0a2f0bc70cc2874043df",
+      "first_recorded_at": "2026-09-04T21:04:00Z",
+      "latest_recorded_at": "2026-09-04T21:04:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "vllm-gemma4-runtime"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "vLLM project"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "runtime_recipe"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "vLLM Gemma 4 recipe"
+      ],
+      "uri_aliases": [
+        "https://github.com/vllm-project/recipes/blob/main/Google/Gemma4.md"
       ]
     },
     {
@@ -7648,6 +8334,202 @@
       ],
       "uri_aliases": [
         "https://huggingface.co/Dhiaul/Gemma-4-E4B-GLM5.1-distill"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:18:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-abliteration-scorer-export"
+          ],
+          "origin_group": "abliterlitics-e2b-forensics",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card bytes.",
+              "locator": "Claim calibration, eight-task capability results, HarmBench review, KL passport, SVD/weight clusters, and shared-KV export defect.",
+              "segment_id": "seg-kl-capability-safety-weight-export"
+            }
+          ],
+          "source_capture_digest": "sha256:0252e8ffa01ce2dbb9bd431038af41781f6858bdc2c662896f4b43d14ba85a00",
+          "source_id": "src-dreamfast-abliterlitics"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/DreamFast/Gemma4-e2b-abliterlitics",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:18:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:f890702686d02993352d",
+      "first_recorded_at": "2026-09-04T21:18:00Z",
+      "latest_recorded_at": "2026-09-04T21:18:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "abliterlitics-e2b-forensics"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "DreamFast / Abliterlitics"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "community_forensic_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 E2B: 13 Abliteration Techniques Compared"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/DreamFast/Gemma4-e2b-abliterlitics"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:24:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-welsh-e4b-cpt-sft"
+          ],
+          "origin_group": "eryrilabs-welsh-e4b",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The raw README was inspected over HTTPS without retaining a repository copy.",
+              "locator": "Training summary, CPT/SFT mix correction, single- and multi-turn evaluation, English arm, quantization, source data, and limitations.",
+              "segment_id": "seg-cpt-sft-data-eval-retention-quants"
+            }
+          ],
+          "source_capture_digest": "sha256:838c757d7d85ffa996b80deeee0c695865196897ac97dc23892a113838fb309e",
+          "source_id": "src-welsh-e4b-v4"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/EryriLabs/gemma-4-e4b-cymraeg-v4",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:24:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:f3a0daaf2dc2bbbaa9b9",
+      "first_recorded_at": "2026-09-04T21:24:00Z",
+      "latest_recorded_at": "2026-09-04T21:24:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "eryrilabs-welsh-e4b"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "EryriLabs"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "language_adaptation_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 E4B Cymraeg v4"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/EryriLabs/gemma-4-e4b-cymraeg-v4"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:26:00Z",
+          "mutable_surface": true,
+          "observation_refs": [],
+          "origin_group": "rickkosse-frisian-e4b",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card bytes.",
+              "locator": "Model purpose, six-question fastText language-ID result, CPT/SFT configuration, and stated limitations.",
+              "segment_id": "seg-cpt-sft-smoke-limitations"
+            }
+          ],
+          "source_capture_digest": "sha256:bfdcb162c3526d098bea3fdc958ed5db102384c907806ffd9ddac9e8bfbb55e0",
+          "source_id": "src-frisian-e4b"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/Rickkosse/gemma-4-E4B-frisian",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:26:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:5a5a36333f4eda5a405c",
+      "first_recorded_at": "2026-09-04T21:26:00Z",
+      "latest_recorded_at": "2026-09-04T21:26:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "rickkosse-frisian-e4b"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Rickkosse"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "language_adaptation_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "gemma-4-E4B-frisian"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/Rickkosse/gemma-4-E4B-frisian"
       ]
     },
     {
@@ -8809,6 +9691,270 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T21:30:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-offlineaid-language-metrics"
+          ],
+          "origin_group": "offlineaid-e4b-adaptation",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card bytes.",
+              "locator": "111-row EN/ZH/AR held-out table, format definition, training configuration, merge recipe, and deployment boundary.",
+              "segment_id": "seg-heldout-language-metrics-training-merge"
+            }
+          ],
+          "source_capture_digest": "sha256:69526514b41d1a313110e5a819f7389d293f8d7151594eba75dd032ddc015601",
+          "source_id": "src-offlineaid-e4b"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/helenk/gemma-4-E4B-finetune",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:30:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:29141a6a3e0b1be6dacb",
+      "first_recorded_at": "2026-09-04T21:30:00Z",
+      "latest_recorded_at": "2026-09-04T21:30:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "offlineaid-e4b-adaptation"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "helenk"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "multilingual_adapter_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "OfflineAid - Gemma 4 E4B fine-tune"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/helenk/gemma-4-E4B-finetune"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:34:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-stripping-memory-mtp"
+          ],
+          "origin_group": "igorls-e4b-modality-strip",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card or artifact bytes.",
+              "locator": "Stripping procedure, parameter table, resident-memory and task comparison, multilingual results, limitations, MTP benchmark, and vLLM release gap.",
+              "segment_id": "seg-parameter-memory-text-multilingual-mtp"
+            }
+          ],
+          "source_capture_digest": "sha256:64d9eefa33695083485994ecfcec794e3da8daef167b1b3fb552bfe39bd0e135",
+          "source_id": "src-stripped-e4b-classifier"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/igorls/gemma4-e4b-classifier",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:34:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:b6a982843354b0b1ab81",
+      "first_recorded_at": "2026-09-04T21:34:00Z",
+      "latest_recorded_at": "2026-09-04T21:34:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "igorls-e4b-modality-strip"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "igorls"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "modality_stripped_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 E4B Classifier, vision/audio-stripped"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/igorls/gemma4-e4b-classifier"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:32:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-speech-composition"
+          ],
+          "origin_group": "meralion-e4b-speech-composition",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable model card was inspected without retaining private bundle bytes.",
+              "locator": "Result summary, bundle contents, custom runtime, architecture dimensions, limitations, provenance, and visibility state.",
+              "segment_id": "seg-components-wer-runtime-license"
+            }
+          ],
+          "source_capture_digest": "sha256:fb9cca953c07bba6e7ed2481fe36198eac853e7b65c95914293c28b3e3c36e1b",
+          "source_id": "src-meralion-speech-e4b"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/majentik/Gemma-4-E4B-BF16-MERaLiON-Speech-LoRA-SG-MLX",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:32:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:fd0ec4fe3edb83f82ba1",
+      "first_recorded_at": "2026-09-04T21:32:00Z",
+      "latest_recorded_at": "2026-09-04T21:32:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "meralion-e4b-speech-composition"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "majentik"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "private_composed_model_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma-4-E4B-BF16 plus MERaLiON Speech LoRA for Singapore English"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/majentik/Gemma-4-E4B-BF16-MERaLiON-Speech-LoRA-SG-MLX"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:28:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-formosa-multiseed"
+          ],
+          "origin_group": "formosanlu-e4b-adapter",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card bytes.",
+              "locator": "Model details, untouched MASSIVE zh-TW results, seeds 42-44, deterministic robustness probe, equal-N ablation, and artifact digest.",
+              "segment_id": "seg-heldout-multiseed-equaln-artifact"
+            }
+          ],
+          "source_capture_digest": "sha256:8be6c39c9cde90feb3e8c9b4be37fa8ba9b80da41c4429239a287890e0378c10",
+          "source_id": "src-formosa-e4b-lora"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/steven0226/gemma-4-e4b-formosanlu-lora",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:28:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:6f8472c2514dc269584e",
+      "first_recorded_at": "2026-09-04T21:28:00Z",
+      "latest_recorded_at": "2026-09-04T21:28:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "formosanlu-e4b-adapter"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "steven0226"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "language_task_adapter_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 E4B FormosaNLU LoRA"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/steven0226/gemma-4-e4b-formosanlu-lora"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-09-04T19:30:00Z",
           "mutable_surface": true,
           "observation_refs": [
@@ -8870,6 +10016,72 @@
       ],
       "uri_aliases": [
         "https://huggingface.co/xbruce22/gemma-4-e2b-reasoning-lora"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T21:06:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-qat-comparison-confounded"
+          ],
+          "origin_group": "kmarble-qat-operational-test",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The article was inspected through the web tool without a retained normalized capture.",
+              "locator": "Test setup, E4B results, quality assessment, caveats, and author's request for a same-bit comparison.",
+              "segment_id": "seg-e4b-confounded-comparison"
+            }
+          ],
+          "source_capture_digest": "sha256:9fa7f63fecd78919b64d2ffafc87fac977c0b400d38a6dfa414637e4606977b5",
+          "source_id": "src-kmarble-qat-benchmark"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://kmarble.dev/posts/gemma-4-qat-benchmark-same-quality-faster-less-vram/",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T21:06:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:84c12c4a88080d377ec7",
+      "first_recorded_at": "2026-09-04T21:06:00Z",
+      "latest_recorded_at": "2026-09-04T21:06:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "kmarble-qat-operational-test"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "kmarble.dev"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "independent_operational_benchmark"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 QAT Benchmark: Same Quality, Faster Generation, Less VRAM"
+      ],
+      "uri_aliases": [
+        "https://kmarble.dev/posts/gemma-4-qat-benchmark-same-quality-faster-less-vram/"
       ]
     },
     {
@@ -10724,6 +11936,12 @@
       "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json"
     },
     {
+      "content_digest": "sha256:6c37853b926a9da36180e2349cf47a437400767854a4b76a2abe6cb0e1bdc35b",
+      "kind": "ReconRun",
+      "record_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+      "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json"
+    },
+    {
       "content_digest": "sha256:4404900b111ce459faa9cc355ea559dc754f8d29c793adf26c8d605c9142118a",
       "kind": "ReconRun",
       "record_id": "recon-run:gpt-5.6/2026-08-29-v0.2",
@@ -10806,7 +12024,7 @@
       "preserve path case, trailing slash, and query string"
     ]
   },
-  "input_fingerprint": "sha256:5f35dd853f5f727df327816839f1f32386607286f3bddb0db52e4458f3a0c01b",
+  "input_fingerprint": "sha256:a8ebd34bd0c274df72f4b9d785c91b2279cb3b738a2179bb4d3eaa32342454a8",
   "kind": "ResearchSourceDossierCatalog",
   "schema_version": "aoa_model_research_source_dossier_catalog_v1"
 }
