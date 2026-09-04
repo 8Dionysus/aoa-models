@@ -1,0 +1,1396 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+  "title": "Gemma 4 E2B/E4B fine-tuning, adapters, and adaptation closure",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "Which fine-tuning and adaptation paths, target-surface constraints, quality and retention trade-offs, and deployment or MTP couplings are repeatedly evidenced for Gemma 4 E2B and E4B, and which remain framework-, revision-, task-, or artifact-bound?",
+  "scope": {
+    "subject_labels": [
+      "gemma-4-E2B",
+      "gemma-4-E2B-it",
+      "gemma-4-E4B",
+      "gemma-4-E4B-it",
+      "gemma-4-E4B-it-assistant"
+    ],
+    "target_kinds": [
+      "provider_fact",
+      "benchmark_result",
+      "model_behavior",
+      "runtime_behavior",
+      "operational_pressure",
+      "unresolved"
+    ],
+    "capture_interval": {
+      "start": "2026-09-04T15:00:00Z",
+      "end": "2026-09-04T23:59:59Z"
+    },
+    "inclusion_criteria": [
+      "Official Gemma 4 tuning guidance or an exact runnable E2B/E4B recipe.",
+      "Independent controlled study with method, configuration, and measured adaptation outcomes.",
+      "Inspectably retained adapter, commit-pinned implementation, or exact failure report that constrains training, merge, export, or serving.",
+      "Evidence that preserves adaptation method, module or tower scope, library revision, denominator, evaluation boundary, and temporal state."
+    ],
+    "exclusion_criteria": [
+      "Generic LoRA guidance without a Gemma 4 binding.",
+      "Unversioned VRAM or quality claims lacking configuration and denominator.",
+      "Training loss or a tutorial sample treated as accepted held-out capability evidence.",
+      "Dependent restatements counted as independent corroboration.",
+      "Issue closure treated as technical resolution without a linked change or rerun."
+    ],
+    "generality_probe": {
+      "mode": "different_product_or_instrument",
+      "subject_labels": [
+        "official-text-and-vision-recipes",
+        "independent-tool-specialization",
+        "language-continued-pretraining",
+        "adapter-artifact",
+        "cross-runtime-round-trip",
+        "joint-mtp-training"
+      ],
+      "rationale": "The pass compares materially different adaptation methods and acceptance surfaces rather than inferring a family-wide rule from one provider tutorial or task."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.3",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.3.md",
+        "content_digest": "sha256:64fcff8429ea6823f9f3aa5e1c614110b4d724219e198dd8cfe505424cd15aed"
+      },
+      {
+        "relation": "deep_report",
+        "ref": "research-intake/reports/gemma-4-e2b-e4b-finetuning-adapters-2026-09-04.md",
+        "content_digest": "sha256:5b9c27aab63dae94775f0fec7b359adcad128243286013d29ab6ccf5e9e98c6b"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-corroboration.json",
+        "content_digest": "sha256:4568f319edeb0d17be0f06ddc8fa0bb7320f1c59b32355a26371019bf391540d"
+      }
+    ],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-google-tuning-overview",
+      "title": "Gemma model fine-tuning",
+      "uri": "https://ai.google.dev/gemma/docs/tune?hl=en",
+      "source_class": "provider_guidance",
+      "publisher": "Google",
+      "captured_at": "2026-09-04T18:00:00Z",
+      "published_at": null,
+      "updated_at": "2026-04-16T00:00:00Z",
+      "effective_interval": {"start": "2026-04-16T00:00:00Z", "end": null},
+      "temporal_notes": "Mutable overview; last-updated marker was visible at capture.",
+      "mutable_surface": true,
+      "origin_group": "google-gemma-guidance",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-method-and-deployment",
+          "locator": "Sections Choose a framework, Parameter-efficient tuning, Tune and test, and Deploy the model.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public Google documentation.",
+      "selection_context": "Provider definition of full versus parameter-efficient tuning and base-plus-adapter deployment."
+    },
+    {
+      "source_id": "src-google-text-qlora",
+      "title": "Fine-Tune Gemma using Hugging Face Transformers and QLoRA",
+      "uri": "https://ai.google.dev/gemma/docs/core/huggingface_text_finetune_qlora",
+      "source_class": "provider_operational_recipe",
+      "publisher": "Google",
+      "captured_at": "2026-09-04T18:10:00Z",
+      "published_at": null,
+      "updated_at": "2026-06-19T00:00:00Z",
+      "effective_interval": {"start": "2026-06-19T00:00:00Z", "end": null},
+      "temporal_notes": "Mutable recipe; current dependency floors and code may change.",
+      "mutable_surface": true,
+      "origin_group": "google-gemma-qlora-recipes",
+      "propagation_role": "origin",
+      "dependency_refs": ["src-google-tuning-overview"],
+      "segments": [
+        {
+          "segment_id": "seg-text-config",
+          "locator": "Lines 94-118 and 194-282: E2B/E4B-selectable NF4 QLoRA, Transformers >=5.10.1, PEFT >=0.19.0, LM-scoped PEFT defaults, modules_to_save, weight tying, and training configuration.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-save-merge-eval",
+          "locator": "Lines 392-423: adapter-only save, merge_and_unload, more-than-30GB CPU-memory note, and manual evaluation boundary.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public Google documentation with linked notebook source.",
+      "selection_context": "Current official Gemma 4 text QLoRA route and deployment boundary."
+    },
+    {
+      "source_id": "src-google-vision-qlora",
+      "title": "Fine-Tune Gemma for Vision Tasks using Hugging Face Transformers and QLoRA",
+      "uri": "https://ai.google.dev/gemma/docs/core/huggingface_vision_finetune_qlora",
+      "source_class": "provider_operational_recipe",
+      "publisher": "Google",
+      "captured_at": "2026-09-04T18:15:00Z",
+      "published_at": null,
+      "updated_at": "2026-06-19T00:00:00Z",
+      "effective_interval": {"start": "2026-06-19T00:00:00Z", "end": null},
+      "temporal_notes": "Mutable recipe; the current PEFT default leaves LoRA scoped to the language model even though examples contain images.",
+      "mutable_surface": true,
+      "origin_group": "google-gemma-qlora-recipes",
+      "propagation_role": "origin",
+      "dependency_refs": ["src-google-text-qlora"],
+      "segments": [
+        {
+          "segment_id": "seg-vision-data-and-targets",
+          "locator": "Lines 94-117, 230-342: multimodal dataset/collator, NF4 QLoRA, LM-scoped default targets, special-token modules, and image-token masking.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-vision-merge-eval",
+          "locator": "Lines 382-413: adapter save, merge path, CPU-memory note, and manual evaluation boundary.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public Google documentation with linked notebook source.",
+      "selection_context": "Distinguishes multimodal-conditioned QLoRA from adaptation of the vision tower itself."
+    },
+    {
+      "source_id": "src-hf-vertex-e2b-sft",
+      "title": "Fine-tune Gemma 4 with TRL on Vertex AI",
+      "uri": "https://huggingface.co/docs/google-cloud/examples/vertex-ai-notebooks-fine-tune-gemma-4",
+      "source_class": "provider_operational_recipe",
+      "publisher": "Hugging Face",
+      "captured_at": "2026-09-04T18:20:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable documentation; captured dependency and training configuration are time-bound.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-google-cloud",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e2b-job-scope",
+          "locator": "Lines 94-108 and 228-257: E2B tool-calling SFT, one H100 Spot job, and dependency set.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-freeze-and-train",
+          "locator": "Lines 319-355: BF16 causal LM, language-subtree trainability, frozen vision/audio/embeddings, three epochs, gradient checkpointing, use_cache=false, and Liger disabled.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face Google Cloud documentation.",
+      "selection_context": "Concrete E2B partial-full-weight SFT route distinct from LoRA."
+    },
+    {
+      "source_id": "src-peft-clippable",
+      "title": "Add LoRA support for Gemma 4 (Gemma4ClippableLinear)",
+      "uri": "https://github.com/huggingface/peft/issues/3130",
+      "source_class": "upstream_issue_and_maintainer_guidance",
+      "publisher": "Hugging Face PEFT contributors",
+      "captured_at": "2026-09-04T18:30:00Z",
+      "published_at": "2026-04-02T00:00:00Z",
+      "updated_at": "2026-04-03T11:15:43Z",
+      "effective_interval": {"start": "2026-04-02T00:00:00Z", "end": null},
+      "temporal_notes": "Closed as not planned; maintainer guidance in the discussion narrows the workaround to scoped inner .linear targets.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-peft",
+      "propagation_role": "mixed",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-wrapper-failure",
+          "locator": "Issue description sections Problem, Root Cause, Workaround, and Tested With.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through GitHub HTML and API without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-maintainer-selector",
+          "locator": "Maintainer comment dated 2026-04-03 recommending tower-scoped regexes targeting q_proj.linear or v_proj.linear.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue comment was inspected through GitHub API without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public GitHub issue and comments.",
+      "selection_context": "Exact topology and merge/unmerge constraint for multimodal Gemma 4 LoRA selectors."
+    },
+    {
+      "source_id": "src-peft-modules-save-fix",
+      "title": "fix aux4 kwargs-only modules in modules_to_save",
+      "uri": "https://github.com/huggingface/peft/pull/3199",
+      "source_class": "upstream_merged_fix",
+      "publisher": "Hugging Face PEFT contributors",
+      "captured_at": "2026-09-04T18:35:00Z",
+      "published_at": "2026-04-24T00:00:00Z",
+      "updated_at": "2026-04-24T00:00:00Z",
+      "effective_interval": {"start": "2026-04-24T00:00:00Z", "end": null},
+      "temporal_notes": "Merged as commit 24d70f47b5d3a1fe363119ef31e30261dd5286a3; later dependency notes identify PEFT 0.20.0 as shipping the fix.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-peft",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-merged-fix",
+          "locator": "Merged status, commit 24d70f4, test/CI note, and later PEFT 0.20.0 shipment references.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable pull-request surface was inspected through GitHub HTML and API without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public merged GitHub pull request.",
+      "selection_context": "Version boundary for kwargs-only modules wrapped by modules_to_save."
+    },
+    {
+      "source_id": "src-transformers-kv-fix",
+      "title": "[gemma4] Dissociate kv states sharing from the Cache",
+      "uri": "https://github.com/huggingface/transformers/pull/45312",
+      "source_class": "upstream_merged_fix",
+      "publisher": "Hugging Face Transformers contributors",
+      "captured_at": "2026-09-04T18:40:00Z",
+      "published_at": "2026-04-08T00:00:00Z",
+      "updated_at": "2026-04-09T08:08:04Z",
+      "effective_interval": {"start": "2026-04-09T08:08:04Z", "end": null},
+      "temporal_notes": "Merged as d42f8ba5c86ee7d1472dd18ed929b4dbc3cd1f35; current Google recipes now require a substantially later Transformers floor.",
+      "mutable_surface": true,
+      "origin_group": "huggingface-transformers",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-uncached-training-fix",
+          "locator": "PR description and merged state: shared KV states must remain shared during training and uncached inference.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable pull-request surface was inspected through GitHub HTML and API without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public merged GitHub pull request.",
+      "selection_context": "Explains why launch-week use_cache=false training and high-loss reports require exact revision context."
+    },
+    {
+      "source_id": "src-tool-qlora-study",
+      "title": "Internalizing Tool Knowledge in Small Language Models via QLoRA Fine-Tuning",
+      "uri": "https://arxiv.org/html/2605.17774v2",
+      "source_class": "independent_controlled_study",
+      "publisher": "Shemla, Yakobe, and Agarwal",
+      "captured_at": "2026-09-04T19:00:00Z",
+      "published_at": "2026-05-18T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-05-18T00:00:00Z", "end": null},
+      "temporal_notes": "Version 2 paper; fixed-catalog scope, 30-scenario held-out set, and run-to-run variance are preserved.",
+      "mutable_surface": false,
+      "origin_group": "assetops-qlora-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-method-and-scope",
+          "locator": "Sections III-IV: fixed-catalog description-free setup, 1,741 examples, QLoRA configuration, and evaluation protocol.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-quality-rank-retention",
+          "locator": "Sections V-A through V-C: main results, rank sweep, 100-question retention probe, and quantization check.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-resource-profile",
+          "locator": "Table III and deployment characterization on one A100 80GB.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned arXiv HTML paper.",
+      "selection_context": "Strongest controlled Gemma 4 E4B QLoRA specialization, rank, retention, and resource evidence found."
+    },
+    {
+      "source_id": "src-armenian-cpt-study",
+      "title": "From Zero to Hero: An Open LLM Ecosystem for Armenian",
+      "uri": "https://arxiv.org/html/2609.03350v1",
+      "source_class": "independent_controlled_study",
+      "publisher": "ArmLLM study authors",
+      "captured_at": "2026-09-04T19:15:00Z",
+      "published_at": "2026-09-03T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {"start": "2026-09-03T00:00:00Z", "end": null},
+      "temporal_notes": "Fresh version 1 paper; method is detailed and artifacts are reported open, but time corroboration is not yet available.",
+      "mutable_surface": false,
+      "origin_group": "armenian-cpt-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-cpt-mixture",
+          "locator": "Sections 3 and 5: E4B 10B-token mixture, learning-rate controls, five runs, likelihood suite, and forgetting analysis.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-e2b-tokenizer-ablation",
+          "locator": "Table 6: E2B 2B-token stock versus +8k/+16k mean-initialized tokenizer-extension ablation.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-limitations",
+          "locator": "Limitations: fresh single-run columns, task composition, MCQA-heavy evaluation, and absent safety assessment.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned arXiv HTML paper.",
+      "selection_context": "Independent full-weight language adaptation and forgetting controls, plus an E2B tokenizer intervention."
+    },
+    {
+      "source_id": "src-e2b-reasoning-adapter",
+      "title": "gemma-4-e2b-reasoning-lora",
+      "uri": "https://huggingface.co/xbruce22/gemma-4-e2b-reasoning-lora",
+      "source_class": "community_adapter_artifact",
+      "publisher": "xbruce22",
+      "captured_at": "2026-09-04T19:30:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model card and files; artifact existence is retained separately from author-reported behavior.",
+      "mutable_surface": true,
+      "origin_group": "xbruce22-adapter-artifact",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-adapter-config-and-run",
+          "locator": "Model card training configuration, dataset size, trainable parameter count, XPU memory class, runtime, and adapter load/merge examples.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable Hub page and files were inspected without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face adapter repository.",
+      "selection_context": "Inspectable E2B LoRA artifact demonstrating real adapter packaging but not accepted quality."
+    },
+    {
+      "source_id": "src-unsloth-e4b-audio",
+      "title": "Gemma4 E4B Audio fine-tuning notebook",
+      "uri": "https://github.com/unslothai/notebooks/blob/cc4742b4d55fd210d4fb55a6aecb3a7a03101b8a/nb/Gemma4_(E4B)-Audio.ipynb",
+      "source_class": "commit_pinned_provider_recipe",
+      "publisher": "Unsloth",
+      "captured_at": "2026-09-04T19:40:00Z",
+      "published_at": null,
+      "updated_at": "2026-09-04T01:08:40Z",
+      "effective_interval": {"start": "2026-09-04T01:08:40Z", "end": null},
+      "temporal_notes": "Pinned to notebooks commit cc4742b4d55fd210d4fb55a6aecb3a7a03101b8a.",
+      "mutable_surface": false,
+      "origin_group": "unsloth-implementation",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-audio-targets-and-demo",
+          "locator": "Notebook cells loading E4B in 4-bit, selecting language attention/MLP and named audio modules, r=8/alpha=16, 3,000 Emilia-DE samples, and 60-step T4 demonstration.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned notebook was inspected without retaining canonical notebook bytes."
+        }
+      ],
+      "access_notes": "Public commit-pinned GitHub notebook.",
+      "selection_context": "Concrete framework-specific audio-plus-language PEFT surface; no held-out quality artifact found."
+    },
+    {
+      "source_id": "src-mlx-roundtrip",
+      "title": "Gemma 4 attention-shape divergence between mlx-lm and mlx-swift-lm breaks fused-checkpoint round-trip",
+      "uri": "https://github.com/ml-explore/mlx-lm/issues/1210",
+      "source_class": "cross_runtime_failure_report",
+      "publisher": "MLX contributors",
+      "captured_at": "2026-09-04T19:50:00Z",
+      "published_at": "2026-04-27T00:00:00Z",
+      "updated_at": "2026-08-21T05:15:09Z",
+      "effective_interval": {"start": "2026-04-27T00:00:00Z", "end": null},
+      "temporal_notes": "Issue is closed, but the closing comment states queue reduction rather than a technical resolution and no linked fix was identified.",
+      "mutable_surface": true,
+      "origin_group": "mlx-cross-runtime-issue",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e2b-key-divergence",
+          "locator": "Issue summary, parameter-set table, E2B 140-key derivation, and Python/Swift round-trip reproductions.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected through GitHub HTML and API without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-closure-without-fix",
+          "locator": "Maintainer closing comment dated 2026-08-21 stating non-essential issues were closed to reduce the queue.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue comment was inspected through GitHub API without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public GitHub issue and comments.",
+      "selection_context": "Concrete counterexample to assuming that a fused adapter checkpoint is portable across runtimes."
+    },
+    {
+      "source_id": "src-google-mtp",
+      "title": "Speed-up Gemma 4 with Multi-Token Prediction",
+      "uri": "https://ai.google.dev/gemma/docs/mtp/overview",
+      "source_class": "provider_architecture_guidance",
+      "publisher": "Google",
+      "captured_at": "2026-09-04T20:00:00Z",
+      "published_at": null,
+      "updated_at": "2026-05-05T00:00:00Z",
+      "effective_interval": {"start": "2026-05-05T00:00:00Z", "end": null},
+      "temporal_notes": "Mutable provider overview; last-updated marker visible at capture.",
+      "mutable_surface": true,
+      "origin_group": "google-gemma-guidance",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-target-drafter-coupling",
+          "locator": "Lines 94-105: exact verification, shared input embeddings, target last-layer activations, and E2B/E4B efficient embedder.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public Google documentation.",
+      "selection_context": "Defines why an adapted target and its drafter are coupled for throughput even though verification preserves output exactness."
+    },
+    {
+      "source_id": "src-nemo-joint-mtp",
+      "title": "Gemma4 Assistant model support for MTP",
+      "uri": "https://github.com/NVIDIA-NeMo/Automodel/discussions/2481",
+      "source_class": "provider_implementation_and_benchmark",
+      "publisher": "NVIDIA NeMo Automodel contributors",
+      "captured_at": "2026-09-04T20:10:00Z",
+      "published_at": "2026-06-09T00:00:00Z",
+      "updated_at": "2026-09-04T05:27:53Z",
+      "effective_interval": {"start": "2026-06-09T00:00:00Z", "end": null},
+      "temporal_notes": "Discussion is mutable; implementation details were checked against Automodel commit d113efbe95a859c8443f91ede57aca53d2c0557a.",
+      "mutable_surface": true,
+      "origin_group": "nvidia-nemo-automodel",
+      "propagation_role": "origin",
+      "dependency_refs": ["src-google-mtp"],
+      "segments": [
+        {
+          "segment_id": "seg-joint-recipe",
+          "locator": "Discussion lines 146-151 plus commit-pinned E4B Tulu/Magicoder YAML: full LM plus drafter, K=4, loss weight 0.01, trainable embeddings, frozen vision/audio, FSDP2, and activation checkpointing.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The discussion and commit-pinned source were inspected without retaining canonical response bytes."
+        },
+        {
+          "segment_id": "seg-20-prompt-result",
+          "locator": "Discussion lines 157-166: 500-step checkpoint, 20 prompts, tokens, decode time, throughput, accepted tokens per target step, and 1.98x speed-up.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable discussion was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public GitHub discussion plus public commit-pinned repository files.",
+      "selection_context": "Concrete joint E4B target/drafter training and bounded post-training MTP throughput measurement."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-adaptation-bundle-contract",
+      "statement": "Official guidance and current Gemma 4 QLoRA recipes define a tuned realization as an exact base plus method, adapter or merged weights, processor/template state, and framework-compatible deployment format rather than as a standalone adapter file.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B"],
+        "provider": "google",
+        "product": "gemma-4-adaptation",
+        "snapshot": "google-tuning-guidance-2026-09-04",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"methods": ["full_tuning", "lora", "qlora"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider guidance and current text/vision QLoRA recipes",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["Transformers", "PEFT", "TRL"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "base-plus-adapter or merged checkpoint",
+        "runbook": "train, test, retain adapter or merge, then deploy in a compatible format",
+        "harness": null,
+        "instrument_revision": "Google docs updated 2026-04-16 and 2026-06-19",
+        "grader": null,
+        "additional_dimensions": {"formats_named_by_overview": ["Keras", "Safetensors", "GGUF"]}
+      },
+      "outcome": {
+        "requested": "Identify the durable object that must be tracked for adaptation.",
+        "executed": "Compared provider method, save, merge, and deployment guidance.",
+        "artifact": "Mutable official documentation.",
+        "verified": "The guides separately describe adapter-only saving and base-plus-adapter or merged deployment.",
+        "reported": "Adapter validity depends on its exact base and deployment path.",
+        "termination": "Documentation review completed.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-google-tuning-overview", "segment_id": "seg-method-and-deployment"},
+        {"source_id": "src-google-text-qlora", "segment_id": "seg-save-merge-eval"},
+        {"source_id": "src-google-vision-qlora", "segment_id": "seg-vision-merge-eval"}
+      ],
+      "confounds": ["Provider recipes do not establish cross-framework portability."],
+      "configuration_gaps": ["Exact base revision and runtime must still be supplied by each concrete adaptation."],
+      "transfer_limits": ["Does not prove that every adapter can be merged or served by every supported runtime."],
+      "counterevidence_refs": ["obs-mlx-roundtrip-failure"],
+      "supersedes": [],
+      "evidence_posture": "cross_modal_pattern",
+      "disposition": "cluster",
+      "observed_interval": {"start": "2026-04-16T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e2b-language-subtree-sft",
+      "statement": "The Hugging Face Google Cloud recipe provides a concrete E2B BF16 supervised-fine-tuning path on one H100 Spot job that trains the full language-model subtree while freezing vision, audio, and embeddings; it publishes no held-out result or retained checkpoint.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "vertex-ai-trl-sft",
+        "snapshot": "hf-google-cloud-docs-2026-09-04",
+        "runtime": {"name": "Vertex AI Serverless Training", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"method": "language_subtree_sft", "adapter": false}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "single H100 80GB Spot custom training container",
+        "reasoning_effort": null,
+        "context_policy": "tool-calling SFT; packing disabled",
+        "tools": ["Transformers>=5.5.0", "TRL 1.0.0", "Accelerate 1.13.0", "PyTorch 2.10.0"],
+        "permissions": ["gated Gemma checkpoint access", "Vertex AI job permissions"],
+        "prompt": "Gemma chat template with Hermes function-calling examples",
+        "scaffold": "SFTTrainer",
+        "runbook": "three epochs; batch 4; gradient accumulation 2; gradient checkpointing; use_cache=false; BF16",
+        "harness": "NousResearch/hermes-function-calling-v1",
+        "instrument_revision": "mutable documentation captured 2026-09-04",
+        "grader": null,
+        "additional_dimensions": {"learning_rate": 0.000005, "liger_enabled": false}
+      },
+      "outcome": {
+        "requested": "Show a runnable E2B full or partial-full-weight adaptation path.",
+        "executed": "Documentation provides build, launch, train, and save code.",
+        "artifact": "Training script and Vertex launch recipe; no completed output artifact resolved.",
+        "verified": "Trainability filter and training arguments are explicit.",
+        "reported": "Language subtree is trained; other towers and embeddings are frozen.",
+        "termination": "Recipe inspection completed; execution was not attempted.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-hf-vertex-e2b-sft", "segment_id": "seg-e2b-job-scope"},
+        {"source_id": "src-hf-vertex-e2b-sft", "segment_id": "seg-freeze-and-train"}
+      ],
+      "confounds": ["Provider-authored operational recipe without published completion or quality artifact."],
+      "configuration_gaps": ["Dataset revision, actual job receipt, peak memory, runtime, and held-out evaluation are absent."],
+      "transfer_limits": ["Does not establish E2B fine-tuning quality, cost, or superiority over QLoRA or E4B."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-09-04T18:20:00Z", "end": "2026-09-04T18:20:00Z"}
+    },
+    {
+      "observation_id": "obs-multimodal-data-versus-tower-scope",
+      "statement": "Google's current text and vision QLoRA recipes both default PEFT targets to Gemma 4 language-model layers, so image-bearing training demonstrates multimodal-conditioned adaptation but not adaptation of the vision tower itself.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B"],
+        "provider": "google",
+        "product": "gemma-4-hf-qlora",
+        "snapshot": "google-qlora-guides-2026-06-19",
+        "runtime": {"name": "Transformers PEFT TRL", "version": "Transformers>=5.10.1; PEFT>=0.19.0", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"data_modalities": ["text", "image"], "default_trainable_tower": "language_model"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "official text-to-SQL and image-product-description QLoRA notebooks",
+        "reasoning_effort": null,
+        "context_policy": "max length 512 for text recipe; multimodal collator for vision recipe",
+        "tools": ["Transformers>=5.10.1", "PEFT>=0.19.0", "TRL", "bitsandbytes"],
+        "permissions": ["gated Gemma checkpoint access"],
+        "prompt": "official Gemma instruction processor and chat template",
+        "scaffold": "SFTTrainer with LoraConfig",
+        "runbook": "NF4 base; r=16; alpha=16; dropout=0.05; modules_to_save lm_head/embed_tokens; weight tying",
+        "harness": "text-to-SQL and image-conditioned product-description tutorial datasets",
+        "instrument_revision": "Google docs last updated 2026-06-19",
+        "grader": "manual examples only",
+        "additional_dimensions": {"target_modules": "PEFT Gemma 4 defaults; LM layers", "vision_tower_adapted": false}
+      },
+      "outcome": {
+        "requested": "Separate data modality from trainable tower scope.",
+        "executed": "Compared text and vision recipe target configuration and collators.",
+        "artifact": "Two official mutable notebooks.",
+        "verified": "Both omit target_modules and document LM-layer defaults; the vision recipe passes image inputs.",
+        "reported": "Vision-conditioned SFT can leave the vision tower frozen.",
+        "termination": "Recipe comparison completed.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-google-text-qlora", "segment_id": "seg-text-config"},
+        {"source_id": "src-google-vision-qlora", "segment_id": "seg-vision-data-and-targets"}
+      ],
+      "confounds": ["Both pages share one Google recipe lineage and do not provide independent corroboration."],
+      "configuration_gaps": ["No frozen-versus-adapted vision-tower comparison is published in these guides."],
+      "transfer_limits": ["Must not be generalized into a claim that Gemma 4 towers cannot be adapted."],
+      "counterevidence_refs": ["obs-audio-tower-adapter-path"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "cluster",
+      "observed_interval": {"start": "2026-06-19T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-clippable-selector-topology",
+      "statement": "Gemma4ClippableLinear makes broad q/k/v/o target suffixes ambiguous across language, vision, and audio; PEFT guidance resolves tower adaptation by targeting the wrapped inner .linear with a tower-scoped regex, while the reported monkey patch breaks merge and unmerge.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "peft-lora-module-selection",
+        "snapshot": "peft-issue-3130",
+        "runtime": {"name": "PEFT", "version": "0.18.2.dev0 at report", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"towers": ["language", "vision", "audio"], "wrapper": "Gemma4ClippableLinear"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "issue reproduction, exclusion workaround, monkey patch, and maintainer regex guidance",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["Transformers 5.5.0", "PEFT 0.18.2.dev0", "TRL 1.0.0"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "LoRA module dispatch",
+        "runbook": "target q_proj/v_proj with explicit tower path and inner .linear",
+        "harness": "reported DPO training on E2B; SFT and GRPO not tested",
+        "instrument_revision": "issue opened 2026-04-02; maintainer comment 2026-04-03",
+        "grader": "module injection and merge behavior",
+        "additional_dimensions": {"merge_with_monkey_patch": false}
+      },
+      "outcome": {
+        "requested": "Determine why generic LoRA module lists failed on multimodal Gemma 4.",
+        "executed": "Issue author traced wrapper dispatch and maintainer supplied a scoped target.",
+        "artifact": "Public reproduction and maintainer comment.",
+        "verified": "Wrapper structure, suffix collision, exclusion behavior, and suggested inner-linear target are inspectable.",
+        "reported": "Scope-aware selectors avoid treating tower wrapper incompatibility as global LoRA incompatibility.",
+        "termination": "Issue closed as not planned; workaround remains configuration-bound.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-peft-clippable", "segment_id": "seg-wrapper-failure"},
+        {"source_id": "src-peft-clippable", "segment_id": "seg-maintainer-selector"}
+      ],
+      "confounds": ["Launch-week library versions and an issue-scoped reproduction."],
+      "configuration_gaps": ["No retained cross-version merge/export matrix for each tower and adapter initializer."],
+      "transfer_limits": ["The workaround does not prove semantic quality or cross-runtime portability."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-04-02T00:00:00Z", "end": "2026-04-03T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-revision-sensitive-training-stack",
+      "statement": "Two merged upstream fixes show that Gemma 4 training configuration is revision-sensitive: uncached shared-KV training was corrected in Transformers on 2026-04-09, and kwargs-only modules_to_save behavior was fixed in PEFT and later identified as shipped in 0.20.0.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "transformers-peft-training-stack",
+        "snapshot": "upstream-fixes-through-2026-09-04",
+        "runtime": {"name": "Transformers and PEFT", "version": "revision-bound", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"transformers_fix": "d42f8ba5c86ee7d1472dd18ed929b4dbc3cd1f35", "peft_fix": "24d70f47b5d3a1fe363119ef31e30261dd5286a3"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "merged upstream pull requests compared with current Google recipe floors",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["Transformers", "PEFT"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "training with use_cache=false and modules_to_save",
+        "runbook": "pin a release or commit containing required fixes",
+        "harness": "upstream regression tests and current recipe dependency floors",
+        "instrument_revision": "captured 2026-09-04",
+        "grader": "merged fix and test state",
+        "additional_dimensions": {"current_google_floor": "Transformers>=5.10.1; PEFT>=0.19.0", "kwargs_fix_reported_release": "PEFT 0.20.0"}
+      },
+      "outcome": {
+        "requested": "Identify launch-window defects that invalidate unqualified training reports.",
+        "executed": "Resolved issue history to merged commits and compared current dependency floors.",
+        "artifact": "Two merged PRs and current provider recipes.",
+        "verified": "Merge commits, dates, intent, and later shipped-version note are public.",
+        "reported": "Exact framework revisions and known-fix state are part of the adaptation contract.",
+        "termination": "Revision review completed.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-transformers-kv-fix", "segment_id": "seg-uncached-training-fix"},
+        {"source_id": "src-peft-modules-save-fix", "segment_id": "seg-merged-fix"},
+        {"source_id": "src-google-text-qlora", "segment_id": "seg-text-config"}
+      ],
+      "confounds": ["The current Google minimum PEFT floor is lower than the later source that explicitly identifies 0.20.0 as shipping the kwargs-only fix."],
+      "configuration_gaps": ["No retained release-manifest proof was added for every intermediate Transformers tag."],
+      "transfer_limits": ["Merged fixes do not establish that all framework-specific Gemma 4 adapter paths are currently correct."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "watch",
+      "observed_interval": {"start": "2026-04-08T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e4b-tool-qlora-gain",
+      "statement": "In a fixed-catalog AssetOpsBench study, E4B 8-bit QLoRA internalizes tool knowledge sufficiently to outperform an informed base while removing most schema tokens, with rank 32 best in the reported sweep but bounded by a 30-scenario held-out set and run variance.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "assetopsbench-fixed-catalog-tool-planning",
+        "snapshot": "arxiv-2605.17774v2",
+        "runtime": {"name": "Transformers QLoRA", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"method": "8_bit_qlora", "rank_sweep": [8, 16, 32, 64]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "published E4B QLoRA experiment",
+        "reasoning_effort": null,
+        "context_policy": "fixed tool catalog omitted after fine-tuning",
+        "tools": ["AssetOpsBench MCP servers"],
+        "permissions": [],
+        "prompt": "description-free structured plan prompt",
+        "scaffold": "teacher-generated schema, plan, and execution-trace SFT",
+        "runbook": "1,741 examples; two epochs; 436 steps; r=32; alpha=64; dropout=0.05; learning rate 2e-4",
+        "harness": "30 held-out scenarios from AssetOpsBench",
+        "instrument_revision": "arXiv 2605.17774v2",
+        "grader": "AT-F1, ArgKey-F1, and Gemini 2.5 Flash six-axis judge",
+        "additional_dimensions": {"target_modules": "all linear layers", "test_catalog": "fixed"}
+      },
+      "outcome": {
+        "requested": "Test whether E4B can internalize a stable tool catalog through QLoRA.",
+        "executed": "Compared informed base, description-free base, and description-free tuned model; swept ranks.",
+        "artifact": "Versioned paper, tables, prompts, and described experiment artifacts.",
+        "verified": "Method, denominators, rank sweep, and result tables are published.",
+        "reported": "Tuned E4B improves fixed-catalog planning while reducing prompt input.",
+        "termination": "Published experiment completed.",
+        "measurements": [
+          {"metric": "main_run_at_f1", "value": 0.635, "unit": "score", "denominator": "30 held-out scenarios", "notes": "Rank 32 Config C."},
+          {"metric": "main_run_judge_overall", "value": 3.6, "unit": "score_1_to_5", "denominator": "30 held-out scenarios", "notes": "Rank 32 Config C."},
+          {"metric": "informed_base_at_f1", "value": 0.47, "unit": "score", "denominator": "30 held-out scenarios", "notes": "Base receives full tool descriptions."},
+          {"metric": "informed_base_judge_overall", "value": 2.88, "unit": "score_1_to_5", "denominator": "30 held-out scenarios", "notes": "Base receives full tool descriptions."},
+          {"metric": "best_rank_sweep_at_f1", "value": 0.65, "unit": "score", "denominator": "separate rank-32 run", "notes": "Preserved separately from main run."},
+          {"metric": "prompt_token_reduction", "value": 94.7, "unit": "percent", "denominator": "approximately 2400 to 128 input tokens", "notes": "Fixed catalog only."},
+          {"metric": "peak_train_memory", "value": 24.1, "unit": "GB", "denominator": "one A100 80GB run", "notes": "Configuration-specific."},
+          {"metric": "train_time", "value": 56, "unit": "minutes", "denominator": "one A100 80GB run", "notes": "Configuration-specific."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-tool-qlora-study", "segment_id": "seg-method-and-scope"},
+        {"source_id": "src-tool-qlora-study", "segment_id": "seg-quality-rank-retention"},
+        {"source_id": "src-tool-qlora-study", "segment_id": "seg-resource-profile"}
+      ],
+      "confounds": ["Teacher-generated data, fixed catalog, small held-out set, LLM judge, and separate main versus sweep runs."],
+      "configuration_gaps": ["No E2B arm, no unseen-tool test, and no independently reproduced adapter artifact."],
+      "transfer_limits": ["Does not establish open-world tool learning, AoA fit, or a universal optimal rank."],
+      "counterevidence_refs": ["obs-specialization-retention-loss"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-05-18T00:00:00Z", "end": "2026-05-18T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-specialization-retention-loss",
+      "statement": "Capability erosion repeats across two independent adaptation methods: E4B tool-use QLoRA lowers a 100-question general probe as rank rises, while naive E4B continued pretraining loses knowledge despite English replay; the exact magnitude remains method- and instrument-bound.",
+      "target_kind": "model_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it", "gemma-4-E4B"],
+        "provider": "google",
+        "product": "specialization-retention",
+        "snapshot": "two-independent-studies-2026",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"methods": ["qlora_sft", "continued_pretraining"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "cross-study recurrence comparison",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "target-task plus orthogonal-retention evaluation",
+        "runbook": "preserve each study's own method and denominator",
+        "harness": "100 MCQs for tool QLoRA; six-task Armenian likelihood suite for CPT",
+        "instrument_revision": "arXiv 2605.17774v2 and 2609.03350v1",
+        "grader": "accuracy and task-specific metrics",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Test whether specialization pressure recurs beyond one method.",
+        "executed": "Compared orthogonal-retention results from QLoRA and full CPT studies.",
+        "artifact": "Two independent versioned papers.",
+        "verified": "Both publish baseline and post-adaptation retention measurements and explicit limitations.",
+        "reported": "Target-task gain can coexist with general-capability loss; rank, learning rate, and data composition mediate the trade-off.",
+        "termination": "Cross-method recurrence classified.",
+        "measurements": [
+          {"metric": "qlora_base_mcq_accuracy", "value": 84, "unit": "percent", "denominator": "100 questions", "notes": "E4B base."},
+          {"metric": "qlora_rank8_mcq_accuracy", "value": 69, "unit": "percent", "denominator": "100 questions", "notes": "82.1% of base performance."},
+          {"metric": "qlora_rank32_mcq_accuracy", "value": 67, "unit": "percent", "denominator": "100 questions", "notes": "79.8% of base performance."},
+          {"metric": "news_cpt_belebele_delta", "value": -21.2, "unit": "percentage_points", "denominator": "E4B News-CPT at learning rate 1e-4 versus base", "notes": "Study-specific."},
+          {"metric": "news_cpt_m_mmlu_hy_delta", "value": -7.1, "unit": "percentage_points", "denominator": "E4B News-CPT at learning rate 1e-4 versus base", "notes": "Study-specific."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-tool-qlora-study", "segment_id": "seg-quality-rank-retention"},
+        {"source_id": "src-armenian-cpt-study", "segment_id": "seg-cpt-mixture"},
+        {"source_id": "src-armenian-cpt-study", "segment_id": "seg-limitations"}
+      ],
+      "confounds": ["Different base/IT checkpoints, methods, languages, datasets, metrics, and evaluation sizes."],
+      "configuration_gaps": ["No shared retention suite across E2B/E4B, LoRA, QLoRA, and full CPT."],
+      "transfer_limits": ["Supports a recurring evaluation requirement, not a portable forgetting percentage or causal ranking of methods."],
+      "counterevidence_refs": ["obs-cpt-controls-recover-capability"],
+      "supersedes": [],
+      "evidence_posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-05-18T00:00:00Z", "end": "2026-09-03T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-cpt-controls-recover-capability",
+      "statement": "In the Armenian CPT study, lowering E4B learning rate and replacing six percent of news with verified bilingual STEM data recovers or reverses much of the measured forgetting, while twenty percent English replay alone does not; an E2B tokenizer-extension ablation is harmful at its two-billion-token budget.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B", "gemma-4-E2B"],
+        "provider": "google",
+        "product": "armenian-language-adaptation",
+        "snapshot": "arxiv-2609.03350v1",
+        "runtime": {"name": "continued-pretraining stack", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"method": "full_continued_pretraining", "e2b_role": "tokenizer_ablation"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "five controlled E4B runs and one E2B tokenizer ablation matrix",
+        "reasoning_effort": null,
+        "context_policy": "sequence-packed 4096 for final E4B run",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "full-weight continued pretraining",
+        "runbook": "10B-token E4B mixture; 69% news, 6% bilingual STEM, 20% English replay, 5% code; learning rate 3e-5 for released run",
+        "harness": "six-task Armenian likelihood suite and E2B bits-per-byte tokenizer ablation",
+        "instrument_revision": "arXiv 2609.03350v1",
+        "grader": "accuracy and bits per byte",
+        "additional_dimensions": {"final_training_hardware": "128 H100 GPUs for approximately 10 hours", "e2b_ablation_budget": "2B tokens"}
+      },
+      "outcome": {
+        "requested": "Test schedule, mixture, replay, and tokenizer interventions for language adaptation.",
+        "executed": "Held trainer, seed, budget, replay, and code streams constant across controlled runs and measured tokenizer variants on E2B.",
+        "artifact": "Versioned paper with reported open corpus, code, models, logs, and tables.",
+        "verified": "Mixture, schedule, baselines, confidence widths, contamination checks, and limitations are reported.",
+        "reported": "Verified task data and gentler scheduling outperform replay-only mitigation in this setup; naive tokenizer extension is budget-sensitive and harmful here.",
+        "termination": "Published study completed; external reproduction not found in this pass.",
+        "measurements": [
+          {"metric": "e4b_base_suite_mean", "value": 0.477, "unit": "accuracy", "denominator": "six-task likelihood suite", "notes": "Unadapted E4B."},
+          {"metric": "e4b_released_stem_cpt_mean", "value": 0.5, "unit": "accuracy", "denominator": "six-task likelihood suite", "notes": "Learning rate 3e-5."},
+          {"metric": "e2b_base_mean_bpb", "value": 0.448, "unit": "bits_per_byte", "denominator": "six Armenian evaluation sets", "notes": "Lower is better."},
+          {"metric": "e2b_stock_cpt_mean_bpb", "value": 0.387, "unit": "bits_per_byte", "denominator": "six Armenian evaluation sets", "notes": "2B-token ablation."},
+          {"metric": "e2b_plus_8k_mean_bpb", "value": 0.628, "unit": "bits_per_byte", "denominator": "six Armenian evaluation sets", "notes": "Mean-initialized vocabulary extension."},
+          {"metric": "e2b_plus_16k_mean_bpb", "value": 0.651, "unit": "bits_per_byte", "denominator": "six Armenian evaluation sets", "notes": "Mean-initialized vocabulary extension."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-armenian-cpt-study", "segment_id": "seg-cpt-mixture"},
+        {"source_id": "src-armenian-cpt-study", "segment_id": "seg-e2b-tokenizer-ablation"},
+        {"source_id": "src-armenian-cpt-study", "segment_id": "seg-limitations"}
+      ],
+      "confounds": ["Fresh single-origin study, single-run columns, Armenian/news concentration, and simultaneous composition and repetition differences in one comparison."],
+      "configuration_gaps": ["No instruction-tuning stage, generation-quality suite, safety evaluation, or E2B final-scale CPT run."],
+      "transfer_limits": ["Does not establish universal mixture percentages, tokenizer policy, or learning rate for other domains."],
+      "counterevidence_refs": ["obs-specialization-retention-loss"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-09-03T00:00:00Z", "end": "2026-09-03T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e2b-adapter-artifact",
+      "statement": "A public E2B reasoning LoRA repository contains an inspectable roughly 12.1-million-parameter adapter and reports a 24GB-XPU training route, but provides no held-out capability or retention evaluation, so it supports artifact existence and packaging rather than claimed quality.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "xbruce22-reasoning-lora",
+        "snapshot": "hub-card-2026-09-04",
+        "runtime": {"name": "PEFT on Intel XPU", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"artifact_type": "lora_adapter", "quality_authority": false}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "community adapter repository and model card",
+        "reasoning_effort": null,
+        "context_policy": "max sequence length 1536",
+        "tools": ["PEFT", "Transformers"],
+        "permissions": [],
+        "prompt": "thinking-formatted instruction examples",
+        "scaffold": "assistant-only-loss SFT",
+        "runbook": "r=8; alpha=8; BF16; no four-bit load; batch 1; gradient accumulation 4; one epoch",
+        "harness": "25,614 training rows",
+        "instrument_revision": "mutable Hub card captured 2026-09-04",
+        "grader": "training loss and author examples only",
+        "additional_dimensions": {"target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]}
+      },
+      "outcome": {
+        "requested": "Confirm that an inspectable E2B adapter artifact exists and identify its evidence boundary.",
+        "executed": "Inspected adapter files, configuration, card, and load/merge examples.",
+        "artifact": "Public adapter repository, approximately 46MB according to Hub file view.",
+        "verified": "Adapter parameter count and configuration are inspectable; reported run metadata is author-supplied.",
+        "reported": "Training took about 5.7 hours on a 24GB Intel XPU and ended at loss 0.795.",
+        "termination": "Artifact inspection completed; no independent rerun performed.",
+        "measurements": [
+          {"metric": "trainable_parameters", "value": 12079104, "unit": "parameters", "denominator": "adapter configuration", "notes": "About 0.236% of the card's 5.1B denominator."},
+          {"metric": "training_rows", "value": 25614, "unit": "rows", "denominator": "author-reported dataset", "notes": "One epoch."},
+          {"metric": "training_time", "value": 5.7, "unit": "hours", "denominator": "author-reported Intel XPU run", "notes": "Not independently reproduced."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-e2b-reasoning-adapter", "segment_id": "seg-adapter-config-and-run"}
+      ],
+      "confounds": ["Single author, mutable card, no held-out or orthogonal evaluation, and self-reported hardware/runtime."],
+      "configuration_gaps": ["Exact base revision, dataset revision, training logs, capability suite, safety suite, and serving receipt are absent."],
+      "transfer_limits": ["Does not establish reasoning improvement or a universal 24GB E2B tuning requirement."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-09-04T19:30:00Z", "end": "2026-09-04T19:30:00Z"}
+    },
+    {
+      "observation_id": "obs-audio-tower-adapter-path",
+      "statement": "A commit-pinned Unsloth E4B notebook combines language attention and MLP targets with named audio modules, showing a framework-specific audio-plus-language PEFT path that is distinct from Google's default LM-only multimodal QLoRA recipes.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "unsloth-e4b-audio-peft",
+        "snapshot": "unsloth-notebooks-cc4742b4",
+        "runtime": {"name": "Unsloth FastModel", "version": "commit cc4742b4d55fd210d4fb55a6aecb3a7a03101b8a", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"trainable_surfaces": ["language_attention", "language_mlp", "named_audio_modules"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "commit-pinned E4B audio notebook",
+        "reasoning_effort": null,
+        "context_policy": "max sequence length 8192",
+        "tools": ["Unsloth", "Transformers 5.5.0"],
+        "permissions": [],
+        "prompt": "audio transcription examples",
+        "scaffold": "FastModel.get_peft_model",
+        "runbook": "four-bit base; r=8; alpha=16; language attention/MLP and audio modules; 60 demonstration steps",
+        "harness": "3,000 Emilia-DE samples on a T4-class notebook",
+        "instrument_revision": "cc4742b4d55fd210d4fb55a6aecb3a7a03101b8a",
+        "grader": "training loss and example inference only",
+        "additional_dimensions": {"vision_layers": false, "audio_modules": ["post", "linear_start", "linear_end", "embedding_projection", "ffw_layer_1", "ffw_layer_2", "output_proj"]}
+      },
+      "outcome": {
+        "requested": "Find a concrete Gemma 4 tower-adaptation path rather than only multimodal-conditioned LM tuning.",
+        "executed": "Inspected exact target selectors and training cells in a commit-pinned notebook.",
+        "artifact": "Public commit-pinned notebook.",
+        "verified": "The notebook explicitly selects audio modules alongside language modules.",
+        "reported": "A 60-step E4B audio demonstration is provided.",
+        "termination": "Implementation inspection completed; quality and portability were not established.",
+        "measurements": [
+          {"metric": "demo_training_steps", "value": 60, "unit": "steps", "denominator": "notebook demonstration", "notes": "Not a held-out benchmark."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-unsloth-e4b-audio", "segment_id": "seg-audio-targets-and-demo"},
+        {"source_id": "src-peft-clippable", "segment_id": "seg-maintainer-selector"}
+      ],
+      "confounds": ["Provider implementation, short demonstration, framework-specific selectors, and no independent evaluation."],
+      "configuration_gaps": ["Held-out ASR quality, text retention, merge/export, real serving, and comparison with LM-only tuning are absent."],
+      "transfer_limits": ["Does not establish a portable generic PEFT path or E4B audio superiority."],
+      "counterevidence_refs": ["obs-multimodal-data-versus-tower-scope"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-09-04T01:08:40Z", "end": "2026-09-04T01:08:40Z"}
+    },
+    {
+      "observation_id": "obs-mlx-roundtrip-failure",
+      "statement": "An E2B shared-KV parameter-set divergence between mlx-lm and mlx-swift-lm produces 140 mismatched keys and breaks fused-checkpoint round trips; the issue's later closure was queue maintenance rather than a demonstrated technical fix.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B"],
+        "provider": "google",
+        "product": "mlx-fused-checkpoint-portability",
+        "snapshot": "mlx-lm-issue-1210",
+        "runtime": {"name": "mlx-lm and mlx-swift-lm", "version": "issue reproduction state", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"shared_kv_layers": 20, "mismatched_keys": 140}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Python/Swift checkpoint load and fuse reproduction",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["mlx_lm.load", "mlx_lm.fuse", "mlx-swift-lm"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "shared-KV tail checkpoint conversion",
+        "runbook": "load community int4 checkpoint or round-trip a fused checkpoint between implementations",
+        "harness": "Gemma 4 E2B Text parameter names",
+        "instrument_revision": "issue opened 2026-04-27; closed 2026-08-21",
+        "grader": "successful structural checkpoint load",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Test whether an apparently fused Gemma 4 checkpoint is structurally portable across two MLX implementations.",
+        "executed": "Compared parameter declarations and reproduced unexpected or missing keys.",
+        "artifact": "Issue reproduction, code references, and workarounds.",
+        "verified": "E2B layer counts and 140-key mismatch derivation are explicit.",
+        "reported": "Round-trip fails without sanitizing, dropping, or restoring keys.",
+        "termination": "Issue closed without a linked technical fix in the captured discussion.",
+        "measurements": [
+          {"metric": "mismatched_checkpoint_keys", "value": 140, "unit": "keys", "denominator": "four tensors across 20 E2B shared-KV layers", "notes": "Structural mismatch."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-mlx-roundtrip", "segment_id": "seg-e2b-key-divergence"},
+        {"source_id": "src-mlx-roundtrip", "segment_id": "seg-closure-without-fix"}
+      ],
+      "confounds": ["Cross-runtime issue report rather than an aoa-models owner rerun."],
+      "configuration_gaps": ["Exact resolved runtime releases and a post-fix regression artifact were not found."],
+      "transfer_limits": ["Does not prove that Safetensors, PEFT, GGUF, or non-MLX routes share the same failure."],
+      "counterevidence_refs": ["obs-adaptation-bundle-contract"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-04-27T00:00:00Z", "end": "2026-08-21T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-mtp-paired-adaptation",
+      "statement": "Because the Gemma 4 E2B/E4B drafter shares target embeddings and consumes target last-layer activations, an adapted target's MTP throughput is a paired-artifact property; NeMo demonstrates joint E4B target/drafter tuning and reports 1.98x on a bounded 20-prompt post-training benchmark.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it", "gemma-4-E4B-it-assistant"],
+        "provider": "google",
+        "product": "joint-mtp-adaptation",
+        "snapshot": "nemo-automodel-d113efbe",
+        "runtime": {"name": "NVIDIA NeMo Automodel plus Transformers assisted generation", "version": "d113efbe95a859c8443f91ede57aca53d2c0557a", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"method": "joint_full_language_model_and_drafter_tuning", "draft_steps": 4}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "joint E4B target and assistant fine-tuning followed by paired speculative decode benchmark",
+        "reasoning_effort": null,
+        "context_policy": "text mix capped at 2048; 20 MT-Bench-style prompts for decode test",
+        "tools": ["NeMo Automodel", "Transformers>=5.8.0.dev", "FSDP2"],
+        "permissions": [],
+        "prompt": "Tulu-3 and Magicoder text mix",
+        "scaffold": "Gemma4WithDrafter composite",
+        "runbook": "K=4; drafter loss weight 0.01; full LM and trainable embeddings; frozen vision/audio; eight processes; activation checkpointing",
+        "harness": "20-prompt greedy-decode benchmark after 500 training steps",
+        "instrument_revision": "discussion plus Automodel commit d113efbe95a859c8443f91ede57aca53d2c0557a",
+        "grader": "aggregate tokens per second and accepted tokens per target step",
+        "additional_dimensions": {"target_verification_preserves_exact_output": true}
+      },
+      "outcome": {
+        "requested": "Determine how Gemma 4 adaptation interacts with its MTP drafter.",
+        "executed": "Co-trained E4B target and assistant and compared greedy decode with and without the drafter.",
+        "artifact": "Public discussion, configs, benchmark script, and reported checkpoint result.",
+        "verified": "Architecture coupling, recipe, benchmark denominator, and aggregate results are published.",
+        "reported": "The tuned pair nearly doubles throughput in the bounded test.",
+        "termination": "Provider experiment completed; no independent reproduction found.",
+        "measurements": [
+          {"metric": "no_mtp_aggregate_throughput", "value": 25.05, "unit": "tokens_per_second", "denominator": "3627 new tokens over 20 prompts", "notes": "Greedy target-only decode."},
+          {"metric": "with_mtp_aggregate_throughput", "value": 49.51, "unit": "tokens_per_second", "denominator": "3655 new tokens over 20 prompts", "notes": "Greedy assisted decode."},
+          {"metric": "mean_accepted_tokens_per_target_step", "value": 2.473, "unit": "tokens", "denominator": "20 prompts", "notes": "K=4 drafter."},
+          {"metric": "wall_clock_speedup", "value": 1.98, "unit": "ratio", "denominator": "with-MTP versus no-MTP aggregate throughput", "notes": "Provider-reported post-joint-tuning result."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-google-mtp", "segment_id": "seg-target-drafter-coupling"},
+        {"source_id": "src-nemo-joint-mtp", "segment_id": "seg-joint-recipe"},
+        {"source_id": "src-nemo-joint-mtp", "segment_id": "seg-20-prompt-result"}
+      ],
+      "confounds": ["Provider implementation, 20 prompts, 500-step checkpoint, full joint tuning, greedy decoding, and no LoRA arm."],
+      "configuration_gaps": ["No E2B result, independent reproduction, domain-shift suite, or LoRA-only target/drafter acceptance measurement."],
+      "transfer_limits": ["Does not imply 1.98x for other hardware, batches, prompts, adapter methods, or untuned drafters."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-06-09T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-no-paired-e2b-e4b-adaptation-benchmark",
+      "statement": "The retained corpus contains meaningful E2B recipes and artifacts and stronger controlled E4B studies, but no same-instrument comparison holding data, revisions, target surfaces, rank, quantization, sequence, hardware, task grading, and retention constant across E2B and E4B.",
+      "target_kind": "unresolved",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B", "gemma-4-E4B"],
+        "provider": "google",
+        "product": "paired-adaptation-comparison",
+        "snapshot": "recon-corpus-2026-09-04",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"comparison_status": "not_found"}
+      },
+      "configuration": {
+        "completeness": "unresolved",
+        "route": "cross-source search and configuration normalization",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "compare candidate E2B and E4B sources by exact method and configuration axes",
+        "harness": null,
+        "instrument_revision": "web corpus captured through 2026-09-04",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Determine whether web evidence selects an E2B or E4B adaptation winner.",
+        "executed": "Compared official recipes, independent studies, artifacts, and runtime reports.",
+        "artifact": "ReconRun source corpus and report.",
+        "verified": "No included source supplies the required paired controls.",
+        "reported": "Evidence is asymmetric and insufficient for a universal E2B/E4B tuning ranking.",
+        "termination": "Gap recorded for owner study rather than filled by cross-source arithmetic.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-hf-vertex-e2b-sft", "segment_id": "seg-freeze-and-train"},
+        {"source_id": "src-e2b-reasoning-adapter", "segment_id": "seg-adapter-config-and-run"},
+        {"source_id": "src-tool-qlora-study", "segment_id": "seg-method-and-scope"},
+        {"source_id": "src-armenian-cpt-study", "segment_id": "seg-cpt-mixture"}
+      ],
+      "confounds": ["Absence is bounded to the searched and retained corpus, not a proof that no such experiment exists anywhere."],
+      "configuration_gaps": ["Every axis required for a same-instrument E2B/E4B adaptation comparison remains jointly unresolved."],
+      "transfer_limits": ["Must not be promoted into a claim that E2B and E4B are equal or incomparable in principle."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "recurring_pressure",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-09-04T15:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "clu-adaptation-bundle-not-file",
+      "label": "Adapter validity is a base-, configuration-, and deployment-bound bundle",
+      "observation_refs": ["obs-adaptation-bundle-contract", "obs-e2b-adapter-artifact", "obs-mlx-roundtrip-failure"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-gemma-guidance", "google-gemma-qlora-recipes", "xbruce22-adapter-artifact", "mlx-cross-runtime-issue"],
+      "supported_scope": "Provider guidance, a real E2B adapter, and a cross-runtime failure independently expose different parts of the exact-base, adapter, processor, merge, export, and load contract.",
+      "transfer_limits": ["The sources do not define one universally portable serialization or runtime."],
+      "unresolved_configuration_gaps": ["No owner acceptance matrix yet spans separate adapter, merged Safetensors, GGUF or MLX export, and the intended serving route."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Represent adaptation bundles explicitly and require staged reload, merge, export, and serving receipts in owner studies."
+    },
+    {
+      "cluster_id": "clu-modality-scope-explicit",
+      "label": "Data modality and trainable tower are separate axes",
+      "observation_refs": ["obs-multimodal-data-versus-tower-scope", "obs-clippable-selector-topology", "obs-audio-tower-adapter-path"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-gemma-qlora-recipes", "huggingface-peft", "unsloth-implementation"],
+      "supported_scope": "Official LM-scoped multimodal recipes, PEFT wrapper guidance, and a specialized audio-target notebook converge on the need to record trainable surfaces by tower and wrapper depth.",
+      "transfer_limits": ["No source provides a controlled frozen-versus-adapted tower quality comparison."],
+      "unresolved_configuration_gaps": ["Vision/audio quality, text retention, merge, and cross-runtime behavior for tower adapters remain unmeasured."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Make tower-scoped fully qualified target selectors mandatory in adaptation study inputs and outputs."
+    },
+    {
+      "cluster_id": "clu-specialization-retention",
+      "label": "Task gain and retained capability must be measured together",
+      "observation_refs": ["obs-e4b-tool-qlora-gain", "obs-specialization-retention-loss", "obs-cpt-controls-recover-capability"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["assetops-qlora-study", "armenian-cpt-study"],
+      "supported_scope": "Independent QLoRA and full-CPT studies both show target-side gains alongside retention pressure and demonstrate that rank, schedule, and data composition change the trade-off.",
+      "transfer_limits": ["Methods, checkpoints, domains, and retention instruments differ, so effect sizes cannot be pooled."],
+      "unresolved_configuration_gaps": ["A common E2B/E4B target, retention, safety, and failure-case suite has not been run."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Reject target-only success criteria; pair every candidate adaptation with orthogonal capability and boundary probes."
+    },
+    {
+      "cluster_id": "clu-stack-revision-bound",
+      "label": "Training and merge claims require exact framework fix state",
+      "observation_refs": ["obs-clippable-selector-topology", "obs-revision-sensitive-training-stack", "obs-mlx-roundtrip-failure"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["huggingface-peft", "huggingface-transformers", "mlx-cross-runtime-issue"],
+      "supported_scope": "Separate upstream defects affected module injection, kwargs-only saved modules, uncached shared-KV training, and checkpoint round trips during the Gemma 4 integration window.",
+      "transfer_limits": ["Issue history does not prove current correctness outside the exact fixed paths."],
+      "unresolved_configuration_gaps": ["A release-pinned end-to-end matrix covering current Transformers, PEFT, Unsloth, MLX, and serving runtimes is absent."],
+      "posture": "cross_modal_pattern",
+      "disposition": "watch",
+      "next_action": "Capture exact dependency locks and known-fix references in every adaptation artifact; refresh mutable issues by segment."
+    },
+    {
+      "cluster_id": "clu-mtp-paired-realization",
+      "label": "MTP performance after adaptation belongs to the target/drafter pair",
+      "observation_refs": ["obs-mtp-paired-adaptation"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-gemma-guidance", "nvidia-nemo-automodel"],
+      "supported_scope": "Google documents architectural coupling and NVIDIA supplies a concrete joint E4B training and throughput route, supporting paired versioning and evaluation when MTP is required.",
+      "transfer_limits": ["The only retained post-tuning result is one provider's full-joint E4B experiment over 20 prompts."],
+      "unresolved_configuration_gaps": ["LoRA-specific, E2B, batch, hardware, and domain-shift acceptance measurements are absent."],
+      "posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "next_action": "Measure target/drafter acceptance before and after the intended adaptation instead of inheriting base-checkpoint speed claims."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "ten-multimodal-input-versus-tower-training",
+      "label": "Multimodal dataset versus trainable modality tower",
+      "side_a_refs": ["obs-multimodal-data-versus-tower-scope"],
+      "side_b_refs": ["obs-audio-tower-adapter-path", "obs-clippable-selector-topology"],
+      "analysis": "The sources are compatible after splitting input modality from parameter scope: official image-conditioned QLoRA can train only the LM, while specialized selectors can adapt wrapped audio or vision components.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "When does tower adaptation improve held-out modality behavior enough to justify its portability and retention risk?"
+    },
+    {
+      "tension_id": "ten-adapter-portable-versus-roundtrip-failure",
+      "label": "Documented merge path versus runtime-specific checkpoint divergence",
+      "side_a_refs": ["obs-adaptation-bundle-contract", "obs-e2b-adapter-artifact"],
+      "side_b_refs": ["obs-mlx-roundtrip-failure"],
+      "analysis": "Google and PEFT describe valid base-plus-adapter and merge paths within their stack; MLX shows that a different conversion and runtime pair can still disagree structurally. Portability is therefore a separate acceptance axis.",
+      "resolution": "resolved_by_scope",
+      "remaining_question": "Which exact export and serving routes are required by the owner realization?"
+    },
+    {
+      "tension_id": "ten-specialization-gain-versus-retention",
+      "label": "Target-task gain versus orthogonal capability loss",
+      "side_a_refs": ["obs-e4b-tool-qlora-gain", "obs-cpt-controls-recover-capability"],
+      "side_b_refs": ["obs-specialization-retention-loss"],
+      "analysis": "The tension is real rather than contradictory: the same adaptation can improve a target distribution while degrading other capabilities, and controls move both sides differently.",
+      "resolution": "unresolved",
+      "remaining_question": "Which target and retention endpoints define acceptable AoA utility for each adaptation role?"
+    },
+    {
+      "tension_id": "ten-e2b-cost-versus-e4b-evidence-depth",
+      "label": "E2B operational accessibility versus E4B controlled evidence depth",
+      "side_a_refs": ["obs-e2b-language-subtree-sft", "obs-e2b-adapter-artifact"],
+      "side_b_refs": ["obs-e4b-tool-qlora-gain", "obs-cpt-controls-recover-capability", "obs-mtp-paired-adaptation"],
+      "analysis": "The corpus is asymmetric: E2B has accessible recipes and an artifact, while E4B has stronger controlled outcome studies. Cross-source resource or quality ranking would mix methods and instruments.",
+      "resolution": "unresolved",
+      "remaining_question": "How do E2B and E4B compare under one fixed stack, dataset, token budget, target surface, task suite, and deployment path?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "mp-adaptation-manifest",
+      "trigger_refs": ["obs-adaptation-bundle-contract", "obs-multimodal-data-versus-tower-scope", "obs-clippable-selector-topology", "obs-revision-sensitive-training-stack"],
+      "pressure": "A label such as LoRA or QLoRA hides the base revision, quantization, tower scope, wrapper depth, chat template, loss mask, special-token behavior, and library fix state that determine whether two runs are comparable.",
+      "proposed_response": "Require an adaptation manifest that records exact base and processor revisions, method, quantization, fully qualified target selectors by tower, modules_to_save, weight tying, template/thinking/loss-mask contract, sequence and optimizer controls, and dependency lock.",
+      "status": "proposed"
+    },
+    {
+      "pressure_id": "mp-adaptation-acceptance-ladder",
+      "trigger_refs": ["obs-e2b-adapter-artifact", "obs-mlx-roundtrip-failure", "obs-mtp-paired-adaptation"],
+      "pressure": "Training completion, task quality, retained capability, adapter reload, merge, export, real serving, and MTP throughput are different claims but web reports frequently collapse them.",
+      "proposed_response": "Preserve an ordered but non-substitutive acceptance ladder: numeric training health, held-out target behavior, orthogonal and safety probes, reload, merge/unmerge, export, target-runtime serving, and optional target/drafter acceptance.",
+      "status": "proposed"
+    },
+    {
+      "pressure_id": "mp-target-and-retention-evaluation",
+      "trigger_refs": ["obs-e4b-tool-qlora-gain", "obs-specialization-retention-loss", "obs-cpt-controls-recover-capability"],
+      "pressure": "Independent QLoRA and CPT studies show that a successful specialization result can conceal general-capability erosion and that adapter rank, learning rate, and mixture alter the frontier.",
+      "proposed_response": "Do not admit an adaptation study from training loss or target metrics alone; require a role-relevant target suite, orthogonal retention suite, safety/boundary cases, failure cases, and explicit checkpoint-selection rule.",
+      "status": "proposed"
+    },
+    {
+      "pressure_id": "mp-paired-e2b-e4b-study",
+      "trigger_refs": ["obs-no-paired-e2b-e4b-adaptation-benchmark"],
+      "pressure": "The web corpus cannot separate model-size effects from method, data, hardware, runtime, rank, and evaluation differences across E2B and E4B adaptation reports.",
+      "proposed_response": "Run a bounded owner study holding stack, data, token budget, target surface, quantization, rank, sequence, optimizer, checkpoint rule, task graders, retention suite, and deployment acceptance constant across E2B and E4B.",
+      "status": "proposed"
+    }
+  ],
+  "revisit_triggers": [
+    "A same-instrument E2B/E4B adaptation benchmark with retained artifacts is published or run by the owner.",
+    "A released PEFT regression matrix establishes wrapped vision/audio tower train, merge, and export behavior.",
+    "An independent Gemma 4 multimodal adapter study reports target quality, text and modality retention, and portable serving.",
+    "The MLX Python/Swift fused-checkpoint round trip is resolved by a linked patch and reproducible test.",
+    "A LoRA-specific study measures Gemma 4 target/drafter acceptance before and after adaptation.",
+    "A long-context Gemma 4 adaptation run approaches 128K with both training and serving evidence.",
+    "Any mutable official recipe, upstream issue, or commit-pinned notebook changes its dependency, target-surface, or closure state."
+  ],
+  "created_at": "2026-09-04T21:00:00Z",
+  "updated_at": "2026-09-04T21:00:00Z"
+}

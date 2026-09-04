@@ -70,6 +70,15 @@ one provider-shaped fixture:
   completed, and semantically usable context. Its paired
   [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-corroboration.json) remains
   pre-canon.
+- [`Gemma 4 E2B/E4B fine-tuning and adapters`](reports/gemma-4-e2b-e4b-finetuning-adapters-2026-09-04.md)
+  separates language-subtree SFT, text and multimodal-conditioned QLoRA,
+  tower-targeted PEFT, full continued pretraining, and joint target/drafter
+  tuning. It retains the recurring adaptation-bundle, modality-scope,
+  specialization-retention, revision-sensitive, merge/export/serve, and MTP
+  pressures without ranking E2B and E4B across incompatible instruments. Its
+  paired
+  [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json)
+  remains pre-canon and feeds the generated per-source dossiers.
 
 The Gemma 4 run also retains nine immutable, locator-bounded capture snapshots
 for release-history segments, memory-table/caveat segments, and exact current
