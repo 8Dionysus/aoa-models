@@ -15,9 +15,9 @@
     "attention_dossiers": 11,
     "capture_snapshots": 9,
     "change_receipts": 0,
-    "dossiers": 124,
-    "recon_runs": 8,
-    "source_appearances": 140,
+    "dossiers": 144,
+    "recon_runs": 9,
+    "source_appearances": 160,
     "supersession_proposals": 1
   },
   "dossiers": [
@@ -1469,6 +1469,72 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T19:20:00Z",
+          "mutable_surface": false,
+          "observation_refs": [
+            "obs-e4b-dpo-domain-and-scorer-pareto"
+          ],
+          "origin_group": "rlearner-hybrid-dpo-study",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The paper PDF and landing page were inspected through the web research tool without retaining normalized bytes.",
+              "locator": "E4B adapter topology, SFT and DPO recipe, domain NLI and ACR results, preference construction, and judge-bias analysis.",
+              "segment_id": "seg-e4b-dpo-domain-results-and-judges"
+            }
+          ],
+          "source_capture_digest": "sha256:90da6ab531c0564bf2d2e10057e41bd257179dda99a08eda94e747b06488c702",
+          "source_id": "src-e4b-hybrid-dpo"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://arxiv.org/abs/2605.04539v4",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:20:00Z",
+        "posture": "immutable_reference",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:6f37f25af5fcd296922a",
+      "first_recorded_at": "2026-09-04T19:20:00Z",
+      "latest_recorded_at": "2026-09-04T19:20:00Z",
+      "mutable_surface_states": [
+        false
+      ],
+      "origin_groups": [
+        "rlearner-hybrid-dpo-study"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Bao et al."
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "independent_preference_study"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "RLearner-LLM: Balancing Logical Grounding and Fluency in Large Language Models via Hybrid Direct Preference Optimization"
+      ],
+      "uri_aliases": [
+        "https://arxiv.org/abs/2605.04539v4"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-08-29T00:00:00Z",
           "mutable_surface": false,
           "observation_refs": [
@@ -2088,6 +2154,72 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T19:10:00Z",
+          "mutable_surface": false,
+          "observation_refs": [
+            "obs-e4b-data-capacity-lr-coupling"
+          ],
+          "origin_group": "document-internalization-study",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned HTML was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Abstract, experiment arc, rank-by-corpus results, data curation, RAG baselines, configuration, and limitations.",
+              "segment_id": "seg-data-capacity-lr-and-baselines"
+            }
+          ],
+          "source_capture_digest": "sha256:2d30fceb37dd9cbf91179fcc25a15867cc07da34bbb37e968b8910a1eb0dcc76",
+          "source_id": "src-e4b-document-lora"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://arxiv.org/html/2607.21861v1",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:10:00Z",
+        "posture": "immutable_reference",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:4204748ad91df044fe38",
+      "first_recorded_at": "2026-09-04T19:10:00Z",
+      "latest_recorded_at": "2026-09-04T19:10:00Z",
+      "mutable_surface_states": [
+        false
+      ],
+      "origin_groups": [
+        "document-internalization-study"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Joan Figuerola Hurtado"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "independent_ablation_study"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Data Quality over Capacity: Internalizing Documents into LoRA Adapters for Closed-Book QA"
+      ],
+      "uri_aliases": [
+        "https://arxiv.org/html/2607.21861v1"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-08-29T00:00:00Z",
           "mutable_surface": false,
           "observation_refs": [
@@ -2162,6 +2294,73 @@
       ],
       "uri_aliases": [
         "https://arxiv.org/html/2608.21601v1"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T19:00:00Z",
+          "mutable_surface": false,
+          "observation_refs": [
+            "obs-e2b-scorer-mechanism-split",
+            "obs-e2b-target-topology-repair"
+          ],
+          "origin_group": "bangladesh-legal-qa-study",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned HTML was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Methods, Gemma 4 E2B training appendix, supplied-law controls, scorer comparison, seed table, and implementation-repair narrative.",
+              "segment_id": "seg-e2b-controls-results-and-repair"
+            }
+          ],
+          "source_capture_digest": "sha256:f4c75b9f88cc0256f53408d16c024f777234e886715991823fbba250b4ceed30",
+          "source_id": "src-e2b-legal-study"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://arxiv.org/html/2608.30327v1",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:00:00Z",
+        "posture": "immutable_reference",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:9644b151449b3be456ce",
+      "first_recorded_at": "2026-09-04T19:00:00Z",
+      "latest_recorded_at": "2026-09-04T19:00:00Z",
+      "mutable_surface_states": [
+        false
+      ],
+      "origin_groups": [
+        "bangladesh-legal-qa-study"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Mahadi et al."
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "independent_controlled_study"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Do Small Models Use the Law You Give Them? Measuring Context Use on a Bilingual Bangladesh Legal Benchmark"
+      ],
+      "uri_aliases": [
+        "https://arxiv.org/html/2608.30327v1"
       ]
     },
     {
@@ -3436,6 +3635,73 @@
       ],
       "uri_aliases": [
         "https://github.com/NVIDIA-NeMo/Automodel/discussions/2481"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T19:30:00Z",
+          "mutable_surface": false,
+          "observation_refs": [
+            "obs-e2b-grpo-judge-and-absolute-bar",
+            "obs-e2b-grpo-reward-regime"
+          ],
+          "origin_group": "e2b-nla-grpo-experiment",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The commit-pinned repository was inspected without retaining normalized segment bytes.",
+              "locator": "README result tables and experiment notes for sparse-reward failures, dense reward, rank metrics, judges, absolute usability, seeds, and causal tracing.",
+              "segment_id": "seg-reward-failures-dense-results-and-acceptance"
+            }
+          ],
+          "source_capture_digest": "sha256:18e928ae789640ebba37f74d48bcc3ad6538eb0f22925007dbc08ce4e36c7957",
+          "source_id": "src-e2b-nla-repo"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/SolshineCode/nla-gemma-4-e2b/tree/d9c5c761786bf933d761ee02bb928b677acfe02c",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:30:00Z",
+        "posture": "immutable_reference",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:138e77b09689b6db05b3",
+      "first_recorded_at": "2026-09-04T19:30:00Z",
+      "latest_recorded_at": "2026-09-04T19:30:00Z",
+      "mutable_surface_states": [
+        false
+      ],
+      "origin_groups": [
+        "e2b-nla-grpo-experiment"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "SolshineCode"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "versioned_experiment_repository"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "nla-gemma-4-e2b"
+      ],
+      "uri_aliases": [
+        "https://github.com/SolshineCode/nla-gemma-4-e2b/tree/d9c5c761786bf933d761ee02bb928b677acfe02c"
       ]
     },
     {
@@ -6595,6 +6861,600 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T19:40:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e2b-grpo-route-currentness"
+          ],
+          "origin_group": "unsloth-e2b-grpo-recipe",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable notebook was inspected through GitHub without retaining notebook bytes.",
+              "locator": "E2B loader, r32 LoRA targets, 4096 sequence, GRPO rewards, 60-step trainer, adapter save, and nonzero-tensor assertion.",
+              "segment_id": "seg-recipe-and-assertion-boundary"
+            }
+          ],
+          "source_capture_digest": "sha256:d0dec146121ef997c4f226b0696b6b41bba06a6e8621974281098e4307b93d12",
+          "source_id": "src-unsloth-e2b-grpo-notebook"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/unslothai/notebooks/blob/main/nb/Gemma4_(E2B)_Reinforcement_Learning_2048_Game.ipynb",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:40:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:74892817fc0183214694",
+      "first_recorded_at": "2026-09-04T19:40:00Z",
+      "latest_recorded_at": "2026-09-04T19:40:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "unsloth-e2b-grpo-recipe"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Unsloth"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "framework_operational_recipe"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma4 E2B Reinforcement Learning 2048 Game notebook"
+      ],
+      "uri_aliases": [
+        "https://github.com/unslothai/notebooks/blob/main/nb/Gemma4_(E2B)_Reinforcement_Learning_2048_Game.ipynb"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:05:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-audio-silent-path"
+          ],
+          "origin_group": "unsloth-audio-silent-path",
+          "propagation_role": "dependent",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable pull-request surface was inspected without retaining normalized bytes.",
+              "locator": "Merged change preserving audio inputs and expanding modality tokens through the collator path.",
+              "segment_id": "seg-merged-collator-fix"
+            }
+          ],
+          "source_capture_digest": "sha256:7c8124d8fcda0dfea4d678840fb703b1ed0cf943e21cda6448309476185f2c7c",
+          "source_id": "src-unsloth-audio-fix"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/unslothai/unsloth-zoo/pull/723",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:05:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:ef7d7ff8ce1f37fea794",
+      "first_recorded_at": "2026-09-04T20:05:00Z",
+      "latest_recorded_at": "2026-09-04T20:05:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "unsloth-audio-silent-path"
+      ],
+      "propagation_roles": [
+        "dependent"
+      ],
+      "publishers": [
+        "Unsloth contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "upstream_fix"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Fix Gemma 4 audio training through the multimodal collator"
+      ],
+      "uri_aliases": [
+        "https://github.com/unslothai/unsloth-zoo/pull/723"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T19:50:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e2b-grpo-route-currentness"
+          ],
+          "origin_group": "unsloth-e2b-logits-defect",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes.",
+              "locator": "Gemma 4 text-logits failure, maintainer support statement, and merged unsloth-zoo change.",
+              "segment_id": "seg-logits-defect-and-merged-fix"
+            }
+          ],
+          "source_capture_digest": "sha256:0653546cd9988a31b761d5e7ff8c1481bb253e7cbca2f18a73c3fe1e20376c8b",
+          "source_id": "src-unsloth-e2b-logits-issue"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/unslothai/unsloth/issues/5121",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:50:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:7c319f8a2c5bc8300256",
+      "first_recorded_at": "2026-09-04T19:50:00Z",
+      "latest_recorded_at": "2026-09-04T19:50:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "unsloth-e2b-logits-defect"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Unsloth contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "primary_framework_issue"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 GRPO text logits support"
+      ],
+      "uri_aliases": [
+        "https://github.com/unslothai/unsloth/issues/5121"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:00:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-audio-silent-path"
+          ],
+          "origin_group": "unsloth-audio-silent-path",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes.",
+              "locator": "Environment, missing input_features, unexpanded audio token, absent tower forward, fix references, and AMD trace.",
+              "segment_id": "seg-silent-path-reproducer-and-verification"
+            }
+          ],
+          "source_capture_digest": "sha256:c1a3f12279238fea0d0ca1dc701fb5e28a91bc343fa24d88785389520a51bd97",
+          "source_id": "src-unsloth-audio-issue"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/unslothai/unsloth/issues/6004",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:00:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:2d23124ef2ef56c853a9",
+      "first_recorded_at": "2026-09-04T20:00:00Z",
+      "latest_recorded_at": "2026-09-04T20:00:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "unsloth-audio-silent-path"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Unsloth contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "primary_framework_issue"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 audio collator silently drops input features"
+      ],
+      "uri_aliases": [
+        "https://github.com/unslothai/unsloth/issues/6004"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T19:45:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e2b-grpo-route-currentness"
+          ],
+          "origin_group": "unsloth-e2b-loader-defect",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes.",
+              "locator": "T4 environment, pre-trainer loader failure, one-step workaround, and link to merged safe-proxy fix.",
+              "segment_id": "seg-failure-workaround-and-fix-state"
+            }
+          ],
+          "source_capture_digest": "sha256:34973cba7c1a0a0268d812f5ddd6e0e1d5147eb784d6d63377cc33a1e1232845",
+          "source_id": "src-unsloth-e2b-loader-issue"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/unslothai/unsloth/issues/6089",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:45:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:5ce10899ab310357d248",
+      "first_recorded_at": "2026-09-04T19:45:00Z",
+      "latest_recorded_at": "2026-09-04T19:45:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "unsloth-e2b-loader-defect"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Unsloth contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "primary_framework_issue"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 E2B official GRPO notebook loader failure on T4"
+      ],
+      "uri_aliases": [
+        "https://github.com/unslothai/unsloth/issues/6089"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:20:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-vllm-adapter-tower-policy"
+          ],
+          "origin_group": "vllm-gemma4-tower-policy",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes.",
+              "locator": "E2B adapter_config namespace, unsupported vision tower target names, and runtime rejection.",
+              "segment_id": "seg-e2b-vision-target-rejection"
+            }
+          ],
+          "source_capture_digest": "sha256:ff0730106baaafd8368fc6b29419c70d3e35370b1c805a54c888d32d88ee85fb",
+          "source_id": "src-vllm-gemma4-tower-issue"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/vllm-project/vllm/issues/41702",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:20:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:4d2f1582a4f5b92da813",
+      "first_recorded_at": "2026-09-04T20:20:00Z",
+      "latest_recorded_at": "2026-09-04T20:20:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "vllm-gemma4-tower-policy"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "vLLM contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "primary_runtime_issue"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 E2B broad adapter target names rejected by vLLM"
+      ],
+      "uri_aliases": [
+        "https://github.com/vllm-project/vllm/issues/41702"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:10:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-vllm-adapter-semantic-noop"
+          ],
+          "origin_group": "vllm-gemma4-lora-mapping",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes.",
+              "locator": "Issue body and later dense/MoE reports showing load success, base-identical output, cherry-pick results, and remaining mapping gaps.",
+              "segment_id": "seg-noop-reproducers-and-current-state"
+            }
+          ],
+          "source_capture_digest": "sha256:46f79bb10134888427fef8854208297c9a4fa9abc6493b9de84f8e924e8f1c6c",
+          "source_id": "src-vllm-gemma4-lora-noop"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/vllm-project/vllm/issues/41754",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:10:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:c7d58529ded7b892270f",
+      "first_recorded_at": "2026-09-04T20:10:00Z",
+      "latest_recorded_at": "2026-09-04T20:10:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "vllm-gemma4-lora-mapping"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "vLLM contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "primary_runtime_issue"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 Unsloth LoRA adapters ignored during vLLM inference"
+      ],
+      "uri_aliases": [
+        "https://github.com/vllm-project/vllm/issues/41754"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:15:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-vllm-adapter-semantic-noop"
+          ],
+          "origin_group": "vllm-gemma4-lora-mapping",
+          "propagation_role": "dependent",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable pull-request surface was inspected without retaining normalized bytes.",
+              "locator": "Open pull request, mapping changes, review state, and user reports after cherry-pick.",
+              "segment_id": "seg-mapping-change-and-cherry-pick-results"
+            }
+          ],
+          "source_capture_digest": "sha256:282a862978c4c565cd5bb00b7f6c09a57eb582b27af51373fc6fd0b36121e124",
+          "source_id": "src-vllm-gemma4-lora-fix"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/vllm-project/vllm/pull/39816",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:15:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:347cc2fb8d520c2976fe",
+      "first_recorded_at": "2026-09-04T20:15:00Z",
+      "latest_recorded_at": "2026-09-04T20:15:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "vllm-gemma4-lora-mapping"
+      ],
+      "propagation_roles": [
+        "dependent"
+      ],
+      "publishers": [
+        "vLLM contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "candidate_runtime_fix"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "vLLM Gemma 4 LoRA weight mapping fix"
+      ],
+      "uri_aliases": [
+        "https://github.com/vllm-project/vllm/pull/39816"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:25:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-vllm-adapter-tower-policy"
+          ],
+          "origin_group": "vllm-gemma4-tower-policy",
+          "propagation_role": "dependent",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable pull-request surface was inspected without retaining normalized bytes.",
+              "locator": "Merged vision-tower and connector LoRA support plus documented limitations.",
+              "segment_id": "seg-merged-tower-support"
+            }
+          ],
+          "source_capture_digest": "sha256:b75311e86c2653528787c03133c58f308d7431bb59e8160e1844267f073d79fa",
+          "source_id": "src-vllm-vision-lora-fix"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/vllm-project/vllm/pull/42662",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:25:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:1bf03a1cbf0d7adacd51",
+      "first_recorded_at": "2026-09-04T20:25:00Z",
+      "latest_recorded_at": "2026-09-04T20:25:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "vllm-gemma4-tower-policy"
+      ],
+      "propagation_roles": [
+        "dependent"
+      ],
+      "publishers": [
+        "vLLM contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "upstream_runtime_fix"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "vLLM vision tower LoRA support"
+      ],
+      "uri_aliases": [
+        "https://github.com/vllm-project/vllm/pull/42662"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-08-30T07:20:00Z",
           "mutable_surface": true,
           "observation_refs": [
@@ -6656,6 +7516,270 @@
       ],
       "uri_aliases": [
         "https://help.openai.com/en/articles/6825453"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:55:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e4b-adapted-mtp-pair"
+          ],
+          "origin_group": "e4b-adapted-mtp-runtime",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes.",
+              "locator": "K0-K5 vLLM benchmark, acceptance counters, two-run prompt protocol, streaming counter defect, corrected results, patch requirements, and degenerate-output controls.",
+              "segment_id": "seg-paired-mtp-results-and-counter-fix"
+            }
+          ],
+          "source_capture_digest": "sha256:113a73c6dfb11cdf84abe5726aefa8a0c8c0f602d3277a2c86a97920fc057d06",
+          "source_id": "src-e4b-mtp-derivative"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/Adolphsson/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-MTP-NVFP4",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:55:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:6cbe8abed96efe671a61",
+      "first_recorded_at": "2026-09-04T20:55:00Z",
+      "latest_recorded_at": "2026-09-04T20:55:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "e4b-adapted-mtp-runtime"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Adolphsson"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "community_paired_runtime_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 E4B fine-tuned derivative with MTP NVFP4 measurements"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/Adolphsson/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-MTP-NVFP4"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:50:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-adapted-long-context-unverified"
+          ],
+          "origin_group": "e4b-long-context-weak-signal",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes.",
+              "locator": "2048-token training configuration, large-context serve guidance, and explicit statement that long reasoning was not formally evaluated.",
+              "segment_id": "seg-short-training-and-unmeasured-long-context"
+            }
+          ],
+          "source_capture_digest": "sha256:3d934c2a721c7fb88daf74efea311034a951bd92e322beb5359cbd030a484d40",
+          "source_id": "src-e4b-long-context-artifact"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/Dhiaul/Gemma-4-E4B-GLM5.1-distill",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:50:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:fb2c866fa930d8617373",
+      "first_recorded_at": "2026-09-04T20:50:00Z",
+      "latest_recorded_at": "2026-09-04T20:50:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "e4b-long-context-weak-signal"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Dhiaul"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "weak_long_context_signal"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma-4-E4B-GLM5.1-distill"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/Dhiaul/Gemma-4-E4B-GLM5.1-distill"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T19:35:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e2b-grpo-reward-regime"
+          ],
+          "origin_group": "e2b-nla-grpo-experiment",
+          "propagation_role": "dependent",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Artifact metadata was inspected without retaining repository bytes.",
+              "locator": "Model card and retained adapter files for the dense1000 checkpoint.",
+              "segment_id": "seg-artifact-identity"
+            }
+          ],
+          "source_capture_digest": "sha256:c02ad165d7ab4463437215ffb761d9dc0cd2d12b158359ef8692c062420e4764",
+          "source_id": "src-e2b-nla-dense1000"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/Solshine/gemma-4-e2b-nla-L23-av-grpo-dense1000",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:35:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:1e06e47d4f65653aa055",
+      "first_recorded_at": "2026-09-04T19:35:00Z",
+      "latest_recorded_at": "2026-09-04T19:35:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "e2b-nla-grpo-experiment"
+      ],
+      "propagation_roles": [
+        "dependent"
+      ],
+      "publishers": [
+        "Solshine"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "adapter_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "gemma-4-e2b-nla-L23-av-grpo-dense1000"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/Solshine/gemma-4-e2b-nla-L23-av-grpo-dense1000"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:30:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e4b-ties-composition-retention"
+          ],
+          "origin_group": "e4b-masked-ties-merge",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes.",
+              "locator": "Three r64 component recipes, gradient masks, PEFT TIES density and weights, component IFEval, merged IFEval, style and dialogue probes.",
+              "segment_id": "seg-components-merge-and-evaluation"
+            }
+          ],
+          "source_capture_digest": "sha256:7acbf91f8085efa5bbefc9d2895c624d78496c0ebe8ad293c896259230db4450",
+          "source_id": "src-e4b-ties-merge"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/ToastyPigeon/Gemma4-E4B-TIES-3mask-r64",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:30:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:6c59b545ddff157cfccf",
+      "first_recorded_at": "2026-09-04T20:30:00Z",
+      "latest_recorded_at": "2026-09-04T20:30:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "e4b-masked-ties-merge"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "ToastyPigeon"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "community_composition_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma4 E4B TIES merge of three instruct-subspace-masked adapters"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/ToastyPigeon/Gemma4-E4B-TIES-3mask-r64"
       ]
     },
     {
@@ -6984,6 +8108,138 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T20:40:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e2b-vision-language-control"
+          ],
+          "origin_group": "e2b-oceanguard-experiment",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes.",
+              "locator": "Vision-plus-language LoRA recipe, held-out n=200 mAP, language-only baseline, class results, JSON validity, GGUF and pending LiteRT notes.",
+              "segment_id": "seg-vision-language-baselines-and-format"
+            }
+          ],
+          "source_capture_digest": "sha256:fa40e179d110d059cab4805beab75d5261b7659ee61efcd78aeba0b3c89d7100",
+          "source_id": "src-e2b-oceanguard"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/asferrer/gemma-4-E2B-it-oceanguard-marine-debris",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:40:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:9708be558566c94ca9d2",
+      "first_recorded_at": "2026-09-04T20:40:00Z",
+      "latest_recorded_at": "2026-09-04T20:40:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "e2b-oceanguard-experiment"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "asferrer"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "community_multimodal_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 E2B OceanGuard marine-debris adapter"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/asferrer/gemma-4-E2B-it-oceanguard-marine-debris"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:35:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e4b-audio-dora-pareto"
+          ],
+          "origin_group": "e4b-audio-dora-experiment",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes.",
+              "locator": "DoRA topology, 91k audio QA, hardware and steps, MMAU test-mini totals and subcategories, OOM stopping, and worse encoder-pretraining route.",
+              "segment_id": "seg-recipe-mmaau-and-negative-pretraining"
+            }
+          ],
+          "source_capture_digest": "sha256:2e20bc15b96cb6e3c6bab5987ab4e47671f5ca8adfa7d9196b0bc2ae58a331cd",
+          "source_id": "src-e4b-audio-dora"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/bnovikov/gemma-4-e4b-audio-v3",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:35:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:0e5856ac73019018e72d",
+      "first_recorded_at": "2026-09-04T20:35:00Z",
+      "latest_recorded_at": "2026-09-04T20:35:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "e4b-audio-dora-experiment"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "bnovikov"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "community_multimodal_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "gemma-4-e4b-audio-v3"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/bnovikov/gemma-4-e4b-audio-v3"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-09-04T18:20:00Z",
           "mutable_surface": true,
           "observation_refs": [
@@ -7051,6 +8307,72 @@
       ],
       "uri_aliases": [
         "https://huggingface.co/docs/google-cloud/examples/vertex-ai-notebooks-fine-tune-gemma-4"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:45:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e4b-wallet-loss-and-strength"
+          ],
+          "origin_group": "e4b-wallet-toolcall-experiment",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes.",
+              "locator": "Measured artifact digest, 1000-case exact-match table, training split, epoch ablation, validation-loss reversal, 0.75 merge strength, and development-selection boundary.",
+              "segment_id": "seg-heldout-loss-reversal-and-merge-strength"
+            }
+          ],
+          "source_capture_digest": "sha256:1e6d9fe8fe7faac34e59df45c47e4220a0236ad146803822deeb92bc17867c20",
+          "source_id": "src-e4b-wallet"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/ef-dai-team/gemma-4-E4B-wallet-ft-v5",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:45:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:5c7656ca74d394d21492",
+      "first_recorded_at": "2026-09-04T20:45:00Z",
+      "latest_recorded_at": "2026-09-04T20:45:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "e4b-wallet-toolcall-experiment"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Ethereum Foundation dAI team"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "reproducible_specialization_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "gemma-4-E4B-wallet-ft-v5"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/ef-dai-team/gemma-4-E4B-wallet-ft-v5"
       ]
     },
     {
@@ -9357,7 +10679,7 @@
       ]
     }
   ],
-  "generated_at": "2026-09-04T21:00:00Z",
+  "generated_at": "2026-09-04T22:30:00Z",
   "generated_from": [
     {
       "content_digest": "sha256:24647cafefa2c852b7129e165b1164b007d6ee6e9cc17d28d0a8c74b26bfa641",
@@ -9382,6 +10704,12 @@
       "kind": "ReconRun",
       "record_id": "recon-run:gemma-4/2026-08-30-e2b-e4b-operating-points",
       "ref": "research-intake/recon-runs/gemma-4-2026-08-30-e2b-e4b-operating-points.json"
+    },
+    {
+      "content_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b",
+      "kind": "ReconRun",
+      "record_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+      "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json"
     },
     {
       "content_digest": "sha256:4568f319edeb0d17be0f06ddc8fa0bb7320f1c59b32355a26371019bf391540d",
@@ -9478,7 +10806,7 @@
       "preserve path case, trailing slash, and query string"
     ]
   },
-  "input_fingerprint": "sha256:672870e0dcdb4ede0f65c5e4d08be74117d63c50e2bc6c981e0df6e9a29f8e1c",
+  "input_fingerprint": "sha256:5f35dd853f5f727df327816839f1f32386607286f3bddb0db52e4458f3a0c01b",
   "kind": "ResearchSourceDossierCatalog",
   "schema_version": "aoa_model_research_source_dossier_catalog_v1"
 }

@@ -47,6 +47,7 @@ ReconRun
   ├─ ObservationCluster[]
   ├─ tension[]
   ├─ method_pressure[]
+  ├─ search_probe[] (optional coverage and negative-search ledger)
   └─ lineage + revisit triggers
 ```
 
@@ -54,6 +55,15 @@ Local source, observation, cluster, tension, and pressure IDs are unique inside
 the packet. A cross-run supersession uses a qualified run plus observation ref.
 Old packets remain readable; a newer observation links to history instead of
 rewriting it.
+
+`search_probes` make the search itself inspectable without imposing a source
+quota. A probe records one question, query variants, source roles sought,
+capture time, retained source and observation refs, limitations, and the next
+action. Its result distinguishes qualified or mixed evidence, weak signals,
+bounded failure to find a qualified source, access limits, and deliberate
+deferral. `no_qualified_source_found` is a statement about the recorded search
+scope and time, never proof that evidence does not exist. Older packets do not
+need probes.
 
 Mechanical automation uses three separate flat routes:
 
@@ -153,7 +163,9 @@ Record:
   records an evidence-backed deferral.
 
 There is no required source count. Stop when the supported scope, unknowns,
-countersearch, and next disposition are reviewable.
+countersearch, and next disposition are reviewable. For a materially searched
+gap, preserve a `search_probe` so the next pass can continue rather than repeat
+an invisible search.
 
 ### 3. Capture sources by segment and origin
 

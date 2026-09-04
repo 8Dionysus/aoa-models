@@ -79,6 +79,14 @@ one provider-shaped fixture:
   paired
   [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json)
   remains pre-canon and feeds the generated per-source dossiers.
+- [`Gemma 4 E2B/E4B adaptation frontier`](reports/gemma-4-e2b-e4b-adaptation-frontier-2026-09-04.md)
+  extends that work into scorer/mechanism controls, data-quality and capacity
+  coupling, DPO/GRPO reward and judge sensitivity, silent multimodal paths,
+  adapter composition, serving-time semantic no-ops, post-adaptation MTP, and
+  an explicit negative search for long-context evidence. Its paired
+  [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json)
+  is the first packet to retain optional `search_probes`, so later agents can
+  update the evidence map without treating finite search coverage as truth.
 
 The Gemma 4 run also retains nine immutable, locator-bounded capture snapshots
 for release-history segments, memory-table/caveat segments, and exact current
@@ -93,7 +101,7 @@ prior retained locator-bounded snapshot. The proposal neither edits the source
 runs nor interprets stale closure as supported PLE offload.
 
 The current lens is
-[`External Model Web Recon v0.3`](reports/external-model-web-recon-method-v0.3.md).
+[`External Model Web Recon v0.4`](reports/external-model-web-recon-method-v0.4.md).
 These records prove that the contour can preserve materially different web
 evidence as data; they do not prove that the ontology is complete.
 
