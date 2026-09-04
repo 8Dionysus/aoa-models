@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schemas.aoa.local/models/research-automation-artifact.schema.json",
+  "schema_version": "aoa_model_research_automation_artifact_v1",
+  "kind": "ResearchSupersessionProposal",
+  "proposal_id": "research-supersession:abaae0cdcd357b9b/20260904t181000z",
+  "created_at": "2026-09-04T18:10:00Z",
+  "status": "proposed",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "source_mutation_authority": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "prior_observation": {
+    "recon_run_id": "recon-run:gemma-4/2026-08-30-e2b-e4b-operating-points",
+    "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-08-30-e2b-e4b-operating-points.json",
+    "recon_run_digest": "sha256:1582e651137d02a65d9d5ae3aaa5102e2ea82410874735ad21f2c92f003bfb46",
+    "observation_id": "obs-ple-offload",
+    "observation_digest": "sha256:8cf6e51889aed8d0a084c246caee92ca1a00d2c3523bb096aadba31720a1009b",
+    "target_kind": "runtime_behavior",
+    "observed_interval": {
+      "start": "2026-08-02T00:00:00Z",
+      "end": "2026-08-02T23:59:59Z"
+    },
+    "source_segment_refs": [
+      {
+        "source_id": "src-ple-offload",
+        "segment_id": "seg-measurement"
+      },
+      {
+        "source_id": "src-ple-offload",
+        "segment_id": "seg-support-question"
+      }
+    ],
+    "counterevidence_refs": []
+  },
+  "candidate_observation": {
+    "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-corroboration",
+    "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-corroboration.json",
+    "recon_run_digest": "sha256:4568f319edeb0d17be0f06ddc8fa0bb7320f1c59b32355a26371019bf391540d",
+    "observation_id": "obs-ple-offload-status-update",
+    "observation_digest": "sha256:500abac385978f17ed1ba50860e5366f4bb08309778d8e20a4d6fde5066fedac",
+    "target_kind": "runtime_behavior",
+    "observed_interval": {
+      "start": "2026-09-01T08:52:22Z",
+      "end": "2026-09-04T17:20:00Z"
+    },
+    "source_segment_refs": [
+      {
+        "source_id": "src-ple-offload-status",
+        "segment_id": "seg-current-state"
+      },
+      {
+        "source_id": "src-ple-offload-status",
+        "segment_id": "seg-maintainer-comment"
+      }
+    ],
+    "counterevidence_refs": []
+  },
+  "candidate_relation": "update",
+  "scope_dimensions": [
+    "observed_interval",
+    "issue_status"
+  ],
+  "rationale": "The later observation updates the issue lifecycle state in the earlier open-state sentence while preserving the original PLE memory measurement and its runtime-specific limits.",
+  "ambiguities": [
+    "Closure followed stale automation and supplies no exact PLE device_map, supported default, or fixed-version reproduction.",
+    "No earlier locator-bounded capture snapshot exists, so this proposal is not a mechanical ResearchChangeReceipt."
+  ],
+  "structural_comparison": {
+    "same_target_kind": true,
+    "shared_subject_dimensions": [
+      "family",
+      "models",
+      "product",
+      "provider",
+      "runtime.name",
+      "runtime.version"
+    ],
+    "conflicting_subject_dimensions": [],
+    "shared_configuration_dimensions": [],
+    "conflicting_configuration_dimensions": [
+      "grader",
+      "harness",
+      "instrument_revision",
+      "route"
+    ],
+    "temporal_relation": "after"
+  },
+  "candidate_action": "review_add_qualified_supersedes_ref",
+  "review_required": true,
+  "automatic_application": false,
+  "mutation_policy": "no_source_or_recon_run_mutation",
+  "artifact_digest": "sha256:0a912c98684cc7eaa18dd97ef45a090a042e404c2d10589f41b6b6adb33a2df3"
+}

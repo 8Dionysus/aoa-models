@@ -47,11 +47,26 @@ one provider-shaped fixture:
   denominators, bounded Gemma 3n inheritance, MTP amortization, energy and
   device Pareto regions, usable-versus-nominal context, runtime attribution,
   and subject-metadata audit without promoting either size.
+- [`Gemma 4 E2B/E4B corroboration`](reports/gemma-4-e2b-e4b-corroboration-2026-09-04.md)
+  adds independent agentic, clinical, audio, Raspberry Pi, Apple Silicon, and
+  MTP evidence. It preserves metric-level E2B inversions inside otherwise
+  E4B-favorable instruments, strengthens the recurring E2B resource direction,
+  exposes an MTP backend sign flip, and separates nominal, allocated,
+  completed, and semantically usable context. Its paired
+  [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-corroboration.json) remains
+  pre-canon.
 
 The Gemma 4 run also retains nine immutable, locator-bounded capture snapshots
 for release-history segments, memory-table/caveat segments, and exact current
 E2B/E4B base/IT registry responses. They are refresh anchors, not archived page
 bodies, scheduled watches, or canonical evidence.
+
+The later PLE issue state is linked to the earlier open-state observation by a
+review-only
+[`ResearchSupersessionProposal`](supersession-proposals/gemma4-ple-offload-status-20260904.json).
+No `ResearchChangeReceipt` is claimed because the mutable issue did not have a
+prior retained locator-bounded snapshot. The proposal neither edits the source
+runs nor interprets stale closure as supported PLE offload.
 
 The current lens is
 [`External Model Web Recon v0.3`](reports/external-model-web-recon-method-v0.3.md).
