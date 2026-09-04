@@ -30,9 +30,6 @@ from a generated index or another repository.
 
 ## Builder and check
 
-```bash
-python scripts/generate_decision_index.py
-python scripts/generate_decision_index.py --check
-```
+Run `../../VALIDATION.md#decisions` after decision changes.
 
 Never hand-edit `generated/decision-index.md`.

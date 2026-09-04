@@ -28,7 +28,9 @@ pre-canon structure, not proof or fit evidence.
 
 ## Mutation route
 
-1. Read `README.md`, `DIRECTION.md`, and the nearest schema or decision law.
+1. Start with `DIRECTION.md` and the nearest schema or decision law.
+   `README.md` remains the human/public map when scope or owner routing is
+   unclear; it is not an unconditional edit prerequisite.
 2. Preserve the distinction between provider fact, runtime observation,
    behavioral evidence, task outcome, internal-space measurement, causal
    intervention, training-lineage evidence, and bounded inference.
@@ -70,14 +72,7 @@ reason; semantic history is not rewritten silently.
 
 ## Validation
 
-```bash
-python scripts/validate_models.py
-python scripts/validate_research_intake.py
-python scripts/build_model_fit_projections.py --check
-python scripts/build_research_source_dossiers.py --check
-python scripts/generate_decision_index.py --check
-python -m unittest discover -s tests -v
-```
+Run the model validation route in `VALIDATION.md` on demand.
 
 ## Stop lines
 
