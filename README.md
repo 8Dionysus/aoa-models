@@ -26,6 +26,13 @@ refresh it into an append-only change receipt, and package a content-addressed
 supersession proposal for review. It does not crawl, select, rank, promote, or
 mutate research or model source.
 
+A generated source-dossier catalog makes repeated web work cheap: it joins the
+same exact normalized URI across runs with its cited segments, observations,
+snapshots, change receipts, metadata variants, and supersession proposals.
+Agents query it before reusing a source and rebuild it after changing retained
+research. The catalog is a pre-canon read model and never claims that a page is
+currently fresh or that its statements are true.
+
 ## Owner boundary
 
 | Relation | This repository |
@@ -47,6 +54,8 @@ mutate research or model source.
 - `ResearchCaptureSnapshot`, `ResearchChangeReceipt`, and
   `ResearchSupersessionProposal`: immutable mechanical intake candidates with
   no source-mutation or automatic-application authority.
+- `ResearchSourceDossier`: a generated pre-canon history view over one exact
+  normalized external source URI.
 
 The first bounded access plane is `scripts/query_model_fit.py`. It accepts
 role-derived task, exact runtime-subject identity, runtime compatibility,
@@ -83,7 +92,8 @@ reduces them to human categories nor freezes them into final object types.
   reports, capture snapshots, change receipts, and review proposals; it is
   neither `source/` nor accepted evidence.
 - `schemas/` defines their machine-readable contracts.
-- `generated/` contains rebuildable model-fit projections and indexes only.
+- `generated/` contains rebuildable model-fit projections, indexes, and the
+  research-source dossier catalog.
 - `docs/decisions/` preserves durable owner rationale.
 - `scripts/` validates sources and rebuilds derived views.
 - `tests/` proves the local lifecycle and source/derived guards.
@@ -96,6 +106,7 @@ Run from the repository root:
 python scripts/validate_models.py
 python scripts/validate_research_intake.py
 python scripts/build_model_fit_projections.py --check
+python scripts/build_research_source_dossiers.py --check
 python scripts/generate_decision_index.py --check
 python scripts/check_live_codex_catalog.py
 python -m unittest discover -s tests -v

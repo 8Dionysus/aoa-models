@@ -49,6 +49,14 @@ digest, and leave `ReconRun` and canonical source unchanged. Provider, model,
 publisher, URL, and source class remain data; broad crawling, ranking,
 consensus, scheduling, and automatic supersession are outside this contour.
 
+Before reusing a web source, query its generated dossier with
+`python -B scripts/query_research_source_dossiers.py <URI-or-text>`. If a pass
+adds or changes a retained `ReconRun` or research-automation artifact, rebuild
+`generated/research-source-dossiers.json`; do not hand-edit that file or create
+a second mutable source ledger. Refresh a live segment only when the current
+question requires new currentness evidence. A dossier joins retained history;
+it does not assert freshness, truth, consensus, ranking, or promotion.
+
 ## Claim lifecycle
 
 The supported lifecycle is:
@@ -66,6 +74,7 @@ reason; semantic history is not rewritten silently.
 python scripts/validate_models.py
 python scripts/validate_research_intake.py
 python scripts/build_model_fit_projections.py --check
+python scripts/build_research_source_dossiers.py --check
 python scripts/generate_decision_index.py --check
 python -m unittest discover -s tests -v
 ```

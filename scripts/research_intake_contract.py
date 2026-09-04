@@ -17,6 +17,10 @@ from research_automation_contract import (
     research_automation_summary,
     validate_research_automation,
 )
+from research_source_dossiers import (
+    source_dossier_summary,
+    validate_research_source_dossiers,
+)
 
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
@@ -474,6 +478,7 @@ def validate_research_intake(root: Path = DEFAULT_ROOT) -> list[str]:
         )
     _validate_no_direct_promotion(root, issues)
     issues.extend(validate_research_automation(root))
+    issues.extend(validate_research_source_dossiers(root))
     return issues
 
 
@@ -485,4 +490,5 @@ def research_intake_summary(root: Path = DEFAULT_ROOT) -> dict[str, int]:
         "ExternalObservation": sum(len(record.get("observations", [])) for _, record in records),
         "ObservationCluster": sum(len(record.get("clusters", [])) for _, record in records),
         **research_automation_summary(root.resolve()),
+        **source_dossier_summary(root.resolve()),
     }

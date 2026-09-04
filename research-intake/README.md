@@ -14,11 +14,26 @@ This directory contains pre-canon external web-reconnaissance material.
 Nothing here is a `ModelClaim`, accepted `ModelStudy`, proof verdict, runtime
 currentness fact, fit-query input, route, activation, or owner acceptance.
 
+Cross-run lookup is generated at
+[`generated/research-source-dossiers.json`](../generated/research-source-dossiers.json).
+It is not another authored source store: each dossier is rebuilt from the
+retained routes above and groups only the same exact normalized URI. Query it
+before reusing a source:
+
+```bash
+python -B scripts/query_research_source_dossiers.py <URI-or-text>
+```
+
+After changing a retained run or automation artifact, rebuild the catalog with
+`python -B scripts/build_research_source_dossiers.py`. The normal validator
+rejects a missing or stale catalog.
+
 Read [`docs/RESEARCH_INTAKE.md`](../docs/RESEARCH_INTAKE.md) before adding a run
 and validate with:
 
 ```bash
 python -B scripts/validate_research_intake.py
+python -B scripts/build_research_source_dossiers.py --check
 ```
 
 Bounded capture and refresh use `python -B scripts/research_intake.py`. Request
