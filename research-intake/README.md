@@ -87,6 +87,16 @@ one provider-shaped fixture:
   [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json)
   is the first packet to retain optional `search_probes`, so later agents can
   update the evidence map without treating finite search coverage as truth.
+- [`Gemma 4 E2B/E4B full frontier`](reports/gemma-4-e2b-e4b-full-frontier-2026-09-04.md)
+  follows the remaining adaptation and deployment chain through QAT versus
+  PTQ, memory and energy denominators, kernel warmup, refusal and multilingual
+  safety geometry, distillation lineage, low-resource CPT/SFT, external speech
+  composition, modality stripping, MTP preservation, unseen-tool search,
+  privacy/memorization search, and post-adaptation long-context search. Its
+  paired
+  [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json)
+  preserves both the repeated evidence and the qualified gaps; it proposes a
+  common E2B/E4B experiment matrix without manufacturing a family winner.
 
 The Gemma 4 run also retains nine immutable, locator-bounded capture snapshots
 for release-history segments, memory-table/caveat segments, and exact current
@@ -101,7 +111,7 @@ prior retained locator-bounded snapshot. The proposal neither edits the source
 runs nor interprets stale closure as supported PLE offload.
 
 The current lens is
-[`External Model Web Recon v0.4`](reports/external-model-web-recon-method-v0.4.md).
+[`External Model Web Recon v0.5`](reports/external-model-web-recon-method-v0.5.md).
 These records prove that the contour can preserve materially different web
 evidence as data; they do not prove that the ontology is complete.
 

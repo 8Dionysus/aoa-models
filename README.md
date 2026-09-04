@@ -18,16 +18,21 @@ triggers without becoming model source truth or fit-query input. See
 The manual corpus includes a GPT-5.6 seed and temporal recheck, a
 different-provider Claude 5 persistence run, a cross-provider outcome-
 economics run, and a layered Gemma 4 E2B/E4B investigation covering lineage,
-operating points, independent corroboration, and fine-tuning/adapters;
+operating points, independent corroboration, fine-tuning/adapters, QAT and
+deployment, safety geometry, distillation, multilingual adaptation, modality
+composition and stripping, and qualified negative searches;
 [`research-intake/README.md`](research-intake/README.md) indexes the packets,
 reports, and bounded capture anchors.
 
-The current web-recon lens also retains optional search coverage and bounded
-negative-search results. Its deeper Gemma 4 adaptation pass separates scorer
-from mechanism, training proxy from held-out selection, multimodal execution
-from silent tower bypass, artifact load from served semantic effect, and an
-adapted target from its exact MTP-drafter pair. These remain pre-canon research
-objects and do not create a model ranking or automatic promotion path.
+The current v0.5 web-recon lens also retains optional search coverage and
+bounded negative-search results. It separates scorer from mechanism, training
+proxy from held-out selection, multimodal execution from silent tower bypass,
+artifact load from served semantic effect, and an adapted target from its
+exact MTP-drafter pair. It additionally binds deployment claims to a causal
+artifact chain, explicit measurement namespaces, metric passports, release
+states, distillation lineage, and base-to-accelerated lifecycle parity. These
+remain pre-canon research objects and do not create a model ranking or
+automatic promotion path.
 
 The first bounded automation contour can capture one structured source segment,
 refresh it into an append-only change receipt, and package a content-addressed

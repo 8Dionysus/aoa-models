@@ -1,0 +1,1831 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-full-frontier",
+  "title": "Gemma 4 E2B/E4B QAT, safety geometry, transfer, composition, and lifecycle frontier",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "What additional Gemma 4 E2B and E4B evidence survives causal separation across QAT, PTQ, runtime, refusal scoring, multilingual safety, distillation, low-resource adaptation, modality composition, stripping, export, context, privacy, tool-schema drift, and MTP lifecycle stages?",
+  "scope": {
+    "subject_labels": [
+      "gemma-4-E2B",
+      "gemma-4-E2B-it",
+      "gemma-4-E4B",
+      "gemma-4-E4B-it",
+      "gemma-4-E2B-it-assistant",
+      "gemma-4-E4B-it-assistant"
+    ],
+    "target_kinds": [
+      "provider_fact",
+      "benchmark_result",
+      "model_behavior",
+      "runtime_behavior",
+      "operational_pressure",
+      "unresolved"
+    ],
+    "capture_interval": {
+      "start": "2026-09-04T00:00:00Z",
+      "end": "2026-09-04T23:59:59Z"
+    },
+    "inclusion_criteria": [
+      "Exact Gemma 4 E2B or E4B source with an official topology, measured outcome, retained artifact, reproducible method, operational correction, or bounded negative search.",
+      "Evidence that exposes a denominator, scorer, teacher/data lineage, topology, export, runtime, modality, context, safety, or paired-artifact control.",
+      "Weak and private artifacts retained only when they expose a useful route or missing acceptance boundary.",
+      "Repeated observations counted by independent origin rather than number of mirrors or retellings."
+    ],
+    "exclusion_criteria": [
+      "Generic quantization, safety, distillation, language tuning, or tool-use guidance without an exact Gemma 4 E2B or E4B binding.",
+      "Provider quality language treated as an independent task result.",
+      "Substring refusal counts treated as harmfulness or effective refusal without audit.",
+      "Language identification treated as native fluency or task correctness.",
+      "Nominal context, successful load, or announced compatibility treated as semantic lifecycle acceptance."
+    ],
+    "generality_probe": {
+      "mode": "different_product_or_instrument",
+      "subject_labels": [
+        "quantization-causal-attribution",
+        "deployment-denominators",
+        "safety-scorer-audit",
+        "multilingual-geometry",
+        "teacher-student-lineage",
+        "low-resource-transfer",
+        "composed-modality",
+        "modality-stripping",
+        "unseen-tool-schemas",
+        "adaptation-privacy",
+        "post-adaptation-context",
+        "lifecycle-parity"
+      ],
+      "rationale": "The run crosses provider releases, runtime recipes, executable journals, independent papers, community forensics, language artifacts, private composition, and negative search so no single benchmark or framework defines the result."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.5",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.5.md",
+        "content_digest": "sha256:92069f207cc5d4eafbc2f4bca25e1262290e02a7248536cfb88b889841155471"
+      },
+      {
+        "relation": "deep_report",
+        "ref": "research-intake/reports/gemma-4-e2b-e4b-full-frontier-2026-09-04.md",
+        "content_digest": "sha256:b8f75a31238ed5f9eeaa42f4235455d357983b2c5d9fcde24b1cd8717f416d63"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+        "content_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92"
+      },
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json",
+        "content_digest": "sha256:6bb249b277ce2132320f8990e36e1c80dad976812d287f0642b5d6f8cb6da68b"
+      }
+    ],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-google-qat-announcement",
+      "title": "Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency",
+      "uri": "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
+      "source_class": "provider_release_announcement",
+      "publisher": "Google DeepMind",
+      "captured_at": "2026-09-04T21:00:00Z",
+      "published_at": "2026-06-05T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable provider announcement captured after the initial release.",
+      "mutable_surface": true,
+      "origin_group": "google-gemma4-qat-release",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-qat-formats-mobile-mtp-finetune",
+          "locator": "Release sections on QAT versus PTQ, mobile quantization, modality removal, formats, MTP assistants, and fine-tuning routes.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable provider page was inspected through the web research tool without retaining normalized segment bytes."
+        }
+      ],
+      "access_notes": "Public provider blog.",
+      "selection_context": "Primary source for intended QAT topology and provider quality claims."
+    },
+    {
+      "source_id": "src-google-core-overview-revisit",
+      "title": "Gemma 4 model overview",
+      "uri": "https://ai.google.dev/gemma/docs/core",
+      "source_class": "provider_documentation",
+      "publisher": "Google",
+      "captured_at": "2026-09-04T21:02:00Z",
+      "published_at": null,
+      "updated_at": "2026-07-08T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Revisit of a source already represented in the generated dossier; current page states last updated 2026-07-08 UTC.",
+      "mutable_surface": true,
+      "origin_group": "google-gemma4-core-docs",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-current-memory-and-qat-routing",
+          "locator": "Capabilities, inference memory requirements, denominator caveats, QAT routing table, checkpoint classes, and mobile schema.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable documentation was inspected live without a new retained immutable snapshot."
+        }
+      ],
+      "access_notes": "Public provider documentation; prior dossier contains older digest-backed snapshots for memory segments.",
+      "selection_context": "Current provider denominator and route details needed for comparison with runtime sources."
+    },
+    {
+      "source_id": "src-vllm-gemma4-recipe",
+      "title": "vLLM Gemma 4 recipe",
+      "uri": "https://github.com/vllm-project/recipes/blob/main/Google/Gemma4.md",
+      "source_class": "runtime_recipe",
+      "publisher": "vLLM project",
+      "captured_at": "2026-09-04T21:04:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable main-branch runtime recipe; exact commit was not pinned by the web surface.",
+      "mutable_surface": true,
+      "origin_group": "vllm-gemma4-runtime",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-w4a16-mobile-memory-throughput-mtp",
+          "locator": "QAT W4A16 and mobile sections plus MTP recommended settings and A100/H100 caveats.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable recipe was inspected without retaining exact repository bytes."
+        }
+      ],
+      "access_notes": "Public GitHub recipe.",
+      "selection_context": "Runtime-owner evidence for loaded memory, concurrency-dependent throughput, and paired MTP settings."
+    },
+    {
+      "source_id": "src-kmarble-qat-benchmark",
+      "title": "Gemma 4 QAT Benchmark: Same Quality, Faster Generation, Less VRAM",
+      "uri": "https://kmarble.dev/posts/gemma-4-qat-benchmark-same-quality-faster-less-vram/",
+      "source_class": "independent_operational_benchmark",
+      "publisher": "kmarble.dev",
+      "captured_at": "2026-09-04T21:06:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable article based on 48 sampled generations.",
+      "mutable_surface": true,
+      "origin_group": "kmarble-qat-operational-test",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e4b-confounded-comparison",
+          "locator": "Test setup, E4B results, quality assessment, caveats, and author's request for a same-bit comparison.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The article was inspected through the web tool without a retained normalized capture."
+        }
+      ],
+      "access_notes": "Public independent blog with prompt list and method description.",
+      "selection_context": "Useful because the source explicitly identifies its own E4B precision confound."
+    },
+    {
+      "source_id": "src-3h4x-qat-causal-audit",
+      "title": "Gemma 4 QAT vs non-QAT: is quantization-aware training actually better?",
+      "uri": "https://3h4x.github.io/tech/2026/06/08/gemma4-qat-vs-non-qat",
+      "source_class": "independent_instrument_audit",
+      "publisher": "3h4x.github.io",
+      "captured_at": "2026-09-04T21:08:00Z",
+      "published_at": "2026-06-08T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable article with linked executable harness; model subject is 12B and is retained as an instrument generality probe, not E2B/E4B outcome evidence.",
+      "mutable_surface": true,
+      "origin_group": "3h4x-qat-format-audit",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-format-versus-recipe",
+          "locator": "Harness, QAT/PTQ Q4_0 and Q4_K_M decode probe, behavioral-suite resolution, and causal interpretation.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The page and linked harness were inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public technical article.",
+      "selection_context": "Separates quantization recipe from file format and runtime kernel effects."
+    },
+    {
+      "source_id": "src-jetson-e2b-engines",
+      "title": "Benchmark: LiteRT-LM vs llama.cpp server - Gemma 4 E2B on NVIDIA Jetson Thor",
+      "uri": "https://forums.developer.nvidia.com/t/benchmark-litert-lm-vs-llama-cpp-server-gemma-4-e2b-on-nvidia-jetson-thor/380349",
+      "source_class": "primary_forum_benchmark",
+      "publisher": "NVIDIA Developer Forums contributor",
+      "captured_at": "2026-09-04T21:10:00Z",
+      "published_at": "2026-08-16T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Single-user mutable forum measurement on one Jetson Thor kit.",
+      "mutable_surface": true,
+      "origin_group": "jetson-thor-e2b-engine-test",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-speed-memory-power-energy",
+          "locator": "Summary table and method notes for LiteRT-LM CPU and llama.cpp CPU/GPU modes under an 8 GB budget.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The forum thread was inspected without retaining normalized post bytes."
+        }
+      ],
+      "access_notes": "Public forum thread.",
+      "selection_context": "Operational Pareto across latency, memory, power, and energy using official E2B artifacts."
+    },
+    {
+      "source_id": "src-little-gemma-journal",
+      "title": "little-gemma prefill performance journal",
+      "uri": "https://github.com/cortexist/little-gemma/blob/main/docs/prefill-performance-journal.md",
+      "source_class": "versioned_runtime_journal",
+      "publisher": "cortexist",
+      "captured_at": "2026-09-04T21:12:00Z",
+      "published_at": null,
+      "updated_at": "2026-07-17T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Mutable engineering journal containing in-place corrections and superseding same-session measurements.",
+      "mutable_surface": true,
+      "origin_group": "little-gemma-runtime-engineering",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e2b-q4-kernel-mtp-and-errata",
+          "locator": "E2B QAT q4_0 MMA/repack entries, MTP acceptance, memory changes, same-day comparison, and July errata.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable journal was inspected through GitHub without a commit-pinned byte capture."
+        }
+      ],
+      "access_notes": "Public GitHub engineering journal with linked harnesses and raw-log paths.",
+      "selection_context": "Strong operational evidence for warmup accounting, metric correction, and paired MTP identity."
+    },
+    {
+      "source_id": "src-unsloth-qat-finetune-discussion",
+      "title": "How to QLoRA fine-tune on Google's Gemma 4 QAT checkpoints without losing QAT calibration?",
+      "uri": "https://github.com/unslothai/unsloth/discussions/6389",
+      "source_class": "framework_community_discussion",
+      "publisher": "Unsloth community",
+      "captured_at": "2026-09-04T21:14:00Z",
+      "published_at": "2026-06-16T00:00:00Z",
+      "updated_at": "2026-06-29T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Unanswered community Q&A; replies are not an official framework guarantee.",
+      "mutable_surface": true,
+      "origin_group": "unsloth-qat-adaptation-question",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-calibration-preservation-gap",
+          "locator": "Question and replies distinguishing Google Q4_0 QAT, unquantized QAT initialization, bitsandbytes NF4, LoRA, merge, and re-quantization.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable discussion was inspected without retaining normalized thread bytes."
+        }
+      ],
+      "access_notes": "Public GitHub discussion.",
+      "selection_context": "Exact operational question for the missing QAT-to-adaptation lifecycle transition."
+    },
+    {
+      "source_id": "src-trevors-abliteration",
+      "title": "Gemma 4 Abliteration Research",
+      "uri": "https://github.com/TrevorS/gemma-4-abliteration/blob/master/ABLITERATION.md",
+      "source_class": "community_experiment_repository",
+      "publisher": "TrevorS",
+      "captured_at": "2026-09-04T21:16:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable master-branch research report with executable scripts and later family additions.",
+      "mutable_surface": true,
+      "origin_group": "trevors-gemma4-abliteration",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e2b-e4b-methods-cross-dataset-audit",
+          "locator": "E2B and E4B biprojection, task-vector, marker correction, 686-prompt cross-validation, KL, layers, and tooling sections.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable report was inspected without a commit-pinned byte capture."
+        }
+      ],
+      "access_notes": "Public GitHub research repository.",
+      "selection_context": "Most extensive located within-origin E2B/E4B refusal-removal comparison."
+    },
+    {
+      "source_id": "src-dreamfast-abliterlitics",
+      "title": "Gemma 4 E2B: 13 Abliteration Techniques Compared",
+      "uri": "https://huggingface.co/DreamFast/Gemma4-e2b-abliterlitics",
+      "source_class": "community_forensic_artifact",
+      "publisher": "DreamFast / Abliterlitics",
+      "captured_at": "2026-09-04T21:18:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model-card report over thirteen community variants.",
+      "mutable_surface": true,
+      "origin_group": "abliterlitics-e2b-forensics",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-kl-capability-safety-weight-export",
+          "locator": "Claim calibration, eight-task capability results, HarmBench review, KL passport, SVD/weight clusters, and shared-KV export defect.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model card with links to data, report, and code.",
+      "selection_context": "Independent E2B forensics and scorer/export audit across thirteen artifacts."
+    },
+    {
+      "source_id": "src-gustipardo-multilingual-safety",
+      "title": "The Democratization Safety Paradox: Multilingual Safety Collapse in Small Language Models",
+      "uri": "https://github.com/gustipardo/gemma4-abliteration",
+      "source_class": "community_multilingual_study",
+      "publisher": "gustipardo",
+      "captured_at": "2026-09-04T21:20:00Z",
+      "published_at": null,
+      "updated_at": "2026-05-06T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Repository marks experiments complete but paper writing pending; headline results are preliminary.",
+      "mutable_surface": true,
+      "origin_group": "gustipardo-multilingual-abliteration",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-seven-language-results-geometry-protocol",
+          "locator": "Preliminary size table, per-language results, mechanistic findings, fixed controls, pipeline, delayed-refusal note, and project status.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable repository page was inspected without retaining commit-pinned bytes."
+        }
+      ],
+      "access_notes": "Public GitHub repository with scripts, configs, data paths, Dockerfile, and experiment status.",
+      "selection_context": "Only located E2B/E4B seven-language refusal-geometry comparison."
+    },
+    {
+      "source_id": "src-distilled-gemma",
+      "title": "DistilledGemma: Balanced Efficiency-Accuracy for Person-Place Relation Extraction from Multilingual Historical Articles",
+      "uri": "https://arxiv.org/html/2606.29130",
+      "source_class": "independent_distillation_study",
+      "publisher": "HIPE 2026 team whereami",
+      "captured_at": "2026-09-04T21:22:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Versioned arXiv paper with official shared-task rankings.",
+      "mutable_surface": false,
+      "origin_group": "distilled-gemma-hipe",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-teacher-silver-student-results",
+          "locator": "Teacher selection and QLoRA, merged silver-trace generation, E2B student QLoRA, corpus, sandbox comparison, official results, and cross-language analysis.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned arXiv HTML was inspected without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public arXiv HTML.",
+      "selection_context": "Exact E2B response-level distillation with 26B-A4B teacher and external shared-task result."
+    },
+    {
+      "source_id": "src-welsh-e4b-v4",
+      "title": "Gemma 4 E4B Cymraeg v4",
+      "uri": "https://huggingface.co/EryriLabs/gemma-4-e4b-cymraeg-v4",
+      "source_class": "language_adaptation_artifact",
+      "publisher": "EryriLabs",
+      "captured_at": "2026-09-04T21:24:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model repository; web UI was rate-limited and the public raw README was inspected directly.",
+      "mutable_surface": true,
+      "origin_group": "eryrilabs-welsh-e4b",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-cpt-sft-data-eval-retention-quants",
+          "locator": "Training summary, CPT/SFT mix correction, single- and multi-turn evaluation, English arm, quantization, source data, and limitations.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The raw README was inspected over HTTPS without retaining a repository copy."
+        }
+      ],
+      "access_notes": "Public Hugging Face raw README remained accessible during UI rate limiting.",
+      "selection_context": "Richest located Welsh E4B lineage with retained adapters, merged weights, GGUF, data cards, logs, and raw eval paths."
+    },
+    {
+      "source_id": "src-frisian-e4b",
+      "title": "gemma-4-E4B-frisian",
+      "uri": "https://huggingface.co/Rickkosse/gemma-4-E4B-frisian",
+      "source_class": "language_adaptation_artifact",
+      "publisher": "Rickkosse",
+      "captured_at": "2026-09-04T21:26:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model card with CPT and SFT recipes and a six-question smoke test.",
+      "mutable_surface": true,
+      "origin_group": "rickkosse-frisian-e4b",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-cpt-sft-smoke-limitations",
+          "locator": "Model purpose, six-question fastText language-ID result, CPT/SFT configuration, and stated limitations.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model card.",
+      "selection_context": "Useful weak signal and negative control for what does not yet constitute language-quality evidence."
+    },
+    {
+      "source_id": "src-formosa-e4b-lora",
+      "title": "Gemma 4 E4B FormosaNLU LoRA",
+      "uri": "https://huggingface.co/steven0226/gemma-4-e4b-formosanlu-lora",
+      "source_class": "language_task_adapter_artifact",
+      "publisher": "steven0226",
+      "captured_at": "2026-09-04T21:28:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable adapter card with artifact hash and later evidence-release notes.",
+      "mutable_surface": true,
+      "origin_group": "formosanlu-e4b-adapter",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-heldout-multiseed-equaln-artifact",
+          "locator": "Model details, untouched MASSIVE zh-TW results, seeds 42-44, deterministic robustness probe, equal-N ablation, and artifact digest.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face adapter repository with linked code, data, config, and archival note.",
+      "selection_context": "Strong community evidence for multi-seed synthetic-data gains and limits on recipe attribution."
+    },
+    {
+      "source_id": "src-offlineaid-e4b",
+      "title": "OfflineAid - Gemma 4 E4B fine-tune",
+      "uri": "https://huggingface.co/helenk/gemma-4-E4B-finetune",
+      "source_class": "multilingual_adapter_artifact",
+      "publisher": "helenk",
+      "captured_at": "2026-09-04T21:30:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable merged-model card with linked LoRA and GGUF siblings.",
+      "mutable_surface": true,
+      "origin_group": "offlineaid-e4b-adaptation",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-heldout-language-metrics-training-merge",
+          "locator": "111-row EN/ZH/AR held-out table, format definition, training configuration, merge recipe, and deployment boundary.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model repository.",
+      "selection_context": "Separates script/format adherence from ROUGE and preserves adapter-to-merged-to-GGUF lineage."
+    },
+    {
+      "source_id": "src-meralion-speech-e4b",
+      "title": "Gemma-4-E4B-BF16 plus MERaLiON Speech LoRA for Singapore English",
+      "uri": "https://huggingface.co/majentik/Gemma-4-E4B-BF16-MERaLiON-Speech-LoRA-SG-MLX",
+      "source_class": "private_composed_model_artifact",
+      "publisher": "majentik",
+      "captured_at": "2026-09-04T21:32:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Model card is visible but explicitly states owner-only/private and requires an explicit future visibility decision.",
+      "mutable_surface": true,
+      "origin_group": "meralion-e4b-speech-composition",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-components-wer-runtime-license",
+          "locator": "Result summary, bundle contents, custom runtime, architecture dimensions, limitations, provenance, and visibility state.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected without retaining private bundle bytes."
+        }
+      ],
+      "access_notes": "Visible model card; full bundle availability and public status are not inferred.",
+      "selection_context": "Exact E4B external speech-encoder/projector composition with a 3000-utterance result."
+    },
+    {
+      "source_id": "src-stripped-e4b-classifier",
+      "title": "Gemma 4 E4B Classifier, vision/audio-stripped",
+      "uri": "https://huggingface.co/igorls/gemma4-e4b-classifier",
+      "source_class": "modality_stripped_artifact",
+      "publisher": "igorls",
+      "captured_at": "2026-09-04T21:34:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model card with dated runtime compatibility statements.",
+      "mutable_surface": true,
+      "origin_group": "igorls-e4b-modality-strip",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-parameter-memory-text-multilingual-mtp",
+          "locator": "Stripping procedure, parameter table, resident-memory and task comparison, multilingual results, limitations, MTP benchmark, and vLLM release gap.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable model card was inspected without retaining exact card or artifact bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model card and artifacts.",
+      "selection_context": "Detailed E4B evidence for modality stripping, system-memory effects, and post-strip MTP pairing."
+    },
+    {
+      "source_id": "src-google-function-calling",
+      "title": "Function calling with Gemma 4",
+      "uri": "https://ai.google.dev/gemma/docs/capabilities/text/function-calling-gemma4",
+      "source_class": "provider_capability_documentation",
+      "publisher": "Google",
+      "captured_at": "2026-09-04T21:36:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable provider documentation for the function-calling interface, not an adaptation benchmark.",
+      "mutable_surface": true,
+      "origin_group": "google-gemma4-function-calling",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-schema-cycle-validation-caveat",
+          "locator": "Tool declaration format, full model/developer cycle, argument validation warning, and automatic-schema caveat.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable provider documentation was inspected without retaining normalized segment bytes."
+        }
+      ],
+      "access_notes": "Public provider documentation.",
+      "selection_context": "Establishes the interface surface while leaving unseen-tool adaptation generalization unmeasured."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-qat-official-topology",
+      "statement": "Google exposes distinct Q4_0 and mobile QAT routes for Gemma 4 E2B/E4B, with runtime-specific formats, optional text-only deployment, and matching QAT assistants for MTP; the published memory numbers are planning estimates with explicit exclusions.",
+      "target_kind": "provider_fact",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "official QAT checkpoint families",
+        "snapshot": "provider docs captured 2026-09-04",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"formats": ["Q4_0 GGUF", "W4A16 compressed tensors", "mobile wNa8o8", "unquantized QAT"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "provider release and deployment routing tables",
+        "reasoning_effort": null,
+        "context_policy": "static weights; KV cache excluded from the load table",
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "QAT Q4_0 or mobile quantization schema",
+        "runbook": "provider-documented format selection and exact QAT assistant pairing",
+        "harness": "provider memory estimates and release descriptions",
+        "instrument_revision": "Google announcement plus overview updated 2026-07-08",
+        "grader": null,
+        "additional_dimensions": {"memory_namespace": "approximate model load including stated 20 percent overhead but excluding supporting software and context"}
+      },
+      "outcome": {
+        "requested": "Map official QAT routes, memory claims, modality options, and MTP/fine-tuning surfaces.",
+        "executed": "Compared the provider announcement and current overview by route and denominator.",
+        "artifact": "Official checkpoint collections and documented format suffixes.",
+        "verified": "The two provider pages consistently expose Q4_0, mobile, MTP, conversion, and fine-tuning routes.",
+        "reported": "Provider topology is broad, while task parity and post-adaptation calibration require separate evidence.",
+        "termination": "Current provider surface captured.",
+        "measurements": [
+          {"metric": "e2b_q4_0_load_memory", "value": 2.9, "unit": "GB", "denominator": "provider approximate static model load with 20 percent overhead", "notes": "Excludes supporting software and KV cache."},
+          {"metric": "e2b_mobile_text_only_load_memory", "value": 0.84, "unit": "GB", "denominator": "provider LiteRT-LM mobile estimate", "notes": "Text-only mobile route."},
+          {"metric": "e4b_q4_0_load_memory", "value": 4.5, "unit": "GB", "denominator": "provider approximate static model load with 20 percent overhead", "notes": "Excludes supporting software and KV cache."},
+          {"metric": "e4b_mobile_text_only_load_memory", "value": 2.2, "unit": "GB", "denominator": "provider LiteRT-LM mobile estimate", "notes": "Text-only mobile route."}
+        ],
+        "additional_dimensions": {"fine_tuning_claim": "unquantized QAT weights can be fine-tuned; preservation of target-format calibration is not stated"}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-google-qat-announcement", "segment_id": "seg-qat-formats-mobile-mtp-finetune"},
+        {"source_id": "src-google-core-overview-revisit", "segment_id": "seg-current-memory-and-qat-routing"}
+      ],
+      "confounds": ["Provider-authored quality language and approximate memory planning numbers."],
+      "configuration_gaps": ["No independent E2B/E4B task deltas, energy, or post-adaptation parity in these sources."],
+      "transfer_limits": ["Establishes provider intent and route availability, not realized performance on an owner runtime."],
+      "counterevidence_refs": ["obs-qat-comparison-confounded", "obs-qat-post-adaptation-gap"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-06-05T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-qat-server-memory-throughput",
+      "statement": "The vLLM recipe reports E2B/E4B QAT memory under runtime-specific namespaces and an E4B mobile throughput gain that is largest at low concurrency and tapers as the workload becomes compute-bound.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "vLLM QAT serving",
+        "snapshot": "mutable recipe captured 2026-09-04",
+        "runtime": {"name": "vLLM", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "A100-80GB for published throughput arm"}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "W4A16 and mobile compressed-tensor serving",
+        "reasoning_effort": null,
+        "context_policy": "1024 input and 1024 output tokens for throughput",
+        "tools": [],
+        "permissions": [],
+        "prompt": "text requests",
+        "scaffold": "vLLM Gemma 4 recipe",
+        "runbook": "prefix cache disabled for benchmarking and concurrency sweep",
+        "harness": "runtime recipe benchmark",
+        "instrument_revision": "mutable main-branch recipe",
+        "grader": null,
+        "additional_dimensions": {"configuration_gap_reason": "Exact vLLM commit and full raw benchmark distribution are not retained."}
+      },
+      "outcome": {
+        "requested": "Measure memory and throughput of server/mobile QAT routes.",
+        "executed": "Published runtime-specific memory reductions and E4B concurrency behavior.",
+        "artifact": "vLLM recipe and linked compressed-tensor checkpoints.",
+        "verified": "Denominators and workload lengths are stated in the recipe.",
+        "reported": "Memory and speed depend on route and concurrency rather than model label alone.",
+        "termination": "Recipe benchmark reported.",
+        "measurements": [
+          {"metric": "e2b_w4a16_memory", "value": 7.3, "unit": "GB", "denominator": "vLLM W4A16 route versus 9.8 GB base", "notes": "Reported reduction about 26 percent."},
+          {"metric": "e4b_w4a16_memory", "value": 9.8, "unit": "GB", "denominator": "vLLM W4A16 route versus 15.2 GB base", "notes": "Reported reduction about 36 percent."},
+          {"metric": "e2b_mobile_weight_memory", "value": 2.7, "unit": "GB", "denominator": "vLLM mobile compressed-tensor weight memory", "notes": "Reported 3.6x smaller."},
+          {"metric": "e4b_mobile_weight_memory", "value": 3.7, "unit": "GB", "denominator": "vLLM mobile compressed-tensor weight memory", "notes": "Reported 4.1x smaller."},
+          {"metric": "e4b_low_concurrency_output_throughput", "value": 1.5, "unit": "times_bf16", "denominator": "A100-80GB, 1024 input, 1024 output, concurrency 1-16", "notes": "Gain tapers above roughly 64 concurrent requests."}
+        ],
+        "additional_dimensions": {"causal_boundary": "mobile format and runtime behavior are jointly varied"}
+      },
+      "source_segment_refs": [{"source_id": "src-vllm-gemma4-recipe", "segment_id": "seg-w4a16-mobile-memory-throughput-mtp"}],
+      "confounds": ["Mutable recipe, server GPU, route-specific tensor formats, and no raw task-quality results in the cited segment."],
+      "configuration_gaps": ["Exact runtime commit, per-request latency distribution, and energy are absent."],
+      "transfer_limits": ["Does not predict LiteRT, llama.cpp, mobile accelerator, or fine-tuned artifact performance."],
+      "counterevidence_refs": ["obs-edge-energy-pareto"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-06-05T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-qat-comparison-confounded",
+      "statement": "Located QAT-versus-PTQ comparisons do not yet isolate an E2B/E4B training-recipe effect at matched bit width, format, converter, runtime, and task instrument; observed speed differences can be explained substantially by deployed format and kernel path.",
+      "target_kind": "unresolved",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "community QAT and PTQ comparisons",
+        "snapshot": "search captured 2026-09-04",
+        "runtime": {"name": "llama.cpp or Ollama", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"generality_probe": "12B same-format audit retained only for causal method"}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "consumer-GPU QAT and PTQ comparisons",
+        "reasoning_effort": null,
+        "context_policy": "short prompts and one fixed 490-token decode probe",
+        "tools": [],
+        "permissions": [],
+        "prompt": "six mixed qualitative prompts or a 490-token integer generation",
+        "scaffold": "GGUF inference",
+        "runbook": "single GPU or Apple Silicon; mixed quant formats",
+        "harness": "48 generations and a linked three-arm script",
+        "instrument_revision": "article-local harnesses",
+        "grader": "subjective prose review or coarse 6-item behavioral score",
+        "additional_dimensions": {"configuration_gap_reason": "No matched E2B/E4B QAT and PTQ artifact pair."}
+      },
+      "outcome": {
+        "requested": "Test whether QAT itself improves E2B/E4B quality, speed, and memory relative to PTQ.",
+        "executed": "Compared available operational studies and their own causal caveats.",
+        "artifact": "Two public articles, one with a linked harness.",
+        "verified": "The E4B source explicitly mixes 4-bit QAT and 8-bit PTQ; the 12B audit demonstrates a strong format effect.",
+        "reported": "The exact E2B/E4B QAT recipe effect remains unmeasured under matched controls.",
+        "termination": "No qualified matched E2B/E4B source found in the capture interval.",
+        "measurements": [
+          {"metric": "twelve_b_qat_q4_0_decode", "value": 42.9, "unit": "tokens_per_second", "denominator": "one 490-visible-token Apple Silicon/Ollama probe", "notes": "Generality probe; not an E2B/E4B result."},
+          {"metric": "twelve_b_ptq_q4_0_decode", "value": 38.4, "unit": "tokens_per_second", "denominator": "same 490-visible-token probe", "notes": "Different file and tensor mix remain."},
+          {"metric": "twelve_b_ptq_q4_k_m_decode", "value": 33.2, "unit": "tokens_per_second", "denominator": "same 490-visible-token probe", "notes": "Shows format and kernel path can dominate speed."}
+        ],
+        "additional_dimensions": {"search_state": "no_qualified_source_found for matched E2B/E4B task-quality comparison"}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-kmarble-qat-benchmark", "segment_id": "seg-e4b-confounded-comparison"},
+        {"source_id": "src-3h4x-qat-causal-audit", "segment_id": "seg-format-versus-recipe"}
+      ],
+      "confounds": ["Small qualitative suites, mismatched bit widths, different file builds, and one cross-size instrument probe."],
+      "configuration_gaps": ["No exact E2B/E4B same-base same-format QAT/PTQ pair with frozen task and runtime instruments."],
+      "transfer_limits": ["Supports a causal-attribution warning, not a conclusion that QAT lacks quality benefit."],
+      "counterevidence_refs": ["obs-qat-official-topology"],
+      "supersedes": [],
+      "evidence_posture": "contradictory",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-06-08T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-edge-energy-pareto",
+      "statement": "On one Jetson Thor, official E2B artifacts produce different latency, RAM, power, and energy optima across llama.cpp GPU, LiteRT-LM CPU, and llama.cpp CPU, so no single engine dominates the deployment objective.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "Jetson Thor local inference",
+        "snapshot": "forum post 2026-08-16",
+        "runtime": {"name": "LiteRT-LM and llama.cpp", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "NVIDIA Jetson Thor developer kit", "budget": "8 GB RAM"}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "official LiteRT binary versus official Q4_0 GGUF",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "local serving",
+        "runbook": "LiteRT default CPU, llama.cpp full GPU offload, and llama.cpp CPU",
+        "harness": "forum benchmark with peak VmHWM, power, decode, and J/token",
+        "instrument_revision": "author-local August 2026 setup",
+        "grader": null,
+        "additional_dimensions": {"configuration_gap_reason": "Prompt lengths, repetitions, runtime commits, and idle-power subtraction are not fully exposed in the retained summary."}
+      },
+      "outcome": {
+        "requested": "Choose an E2B engine under an 8 GB device budget.",
+        "executed": "Measured three engine/device modes on one board.",
+        "artifact": "Forum table and command notes.",
+        "verified": "All four resource axes are reported for the same device study.",
+        "reported": "GPU llama.cpp maximizes decode while LiteRT-LM minimizes measured energy per token.",
+        "termination": "Single-device experiment completed.",
+        "measurements": [
+          {"metric": "llamacpp_gpu_decode", "value": 80, "unit": "tokens_per_second", "denominator": "one Jetson Thor mode", "notes": "Peak power 16.7 W, RAM 2.45 GB, 0.20 J/token."},
+          {"metric": "litert_cpu_decode", "value": 21, "unit": "tokens_per_second", "denominator": "same board and model family", "notes": "Peak power 1.7 W, RAM 2.54 GB, 0.06 J/token."},
+          {"metric": "llamacpp_cpu_decode", "value": 15, "unit": "tokens_per_second", "denominator": "same board and model family", "notes": "Peak power 1.2 W, RAM 4.07 GB, 0.07 J/token."}
+        ],
+        "additional_dimensions": {"pareto": ["latency", "resident_memory", "power", "energy_per_token"]}
+      },
+      "source_segment_refs": [{"source_id": "src-jetson-e2b-engines", "segment_id": "seg-speed-memory-power-energy"}],
+      "confounds": ["Single author, device, workload summary, and incomplete runtime identity."],
+      "configuration_gaps": ["No task-quality parity or repeated-run uncertainty."],
+      "transfer_limits": ["Operational pressure for this board; not an incidence or cross-device engine ranking."],
+      "counterevidence_refs": ["obs-qat-server-memory-throughput"],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-08-16T00:00:00Z", "end": "2026-08-16T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e2b-kernel-mtp-lineage",
+      "statement": "A retained E2B QAT runtime journal shows that q4_0 kernel routing, repack accounting, warm service state, device clocks, MTP verification, and corrected model labels materially change measured performance while deterministic identity gates remain separately observable.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E2B-it-assistant"],
+        "provider": "google",
+        "product": "little-gemma runtime engineering",
+        "snapshot": "journal through 2026-07-17",
+        "runtime": {"name": "little-gemma", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": ["Jetson Orin", "NVIDIA A5000"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "QAT Q4_0 target with optional MTP assistant",
+        "reasoning_effort": null,
+        "context_policy": "912-token or 929-token warm serve turns depending subexperiment",
+        "tools": [],
+        "permissions": [],
+        "prompt": "structured and dictation-derived workloads",
+        "scaffold": "custom CUDA runtime with q4_0 repack and MTP verify",
+        "runbook": "warm service, first turn discarded, pinned clocks for paired comparison",
+        "harness": "serve benchmarks, llama-bench comparator, byte-identity gates, and acceptance counters",
+        "instrument_revision": "journal includes July 16-17 corrections",
+        "grader": "deterministic output identity and measured timings",
+        "additional_dimensions": {"metric_lineage": "one-shot results and mislabeled decode cells are retained as corrected history"}
+      },
+      "outcome": {
+        "requested": "Make E2B QAT efficient on embedded and discrete NVIDIA hardware while retaining output gates.",
+        "executed": "Added q4_0 repack/MMA route, revised memory mapping, paired MTP, and re-benchmarked under corrected harnesses.",
+        "artifact": "Public runtime journal, code paths, harness references, and raw-log locations.",
+        "verified": "Warmup, clock state, output identity, acceptance, and same-session comparisons are separately reported.",
+        "reported": "Runtime implementation and measurement hygiene dominate the apparent QAT speed outcome.",
+        "termination": "Several measurements settled; repository remains mutable.",
+        "measurements": [
+          {"metric": "orin_e2b_prefill_before", "value": 48, "unit": "tokens_per_second", "denominator": "warm serve before q4_0 MMA route", "notes": "dp4a fallback."},
+          {"metric": "orin_e2b_prefill_after", "value": 798, "unit": "tokens_per_second", "denominator": "warm serve, 912-token turns", "notes": "Later same-session readings approximately 815 tok/s."},
+          {"metric": "plain_decode_after_repack", "value": 28.5, "unit": "tokens_per_second", "denominator": "reported E2B QAT runtime path", "notes": "From 26.3 tok/s."},
+          {"metric": "structured_mtp_decode_after", "value": 55.3, "unit": "tokens_per_second", "denominator": "E2B QAT target plus assistant", "notes": "From 31.5 tok/s, with same reply text."},
+          {"metric": "mtp_acceptance", "value": 75.7, "unit": "percent", "denominator": "reported structured E2B workload", "notes": "Workload-specific."}
+        ],
+        "additional_dimensions": {"warmup_repack": "one-shot prompt timing initially charged in-process repack"}
+      },
+      "source_segment_refs": [{"source_id": "src-little-gemma-journal", "segment_id": "seg-e2b-q4-kernel-mtp-and-errata"}],
+      "confounds": ["Custom runtime, evolving main branch, multiple subexperiments, and hardware-specific kernels."],
+      "configuration_gaps": ["No independent reproduction on the exact code revision and no broad semantic benchmark."],
+      "transfer_limits": ["Supports runtime and metric-lineage requirements, not a general E2B throughput guarantee."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-07-02T00:00:00Z", "end": "2026-07-17T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-qat-post-adaptation-gap",
+      "statement": "The located Unsloth Q&A does not establish a supported way to preserve Google's target Q4_0 calibration through downstream QLoRA; loading the unquantized QAT checkpoint under bitsandbytes NF4, merging, and re-quantizing creates a new artifact that needs fresh acceptance.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "Unsloth QLoRA over unquantized QAT initialization",
+        "snapshot": "discussion captured 2026-09-04",
+        "runtime": {"name": "Unsloth and bitsandbytes", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"configuration_gap_reason": "Community replies are not an official supported-workflow statement."}
+      },
+      "configuration": {
+        "completeness": "unresolved",
+        "route": "unquantized QAT checkpoint to LoRA or QLoRA to merged Q4_0",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "PEFT adapter over QAT-derived initialization",
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "Unsloth discussion 6389",
+        "grader": null,
+        "additional_dimensions": {"configuration_gap_reason": "No retained executed experiment or parity suite."}
+      },
+      "outcome": {
+        "requested": "Preserve Google Q4_0 calibration while fine-tuning a QAT checkpoint.",
+        "executed": "Question discussed; no official or executed preservation route demonstrated.",
+        "artifact": "Public unanswered Q&A.",
+        "verified": "Replies distinguish NF4 training quantization from target Q4_0 deployment quantization.",
+        "reported": "Treat QAT as initialization and re-validate the final artifact rather than inheriting calibration claims.",
+        "termination": "No qualified end-to-end evidence found.",
+        "measurements": [],
+        "additional_dimensions": {"search_state": "weak_signal_only"}
+      },
+      "source_segment_refs": [{"source_id": "src-unsloth-qat-finetune-discussion", "segment_id": "seg-calibration-preservation-gap"}],
+      "confounds": ["Unanswered community discussion without maintainer confirmation or code."],
+      "configuration_gaps": ["No exact training base, adapter, merge, converter, final bytes, tasks, or runtime."],
+      "transfer_limits": ["Creates a lifecycle acceptance requirement; it does not prove all QAT fine-tuning routes lose their benefit."],
+      "counterevidence_refs": ["obs-qat-official-topology"],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "watch",
+      "observed_interval": {"start": "2026-06-16T00:00:00Z", "end": "2026-06-29T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-refusal-e2b-e4b",
+      "statement": "Within one Gemma 4 abliteration repository, norm-preserving biprojection removes most measured E2B and E4B refusals across 686 prompts, while E4B reaches a similar raw outcome at lower within-instrument KL and task-vector negation shows an unusable E2B phase transition.",
+      "target_kind": "model_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "community abliterated derivatives",
+        "snapshot": "mutable report captured 2026-09-04",
+        "runtime": {"name": "Transformers and Heretic-derived tooling", "version": "transformers 5.x family", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"prompt_pool": 686, "datasets": 4}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "norm-preserving biprojection and task-vector controls",
+        "reasoning_effort": null,
+        "context_policy": "full generated response inspected by source-specific refusal logic",
+        "tools": [],
+        "permissions": [],
+        "prompt": "JailbreakBench, tulu-harmbench, NousResearch, and mlabonne harmful prompts",
+        "scaffold": "directional weight edits over selected or all decoder layers",
+        "runbook": "E2B and E4B within one repository and corrected topic-word marker set",
+        "harness": "100-prompt iteration plus 686-prompt cross-dataset evaluation",
+        "instrument_revision": "stripped topic markers and refusal-then-comply audit",
+        "grader": "marker detector plus manual audit described by author",
+        "additional_dimensions": {"kl_comparability": "within this implementation only"}
+      },
+      "outcome": {
+        "requested": "Remove refusal behavior while preserving ordinary output distribution.",
+        "executed": "Ran multiple E2B methods and two E4B layer fractions, then cross-validated the strongest configurations.",
+        "artifact": "Repository scripts, reports, prompt pools, and model artifacts.",
+        "verified": "Raw counts, layers, KL, and marker corrections are exposed.",
+        "reported": "Directional removal is effective in this setup, but the capability-safety tradeoff and metric passport remain configuration-bound.",
+        "termination": "Reported experiments completed.",
+        "measurements": [
+          {"metric": "e2b_biprojection_cross_dataset_refusals", "value": 3, "unit": "responses", "denominator": "686 prompts across four datasets", "notes": "Corrected marker configuration."},
+          {"metric": "e2b_biprojection_kl", "value": 0.3461, "unit": "kl_divergence", "denominator": "repository-specific harmless prompt instrument", "notes": "All 35 layers."},
+          {"metric": "e4b_biprojection_cross_dataset_refusals", "value": 5, "unit": "responses", "denominator": "686 prompts across four datasets", "notes": "Raw marker count."},
+          {"metric": "e4b_biprojection_kl", "value": 0.0678, "unit": "kl_divergence", "denominator": "same repository-specific instrument", "notes": "All 42 layers."},
+          {"metric": "e2b_task_vector_alpha_half_kl", "value": 7.87, "unit": "kl_divergence", "denominator": "100-prompt repository experiment", "notes": "Zero refusals but author labels model destroyed."}
+        ],
+        "additional_dimensions": {"dual_use": "This is safety-removal evidence and must not be interpreted as an endorsed deployment route."}
+      },
+      "source_segment_refs": [{"source_id": "src-trevors-abliteration", "segment_id": "seg-e2b-e4b-methods-cross-dataset-audit"}],
+      "confounds": ["Single community origin, custom tool patches, and a refusal metric rather than a full harmfulness policy evaluation."],
+      "configuration_gaps": ["No independent human safety evaluation, multiple edit seeds, or common external capability suite."],
+      "transfer_limits": ["Supports method behavior for exact derivatives, not a safety verdict or universal size ranking."],
+      "counterevidence_refs": ["obs-abliteration-scorer-export", "obs-multilingual-collapse"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-04-01T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-abliteration-scorer-export",
+      "statement": "Forensics across thirteen E2B abliterated artifacts shows a wide KL/capability Pareto, several nearly orthogonal edit directions with similar safety outcomes, creator-claim mismatches, and a shared-KV export defect in five artifacts that had to be repaired before comparison.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "thirteen community abliterated variants",
+        "snapshot": "Abliterlitics card captured 2026-09-04",
+        "runtime": {"name": "vLLM and Transformers", "version": "vLLM 0.20.0", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"variants": 13, "creators": 9}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "weight forensics, capability evaluation, KL calibration, and HarmBench",
+        "reasoning_effort": "thinking enabled for HarmBench",
+        "context_policy": "up to 8096 generated tokens for safety evaluation",
+        "tools": [],
+        "permissions": [],
+        "prompt": "400 HarmBench behaviors and 100 harmless KL prompts",
+        "scaffold": "native BF16 comparison after repairing missing unmodified shared-KV tensors",
+        "runbook": "eight capability tasks, 5600 safety responses, full-vocab first-token KL, SVD and per-layer analysis",
+        "harness": "lm-evaluation-harness, HarmBench, Abliterlitics",
+        "instrument_revision": "full 262K vocab, first-token logits, batchmean KL; keyword detector plus full LLM review",
+        "grader": "glm-5.1 review for all safety responses",
+        "additional_dimensions": {"hardware": "single RTX 5090 32 GB"}
+      },
+      "outcome": {
+        "requested": "Compare claims, safety removal, distribution shift, capabilities, edit geometry, and artifact integrity across E2B variants.",
+        "executed": "Ran a common forensic suite over thirteen variants and patched missing base-identical tensors.",
+        "artifact": "Model card, data, report, and open-source toolkit.",
+        "verified": "Four Heretic claims provide a partial KL calibration and all 5600 responses received LLM review.",
+        "reported": "Similar refusal outcomes can arise from distinct edit directions and very different capability costs; artifact repair is a prerequisite to ranking.",
+        "termination": "Forensic suite completed.",
+        "measurements": [
+          {"metric": "variant_kl_range", "value": "0.0677 to 3.9713", "unit": "kl_divergence", "denominator": "13 variants, 100 harmless prompts, full 262K vocab, first generated token", "notes": "58.7x spread."},
+          {"metric": "shared_kv_defective_variants", "value": 5, "unit": "variants", "denominator": "13 examined variants", "notes": "Each missed 60 weights across layers 15-34 before lossless base-weight repair."},
+          {"metric": "lowest_kl_high_asr", "value": 83.8, "unit": "percent_asr", "denominator": "llmfan46 on 400 HarmBench behaviors", "notes": "KL 0.0677."},
+          {"metric": "high_lambada_cost", "value": 5.69, "unit": "times_base_perplexity", "denominator": "wwtcyberlab variant", "notes": "Despite 99.5 percent ASR."}
+        ],
+        "additional_dimensions": {"mechanism": "ten rank-1 variants still form multiple alignment clusters with some near-orthogonal pairs"}
+      },
+      "source_segment_refs": [{"source_id": "src-dreamfast-abliterlitics", "segment_id": "seg-kl-capability-safety-weight-export"}],
+      "confounds": ["One forensic team, LLM review rather than human gold labels, and repaired artifacts no longer exactly match shipped bytes."],
+      "configuration_gaps": ["No E4B arm in this thirteen-variant suite and no multi-seed edit generation."],
+      "transfer_limits": ["KL ratings and optimality language remain specific to this metric passport and task suite."],
+      "counterevidence_refs": ["obs-refusal-e2b-e4b"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-04-01T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-multilingual-collapse",
+      "statement": "A controlled seven-language Gemma 4 study reports non-monotonic harmful compliance after English-direction abliteration: both the behavioral increase and cross-lingual refusal-direction similarity peak at E4B rather than at E2B or 31B.",
+      "target_kind": "model_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it", "gemma-4-31B-it"],
+        "provider": "google",
+        "product": "multilingual abliteration experiment",
+        "snapshot": "repository through 2026-05-06",
+        "runtime": {"name": "Transformers with bitsandbytes", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"languages": ["en", "es", "zh", "pt", "de", "ar", "hi"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "same public single-vector abliterated artifacts across three dense sizes",
+        "reasoning_effort": null,
+        "context_policy": "512 maximum generated tokens for delayed-refusal visibility",
+        "tools": [],
+        "permissions": [],
+        "prompt": "100 translated harmful BeaverTails prompts plus 10 harmless prompts per language",
+        "scaffold": "NF4 double quantization with BF16 compute",
+        "runbook": "greedy decode and one judge across every cell",
+        "harness": "3 sizes by 2 conditions by 7 languages",
+        "instrument_revision": "repository pipeline and fixed seed 42",
+        "grader": "Claude Haiku 4.5 full-response compliance judge",
+        "additional_dimensions": {"mechanistic": "refusal-direction cosine and silhouette by size and language"}
+      },
+      "outcome": {
+        "requested": "Determine whether English abliteration collapses multilingual safety uniformly across small Gemma 4 sizes.",
+        "executed": "Ran base and abliterated arms over seven languages and computed direction geometry.",
+        "artifact": "Public scripts, configs, outputs path, figures, Dockerfile, and status ledger.",
+        "verified": "All principal inference, judging, and mechanistic cells are marked complete; paper writing remains pending.",
+        "reported": "E4B is the peak of the measured curve, and the behavioral and cosine peaks coincide.",
+        "termination": "Experimental phases complete; publication pending.",
+        "measurements": [
+          {"metric": "e2b_base_harmful_compliance", "value": 4.1, "unit": "percent", "denominator": "700 judged responses, 100 per language", "notes": "Mean across seven languages."},
+          {"metric": "e2b_abliterated_harmful_compliance", "value": 42.9, "unit": "percent", "denominator": "700 judged responses", "notes": "Increase 38.8 percentage points."},
+          {"metric": "e4b_base_harmful_compliance", "value": 10.7, "unit": "percent", "denominator": "700 judged responses", "notes": "Mean across seven languages."},
+          {"metric": "e4b_abliterated_harmful_compliance", "value": 68.1, "unit": "percent", "denominator": "700 judged responses", "notes": "Increase 57.4 percentage points and peak size."},
+          {"metric": "cross_lingual_refusal_cosine", "value": "E2B 0.31; E4B 0.37; 31B 0.27", "unit": "mean_cosine", "denominator": "repository mechanistic phase", "notes": "Geometry peak coincides with behavioral peak."}
+        ],
+        "additional_dimensions": {"status": "preliminary results with completed experiment matrix"}
+      },
+      "source_segment_refs": [{"source_id": "src-gustipardo-multilingual-safety", "segment_id": "seg-seven-language-results-geometry-protocol"}],
+      "confounds": ["Translated prompts, one LLM judge, public derivative artifacts, and no edit-seed variation."],
+      "configuration_gaps": ["No native-authored harmful set, second judge, human calibration, or independent replication."],
+      "transfer_limits": ["Supports a non-monotonic curve in this setup, not a universal E4B vulnerability law."],
+      "counterevidence_refs": ["obs-refusal-e2b-e4b"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-05-03T00:00:00Z", "end": "2026-05-06T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-distilled-e2b",
+      "statement": "DistilledGemma transfers a QLoRA-tuned 26B-A4B teacher's silver labels and reasoning traces into a merged E2B student that recovers about 88 percent of teacher macro recall on sandbox dev and ranks second or third in official HIPE profiles, but the contribution of traces is not isolated from labels and student SFT.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-26B-A4B-it", "gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "HIPE 2026 person-place relation extraction",
+        "snapshot": "arxiv 2606.29130",
+        "runtime": {"name": "vLLM and QLoRA training stack", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"languages": ["de", "en", "fr"], "documents": 104}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "teacher QLoRA, merge, silver trace generation, student QLoRA, and merge",
+        "reasoning_effort": null,
+        "context_policy": "noisy OCR historical articles",
+        "tools": [],
+        "permissions": [],
+        "prompt": "evidence-grounded JSON for at and isAt relations",
+        "scaffold": "26B-A4B teacher r32 alpha64 then E2B student r16 alpha32",
+        "runbook": "teacher 3 epochs; student 6 epochs; temperature 0; seed 42",
+        "harness": "sandbox dev plus official HIPE 2026 profiles",
+        "instrument_revision": "paper tables 4 and 5",
+        "grader": "macro and micro recall with logical post-processing",
+        "additional_dimensions": {"teacher_data": "90/10 stratified split over labeled EN/DE/FR training pairs"}
+      },
+      "outcome": {
+        "requested": "Deploy a compact multilingual historical relation extractor while retaining much of a larger teacher's accuracy.",
+        "executed": "Fine-tuned and merged the teacher, generated silver labels and traces, trained and merged the E2B student, and submitted the system.",
+        "artifact": "Paper-described merged student and official shared-task result.",
+        "verified": "Sandbox and official profile denominators are distinguished in the paper.",
+        "reported": "Task-specific distillation is competitive, but reasoning-trace causality and full training economics remain unresolved.",
+        "termination": "Official shared-task evaluation completed.",
+        "measurements": [
+          {"metric": "teacher_sandbox_macro_recall", "value": 0.7015, "unit": "macro_recall", "denominator": "sandbox dev set", "notes": "Merged 26B-A4B teacher."},
+          {"metric": "distilled_e2b_sandbox_macro_recall", "value": 0.6171, "unit": "macro_recall", "denominator": "same sandbox dev set", "notes": "About 88 percent teacher recovery."},
+          {"metric": "zero_shot_e2b_sandbox_macro_recall", "value": 0.5329, "unit": "macro_recall", "denominator": "same sandbox dev set", "notes": "Zero-shot comparison."},
+          {"metric": "official_standard_profile", "value": 0.688, "unit": "mean_profile_score", "denominator": "HIPE 2026 standard profile", "notes": "Rank 3."},
+          {"metric": "official_binary_profile", "value": 0.8156, "unit": "mean_profile_score", "denominator": "HIPE 2026 binary profile", "notes": "Rank 2."}
+        ],
+        "additional_dimensions": {"deployed_parameter_accounting": "2.3B student only; offline teacher cost excluded"}
+      },
+      "source_segment_refs": [{"source_id": "src-distilled-gemma", "segment_id": "seg-teacher-silver-student-results"}],
+      "confounds": ["Small corpus, class imbalance, task-specific post-processing, and no gold-only versus labels-only versus traces factorial."],
+      "configuration_gaps": ["Teacher generation cost, trace filtering, contamination checks, and student export/runtime parity are incomplete."],
+      "transfer_limits": ["Supports this multilingual relation-extraction system, not general reasoning distillation or universal E2B efficiency."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-06-01T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-welsh-e4b-cpt-sft",
+      "statement": "A two-stage Welsh E4B artifact reports that CPT plus SFT reaches full requested-language adherence and higher task and multi-turn scores than stock or SFT-only arms, while exposing data-mix regressions, non-native judging, repetition, factuality, tokenizer-fertility, and quantization limits.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "EryriLabs Welsh E4B v4",
+        "snapshot": "mutable repository captured 2026-09-04",
+        "runtime": {"name": "Transformers and llama.cpp", "version": "transformers 5.15 minimum stated", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"languages": ["cy", "en"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "CPT rsLoRA then SFT LoRA, merged BF16 and GGUF",
+        "reasoning_effort": "thinking disabled",
+        "context_policy": "2048-token training sequences; short single- and multi-turn evaluation",
+        "tools": [],
+        "permissions": [],
+        "prompt": "40 Welsh single-turn prompts, 20 English prompts, and 14 fixed multi-turn turns",
+        "scaffold": "CPT r128 with embedding update, then SFT r64 with reduced raw replay",
+        "runbook": "43.8M CPT tokens, 19,443 instruction rows, 2.5M raw replay tokens, one epoch each stage",
+        "harness": "blind Opus judging and structural checks; raw outputs retained",
+        "instrument_revision": "v4 versus stock and v3 SFT-only",
+        "grader": "Opus LLM judge, explicitly non-native Welsh",
+        "additional_dimensions": {"quantization": "NF4 evaluation and separate Q4_K_M/Q6_K GGUF checks"}
+      },
+      "outcome": {
+        "requested": "Improve Welsh conversation while retaining English and edge deployment.",
+        "executed": "Built a licensed corpus, trained CPT and SFT adapters, merged, quantized, and evaluated multiple arms.",
+        "artifact": "CPT and SFT adapters, merged BF16, GGUF, data cards, corpus report, logs, and raw eval outputs.",
+        "verified": "The source distinguishes trained from built corpus, exposes prior failed mix, and names judge limitations.",
+        "reported": "CPT plus SFT improves several measured Welsh outcomes but does not establish native fluency, factual reliability, or long-context parity.",
+        "termination": "v4 release and evaluation completed.",
+        "measurements": [
+          {"metric": "requested_language_adherence_stock", "value": 47.5, "unit": "percent", "denominator": "40 Welsh prompts", "notes": "Stock E4B."},
+          {"metric": "requested_language_adherence_v4", "value": 100, "unit": "percent", "denominator": "same 40 Welsh prompts", "notes": "CPT plus SFT."},
+          {"metric": "task_score_v4", "value": 2.7, "unit": "points_out_of_5", "denominator": "same 40 prompts and LLM judge", "notes": "Stock 1.45; SFT-only 2.33."},
+          {"metric": "multi_turn_score_v4", "value": 3.99, "unit": "points_out_of_5", "denominator": "14 fixed turns", "notes": "Stock 1.97; SFT-only 3.35."},
+          {"metric": "v4_vs_v3_pairwise", "value": "23 wins, 13 ties, 4 losses", "unit": "prompt_outcomes", "denominator": "40 prompts", "notes": "Blind LLM comparison."}
+        ],
+        "additional_dimensions": {"retention": "English fluency 5.0 and task 4.95 are source-reported under a small arm"}
+      },
+      "source_segment_refs": [{"source_id": "src-welsh-e4b-v4", "segment_id": "seg-cpt-sft-data-eval-retention-quants"}],
+      "confounds": ["Single artifact author, non-native LLM judge, small samples, automated data, and unmatched external Welsh comparator."],
+      "configuration_gaps": ["No native-speaker adjudication, multi-seed training, 128K curve, safety suite, or complete cross-runtime semantic parity."],
+      "transfer_limits": ["Supports this Welsh artifact and research method, not a general CPT recipe for low-resource languages."],
+      "counterevidence_refs": ["obs-offlineaid-language-metrics"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-08-01T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-formosa-multiseed",
+      "statement": "The FormosaNLU E4B adapter reports positive Traditional Chinese NLU deltas from filtered synthetic data on an untouched 2974-row test and across three seeds, while equal-N recipe removals remain below the preregistered detectability threshold and some secondary metrics change sign by seed.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "FormosaNLU zh-TW adapter",
+        "snapshot": "v1.2.2 evidence card captured 2026-09-04",
+        "runtime": {"name": "Transformers PEFT", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"language": "zh-TW", "artifact_sha256": "f70f423814dcd47943c92c0beb8b08a4e7f65e60a44355d3dcd95bed9f0bd60a"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "text-tower NF4 QLoRA with filtered synthetic and real data",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "MASSIVE zh-TW intent and slot extraction to JSON",
+        "scaffold": "LoRA r16 alpha32 dropout 0.05",
+        "runbook": "500 steps, effective batch 16, seeds 42-44, RTX 4090",
+        "harness": "untouched 2974-row test, deterministic robustness set, bootstrap and McNemar tests, equal-N ablation",
+        "instrument_revision": "v1.2.2 evidence release",
+        "grader": "intent, slot, exact-match, JSON validity, paired statistics",
+        "additional_dimensions": {"training_rows": "1176 real plus 3760 filtered synthetic for primary artifact"}
+      },
+      "outcome": {
+        "requested": "Improve Taiwanese Traditional Chinese NLU using filtered synthetic data.",
+        "executed": "Compared real-only and filtered adapters, repeated three seeds, and ran equal-N leave-one-recipe-out probes.",
+        "artifact": "Adapter, tokenizer, exact digest, linked code/data/config, and archival technical note.",
+        "verified": "Untouched test size, seeds, artifact identity, uncertainty, and negative component results are published.",
+        "reported": "Overall filtered-data gain is supported within the task, while component causality is not.",
+        "termination": "Evidence release completed.",
+        "measurements": [
+          {"metric": "seed42_intent_accuracy_delta", "value": 2.65, "unit": "percentage_points", "denominator": "2974 untouched MASSIVE zh-TW rows", "notes": "73.54 to 76.19 percent."},
+          {"metric": "seed42_slot_micro_f1_delta", "value": 4.4, "unit": "percentage_points", "denominator": "same 2974 rows", "notes": "62.14 to 66.54 percent."},
+          {"metric": "seed42_exact_match_delta", "value": 3.06, "unit": "percentage_points", "denominator": "same 2974 rows", "notes": "49.06 to 52.12 percent."},
+          {"metric": "robustness_intent_delta", "value": 3.63, "unit": "percentage_points_mean", "denominator": "seeds 42-44 on 8922-row deterministic probe", "notes": "SD 1.72 percentage points."},
+          {"metric": "equal_n_recipe_detectability", "value": false, "unit": null, "denominator": "single seed equal-N groups and 2.5 percentage-point threshold", "notes": "No exclusion met the preregistered threshold."}
+        ],
+        "additional_dimensions": {"seed_warning": "seed 42 alone makes intent macro-F1 and JSON-valid deltas negative in the later probe"}
+      },
+      "source_segment_refs": [{"source_id": "src-formosa-e4b-lora", "segment_id": "seg-heldout-multiseed-equaln-artifact"}],
+      "confounds": ["Community artifact, one task family, synthetic recipe interactions, and primary published adapter from one seed."],
+      "configuration_gaps": ["No native-language qualitative audit, English/general retention suite, long context, or post-merge served parity."],
+      "transfer_limits": ["Supports filtered synthetic data for this zh-TW NLU contract, not generic Traditional Chinese capability."],
+      "counterevidence_refs": ["obs-offlineaid-language-metrics"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-04-01T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-offlineaid-language-metrics",
+      "statement": "OfflineAid E4B improves expected-script and format rates much more than ROUGE-L on a 111-row EN/ZH/AR held-out set, including a small Chinese ROUGE regression alongside a large Chinese format gain, showing that script adherence and lexical similarity answer different questions.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "OfflineAid multilingual assistant",
+        "snapshot": "model card captured 2026-09-04",
+        "runtime": {"name": "Ollama", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"languages": ["en", "zh", "ar"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "LoRA, merged FP16, Q4_K_M, and RAG",
+        "reasoning_effort": null,
+        "context_policy": "verbatim evidence quote supplied through retrieval",
+        "tools": ["retrieval"],
+        "permissions": [],
+        "prompt": "grounded answer in specified language",
+        "scaffold": "LoRA r16 alpha16 with response-only loss and language layers only",
+        "runbook": "1002 training rows, 2 epochs, seed 3407, then merge and Q4_K_M",
+        "harness": "111 stratified held-out rows, stock plus RAG versus tuned plus RAG",
+        "instrument_revision": "model-card Tier A evaluation",
+        "grader": "ROUGE-L F1 and expected-script format check",
+        "additional_dimensions": {"decoding": "greedy", "split": "37 rows per language"}
+      },
+      "outcome": {
+        "requested": "Improve grounded multilingual answers for consumer-safety scenarios.",
+        "executed": "Trained LoRA, merged, quantized, and compared stock and tuned Q4_K_M through Ollama with the same RAG route.",
+        "artifact": "LoRA, merged FP16, GGUF sibling, dataset, and merge script.",
+        "verified": "Language-stratified outcomes and the weak format definition are explicit.",
+        "reported": "Adaptation strongly changes output-script compliance, while lexical overlap is small, mixed, and not a semantic translation metric.",
+        "termination": "Tier A held-out evaluation completed.",
+        "measurements": [
+          {"metric": "zh_rouge_l_delta", "value": -0.002, "unit": "f1", "denominator": "37 Chinese held-out rows", "notes": "0.229 to 0.227."},
+          {"metric": "zh_format_delta", "value": 16.3, "unit": "percentage_points", "denominator": "same 37 rows", "notes": "Expected CJK character plus non-empty output."},
+          {"metric": "ar_rouge_l_delta", "value": 0.054, "unit": "f1", "denominator": "37 Arabic held-out rows", "notes": "0.085 to 0.139."},
+          {"metric": "ar_format_delta", "value": 32.4, "unit": "percentage_points", "denominator": "same 37 rows", "notes": "21.6 to 54.1 percent."},
+          {"metric": "all_format_delta", "value": 17.0, "unit": "percentage_points", "denominator": "111 held-out rows", "notes": "53.2 to 70.3 percent."}
+        ],
+        "additional_dimensions": {"metric_boundary": "format does not establish correctness; ROUGE is lexically blind to valid translation variation"}
+      },
+      "source_segment_refs": [{"source_id": "src-offlineaid-e4b", "segment_id": "seg-heldout-language-metrics-training-merge"}],
+      "confounds": ["Small single-corpus held-out set, no native human judge, RAG in both arms, and coarse format criterion."],
+      "configuration_gaps": ["No multi-seed result, broader retention suite, or independent semantic translation scorer."],
+      "transfer_limits": ["Supports a metric split on this application, not a general multilingual-quality gain."],
+      "counterevidence_refs": ["obs-welsh-e4b-cpt-sft", "obs-formosa-multiseed"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-04-01T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-speech-composition",
+      "statement": "A private-marked E4B speech bundle composes an external MERaLiON encoder, trained projector, per-layer side channel, BF16 decoder, and rank-16 speech LoRA to reduce source-reported WER on 3000 Singapore-English utterances, but requires a custom runtime and cannot be treated as native Gemma audio-LoRA evidence.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it", "MERaLiON-3-10B"],
+        "provider": "multiple",
+        "product": "Singapore English ASR composition",
+        "snapshot": "visible card captured 2026-09-04",
+        "runtime": {"name": "elderwise MLX runtime", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"visibility": "owner-only/private according to card", "licenses": "multiple component licenses"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "external speech encoder to projector to E4B decoder with switchable LoRA",
+        "reasoning_effort": null,
+        "context_policy": "utterance-level 16 kHz mono PCM16 audio",
+        "tools": [],
+        "permissions": [],
+        "prompt": "Transcribe the following audio",
+        "scaffold": "3584 encoder output, 3072 projector hidden, 2560 decoder embedding, LoRA r16 scale 20",
+        "runbook": "custom per-layer speech-position inputs over all 42 decoder layers",
+        "harness": "MNSC ASR Part 2 Test with 3000 clips",
+        "instrument_revision": "card-normalized WER",
+        "grader": "lowercased and punctuation-normalized word error rate",
+        "additional_dimensions": {"decoder_precision": "BF16"}
+      },
+      "outcome": {
+        "requested": "Adapt E4B as a Singapore-English ASR decoder through an external speech interface.",
+        "executed": "Trained projector and speech LoRA, composed a custom bundle, and evaluated held-out utterances.",
+        "artifact": "Visible model card and described private full bundle.",
+        "verified": "Component identities, dimensions, target modules, prompt, evaluation set, and WER normalization are reported.",
+        "reported": "The composition improves the stated ASR baseline but has custom-runtime, visibility, license, and portability boundaries.",
+        "termination": "Owner evaluation complete; public visibility not established.",
+        "measurements": [
+          {"metric": "meralion_baseline_wer", "value": 25.78, "unit": "percent_wer", "denominator": "3000 MNSC ASR Part 2 test clips", "notes": "Stock MERaLiON-3 pipeline."},
+          {"metric": "e4b_8bit_composed_wer", "value": 18.86, "unit": "percent_wer", "denominator": "same test and normalization", "notes": "Smaller sibling release."},
+          {"metric": "e4b_bf16_composed_wer", "value": 16.09, "unit": "percent_wer", "denominator": "same test and normalization", "notes": "Quality-first bundle."}
+        ],
+        "additional_dimensions": {"portable": false}
+      },
+      "source_segment_refs": [{"source_id": "src-meralion-speech-e4b", "segment_id": "seg-components-wer-runtime-license"}],
+      "confounds": ["Single author/source, composed baseline changes decoder family, private bundle, and no independent rerun."],
+      "configuration_gaps": ["No native Gemma audio baseline, accent/language sweep, long-form, streaming, timestamps, or generic runtime acceptance."],
+      "transfer_limits": ["Supports existence of this composition and measured WER only, not a general E4B speech property."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-08-01T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-stripping-memory-mtp",
+      "statement": "One E4B artifact removes 478.1M vision/audio parameters without retraining the text path, reports a 4.1 GB resident-VRAM reduction that exceeds removed Q4 weight bytes, small task and multilingual deltas, and byte-identical deterministic output with the official MTP assistant while runtime support remains uneven.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it", "gemma-4-E4B-it-assistant"],
+        "provider": "google and community derivative",
+        "product": "vision/audio-stripped E4B classifier",
+        "snapshot": "model card captured 2026-09-04",
+        "runtime": {"name": "Ollama, Transformers, and attempted vLLM", "version": "vLLM 0.20.2 limitation stated", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "RTX 3090", "quantization": "Q4_K_M for resident comparison"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "clean text-model re-instantiation followed by GGUF and optional official assistant",
+        "reasoning_effort": "thinking disabled for classification",
+        "context_policy": "4096 and 8192 resident examples; nominal 128K retained",
+        "tools": [],
+        "permissions": [],
+        "prompt": "classification, extraction, memory, and deterministic MTP workloads",
+        "scaffold": "copy unchanged text tensors and remove modality towers/projectors",
+        "runbook": "official versus stripped Q4_K_M on n=100 per task; BF16 target plus assistant for MTP",
+        "harness": "MemPalace small-model suite and per-workload latency table",
+        "instrument_revision": "model-card evaluation",
+        "grader": "task metrics, resident memory, byte identity, and elapsed time",
+        "additional_dimensions": {"languages": ["en", "pt-BR", "es", "zh"]}
+      },
+      "outcome": {
+        "requested": "Reduce text-only E4B memory while preserving behavior and MTP compatibility.",
+        "executed": "Removed modality subtrees, exported BF16/GGUF, compared tasks and languages, and paired the BF16 target with the official assistant.",
+        "artifact": "Public model, GGUF variants, card, and linked MTP server script.",
+        "verified": "Parameter classes, resident memory, task denominators, MTP pair, and one failed released-vLLM route are reported.",
+        "reported": "System-memory savings arise from more than removed quantized weights; semantic parity is promising but bounded and runtime-sensitive.",
+        "termination": "Transformers pairing tested; Ollama and released-vLLM MTP gaps remain.",
+        "measurements": [
+          {"metric": "parameters_removed", "value": 478.1, "unit": "million_parameters", "denominator": "7996.2M-parameter multimodal checkpoint", "notes": "Audio, vision, and two projectors; 6.0 percent."},
+          {"metric": "resident_vram_official", "value": 10626, "unit": "MB", "denominator": "Ollama Q4_K_M on RTX 3090", "notes": "Official multimodal artifact."},
+          {"metric": "resident_vram_stripped", "value": 6517, "unit": "MB", "denominator": "same runtime/hardware class", "notes": "Reduction 4109 MB."},
+          {"metric": "entity_f1_delta", "value": -0.0201, "unit": "f1", "denominator": "n=100 entity-extraction task", "notes": "Source calls all accuracy deltas noise but does not publish confidence intervals."},
+          {"metric": "mtp_speedup_range", "value": "1.09 to 3.04", "unit": "times", "denominator": "five deterministic workloads on RTX 3090 Transformers", "notes": "Depends strongly on output predictability; bytes reported identical."}
+        ],
+        "additional_dimensions": {"memory_explanation": "higher-precision encoders, modality buffers, and vocab-offset structures are proposed contributors"}
+      },
+      "source_segment_refs": [{"source_id": "src-stripped-e4b-classifier", "segment_id": "seg-parameter-memory-text-multilingual-mtp"}],
+      "confounds": ["Single author artifact, n=100 tasks, no confidence intervals, different BF16 and Q4 paths, and mutable runtime compatibility."],
+      "configuration_gaps": ["No independent byte-level tensor audit, full safety suite, 128K behavior curve, or released vLLM MTP rerun."],
+      "transfer_limits": ["Supports this clean strip and runtime setup, not arbitrary PLE or modality stripping nor total text equivalence."],
+      "counterevidence_refs": ["obs-qat-official-topology"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-05-01T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "cluster-quantization-causal-chain",
+      "label": "QAT outcome is a chain of training, format, conversion, kernels, and workload",
+      "observation_refs": ["obs-qat-official-topology", "obs-qat-server-memory-throughput", "obs-qat-comparison-confounded", "obs-e2b-kernel-mtp-lineage"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-gemma4-qat-release", "google-gemma4-core-docs", "vllm-gemma4-runtime", "kmarble-qat-operational-test", "3h4x-qat-format-audit", "little-gemma-runtime-engineering"],
+      "supported_scope": "Across provider, runtime, independent benchmark, and engineering-journal sources, QAT model label alone does not identify the cause of memory, speed, or task outcomes.",
+      "transfer_limits": ["No matched E2B/E4B same-format QAT/PTQ task study was located."],
+      "unresolved_configuration_gaps": ["Exact converter, tensor mix, runtime revision, and task-quality parity are incomplete across sources."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Run a matched E2B/E4B QAT/PTQ lattice with explicit measurement namespaces."
+    },
+    {
+      "cluster_id": "cluster-deployment-pareto-denominators",
+      "label": "Memory, latency, throughput, power, and energy form a workload-specific deployment Pareto",
+      "observation_refs": ["obs-qat-official-topology", "obs-qat-server-memory-throughput", "obs-edge-energy-pareto", "obs-stripping-memory-mtp"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-gemma4-core-docs", "vllm-gemma4-runtime", "jetson-thor-e2b-engine-test", "igorls-e4b-modality-strip"],
+      "supported_scope": "Independent sources repeatedly show that similarly named GB or speed claims use different denominators and that no engine or topology dominates every deployment objective.",
+      "transfer_limits": ["Devices, runtimes, precisions, and workloads differ and cannot be averaged into one family score."],
+      "unresolved_configuration_gaps": ["Energy methodology and full-stack peak memory are missing in most sources."],
+      "posture": "cross_modal_pattern",
+      "disposition": "cluster",
+      "next_action": "Require namespace-qualified measures and retain multi-objective Pareto surfaces."
+    },
+    {
+      "cluster_id": "cluster-post-adaptation-lifecycle",
+      "label": "Adapted QAT and MTP compatibility require new artifact-stage acceptance",
+      "observation_refs": ["obs-qat-official-topology", "obs-e2b-kernel-mtp-lineage", "obs-qat-post-adaptation-gap", "obs-stripping-memory-mtp"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["google-gemma4-qat-release", "little-gemma-runtime-engineering", "unsloth-qat-adaptation-question", "igorls-e4b-modality-strip"],
+      "supported_scope": "Provider support, community Q&A, and two runtime artifacts agree that exact target, assistant, representation, and runtime stage matter after adaptation or topology change.",
+      "transfer_limits": ["No source closes the full base-to-adapter-to-merge-to-quantize-to-serve-to-MTP chain."],
+      "unresolved_configuration_gaps": ["Post-LoRA QAT calibration and cross-runtime MTP parity remain unmeasured."],
+      "posture": "recurring_pressure",
+      "disposition": "review_for_study",
+      "next_action": "Build a lifecycle parity matrix with semantic and output-equivalence gates after every stage."
+    },
+    {
+      "cluster_id": "cluster-refusal-scorer-geometry",
+      "label": "Refusal removal, harmfulness, distribution shift, capability, and geometry are separate instruments",
+      "observation_refs": ["obs-refusal-e2b-e4b", "obs-abliteration-scorer-export", "obs-multilingual-collapse"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["trevors-gemma4-abliteration", "abliterlitics-e2b-forensics", "gustipardo-multilingual-abliteration"],
+      "supported_scope": "Three independent community origins converge on strong directional refusal changes while exposing marker errors, capability Pareto, distinct weight directions, and multilingual variation.",
+      "transfer_limits": ["All are community studies and use different safety definitions, judges, edit artifacts, and KL passports."],
+      "unresolved_configuration_gaps": ["Human harmfulness labels, native multilingual prompts, edit seeds, and independent replication are incomplete."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Re-run one common prompt pool with marker confusion matrix, harmfulness judge, capability suite, and metric passports."
+    },
+    {
+      "cluster_id": "cluster-transfer-lineage",
+      "label": "Teacher, CPT, SFT, synthetic data, scorer, and retention must be separated in language transfer",
+      "observation_refs": ["obs-distilled-e2b", "obs-welsh-e4b-cpt-sft", "obs-formosa-multiseed", "obs-offlineaid-language-metrics"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["distilled-gemma-hipe", "eryrilabs-welsh-e4b", "formosanlu-e4b-adapter", "offlineaid-e4b-adaptation"],
+      "supported_scope": "Across four independent multilingual tasks, adaptation gains depend on teacher/data lineage and the evaluator, while useful negative or mixed outcomes survive publication.",
+      "transfer_limits": ["Languages, tasks, sample sizes, data sources, and quality instruments are heterogeneous."],
+      "unresolved_configuration_gaps": ["Native-speaker evaluation, shared retention suites, contamination audits, and common E2B/E4B arms are incomplete."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Use a common low-resource suite and a distillation factorial that isolates labels from traces."
+    },
+    {
+      "cluster_id": "cluster-modality-topology",
+      "label": "External composition and modality stripping change system topology, portability, and memory beyond ordinary LoRA",
+      "observation_refs": ["obs-speech-composition", "obs-stripping-memory-mtp"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["meralion-e4b-speech-composition", "igorls-e4b-modality-strip"],
+      "supported_scope": "Two independent E4B artifacts demonstrate that adding or removing modality paths changes runtime contracts, licenses, memory, and compatibility even when the text decoder remains central.",
+      "transfer_limits": ["Both are single-origin community artifacts with different tasks and runtime stacks."],
+      "unresolved_configuration_gaps": ["Native modality comparators, independent parity, and generic-runtime acceptance are missing."],
+      "posture": "recurring_pressure",
+      "disposition": "preserve",
+      "next_action": "Treat component identities and side-channel interfaces as first-class realization fields in future studies."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "tension-qat-quality-claim-versus-isolation",
+      "label": "Provider QAT quality claim versus missing matched E2B/E4B causal comparison",
+      "side_a_refs": ["obs-qat-official-topology"],
+      "side_b_refs": ["obs-qat-comparison-confounded"],
+      "analysis": "The provider describes higher quality than PTQ, while located E2B/E4B operational comparisons change precision or format and cannot isolate the recipe.",
+      "resolution": "partially_resolved",
+      "remaining_question": "What is the E2B/E4B task delta for QAT versus PTQ at identical target format, converter, runtime, and harness?"
+    },
+    {
+      "tension_id": "tension-memory-namespaces",
+      "label": "Provider, server, forum, and stripped-artifact memory numbers",
+      "side_a_refs": ["obs-qat-official-topology", "obs-qat-server-memory-throughput"],
+      "side_b_refs": ["obs-edge-energy-pareto", "obs-stripping-memory-mtp"],
+      "analysis": "The sources report load estimates, compressed-tensor weight memory, process high-water RAM, and resident VRAM, so numerical differences are mostly denominator differences rather than direct contradictions.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Can one common runtime collect file, loaded-static, resident, peak, KV-cache, and full-stack memory for every arm?"
+    },
+    {
+      "tension_id": "tension-refusal-count-versus-effective-behavior",
+      "label": "Raw marker refusals versus audited refusal-then-comply behavior",
+      "side_a_refs": ["obs-refusal-e2b-e4b"],
+      "side_b_refs": ["obs-abliteration-scorer-export", "obs-multilingual-collapse"],
+      "analysis": "Topic markers and early refusal phrases can label a full compliant response as refusal; full-response judging also introduces its own model-judge dependency.",
+      "resolution": "resolved_by_instrument",
+      "remaining_question": "What are precision and recall of each detector against a human-audited multilingual gold set?"
+    },
+    {
+      "tension_id": "tension-size-kl-versus-multilingual-collapse",
+      "label": "Lower E4B within-study KL versus peak E4B multilingual harmful compliance",
+      "side_a_refs": ["obs-refusal-e2b-e4b"],
+      "side_b_refs": ["obs-multilingual-collapse"],
+      "analysis": "Lower distribution shift on harmless first-token prompts and greater multilingual harmful compliance measure different axes; neither entails the other.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Does the E4B peak persist when edit tool, prompts, judges, KL passport, and capability suite are unified?"
+    },
+    {
+      "tension_id": "tension-language-score-versus-language-quality",
+      "label": "Language adherence and task scores versus native fluency and semantic correctness",
+      "side_a_refs": ["obs-welsh-e4b-cpt-sft", "obs-formosa-multiseed"],
+      "side_b_refs": ["obs-offlineaid-language-metrics"],
+      "analysis": "Requested script, fast task metrics, LLM-judge fluency, ROUGE, and native quality are distinct; the Chinese arm explicitly improves format while slightly regressing in ROUGE.",
+      "resolution": "resolved_by_instrument",
+      "remaining_question": "Can native-speaker, semantic, script, task, and retention instruments be run on one common low-resource suite?"
+    },
+    {
+      "tension_id": "tension-qat-finetune-route-versus-calibration",
+      "label": "Fine-tunable QAT weights versus preservation of deployed Q4 calibration",
+      "side_a_refs": ["obs-qat-official-topology"],
+      "side_b_refs": ["obs-qat-post-adaptation-gap"],
+      "analysis": "A trainable initialization exists, but changing effective weights and re-quantizing does not preserve the original deployed artifact by identity or evidence.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Which post-adaptation workflow best preserves base QAT quality after a final target-format export?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "pressure-quantization-causal-decomposition",
+      "trigger_refs": ["obs-qat-official-topology", "obs-qat-comparison-confounded", "obs-e2b-kernel-mtp-lineage"],
+      "pressure": "Training recipe, tensor representation, conversion, runtime kernels, and workload are repeatedly conflated under one QAT label.",
+      "proposed_response": "Add a generic causal decomposition for deployed artifacts and refuse recipe attribution until other stages are controlled.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-measurement-namespace",
+      "trigger_refs": ["obs-qat-official-topology", "obs-qat-server-memory-throughput", "obs-edge-energy-pareto", "obs-stripping-memory-mtp"],
+      "pressure": "Memory and performance numbers share units while measuring different process boundaries, workload points, and cache states.",
+      "proposed_response": "Require semantic measurement namespaces, denominators, concurrency, prompt/output lengths, and cold/warm state.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-release-state-ladder",
+      "trigger_refs": ["obs-qat-official-topology", "obs-qat-post-adaptation-gap", "obs-stripping-memory-mtp"],
+      "pressure": "Documentation, listed artifacts, released runtime support, successful execution, and semantic acceptance diverge in the same lifecycle.",
+      "proposed_response": "Record announced, listed, retrievable, loadable, executable, accepted, benchmarked, and independently rerun states separately.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-lifecycle-parity-matrix",
+      "trigger_refs": ["obs-e2b-kernel-mtp-lineage", "obs-qat-post-adaptation-gap", "obs-stripping-memory-mtp"],
+      "pressure": "No source closes base, adapter, merge, quantization, serving, and exact MTP pairing with one semantic suite.",
+      "proposed_response": "Use a stage-by-stage lifecycle parity matrix with artifact identity and fresh acceptance at every transition.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-safety-metric-passport",
+      "trigger_refs": ["obs-refusal-e2b-e4b", "obs-abliteration-scorer-export", "obs-multilingual-collapse"],
+      "pressure": "Refusal, harmful compliance, ASR, KL, capability and geometry are treated as interchangeable despite different prompts, positions, reductions, and judges.",
+      "proposed_response": "Give KL and safety metrics explicit passports and require marker confusion audits against full-response judgments.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-distillation-lineage",
+      "trigger_refs": ["obs-distilled-e2b"],
+      "pressure": "A student gain can be incorrectly attributed to reasoning traces when teacher adaptation, silver labels, student SFT, merge, and post-processing change together.",
+      "proposed_response": "Retain teacher-to-silver-to-student lineage and require gold-only, labels-only, and labels-plus-traces ablations for causal claims.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-low-resource-multiaxis-suite",
+      "trigger_refs": ["obs-welsh-e4b-cpt-sft", "obs-formosa-multiseed", "obs-offlineaid-language-metrics"],
+      "pressure": "Language ID, expected script, LLM fluency, lexical overlap, task correctness, retention, and tokenizer fertility expose different success and failure modes.",
+      "proposed_response": "Require a generic low-resource suite with native review, script, task, retention, contamination, code-switch, and fertility axes.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-modality-topology",
+      "trigger_refs": ["obs-speech-composition", "obs-stripping-memory-mtp"],
+      "pressure": "External encoder composition and modality removal alter component identity, licenses, side channels, memory, and runtime portability beyond an ordinary adapter label.",
+      "proposed_response": "Record component topology, trainable subtrees, interface dimensions, prompt contract, visibility, and runtime acceptance as first-class research data.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-adaptation-privacy",
+      "trigger_refs": ["obs-distilled-e2b", "obs-welsh-e4b-cpt-sft", "obs-formosa-multiseed"],
+      "pressure": "CPT, silver traces, synthetic data, and document internalization create a privacy and memorization surface that task accuracy does not measure.",
+      "proposed_response": "Add canary, verbatim extraction, membership-alternative, PII, license, repetition, and capacity probes across adaptation stages.",
+      "status": "adopted"
+    }
+  ],
+  "search_probes": [
+    {
+      "probe_id": "probe-qat-official-topology",
+      "question": "Which official QAT checkpoint classes, memory denominators, runtime formats, and MTP/fine-tuning routes exist for E2B and E4B?",
+      "searched_at": "2026-09-04T21:40:00Z",
+      "query_variants": ["Gemma 4 QAT official E2B E4B Q4_0 mobile MTP", "Gemma 4 QAT memory fine-tune weights"],
+      "source_roles_sought": ["provider announcement", "provider documentation", "official artifact collection"],
+      "result_state": "qualified_evidence_found",
+      "source_refs": ["src-google-qat-announcement", "src-google-core-overview-revisit"],
+      "observation_refs": ["obs-qat-official-topology"],
+      "limitations": ["Provider sources establish intended topology rather than independent outcome quality."],
+      "next_action": "Snapshot current route tables if a later release changes formats or assistant pairing."
+    },
+    {
+      "probe_id": "probe-qat-versus-ptq",
+      "question": "Does an exact E2B or E4B benchmark isolate QAT from PTQ at the same bit width, tensor format, converter, runtime, and tasks?",
+      "searched_at": "2026-09-04T21:42:00Z",
+      "query_variants": ["Gemma 4 E2B QAT PTQ benchmark quality Q4_0 accuracy", "Gemma 4 E4B QAT PTQ same bit comparison", "Gemma 4 QAT versus non-QAT GGUF benchmark"],
+      "source_roles_sought": ["independent controlled benchmark", "executable harness", "raw per-item results"],
+      "result_state": "no_qualified_source_found",
+      "source_refs": ["src-kmarble-qat-benchmark", "src-3h4x-qat-causal-audit"],
+      "observation_refs": ["obs-qat-comparison-confounded"],
+      "limitations": ["E4B comparison changes precision; the strongest same-format causal audit uses 12B and different builds."],
+      "next_action": "Construct and publish the matched E2B/E4B comparison rather than infer the recipe effect."
+    },
+    {
+      "probe_id": "probe-qat-runtime-pareto",
+      "question": "How do server, embedded, and custom runtimes change QAT memory, speed, energy, warmup, and MTP outcomes?",
+      "searched_at": "2026-09-04T21:44:00Z",
+      "query_variants": ["Gemma 4 E2B QAT LiteRT llama.cpp power benchmark", "Gemma 4 E2B q4_0 MTP prefill runtime journal", "Gemma 4 E4B QAT vLLM throughput"],
+      "source_roles_sought": ["runtime owner recipe", "device benchmark", "engineering journal"],
+      "result_state": "mixed_evidence_found",
+      "source_refs": ["src-vllm-gemma4-recipe", "src-jetson-e2b-engines", "src-little-gemma-journal"],
+      "observation_refs": ["obs-qat-server-memory-throughput", "obs-edge-energy-pareto", "obs-e2b-kernel-mtp-lineage"],
+      "limitations": ["Different devices, formats, workloads, runtime revisions, and measurement namespaces."],
+      "next_action": "Reuse the same workload and measurement namespace across at least two runtimes per device class."
+    },
+    {
+      "probe_id": "probe-qat-after-adaptation",
+      "question": "Is Q4_0 calibration preserved after E2B or E4B LoRA or QLoRA, merge, re-quantization, serving, and MTP pairing?",
+      "searched_at": "2026-09-04T21:46:00Z",
+      "query_variants": ["Gemma 4 QAT fine tuning LoRA after QAT Unsloth", "QLoRA Google QAT checkpoint preserve Q4_0 calibration", "Gemma 4 adapted QAT GGUF vLLM LiteRT parity"],
+      "source_roles_sought": ["framework-supported workflow", "controlled artifact chain", "post-export semantic benchmark"],
+      "result_state": "weak_signal_only",
+      "source_refs": ["src-google-qat-announcement", "src-unsloth-qat-finetune-discussion"],
+      "observation_refs": ["obs-qat-post-adaptation-gap"],
+      "limitations": ["Provider states weights are fine-tunable; the preservation question appears only in unanswered community discussion."],
+      "next_action": "Run a QAT-initialized LoRA lifecycle matrix with final target-format task and MTP parity."
+    },
+    {
+      "probe_id": "probe-safety-refusal-geometry",
+      "question": "Which E2B and E4B refusal-removal effects repeat across prompt pools, edit methods, capability metrics, KL, layers, and artifact audits?",
+      "searched_at": "2026-09-04T21:48:00Z",
+      "query_variants": ["Gemma 4 E2B E4B abliteration KL layers 686 prompts", "Gemma 4 E2B abliterated variants capability HarmBench forensics"],
+      "source_roles_sought": ["experiment repository", "cross-artifact forensic suite", "raw prompt and response artifacts"],
+      "result_state": "mixed_evidence_found",
+      "source_refs": ["src-trevors-abliteration", "src-dreamfast-abliterlitics"],
+      "observation_refs": ["obs-refusal-e2b-e4b", "obs-abliteration-scorer-export"],
+      "limitations": ["Community-only evidence, distinct KL passports, and incomplete human safety calibration."],
+      "next_action": "Freeze one shared safety and capability suite with a human-audited detector confusion matrix."
+    },
+    {
+      "probe_id": "probe-multilingual-refusal",
+      "question": "Does English-direction safety removal affect E2B and E4B similarly across languages and model sizes?",
+      "searched_at": "2026-09-04T21:50:00Z",
+      "query_variants": ["Gemma 4 multilingual abliteration E2B E4B seven languages", "Gemma 4 refusal direction cross lingual cosine safety collapse"],
+      "source_roles_sought": ["multilingual controlled study", "mechanistic artifacts", "native-language replication"],
+      "result_state": "qualified_evidence_found",
+      "source_refs": ["src-gustipardo-multilingual-safety"],
+      "observation_refs": ["obs-multilingual-collapse"],
+      "limitations": ["Single origin, translated prompts, one judge, and preliminary publication state."],
+      "next_action": "Replicate with native prompts, a second judge, multiple edit tools, and multiple edit seeds."
+    },
+    {
+      "probe_id": "probe-distillation-e2b",
+      "question": "What teacher, silver-data, student, merge, multilingual, official-result, and efficiency evidence exists for Gemma 4 E2B distillation?",
+      "searched_at": "2026-09-04T21:52:00Z",
+      "query_variants": ["Gemma 4 E2B distillation 26B-A4B teacher silver traces", "DistilledGemma HIPE 2026 E2B"],
+      "source_roles_sought": ["research paper", "official shared-task result", "student artifact"],
+      "result_state": "qualified_evidence_found",
+      "source_refs": ["src-distilled-gemma"],
+      "observation_refs": ["obs-distilled-e2b"],
+      "limitations": ["No factorial separating gold labels, teacher labels, and reasoning traces."],
+      "next_action": "Run the missing distillation ablations and include offline teacher-generation economics."
+    },
+    {
+      "probe_id": "probe-low-resource-languages",
+      "question": "Which low-resource E4B CPT or SFT artifacts expose data, script, native-quality, task, retention, seed, contamination, and export controls?",
+      "searched_at": "2026-09-04T21:54:00Z",
+      "query_variants": ["Gemma 4 E4B Welsh CPT SFT", "Gemma 4 E4B Frisian continued pretraining", "Gemma 4 E4B Traditional Chinese QLoRA multi seed", "Gemma 4 E4B multilingual English Chinese Arabic fine tune"],
+      "source_roles_sought": ["language artifact with raw eval", "multi-seed task benchmark", "native-speaker evaluation", "data card"],
+      "result_state": "mixed_evidence_found",
+      "source_refs": ["src-welsh-e4b-v4", "src-frisian-e4b", "src-formosa-e4b-lora", "src-offlineaid-e4b"],
+      "observation_refs": ["obs-welsh-e4b-cpt-sft", "obs-formosa-multiseed", "obs-offlineaid-language-metrics"],
+      "limitations": ["Frisian remains a six-question weak signal; other artifacts use incompatible tasks and non-native or non-semantic scorers."],
+      "next_action": "Build a shared native-reviewed language suite and reuse Armenian evidence from the predecessor run without flattening tasks."
+    },
+    {
+      "probe_id": "probe-speech-composition",
+      "question": "Is an external speech encoder plus projector and E4B decoder evaluated as a complete composed system rather than described as ordinary audio LoRA?",
+      "searched_at": "2026-09-04T21:56:00Z",
+      "query_variants": ["Gemma 4 E4B external speech encoder projector LoRA ASR", "Gemma 4 E4B MERaLiON speech MLX"],
+      "source_roles_sought": ["component-backed model artifact", "held-out speech benchmark", "runtime and license provenance"],
+      "result_state": "qualified_evidence_found",
+      "source_refs": ["src-meralion-speech-e4b"],
+      "observation_refs": ["obs-speech-composition"],
+      "limitations": ["One private-marked bundle, one accent/task, custom runtime, and no native Gemma audio baseline."],
+      "next_action": "Compare native audio adaptation and external composition under one WER, latency, memory, and portability suite."
+    },
+    {
+      "probe_id": "probe-modality-stripping",
+      "question": "What memory, text, multilingual, tokenizer, context, quantization, and MTP effects are measured after removing E4B modality components?",
+      "searched_at": "2026-09-04T21:58:00Z",
+      "query_variants": ["Gemma 4 E4B modality stripped vision audio memory benchmark", "Gemma 4 E4B text only MTP assistant stripped"],
+      "source_roles_sought": ["artifact with tensor accounting", "paired task benchmark", "runtime compatibility result"],
+      "result_state": "qualified_evidence_found",
+      "source_refs": ["src-stripped-e4b-classifier"],
+      "observation_refs": ["obs-stripping-memory-mtp"],
+      "limitations": ["Single community artifact and no independent parity or 128K evaluation."],
+      "next_action": "Replicate full, no-audio, no-vision, and supported no-PLE arms with confidence intervals and exact runtime versions."
+    },
+    {
+      "probe_id": "probe-unseen-tool-schemas",
+      "question": "Does post-training E2B or E4B tool use generalize beyond a fixed catalog under added, removed, renamed, nested, irrelevant, or hostile schemas?",
+      "searched_at": "2026-09-04T22:00:00Z",
+      "query_variants": ["Gemma 4 unseen tools tool calling evaluation schema", "Gemma 4 E4B fine tuning unseen tool schemas rename", "Gemma 4 hostile tool descriptions"],
+      "source_roles_sought": ["controlled adaptation study", "schema mutation benchmark", "adversarial tool-description evaluation"],
+      "result_state": "no_qualified_source_found",
+      "source_refs": ["src-google-function-calling"],
+      "observation_refs": [],
+      "limitations": ["Official documentation establishes interface and validation cautions; predecessor tool study uses a fixed catalog."],
+      "next_action": "Create the schema-mutation suite and evaluate tool choice, exact arguments, no-call, and recovery after QLoRA."
+    },
+    {
+      "probe_id": "probe-adaptation-privacy",
+      "question": "Do exact E2B or E4B CPT, distillation, or document-internalization studies measure canary extraction, verbatim continuation, membership inference, PII, or licensed-text leakage?",
+      "searched_at": "2026-09-04T22:02:00Z",
+      "query_variants": ["Gemma 4 memorization continued pretraining CPT privacy", "Gemma 4 document internalization memorization", "Gemma 4 E2B E4B adapter canary extraction"],
+      "source_roles_sought": ["privacy study", "memorization benchmark", "artifact-level leakage audit"],
+      "result_state": "no_qualified_source_found",
+      "source_refs": [],
+      "observation_refs": [],
+      "limitations": ["Search found generic or other-size work, not an exact post-adaptation E2B/E4B privacy evaluation."],
+      "next_action": "Add canary and verbatim-extraction arms to the existing CPT and document-internalization study designs."
+    },
+    {
+      "probe_id": "probe-post-adaptation-128k",
+      "question": "Does an adapted E2B or E4B artifact retain behavioral quality across a measured context-length curve approaching 128K?",
+      "searched_at": "2026-09-04T22:04:00Z",
+      "query_variants": ["Gemma 4 E2B fine tuned 128K benchmark", "Gemma 4 E4B LoRA long context 128K evaluation", "Gemma 4 CPT post adaptation context curve"],
+      "source_roles_sought": ["multi-depth benchmark", "position sweep", "base-versus-adapted curve"],
+      "result_state": "no_qualified_source_found",
+      "source_refs": ["src-welsh-e4b-v4", "src-stripped-e4b-classifier"],
+      "observation_refs": [],
+      "limitations": ["Artifacts retain nominal 128K configuration but train and evaluate mainly at short contexts."],
+      "next_action": "Run base and adapted arms at multiple depths and positions with completion, looping, latency, memory, and tokenizer-fertility controls."
+    },
+    {
+      "probe_id": "probe-common-e2b-e4b-matrix",
+      "question": "Is there one E2B/E4B adaptation experiment with identical data, topology, seeds, scorer, retention, hardware accounting, export, serving, context, and MTP controls?",
+      "searched_at": "2026-09-04T22:06:00Z",
+      "query_variants": ["Gemma 4 E2B E4B fine tuning same dataset LoRA benchmark", "Gemma 4 E2B versus E4B adaptation paired seeds runtime", "Gemma 4 E2B E4B common post training matrix"],
+      "source_roles_sought": ["paired family study", "common artifact matrix", "cross-size controlled benchmark"],
+      "result_state": "no_qualified_source_found",
+      "source_refs": ["src-trevors-abliteration", "src-gustipardo-multilingual-safety"],
+      "observation_refs": [],
+      "limitations": ["Safety studies provide partial paired size controls but not the full adaptation, retention, export, runtime, context, and MTP matrix."],
+      "next_action": "Implement the common matrix as a new ModelStudy candidate after owner review."
+    },
+    {
+      "probe_id": "probe-full-lifecycle-chain",
+      "question": "Does any exact Gemma 4 E2B or E4B artifact close base revision through adapter, merge, QAT or PTQ, runtime serving, semantic parity, and matching MTP assistant?",
+      "searched_at": "2026-09-04T22:08:00Z",
+      "query_variants": ["Gemma 4 LoRA merge quantize GGUF vLLM LiteRT MTP parity", "Gemma 4 adapted target assistant model post quantization benchmark", "Gemma 4 QAT adapter lifecycle compatibility"],
+      "source_roles_sought": ["end-to-end artifact lineage", "cross-runtime parity", "paired MTP acceptance"],
+      "result_state": "no_qualified_source_found",
+      "source_refs": ["src-google-qat-announcement", "src-little-gemma-journal", "src-offlineaid-e4b", "src-stripped-e4b-classifier"],
+      "observation_refs": ["obs-qat-post-adaptation-gap", "obs-e2b-kernel-mtp-lineage", "obs-stripping-memory-mtp"],
+      "limitations": ["Different sources cover disjoint lifecycle segments; their composition is not an end-to-end result."],
+      "next_action": "Create one content-addressed artifact chain and repeat the same semantic suite after every transition."
+    }
+  ],
+  "revisit_triggers": [
+    "Google, Unsloth, llama.cpp, vLLM, SGLang, or LiteRT publishes a released-version E2B/E4B QAT parity or post-adaptation workflow.",
+    "A matched E2B/E4B QAT-versus-PTQ task study appears at the same bit width and runtime.",
+    "The multilingual safety repository publishes a paper, native-language replication, second judge, or different edit method.",
+    "Abliterlitics or another forensic suite publishes a compatible E4B arm or human-audited safety labels.",
+    "DistilledGemma publishes gold-only, teacher-label-only, and labels-plus-traces ablations or exact artifacts.",
+    "Welsh, Frisian, Armenian, Traditional Chinese, or another low-resource E2B/E4B artifact receives native-speaker and common-retention evaluation.",
+    "A public external-speech composition or modality-stripping replication closes generic runtime, license, and MTP parity.",
+    "An unseen-tool schema-mutation benchmark evaluates a post-trained E2B or E4B model.",
+    "A post-adaptation privacy or memorization study targets E2B or E4B.",
+    "A qualified post-adaptation context-length curve approaches 128K.",
+    "A common E2B/E4B adaptation matrix or full lifecycle chain becomes available."
+  ],
+  "created_at": "2026-09-04T22:10:00Z",
+  "updated_at": "2026-09-04T22:10:00Z"
+}
