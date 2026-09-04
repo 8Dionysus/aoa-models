@@ -27,6 +27,10 @@ not promote model knowledge into routing, runtime, proof, or acceptance.
 - A provider-neutral research-automation artifact schema and durable tests for
   overwrite refusal, predecessor history, recomputed change classification,
   qualified observation refs, and review-only supersession admission.
+- A generated research-source dossier catalog and fast query command that join
+  exact normalized URIs across runs with segment, observation, snapshot,
+  change, metadata-variation, and supersession history without claiming
+  freshness or truth.
 
 ### Changed
 
@@ -37,6 +41,10 @@ not promote model knowledge into routing, runtime, proof, or acceptance.
   counterevidence without allowing either to invent an origin group.
 - The normal research-intake validator now also checks retained automation
   artifacts, their local digest-bound refs, and their declared flat routes.
+- Research agents now query one shared generated source history before reuse
+  and rebuild it after retained input changes; actionable attention is limited
+  to repeated unanchored use, classification conflicts, capture gaps, and
+  pending semantic review.
 
 ### Security
 

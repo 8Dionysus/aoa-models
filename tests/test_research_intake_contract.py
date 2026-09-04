@@ -16,6 +16,7 @@ from research_intake_contract import (  # noqa: E402
     canonical_digest,
     validate_research_intake,
 )
+from research_source_dossiers import expected_content as expected_dossier_content  # noqa: E402
 
 
 def minimal_packet(
@@ -199,12 +200,19 @@ class ResearchIntakeContractTests(unittest.TestCase):
             ROOT / "schemas/research-automation-artifact.schema.json",
             fixture / "schemas",
         )
+        shutil.copy2(
+            ROOT / "schemas/research-source-dossier-catalog.schema.json",
+            fixture / "schemas",
+        )
         (fixture / "research-intake/recon-runs").mkdir(parents=True)
         return temporary, fixture
 
     def write_packet(self, fixture: Path, name: str, packet: dict) -> None:
         path = fixture / "research-intake/recon-runs" / name
         path.write_text(json.dumps(packet, indent=2) + "\n", encoding="utf-8")
+        dossier_path = fixture / "generated/research-source-dossiers.json"
+        dossier_path.parent.mkdir(parents=True, exist_ok=True)
+        dossier_path.write_text(expected_dossier_content(fixture), encoding="utf-8")
 
     def test_repository_research_intake_is_valid(self) -> None:
         self.assertEqual(validate_research_intake(ROOT), [])

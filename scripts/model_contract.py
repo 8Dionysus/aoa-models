@@ -24,6 +24,10 @@ RECORD_ROUTES = {
     Path("generated/model-fit-projections"): "model-fit-projection.schema.json",
 }
 
+AUXILIARY_DERIVED_JSON = {
+    Path("generated/research-source-dossiers.json"),
+}
+
 REQUIRED_SCHEMA_FILES = {*RECORD_ROUTES.values(), "runtime-subject.schema.json"}
 
 ID_FIELDS = {
@@ -114,7 +118,7 @@ def collect_records(root: Path) -> tuple[dict[str, list[tuple[Path, dict[str, An
             continue
         for path in sorted(base.rglob("*.json")):
             rel = path.relative_to(root)
-            if rel.parts[0:2] not in known_roots:
+            if rel.parts[0:2] not in known_roots and rel not in AUXILIARY_DERIVED_JSON:
                 issues.append(f"{rel}: JSON record is outside a declared source/derived route")
     return records, issues
 
