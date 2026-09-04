@@ -90,16 +90,8 @@ reduces them to human categories nor freezes them into final object types.
 
 ## Validation
 
-Run from the repository root:
-
-```bash
-python scripts/validate_models.py
-python scripts/validate_research_intake.py
-python scripts/build_model_fit_projections.py --check
-python scripts/generate_decision_index.py --check
-python scripts/check_live_codex_catalog.py
-python -m unittest discover -s tests -v
-```
+Use the on-demand repository [validation route](VALIDATION.md) for model,
+research-intake, projection, live-catalog, decision-index, and test checks.
 
 The external Luna runtime, incarnation binding, and proof packets live in
 their stronger owners. See [HANDOFFS.md](HANDOFFS.md) for those routes and

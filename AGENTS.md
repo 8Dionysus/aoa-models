@@ -64,13 +64,7 @@ reason; semantic history is not rewritten silently.
 
 ## Validation
 
-```bash
-python scripts/validate_models.py
-python scripts/validate_research_intake.py
-python scripts/build_model_fit_projections.py --check
-python scripts/generate_decision_index.py --check
-python -m unittest discover -s tests -v
-```
+Run the model validation route in `VALIDATION.md` on demand.
 
 ## Stop lines
 
