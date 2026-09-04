@@ -14,11 +14,26 @@ This directory contains pre-canon external web-reconnaissance material.
 Nothing here is a `ModelClaim`, accepted `ModelStudy`, proof verdict, runtime
 currentness fact, fit-query input, route, activation, or owner acceptance.
 
+Cross-run lookup is generated at
+[`generated/research-source-dossiers.json`](../generated/research-source-dossiers.json).
+It is not another authored source store: each dossier is rebuilt from the
+retained routes above and groups only the same exact normalized URI. Query it
+before reusing a source:
+
+```bash
+python -B scripts/query_research_source_dossiers.py <URI-or-text>
+```
+
+After changing a retained run or automation artifact, rebuild the catalog with
+`python -B scripts/build_research_source_dossiers.py`. The normal validator
+rejects a missing or stale catalog.
+
 Read [`docs/RESEARCH_INTAKE.md`](../docs/RESEARCH_INTAKE.md) before adding a run
 and validate with:
 
 ```bash
 python -B scripts/validate_research_intake.py
+python -B scripts/build_research_source_dossiers.py --check
 ```
 
 Bounded capture and refresh use `python -B scripts/research_intake.py`. Request
@@ -47,14 +62,56 @@ one provider-shaped fixture:
   denominators, bounded Gemma 3n inheritance, MTP amortization, energy and
   device Pareto regions, usable-versus-nominal context, runtime attribution,
   and subject-metadata audit without promoting either size.
+- [`Gemma 4 E2B/E4B corroboration`](reports/gemma-4-e2b-e4b-corroboration-2026-09-04.md)
+  adds independent agentic, clinical, audio, Raspberry Pi, Apple Silicon, and
+  MTP evidence. It preserves metric-level E2B inversions inside otherwise
+  E4B-favorable instruments, strengthens the recurring E2B resource direction,
+  exposes an MTP backend sign flip, and separates nominal, allocated,
+  completed, and semantically usable context. Its paired
+  [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-corroboration.json) remains
+  pre-canon.
+- [`Gemma 4 E2B/E4B fine-tuning and adapters`](reports/gemma-4-e2b-e4b-finetuning-adapters-2026-09-04.md)
+  separates language-subtree SFT, text and multimodal-conditioned QLoRA,
+  tower-targeted PEFT, full continued pretraining, and joint target/drafter
+  tuning. It retains the recurring adaptation-bundle, modality-scope,
+  specialization-retention, revision-sensitive, merge/export/serve, and MTP
+  pressures without ranking E2B and E4B across incompatible instruments. Its
+  paired
+  [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json)
+  remains pre-canon and feeds the generated per-source dossiers.
+- [`Gemma 4 E2B/E4B adaptation frontier`](reports/gemma-4-e2b-e4b-adaptation-frontier-2026-09-04.md)
+  extends that work into scorer/mechanism controls, data-quality and capacity
+  coupling, DPO/GRPO reward and judge sensitivity, silent multimodal paths,
+  adapter composition, serving-time semantic no-ops, post-adaptation MTP, and
+  an explicit negative search for long-context evidence. Its paired
+  [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-adaptation-frontier.json)
+  is the first packet to retain optional `search_probes`, so later agents can
+  update the evidence map without treating finite search coverage as truth.
+- [`Gemma 4 E2B/E4B full frontier`](reports/gemma-4-e2b-e4b-full-frontier-2026-09-04.md)
+  follows the remaining adaptation and deployment chain through QAT versus
+  PTQ, memory and energy denominators, kernel warmup, refusal and multilingual
+  safety geometry, distillation lineage, low-resource CPT/SFT, external speech
+  composition, modality stripping, MTP preservation, unseen-tool search,
+  privacy/memorization search, and post-adaptation long-context search. Its
+  paired
+  [`ReconRun`](recon-runs/gemma-4-2026-09-04-e2b-e4b-full-frontier.json)
+  preserves both the repeated evidence and the qualified gaps; it proposes a
+  common E2B/E4B experiment matrix without manufacturing a family winner.
 
 The Gemma 4 run also retains nine immutable, locator-bounded capture snapshots
 for release-history segments, memory-table/caveat segments, and exact current
 E2B/E4B base/IT registry responses. They are refresh anchors, not archived page
 bodies, scheduled watches, or canonical evidence.
 
+The later PLE issue state is linked to the earlier open-state observation by a
+review-only
+[`ResearchSupersessionProposal`](supersession-proposals/gemma4-ple-offload-status-20260904.json).
+No `ResearchChangeReceipt` is claimed because the mutable issue did not have a
+prior retained locator-bounded snapshot. The proposal neither edits the source
+runs nor interprets stale closure as supported PLE offload.
+
 The current lens is
-[`External Model Web Recon v0.3`](reports/external-model-web-recon-method-v0.3.md).
+[`External Model Web Recon v0.5`](reports/external-model-web-recon-method-v0.5.md).
 These records prove that the contour can preserve materially different web
 evidence as data; they do not prove that the ontology is complete.
 

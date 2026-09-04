@@ -1,0 +1,1856 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-adaptation-frontier",
+  "title": "Gemma 4 E2B/E4B adaptation frontier, controls, composition, and runtime closure",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "Which deeper Gemma 4 E2B and E4B adaptation findings survive scorer, mechanism, seed, retention, multimodal-path, export, serving, and paired-MTP controls, and which important directions remain weak, contradictory, or unmeasured?",
+  "scope": {
+    "subject_labels": [
+      "gemma-4-E2B",
+      "gemma-4-E2B-it",
+      "gemma-4-E4B",
+      "gemma-4-E4B-it",
+      "gemma-4-E4B-it-assistant"
+    ],
+    "target_kinds": [
+      "benchmark_result",
+      "model_behavior",
+      "runtime_behavior",
+      "operational_pressure",
+      "unresolved"
+    ],
+    "capture_interval": {
+      "start": "2026-09-04T00:00:00Z",
+      "end": "2026-09-04T23:59:59Z"
+    },
+    "inclusion_criteria": [
+      "Exact Gemma 4 E2B or E4B adaptation subject with a method, retained artifact, issue reproducer, or measured outcome.",
+      "Evidence that exposes at least one useful control across scorer, mechanism, seed, data, retention, target topology, export, serving, or MTP pairing.",
+      "Negative or contradictory results retained when their configuration and denominator improve the research method.",
+      "Current issue and pull-request state retained separately from merged, released, and independently rerun states."
+    ],
+    "exclusion_criteria": [
+      "Generic tuning guidance without an exact Gemma 4 E2B or E4B binding.",
+      "Training loss, adapter load success, HTTP health, or nominal context treated as semantic acceptance.",
+      "Dependent retellings counted as independent origin groups.",
+      "Cross-size rankings assembled from incompatible tasks, scorers, runtimes, or denominators."
+    ],
+    "generality_probe": {
+      "mode": "different_product_or_instrument",
+      "subject_labels": [
+        "controlled-legal-qa",
+        "closed-book-document-internalization",
+        "preference-and-reinforcement-learning",
+        "multimodal-adaptation",
+        "adapter-composition",
+        "runtime-semantic-delta",
+        "paired-mtp"
+      ],
+      "rationale": "The run deliberately crosses research papers, executable artifacts, upstream failures, corrected instruments, and serving surfaces so that no one task or framework defines a family-wide conclusion."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.4",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.4.md",
+        "content_digest": "sha256:41118fcf3c10ff8f7d77f2a5283001e3e827dfa8f003f06c6d407740d3f3b4d0"
+      },
+      {
+        "relation": "deep_report",
+        "ref": "research-intake/reports/gemma-4-e2b-e4b-adaptation-frontier-2026-09-04.md",
+        "content_digest": "sha256:34d3228ecabc989df5be4d366786721421836d728b5e6beb6ef63bd49a741a4d"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+        "content_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92"
+      }
+    ],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-e2b-legal-study",
+      "title": "Do Small Models Use the Law You Give Them? Measuring Context Use on a Bilingual Bangladesh Legal Benchmark",
+      "uri": "https://arxiv.org/html/2608.30327v1",
+      "source_class": "independent_controlled_study",
+      "publisher": "Mahadi et al.",
+      "captured_at": "2026-09-04T19:00:00Z",
+      "published_at": "2026-08-31T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Versioned arXiv v1; fresh result without long-term replication.",
+      "mutable_surface": false,
+      "origin_group": "bangladesh-legal-qa-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e2b-controls-results-and-repair",
+          "locator": "Methods, Gemma 4 E2B training appendix, supplied-law controls, scorer comparison, seed table, and implementation-repair narrative.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned arXiv HTML.",
+      "selection_context": "Strongest located E2B scorer, intervention, and three-seed mechanism control."
+    },
+    {
+      "source_id": "src-e4b-document-lora",
+      "title": "Data Quality over Capacity: Internalizing Documents into LoRA Adapters for Closed-Book QA",
+      "uri": "https://arxiv.org/html/2607.21861v1",
+      "source_class": "independent_ablation_study",
+      "publisher": "Joan Figuerola Hurtado",
+      "captured_at": "2026-09-04T19:10:00Z",
+      "published_at": "2026-07-23T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Versioned arXiv v1; single-seed and 4-bit limitations are explicit.",
+      "mutable_surface": false,
+      "origin_group": "document-internalization-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-data-capacity-lr-and-baselines",
+          "locator": "Abstract, experiment arc, rank-by-corpus results, data curation, RAG baselines, configuration, and limitations.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned arXiv HTML.",
+      "selection_context": "Approximately one hundred E4B runs expose data quality, capacity, learning-rate coupling, and misdiagnosis corrections."
+    },
+    {
+      "source_id": "src-e4b-hybrid-dpo",
+      "title": "RLearner-LLM: Balancing Logical Grounding and Fluency in Large Language Models via Hybrid Direct Preference Optimization",
+      "uri": "https://arxiv.org/abs/2605.04539v4",
+      "source_class": "independent_preference_study",
+      "publisher": "Bao et al.",
+      "captured_at": "2026-09-04T19:20:00Z",
+      "published_at": "2026-05-06T00:00:00Z",
+      "updated_at": "2026-07-17T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Versioned arXiv v4; current revision at capture.",
+      "mutable_surface": false,
+      "origin_group": "rlearner-hybrid-dpo-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e4b-dpo-domain-results-and-judges",
+          "locator": "E4B adapter topology, SFT and DPO recipe, domain NLI and ACR results, preference construction, and judge-bias analysis.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The paper PDF and landing page were inspected through the web research tool without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public arXiv landing page and author-hosted PDF.",
+      "selection_context": "Exact E4B preference-tuning study with domain regressions and scorer/judge sensitivity."
+    },
+    {
+      "source_id": "src-e2b-nla-repo",
+      "title": "nla-gemma-4-e2b",
+      "uri": "https://github.com/SolshineCode/nla-gemma-4-e2b/tree/d9c5c761786bf933d761ee02bb928b677acfe02c",
+      "source_class": "versioned_experiment_repository",
+      "publisher": "SolshineCode",
+      "captured_at": "2026-09-04T19:30:00Z",
+      "published_at": null,
+      "updated_at": "2026-08-09T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Commit-pinned repository state.",
+      "mutable_surface": false,
+      "origin_group": "e2b-nla-grpo-experiment",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-reward-failures-dense-results-and-acceptance",
+          "locator": "README result tables and experiment notes for sparse-reward failures, dense reward, rank metrics, judges, absolute usability, seeds, and causal tracing.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned repository was inspected without retaining normalized segment bytes."
+        }
+      ],
+      "access_notes": "Public commit-pinned GitHub repository.",
+      "selection_context": "Rare artifact that preserves failed and successful E2B GRPO regimes plus conflicting acceptance instruments."
+    },
+    {
+      "source_id": "src-e2b-nla-dense1000",
+      "title": "gemma-4-e2b-nla-L23-av-grpo-dense1000",
+      "uri": "https://huggingface.co/Solshine/gemma-4-e2b-nla-L23-av-grpo-dense1000",
+      "source_class": "adapter_artifact",
+      "publisher": "Solshine",
+      "captured_at": "2026-09-04T19:35:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model-card surface tied to the repository experiment.",
+      "mutable_surface": true,
+      "origin_group": "e2b-nla-grpo-experiment",
+      "propagation_role": "dependent",
+      "dependency_refs": ["src-e2b-nla-repo"],
+      "segments": [
+        {
+          "segment_id": "seg-artifact-identity",
+          "locator": "Model card and retained adapter files for the dense1000 checkpoint.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Artifact metadata was inspected without retaining repository bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model repository.",
+      "selection_context": "Retained artifact corresponding to the strongest reported E2B dense-reward run."
+    },
+    {
+      "source_id": "src-unsloth-e2b-grpo-notebook",
+      "title": "Gemma4 E2B Reinforcement Learning 2048 Game notebook",
+      "uri": "https://github.com/unslothai/notebooks/blob/main/nb/Gemma4_(E2B)_Reinforcement_Learning_2048_Game.ipynb",
+      "source_class": "framework_operational_recipe",
+      "publisher": "Unsloth",
+      "captured_at": "2026-09-04T19:40:00Z",
+      "published_at": null,
+      "updated_at": "2026-08-07T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Mutable main-branch notebook; inspected content object f786f1be9649f83cd5aef39d9b0c8f508c148d21.",
+      "mutable_surface": true,
+      "origin_group": "unsloth-e2b-grpo-recipe",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-recipe-and-assertion-boundary",
+          "locator": "E2B loader, r32 LoRA targets, 4096 sequence, GRPO rewards, 60-step trainer, adapter save, and nonzero-tensor assertion.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable notebook was inspected through GitHub without retaining notebook bytes."
+        }
+      ],
+      "access_notes": "Public GitHub notebook.",
+      "selection_context": "Current runnable-looking E2B GRPO contour whose retained check stops before held-out behavior."
+    },
+    {
+      "source_id": "src-unsloth-e2b-loader-issue",
+      "title": "Gemma 4 E2B official GRPO notebook loader failure on T4",
+      "uri": "https://github.com/unslothai/unsloth/issues/6089",
+      "source_class": "primary_framework_issue",
+      "publisher": "Unsloth contributors",
+      "captured_at": "2026-09-04T19:45:00Z",
+      "published_at": "2026-06-06T00:00:00Z",
+      "updated_at": "2026-06-09T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Closed issue with linked merged unsloth-zoo fix; no retained full notebook rerun was located.",
+      "mutable_surface": true,
+      "origin_group": "unsloth-e2b-loader-defect",
+      "propagation_role": "origin",
+      "dependency_refs": ["src-unsloth-e2b-grpo-notebook"],
+      "segments": [
+        {
+          "segment_id": "seg-failure-workaround-and-fix-state",
+          "locator": "T4 environment, pre-trainer loader failure, one-step workaround, and link to merged safe-proxy fix.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public GitHub issue.",
+      "selection_context": "Separates notebook existence, local smoke workaround, merged fix, and full current rerun."
+    },
+    {
+      "source_id": "src-unsloth-e2b-logits-issue",
+      "title": "Gemma 4 GRPO text logits support",
+      "uri": "https://github.com/unslothai/unsloth/issues/5121",
+      "source_class": "primary_framework_issue",
+      "publisher": "Unsloth contributors",
+      "captured_at": "2026-09-04T19:50:00Z",
+      "published_at": "2026-04-29T00:00:00Z",
+      "updated_at": "2026-06-18T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Closed issue with linked merged logits fix; release and full-recipe currentness remain separate.",
+      "mutable_surface": true,
+      "origin_group": "unsloth-e2b-logits-defect",
+      "propagation_role": "origin",
+      "dependency_refs": ["src-unsloth-e2b-grpo-notebook"],
+      "segments": [
+        {
+          "segment_id": "seg-logits-defect-and-merged-fix",
+          "locator": "Gemma 4 text-logits failure, maintainer support statement, and merged unsloth-zoo change.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public GitHub issue.",
+      "selection_context": "Second independent implementation gate on the official-style GRPO path."
+    },
+    {
+      "source_id": "src-unsloth-audio-issue",
+      "title": "Gemma 4 audio collator silently drops input features",
+      "uri": "https://github.com/unslothai/unsloth/issues/6004",
+      "source_class": "primary_framework_issue",
+      "publisher": "Unsloth contributors",
+      "captured_at": "2026-09-04T20:00:00Z",
+      "published_at": "2026-05-30T00:00:00Z",
+      "updated_at": "2026-06-10T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Closed after a linked fix; report includes the silent pre-fix path and partial independent AMD verification.",
+      "mutable_surface": true,
+      "origin_group": "unsloth-audio-silent-path",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-silent-path-reproducer-and-verification",
+          "locator": "Environment, missing input_features, unexpanded audio token, absent tower forward, fix references, and AMD trace.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public GitHub issue.",
+      "selection_context": "Concrete silent-success failure that directly shaped the multimodal acceptance method."
+    },
+    {
+      "source_id": "src-unsloth-audio-fix",
+      "title": "Fix Gemma 4 audio training through the multimodal collator",
+      "uri": "https://github.com/unslothai/unsloth-zoo/pull/723",
+      "source_class": "upstream_fix",
+      "publisher": "Unsloth contributors",
+      "captured_at": "2026-09-04T20:05:00Z",
+      "published_at": "2026-06-06T00:00:00Z",
+      "updated_at": "2026-06-10T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Merged pull request at commit 1a845d; package-release and full backward acceptance are separate.",
+      "mutable_surface": true,
+      "origin_group": "unsloth-audio-silent-path",
+      "propagation_role": "dependent",
+      "dependency_refs": ["src-unsloth-audio-issue"],
+      "segments": [
+        {
+          "segment_id": "seg-merged-collator-fix",
+          "locator": "Merged change preserving audio inputs and expanding modality tokens through the collator path.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable pull-request surface was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public GitHub pull request.",
+      "selection_context": "Implementation response to the silent audio path, not a substitute for full training acceptance."
+    },
+    {
+      "source_id": "src-vllm-gemma4-lora-noop",
+      "title": "Gemma 4 Unsloth LoRA adapters ignored during vLLM inference",
+      "uri": "https://github.com/vllm-project/vllm/issues/41754",
+      "source_class": "primary_runtime_issue",
+      "publisher": "vLLM contributors",
+      "captured_at": "2026-09-04T20:10:00Z",
+      "published_at": "2026-05-05T00:00:00Z",
+      "updated_at": "2026-08-23T00:00:00Z",
+      "effective_interval": {"start": "2026-05-05T00:00:00Z", "end": null},
+      "temporal_notes": "Open at capture; multiple reporters distinguish successful load from byte-identical base behavior.",
+      "mutable_surface": true,
+      "origin_group": "vllm-gemma4-lora-mapping",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-noop-reproducers-and-current-state",
+          "locator": "Issue body and later dense/MoE reports showing load success, base-identical output, cherry-pick results, and remaining mapping gaps.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public GitHub issue.",
+      "selection_context": "Strong serving-time example where operational success does not imply adapter semantics."
+    },
+    {
+      "source_id": "src-vllm-gemma4-lora-fix",
+      "title": "vLLM Gemma 4 LoRA weight mapping fix",
+      "uri": "https://github.com/vllm-project/vllm/pull/39816",
+      "source_class": "candidate_runtime_fix",
+      "publisher": "vLLM contributors",
+      "captured_at": "2026-09-04T20:15:00Z",
+      "published_at": "2026-04-18T00:00:00Z",
+      "updated_at": "2026-09-04T00:00:00Z",
+      "effective_interval": {"start": "2026-04-18T00:00:00Z", "end": null},
+      "temporal_notes": "Open at capture; cherry-pick reports are not a merged release.",
+      "mutable_surface": true,
+      "origin_group": "vllm-gemma4-lora-mapping",
+      "propagation_role": "dependent",
+      "dependency_refs": ["src-vllm-gemma4-lora-noop"],
+      "segments": [
+        {
+          "segment_id": "seg-mapping-change-and-cherry-pick-results",
+          "locator": "Open pull request, mapping changes, review state, and user reports after cherry-pick.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable pull-request surface was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public GitHub pull request.",
+      "selection_context": "Candidate fix that narrows mechanism without establishing released runtime currentness."
+    },
+    {
+      "source_id": "src-vllm-gemma4-tower-issue",
+      "title": "Gemma 4 E2B broad adapter target names rejected by vLLM",
+      "uri": "https://github.com/vllm-project/vllm/issues/41702",
+      "source_class": "primary_runtime_issue",
+      "publisher": "vLLM contributors",
+      "captured_at": "2026-09-04T20:20:00Z",
+      "published_at": "2026-05-04T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Open and stale at capture; later vision support does not by itself resolve every text mapping.",
+      "mutable_surface": true,
+      "origin_group": "vllm-gemma4-tower-policy",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-e2b-vision-target-rejection",
+          "locator": "E2B adapter_config namespace, unsupported vision tower target names, and runtime rejection.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable issue discussion was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public GitHub issue.",
+      "selection_context": "Shows that training-time target expansion changes serving compatibility."
+    },
+    {
+      "source_id": "src-vllm-vision-lora-fix",
+      "title": "vLLM vision tower LoRA support",
+      "uri": "https://github.com/vllm-project/vllm/pull/42662",
+      "source_class": "upstream_runtime_fix",
+      "publisher": "vLLM contributors",
+      "captured_at": "2026-09-04T20:25:00Z",
+      "published_at": "2026-05-17T00:00:00Z",
+      "updated_at": "2026-08-13T00:00:00Z",
+      "effective_interval": null,
+      "temporal_notes": "Merged at capture; release and exact Gemma adapter rerun are separate states.",
+      "mutable_surface": true,
+      "origin_group": "vllm-gemma4-tower-policy",
+      "propagation_role": "dependent",
+      "dependency_refs": ["src-vllm-gemma4-tower-issue"],
+      "segments": [
+        {
+          "segment_id": "seg-merged-tower-support",
+          "locator": "Merged vision-tower and connector LoRA support plus documented limitations.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable pull-request surface was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public GitHub pull request.",
+      "selection_context": "Later implementation state related to, but not identical with, the earlier E2B adapter failure."
+    },
+    {
+      "source_id": "src-e4b-ties-merge",
+      "title": "Gemma4 E4B TIES merge of three instruct-subspace-masked adapters",
+      "uri": "https://huggingface.co/ToastyPigeon/Gemma4-E4B-TIES-3mask-r64",
+      "source_class": "community_composition_artifact",
+      "publisher": "ToastyPigeon",
+      "captured_at": "2026-09-04T20:30:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model card; author-reported evaluation and component lineage were current at capture.",
+      "mutable_surface": true,
+      "origin_group": "e4b-masked-ties-merge",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-components-merge-and-evaluation",
+          "locator": "Three r64 component recipes, gradient masks, PEFT TIES density and weights, component IFEval, merged IFEval, style and dialogue probes.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model repository.",
+      "selection_context": "Concrete E4B multi-adapter composition with component and merge-level retention measurements."
+    },
+    {
+      "source_id": "src-e4b-audio-dora",
+      "title": "gemma-4-e4b-audio-v3",
+      "uri": "https://huggingface.co/bnovikov/gemma-4-e4b-audio-v3",
+      "source_class": "community_multimodal_artifact",
+      "publisher": "bnovikov",
+      "captured_at": "2026-09-04T20:35:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model card with author-evaluated checkpoint and explicit failed two-stage predecessor.",
+      "mutable_surface": true,
+      "origin_group": "e4b-audio-dora-experiment",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-recipe-mmaau-and-negative-pretraining",
+          "locator": "DoRA topology, 91k audio QA, hardware and steps, MMAU test-mini totals and subcategories, OOM stopping, and worse encoder-pretraining route.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model repository.",
+      "selection_context": "E4B audio adaptation with an explicit negative precursor and per-category trade-offs."
+    },
+    {
+      "source_id": "src-e2b-oceanguard",
+      "title": "Gemma 4 E2B OceanGuard marine-debris adapter",
+      "uri": "https://huggingface.co/asferrer/gemma-4-E2B-it-oceanguard-marine-debris",
+      "source_class": "community_multimodal_artifact",
+      "publisher": "asferrer",
+      "captured_at": "2026-09-04T20:40:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable hackathon model card with within-project baselines and pending runtime routes.",
+      "mutable_surface": true,
+      "origin_group": "e2b-oceanguard-experiment",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-vision-language-baselines-and-format",
+          "locator": "Vision-plus-language LoRA recipe, held-out n=200 mAP, language-only baseline, class results, JSON validity, GGUF and pending LiteRT notes.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model repository.",
+      "selection_context": "E2B vision adaptation where global metric, class behavior, language-only control, and structured-output retention diverge."
+    },
+    {
+      "source_id": "src-e4b-wallet",
+      "title": "gemma-4-E4B-wallet-ft-v5",
+      "uri": "https://huggingface.co/ef-dai-team/gemma-4-E4B-wallet-ft-v5",
+      "source_class": "reproducible_specialization_artifact",
+      "publisher": "Ethereum Foundation dAI team",
+      "captured_at": "2026-09-04T20:45:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model card; exact measured GGUF digest, adapter, scorer, and split description were current at capture.",
+      "mutable_surface": true,
+      "origin_group": "e4b-wallet-toolcall-experiment",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-heldout-loss-reversal-and-merge-strength",
+          "locator": "Measured artifact digest, 1000-case exact-match table, training split, epoch ablation, validation-loss reversal, 0.75 merge strength, and development-selection boundary.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model repository and linked evaluation repository.",
+      "selection_context": "Strong E4B artifact-level selection and adapter-strength controls on a narrow deterministic task."
+    },
+    {
+      "source_id": "src-e4b-long-context-artifact",
+      "title": "Gemma-4-E4B-GLM5.1-distill",
+      "uri": "https://huggingface.co/Dhiaul/Gemma-4-E4B-GLM5.1-distill",
+      "source_class": "weak_long_context_signal",
+      "publisher": "Dhiaul",
+      "captured_at": "2026-09-04T20:50:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model card; used only to bound nominal serve claims against the admitted evaluation gap.",
+      "mutable_surface": true,
+      "origin_group": "e4b-long-context-weak-signal",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-short-training-and-unmeasured-long-context",
+          "locator": "2048-token training configuration, large-context serve guidance, and explicit statement that long reasoning was not formally evaluated.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model repository.",
+      "selection_context": "Representative weak signal demonstrating that nominal context and measured post-adaptation behavior must not be conflated."
+    },
+    {
+      "source_id": "src-e4b-mtp-derivative",
+      "title": "Gemma 4 E4B fine-tuned derivative with MTP NVFP4 measurements",
+      "uri": "https://huggingface.co/Adolphsson/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-MTP-NVFP4",
+      "source_class": "community_paired_runtime_artifact",
+      "publisher": "Adolphsson",
+      "captured_at": "2026-09-04T20:55:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Mutable model card; corrected benchmark and required runtime patch were current at capture.",
+      "mutable_surface": true,
+      "origin_group": "e4b-adapted-mtp-runtime",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-paired-mtp-results-and-counter-fix",
+          "locator": "K0-K5 vLLM benchmark, acceptance counters, two-run prompt protocol, streaming counter defect, corrected results, patch requirements, and degenerate-output controls.",
+          "content_digest": null,
+          "digest_unavailable_reason": "Mutable model-card content was inspected without retaining normalized bytes."
+        }
+      ],
+      "access_notes": "Public Hugging Face model repository.",
+      "selection_context": "First located measured MTP pair for a fine-tuned E4B derivative and a strong metric-lineage case."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-e2b-scorer-mechanism-split",
+      "statement": "Three Gemma 4 E2B LoRA seeds reverse their reference-versus-tuned ordering between exact-line parsing and constrained option scoring, while controlled removal of the governing law does not show increased law reliance after tuning.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "bilingual-bangladesh-legal-qa",
+        "snapshot": "arxiv-2608.30327v1",
+        "runtime": {"name": "Transformers NF4 QLoRA", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"seeds": [17, 42, 73], "control_items": 150}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "three-seed E2B LoRA study",
+        "reasoning_effort": null,
+        "context_policy": "governing section present, removed, or replaced with irrelevant material",
+        "tools": [],
+        "permissions": [],
+        "prompt": "bilingual multiple-choice legal QA",
+        "scaffold": "NF4 QLoRA over all language-model projections",
+        "runbook": "rank 16, alpha 16, no dropout, sequence 1536, effective batch 16, 216 steps, one T4 16GB per seed",
+        "harness": "398 Bar Council outputs plus 150 supplied-law controls",
+        "instrument_revision": "exact-line parser, constrained option logits, cyclic option rotation, and difference-in-differences",
+        "grader": "two alternative scorers plus intervention contrasts",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Determine whether E2B tuning improves legal answers and use of supplied governing law.",
+        "executed": "Ran three seeds, two scorers, option rotation, and law-removal controls.",
+        "artifact": "Versioned paper, code and data reference, and full result tables.",
+        "verified": "Scorer-specific and intervention-specific denominators are published.",
+        "reported": "Surface accuracy depends on scorer and tuning does not detectably increase reliance on the governing provision.",
+        "termination": "Published experiment completed.",
+        "measurements": [
+          {"metric": "exact_line_tuned_minus_reference", "value": 10.1, "unit": "percentage_points", "denominator": "398 Bar Council outputs, seed 42 comparison", "notes": "Parser favors tuned E2B."},
+          {"metric": "constrained_tuned_minus_reference", "value": -2.5, "unit": "percentage_points", "denominator": "same 398 outputs, seed 42 comparison", "notes": "Constrained scorer favors reference E2B."},
+          {"metric": "reference_law_present_accuracy", "value": 84.7, "unit": "percent", "denominator": "150 supplied-law control items", "notes": "Reference mean under the stated criterion."},
+          {"metric": "tuned_law_present_accuracy", "value": 78.7, "unit": "percent", "denominator": "150 supplied-law control items averaged across three seeds", "notes": "Fine-tuned mean."}
+        ],
+        "additional_dimensions": {"difference_in_differences": "no significant increase in governing-provision reliance after tuning"}
+      },
+      "source_segment_refs": [{"source_id": "src-e2b-legal-study", "segment_id": "seg-e2b-controls-results-and-repair"}],
+      "confounds": ["Fresh v1 paper, one legal domain, one family checkpoint, and study-specific law-use criterion."],
+      "configuration_gaps": ["No independent rerun or post-export serving check."],
+      "transfer_limits": ["Supports scorer and mechanism separation for this study, not a general legal-capability ranking."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-08-31T00:00:00Z", "end": "2026-08-31T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e2b-target-topology-repair",
+      "statement": "The E2B legal study required seven training attempts and corrected an accidental 249-of-494 multimodal-module match to 245 language-model modules, alongside prompt-loss masking and shuffle repairs, before interpreting model results.",
+      "target_kind": "operational_pressure",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "legal-qa-training-implementation",
+        "snapshot": "arxiv-2608.30327v1",
+        "runtime": {"name": "Transformers and PEFT", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"reported_training_attempts": 7}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "implementation repair narrative",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["PEFT"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "target-module regex and prompt-loss mask",
+        "runbook": "compare matched module counts and trainable LoRA tensor names before final runs",
+        "harness": "training setup audit",
+        "instrument_revision": "final repaired study configuration",
+        "grader": "module counts and downstream scorer suite",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Establish that the intended language subtree, rather than accidental multimodal modules, is adapted.",
+        "executed": "Audited and repaired target matching, masking, and shuffle controls.",
+        "artifact": "Versioned implementation narrative and final module counts.",
+        "verified": "The before and after target counts are reported.",
+        "reported": "Exact family identity did not prevent a materially wrong adaptation surface.",
+        "termination": "Repair completed before final study runs.",
+        "measurements": [
+          {"metric": "accidental_matched_modules", "value": 249, "unit": "modules", "denominator": "494 candidate multimodal modules", "notes": "Initial target selection."},
+          {"metric": "repaired_lm_modules", "value": 245, "unit": "modules", "denominator": "language-model target surface", "notes": "Corresponding to 490 LoRA tensors."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e2b-legal-study", "segment_id": "seg-e2b-controls-results-and-repair"}],
+      "confounds": ["Module count alone does not prove behavioral contribution."],
+      "configuration_gaps": ["Exact package lock and complete attempt-by-attempt logs are not preserved in the paper."],
+      "transfer_limits": ["The durable requirement is target-surface inspection; the exact counts are E2B-study-specific."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-08-31T00:00:00Z", "end": "2026-08-31T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e4b-data-capacity-lr-coupling",
+      "statement": "Across roughly one hundred 4-bit E4B document-internalization runs, data curation dominates once adapter capacity is adequate, while corpus scale, rank, and learning rate form a coupled capacity gate rather than a portable best-rank rule.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B"],
+        "provider": "google",
+        "product": "closed-book-document-internalization",
+        "snapshot": "arxiv-2607.21861v1",
+        "runtime": {"name": "MLX", "version": null, "subject_ref": "Apple Silicon"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"precision": "4-bit", "seed": 42, "maximum_documents": 99}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "two-stage CPT-like exposure plus supervised QA",
+        "reasoning_effort": null,
+        "context_policy": "maximum sequence 3072, reduced to 2048 for rank 256",
+        "tools": ["MLX"],
+        "permissions": [],
+        "prompt": "closed-book factual QA over retained documents",
+        "scaffold": "MLP-only LoRA across all 42 layers",
+        "runbook": "rank, learning-rate, corpus-size, data-curation, architecture, and RAG-baseline sweep",
+        "harness": "held-out document QA and retrieval baselines",
+        "instrument_revision": "arXiv 2607.21861v1",
+        "grader": "recall with study-specific answer normalization",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Determine whether document knowledge can be internalized and which intervention controls quality.",
+        "executed": "Ran approximately one hundred configurations from single documents through a 99-document corpus.",
+        "artifact": "Versioned paper with full empirical debugging arc.",
+        "verified": "Curation, rank, learning-rate, and retrieval baselines are separately reported.",
+        "reported": "Data quality yields the largest gain after a capacity threshold, while the threshold grows with corpus size and is entangled with learning rate.",
+        "termination": "Published experiment completed.",
+        "measurements": [
+          {"metric": "uncurated_to_curated_overall", "value": "57.7->85.7", "unit": "percent", "denominator": "15-document experiment", "notes": "Answer shortening and trivia removal."},
+          {"metric": "curated_adapter_recall", "value": 84.2, "unit": "percent", "denominator": "15-document curated slice", "notes": "Study metric favors style-matched adapter outputs."},
+          {"metric": "bm25_rag_recall", "value": 58.9, "unit": "percent", "denominator": "same 15-document slice", "notes": "Base reader with BM25 retrieval."},
+          {"metric": "gold_chunk_oracle_recall", "value": 65.6, "unit": "percent", "denominator": "same 15-document slice", "notes": "Realistic gold-chunk oracle."},
+          {"metric": "rank256_lr_coupling", "value": "46.7@4e-5 -> 61.6@2e-5", "unit": "percent_recall", "denominator": "100-document configuration", "notes": "Rank change cannot be interpreted without learning rate."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e4b-document-lora", "segment_id": "seg-data-capacity-lr-and-baselines"}],
+      "confounds": ["Single seed, 4-bit base, 99-document ceiling, and adapter-favorable output normalization."],
+      "configuration_gaps": ["No E2B arm, higher-precision comparison, or long-context retention evaluation."],
+      "transfer_limits": ["Does not establish a universal optimal rank, learning rate, or replacement for retrieval."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-07-23T00:00:00Z", "end": "2026-07-23T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e4b-dpo-domain-and-scorer-pareto",
+      "statement": "E4B Hybrid-DPO raises the study's NLI score in four of five domains but regresses Sydney and several answer-correctness results, while reuse of the same NLI model for preference construction and evaluation leaves a circular-scorer confound.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "hybrid-direct-preference-optimization",
+        "snapshot": "arxiv-2605.04539v4",
+        "runtime": {"name": "PEFT and TRL", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"preference_pairs": 164, "domains": 5}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "SFT adapter merged before E4B DPO adapter",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "explanation generation",
+        "scaffold": "258 text modules selected by exact class and namespace regex",
+        "runbook": "13211-example SFT r16 alpha32 for three epochs; 164 E4B preference pairs; DPO five epochs at 5e-5 and beta 0.1",
+        "harness": "five domains with 100 tests each",
+        "instrument_revision": "arXiv 2605.04539v4",
+        "grader": "DeBERTa NLI, answer correctness, and separate LLM preference judges",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Balance logical grounding and fluency after E4B SFT.",
+        "executed": "Constructed preferences and evaluated SFT versus DPO by domain and multiple graders.",
+        "artifact": "Versioned paper and public code repository.",
+        "verified": "Domain tables and judge-preference diagnostics are published.",
+        "reported": "The optimization has a domain and metric Pareto rather than a uniform improvement.",
+        "termination": "Published experiment completed.",
+        "measurements": [
+          {"metric": "sydney_nli", "value": "0.2469->0.2309", "unit": "score", "denominator": "100 Sydney test items", "notes": "Regression after DPO."},
+          {"metric": "medical_y2_nli", "value": "0.1604->0.3892", "unit": "score", "denominator": "100 Medical Y2 test items", "notes": "Largest published domain increase."},
+          {"metric": "verbose_sft_preferred_over_dpo", "value": 69, "unit": "percent", "denominator": "LLM-judge pairwise comparisons", "notes": "Judge preference conflicts with the targeted logical-strength metric."},
+          {"metric": "judge_self_preference", "value": 95, "unit": "percent", "denominator": "reported self-output control", "notes": "Supports adjudicator sensitivity."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e4b-hybrid-dpo", "segment_id": "seg-e4b-dpo-domain-results-and-judges"}],
+      "confounds": ["The DeBERTa NLI model participates in both pair construction and primary evaluation; no seed count was located."],
+      "configuration_gaps": ["No independent held-out NLI scorer, E2B arm, or repeated-seed interval."],
+      "transfer_limits": ["Supports metric and domain decomposition, not a family-wide DPO benefit."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "contradictory",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-05-06T00:00:00Z", "end": "2026-07-17T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e2b-grpo-reward-regime",
+      "statement": "E2B GRPO collapses under most sparse reward and entropy regimes in the retained NLA experiment, while a later dense cosine reward improves routing and within-domain rank metrics, showing reward design as an instrument-level gate rather than a minor hyperparameter.",
+      "target_kind": "model_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "natural-language-activation-grpo",
+        "snapshot": "git-d9c5c761",
+        "runtime": {"name": "Unsloth-style NF4 LoRA GRPO", "version": null, "subject_ref": "GTX 1650 Ti and Tesla M40 experiments"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"dense1000_artifact": "Solshine/gemma-4-e2b-nla-L23-av-grpo-dense1000"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "failed sparse-reward sweep followed by dense cosine reward",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "NLA activation task",
+        "scaffold": "NF4 LoRA plus GRPO",
+        "runbook": "five rewards by four entropy regimes and 120 initial rollouts; later 500 and 1000 dense-reward steps",
+        "harness": "routing accuracy, within-domain percentile, top-1 count, pairwise judges, absolute usability, and causal tracing",
+        "instrument_revision": "repository commit d9c5c761786bf933d761ee02bb928b677acfe02c",
+        "grader": "multiple deterministic and LLM-judge metrics",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Improve E2B NLA behavior with reinforcement learning.",
+        "executed": "Retained both failed sparse-reward sweeps and later dense-reward checkpoints.",
+        "artifact": "Commit-pinned experiment repository and dense1000 adapter.",
+        "verified": "Per-regime qualitative failures and quantitative dense-reward tables are public.",
+        "reported": "Dense reward improves relative routing and rank metrics after sparse rewards fail.",
+        "termination": "Experiment completed with unresolved external validity.",
+        "measurements": [
+          {"metric": "routing_accuracy", "value": "0.524->0.617->0.674", "unit": "score", "denominator": "580 held-out documents for base, 500-step, and 1000-step checkpoints", "notes": "Dense-reward line."},
+          {"metric": "within_domain_percentile", "value": "0.448->0.421->0.402", "unit": "percentile_score", "denominator": "same 580 held-out documents", "notes": "Lower is better."},
+          {"metric": "paired_500_to_1000_p", "value": 1.5e-7, "unit": "p_value", "denominator": "paired held-out comparison", "notes": "1000 is continuation of seed 0."}
+        ],
+        "additional_dimensions": {"initial_failure": "only r40 remained coherent; other regimes produced gibberish, whitespace, or evasion and all remained at L2 chance"}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-e2b-nla-repo", "segment_id": "seg-reward-failures-dense-results-and-acceptance"},
+        {"source_id": "src-e2b-nla-dense1000", "segment_id": "seg-artifact-identity"}
+      ],
+      "confounds": ["Single research group, custom task, changing hardware, and the 1000-step result is not an independent seed."],
+      "configuration_gaps": ["No independent reproduction or common E2B/E4B GRPO arm."],
+      "transfer_limits": ["Does not establish that GRPO or the dense reward transfers to other E2B tasks."],
+      "counterevidence_refs": ["obs-e2b-grpo-judge-and-absolute-bar"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-08-09T00:00:00Z", "end": "2026-08-09T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e2b-grpo-judge-and-absolute-bar",
+      "statement": "The same E2B dense1000 artifact improves relative rank metrics and wins one LLM judge, yet top-1 count is non-monotonic, another judge returns null, and every E2B checkpoint fails the experiment's absolute usability bar.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "natural-language-activation-grpo",
+        "snapshot": "git-d9c5c761",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"checkpoints": ["base", "dense500", "dense1000"]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "cross-instrument acceptance comparison",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "NLA held-out and pairwise comparisons",
+        "scaffold": null,
+        "runbook": "preserve deterministic, preference-judge, and absolute-bar outcomes separately",
+        "harness": "top-1, rank, two LLM judges, and 36-row usability rubric",
+        "instrument_revision": "repository commit d9c5c761786bf933d761ee02bb928b677acfe02c",
+        "grader": "deterministic counts, qwen3.5:27b, Claude Haiku, and Anthropic-NLA-relative rubric",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Determine whether the relative dense-reward gain clears multiple acceptance instruments.",
+        "executed": "Compared rank, top-1, two judges, and an absolute usability rubric.",
+        "artifact": "Commit-pinned tables and checkpoint.",
+        "verified": "Conflicting metrics and the failed judge control are explicitly reported.",
+        "reported": "Relative improvement survives some instruments but not a robust absolute or judge-independent acceptance boundary.",
+        "termination": "Contradiction retained.",
+        "measurements": [
+          {"metric": "top1_count", "value": "3->9->7", "unit": "count", "denominator": "base, dense500, and dense1000 on the retained held-out set", "notes": "Non-monotonic while rank improves."},
+          {"metric": "qwen_judge_dense1000_preference", "value": 88.1, "unit": "percent", "denominator": "reported pairwise judgments", "notes": "One judge strongly favors dense1000."},
+          {"metric": "haiku_prior_control_preference", "value": 45.5, "unit": "percent", "denominator": "prior control comparison", "notes": "p=0.87; the judge fails its own expected control."},
+          {"metric": "absolute_usability", "value": "0.0/3", "unit": "rubric_score", "denominator": "36 rows for each of base, dense500, and dense1000", "notes": "No E2B checkpoint clears the external absolute bar."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e2b-nla-repo", "segment_id": "seg-reward-failures-dense-results-and-acceptance"}],
+      "confounds": ["Custom task and judge prompts; absolute comparator is a different model family and capability scale."],
+      "configuration_gaps": ["No human adjudication or independent rerun of the pairwise preference."],
+      "transfer_limits": ["Prevents promotion of a relative metric gain into an absolute capability claim."],
+      "counterevidence_refs": ["obs-e2b-grpo-reward-regime"],
+      "supersedes": [],
+      "evidence_posture": "contradictory",
+      "disposition": "split_required",
+      "observed_interval": {"start": "2026-08-09T00:00:00Z", "end": "2026-08-09T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e2b-grpo-route-currentness",
+      "statement": "The current Unsloth E2B GRPO notebook specifies a runnable 60-step adapter route and verifies nonzero LoRA tensors, while two earlier loader and logits defects now have merged fixes but no retained full current end-to-end behavioral rerun was located.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "unsloth-e2b-grpo-notebook",
+        "snapshot": "main-content-f786f1be",
+        "runtime": {"name": "Unsloth, Transformers, and TRL", "version": null, "subject_ref": "T4 notebook route"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "official-style 2048 game notebook",
+        "reasoning_effort": null,
+        "context_policy": "maximum sequence 4096",
+        "tools": ["Unsloth", "TRL GRPO"],
+        "permissions": [],
+        "prompt": "2048 game actions",
+        "scaffold": "LoRA r32 alpha64 over q/k/v/o/gate/up/down projections",
+        "runbook": "60 GRPO steps, effective batch two, two generations, game-validity and strategy rewards",
+        "harness": "notebook assertions",
+        "instrument_revision": "mutable notebook content plus issue states at 2026-09-04",
+        "grader": "adapter tensor nonzero assertion; no retained held-out behavioral grader",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Establish current E2B GRPO implementation and behavioral readiness.",
+        "executed": "Inspected current notebook and linked historical defects and fixes.",
+        "artifact": "Notebook, closed issues, and linked merged fixes.",
+        "verified": "The route and tensor assertion exist; historical defects have linked merged code changes.",
+        "reported": "Implementation availability is stronger than before, but current behavioral execution is not established by the retained evidence.",
+        "termination": "Evidence-backed deferral of end-to-end acceptance.",
+        "measurements": [
+          {"metric": "planned_grpo_steps", "value": 60, "unit": "steps", "denominator": "current notebook", "notes": "Not a retained completion receipt."},
+          {"metric": "num_generations", "value": 2, "unit": "generations_per_prompt", "denominator": "current notebook", "notes": "Resource-constrained recipe."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-unsloth-e2b-grpo-notebook", "segment_id": "seg-recipe-and-assertion-boundary"},
+        {"source_id": "src-unsloth-e2b-loader-issue", "segment_id": "seg-failure-workaround-and-fix-state"},
+        {"source_id": "src-unsloth-e2b-logits-issue", "segment_id": "seg-logits-defect-and-merged-fix"}
+      ],
+      "confounds": ["Mutable dependencies and notebook surface; merged upstream code may not yet match an installed release."],
+      "configuration_gaps": ["Exact current package lock, full 60-step run receipt, held-out behavior, and post-save reload result are absent."],
+      "transfer_limits": ["Notebook presence and nonzero tensors establish neither useful RL behavior nor deployment portability."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "recurring_pressure",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-04-29T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-audio-silent-path",
+      "statement": "A Gemma 4 audio fine-tuning route could complete without error while its collator dropped input_features, left the audio placeholder unexpanded, and never invoked the audio tower; the merged fix received a partial independent forward-path check but not full backward acceptance.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "unsloth-audio-fine-tuning",
+        "snapshot": "issue-6004-and-pr-723",
+        "runtime": {"name": "Unsloth", "version": "2026.4.4", "subject_ref": "T4 reproducer and AMD forward-path check"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "multimodal collator into Gemma 4 audio tower",
+        "reasoning_effort": null,
+        "context_policy": "audio placeholder expansion",
+        "tools": ["Unsloth", "Transformers"],
+        "permissions": [],
+        "prompt": "audio-conditioned training example",
+        "scaffold": "multimodal data collator",
+        "runbook": "inspect batch keys, input tensors, token expansion, encoder forward, and backward separately",
+        "harness": "issue reproducer and independent AMD instrumentation",
+        "instrument_revision": "Unsloth 2026.4.4, zoo 2026.4.0, fix commit 1a845d",
+        "grader": "tensor presence, token count, and forward hook",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Verify that audio examples actually traverse the audio adaptation path.",
+        "executed": "Reproduced missing inputs and tower bypass, then inspected the merged collator repair on a second platform.",
+        "artifact": "Issue, merged pull request, and public diagnostic traces.",
+        "verified": "Pre-fix silent bypass and post-fix forward-path evidence are recorded.",
+        "reported": "No-exception training is insufficient evidence of multimodal adaptation.",
+        "termination": "Forward path repaired; full independent backward run remained blocked by a separate ROCm bitsandbytes issue.",
+        "measurements": [
+          {"metric": "audio_placeholder_before_fix", "value": 1, "unit": "token", "denominator": "reported failing batch", "notes": "Expected modality expansion did not occur."},
+          {"metric": "audio_encoder_forward_after_fix", "value": true, "unit": null, "denominator": "independent AMD diagnostic", "notes": "Does not include a completed backward pass."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-unsloth-audio-issue", "segment_id": "seg-silent-path-reproducer-and-verification"},
+        {"source_id": "src-unsloth-audio-fix", "segment_id": "seg-merged-collator-fix"}
+      ],
+      "confounds": ["Forward verification used a different hardware stack; full backward was blocked by an unrelated dependency."],
+      "configuration_gaps": ["No post-fix full T4 training result or modality-specific held-out delta in the issue."],
+      "transfer_limits": ["Supports a generic silent-path guard, not a claim about every current framework or audio adapter."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "recurring_pressure",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-05-30T00:00:00Z", "end": "2026-06-10T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-vllm-adapter-semantic-noop",
+      "statement": "Multiple vLLM Gemma 4 reports show LoRA adapters loading without error while deterministic output remains byte-identical to the base; an open mapping pull request fixes several dense cases when cherry-picked but is not a released acceptance result.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it", "gemma-4-31B-it"],
+        "provider": "google",
+        "product": "vllm-dynamic-lora-serving",
+        "snapshot": "issue-41754-pr-39816-at-2026-09-04",
+        "runtime": {"name": "vLLM", "version": null, "subject_ref": "RTX 4090, A6000 Pro, and reporter-specific systems"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "base and Unsloth-trained LoRA through LoRARequest",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["vLLM", "Unsloth"],
+        "permissions": [],
+        "prompt": "reporter-specific deterministic probes",
+        "scaffold": "runtime weight-name mapping",
+        "runbook": "compare base and adapter-enabled outputs before and after cherry-pick",
+        "harness": "issue reproducers",
+        "instrument_revision": "open issue 41754 and open PR 39816 at capture",
+        "grader": "byte and semantic output comparison",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Serve Gemma 4 LoRA adapters through vLLM.",
+        "executed": "Loaded adapters and compared outputs; several reporters cherry-picked a candidate mapping fix.",
+        "artifact": "Open issue, open pull request, and reporter traces.",
+        "verified": "Silent no-op is reproduced for multiple Gemma 4 variants; some dense cases change after cherry-pick.",
+        "reported": "Load success does not prove runtime adapter application and current release support remains unresolved.",
+        "termination": "Open upstream state.",
+        "measurements": [
+          {"metric": "base_adapter_output_identical_before_fix", "value": true, "unit": null, "denominator": "reported deterministic Gemma 4 reproducer", "notes": "Operational load succeeded."},
+          {"metric": "candidate_fix_merged", "value": false, "unit": null, "denominator": "PR 39816 state at 2026-09-04", "notes": "Cherry-pick results are not release currentness."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-vllm-gemma4-lora-noop", "segment_id": "seg-noop-reproducers-and-current-state"},
+        {"source_id": "src-vllm-gemma4-lora-fix", "segment_id": "seg-mapping-change-and-cherry-pick-results"}
+      ],
+      "confounds": ["Reporter adapters, exact vLLM revisions, and model variants differ; MoE mapping has an additional expert-path concern."],
+      "configuration_gaps": ["No single released vLLM matrix covers E2B, E4B, multimodal targets, quantization, and semantic deltas."],
+      "transfer_limits": ["The issue establishes a runtime acceptance requirement, not that every adapter is currently ignored."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "recurring_pressure",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-05-05T00:00:00Z", "end": null}
+    },
+    {
+      "observation_id": "obs-vllm-adapter-tower-policy",
+      "statement": "A broad E2B adapter containing vision-tower target names is rejected by vLLM, while later merged vision-LoRA support changes only part of the compatibility surface and does not imply that every earlier text or mixed adapter mapping is accepted.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "vllm-multimodal-lora-serving",
+        "snapshot": "issue-41702-pr-42662-at-2026-09-04",
+        "runtime": {"name": "vLLM", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "load adapter with text and vision namespace targets",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["vLLM", "PEFT"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "adapter target namespace policy",
+        "runbook": "compare adapter_config target names with runtime-supported modules and tower policy",
+        "harness": "issue reproducer and later pull request",
+        "instrument_revision": "issue 41702 plus merged PR 42662 at capture",
+        "grader": "load result and module mapping review",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Load an E2B adapter that includes multimodal target names.",
+        "executed": "Runtime rejected unsupported vision target names; later upstream support added tower and connector LoRA capability.",
+        "artifact": "Open issue and merged pull request.",
+        "verified": "The namespace failure and later implementation change are publicly linked.",
+        "reported": "Training topology and serving topology must be accepted as one configuration, not inferred independently.",
+        "termination": "Partially resolved implementation surface; exact earlier adapter acceptance not established.",
+        "measurements": [
+          {"metric": "vision_lora_support_pr_merged", "value": true, "unit": null, "denominator": "PR 42662 state at 2026-09-04", "notes": "Release and exact artifact rerun remain separate."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-vllm-gemma4-tower-issue", "segment_id": "seg-e2b-vision-target-rejection"},
+        {"source_id": "src-vllm-vision-lora-fix", "segment_id": "seg-merged-tower-support"}
+      ],
+      "confounds": ["The failed adapter was produced by an older broad Unsloth target policy; later runtime support has its own limits."],
+      "configuration_gaps": ["No exact post-merge E2B adapter replay on a released package was retained."],
+      "transfer_limits": ["Does not equate merged vision support with general mixed-adapter correctness."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "recurring_pressure",
+      "disposition": "route_to_runtime_owner",
+      "observed_interval": {"start": "2026-05-04T00:00:00Z", "end": null}
+    },
+    {
+      "observation_id": "obs-e4b-ties-composition-retention",
+      "statement": "One E4B artifact combines three independently trained, instruct-subspace-masked rank-64 adapters through TIES and reports a smaller IFEval loss for the merge than for any component, while its small stochastic style suite and one-shot density leave broad composition claims unproven.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "ties-multi-adapter-composition",
+        "snapshot": "ToastyPigeon/Gemma4-E4B-TIES-3mask-r64-at-capture",
+        "runtime": {"name": "PEFT", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"component_count": 3, "merge_density": 0.2}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "three masked adapters merged with add_weighted_adapter TIES",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["PEFT"],
+        "permissions": [],
+        "prompt": "IFEval plus author style and dialogue probes",
+        "scaffold": "instruct-subspace gradient mask at rank 64",
+        "runbook": "three r64 alpha16 components, equal weights, TIES density 0.2, merge_and_unload",
+        "harness": "component and merge-level author evaluation",
+        "instrument_revision": "model card at 2026-09-04",
+        "grader": "IFEval, style probability, and dialogue score",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Combine multiple E4B style/domain adapters while retaining instruction following.",
+        "executed": "Evaluated masked and unmasked components and the TIES-merged full model.",
+        "artifact": "Published component lineage and merged safetensors model.",
+        "verified": "Author reports component and merged metrics on a common local suite.",
+        "reported": "The retained merge is compatible with a smaller instruction-following drop and stronger style signals in this artifact.",
+        "termination": "Artifact published; independent replication absent.",
+        "measurements": [
+          {"metric": "base_ifeval", "value": 83.36, "unit": "percent", "denominator": "author IFEval suite", "notes": "Stock E4B IT baseline."},
+          {"metric": "masked_component_drop_range", "value": "-6.84 to -8.50", "unit": "percentage_points", "denominator": "three masked components", "notes": "Unmasked comparators drop -12.20 to -14.97."},
+          {"metric": "ties_merge_ifeval_drop", "value": -0.92, "unit": "percentage_points", "denominator": "merged model versus base", "notes": "Author-reported."},
+          {"metric": "style_probability", "value": 0.343, "unit": "score", "denominator": "10 stochastic style prompts", "notes": "Approximately 0.10 for base/components."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e4b-ties-merge", "segment_id": "seg-components-merge-and-evaluation"}],
+      "confounds": ["Ten-prompt style evaluation at temperature one, one merge density, opportunistic components, and no independent rerun."],
+      "configuration_gaps": ["No held-out leakage control, seed sweep, or comparison with other merge algorithms."],
+      "transfer_limits": ["Establishes one composition artifact and hypothesis, not a general TIES or masking advantage."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-09-04T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e4b-audio-dora-pareto",
+      "statement": "An E4B audio DoRA artifact improves aggregate MMAU test-mini from 55.0 to 58.8 after single-stage training, while prior audio-encoder adaptation performs worse and several subcategories regress, supporting a modality-specific Pareto rather than uniform gain.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "audio-dora-specialization",
+        "snapshot": "bnovikov/gemma-4-e4b-audio-v3-at-capture",
+        "runtime": {"name": "Transformers and PEFT DoRA", "version": null, "subject_ref": "RTX 4090 24GB"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "single-stage DoRA over a broad language/audio/vision regex",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["PEFT DoRA"],
+        "permissions": [],
+        "prompt": "audio question answering",
+        "scaffold": "r32 alpha64 adapter",
+        "runbook": "approximately 91000 audio QA examples, 200 steps, about one hour on RTX 4090",
+        "harness": "MMAU test-mini",
+        "instrument_revision": "model card at capture",
+        "grader": "aggregate and subcategory accuracy",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Improve E4B audio understanding through parameter-efficient adaptation.",
+        "executed": "Compared the single-stage artifact with base and a worse encoder-pretrained predecessor.",
+        "artifact": "Published model checkpoint and evaluation table.",
+        "verified": "Author-reported same-pipeline aggregate and subcategory results are retained.",
+        "reported": "Single-stage DoRA raises aggregate score but does not improve every audio category.",
+        "termination": "Checkpoint 200 retained after the next save encountered OOM.",
+        "measurements": [
+          {"metric": "mmau_test_mini", "value": "55.0->58.8", "unit": "percent", "denominator": "1000 items in the same author pipeline", "notes": "Base to v3."},
+          {"metric": "emotion_flip_delta", "value": -15, "unit": "percentage_points", "denominator": "20-item subcategory", "notes": "Wide uncertainty and visible regression."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e4b-audio-dora", "segment_id": "seg-recipe-mmaau-and-negative-pretraining"}],
+      "confounds": ["Author-only evaluation, broad target regex, checkpoint selected by operational OOM, and small subcategory denominators."],
+      "configuration_gaps": ["No independent rerun, exact tower-ablation matrix, or served-artifact parity test."],
+      "transfer_limits": ["Does not imply that audio-tower pretraining is generally harmful or that aggregate gain transfers to all audio tasks."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-09-04T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e2b-vision-language-control",
+      "statement": "An E2B marine-debris vision-plus-language LoRA raises held-out mAP over base but is nearly tied with the language-only adapter globally, while per-class gains and JSON-validity loss reveal separate visual, label-data, and format-retention effects.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it"],
+        "provider": "google",
+        "product": "oceanguard-marine-debris-classification",
+        "snapshot": "asferrer-oceanguard-at-capture",
+        "runtime": {"name": "Transformers and PEFT", "version": null, "subject_ref": "RTX 5090 training"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "vision-plus-language LoRA compared with base and language-only LoRA",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": ["PEFT"],
+        "permissions": [],
+        "prompt": "structured marine-debris classification",
+        "scaffold": "r16 alpha32 adapter over vision and language targets",
+        "runbook": "1150 of 2292 planned steps, approximately 5.5 hours on RTX 5090",
+        "harness": "200-example held-out set",
+        "instrument_revision": "model card at capture",
+        "grader": "mAP@0.5, per-class scores, and JSON validity",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Improve structured marine-debris recognition with vision adaptation.",
+        "executed": "Compared base, language-only, and vision-plus-language adapter arms.",
+        "artifact": "Published adapter/merged artifacts and GGUF route.",
+        "verified": "Author-retained held-out aggregate, class, and format measurements are available.",
+        "reported": "Most global gain is already present in the language-only arm; visual and format effects are class-specific and non-uniform.",
+        "termination": "Partial planned training completed and artifact published.",
+        "measurements": [
+          {"metric": "base_map50", "value": 0.1067, "unit": "score", "denominator": "200 held-out examples", "notes": "Base."},
+          {"metric": "vision_language_map50", "value": 0.3256, "unit": "score", "denominator": "same held-out set", "notes": "Language-only is approximately 0.3253."},
+          {"metric": "json_validity", "value": 88.5, "unit": "percent", "denominator": "vision-plus-language held-out outputs", "notes": "Language-only reaches 94.5%."},
+          {"metric": "metal_debris_score", "value": 0, "unit": "score", "denominator": "held-out Metal Debris class", "notes": "Suggests a remaining data or label bottleneck."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e2b-oceanguard", "segment_id": "seg-vision-language-baselines-and-format"}],
+      "confounds": ["Community hackathon artifact, incomplete planned steps, author evaluation, and small class denominators."],
+      "configuration_gaps": ["No independent evaluation, seed repeat, or verified GGUF semantic-parity result."],
+      "transfer_limits": ["Does not establish a general benefit from training the E2B vision tower."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-09-04T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e4b-wallet-loss-and-strength",
+      "statement": "In a narrow deterministic E4B wallet tool-call task, validation loss keeps falling while out-of-distribution accuracy falls by 14.5 points across three epochs, and selecting one epoch plus 0.75 adapter merge strength on a disjoint development set yields about 95 percent on a frozen 1000-case benchmark.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "local-wallet-tool-calling",
+        "snapshot": "ef-dai-team-wallet-ft-v5-at-capture",
+        "runtime": {"name": "LoRA training and llama.cpp GGUF serving", "version": null, "subject_ref": "single A40 training and on-device Q4_K_M artifact"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"measured_merge_strength": 0.75}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "LoRA adapter, development-selected strength, merged and quantized artifact",
+        "reasoning_effort": null,
+        "context_policy": "fixed wallet schema with and without an unseen safety clause",
+        "tools": ["PEFT", "llama.cpp"],
+        "permissions": [],
+        "prompt": "wallet request to exact structured call",
+        "scaffold": "r16 alpha16 LoRA over attention and MLP projections",
+        "runbook": "2288 training examples, one epoch, 145-case dev selection, one final 1000-case test evaluation",
+        "harness": "field-exact deterministic scorer",
+        "instrument_revision": "published v5 artifact and evaluation contract",
+        "grader": "exact match on every field of every call",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Specialize E4B for safe structured wallet proposals without using the test set for selection.",
+        "executed": "Compared epochs and merge strengths on development data and scored the selected measured artifact once on frozen test data.",
+        "artifact": "Digest-identified Q4_K_M file, full-strength comparator, adapter, and linked scorer.",
+        "verified": "Split sizes, deterministic metric, artifact digest, and held-out table are published.",
+        "reported": "Task gain depends on selection by the real outcome and adapter strength rather than minimum validation loss.",
+        "termination": "Selected artifact published.",
+        "measurements": [
+          {"metric": "ood_accuracy_loss_across_three_epochs", "value": -14.5, "unit": "percentage_points", "denominator": "three-epoch development trajectory", "notes": "Validation loss falls monotonically over the same interval."},
+          {"metric": "tuned_no_clause_overall", "value": 94.9, "unit": "percent", "denominator": "1000 frozen held-out cases", "notes": "Base without clause is 90.3%."},
+          {"metric": "tuned_with_clause_overall", "value": 95.1, "unit": "percent", "denominator": "same 1000 cases", "notes": "Base with clause is 91.0%."},
+          {"metric": "safety_refusal_accuracy", "value": "81.6->95.9", "unit": "percent", "denominator": "49 safety-refusal cases without versus with clause", "notes": "The prompt clause contributes independently of tuning."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e4b-wallet", "segment_id": "seg-heldout-loss-reversal-and-merge-strength"}],
+      "confounds": ["Single narrow template-generated task, one training run, and publisher-owned evaluation."],
+      "configuration_gaps": ["No general-assistant retention suite beyond the task-specific cases and no independent artifact rerun."],
+      "transfer_limits": ["Does not make 0.75 a default merge strength or lowest-loss reversal universal."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-09-04T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-adapted-long-context-unverified",
+      "statement": "The located E4B derivative trained at a 2048-token maximum can be configured for a much larger serving window but explicitly lacks a formal long-reasoning evaluation, so nominal positional capacity is not retained as post-adaptation long-context evidence.",
+      "target_kind": "unresolved",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E4B"],
+        "provider": "google",
+        "product": "long-context-after-adaptation",
+        "snapshot": "Dhiaul-GLM5.1-distill-at-capture",
+        "runtime": {"name": "vLLM", "version": null, "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "partial",
+        "route": "short-sequence distillation followed by large max-model-len serving guidance",
+        "reasoning_effort": null,
+        "context_policy": "training maximum 2048; nominal serving window up to model configuration",
+        "tools": ["vLLM"],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": "merged E4B derivative",
+        "runbook": null,
+        "harness": null,
+        "instrument_revision": "model card at capture",
+        "grader": null,
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Find evidence that E2B or E4B preserves useful long-context behavior after adaptation.",
+        "executed": "Searched papers, model cards, and runtime reports and inspected a representative explicit limitation.",
+        "artifact": "Model card with training length and admitted evaluation gap.",
+        "verified": "The mismatch between train length, serve configuration, and absent formal evaluation is explicit.",
+        "reported": "No qualified post-adaptation long-context behavior result was located in this pass.",
+        "termination": "Negative search state retained for revisit.",
+        "measurements": [
+          {"metric": "training_max_sequence", "value": 2048, "unit": "tokens", "denominator": "reported derivative training configuration", "notes": "Not a long-context curriculum."},
+          {"metric": "formal_long_reasoning_evaluation", "value": false, "unit": null, "denominator": "model-card admission", "notes": "Nominal serving support is not substituted."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-e4b-long-context-artifact", "segment_id": "seg-short-training-and-unmeasured-long-context"}],
+      "confounds": ["Search coverage is finite and one weak artifact does not represent all derivatives."],
+      "configuration_gaps": ["No retained needle, retrieval, long-reasoning, perplexity-by-position, or lost-in-the-middle curve after adaptation."],
+      "transfer_limits": ["This is a bounded negative search result, not proof that qualifying evidence does not exist."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "anecdotal_signal",
+      "disposition": "watch",
+      "observed_interval": {"start": "2026-09-04T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-e4b-adapted-mtp-pair",
+      "statement": "One fine-tuned E4B NVFP4 derivative paired with the official MTP assistant reaches about 2.1 times target-only throughput at draft depth five, but only after a runtime patch and correction of a streaming-token counter that had inflated earlier results.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["fine-tuned-gemma-4-E4B-derivative", "gemma-4-E4B-it-assistant"],
+        "provider": "community-plus-google",
+        "product": "post-adaptation-mtp-pair",
+        "snapshot": "Adolphsson-NVFP4-card-at-capture",
+        "runtime": {"name": "vLLM", "version": "0.28", "subject_ref": "RTX 5090"},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"quantization": "NVFP4 plus FP8 embeddings", "draft_depths": [0, 1, 2, 3, 4, 5]}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "adapted target with official E4B assistant and required sitecustomize patch",
+        "reasoning_effort": null,
+        "context_policy": "six prompts, 300-token cap, greedy decode",
+        "tools": ["vLLM", "Prometheus metrics"],
+        "permissions": [],
+        "prompt": "six fixed benchmark prompts",
+        "scaffold": "fresh server per draft depth",
+        "runbook": "two runs for each K from zero through five",
+        "harness": "corrected streaming-token throughput and Prometheus acceptance counters",
+        "instrument_revision": "corrected model-card harness at capture",
+        "grader": "tokens per second, acceptance, output sanity, and deterministic decode comparison",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Test whether an adapted E4B derivative remains compatible with the official MTP drafter.",
+        "executed": "Compared K0-K5 with fresh servers, corrected token accounting, and retained broken-patch controls.",
+        "artifact": "Published derivative, runtime patch instructions, corrected tables, and metric traces.",
+        "verified": "Two-run throughput and acceptance results plus the earlier counter defect are documented.",
+        "reported": "The exact pair can accelerate decode, but the result is workload-, patch-, and instrument-bound.",
+        "termination": "Community pair measured; generic LoRA compatibility remains open.",
+        "measurements": [
+          {"metric": "k0_throughput", "value": 242.5, "unit": "tokens_per_second", "denominator": "approximately two runs by six prompts", "notes": "Target-only reference."},
+          {"metric": "k5_throughput", "value": "528-534", "unit": "tokens_per_second", "denominator": "approximately two runs by six prompts", "notes": "About 2.1x K0."},
+          {"metric": "k5_acceptance", "value": 0.305, "unit": "ratio", "denominator": "Prometheus speculative acceptance counter", "notes": "K1 is 0.669 and acceptance falls with depth."},
+          {"metric": "broken_drafter_patch_acceptance", "value": "0/15", "unit": "accepted_tokens", "denominator": "reported mispatched control", "notes": "Server health alone remained green."}
+        ],
+        "additional_dimensions": {"superseded_metric": "earlier 624-700 tok/s values were not reproduced because streaming events were counted as tokens"}
+      },
+      "source_segment_refs": [{"source_id": "src-e4b-mtp-derivative", "segment_id": "seg-paired-mtp-results-and-counter-fix"}],
+      "confounds": ["Community-assembled derivative, sitecustomize patch, RTX 5090, six prompts, greedy decoding, and mutable artifact card."],
+      "configuration_gaps": ["No E2B pair, arbitrary LoRA matrix, independent reproduction, or broad output-distribution sweep."],
+      "transfer_limits": ["Narrows the evidence gap to one exact E4B pair; does not guarantee official-drafter compatibility after other adaptations."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-09-04T00:00:00Z", "end": "2026-09-04T23:59:59Z"}
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "cluster-scorer-mechanism-and-judge",
+      "label": "Scorer, mechanism, and adjudicator are independent outcome axes",
+      "observation_refs": [
+        "obs-e2b-scorer-mechanism-split",
+        "obs-e4b-dpo-domain-and-scorer-pareto",
+        "obs-e2b-grpo-judge-and-absolute-bar"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "bangladesh-legal-qa-study",
+        "rlearner-hybrid-dpo-study",
+        "e2b-nla-grpo-experiment"
+      ],
+      "supported_scope": "Across one E2B controlled study, one E4B DPO study, and one E2B artifact suite, the scorer or judge changes the magnitude and sometimes the direction of an adaptation conclusion.",
+      "transfer_limits": ["The studies use different tasks and do not quantify one portable scorer-bias rate."],
+      "unresolved_configuration_gaps": ["Independent human or held-out scorers are absent from part of the corpus."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Require alternative scorer and intervention controls in adaptation studies whose primary metric also shaped training or selection."
+    },
+    {
+      "cluster_id": "cluster-data-capacity-selection",
+      "label": "Data, capacity, checkpoint selection, and adapter strength are coupled",
+      "observation_refs": [
+        "obs-e4b-data-capacity-lr-coupling",
+        "obs-e4b-wallet-loss-and-strength",
+        "obs-e4b-ties-composition-retention"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "document-internalization-study",
+        "e4b-wallet-toolcall-experiment",
+        "e4b-masked-ties-merge"
+      ],
+      "supported_scope": "Three independent E4B origins show that rank, learning rate, data quality, epoch, masks, merge algorithm, and adapter strength can move task and retention outcomes separately.",
+      "transfer_limits": ["No shared factorial experiment spans the three tasks or establishes universal settings."],
+      "unresolved_configuration_gaps": ["Multi-seed rank-by-learning-rate and merge-strength sweeps remain sparse."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Design disjoint-development selection with a common task plus orthogonal-retention suite."
+    },
+    {
+      "cluster_id": "cluster-reward-relative-absolute",
+      "label": "Reward design can unlock relative gain without clearing absolute acceptance",
+      "observation_refs": ["obs-e2b-grpo-reward-regime"],
+      "counterevidence_refs": ["obs-e2b-grpo-judge-and-absolute-bar"],
+      "independent_origin_groups": ["e2b-nla-grpo-experiment"],
+      "supported_scope": "Within the retained E2B NLA experiment, dense reward improves routing and rank measurements after sparse regimes fail, while judge disagreement and the absolute rubric prevent a broader capability conclusion.",
+      "transfer_limits": ["One experiment origin cannot establish recurring E2B GRPO behavior."],
+      "unresolved_configuration_gaps": ["The strongest checkpoint lacks independent seeds and external replication."],
+      "posture": "contradictory",
+      "disposition": "replicate",
+      "next_action": "Repeat the dense-reward route with multiple seeds, a frozen absolute bar, and independent adjudication."
+    },
+    {
+      "cluster_id": "cluster-target-and-silent-path",
+      "label": "Target selection and multimodal data flow need direct instrumentation",
+      "observation_refs": [
+        "obs-e2b-target-topology-repair",
+        "obs-audio-silent-path",
+        "obs-vllm-adapter-tower-policy"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "bangladesh-legal-qa-study",
+        "unsloth-audio-silent-path",
+        "vllm-gemma4-tower-policy"
+      ],
+      "supported_scope": "Across training and serving surfaces, exact model identity and error-free execution do not prove that the intended language, audio, or vision path was selected and exercised.",
+      "transfer_limits": ["Exact namespaces and counts remain framework- and revision-specific."],
+      "unresolved_configuration_gaps": ["A framework-neutral end-to-end tower and gradient probe is not yet retained."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Prototype a generic batch-key, token-expansion, forward-hook, gradient, and counterfactual acceptance probe outside the production validator."
+    },
+    {
+      "cluster_id": "cluster-runtime-semantic-delta",
+      "label": "Load, health, export, and semantic application are separate states",
+      "observation_refs": [
+        "obs-vllm-adapter-semantic-noop",
+        "obs-vllm-adapter-tower-policy",
+        "obs-e4b-adapted-mtp-pair"
+      ],
+      "counterevidence_refs": [],
+      "independent_origin_groups": [
+        "vllm-gemma4-lora-mapping",
+        "vllm-gemma4-tower-policy",
+        "e4b-adapted-mtp-runtime"
+      ],
+      "supported_scope": "Independent runtime surfaces show that successful load or HTTP health can coexist with ignored adapters or degenerate generation, so acceptance requires a deterministic semantic delta and exact artifact mapping.",
+      "transfer_limits": ["Current defect incidence across released runtimes and all adapter topologies is unknown."],
+      "unresolved_configuration_gaps": ["No public release matrix covers base, adapter, merged, quantized, and served parity for E2B and E4B."],
+      "posture": "cross_modal_pattern",
+      "disposition": "route_to_runtime_owner",
+      "next_action": "Create a bounded semantic parity protocol and route actual runtime execution to its owner."
+    },
+    {
+      "cluster_id": "cluster-multimodal-specialization-pareto",
+      "label": "Multimodal aggregate gain hides tower, class, and format trade-offs",
+      "observation_refs": ["obs-e4b-audio-dora-pareto", "obs-e2b-vision-language-control"],
+      "counterevidence_refs": ["obs-audio-silent-path"],
+      "independent_origin_groups": [
+        "e4b-audio-dora-experiment",
+        "e2b-oceanguard-experiment",
+        "unsloth-audio-silent-path"
+      ],
+      "supported_scope": "One E4B audio and one E2B vision artifact show aggregate specialization gains alongside subcategory or format regressions, while an independent framework defect proves that modality flow itself needs verification.",
+      "transfer_limits": ["Tasks, targets, data, and evaluation ownership differ; the cluster supports a study shape rather than a size comparison."],
+      "unresolved_configuration_gaps": ["Neither artifact has an independent end-to-end modality and export replication."],
+      "posture": "cross_modal_pattern",
+      "disposition": "replicate",
+      "next_action": "Retain base, language-only, tower-only, joint, and modality-removed arms with per-class and structured-output metrics."
+    },
+    {
+      "cluster_id": "cluster-long-context-evidence-gap",
+      "label": "Post-adaptation long-context behavior remains unqualified",
+      "observation_refs": ["obs-adapted-long-context-unverified"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["e4b-long-context-weak-signal"],
+      "supported_scope": "The representative E4B derivative exposes short training and an explicit lack of formal long-reasoning evaluation despite a configurable large serving window.",
+      "transfer_limits": ["Finite search coverage cannot prove the absence of qualifying evidence elsewhere."],
+      "unresolved_configuration_gaps": ["No retained post-adaptation position-sensitive or long-reasoning curve for E2B or E4B."],
+      "posture": "anecdotal_signal",
+      "disposition": "watch",
+      "next_action": "Repeat targeted searches and prioritize a direct shared-context-length experiment."
+    },
+    {
+      "cluster_id": "cluster-mtp-paired-acceptance",
+      "label": "Adapted target and MTP drafter must be accepted as an exact pair",
+      "observation_refs": ["obs-e4b-adapted-mtp-pair"],
+      "counterevidence_refs": ["obs-vllm-adapter-semantic-noop"],
+      "independent_origin_groups": ["e4b-adapted-mtp-runtime", "vllm-gemma4-lora-mapping"],
+      "supported_scope": "One exact fine-tuned E4B derivative and official assistant pair has measured corrected throughput, while neighboring runtime failures prevent transfer to arbitrary adapters or releases.",
+      "transfer_limits": ["The result is bounded to the named derivative, drafter, patch, vLLM revision, hardware, prompts, and draft depths."],
+      "unresolved_configuration_gaps": ["No E2B pair or general LoRA-versus-joint-tuning matrix exists."],
+      "posture": "artifact_backed_observation",
+      "disposition": "review_for_study",
+      "next_action": "Build a target/drafter matrix with deterministic parity, corrected token counters, acceptance, and workload curves."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "tension-relative-versus-absolute-rl",
+      "label": "Relative dense-reward gain versus absolute usability",
+      "side_a_refs": ["obs-e2b-grpo-reward-regime"],
+      "side_b_refs": ["obs-e2b-grpo-judge-and-absolute-bar"],
+      "analysis": "Routing and percentile improve, but top-1 is non-monotonic, judges disagree, and no checkpoint clears the external absolute rubric; these instruments answer different questions.",
+      "resolution": "resolved_by_instrument",
+      "remaining_question": "Can a multi-seed dense-reward E2B run improve both relative rank and a frozen absolute task bar?"
+    },
+    {
+      "tension_id": "tension-adapter-result-versus-runtime",
+      "label": "Measured adapter artifact versus silent runtime no-op",
+      "side_a_refs": ["obs-e4b-wallet-loss-and-strength", "obs-e4b-ties-composition-retention"],
+      "side_b_refs": ["obs-vllm-adapter-semantic-noop"],
+      "analysis": "Task and retention deltas exist for exact artifacts, but a different runtime can load Gemma 4 LoRA without applying it, so artifact evidence cannot be projected through an unverified serving path.",
+      "resolution": "resolved_by_product",
+      "remaining_question": "Which released serving configurations preserve each named artifact's deterministic semantic delta?"
+    },
+    {
+      "tension_id": "tension-multimodal-gain-versus-path",
+      "label": "Multimodal task gain versus proof that modality traversed the intended tower",
+      "side_a_refs": ["obs-e4b-audio-dora-pareto", "obs-e2b-vision-language-control"],
+      "side_b_refs": ["obs-audio-silent-path", "obs-e2b-target-topology-repair"],
+      "analysis": "Author metrics show bounded gains, but independent implementation evidence shows both accidental target selection and silent tower bypass; task results need path instrumentation before tower causality is assigned.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Do tower-only and modality-removed controls preserve the reported per-class gains under a verified data path?"
+    },
+    {
+      "tension_id": "tension-loss-versus-heldout",
+      "label": "Improving training proxy versus degrading held-out outcome",
+      "side_a_refs": ["obs-e4b-data-capacity-lr-coupling"],
+      "side_b_refs": ["obs-e4b-wallet-loss-and-strength"],
+      "analysis": "The document study rewards careful data and coupled optimizer diagnosis, while the wallet study directly shows that lower validation loss can select a worse OOD checkpoint; both reject single-proxy tuning but under different instruments.",
+      "resolution": "resolved_by_instrument",
+      "remaining_question": "Which development metrics predict target and retention outcomes across less template-deterministic E4B tasks?"
+    },
+    {
+      "tension_id": "tension-mtp-speed-versus-health",
+      "label": "MTP throughput gain versus healthy but semantically broken serving",
+      "side_a_refs": ["obs-e4b-adapted-mtp-pair"],
+      "side_b_refs": ["obs-vllm-adapter-semantic-noop"],
+      "analysis": "The corrected exact pair accelerates decode, yet both its own patch controls and the wider vLLM issue show that health or load success can coexist with broken semantics.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Can one released runtime pass semantic parity and throughput acceptance for base, adapted target, and target-drafter pair together?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "pressure-coverage-ledger",
+      "trigger_refs": ["obs-adapted-long-context-unverified", "obs-e2b-grpo-route-currentness"],
+      "pressure": "A source-only packet cannot distinguish a deliberately searched evidence gap from a direction the researcher never examined.",
+      "proposed_response": "Add optional generic search probes with question, strategies, sought source roles, result state, retained refs, limitations, and next action.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-mechanism-and-scorer-controls",
+      "trigger_refs": ["obs-e2b-scorer-mechanism-split", "obs-e4b-dpo-domain-and-scorer-pareto", "obs-e2b-grpo-judge-and-absolute-bar"],
+      "pressure": "A tuned model can gain under one parser or judge without improving the claimed mechanism, and scorer reuse can make the evaluation circular.",
+      "proposed_response": "Separate behavioral outcome, mechanism intervention, scorer identity, judge direction, seeds, and absolute acceptance in the method.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-selection-proxy-ledger",
+      "trigger_refs": ["obs-e4b-data-capacity-lr-coupling", "obs-e4b-wallet-loss-and-strength"],
+      "pressure": "Validation loss, data quality, rank, learning rate, epoch, and merge strength can disagree or interact, making best-checkpoint language ambiguous.",
+      "proposed_response": "Require an explicit train signal, disjoint development selection, frozen held-out result, and orthogonal retention path.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-silent-path-validation",
+      "trigger_refs": ["obs-e2b-target-topology-repair", "obs-audio-silent-path", "obs-vllm-adapter-tower-policy"],
+      "pressure": "Multimodal training and serving can remain operational while selecting the wrong modules or bypassing the intended modality tower.",
+      "proposed_response": "Add generic silent-path checks for batch keys, placeholder expansion, tensor shapes, tower forward or gradients, target counts, and modality counterfactuals.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-runtime-semantic-delta",
+      "trigger_refs": ["obs-vllm-adapter-semantic-noop", "obs-vllm-adapter-tower-policy", "obs-e4b-adapted-mtp-pair"],
+      "pressure": "Load success, HTTP health, or merged code does not prove that a served adapter or paired drafter changes behavior correctly.",
+      "proposed_response": "Add a distinct semantic-delta and paired-artifact acceptance stage after export and serve.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-metric-lineage",
+      "trigger_refs": ["obs-e2b-grpo-judge-and-absolute-bar", "obs-e4b-adapted-mtp-pair"],
+      "pressure": "A metric can change because its judge fails a control or its harness counts streaming events instead of tokens, and rewriting the number would erase causal history.",
+      "proposed_response": "Retain metric, instrument revision, discovered defect, corrected computation, rerun, and revised observation as an explicit lineage.",
+      "status": "adopted"
+    },
+    {
+      "pressure_id": "pressure-composition-and-pair-identity",
+      "trigger_refs": ["obs-e4b-ties-composition-retention", "obs-e4b-adapted-mtp-pair"],
+      "pressure": "Adapter merge and target-drafter success depend on exact component bytes, weights, ordering, density, runtime, and workload rather than family labels.",
+      "proposed_response": "Treat composition and MTP as exact multi-artifact configurations with component baselines and common acceptance suites.",
+      "status": "adopted"
+    }
+  ],
+  "search_probes": [
+    {
+      "probe_id": "probe-e2b-scorer-mechanism",
+      "question": "Does E2B fine-tuning survive alternative scoring and intervention controls?",
+      "searched_at": "2026-09-04T19:05:00Z",
+      "query_variants": ["Gemma 4 E2B LoRA benchmark multiple seeds", "Gemma 4 E2B fine tuning controlled context removal scorer"],
+      "source_roles_sought": ["independent controlled study", "code or data artifact"],
+      "result_state": "qualified_evidence_found",
+      "source_refs": ["src-e2b-legal-study"],
+      "observation_refs": ["obs-e2b-scorer-mechanism-split", "obs-e2b-target-topology-repair"],
+      "limitations": ["One fresh legal-domain study and no independent reproduction."],
+      "next_action": "Revisit after scorer or dataset revision and seek a second controlled E2B domain."
+    },
+    {
+      "probe_id": "probe-e4b-data-capacity-selection",
+      "question": "Which E4B data, capacity, optimizer, epoch, and merge-strength controls have measured held-out effects?",
+      "searched_at": "2026-09-04T20:50:00Z",
+      "query_variants": ["Gemma 4 E4B LoRA rank learning rate ablation", "Gemma 4 E4B adapter strength held out evaluation", "Gemma 4 E4B validation loss out of distribution"],
+      "source_roles_sought": ["independent ablation study", "reproducible artifact with frozen test set"],
+      "result_state": "qualified_evidence_found",
+      "source_refs": ["src-e4b-document-lora", "src-e4b-wallet"],
+      "observation_refs": ["obs-e4b-data-capacity-lr-coupling", "obs-e4b-wallet-loss-and-strength"],
+      "limitations": ["The tasks, precision, and evaluation ownership differ."],
+      "next_action": "Seek a multi-seed factorial and a second independent merge-strength study."
+    },
+    {
+      "probe_id": "probe-preference-and-rl",
+      "question": "What E2B or E4B preference-tuning and reinforcement-learning evidence exposes reward, scorer, seed, and absolute-acceptance sensitivity?",
+      "searched_at": "2026-09-04T19:55:00Z",
+      "query_variants": ["Gemma 4 E2B GRPO reward evaluation", "Gemma 4 E4B DPO LoRA benchmark", "Gemma 4 E2B reinforcement learning failure"],
+      "source_roles_sought": ["versioned study", "failed experiment", "retained checkpoint", "framework recipe"],
+      "result_state": "mixed_evidence_found",
+      "source_refs": ["src-e4b-hybrid-dpo", "src-e2b-nla-repo", "src-e2b-nla-dense1000", "src-unsloth-e2b-grpo-notebook", "src-unsloth-e2b-loader-issue", "src-unsloth-e2b-logits-issue"],
+      "observation_refs": ["obs-e4b-dpo-domain-and-scorer-pareto", "obs-e2b-grpo-reward-regime", "obs-e2b-grpo-judge-and-absolute-bar", "obs-e2b-grpo-route-currentness"],
+      "limitations": ["No shared E2B/E4B task, the strongest E2B step lacks seed replication, and E4B DPO reuses its scorer."],
+      "next_action": "Run a frozen absolute-bar and multi-judge replication after current framework fixes."
+    },
+    {
+      "probe_id": "probe-multimodal-path-and-outcome",
+      "question": "Do E2B and E4B multimodal adaptations verify both modality data flow and held-out modality-specific behavior?",
+      "searched_at": "2026-09-04T20:45:00Z",
+      "query_variants": ["Gemma 4 E4B audio LoRA evaluation", "Gemma 4 E2B vision LoRA benchmark", "Gemma 4 audio fine tuning input_features issue"],
+      "source_roles_sought": ["multimodal adapter artifact", "tower ablation", "framework failure and fix"],
+      "result_state": "mixed_evidence_found",
+      "source_refs": ["src-unsloth-audio-issue", "src-unsloth-audio-fix", "src-e4b-audio-dora", "src-e2b-oceanguard"],
+      "observation_refs": ["obs-audio-silent-path", "obs-e4b-audio-dora-pareto", "obs-e2b-vision-language-control"],
+      "limitations": ["Outcome artifacts are author-evaluated and do not retain the full generic silent-path trace."],
+      "next_action": "Create a disposable framework-neutral probe, then retain only the durable acceptance contract and study results."
+    },
+    {
+      "probe_id": "probe-adapter-composition",
+      "question": "Is there an E2B or E4B multi-adapter composition with component and merged retention measurements?",
+      "searched_at": "2026-09-04T20:35:00Z",
+      "query_variants": ["Gemma 4 E4B TIES adapter merge evaluation", "Gemma 4 E2B multi adapter composition", "Gemma 4 E4B LoRA merge retention"],
+      "source_roles_sought": ["component artifacts", "merge recipe", "common retention evaluation"],
+      "result_state": "qualified_evidence_found",
+      "source_refs": ["src-e4b-ties-merge"],
+      "observation_refs": ["obs-e4b-ties-composition-retention"],
+      "limitations": ["One E4B community origin, ten style prompts, and one TIES density."],
+      "next_action": "Seek or run an independent algorithm and density comparison with a frozen suite."
+    },
+    {
+      "probe_id": "probe-runtime-semantic-application",
+      "question": "Can current serving routes prove that Gemma 4 adapters are semantically applied rather than merely loaded?",
+      "searched_at": "2026-09-04T20:30:00Z",
+      "query_variants": ["vLLM Gemma 4 LoRA ignored output", "vLLM Gemma 4 adapter target module vision tower", "Gemma 4 LoRA loaded no effect"],
+      "source_roles_sought": ["runtime reproducer", "candidate fix", "merged tower support", "released rerun"],
+      "result_state": "mixed_evidence_found",
+      "source_refs": ["src-vllm-gemma4-lora-noop", "src-vllm-gemma4-lora-fix", "src-vllm-gemma4-tower-issue", "src-vllm-vision-lora-fix"],
+      "observation_refs": ["obs-vllm-adapter-semantic-noop", "obs-vllm-adapter-tower-policy"],
+      "limitations": ["The central mapping fix is open and later tower support lacks one exact released-version E2B replay."],
+      "next_action": "Revisit after release and require deterministic base-versus-adapter output deltas."
+    },
+    {
+      "probe_id": "probe-post-adaptation-long-context",
+      "question": "Has E2B or E4B post-adaptation behavior been evaluated near the nominal long-context limit?",
+      "searched_at": "2026-09-04T21:00:00Z",
+      "query_variants": ["Gemma 4 E2B fine tuned 128k benchmark", "Gemma 4 E4B LoRA long context evaluation", "Gemma 4 adapter lost in the middle"],
+      "source_roles_sought": ["position-sensitive benchmark", "long-reasoning evaluation", "post-adaptation context curve"],
+      "result_state": "no_qualified_source_found",
+      "source_refs": ["src-e4b-long-context-artifact"],
+      "observation_refs": ["obs-adapted-long-context-unverified"],
+      "limitations": ["Search was finite; the retained artifact is a weak counterexample to nominal-capacity inference, not a complete corpus."],
+      "next_action": "Repeat the search after new derivative releases or design a direct context-length curve."
+    },
+    {
+      "probe_id": "probe-mtp-after-adaptation",
+      "question": "Is an adapted E2B or E4B target measured with its MTP drafter after training and export?",
+      "searched_at": "2026-09-04T21:05:00Z",
+      "query_variants": ["Gemma 4 E4B fine tuned MTP acceptance", "Gemma 4 E2B LoRA MTP assistant", "Gemma 4 adapted target speculative decoding"],
+      "source_roles_sought": ["paired artifact", "acceptance metric", "target-only control", "corrected throughput harness"],
+      "result_state": "mixed_evidence_found",
+      "source_refs": ["src-e4b-mtp-derivative"],
+      "observation_refs": ["obs-e4b-adapted-mtp-pair"],
+      "limitations": ["One community E4B derivative, custom runtime patch, six prompts, and no arbitrary-LoRA or E2B arm."],
+      "next_action": "Build a target/drafter matrix and verify exact-output parity across workloads."
+    },
+    {
+      "probe_id": "probe-paired-e2b-e4b-adaptation",
+      "question": "Does one controlled experiment compare E2B and E4B adaptation under identical data, topology, seeds, scorers, retention, export, and serving conditions?",
+      "searched_at": "2026-09-04T21:10:00Z",
+      "query_variants": ["Gemma 4 E2B E4B LoRA comparison same dataset", "Gemma 4 E2B versus E4B fine tuning benchmark", "Gemma 4 E2B E4B adapter retention comparison"],
+      "source_roles_sought": ["paired controlled study", "shared benchmark and runtime receipt"],
+      "result_state": "no_qualified_source_found",
+      "source_refs": [],
+      "observation_refs": [],
+      "limitations": ["Available E2B and E4B studies use incompatible tasks, methods, metrics, hardware, and maturity levels."],
+      "next_action": "Treat the missing paired matrix as the highest-value new owner study rather than synthesize a cross-source ranking."
+    }
+  ],
+  "revisit_triggers": [
+    "A shared E2B/E4B adaptation benchmark publishes identical data, topology, seeds, scorer, retention, export, and serving controls.",
+    "The E2B legal study receives an independent replication or a new scorer revision.",
+    "A current full Unsloth E2B GRPO notebook run is retained after the loader and logits fixes.",
+    "vLLM pull request 39816 merges, ships, or receives an exact released-version semantic-delta rerun.",
+    "A qualified post-adaptation E2B or E4B long-context benchmark evaluates behavior near 128K.",
+    "An independently reproduced adapter-composition study compares merge algorithms on one common task and retention suite.",
+    "A post-adaptation target and official drafter matrix becomes available for E2B or E4B."
+  ],
+  "created_at": "2026-09-04T22:30:00Z",
+  "updated_at": "2026-09-04T22:30:00Z"
+}

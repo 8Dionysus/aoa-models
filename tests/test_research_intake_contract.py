@@ -16,6 +16,7 @@ from research_intake_contract import (  # noqa: E402
     canonical_digest,
     validate_research_intake,
 )
+from research_source_dossiers import expected_content as expected_dossier_content  # noqa: E402
 
 
 def minimal_packet(
@@ -199,12 +200,19 @@ class ResearchIntakeContractTests(unittest.TestCase):
             ROOT / "schemas/research-automation-artifact.schema.json",
             fixture / "schemas",
         )
+        shutil.copy2(
+            ROOT / "schemas/research-source-dossier-catalog.schema.json",
+            fixture / "schemas",
+        )
         (fixture / "research-intake/recon-runs").mkdir(parents=True)
         return temporary, fixture
 
     def write_packet(self, fixture: Path, name: str, packet: dict) -> None:
         path = fixture / "research-intake/recon-runs" / name
         path.write_text(json.dumps(packet, indent=2) + "\n", encoding="utf-8")
+        dossier_path = fixture / "generated/research-source-dossiers.json"
+        dossier_path.parent.mkdir(parents=True, exist_ok=True)
+        dossier_path.write_text(expected_dossier_content(fixture), encoding="utf-8")
 
     def test_repository_research_intake_is_valid(self) -> None:
         self.assertEqual(validate_research_intake(ROOT), [])
@@ -374,6 +382,76 @@ class ResearchIntakeContractTests(unittest.TestCase):
         self.write_packet(fixture, "valid.json", packet)
 
         self.assertEqual(validate_research_intake(fixture), [])
+
+    def test_search_probe_resolves_retained_evidence(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        packet = minimal_packet()
+        packet["search_probes"] = [
+            {
+                "probe_id": "probe-a",
+                "question": "Does the bounded result have qualified retained evidence?",
+                "searched_at": "2026-08-30T01:30:00Z",
+                "query_variants": ["bounded benchmark primary source"],
+                "source_roles_sought": ["primary method-backed report"],
+                "result_state": "qualified_evidence_found",
+                "source_refs": ["source-a"],
+                "observation_refs": ["observation-a"],
+                "limitations": [],
+                "next_action": "Seek an independent replication.",
+            }
+        ]
+        self.write_packet(fixture, "valid.json", packet)
+
+        self.assertEqual(validate_research_intake(fixture), [])
+
+    def test_qualified_search_probe_cannot_point_to_unretained_result(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        packet = minimal_packet()
+        packet["search_probes"] = [
+            {
+                "probe_id": "probe-a",
+                "question": "Does the bounded result have qualified retained evidence?",
+                "searched_at": "2026-08-30T01:30:00Z",
+                "query_variants": ["bounded benchmark primary source"],
+                "source_roles_sought": ["primary method-backed report"],
+                "result_state": "qualified_evidence_found",
+                "source_refs": [],
+                "observation_refs": [],
+                "limitations": [],
+                "next_action": "Retain the source and observation before claiming coverage.",
+            }
+        ]
+        self.write_packet(fixture, "broken.json", packet)
+
+        issues = validate_research_intake(fixture)
+
+        self.assertTrue(any("requires source and observation refs" in issue for issue in issues))
+
+    def test_negative_search_probe_requires_a_limit_statement(self) -> None:
+        temporary, fixture = self.make_fixture()
+        self.addCleanup(temporary.cleanup)
+        packet = minimal_packet()
+        packet["search_probes"] = [
+            {
+                "probe_id": "probe-a",
+                "question": "Was a qualified cross-configuration replication located?",
+                "searched_at": "2026-08-30T01:30:00Z",
+                "query_variants": ["cross configuration replication"],
+                "source_roles_sought": ["independent benchmark"],
+                "result_state": "no_qualified_source_found",
+                "source_refs": [],
+                "observation_refs": [],
+                "limitations": [],
+                "next_action": "Repeat the search after the next release cycle.",
+            }
+        ]
+        self.write_packet(fixture, "broken.json", packet)
+
+        issues = validate_research_intake(fixture)
+
+        self.assertTrue(any("requires limitations" in issue for issue in issues))
 
     def test_missing_cross_run_supersession_is_rejected(self) -> None:
         temporary, fixture = self.make_fixture()

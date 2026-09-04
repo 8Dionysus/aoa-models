@@ -116,6 +116,7 @@ def run_owner_validators() -> None:
     commands = [
         [sys.executable, "-B", "scripts/validate_models.py"],
         [sys.executable, "-B", "scripts/build_model_fit_projections.py", "--check"],
+        [sys.executable, "-B", "scripts/build_research_source_dossiers.py", "--check"],
         [sys.executable, "-B", "scripts/generate_decision_index.py", "--check"],
         [
             sys.executable,

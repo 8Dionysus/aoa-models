@@ -1,0 +1,1297 @@
+{
+  "$schema": "https://schemas.aoa.local/models/recon-run.schema.json",
+  "schema_version": "aoa_model_recon_run_v1",
+  "kind": "ReconRun",
+  "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-corroboration",
+  "title": "Gemma 4 E2B/E4B corroboration, endpoint inversions, and currentness",
+  "status": "intake_reviewed",
+  "intake_owner": "aoa-models",
+  "authority": {
+    "pre_canon": true,
+    "automatic_promotion": false,
+    "routing_authority": false,
+    "activation_authority": false,
+    "proof_authority": false,
+    "acceptance_authority": false
+  },
+  "question": "Which E2B/E4B directions recur across independent agentic, clinical, audio, edge-runtime, Apple-runtime, and MTP evidence; which same-instrument inversions prevent a universal ranking; and what changed in the PLE support question since the predecessor run?",
+  "scope": {
+    "subject_labels": [
+      "gemma-4-E2B-it",
+      "gemma-4-E4B-it",
+      "gemma-4-E2B-it-MTP",
+      "gemma-4-E4B-it-MTP"
+    ],
+    "target_kinds": [
+      "benchmark_result",
+      "runtime_behavior",
+      "operational_pressure",
+      "unresolved"
+    ],
+    "capture_interval": {
+      "start": "2026-09-04T15:00:00Z",
+      "end": "2026-09-04T18:00:00Z"
+    },
+    "inclusion_criteria": [
+      "Prefer versioned papers, commit-pinned code or reports, raw tables, and primary mutable issue state.",
+      "Count independent origin groups rather than pages, rows, repositories mirrored by the same study, or downstream retellings.",
+      "Preserve paired metric directions, denominators, local inversions, runtime identity, task shape, and reproducibility gaps.",
+      "Use the predecessor Gemma 4 packets as bounded prior context without rewriting their observations."
+    ],
+    "exclusion_criteria": [
+      "Do not aggregate unlike endpoint metrics into one family score or universal E2B/E4B ranking.",
+      "Do not interpret runtime allocation or short generation at 256K as semantic usable-context proof.",
+      "Do not treat issue closure, README summaries, or architecture labels as stronger than the underlying state, detailed reports, code, and official architecture evidence.",
+      "Do not promote web observations into canonical model source, runtime admission, proof, or owner fit."
+    ],
+    "generality_probe": {
+      "mode": "different_product_or_instrument",
+      "subject_labels": [
+        "multi-turn-tool-use",
+        "clinical-multimodal",
+        "audio-reasoning-criticism",
+        "raspberry-pi-llama-cpp",
+        "apple-mlx",
+        "mtp-pytorch-mlx-litert"
+      ],
+      "rationale": "The same family is tested through unrelated tasks, origins, hardware generations, and runtimes to distinguish recurring direction from one-instrument preference."
+    }
+  },
+  "method": {
+    "name": "External Model Web Recon Lens",
+    "version": "0.3",
+    "artifacts": [
+      {
+        "relation": "method",
+        "ref": "research-intake/reports/external-model-web-recon-method-v0.3.md",
+        "content_digest": "sha256:64fcff8429ea6823f9f3aa5e1c614110b4d724219e198dd8cfe505424cd15aed"
+      },
+      {
+        "relation": "deep_report",
+        "ref": "research-intake/reports/gemma-4-e2b-e4b-corroboration-2026-09-04.md",
+        "content_digest": "sha256:28e9b2dc4a3166b993e126ecbc71272b1963384829dba4d454b64579299cb18a"
+      }
+    ]
+  },
+  "lineage": {
+    "predecessor_artifacts": [
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gemma-4-2026-08-30-e2b-e4b-lineage-footprint.json",
+        "content_digest": "sha256:efd0fa206cdc54f1fb4e8aded20666692efdd6c11afc997b2a02b1a1a14cd6ba"
+      },
+      {
+        "relation": "predecessor",
+        "ref": "research-intake/recon-runs/gemma-4-2026-08-30-e2b-e4b-operating-points.json",
+        "content_digest": "sha256:1582e651137d02a65d9d5ae3aaa5102e2ea82410874735ad21f2c92f003bfb46"
+      }
+    ],
+    "supersedes_recon_run_refs": []
+  },
+  "promotion_policy": "pre_canon_no_automatic_promotion",
+  "source_captures": [
+    {
+      "source_id": "src-t1-bench",
+      "title": "T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains",
+      "uri": "https://arxiv.org/html/2606.11070",
+      "source_class": "independent_controlled_study",
+      "publisher": "T1-Bench authors",
+      "captured_at": "2026-09-04T16:00:00Z",
+      "published_at": "2026-06-09T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-06-09T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Version 1 paper; code and data are promised for release but no versioned public artifact was resolved in this pass.",
+      "mutable_surface": false,
+      "origin_group": "t1-bench-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-method",
+          "locator": "Sections describing 25 domains, 76 tools, three stochastic trials, decoding parameters, and Pass@K versus Pass^K.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-gemma-results",
+          "locator": "Main results table rows for Gemma 4 E2B and E4B.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned paper.",
+      "selection_context": "Paired multi-turn tool-use instrument exposing both at-least-one and all-run reliability."
+    },
+    {
+      "source_id": "src-clinical-inspect",
+      "title": "Efficient Multimodal Clinical Question Answering for Pulmonary Embolism Risk Assessment",
+      "uri": "https://arxiv.org/html/2606.22442",
+      "source_class": "independent_controlled_study",
+      "publisher": "INSPECT study authors",
+      "captured_at": "2026-09-04T16:10:00Z",
+      "published_at": "2026-06-21T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-06-21T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Version 1 paper with patient-level split and fixed zero-/four-shot protocols.",
+      "mutable_surface": false,
+      "origin_group": "inspect-clinical-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-cohort-method",
+          "locator": "Methods describing 23,248 CTPA studies, 19,402 patients, official patient split, eight tasks, BF16 checkpoint IDs, and prompting.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-task-results",
+          "locator": "Tables containing E2B/E4B pulmonary embolism and 30-day readmission metrics.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned paper.",
+      "selection_context": "Large real-world multimodal cohort with task-level results and a visible local inversion."
+    },
+    {
+      "source_id": "src-audio-process",
+      "title": "AudioProcessBench: Evaluating Process-Level Reasoning in Audio Models",
+      "uri": "https://arxiv.org/html/2606.09925",
+      "source_class": "independent_controlled_study",
+      "publisher": "AudioProcessBench authors",
+      "captured_at": "2026-09-04T16:20:00Z",
+      "published_at": "2026-06-07T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-06-07T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Version 1 paper with human-reviewed reasoning traces and six error categories.",
+      "mutable_surface": false,
+      "origin_group": "audio-process-study",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-construction",
+          "locator": "Dataset construction and human-review description for 3,872 traces and 23,497 steps.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        },
+        {
+          "segment_id": "seg-critic-results",
+          "locator": "Critic-model table rows for Gemma 4 E2B and E4B.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes."
+        }
+      ],
+      "access_notes": "Public versioned paper.",
+      "selection_context": "Independent audio reasoning-chain critic instrument with aggregate and component metrics."
+    },
+    {
+      "source_id": "src-potato-pi",
+      "title": "Gemma 4 Raspberry Pi benchmark",
+      "uri": "https://github.com/potato-os/core/blob/c55c0062f37cc0c59646ff53f3595d7fa99daafe/docs/benchmarks/gemma4-pi-benchmark-2026-04-04.md",
+      "source_class": "commit_pinned_field_benchmark",
+      "publisher": "potato-os",
+      "captured_at": "2026-09-04T16:30:00Z",
+      "published_at": "2026-04-04T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-04-04T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "Document pinned at core commit c55c0062 and identifies llama.cpp revision a1cfb64.",
+      "mutable_surface": false,
+      "origin_group": "potato-os-field",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-method",
+          "locator": "Method, hardware, quantization, context, prompts, output length, and repetition notes.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned report was inspected through the web research tool without retaining response bytes."
+        },
+        {
+          "segment_id": "seg-results",
+          "locator": "Raspberry Pi 5 16GB, Pi 5 8GB, and Pi 4 8GB E2B/E4B chat and llama-bench rows.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned report was inspected through the web research tool without retaining response bytes."
+        }
+      ],
+      "access_notes": "Public commit-pinned field report.",
+      "selection_context": "Independent constrained-device recurrence for resource and throughput direction."
+    },
+    {
+      "source_id": "src-mlxcel-m5",
+      "title": "MLXcel M5 Max model benchmark results",
+      "uri": "https://github.com/lablup/mlxcel/blob/64e8d9a8b991e750fe58faff2b0e15cc377017fd/docs/benchmark_results/model_tests_m5max.md",
+      "source_class": "commit_pinned_field_benchmark",
+      "publisher": "Lablup",
+      "captured_at": "2026-09-04T16:40:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Report pinned at repository commit 64e8d9a8 with MLX runtime revision and cooldown controls.",
+      "mutable_surface": false,
+      "origin_group": "mlxcel-project",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-method",
+          "locator": "M5 Max hardware, OS, mlxcel/MLX revisions, prompt, output cap, output counts, and thermal cooldown.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned report was inspected through the web research tool without retaining response bytes."
+        },
+        {
+          "segment_id": "seg-gemma-results",
+          "locator": "Gemma 4 E2B/E4B 4-bit, 8-bit, and QAT prefill/decode rows.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned report was inspected through the web research tool without retaining response bytes."
+        }
+      ],
+      "access_notes": "Public commit-pinned report.",
+      "selection_context": "Independent Apple Silicon recurrence with thermal controls and multiple precision routes."
+    },
+    {
+      "source_id": "src-incept-m5",
+      "title": "Gemma 4 Apple Silicon long-context benchmark suite",
+      "uri": "https://github.com/Incept5/gemma4-benchmark/tree/babe2bfc1989269a50135444a829c2d56f2c0bda",
+      "source_class": "commit_pinned_code_and_data",
+      "publisher": "Incept5",
+      "captured_at": "2026-09-04T16:50:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Repository pinned at commit babe2bfc with harness and raw JSON; local model directories are not checkpoint-revision pinned.",
+      "mutable_surface": false,
+      "origin_group": "incept5-project",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-harness-data",
+          "locator": "Benchmark code, configuration, and results/bench_all_results.json for 4K through 256K.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned repository was inspected through the web research tool without retaining a normalized archive."
+        },
+        {
+          "segment_id": "seg-architecture-label",
+          "locator": "README text describing E2B/E4B as MoE despite official dense PLE architecture.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned repository was inspected through the web research tool without retaining a normalized archive."
+        }
+      ],
+      "access_notes": "Public commit-pinned code and raw-data repository.",
+      "selection_context": "Long-context execution pressure, resource recurrence, and an independent metadata-audit case."
+    },
+    {
+      "source_id": "src-sunwood-mtp",
+      "title": "Gemma 4 MTP task matrix on M1 Max",
+      "uri": "https://github.com/Sunwood-ai-labs/gemma4-mtp-benchmark/blob/cdc548843bdddd7e6ac34d1491004d40abaffd44/benchmarks/2026-05-06-task-matrix-m1-max.md",
+      "source_class": "commit_pinned_field_benchmark",
+      "publisher": "Sunwood AI Labs",
+      "captured_at": "2026-09-04T17:00:00Z",
+      "published_at": "2026-05-06T00:00:00Z",
+      "updated_at": null,
+      "effective_interval": {
+        "start": "2026-05-06T00:00:00Z",
+        "end": null
+      },
+      "temporal_notes": "One-round exploratory matrix pinned at commit cdc54884; report recommends at least three repetitions.",
+      "mutable_surface": false,
+      "origin_group": "sunwood-mtp-project",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-method-results",
+          "locator": "M1 Max hardware, LiteRT-LM nightly version, package sizes, warmup/repetition policy, token estimation, tasks, and speedup rows.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned report was inspected through the web research tool without retaining response bytes."
+        }
+      ],
+      "access_notes": "Public commit-pinned exploratory report.",
+      "selection_context": "Task-shape probe with positive, neutral, and negative MTP rows."
+    },
+    {
+      "source_id": "src-pank-mtp",
+      "title": "Gemma 4 MTP benchmark across PyTorch/MPS and MLX",
+      "uri": "https://github.com/pank-bhatt/gemma4-mtp-benchmark/tree/4a3ba8e6a1890b955939f189285ed3a33df56f9d",
+      "source_class": "commit_pinned_code_and_reports",
+      "publisher": "Pank Bhatt",
+      "captured_at": "2026-09-04T17:10:00Z",
+      "published_at": null,
+      "updated_at": null,
+      "effective_interval": null,
+      "temporal_notes": "Repository pinned at commit 4a3ba8e6 with code and backend-specific detailed reports.",
+      "mutable_surface": false,
+      "origin_group": "pank-mtp-project",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-code-method",
+          "locator": "Transformers assistant_model and MLX draft_model implementations, prompt set, hardware, and generation settings.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned repository was inspected through the web research tool without retaining a normalized archive."
+        },
+        {
+          "segment_id": "seg-detailed-results",
+          "locator": "PyTorch/MPS and MLX detailed baseline-versus-MTP throughput reports for E2B/E4B 16-bit and 4-bit routes.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned repository was inspected through the web research tool without retaining a normalized archive."
+        },
+        {
+          "segment_id": "seg-summary",
+          "locator": "Top-level README synthesis emphasizing positive MTP averages.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The commit-pinned repository was inspected through the web research tool without retaining a normalized archive."
+        }
+      ],
+      "access_notes": "Public commit-pinned code and report repository.",
+      "selection_context": "Same-machine backend sign flip and source-internal summary/detail audit."
+    },
+    {
+      "source_id": "src-ple-offload-status",
+      "title": "Transformers issue 47705 current PLE placement state",
+      "uri": "https://github.com/huggingface/transformers/issues/47705",
+      "source_class": "primary_issue_currentness",
+      "publisher": "Hugging Face Transformers",
+      "captured_at": "2026-09-04T17:20:00Z",
+      "published_at": "2026-08-02T00:00:00Z",
+      "updated_at": "2026-09-01T08:52:22Z",
+      "effective_interval": {
+        "start": "2026-09-01T08:52:22Z",
+        "end": null
+      },
+      "temporal_notes": "Issue is closed with completed reason after stale automation; closure does not establish a PLE-specific supported device_map or fixed-version rerun.",
+      "mutable_surface": true,
+      "origin_group": "mycelia-ple-issue",
+      "propagation_role": "origin",
+      "dependency_refs": [],
+      "segments": [
+        {
+          "segment_id": "seg-current-state",
+          "locator": "Issue state, state reason, updated/closed timestamps, and closure automation visible through the issue and GitHub API.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue and API state were inspected without a retained locator-bounded capture snapshot."
+        },
+        {
+          "segment_id": "seg-maintainer-comment",
+          "locator": "Maintainer comment that a fine-grained device_map can offload a module, without an exact PLE mapping or verification receipt.",
+          "content_digest": null,
+          "digest_unavailable_reason": "The mutable issue was inspected without a retained locator-bounded capture snapshot."
+        }
+      ],
+      "access_notes": "Public mutable primary issue and API metadata.",
+      "selection_context": "Direct currentness update for the predecessor's open-state sentence."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs-t1-consistency-advantage",
+      "statement": "In T1-Bench's 25-domain, 76-tool, three-trial multi-turn instrument, E4B reports higher tool-output exact match, Pass^3, helpfulness, and coherence than E2B, supporting an all-run consistency advantage rather than a universal success-probability advantage.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "t1-bench-tool-use",
+        "snapshot": "T1-Bench-v1",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "published T1-Bench evaluation",
+        "reasoning_effort": null,
+        "context_policy": "multi-turn trajectories",
+        "tools": ["76 benchmark tools"],
+        "permissions": [],
+        "prompt": "published benchmark tasks",
+        "scaffold": "T1-Bench agent loop",
+        "runbook": "three stochastic trials per task",
+        "harness": "25 domains with tool and parameter grading",
+        "instrument_revision": "T1-Bench arXiv v1",
+        "grader": "exact match, Pass@K, Pass^K, helpfulness, and coherence",
+        "additional_dimensions": {
+          "temperature": 1.0,
+          "top_p": 0.95,
+          "top_k": 64
+        }
+      },
+      "outcome": {
+        "requested": "Compare paired multi-turn tool-use consistency and quality endpoints.",
+        "executed": "Evaluated each task over three stochastic trials.",
+        "artifact": "Versioned paper tables; public code/data artifact not resolved.",
+        "verified": "Method, sampling controls, task/tool counts, and aggregate rows are published.",
+        "reported": "E4B leads all-run reliability and most quality endpoints.",
+        "termination": "Published evaluation completed.",
+        "measurements": [
+          {"metric": "e2b_tool_output_exact_match", "value": 76.39, "unit": "percent", "denominator": "T1-Bench tasks", "notes": "Published aggregate."},
+          {"metric": "e4b_tool_output_exact_match", "value": 79.88, "unit": "percent", "denominator": "T1-Bench tasks", "notes": "Published aggregate."},
+          {"metric": "e2b_pass_all_3", "value": 28.38, "unit": "percent", "denominator": "three-trial tasks", "notes": "All three trials succeed."},
+          {"metric": "e4b_pass_all_3", "value": 35.62, "unit": "percent", "denominator": "three-trial tasks", "notes": "All three trials succeed."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-t1-bench", "segment_id": "seg-method"},
+        {"source_id": "src-t1-bench", "segment_id": "seg-gemma-results"}
+      ],
+      "confounds": ["Stochastic sampling, benchmark task mix, judge construction, and unavailable versioned code/data release."],
+      "configuration_gaps": ["Exact checkpoint revisions, runtime versions, per-task artifacts, and independent rerun are unavailable."],
+      "transfer_limits": ["Does not establish AoA tool-use fit or deterministic production reliability."],
+      "counterevidence_refs": ["obs-t1-at-least-once-inversion"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-06-09T00:00:00Z", "end": "2026-06-09T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-t1-at-least-once-inversion",
+      "statement": "The same T1-Bench table reports E2B Pass@3 at 56.00 versus E4B at 54.67, so the chance of at least one successful trajectory locally reverses the E4B all-run consistency ordering.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "t1-bench-tool-use",
+        "snapshot": "T1-Bench-v1",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "published T1-Bench evaluation",
+        "reasoning_effort": null,
+        "context_policy": "multi-turn trajectories",
+        "tools": ["76 benchmark tools"],
+        "permissions": [],
+        "prompt": "published benchmark tasks",
+        "scaffold": "T1-Bench agent loop",
+        "runbook": "three stochastic trials per task",
+        "harness": "25 domains with tool and parameter grading",
+        "instrument_revision": "T1-Bench arXiv v1",
+        "grader": "Pass@3",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare probability of at least one successful trajectory.",
+        "executed": "Aggregated success over three stochastic trials.",
+        "artifact": "Versioned paper table.",
+        "verified": "Paired rows and denominator are published.",
+        "reported": "E2B is 1.33 points higher on Pass@3.",
+        "termination": "Published evaluation completed.",
+        "measurements": [
+          {"metric": "e2b_pass_at_3", "value": 56.0, "unit": "percent", "denominator": "three-trial tasks", "notes": "At least one trial succeeds."},
+          {"metric": "e4b_pass_at_3", "value": 54.67, "unit": "percent", "denominator": "three-trial tasks", "notes": "At least one trial succeeds."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-t1-bench", "segment_id": "seg-gemma-results"}],
+      "confounds": ["Small absolute difference, stochastic sampling, and benchmark-specific success definition."],
+      "configuration_gaps": ["Variance and per-task decomposition are unavailable."],
+      "transfer_limits": ["Does not show E2B is generally more reliable; it contradicts only an endpoint-free ordering."],
+      "counterevidence_refs": ["obs-t1-consistency-advantage"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-06-09T00:00:00Z", "end": "2026-06-09T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-clinical-e4b-advantage",
+      "statement": "In the INSPECT cohort's BF16 fixed-prompt study, E4B is the stronger aggregate Gemma 4 point and materially leads E2B on pulmonary embolism diagnosis from CTPA plus EHR under both zero-shot and four-shot prompting.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["google/gemma-4-e2b-it", "google/gemma-4-e4b-it"],
+        "provider": "google",
+        "product": "inspect-clinical-multimodal-study",
+        "snapshot": "arXiv-2606.22442v1",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"precision": "BF16"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "clinical CTPA and EHR evaluation",
+        "reasoning_effort": "zero-shot and fixed four-shot",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "published task prompts and fixed demonstrations",
+        "scaffold": null,
+        "runbook": "official patient split across eight tasks",
+        "harness": "23,248 CTPA studies from 19,402 patients",
+        "instrument_revision": "arXiv 2606.22442v1",
+        "grader": "task-specific AUROC, AUPRC, and F1",
+        "additional_dimensions": {"completed_task_instances": 23079}
+      },
+      "outcome": {
+        "requested": "Compare multimodal clinical task outcomes across E2B and E4B.",
+        "executed": "Ran zero-shot and four-shot protocols on the patient-level split.",
+        "artifact": "Versioned paper methods and task tables.",
+        "verified": "Cohort, split, checkpoint IDs, precision, prompt conditions, and metrics are published.",
+        "reported": "E4B leads the modality-aligned pulmonary embolism diagnosis task.",
+        "termination": "Published study completed.",
+        "measurements": [
+          {"metric": "e2b_pe_zero_shot_auroc", "value": 0.8497, "unit": "fraction", "denominator": "CTPA plus EHR pulmonary embolism task", "notes": "Published row."},
+          {"metric": "e4b_pe_zero_shot_auroc", "value": 0.9683, "unit": "fraction", "denominator": "CTPA plus EHR pulmonary embolism task", "notes": "Published row."},
+          {"metric": "e2b_pe_four_shot_auroc", "value": 0.9467, "unit": "fraction", "denominator": "CTPA plus EHR pulmonary embolism task", "notes": "Published row."},
+          {"metric": "e4b_pe_four_shot_auroc", "value": 0.9706, "unit": "fraction", "denominator": "CTPA plus EHR pulmonary embolism task", "notes": "Published row."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-clinical-inspect", "segment_id": "seg-cohort-method"},
+        {"source_id": "src-clinical-inspect", "segment_id": "seg-task-results"}
+      ],
+      "confounds": ["Clinical prevalence, task-specific prompts, thresholding, cohort shift, and aggregate task weighting."],
+      "configuration_gaps": ["Exact checkpoint revisions, runtime identity, per-patient outputs, and external cohort replication are unavailable."],
+      "transfer_limits": ["Research evidence only; not a clinical deployment, safety, or AoA fit claim."],
+      "counterevidence_refs": ["obs-clinical-readmission-inversion"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-06-21T00:00:00Z", "end": "2026-06-21T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-clinical-readmission-inversion",
+      "statement": "Within the same INSPECT study, four-shot CTPA-plus-EHR 30-day readmission locally favors E2B at AUROC 0.6141 and F1 0.2221 over E4B at 0.5541 and 0.1791, while all absolute results remain weak.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["google/gemma-4-e2b-it", "google/gemma-4-e4b-it"],
+        "provider": "google",
+        "product": "inspect-clinical-multimodal-study",
+        "snapshot": "arXiv-2606.22442v1",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"precision": "BF16"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "clinical CTPA plus EHR readmission evaluation",
+        "reasoning_effort": "fixed four-shot",
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "published task prompt and fixed demonstrations",
+        "scaffold": null,
+        "runbook": "official patient split",
+        "harness": "INSPECT 30-day readmission task",
+        "instrument_revision": "arXiv 2606.22442v1",
+        "grader": "AUROC and F1",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare one task-level prompt-conditioned endpoint.",
+        "executed": "Ran the four-shot CTPA-plus-EHR readmission task.",
+        "artifact": "Versioned paper task table.",
+        "verified": "Paired task row and metrics are published.",
+        "reported": "E2B locally leads E4B, with low absolute F1 for both.",
+        "termination": "Published evaluation completed.",
+        "measurements": [
+          {"metric": "e2b_readmission_four_shot_auroc", "value": 0.6141, "unit": "fraction", "denominator": "CTPA plus EHR 30-day readmission task", "notes": "Published row."},
+          {"metric": "e4b_readmission_four_shot_auroc", "value": 0.5541, "unit": "fraction", "denominator": "CTPA plus EHR 30-day readmission task", "notes": "Published row."},
+          {"metric": "e2b_readmission_four_shot_f1", "value": 0.2221, "unit": "fraction", "denominator": "CTPA plus EHR 30-day readmission task", "notes": "Low absolute result."},
+          {"metric": "e4b_readmission_four_shot_f1", "value": 0.1791, "unit": "fraction", "denominator": "CTPA plus EHR 30-day readmission task", "notes": "Low absolute result."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-clinical-inspect", "segment_id": "seg-task-results"}],
+      "confounds": ["Weak absolute performance, task prevalence, thresholding, and prompt-conditioned behavior."],
+      "configuration_gaps": ["Uncertainty intervals and independent clinical replication are unavailable in the retained segment."],
+      "transfer_limits": ["Does not establish a general E2B clinical advantage or deployment fitness."],
+      "counterevidence_refs": ["obs-clinical-e4b-advantage"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-06-21T00:00:00Z", "end": "2026-06-21T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-audio-e4b-critic-advantage",
+      "statement": "AudioProcessBench reports E4B materially ahead of E2B on overall process criticism, final-error identification, audio-error identification, and error-type average across its human-reviewed reasoning-chain corpus.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "audio-process-bench",
+        "snapshot": "AudioProcessBench-v1",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "audio reasoning-chain critic evaluation",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "published critic prompts",
+        "scaffold": null,
+        "runbook": "evaluate six error types and chain aggregation",
+        "harness": "3,872 traces and 23,497 human-reviewed steps",
+        "instrument_revision": "AudioProcessBench arXiv v1",
+        "grader": "process-level critic metrics",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare audio reasoning-chain criticism endpoints.",
+        "executed": "Evaluated E2B and E4B as critic models.",
+        "artifact": "Versioned paper dataset description and results table.",
+        "verified": "Corpus size, annotation process, error categories, and paired aggregate rows are published.",
+        "reported": "E4B leads most captured process-criticism endpoints.",
+        "termination": "Published evaluation completed.",
+        "measurements": [
+          {"metric": "e2b_audio_process_overall", "value": 43.6, "unit": "score", "denominator": "AudioProcessBench critic evaluation", "notes": "Published aggregate."},
+          {"metric": "e4b_audio_process_overall", "value": 50.5, "unit": "score", "denominator": "AudioProcessBench critic evaluation", "notes": "Published aggregate."},
+          {"metric": "e2b_error_type_average", "value": 43.4, "unit": "score", "denominator": "six error types", "notes": "Published aggregate."},
+          {"metric": "e4b_error_type_average", "value": 55.0, "unit": "score", "denominator": "six error types", "notes": "Published aggregate."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-audio-process", "segment_id": "seg-construction"},
+        {"source_id": "src-audio-process", "segment_id": "seg-critic-results"}
+      ],
+      "confounds": ["Benchmark-specific critic prompts, error taxonomy, aggregation, and exact checkpoint revisions."],
+      "configuration_gaps": ["Versioned inference code, runtime identity, per-item outputs, and independent rerun are unavailable."],
+      "transfer_limits": ["Does not establish generation quality, general audio capability, or AoA workload fit."],
+      "counterevidence_refs": ["obs-audio-chain-aggregation-inversion"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "review_for_study",
+      "observed_interval": {"start": "2026-06-07T00:00:00Z", "end": "2026-06-07T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-audio-chain-aggregation-inversion",
+      "statement": "The same AudioProcessBench table reports E2B chain aggregation at 52.8 versus E4B at 51.9, a small endpoint inversion inside an otherwise E4B-favorable instrument.",
+      "target_kind": "benchmark_result",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "audio-process-bench",
+        "snapshot": "AudioProcessBench-v1",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "audio reasoning-chain critic evaluation",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": "published critic prompts",
+        "scaffold": null,
+        "runbook": "chain aggregation endpoint",
+        "harness": "AudioProcessBench",
+        "instrument_revision": "AudioProcessBench arXiv v1",
+        "grader": "chain aggregation average",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare the chain aggregation component.",
+        "executed": "Evaluated the published component metric.",
+        "artifact": "Versioned paper results table.",
+        "verified": "Paired component row is published.",
+        "reported": "E2B leads E4B by 0.9 points on this component.",
+        "termination": "Published evaluation completed.",
+        "measurements": [
+          {"metric": "e2b_chain_aggregation_average", "value": 52.8, "unit": "score", "denominator": "AudioProcessBench chain aggregation", "notes": "Published component."},
+          {"metric": "e4b_chain_aggregation_average", "value": 51.9, "unit": "score", "denominator": "AudioProcessBench chain aggregation", "notes": "Published component."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-audio-process", "segment_id": "seg-critic-results"}],
+      "confounds": ["Small absolute difference and one benchmark component."],
+      "configuration_gaps": ["Variance and per-item decomposition are unavailable."],
+      "transfer_limits": ["Does not outweigh the broader E4B critic advantage or imply a general E2B audio advantage."],
+      "counterevidence_refs": ["obs-audio-e4b-critic-advantage"],
+      "supersedes": [],
+      "evidence_posture": "method_backed_observation",
+      "disposition": "preserve",
+      "observed_interval": {"start": "2026-06-07T00:00:00Z", "end": "2026-06-07T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-pi-resource-frontier",
+      "statement": "A commit-pinned Raspberry Pi benchmark places E2B above E4B in chat and llama-bench generation throughput on Pi 5, while E4B chat times out on Pi 4 where E2B completes; this reinforces the resource-side direction under explicitly different quant types.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "llama-cpp-edge-inference",
+        "snapshot": "potato-os-core-c55c0062",
+        "runtime": {"name": "llama.cpp", "version": "a1cfb64", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"e2b_quantization": "Q4_K_M", "e4b_quantization": "Q4_0"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Raspberry Pi 5 16GB, Pi 5 8GB, and Pi 4 8GB",
+        "reasoning_effort": null,
+        "context_policy": "16K context, maximum 512 generated tokens",
+        "tools": [],
+        "permissions": [],
+        "prompt": "five fixed conversational turns",
+        "scaffold": null,
+        "runbook": "chat runs plus llama-bench pp512/tg128",
+        "harness": "llama.cpp chat and llama-bench",
+        "instrument_revision": "report commit c55c0062",
+        "grader": "throughput and termination",
+        "additional_dimensions": {"temperature": 0.7, "top_p": 0.8, "microbenchmark_repetitions": 1}
+      },
+      "outcome": {
+        "requested": "Compare small-device execution and throughput.",
+        "executed": "Ran fixed chat prompts and llama-bench on three Pi memory/device points.",
+        "artifact": "Commit-pinned report with commands and results.",
+        "verified": "Hardware, runtime revision, formats, context, prompts, and rows are exposed.",
+        "reported": "E2B is faster and crosses a Pi 4 chat completion boundary that E4B does not.",
+        "termination": "Most rows completed; Pi 4 E4B chat timed out.",
+        "measurements": [
+          {"metric": "pi5_16gb_e2b_chat_throughput", "value": 6.5, "unit": "tokens/second", "denominator": "five-turn chat", "notes": "E2B Q4_K_M."},
+          {"metric": "pi5_16gb_e4b_chat_throughput", "value": 3.7, "unit": "tokens/second", "denominator": "five-turn chat", "notes": "E4B Q4_0."},
+          {"metric": "pi5_16gb_e2b_tg128", "value": 6.71, "unit": "tokens/second", "denominator": "llama-bench tg128 one repetition", "notes": "Published row."},
+          {"metric": "pi5_16gb_e4b_tg128", "value": 3.48, "unit": "tokens/second", "denominator": "llama-bench tg128 one repetition", "notes": "Published row."}
+        ],
+        "additional_dimensions": {"pi4_e4b_chat": "timeout", "pi4_e2b_chat_tokens_per_second": 1.7}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-potato-pi", "segment_id": "seg-method"},
+        {"source_id": "src-potato-pi", "segment_id": "seg-results"}
+      ],
+      "confounds": ["Different quantization types, one microbenchmark repetition, thermal state, generated lengths, and field-report harness."],
+      "configuration_gaps": ["Exact model artifact digests, repeated-run variance, energy, semantic output grading, and accepted-outcome denominator are unavailable."],
+      "transfer_limits": ["Absolute ratios do not transfer beyond these Pi routes and formats."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-04-04T00:00:00Z", "end": "2026-04-04T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-mlx-resource-frontier",
+      "statement": "A commit-pinned M5 Max MLXcel report places E2B above E4B in prefill and decode throughput at 4-bit, 8-bit, and QAT operating points, reinforcing the resource direction with explicit cooldown and output-count controls.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "mlxcel-local-inference",
+        "snapshot": "mlxcel-64e8d9a8",
+        "runtime": {"name": "MLX", "version": "57c66cac", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "MacBook Pro M5 Max 128GB", "mlxcel": "0.4.0-rc.1"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Apple Silicon local inference",
+        "reasoning_effort": null,
+        "context_policy": "short prompt, maximum 100 output tokens",
+        "tools": [],
+        "permissions": [],
+        "prompt": "Hello, how are you today?",
+        "scaffold": null,
+        "runbook": "benchmark each precision with 30-second cooldown",
+        "harness": "mlxcel model benchmark",
+        "instrument_revision": "report commit 64e8d9a8",
+        "grader": "prefill/decode throughput and output count",
+        "additional_dimensions": {"os": "macOS 26.5.1"}
+      },
+      "outcome": {
+        "requested": "Compare prefill and decode throughput under multiple precision routes.",
+        "executed": "Ran the exposed short-prompt benchmark with cooldowns.",
+        "artifact": "Commit-pinned report with runtime revision and result table.",
+        "verified": "Hardware, OS, runtime, thermal control, prompt, cap, and generated counts are exposed.",
+        "reported": "E2B leads E4B on prefill and decode across the captured precision rows.",
+        "termination": "Published benchmark rows completed.",
+        "measurements": [
+          {"metric": "e2b_4bit_prefill", "value": 1382.74, "unit": "tokens/second", "denominator": "MLXcel short-prompt row", "notes": "85 output tokens."},
+          {"metric": "e4b_4bit_prefill", "value": 813.21, "unit": "tokens/second", "denominator": "MLXcel short-prompt row", "notes": "100 output tokens."},
+          {"metric": "e2b_4bit_decode", "value": 225.08, "unit": "tokens/second", "denominator": "MLXcel short-prompt row", "notes": "85 output tokens."},
+          {"metric": "e4b_4bit_decode", "value": 142.08, "unit": "tokens/second", "denominator": "MLXcel short-prompt row", "notes": "100 output tokens."},
+          {"metric": "e2b_8bit_decode", "value": 148.16, "unit": "tokens/second", "denominator": "MLXcel short-prompt row", "notes": "79 output tokens."},
+          {"metric": "e4b_8bit_decode", "value": 85.28, "unit": "tokens/second", "denominator": "MLXcel short-prompt row", "notes": "76 output tokens."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-mlxcel-m5", "segment_id": "seg-method"},
+        {"source_id": "src-mlxcel-m5", "segment_id": "seg-gemma-results"}
+      ],
+      "confounds": ["Short prompt, varying generated lengths, unpinned local model directories, framework allocator, and single hardware class."],
+      "configuration_gaps": ["Exact model revisions/digests, run count, variance, energy, and semantic output acceptance are unavailable."],
+      "transfer_limits": ["Does not establish portable ratios or long-context throughput."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-09-04T16:40:00Z", "end": "2026-09-04T16:40:00Z"}
+    },
+    {
+      "observation_id": "obs-incept-context-execution",
+      "statement": "The commit-pinned Incept5 MLX suite executes E2B/E4B rows through a requested 256K context and again places E2B ahead in decode and memory, but 32-token generation over repetitive filler without semantic grading supports allocation/completion only, not usable 256K context.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "partial",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it-4bit", "gemma-4-E4B-it-4bit"],
+        "provider": "google",
+        "product": "mlx-long-context-benchmark",
+        "snapshot": "incept5-babe2bfc",
+        "runtime": {"name": "mlx-vlm", "version": "0.4.4", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "Apple M5 Max 128GB", "mlx": "0.31.1"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "Apple Silicon unified-memory inference",
+        "reasoning_effort": null,
+        "context_policy": "synthetic filler targets from 4K through 256K; maximum 32 generated tokens",
+        "tools": [],
+        "permissions": [],
+        "prompt": "repetitive filler plus short terminal instruction",
+        "scaffold": null,
+        "runbook": "one run per configured target",
+        "harness": "commit-pinned Python benchmark with raw JSON",
+        "instrument_revision": "repository commit babe2bfc",
+        "grader": "throughput, memory, and process completion",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Measure runtime scaling across requested context lengths.",
+        "executed": "Allocated, prefetched, and generated a short continuation through 256K targets.",
+        "artifact": "Commit-pinned code, config, report, and raw JSON.",
+        "verified": "Harness and raw result rows are inspectable; exact checkpoint revisions and semantic correctness are not.",
+        "reported": "E2B retains a decode/memory advantage and both sizes complete the synthetic 256K route.",
+        "termination": "Published configured rows completed.",
+        "measurements": [
+          {"metric": "e2b_4bit_4k_decode", "value": 204.9, "unit": "tokens/second", "denominator": "32-token synthetic generation", "notes": "Approximate report row."},
+          {"metric": "e4b_4bit_4k_decode", "value": 126.7, "unit": "tokens/second", "denominator": "32-token synthetic generation", "notes": "Approximate report row."},
+          {"metric": "e2b_4bit_256k_memory", "value": 23.0, "unit": "GB", "denominator": "synthetic 256K route", "notes": "Approximate report row."},
+          {"metric": "e4b_4bit_256k_memory", "value": 26.5, "unit": "GB", "denominator": "synthetic 256K route", "notes": "Approximate report row."}
+        ],
+        "additional_dimensions": {"semantic_long_context_grade": false}
+      },
+      "source_segment_refs": [{"source_id": "src-incept-m5", "segment_id": "seg-harness-data"}],
+      "confounds": ["One run, short generation, repetitive filler, approximate summarized rows, local model directories, and no semantic long-context grader."],
+      "configuration_gaps": ["Exact checkpoint revisions, repetitions, semantic retrieval/reasoning, energy, thermal state, and accepted outputs are unavailable."],
+      "transfer_limits": ["Does not establish usable 256K context, alter the provider's nominal 128K contract, or support absolute throughput portability."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-09-04T16:50:00Z", "end": "2026-09-04T16:50:00Z"}
+    },
+    {
+      "observation_id": "obs-incept-metadata-error",
+      "statement": "The Incept5 README labels Gemma 4 E2B/E4B as Mixture-of-Experts models, contradicting official dense PLE architecture evidence; this invalidates that metadata layer without erasing inspectable code and raw runtime measurements.",
+      "target_kind": "unresolved",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "incept5-benchmark-documentation",
+        "snapshot": "incept5-babe2bfc",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "source metadata audit",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "compare README architecture label with predecessor official architecture evidence",
+        "harness": "manual source-layer audit",
+        "instrument_revision": "repository commit babe2bfc",
+        "grader": "official architecture agreement",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Audit subject metadata separately from measurements.",
+        "executed": "Compared the commit-pinned label with provider architecture evidence.",
+        "artifact": "Commit-pinned README plus predecessor official report capture.",
+        "verified": "The label conflicts with the provider's dense PLE description.",
+        "reported": "Architecture metadata is rejected; runtime tables remain bounded candidates.",
+        "termination": "Semantic layer split completed.",
+        "measurements": [],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-incept-m5", "segment_id": "seg-architecture-label"}],
+      "confounds": ["Terminology may be copied or informal, but the published label is unqualified."],
+      "configuration_gaps": ["Author correction or clarification is unavailable."],
+      "transfer_limits": ["The error does not by itself prove the numerical measurements false."],
+      "counterevidence_refs": ["obs-incept-context-execution"],
+      "supersedes": [],
+      "evidence_posture": "contradictory",
+      "disposition": "split_required",
+      "observed_interval": {"start": "2026-09-04T16:50:00Z", "end": "2026-09-04T16:50:00Z"}
+    },
+    {
+      "observation_id": "obs-mtp-task-shape",
+      "statement": "A commit-pinned one-round M1 Max LiteRT-LM task matrix reports MTP ratios from 0.82x to 1.53x for E2B and 0.91x to 1.87x for E4B, with structured JSON/coding/extraction tending positive and quick or creative tasks including neutral or negative rows.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it", "gemma-4-E2B-it-MTP", "gemma-4-E4B-it-MTP"],
+        "provider": "google",
+        "product": "litert-lm-mtp",
+        "snapshot": "sunwood-cdc54884",
+        "runtime": {"name": "litert-lm-api-nightly", "version": "0.11.0.dev20260422", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "MacBook Pro M1 Max 64GB"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "LiteRT-LM GPU inference",
+        "reasoning_effort": null,
+        "context_policy": "task-specific prompts and outputs",
+        "tools": [],
+        "permissions": [],
+        "prompt": "seven task classes",
+        "scaffold": "official community target and MTP packages",
+        "runbook": "one warmup and one measured round per task",
+        "harness": "repository benchmark script and report",
+        "instrument_revision": "commit cdc54884",
+        "grader": "estimated tokens per second and ratio",
+        "additional_dimensions": {"token_estimation": "ASCII characters/4, non-ASCII characters/1.8"}
+      },
+      "outcome": {
+        "requested": "Probe MTP benefit by task shape.",
+        "executed": "Compared baseline and MTP throughput across seven tasks.",
+        "artifact": "Commit-pinned report and repository code.",
+        "verified": "Runtime version, package sizes, hardware, task matrix, and explicit one-round limitation are published.",
+        "reported": "MTP direction changes by task and model size.",
+        "termination": "Exploratory matrix completed.",
+        "measurements": [
+          {"metric": "e2b_mtp_min_ratio", "value": 0.82, "unit": "ratio", "denominator": "quick Q&A or summarization row", "notes": "One measured round."},
+          {"metric": "e2b_mtp_max_ratio", "value": 1.53, "unit": "ratio", "denominator": "JSON generation row", "notes": "One measured round."},
+          {"metric": "e4b_mtp_min_ratio", "value": 0.91, "unit": "ratio", "denominator": "creative writing row", "notes": "One measured round."},
+          {"metric": "e4b_mtp_max_ratio", "value": 1.87, "unit": "ratio", "denominator": "coding row", "notes": "One measured round."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [{"source_id": "src-sunwood-mtp", "segment_id": "seg-method-results"}],
+      "confounds": ["One measured round, character-based token estimation, task-specific output lengths, and one hardware/runtime route."],
+      "configuration_gaps": ["Repeated variance, exact accepted-token counts, semantic parity, energy, and concurrency are unavailable."],
+      "transfer_limits": ["Ratios are exploratory and cannot be generalized to other backends or workload mixes."],
+      "counterevidence_refs": ["obs-mtp-backend-sign-flip"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-05-06T00:00:00Z", "end": "2026-05-06T23:59:59Z"}
+    },
+    {
+      "observation_id": "obs-mtp-backend-sign-flip",
+      "statement": "A commit-pinned same-machine M4 study reports positive MTP averages on PyTorch/MPS but systematic slowdowns on MLX for both E2B and E4B, demonstrating that backend realization can reverse the sign of speculative-decoding benefit.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "bounded",
+        "family": "gemma-4",
+        "models": ["gemma-4-E2B-it", "gemma-4-E4B-it", "gemma-4-E2B-it-MTP", "gemma-4-E4B-it-MTP"],
+        "provider": "google",
+        "product": "pytorch-mlx-mtp-comparison",
+        "snapshot": "pank-4a3ba8e6",
+        "runtime": null,
+        "owner_realization_refs": [],
+        "additional_dimensions": {"hardware": "Mac mini M4"}
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "same task set through PyTorch/MPS and MLX",
+        "reasoning_effort": null,
+        "context_policy": "task-specific prompts and outputs",
+        "tools": [],
+        "permissions": [],
+        "prompt": "repository prompt set",
+        "scaffold": "Transformers assistant_model or MLX draft_model",
+        "runbook": "baseline versus MTP across 16-bit and 4-bit target routes",
+        "harness": "commit-pinned code and detailed backend reports",
+        "instrument_revision": "commit 4a3ba8e6",
+        "grader": "throughput ratio; PyTorch uses greedy do_sample=false",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Compare MTP realization across two backends on one machine and task set.",
+        "executed": "Ran baseline and target-plus-drafter routes for both sizes and precisions.",
+        "artifact": "Commit-pinned code, README, detailed result reports, and sample outputs.",
+        "verified": "Detailed reports expose a backend sign flip; sample texts do not establish byte-identical output parity.",
+        "reported": "PyTorch/MPS benefits while MLX slows down in every captured aggregate row.",
+        "termination": "Published benchmark matrices completed.",
+        "measurements": [
+          {"metric": "e2b_pytorch_16bit_mtp_ratio", "value": 1.87, "unit": "ratio", "denominator": "task-set average", "notes": "26.38 to 49.25 tokens/second."},
+          {"metric": "e4b_pytorch_16bit_mtp_ratio", "value": 2.27, "unit": "ratio", "denominator": "task-set average", "notes": "17.34 to 39.44 tokens/second."},
+          {"metric": "e2b_mlx_16bit_mtp_ratio", "value": 0.41, "unit": "ratio", "denominator": "task-set average", "notes": "47.64 to 19.62 tokens/second."},
+          {"metric": "e4b_mlx_16bit_mtp_ratio", "value": 0.46, "unit": "ratio", "denominator": "task-set average", "notes": "23.99 to 10.95 tokens/second."},
+          {"metric": "e2b_mlx_4bit_mtp_ratio", "value": 0.52, "unit": "ratio", "denominator": "task-set average", "notes": "124.27 to 64.71 tokens/second."},
+          {"metric": "e4b_mlx_4bit_mtp_ratio", "value": 0.57, "unit": "ratio", "denominator": "task-set average", "notes": "71.20 to 40.28 tokens/second."}
+        ],
+        "additional_dimensions": {"output_parity_verified": false}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-pank-mtp", "segment_id": "seg-code-method"},
+        {"source_id": "src-pank-mtp", "segment_id": "seg-detailed-results"},
+        {"source_id": "src-pank-mtp", "segment_id": "seg-summary"}
+      ],
+      "confounds": ["Backend implementations, quantization routes, drafter integration, generated lengths, and output text differ."],
+      "configuration_gaps": ["Exact model revisions, repeated-run variance, accepted-token rate, byte parity, energy, and concurrency are incomplete."],
+      "transfer_limits": ["Neither positive PyTorch ratios nor negative MLX ratios transfer to a different runtime revision or workload without replication."],
+      "counterevidence_refs": ["obs-mtp-task-shape"],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "replicate",
+      "observed_interval": {"start": "2026-09-04T17:10:00Z", "end": "2026-09-04T17:10:00Z"}
+    },
+    {
+      "observation_id": "obs-ple-offload-status-update",
+      "statement": "Transformers issue 47705 is now closed after stale automation rather than a PLE-specific support resolution; a maintainer only confirmed that fine-grained device_map placement is possible in principle, leaving the exact PLE map and verified supported route unresolved.",
+      "target_kind": "runtime_behavior",
+      "subject": {
+        "completeness": "exact",
+        "family": "gemma-4",
+        "models": ["google/gemma-4-E4B-it"],
+        "provider": "google",
+        "product": "transformers-local-inference",
+        "snapshot": null,
+        "runtime": {"name": "transformers", "version": "5.8.1", "subject_ref": null},
+        "owner_realization_refs": [],
+        "additional_dimensions": {
+          "issue": "huggingface/transformers#47705",
+          "issue_state": "closed",
+          "state_reason": "completed"
+        }
+      },
+      "configuration": {
+        "completeness": "bounded",
+        "route": "issue-lifecycle and support-response review",
+        "reasoning_effort": null,
+        "context_policy": null,
+        "tools": [],
+        "permissions": [],
+        "prompt": null,
+        "scaffold": null,
+        "runbook": "inspect current issue/API state, maintainer response, stale event, and closure",
+        "harness": "GitHub issue and API metadata",
+        "instrument_revision": "issue state captured 2026-09-04",
+        "grader": "state/currentness and presence of a PLE-specific supported route",
+        "additional_dimensions": {}
+      },
+      "outcome": {
+        "requested": "Refresh the support-question currentness without rewriting the earlier measurement.",
+        "executed": "Inspected issue lifecycle and maintainer response.",
+        "artifact": "Mutable issue state and comments; no retained prior locator-bounded snapshot exists.",
+        "verified": "Issue closed at 2026-09-01T08:52:22Z after stale automation; no exact PLE device_map or verification run was supplied.",
+        "reported": "The open-state sentence is stale, while supported PLE offload remains unresolved.",
+        "termination": "Currentness review completed; semantic update requires owner review.",
+        "measurements": [
+          {"metric": "issue_closed", "value": true, "unit": null, "denominator": "GitHub issue 47705 current state", "notes": "Closed with state reason completed after stale automation."},
+          {"metric": "ple_specific_supported_map_published", "value": false, "unit": null, "denominator": "issue discussion", "notes": "General fine-grained device_map possibility was mentioned."}
+        ],
+        "additional_dimensions": {}
+      },
+      "source_segment_refs": [
+        {"source_id": "src-ple-offload-status", "segment_id": "seg-current-state"},
+        {"source_id": "src-ple-offload-status", "segment_id": "seg-maintainer-comment"}
+      ],
+      "confounds": ["GitHub's completed reason is compatible with automated stale closure and does not encode technical support semantics."],
+      "configuration_gaps": ["No exact device_map, merged PLE-specific change, fixed-version rerun, E2B replication, or locator-bounded prior snapshot."],
+      "transfer_limits": ["Does not contradict the predecessor's memory measurement and does not establish supported offload."],
+      "counterevidence_refs": [],
+      "supersedes": [],
+      "evidence_posture": "artifact_backed_observation",
+      "disposition": "watch",
+      "observed_interval": {"start": "2026-09-01T08:52:22Z", "end": "2026-09-04T17:20:00Z"}
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "clu-resource-direction-reinforced",
+      "label": "E2B resource and decode direction repeats across independent local routes",
+      "observation_refs": ["obs-pi-resource-frontier", "obs-mlx-resource-frontier", "obs-incept-context-execution"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["potato-os-field", "mlxcel-project", "incept5-project"],
+      "supported_scope": "Three added independent field origins place E2B ahead of E4B on decode throughput, memory, or constrained-device completion, reinforcing the predecessor's H100, energy, and OpenVINO resource-side direction.",
+      "transfer_limits": ["Quantization, checkpoint identity, runtime, hardware, prompt, context, repetitions, and output length are not held constant across origins."],
+      "unresolved_configuration_gaps": ["No owner run combines exact artifacts, accepted outputs, memory, energy, thermal behavior, and repeated reliability."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Use E2B as the resource-side study candidate and measure an exact realization rather than importing any published ratio."
+    },
+    {
+      "cluster_id": "clu-e4b-usual-capability",
+      "label": "E4B usually leads capability or all-run reliability in unrelated instruments",
+      "observation_refs": ["obs-t1-consistency-advantage", "obs-clinical-e4b-advantage", "obs-audio-e4b-critic-advantage"],
+      "counterevidence_refs": ["obs-t1-at-least-once-inversion", "obs-clinical-readmission-inversion", "obs-audio-chain-aggregation-inversion"],
+      "independent_origin_groups": ["t1-bench-study", "inspect-clinical-study", "audio-process-study"],
+      "supported_scope": "Independent tool-use, clinical multimodal, and audio-criticism studies place E4B ahead on most captured aggregate, consistency, or task-aligned endpoints.",
+      "transfer_limits": ["No common checkpoint revisions, prompts, runtimes, tasks, or owner utility connect these instruments."],
+      "unresolved_configuration_gaps": ["Per-item outputs, variance, exact revisions, deployment cost, and AoA workload acceptance remain incomplete."],
+      "posture": "cross_modal_pattern",
+      "disposition": "review_for_study",
+      "next_action": "Use E4B as the capability-side study candidate while preserving endpoint-specific counterevidence."
+    },
+    {
+      "cluster_id": "clu-endpoint-inversions",
+      "label": "Same-instrument endpoint inversions rule out a global family ranking",
+      "observation_refs": ["obs-t1-at-least-once-inversion", "obs-clinical-readmission-inversion", "obs-audio-chain-aggregation-inversion"],
+      "counterevidence_refs": ["obs-t1-consistency-advantage", "obs-clinical-e4b-advantage", "obs-audio-e4b-critic-advantage"],
+      "independent_origin_groups": ["t1-bench-study", "inspect-clinical-study", "audio-process-study"],
+      "supported_scope": "Each otherwise E4B-favorable instrument contains a bounded E2B endpoint lead, showing that reliability definition, task, prompt, and metric can change the local ordering.",
+      "transfer_limits": ["The inversions range from small differences to weak absolute outcomes and do not establish a general E2B capability advantage."],
+      "unresolved_configuration_gaps": ["Uncertainty, per-item decomposition, prompt sensitivity, and replicated endpoint stability remain incomplete."],
+      "posture": "recurring_pressure",
+      "disposition": "preserve",
+      "next_action": "Retain metric-specific directions and forbid a scalar family rank before owner weighting."
+    },
+    {
+      "cluster_id": "clu-mtp-realization-conditional",
+      "label": "MTP sign depends on backend and task shape",
+      "observation_refs": ["obs-mtp-task-shape", "obs-mtp-backend-sign-flip"],
+      "counterevidence_refs": ["obs-mtp-task-shape", "obs-mtp-backend-sign-flip"],
+      "independent_origin_groups": ["sunwood-mtp-project", "pank-mtp-project"],
+      "supported_scope": "Two code-bearing origins expose positive, neutral, and negative MTP rows; one changes direction by task and the other changes sign between PyTorch/MPS and MLX on one machine.",
+      "transfer_limits": ["Repetition, token counting, accepted-token rate, output parity, revisions, and workload mix remain incomplete or differ."],
+      "unresolved_configuration_gaps": ["No common break-even curve spans output length, task predictability, backend, precision, batch, concurrency, and semantic acceptance."],
+      "posture": "cross_modal_pattern",
+      "disposition": "route_to_runtime_owner",
+      "next_action": "Admit MTP only through exact target/assistant/runtime workload evidence with output acceptance."
+    },
+    {
+      "cluster_id": "clu-context-admission-layers",
+      "label": "Allocated and completed context remains distinct from semantic usable context",
+      "observation_refs": ["obs-incept-context-execution", "obs-ple-offload-status-update"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["incept5-project", "mycelia-ple-issue"],
+      "supported_scope": "Synthetic 256K execution and PLE placement currentness reinforce that context admission depends on allocation, completion, placement, and semantic grading rather than one nominal number.",
+      "transfer_limits": ["The sources do not run a common semantic long-context task or exact runtime realization."],
+      "unresolved_configuration_gaps": ["Position-sensitive retrieval/reasoning, repeated completion, memory, thermal, and corruption checks are absent at long context."],
+      "posture": "recurring_pressure",
+      "disposition": "replicate",
+      "next_action": "Measure nominal, allocated, completed, and semantically usable context as separate owner-study outputs."
+    },
+    {
+      "cluster_id": "clu-source-layer-audit",
+      "label": "Source-internal semantic defects must be isolated from inspectable measurements",
+      "observation_refs": ["obs-incept-metadata-error", "obs-incept-context-execution", "obs-mtp-backend-sign-flip"],
+      "counterevidence_refs": [],
+      "independent_origin_groups": ["incept5-project", "pank-mtp-project"],
+      "supported_scope": "A wrong architecture label and a positive top-level synthesis coexist with inspectable raw or detailed results that support narrower runtime observations.",
+      "transfer_limits": ["Manual review is still required to decide which source layer remains usable; source class alone cannot decide it."],
+      "unresolved_configuration_gaps": ["No generic semantic checker can infer architecture truth or reconcile summary/detail intent without owner evidence."],
+      "posture": "recurring_pressure",
+      "disposition": "preserve",
+      "next_action": "Audit subject metadata, method, raw data, and conclusion as separate layers before counting an origin."
+    }
+  ],
+  "tensions": [
+    {
+      "tension_id": "ten-capability-versus-endpoint-inversion",
+      "label": "Usual E4B advantage versus local E2B endpoints",
+      "side_a_refs": ["obs-t1-consistency-advantage", "obs-clinical-e4b-advantage", "obs-audio-e4b-critic-advantage"],
+      "side_b_refs": ["obs-t1-at-least-once-inversion", "obs-clinical-readmission-inversion", "obs-audio-chain-aggregation-inversion"],
+      "analysis": "The evidence is compatible after preserving metric and task axes: E4B leads most aggregate or consistency outcomes, while E2B can lead a different endpoint in the same instrument.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Which endpoint definitions and task weights represent AoA utility?"
+    },
+    {
+      "tension_id": "ten-mtp-positive-versus-negative",
+      "label": "Positive MTP averages versus route-level slowdowns",
+      "side_a_refs": ["obs-mtp-task-shape"],
+      "side_b_refs": ["obs-mtp-backend-sign-flip"],
+      "analysis": "Backend, task shape, output length, precision, and implementation change the realized speculative-decoding economics, so a model-family multiplier is unsupported.",
+      "resolution": "resolved_by_instrument",
+      "remaining_question": "Where is the break-even surface for the exact AoA route and workload distribution?"
+    },
+    {
+      "tension_id": "ten-issue-closed-versus-support-unresolved",
+      "label": "Closed issue state versus unresolved PLE-specific support",
+      "side_a_refs": ["obs-ple-offload-status-update"],
+      "side_b_refs": ["obs-incept-context-execution"],
+      "analysis": "Issue lifecycle state and runtime capability are different axes: stale closure updates currentness but does not create a supported device map or resolve context-placement behavior.",
+      "resolution": "resolved_by_axis_split",
+      "remaining_question": "Will a named Transformers version publish and verify an exact PLE placement route?"
+    }
+  ],
+  "method_pressures": [
+    {
+      "pressure_id": "mp-metric-direction-recurrence",
+      "trigger_refs": ["obs-t1-consistency-advantage", "obs-t1-at-least-once-inversion", "obs-clinical-e4b-advantage", "obs-clinical-readmission-inversion"],
+      "pressure": "One source can support opposite E2B/E4B directions on different legitimate endpoints, making source-level votes and scalar ranking lossy.",
+      "proposed_response": "Track recurrence by metric, denominator, task, and direction; treat same-instrument endpoint inversion as positive evidence against universal ordering.",
+      "status": "proposed"
+    },
+    {
+      "pressure_id": "mp-source-internal-contradiction",
+      "trigger_refs": ["obs-incept-metadata-error", "obs-mtp-backend-sign-flip"],
+      "pressure": "README labels or summaries can conflict with official architecture or the source's own detailed backend reports while underlying artifacts remain useful.",
+      "proposed_response": "Audit metadata, method, raw data, detailed report, and conclusion independently, and count them as one origin rather than multiple votes.",
+      "status": "proposed"
+    },
+    {
+      "pressure_id": "mp-context-admission-layers",
+      "trigger_refs": ["obs-incept-context-execution", "obs-ple-offload-status-update"],
+      "pressure": "A requested context can allocate and finish a short synthetic generation without establishing semantic usability or changing the provider contract.",
+      "proposed_response": "Separate nominal model context, runtime allocation, execution completion, and semantically graded usable context in future observations.",
+      "status": "proposed"
+    },
+    {
+      "pressure_id": "mp-reproducibility-tier",
+      "trigger_refs": ["obs-t1-consistency-advantage", "obs-pi-resource-frontier", "obs-incept-context-execution", "obs-mtp-backend-sign-flip"],
+      "pressure": "Versioned paper-only, commit-pinned report, code-pinned, raw-data-pinned, and exact-checkpoint-pinned sources support different depths of reproduction.",
+      "proposed_response": "Expose a reproducibility posture derived from retained method, code, raw data, environment, checkpoint, and repeated-run identity without replacing qualitative review.",
+      "status": "proposed"
+    },
+    {
+      "pressure_id": "mp-currentness-without-baseline",
+      "trigger_refs": ["obs-ple-offload-status-update"],
+      "pressure": "A later mutable issue state can be observed even when no earlier locator-bounded capture snapshot exists for mechanical change classification.",
+      "proposed_response": "Allow a qualified observation supersession proposal while refusing to fabricate a ResearchChangeReceipt without two resolvable snapshots.",
+      "status": "adopted"
+    }
+  ],
+  "revisit_triggers": [
+    "T1-Bench releases versioned code, data, per-task outputs, checkpoint revisions, or an independent rerun.",
+    "The INSPECT or AudioProcessBench studies publish exact inference artifacts, uncertainty, per-item outputs, or independent replications.",
+    "A paired E2B/E4B owner study combines exact artifacts, accepted outputs, pass-at-least-once, all-run reliability, TTFT, prefill, decode, memory, energy, thermal state, and retries.",
+    "A code-bearing MTP study publishes exact target/assistant revisions, acceptance, byte or semantic parity, repeated variance, batch/concurrency, and output-length break-even curves across backends.",
+    "A semantic long-context study tests exact E2B/E4B realizations at multiple positions beyond 128K rather than only allocating and generating a short continuation.",
+    "Transformers publishes or verifies an exact PLE device_map route, or issue 47705 receives a technical reopening, linked fix, or fixed-version reproduction.",
+    "Another model family reproduces metric-direction inversion, source-internal contradiction, or the four-layer context-admission pressure strongly enough to justify method v0.4."
+  ],
+  "created_at": "2026-09-04T18:00:00Z",
+  "updated_at": "2026-09-04T18:00:00Z"
+}

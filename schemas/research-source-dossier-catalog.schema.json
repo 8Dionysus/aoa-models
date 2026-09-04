@@ -1,0 +1,458 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.aoa.local/models/research-source-dossier-catalog.schema.json",
+  "title": "ResearchSourceDossierCatalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "kind",
+    "authority",
+    "identity_policy",
+    "generated_from",
+    "input_fingerprint",
+    "counts",
+    "dossiers",
+    "generated_at"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://schemas.aoa.local/models/research-source-dossier-catalog.schema.json"
+    },
+    "schema_version": {
+      "const": "aoa_model_research_source_dossier_catalog_v1"
+    },
+    "kind": {
+      "const": "ResearchSourceDossierCatalog"
+    },
+    "authority": {
+      "$ref": "#/$defs/authority"
+    },
+    "identity_policy": {
+      "$ref": "#/$defs/identity_policy"
+    },
+    "generated_from": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/input_ref"
+      }
+    },
+    "input_fingerprint": {
+      "$ref": "#/$defs/digest"
+    },
+    "counts": {
+      "$ref": "#/$defs/counts"
+    },
+    "dossiers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dossier"
+      }
+    },
+    "generated_at": {
+      "$ref": "#/$defs/date_time"
+    }
+  },
+  "$defs": {
+    "date_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "string_list": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pre_canon",
+        "generated",
+        "informational_only",
+        "automatic_promotion",
+        "source_mutation_authority",
+        "routing_authority",
+        "activation_authority",
+        "proof_authority",
+        "acceptance_authority"
+      ],
+      "properties": {
+        "pre_canon": {"const": true},
+        "generated": {"const": true},
+        "informational_only": {"const": true},
+        "automatic_promotion": {"const": false},
+        "source_mutation_authority": {"const": false},
+        "routing_authority": {"const": false},
+        "activation_authority": {"const": false},
+        "proof_authority": {"const": false},
+        "acceptance_authority": {"const": false}
+      }
+    },
+    "identity_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "normalization", "cross_uri_aliasing"],
+      "properties": {
+        "mode": {"const": "normalized_exact_uri"},
+        "normalization": {
+          "$ref": "#/$defs/string_list"
+        },
+        "cross_uri_aliasing": {
+          "const": "review_required_not_automatic"
+        }
+      }
+    },
+    "input_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "record_id", "ref", "content_digest"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "ReconRun",
+            "ResearchCaptureSnapshot",
+            "ResearchChangeReceipt",
+            "ResearchSupersessionProposal"
+          ]
+        },
+        "record_id": {"type": "string", "minLength": 1},
+        "ref": {"type": "string", "minLength": 1},
+        "content_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dossiers",
+        "source_appearances",
+        "recon_runs",
+        "capture_snapshots",
+        "change_receipts",
+        "supersession_proposals",
+        "attention_dossiers"
+      ],
+      "properties": {
+        "dossiers": {"type": "integer", "minimum": 0},
+        "source_appearances": {"type": "integer", "minimum": 0},
+        "recon_runs": {"type": "integer", "minimum": 0},
+        "capture_snapshots": {"type": "integer", "minimum": 0},
+        "change_receipts": {"type": "integer", "minimum": 0},
+        "supersession_proposals": {"type": "integer", "minimum": 0},
+        "attention_dossiers": {"type": "integer", "minimum": 0}
+      }
+    },
+    "segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "segment_id",
+        "locator",
+        "content_digest",
+        "digest_unavailable_reason"
+      ],
+      "properties": {
+        "segment_id": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1},
+        "content_digest": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/digest"}
+          ]
+        },
+        "digest_unavailable_reason": {
+          "type": ["string", "null"],
+          "minLength": 1
+        }
+      }
+    },
+    "appearance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recon_run_id",
+        "recon_run_ref",
+        "recon_run_digest",
+        "source_id",
+        "source_capture_digest",
+        "captured_at",
+        "mutable_surface",
+        "origin_group",
+        "propagation_role",
+        "observation_refs",
+        "segments",
+        "segment_digest_posture"
+      ],
+      "properties": {
+        "recon_run_id": {
+          "type": "string",
+          "pattern": "^recon-run:[a-z0-9][a-z0-9._/-]+$"
+        },
+        "recon_run_ref": {
+          "type": "string",
+          "pattern": "^research-intake/recon-runs/[a-z0-9][a-z0-9._-]*\\.json$"
+        },
+        "recon_run_digest": {"$ref": "#/$defs/digest"},
+        "source_id": {"type": "string", "minLength": 1},
+        "source_capture_digest": {"$ref": "#/$defs/digest"},
+        "captured_at": {"$ref": "#/$defs/date_time"},
+        "mutable_surface": {"type": "boolean"},
+        "origin_group": {"type": "string", "minLength": 1},
+        "propagation_role": {
+          "type": "string",
+          "enum": ["origin", "dependent", "mixed", "unresolved"]
+        },
+        "observation_refs": {"$ref": "#/$defs/string_list"},
+        "segments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/segment"}
+        },
+        "segment_digest_posture": {
+          "type": "string",
+          "enum": [
+            "all_segments_digest_backed",
+            "some_segments_digest_backed",
+            "no_segment_digest"
+          ]
+        }
+      }
+    },
+    "capture_snapshot_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capture_id",
+        "ref",
+        "content_digest",
+        "created_at",
+        "source_id",
+        "segment_id",
+        "retrieval_state",
+        "segment_state",
+        "segment_content_digest",
+        "normalized_segment_digest",
+        "predecessor_snapshot"
+      ],
+      "properties": {
+        "capture_id": {"type": "string", "minLength": 1},
+        "ref": {
+          "type": "string",
+          "pattern": "^research-intake/capture-snapshots/[a-z0-9][a-z0-9._-]*\\.json$"
+        },
+        "content_digest": {"$ref": "#/$defs/digest"},
+        "created_at": {"$ref": "#/$defs/date_time"},
+        "source_id": {"type": "string", "minLength": 1},
+        "segment_id": {"type": "string", "minLength": 1},
+        "retrieval_state": {
+          "type": "string",
+          "enum": ["captured", "partial", "unavailable"]
+        },
+        "segment_state": {
+          "type": "string",
+          "enum": ["captured", "partial", "missing", "unavailable"]
+        },
+        "segment_content_digest": {
+          "oneOf": [{"type": "null"}, {"$ref": "#/$defs/digest"}]
+        },
+        "normalized_segment_digest": {
+          "oneOf": [{"type": "null"}, {"$ref": "#/$defs/digest"}]
+        },
+        "predecessor_snapshot": {"type": ["string", "null"], "minLength": 1}
+      }
+    },
+    "change_receipt_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "ref",
+        "content_digest",
+        "created_at",
+        "previous_capture_id",
+        "current_capture_id",
+        "classification",
+        "review_disposition"
+      ],
+      "properties": {
+        "receipt_id": {"type": "string", "minLength": 1},
+        "ref": {
+          "type": "string",
+          "pattern": "^research-intake/change-receipts/[a-z0-9][a-z0-9._-]*\\.json$"
+        },
+        "content_digest": {"$ref": "#/$defs/digest"},
+        "created_at": {"$ref": "#/$defs/date_time"},
+        "previous_capture_id": {"type": "string", "minLength": 1},
+        "current_capture_id": {"type": "string", "minLength": 1},
+        "classification": {"type": "string", "minLength": 1},
+        "review_disposition": {
+          "type": "string",
+          "enum": ["no_change", "review_optional", "review_required", "retry_or_revisit"]
+        }
+      }
+    },
+    "supersession_proposal_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proposal_id",
+        "ref",
+        "content_digest",
+        "created_at",
+        "status",
+        "candidate_relation",
+        "roles",
+        "review_required",
+        "automatic_application"
+      ],
+      "properties": {
+        "proposal_id": {"type": "string", "minLength": 1},
+        "ref": {
+          "type": "string",
+          "pattern": "^research-intake/supersession-proposals/[a-z0-9][a-z0-9._-]*\\.json$"
+        },
+        "content_digest": {"$ref": "#/$defs/digest"},
+        "created_at": {"$ref": "#/$defs/date_time"},
+        "status": {"const": "proposed"},
+        "candidate_relation": {
+          "type": "string",
+          "enum": ["update", "narrowing", "contradiction", "independent"]
+        },
+        "roles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "enum": ["prior", "candidate"]}
+        },
+        "review_required": {"const": true},
+        "automatic_application": {"const": false}
+      }
+    },
+    "currentness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "posture",
+        "latest_recorded_at",
+        "snapshot_backed",
+        "change_history_present",
+        "semantic_review_present",
+        "freshness_asserted"
+      ],
+      "properties": {
+        "posture": {
+          "type": "string",
+          "enum": [
+            "immutable_reference",
+            "mutable_metadata_only",
+            "mutable_snapshot_backed",
+            "mutable_snapshot_gap",
+            "mixed_mutability"
+          ]
+        },
+        "latest_recorded_at": {"$ref": "#/$defs/date_time"},
+        "snapshot_backed": {"type": "boolean"},
+        "change_history_present": {"type": "boolean"},
+        "semantic_review_present": {"type": "boolean"},
+        "freshness_asserted": {"const": false}
+      }
+    },
+    "dossier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dossier_id",
+        "canonical_uri",
+        "uri_aliases",
+        "titles",
+        "publishers",
+        "source_classes",
+        "origin_groups",
+        "propagation_roles",
+        "mutable_surface_states",
+        "first_recorded_at",
+        "latest_recorded_at",
+        "appearance_count",
+        "run_count",
+        "appearances",
+        "capture_snapshots",
+        "change_receipts",
+        "supersession_proposals",
+        "currentness",
+        "attention"
+      ],
+      "properties": {
+        "dossier_id": {
+          "type": "string",
+          "pattern": "^research-source:[a-f0-9]{20}$"
+        },
+        "canonical_uri": {"type": "string", "format": "uri"},
+        "uri_aliases": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "format": "uri"}
+        },
+        "titles": {"$ref": "#/$defs/string_list"},
+        "publishers": {"$ref": "#/$defs/string_list"},
+        "source_classes": {"$ref": "#/$defs/string_list"},
+        "origin_groups": {"$ref": "#/$defs/string_list"},
+        "propagation_roles": {"$ref": "#/$defs/string_list"},
+        "mutable_surface_states": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "boolean"}
+        },
+        "first_recorded_at": {"$ref": "#/$defs/date_time"},
+        "latest_recorded_at": {"$ref": "#/$defs/date_time"},
+        "appearance_count": {"type": "integer", "minimum": 0},
+        "run_count": {"type": "integer", "minimum": 0},
+        "appearances": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/appearance"}
+        },
+        "capture_snapshots": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/capture_snapshot_ref"}
+        },
+        "change_receipts": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/change_receipt_ref"}
+        },
+        "supersession_proposals": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/supersession_proposal_ref"}
+        },
+        "currentness": {"$ref": "#/$defs/currentness"},
+        "attention": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "reused_mutable_without_snapshot",
+              "reused_segments_without_complete_digest",
+              "origin_group_variation",
+              "mixed_mutability_classification",
+              "change_review_required",
+              "supersession_review_present",
+              "latest_snapshot_segment_gap"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
