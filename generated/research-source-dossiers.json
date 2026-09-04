@@ -15,9 +15,9 @@
     "attention_dossiers": 11,
     "capture_snapshots": 9,
     "change_receipts": 0,
-    "dossiers": 110,
-    "recon_runs": 7,
-    "source_appearances": 126,
+    "dossiers": 124,
+    "recon_runs": 8,
+    "source_appearances": 140,
     "supersession_proposals": 1
   },
   "dossiers": [
@@ -209,6 +209,153 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T18:10:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-adaptation-bundle-contract",
+            "obs-multimodal-data-versus-tower-scope",
+            "obs-revision-sensitive-training-stack"
+          ],
+          "origin_group": "google-gemma-qlora-recipes",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Lines 94-118 and 194-282: E2B/E4B-selectable NF4 QLoRA, Transformers >=5.10.1, PEFT >=0.19.0, LM-scoped PEFT defaults, modules_to_save, weight tying, and training configuration.",
+              "segment_id": "seg-text-config"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Lines 392-423: adapter-only save, merge_and_unload, more-than-30GB CPU-memory note, and manual evaluation boundary.",
+              "segment_id": "seg-save-merge-eval"
+            }
+          ],
+          "source_capture_digest": "sha256:b5ef5677bbd366fd4d84df762d61078738d21da01e35c9353a055ae38a8f1e0f",
+          "source_id": "src-google-text-qlora"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://ai.google.dev/gemma/docs/core/huggingface_text_finetune_qlora",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T18:10:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:78d3a5d6be3be71e0ce4",
+      "first_recorded_at": "2026-09-04T18:10:00Z",
+      "latest_recorded_at": "2026-09-04T18:10:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "google-gemma-qlora-recipes"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Google"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "provider_operational_recipe"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Fine-Tune Gemma using Hugging Face Transformers and QLoRA"
+      ],
+      "uri_aliases": [
+        "https://ai.google.dev/gemma/docs/core/huggingface_text_finetune_qlora"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T18:15:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-adaptation-bundle-contract",
+            "obs-multimodal-data-versus-tower-scope"
+          ],
+          "origin_group": "google-gemma-qlora-recipes",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Lines 94-117, 230-342: multimodal dataset/collator, NF4 QLoRA, LM-scoped default targets, special-token modules, and image-token masking.",
+              "segment_id": "seg-vision-data-and-targets"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Lines 382-413: adapter save, merge path, CPU-memory note, and manual evaluation boundary.",
+              "segment_id": "seg-vision-merge-eval"
+            }
+          ],
+          "source_capture_digest": "sha256:d4444d13826be77117ee50d19e0254f2a9f9f2066e8cc1014c141acea9757ee3",
+          "source_id": "src-google-vision-qlora"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://ai.google.dev/gemma/docs/core/huggingface_vision_finetune_qlora",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T18:15:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:5292ff10ba993bee66d0",
+      "first_recorded_at": "2026-09-04T18:15:00Z",
+      "latest_recorded_at": "2026-09-04T18:15:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "google-gemma-qlora-recipes"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Google"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "provider_operational_recipe"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Fine-Tune Gemma for Vision Tasks using Hugging Face Transformers and QLoRA"
+      ],
+      "uri_aliases": [
+        "https://ai.google.dev/gemma/docs/core/huggingface_vision_finetune_qlora"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-08-30T08:42:00Z",
           "mutable_surface": true,
           "observation_refs": [
@@ -269,6 +416,72 @@
       ],
       "uri_aliases": [
         "https://ai.google.dev/gemma/docs/gemma-3n"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T20:00:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-mtp-paired-adaptation"
+          ],
+          "origin_group": "google-gemma-guidance",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Lines 94-105: exact verification, shared input embeddings, target last-layer activations, and E2B/E4B efficient embedder.",
+              "segment_id": "seg-target-drafter-coupling"
+            }
+          ],
+          "source_capture_digest": "sha256:b168b5b41653390fe21b9025eeda02e29622eb2b36d1fb04379fee86bc77df54",
+          "source_id": "src-google-mtp"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://ai.google.dev/gemma/docs/mtp/overview",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:00:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:bf1e715e71ca67c2fd04",
+      "first_recorded_at": "2026-09-04T20:00:00Z",
+      "latest_recorded_at": "2026-09-04T20:00:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "google-gemma-guidance"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Google"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "provider_architecture_guidance"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Speed-up Gemma 4 with Multi-Token Prediction"
+      ],
+      "uri_aliases": [
+        "https://ai.google.dev/gemma/docs/mtp/overview"
       ]
     },
     {
@@ -425,6 +638,72 @@
       ],
       "uri_aliases": [
         "https://ai.google.dev/gemma/docs/releases"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T18:00:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-adaptation-bundle-contract"
+          ],
+          "origin_group": "google-gemma-guidance",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Sections Choose a framework, Parameter-efficient tuning, Tune and test, and Deploy the model.",
+              "segment_id": "seg-method-and-deployment"
+            }
+          ],
+          "source_capture_digest": "sha256:0b5134a1d78a2a93f6696f8af946592c1852d9edbb16a4629393feca10cbe10a",
+          "source_id": "src-google-tuning-overview"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://ai.google.dev/gemma/docs/tune?hl=en",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T18:00:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:af27848b68f96e7032e8",
+      "first_recorded_at": "2026-09-04T18:00:00Z",
+      "latest_recorded_at": "2026-09-04T18:00:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "google-gemma-guidance"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Google"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "provider_guidance"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma model fine-tuning"
+      ],
+      "uri_aliases": [
+        "https://ai.google.dev/gemma/docs/tune?hl=en"
       ]
     },
     {
@@ -1401,6 +1680,86 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T19:00:00Z",
+          "mutable_surface": false,
+          "observation_refs": [
+            "obs-e4b-tool-qlora-gain",
+            "obs-no-paired-e2b-e4b-adaptation-benchmark",
+            "obs-specialization-retention-loss"
+          ],
+          "origin_group": "assetops-qlora-study",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Sections III-IV: fixed-catalog description-free setup, 1,741 examples, QLoRA configuration, and evaluation protocol.",
+              "segment_id": "seg-method-and-scope"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Sections V-A through V-C: main results, rank sweep, 100-question retention probe, and quantization check.",
+              "segment_id": "seg-quality-rank-retention"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Table III and deployment characterization on one A100 80GB.",
+              "segment_id": "seg-resource-profile"
+            }
+          ],
+          "source_capture_digest": "sha256:18a99e17eff0cd9959c2e47df6ddfd4e011a6731f79c92375e6e4f409f1bf8aa",
+          "source_id": "src-tool-qlora-study"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://arxiv.org/html/2605.17774v2",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:00:00Z",
+        "posture": "immutable_reference",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:2db58f1e15e172ee0b90",
+      "first_recorded_at": "2026-09-04T19:00:00Z",
+      "latest_recorded_at": "2026-09-04T19:00:00Z",
+      "mutable_surface_states": [
+        false
+      ],
+      "origin_groups": [
+        "assetops-qlora-study"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Shemla, Yakobe, and Agarwal"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "independent_controlled_study"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Internalizing Tool Knowledge in Small Language Models via QLoRA Fine-Tuning"
+      ],
+      "uri_aliases": [
+        "https://arxiv.org/html/2605.17774v2"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-09-04T16:20:00Z",
           "mutable_surface": false,
           "observation_refs": [
@@ -1803,6 +2162,86 @@
       ],
       "uri_aliases": [
         "https://arxiv.org/html/2608.21601v1"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T19:15:00Z",
+          "mutable_surface": false,
+          "observation_refs": [
+            "obs-cpt-controls-recover-capability",
+            "obs-no-paired-e2b-e4b-adaptation-benchmark",
+            "obs-specialization-retention-loss"
+          ],
+          "origin_group": "armenian-cpt-study",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Sections 3 and 5: E4B 10B-token mixture, learning-rate controls, five runs, likelihood suite, and forgetting analysis.",
+              "segment_id": "seg-cpt-mixture"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Table 6: E2B 2B-token stock versus +8k/+16k mean-initialized tokenizer-extension ablation.",
+              "segment_id": "seg-e2b-tokenizer-ablation"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The versioned HTML paper was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Limitations: fresh single-run columns, task composition, MCQA-heavy evaluation, and absent safety assessment.",
+              "segment_id": "seg-limitations"
+            }
+          ],
+          "source_capture_digest": "sha256:a9109150fd0ee2053384f7ff1ee26a304f5543d79c97b4b827e32a5a9e3a975f",
+          "source_id": "src-armenian-cpt-study"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://arxiv.org/html/2609.03350v1",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:15:00Z",
+        "posture": "immutable_reference",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:d6ffa0156fd3669842de",
+      "first_recorded_at": "2026-09-04T19:15:00Z",
+      "latest_recorded_at": "2026-09-04T19:15:00Z",
+      "mutable_surface_states": [
+        false
+      ],
+      "origin_groups": [
+        "armenian-cpt-study"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "ArmLLM study authors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "independent_controlled_study"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "From Zero to Hero: An Open LLM Ecosystem for Armenian"
+      ],
+      "uri_aliases": [
+        "https://arxiv.org/html/2609.03350v1"
       ]
     },
     {
@@ -2931,6 +3370,78 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T20:10:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-mtp-paired-adaptation"
+          ],
+          "origin_group": "nvidia-nemo-automodel",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The discussion and commit-pinned source were inspected without retaining canonical response bytes.",
+              "locator": "Discussion lines 146-151 plus commit-pinned E4B Tulu/Magicoder YAML: full LM plus drafter, K=4, loss weight 0.01, trainable embeddings, frozen vision/audio, FSDP2, and activation checkpointing.",
+              "segment_id": "seg-joint-recipe"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable discussion was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Discussion lines 157-166: 500-step checkpoint, 20 prompts, tokens, decode time, throughput, accepted tokens per target step, and 1.98x speed-up.",
+              "segment_id": "seg-20-prompt-result"
+            }
+          ],
+          "source_capture_digest": "sha256:39de4936f1978ef6ff7c006ff9b48db3ee52c4a164de01ee998eb7452a1912e2",
+          "source_id": "src-nemo-joint-mtp"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/NVIDIA-NeMo/Automodel/discussions/2481",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T20:10:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:002495f4f61af86766e3",
+      "first_recorded_at": "2026-09-04T20:10:00Z",
+      "latest_recorded_at": "2026-09-04T20:10:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "nvidia-nemo-automodel"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "NVIDIA NeMo Automodel contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "provider_implementation_and_benchmark"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma4 Assistant model support for MTP"
+      ],
+      "uri_aliases": [
+        "https://github.com/NVIDIA-NeMo/Automodel/discussions/2481"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-09-04T17:00:00Z",
           "mutable_surface": false,
           "observation_refs": [
@@ -4024,6 +4535,145 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T18:30:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-audio-tower-adapter-path",
+            "obs-clippable-selector-topology"
+          ],
+          "origin_group": "huggingface-peft",
+          "propagation_role": "mixed",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable issue was inspected through GitHub HTML and API without retaining normalized response bytes.",
+              "locator": "Issue description sections Problem, Root Cause, Workaround, and Tested With.",
+              "segment_id": "seg-wrapper-failure"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable issue comment was inspected through GitHub API without retaining normalized response bytes.",
+              "locator": "Maintainer comment dated 2026-04-03 recommending tower-scoped regexes targeting q_proj.linear or v_proj.linear.",
+              "segment_id": "seg-maintainer-selector"
+            }
+          ],
+          "source_capture_digest": "sha256:37197572faf9f3ab41fddfac7f9cbdfaac60a378fb8d9ece10e523ba1af1346c",
+          "source_id": "src-peft-clippable"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/huggingface/peft/issues/3130",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T18:30:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:8550ab0943eebccb4d6f",
+      "first_recorded_at": "2026-09-04T18:30:00Z",
+      "latest_recorded_at": "2026-09-04T18:30:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "huggingface-peft"
+      ],
+      "propagation_roles": [
+        "mixed"
+      ],
+      "publishers": [
+        "Hugging Face PEFT contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "upstream_issue_and_maintainer_guidance"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Add LoRA support for Gemma 4 (Gemma4ClippableLinear)"
+      ],
+      "uri_aliases": [
+        "https://github.com/huggingface/peft/issues/3130"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T18:35:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-revision-sensitive-training-stack"
+          ],
+          "origin_group": "huggingface-peft",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable pull-request surface was inspected through GitHub HTML and API without retaining normalized response bytes.",
+              "locator": "Merged status, commit 24d70f4, test/CI note, and later PEFT 0.20.0 shipment references.",
+              "segment_id": "seg-merged-fix"
+            }
+          ],
+          "source_capture_digest": "sha256:9d6f83a61fb9a1cbe9f5d59c8021c4a5b65c024488c1848d24a00ef35761284c",
+          "source_id": "src-peft-modules-save-fix"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/huggingface/peft/pull/3199",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T18:35:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:49f37db3f694b5a29696",
+      "first_recorded_at": "2026-09-04T18:35:00Z",
+      "latest_recorded_at": "2026-09-04T18:35:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "huggingface-peft"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Hugging Face PEFT contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "upstream_merged_fix"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "fix aux4 kwargs-only modules in modules_to_save"
+      ],
+      "uri_aliases": [
+        "https://github.com/huggingface/peft/pull/3199"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-08-30T08:36:00Z",
           "mutable_surface": true,
           "observation_refs": [
@@ -4213,6 +4863,72 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T18:40:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-revision-sensitive-training-stack"
+          ],
+          "origin_group": "huggingface-transformers",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable pull-request surface was inspected through GitHub HTML and API without retaining normalized response bytes.",
+              "locator": "PR description and merged state: shared KV states must remain shared during training and uncached inference.",
+              "segment_id": "seg-uncached-training-fix"
+            }
+          ],
+          "source_capture_digest": "sha256:a65eaa44298b855fcf9f641bb12763f9cd97663a285335151c52654ea87c1bc0",
+          "source_id": "src-transformers-kv-fix"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/huggingface/transformers/pull/45312",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T18:40:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:36cdba4a39d04a5a3b74",
+      "first_recorded_at": "2026-09-04T18:40:00Z",
+      "latest_recorded_at": "2026-09-04T18:40:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "huggingface-transformers"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Hugging Face Transformers contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "upstream_merged_fix"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "[gemma4] Dissociate kv states sharing from the Cache"
+      ],
+      "uri_aliases": [
+        "https://github.com/huggingface/transformers/pull/45312"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-09-04T16:40:00Z",
           "mutable_surface": false,
           "observation_refs": [
@@ -4345,6 +5061,78 @@
       ],
       "uri_aliases": [
         "https://github.com/mkboch/UDAE/tree/df56f10b16788348b5cb8ba5f9ae886fb9c85c05"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T19:50:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-mlx-roundtrip-failure"
+          ],
+          "origin_group": "mlx-cross-runtime-issue",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable issue was inspected through GitHub HTML and API without retaining normalized response bytes.",
+              "locator": "Issue summary, parameter-set table, E2B 140-key derivation, and Python/Swift round-trip reproductions.",
+              "segment_id": "seg-e2b-key-divergence"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable issue comment was inspected through GitHub API without retaining normalized response bytes.",
+              "locator": "Maintainer closing comment dated 2026-08-21 stating non-essential issues were closed to reduce the queue.",
+              "segment_id": "seg-closure-without-fix"
+            }
+          ],
+          "source_capture_digest": "sha256:c76230a5e96d82e95076933cdbef118aeb0696bfca94ca7ab5f9aa9d295dea2b",
+          "source_id": "src-mlx-roundtrip"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/ml-explore/mlx-lm/issues/1210",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:50:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:b7792c81bd08d8a2bc29",
+      "first_recorded_at": "2026-09-04T19:50:00Z",
+      "latest_recorded_at": "2026-09-04T19:50:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "mlx-cross-runtime-issue"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "MLX contributors"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "cross_runtime_failure_report"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma 4 attention-shape divergence between mlx-lm and mlx-swift-lm breaks fused-checkpoint round-trip"
+      ],
+      "uri_aliases": [
+        "https://github.com/ml-explore/mlx-lm/issues/1210"
       ]
     },
     {
@@ -5741,6 +6529,72 @@
       "appearance_count": 1,
       "appearances": [
         {
+          "captured_at": "2026-09-04T19:40:00Z",
+          "mutable_surface": false,
+          "observation_refs": [
+            "obs-audio-tower-adapter-path"
+          ],
+          "origin_group": "unsloth-implementation",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The commit-pinned notebook was inspected without retaining canonical notebook bytes.",
+              "locator": "Notebook cells loading E4B in 4-bit, selecting language attention/MLP and named audio modules, r=8/alpha=16, 3,000 Emilia-DE samples, and 60-step T4 demonstration.",
+              "segment_id": "seg-audio-targets-and-demo"
+            }
+          ],
+          "source_capture_digest": "sha256:a8f54486e487d4e63614eafe57084bbe643ffb2c9f0c539968b94114e5794f6d",
+          "source_id": "src-unsloth-e4b-audio"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://github.com/unslothai/notebooks/blob/cc4742b4d55fd210d4fb55a6aecb3a7a03101b8a/nb/Gemma4_(E4B)-Audio.ipynb",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:40:00Z",
+        "posture": "immutable_reference",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:e745fb893534bcc16af8",
+      "first_recorded_at": "2026-09-04T19:40:00Z",
+      "latest_recorded_at": "2026-09-04T19:40:00Z",
+      "mutable_surface_states": [
+        false
+      ],
+      "origin_groups": [
+        "unsloth-implementation"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Unsloth"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "commit_pinned_provider_recipe"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Gemma4 E4B Audio fine-tuning notebook"
+      ],
+      "uri_aliases": [
+        "https://github.com/unslothai/notebooks/blob/cc4742b4d55fd210d4fb55a6aecb3a7a03101b8a/nb/Gemma4_(E4B)-Audio.ipynb"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
           "captured_at": "2026-08-30T07:20:00Z",
           "mutable_surface": true,
           "observation_refs": [
@@ -6124,6 +6978,79 @@
       ],
       "uri_aliases": [
         "https://huggingface.co/api/models/google/gemma-4-E4B-it"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T18:20:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e2b-language-subtree-sft",
+            "obs-no-paired-e2b-e4b-adaptation-benchmark"
+          ],
+          "origin_group": "huggingface-google-cloud",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Lines 94-108 and 228-257: E2B tool-calling SFT, one H100 Spot job, and dependency set.",
+              "segment_id": "seg-e2b-job-scope"
+            },
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable page was inspected through the web research tool without retaining normalized response bytes.",
+              "locator": "Lines 319-355: BF16 causal LM, language-subtree trainability, frozen vision/audio/embeddings, three epochs, gradient checkpointing, use_cache=false, and Liger disabled.",
+              "segment_id": "seg-freeze-and-train"
+            }
+          ],
+          "source_capture_digest": "sha256:a37289dd1f8d3ad37774293d8e28de68bee0a7bf992258634df42d7ee6c128aa",
+          "source_id": "src-hf-vertex-e2b-sft"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/docs/google-cloud/examples/vertex-ai-notebooks-fine-tune-gemma-4",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T18:20:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:1874e96dfcde81cc65f3",
+      "first_recorded_at": "2026-09-04T18:20:00Z",
+      "latest_recorded_at": "2026-09-04T18:20:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "huggingface-google-cloud"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "Hugging Face"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "provider_operational_recipe"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "Fine-tune Gemma 4 with TRL on Vertex AI"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/docs/google-cloud/examples/vertex-ai-notebooks-fine-tune-gemma-4"
       ]
     },
     {
@@ -6554,6 +7481,73 @@
       ],
       "uri_aliases": [
         "https://huggingface.co/google/gemma-4-E4B-it-qat-mobile-ct"
+      ]
+    },
+    {
+      "appearance_count": 1,
+      "appearances": [
+        {
+          "captured_at": "2026-09-04T19:30:00Z",
+          "mutable_surface": true,
+          "observation_refs": [
+            "obs-e2b-adapter-artifact",
+            "obs-no-paired-e2b-e4b-adaptation-benchmark"
+          ],
+          "origin_group": "xbruce22-adapter-artifact",
+          "propagation_role": "origin",
+          "recon_run_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+          "recon_run_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+          "recon_run_ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json",
+          "segment_digest_posture": "no_segment_digest",
+          "segments": [
+            {
+              "content_digest": null,
+              "digest_unavailable_reason": "The mutable Hub page and files were inspected without retaining normalized response bytes.",
+              "locator": "Model card training configuration, dataset size, trainable parameter count, XPU memory class, runtime, and adapter load/merge examples.",
+              "segment_id": "seg-adapter-config-and-run"
+            }
+          ],
+          "source_capture_digest": "sha256:aa16001d2cb9e5036dcce281b0f984fa5f188b8a8a6dad6c16f25405a325ec62",
+          "source_id": "src-e2b-reasoning-adapter"
+        }
+      ],
+      "attention": [],
+      "canonical_uri": "https://huggingface.co/xbruce22/gemma-4-e2b-reasoning-lora",
+      "capture_snapshots": [],
+      "change_receipts": [],
+      "currentness": {
+        "change_history_present": false,
+        "freshness_asserted": false,
+        "latest_recorded_at": "2026-09-04T19:30:00Z",
+        "posture": "mutable_metadata_only",
+        "semantic_review_present": false,
+        "snapshot_backed": false
+      },
+      "dossier_id": "research-source:9ec035db11fdb81a29ea",
+      "first_recorded_at": "2026-09-04T19:30:00Z",
+      "latest_recorded_at": "2026-09-04T19:30:00Z",
+      "mutable_surface_states": [
+        true
+      ],
+      "origin_groups": [
+        "xbruce22-adapter-artifact"
+      ],
+      "propagation_roles": [
+        "origin"
+      ],
+      "publishers": [
+        "xbruce22"
+      ],
+      "run_count": 1,
+      "source_classes": [
+        "community_adapter_artifact"
+      ],
+      "supersession_proposals": [],
+      "titles": [
+        "gemma-4-e2b-reasoning-lora"
+      ],
+      "uri_aliases": [
+        "https://huggingface.co/xbruce22/gemma-4-e2b-reasoning-lora"
       ]
     },
     {
@@ -8363,7 +9357,7 @@
       ]
     }
   ],
-  "generated_at": "2026-09-04T18:10:00Z",
+  "generated_at": "2026-09-04T21:00:00Z",
   "generated_from": [
     {
       "content_digest": "sha256:24647cafefa2c852b7129e165b1164b007d6ee6e9cc17d28d0a8c74b26bfa641",
@@ -8394,6 +9388,12 @@
       "kind": "ReconRun",
       "record_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-corroboration",
       "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-corroboration.json"
+    },
+    {
+      "content_digest": "sha256:aa18d3c4c96acac34bc32f1d1278d73c46ccfca2eddf5cff17f44b4939e33a92",
+      "kind": "ReconRun",
+      "record_id": "recon-run:gemma-4/2026-09-04-e2b-e4b-finetuning-adapters",
+      "ref": "research-intake/recon-runs/gemma-4-2026-09-04-e2b-e4b-finetuning-adapters.json"
     },
     {
       "content_digest": "sha256:4404900b111ce459faa9cc355ea559dc754f8d29c793adf26c8d605c9142118a",
@@ -8478,7 +9478,7 @@
       "preserve path case, trailing slash, and query string"
     ]
   },
-  "input_fingerprint": "sha256:66669cfa990e4ba914d65d362db24c70e0cc1dae222c80a91c2fb82e53bb2f26",
+  "input_fingerprint": "sha256:672870e0dcdb4ede0f65c5e4d08be74117d63c50e2bc6c981e0df6e9a29f8e1c",
   "kind": "ResearchSourceDossierCatalog",
   "schema_version": "aoa_model_research_source_dossier_catalog_v1"
 }
