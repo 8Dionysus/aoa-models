@@ -22,6 +22,13 @@ operating points, independent corroboration, and fine-tuning/adapters;
 [`research-intake/README.md`](research-intake/README.md) indexes the packets,
 reports, and bounded capture anchors.
 
+The current web-recon lens also retains optional search coverage and bounded
+negative-search results. Its deeper Gemma 4 adaptation pass separates scorer
+from mechanism, training proxy from held-out selection, multimodal execution
+from silent tower bypass, artifact load from served semantic effect, and an
+adapted target from its exact MTP-drafter pair. These remain pre-canon research
+objects and do not create a model ranking or automatic promotion path.
+
 The first bounded automation contour can capture one structured source segment,
 refresh it into an append-only change receipt, and package a content-addressed
 supersession proposal for review. It does not crawl, select, rank, promote, or

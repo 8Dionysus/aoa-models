@@ -218,6 +218,7 @@ def _validate_packet(
     clusters = packet.get("clusters", [])
     tensions = packet.get("tensions", [])
     method_pressures = packet.get("method_pressures", [])
+    search_probes = packet.get("search_probes", [])
 
     source_ids = [item.get("source_id") for item in source_captures if item.get("source_id")]
     observation_ids = [
@@ -228,7 +229,15 @@ def _validate_packet(
     pressure_ids = [
         item.get("pressure_id") for item in method_pressures if item.get("pressure_id")
     ]
-    record_ids = [*source_ids, *observation_ids, *cluster_ids, *tension_ids, *pressure_ids]
+    probe_ids = [item.get("probe_id") for item in search_probes if item.get("probe_id")]
+    record_ids = [
+        *source_ids,
+        *observation_ids,
+        *cluster_ids,
+        *tension_ids,
+        *pressure_ids,
+        *probe_ids,
+    ]
     for duplicate in sorted(_duplicates(record_ids)):
         issues.append(f"{rel}: duplicate packet-local record ID {duplicate!r}")
 
@@ -406,6 +415,35 @@ def _validate_packet(
                 issues.append(
                     f"{rel}: method pressure {pressure_id!r} observation does not exist: "
                     f"{observation_ref!r}"
+                )
+
+    for probe in search_probes:
+        probe_id = probe.get("probe_id")
+        source_refs = probe.get("source_refs", [])
+        observation_refs = probe.get("observation_refs", [])
+        result_state = probe.get("result_state")
+        for source_ref in source_refs:
+            if source_ref not in source_id_set:
+                issues.append(
+                    f"{rel}: search probe {probe_id!r} source does not exist: {source_ref!r}"
+                )
+        for observation_ref in observation_refs:
+            if observation_ref not in observation_id_set:
+                issues.append(
+                    f"{rel}: search probe {probe_id!r} observation does not exist: "
+                    f"{observation_ref!r}"
+                )
+        if result_state in {"qualified_evidence_found", "mixed_evidence_found"}:
+            if not source_refs or not observation_refs:
+                issues.append(
+                    f"{rel}: search probe {probe_id!r} with result {result_state!r} "
+                    "requires source and observation refs"
+                )
+        if result_state in {"no_qualified_source_found", "access_limited"}:
+            if not probe.get("limitations"):
+                issues.append(
+                    f"{rel}: search probe {probe_id!r} with result {result_state!r} "
+                    "requires limitations"
                 )
 
     for predecessor in packet.get("lineage", {}).get("supersedes_recon_run_refs", []):
